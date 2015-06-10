@@ -1,0 +1,20 @@
+dependencies: \
+  /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/民生小区/Classes/View/KTCartTableView.m \
+  /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/民生小区/Classes/View/KTCartTableView.h \
+  /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/LBModels/SendingWater/WaterSending.h \
+  /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/LBModels/Base/ErrorMessage.h \
+  /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/民生小区/Classes/View/KTCarCell.h \
+  /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/民生小区/Classes/View/KTCartFooterView.h \
+  /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/LBModels/ShoppingCart/ShoppingCart.h \
+  /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/LBModels/ShoppingCart/CartList.h \
+  /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/LBControl/SendingWater/KTInformationConfViewController.h \
+  /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/民生小区/Classes/Other/EHNetwork.h \
+  /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/民生小区/Classes/Controller/request/RequestTool/ViewShoppingCartRequest.h \
+  /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/民生小区/Classes/Controller/request/RequestTool/BasicRequest/MiddleNetWorkTool.h \
+  /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/民生小区/Classes/Controller/request/Params/Singleton.h \
+  /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/LBModels/Base/Conf.h \
+  /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/民生小区/Classes/Controller/request/Params/ViewShoppingCartParams.h \
+  /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/民生小区/Classes/Controller/request/Params/BasicParams.h \
+  /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/民生小区/Classes/Controller/request/Models/ViewShoppingCartResult.h \
+  /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/民生小区/Classes/Controller/request/Models/BasicModel/BasicResponse.h \
+  /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/民生小区/Classes/Controller/request/Models/BasicModel/BasicHeader.h

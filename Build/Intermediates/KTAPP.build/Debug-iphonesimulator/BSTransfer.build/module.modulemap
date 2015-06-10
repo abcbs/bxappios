@@ -1,0 +1,6 @@
+framework module BSTransfer {
+  umbrella header "BSTransfer.h"
+
+  export *
+  module * { export * }
+}

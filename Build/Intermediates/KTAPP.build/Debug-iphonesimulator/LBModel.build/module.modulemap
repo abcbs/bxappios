@@ -1,0 +1,6 @@
+framework module LBModel {
+  umbrella header "LBModel.h"
+
+  export *
+  module * { export * }
+}

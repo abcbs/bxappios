@@ -1,0 +1,6 @@
+framework module KTFrame {
+  umbrella header "KTFrame.h"
+
+  export *
+  module * { export * }
+}

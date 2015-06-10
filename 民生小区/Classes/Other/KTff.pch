@@ -1,0 +1,18 @@
+//
+//  KTff.pch
+//  民生小区
+//
+//  Created by 罗芳芳 on 15/4/22.
+//  Copyright (c) 2015年 itcast. All rights reserved.
+//
+
+#ifndef _____KTff_pch
+#define _____KTff_pch
+
+#define ABC 10
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#import "UIView+Frame.h"
+
+#endif
