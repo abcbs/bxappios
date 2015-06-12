@@ -14,14 +14,37 @@
 #import "WXApi.h"
 #import "WeiboApi.h"
 #import "WeiboSDK.h"
-@interface AppDelegate ()
+#import "Conf.h"
 
+
+@interface AppDelegate ()
+    
 @end
 
 @implementation AppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    AppDelegate *myDelegate = [[UIApplication sharedApplication] delegate];
+    float iosVersion=IOS_VERSION;
+    
+    if(IS_IPHONE5){
+        myDelegate.autoSizeScaleX = 1.0;
+        myDelegate.autoSizeScaleY = 1.0;
+        
+    }else if (IS_IPHONE_6PLUS){
+        myDelegate.autoSizeScaleX = 1.29375;
+        myDelegate.autoSizeScaleY=1.2957;
+ 
+    }else if(IS_IPHONE_6){
+        myDelegate.autoSizeScaleX=1.171875;
+        myDelegate.autoSizeScaleY=1.17429577;
+    }else {
+        myDelegate.autoSizeScaleX = 1.0;
+        myDelegate.autoSizeScaleY = 1.0;
+
+    }
+    
     // Override point for customization after application launch.
     //添加第三方平台
     [ShareSDK registerApp:@"768dff8dce18"];
@@ -59,7 +82,10 @@
     
     //3.显示windows
     [self.window makeKeyAndVisible];
+    //4
     
+
+
     return YES;
 }
 
@@ -92,4 +118,23 @@
 {
     return UIInterfaceOrientationMaskPortrait;
 }
+
+//storyBoard view自动适配
++ (void)storyBoradAutoLay:(UIView *)allView
+{
+    for (UIView *temp in allView.subviews) {
+        temp.frame = BSRectMake(temp.frame.origin.x, temp.frame.origin.y, temp.frame.size.width, temp.frame.size.height);
+        for (UIView *temp1 in temp.subviews) {
+            temp1.frame = BSRectMake(temp1.frame.origin.x, temp1.frame.origin.y, temp1.frame.size.width, temp1.frame.size.height);
+        }
+    }
+}
+
+
 @end
+
+
+
+
+
+

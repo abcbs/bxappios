@@ -547,6 +547,7 @@
 		84BA96731B2829D500388B58 /* ShoppingCart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingCart.m; sourceTree = "<group>"; };
 		84BA96751B2829D500388B58 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		84BA96761B2829D500388B58 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		84D358CD1B2B0DA600CCEE8B /* BSUIAdapter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BSUIAdapter.h; path = BSUIConfig/BSUIAdapter.h; sourceTree = "<group>"; };
 		A04366A91AD7B550005842EE /* 民生小区.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "民生小区.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A04366AD1AD7B550005842EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A04366AE1AD7B550005842EE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -1302,6 +1303,14 @@
 			path = UserManager;
 			sourceTree = "<group>";
 		};
+		84D358CB1B2B0C0500CCEE8B /* BSFramework */ = {
+			isa = PBXGroup;
+			children = (
+				84D358CD1B2B0DA600CCEE8B /* BSUIAdapter.h */,
+			);
+			path = BSFramework;
+			sourceTree = "<group>";
+		};
 		A0028F341ADE4D5500747D8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1343,10 +1352,11 @@
 			isa = PBXGroup;
 			children = (
 				A04366AB1AD7B550005842EE /* KTAPP */,
-				84BA96921B282A0500388B58 /* LBControl */,
-				84BA968E1B2829FC00388B58 /* BSTransfer */,
 				84BA968A1B2829F300388B58 /* BSInfrastructure */,
+				84D358CB1B2B0C0500CCEE8B /* BSFramework */,
+				84BA968E1B2829FC00388B58 /* BSTransfer */,
 				84BA96411B2829D500388B58 /* LBModels */,
+				84BA96921B282A0500388B58 /* LBControl */,
 				A0028F341ADE4D5500747D8A /* Frameworks */,
 				A04366AA1AD7B550005842EE /* Products */,
 				67A658A2709CA6036D46B63C /* Pods */,
