@@ -36,6 +36,10 @@
  */
 #define STATUS_HEIGHT 20
 
+
+/**
+ * 适配度
+ */
 #define scale (CGFloat)[[UIScreen mainScreen] scale]
 
 
@@ -49,6 +53,11 @@
 
 #define IS_IPHONE_6 (IS_IPHONE && ([[UIScreen mainScreen] nativeScale] == 2.0f)&&([[UIScreen mainScreen] bounds].size.height-667)==0)
 
+#define CONTENT_HIGH (SCREEN_HEIGHT-NAVIGATIONBAR_HEIGHT)
+
+/**
+ *获取IOS版本
+ */
 #define IOS_VERSION [[[UIDevice currentDevice] systemVersion] floatValue];
 
 
@@ -89,9 +98,14 @@
 #define INSERT_EXCEPTION @"2002" //数据插入异常
 #define UPDATE_EXCEPTION @"2003" //数据更新异常
 
+/**
+ *送水列表的列宽度
+ */
+#define WATER_LIST_ROW_HIGH 110;
 
 extern NSString *const KBS_URL;
 extern NSString *const WATER_LIST;
+
 extern NSString *const WATER_CATA;
 
 extern NSString *const WATER_DETAIL_COMMENT;

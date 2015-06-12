@@ -15,7 +15,7 @@
 #import "EHNetwork.h"
 #import "MJRefresh.h"
 #import "KTWaterDetailsViewController.h"
-#import "MJExtension.h"
+//#import "MJExtension.h"
 //#import "CartList.h"
 
 #import "ErrorMessage.h"
@@ -36,7 +36,8 @@ static const CGFloat MJDuration = 2.0;
 @property (nonatomic,strong)NSMutableArray *waterSendings;
 //@property (nonatomic, strong) NSMutableArray *mDateArrayM; // 模型数组
 @property (nonatomic, strong) EHNetwork *mNetwork;
-@property (nonatomic, strong) UIView *mHintView;
+//@property (nonatomic, strong) UIView *mHintView;
+@property (nonatomic, strong) MBProgressHUD *HUD;
 
 @end
 
@@ -60,12 +61,17 @@ static const CGFloat MJDuration = 2.0;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //[self initData];
-    // 网络加载数据
-    [self headerRereshing];
-    
-    
     [self setupRefresh];
+    if(!_HUD){
+        _HUD = [[MBProgressHUD alloc] initWithView:self.view];
+        [self.view addSubview:_HUD];
+    
+        //如果设置此属性则当前的view置于后台
+        //_HUD.dimBackground = YES;
+        _HUD.mode = MBProgressHUDModeDeterminate;
+        //设置对话框文字
+        _HUD.labelText = @"请稍等";
+    }
     // 初始化网络请求
     self.mNetwork = [[EHNetwork alloc] init];
 
@@ -108,7 +114,7 @@ static const CGFloat MJDuration = 2.0;
 {
    
     //1.网络加载数据
-    [self loadMoreData:self.lastDataId dataCount:10];
+    [self loadMoreData:self.lastDataId dataCount:[self pageCount]];
     
     // 2.刷新表格UI 刷新表格
     [self.tableView reloadData];
@@ -141,7 +147,7 @@ static const CGFloat MJDuration = 2.0;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 110;
+    return WATER_LIST_ROW_HIGH;
 }
 
 
@@ -149,25 +155,30 @@ static const CGFloat MJDuration = 2.0;
 - (void)loadMoreData:(long) warterId dataCount:(int)cellCount
 {
     
-    [WaterSending
-     listWaterList:warterId dataCount:cellCount
-     blockArray:^(NSMutableArray *warters, NSError *error,ErrorMessage *errorMessage) {
-         if (!error) {
-             [self.waterSendings addObjectsFromArray:warters];
+    
+    //显示对话框
+    [_HUD showAnimated:YES whileExecutingBlock:^{
+        
+        [WaterSending
+         listWaterList:warterId dataCount:cellCount
+         blockArray:^(NSMutableArray *warters, NSError *error,ErrorMessage *errorMessage) {
+             if (!error) {
+                 [self.waterSendings addObjectsFromArray:warters];
+             }
+             if (errorMessage) {
+                 NSLog(@"已经是最后一条数据");
+                 [self.tableView.footer noticeNoMoreData];
+             }
+             [self.tableView reloadData];
          }
-         if (errorMessage) {
-              NSLog(@"已经是最后一条数据");
-             [self.tableView.footer noticeNoMoreData];
-         }
-       }
-    ];
-    //停顿一定时间，使得数据加载完毕
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(MJDuration * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self.tableView reloadData];
-        [MBProgressHUD hideHUDForView:self.tableView animated:YES ];
-        // 关闭刷新提示
-        [self.tableView.footer endRefreshing];
-    });
+         
+         ];
+    } completionBlock:^{
+        //操作执行完后取消对话框
+        //[_HUD removeFromSuperview];
+       // _HUD = nil;
+    }];
+    
 }
 
 // 点击某一行，进入产品详细页
@@ -191,7 +202,7 @@ static const CGFloat MJDuration = 2.0;
     return ws.id;
 }
 -(int )pageCount{
-     return 10;
+     return CONTENT_HIGH/WATER_LIST_ROW_HIGH;
 }
 
 - (void)dealloc
@@ -201,7 +212,8 @@ static const CGFloat MJDuration = 2.0;
     [self.tableView removeHeader ];
     
     [self.tableView removeFooter];
-    
+    [_HUD removeFromSuperview];
+     _HUD = nil;
 }
 
 @end
