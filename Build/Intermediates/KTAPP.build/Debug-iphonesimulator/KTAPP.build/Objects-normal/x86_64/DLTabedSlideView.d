@@ -1,8 +1,8 @@
 dependencies: \
-  /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/民生小区/Classes/Controller/DLSlideView/DLTabedSlideView.m \
-  /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/民生小区/Classes/Controller/DLSlideView/DLTabedSlideView.h \
-  /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/民生小区/Classes/Controller/DLSlideView/DLTabbarView/DLSlideTabbarProtocol.h \
-  /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/民生小区/Classes/Controller/DLSlideView/DLTabbarView/DLFixedTabbarView.h \
-  /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/民生小区/Classes/Controller/DLSlideView/DLSlideView.h \
-  /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/民生小区/Classes/Controller/DLSlideView/DLCache/DLLRUCache.h \
-  /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/民生小区/Classes/Controller/DLSlideView/DLCache/DLCacheProtocol.h
+  /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/民生小区/DLSlideView-0.8.1/DLSlideView/DLTabedSlideView.m \
+  /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/民生小区/DLSlideView-0.8.1/DLSlideView/DLTabedSlideView.h \
+  /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/民生小区/DLSlideView-0.8.1/DLSlideView/DLTabbarView/DLSlideTabbarProtocol.h \
+  /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/民生小区/DLSlideView-0.8.1/DLSlideView/DLTabbarView/DLFixedTabbarView.h \
+  /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/民生小区/DLSlideView-0.8.1/DLSlideView/DLSlideView.h \
+  /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/民生小区/DLSlideView-0.8.1/DLSlideView/DLCache/DLLRUCache.h \
+  /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/民生小区/DLSlideView-0.8.1/DLSlideView/DLCache/DLCacheProtocol.h

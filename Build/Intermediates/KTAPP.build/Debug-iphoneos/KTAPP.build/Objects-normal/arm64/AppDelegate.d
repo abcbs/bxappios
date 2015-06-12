@@ -1,7 +1,7 @@
 dependencies: \
-  /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/民生小区/mingshen/AppDelegate.m \
-  /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/民生小区/mingshen/AppDelegate.h \
-  /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/民生小区/Classes/Controller/mainHomeVC/KTTarBarController.h \
+  /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/LBControl/MainFrame/AppDelegate.m \
+  /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/LBControl/MainFrame/AppDelegate.h \
+  /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/LBControl/MainFrame/KTTarBarController.h \
   /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/民生小区/ShareSDK-iOS-v2.11.0/ShareSDK.framework/Headers/ShareSDK.h \
   /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/民生小区/ShareSDK-iOS-v2.11.0/Core/ShareSDKCoreService.framework/Headers/ShareSDKCoreService.h \
   /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/民生小区/ShareSDK-iOS-v2.11.0/Core/ShareSDKCoreService.framework/Headers/ISSCAccount.h \

@@ -15,7 +15,7 @@
 
 
 
-NSString *const KBS_URL=@"http://192.168.1.104:8090/";
+NSString *const KBS_URL=@"http://192.168.0.200:8090/";
 NSString *const WATER_LIST=@"water/waterinformations";
 NSString *const WATER_CATA=@"/1001/";
 NSString *const WATER_DETAIL_COMMENT=@"productcomment/productcomments/";

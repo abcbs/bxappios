@@ -1,10 +1,10 @@
 dependencies: \
-  /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/民生小区/Classes/View/KTCartTableView.m \
-  /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/民生小区/Classes/View/KTCartTableView.h \
+  /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/LBControl/ShoppingCart/KTCartTableView.m \
+  /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/LBControl/ShoppingCart/KTCartTableView.h \
   /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/LBModels/SendingWater/WaterSending.h \
   /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/LBModels/Base/ErrorMessage.h \
-  /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/民生小区/Classes/View/KTCarCell.h \
-  /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/民生小区/Classes/View/KTCartFooterView.h \
+  /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/LBControl/ShoppingCart/KTCarCell.h \
+  /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/LBControl/ShoppingCart/KTCartFooterView.h \
   /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/LBModels/ShoppingCart/ShoppingCart.h \
   /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/LBModels/ShoppingCart/CartList.h \
   /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/LBControl/SendingWater/KTInformationConfViewController.h \

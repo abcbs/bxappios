@@ -8,6 +8,7 @@ target 'KTAPP' do
 	pod 'MJRefresh'
 	pod 'CocoaLumberjack'
 	pod 'MBProgressHUD'
+	pod 'Mantle'
 end
 
 #target 'BSFramework' do

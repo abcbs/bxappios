@@ -14,13 +14,13 @@ dependencies: \
   /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/民生小区/Classes/Controller/request/Models/BasicModel/BasicHeader.h \
   /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/民生小区/Classes/Controller/request/Params/CommodityEvaluationParams.h \
   /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/民生小区/Classes/Controller/request/Params/BasicParams.h \
-  /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/民生小区/Classes/View/KTCartTableView.h \
+  /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/LBControl/ShoppingCart/KTCartTableView.h \
   /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/LBModels/SendingWater/Comment.h \
-  /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/民生小区/Classes/Controller/LoginRegister/LoginViewController.h \
+  /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/LBControl/LoginRegister/LoginViewController.h \
   /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/LBModels/Discard/LoginMessage.h \
   /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/LBModels/ShoppingCart/ShoppingCart.h \
   /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/LBModels/ShoppingCart/CartList.h \
-  /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/民生小区/Classes/View/KTCarCell.h \
+  /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/LBControl/ShoppingCart/KTCarCell.h \
   /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/民生小区/Classes/Controller/request/RequestTool/JoinShoppingCartRequest.h \
   /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/民生小区/Classes/Controller/request/Params/JoinShoppingCartParams.h \
   /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/民生小区/Classes/Controller/request/Models/JoinShoppingCartResult.h \

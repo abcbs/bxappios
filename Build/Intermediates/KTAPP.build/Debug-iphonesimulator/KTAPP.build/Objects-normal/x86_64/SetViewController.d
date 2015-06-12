@@ -1,13 +1,13 @@
 dependencies: \
-  /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/民生小区/Classes/Controller/SetViewController.m \
-  /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/民生小区/Classes/Controller/SetViewController.h \
+  /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/LBControl/SystemConfig/SetViewController.m \
+  /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/LBControl/SystemConfig/SetViewController.h \
   /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/民生小区/Classes/Controller/LoginRegisterView/SetCell.h \
-  /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/民生小区/Classes/Controller/LoginRegister/LoginViewController.h \
+  /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/LBControl/LoginRegister/LoginViewController.h \
   /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/LBModels/Discard/LoginMessage.h \
-  /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/民生小区/Classes/Controller/LoginRegister/RegisterViewController.h \
+  /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/LBControl/LoginRegister/RegisterViewController.h \
   /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/LBModels/Discard/SendMessage.h \
   /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/LBModels/Base/Conf.h \
-  /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/民生小区/Classes/Controller/SystemSet.h \
+  /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/LBControl/SystemConfig/SystemSet.h \
   /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/民生小区/ShareSDK-iOS-v2.11.0/ShareSDK.framework/Headers/ShareSDK.h \
   /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/民生小区/ShareSDK-iOS-v2.11.0/Core/ShareSDKCoreService.framework/Headers/ShareSDKCoreService.h \
   /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/民生小区/ShareSDK-iOS-v2.11.0/Core/ShareSDKCoreService.framework/Headers/ISSCAccount.h \
@@ -55,8 +55,8 @@ dependencies: \
   /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/民生小区/ShareSDK-iOS-v2.11.0/Extend/QQConnectSDK/TencentOpenAPI.framework/Headers/TencentOAuth.h \
   /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/民生小区/ShareSDK-iOS-v2.11.0/Extend/QQConnectSDK/TencentOpenAPI.framework/Headers/sdkdef.h \
   /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/民生小区/ShareSDK-iOS-v2.11.0/Extend/QQConnectSDK/TencentOpenAPI.framework/Headers/TencentOAuthObject.h \
-  /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/民生小区/Classes/Controller/myWallet.h \
-  /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/民生小区/Classes/Controller/applyShop.h \
-  /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/民生小区/Classes/Controller/Demo1ViewController.h \
-  /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/民生小区/Classes/Controller/DLSlideView/DLTabedSlideView.h \
-  /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/民生小区/Classes/Controller/DLSlideView/DLTabbarView/DLSlideTabbarProtocol.h
+  /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/LBControl/PayManager/myWallet.h \
+  /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/LBControl/MyCircle/applyShop.h \
+  /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/LBControl/MyOrderItems/Demo1ViewController.h \
+  /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/民生小区/DLSlideView-0.8.1/DLSlideView/DLTabedSlideView.h \
+  /Users/fangfangluo/Desktop/Dev/project/KT-APP/KT-APP-BS/民生小区/DLSlideView-0.8.1/DLSlideView/DLTabbarView/DLSlideTabbarProtocol.h
