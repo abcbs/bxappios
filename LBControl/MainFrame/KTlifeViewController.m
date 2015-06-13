@@ -10,11 +10,11 @@
 #import "KTLifeSearchBar.h"
 #import "KTTarBarController.h"
 #import "UIView+Frame.h"
-//#import "ViewController.h"
+#import "Conf.h"
 #import "TableViewController.h"
 #import "AppDelegate.h"
-#define kScreenWidth [UIScreen mainScreen].bounds.size.width
-#define kScreenHight [UIScreen mainScreen].bounds.size.height
+
+
 @interface KTlifeViewController ()<UITextFieldDelegate,UITableViewDelegate>
 {
    
@@ -36,8 +36,8 @@
    [super viewDidLoad];
    [AppDelegate storyBoradAutoLay:self.view];
     // 产品
-   _BigScrollView =[[UIScrollView alloc]initWithFrame:BSRectMake(0,0 , kScreenWidth,kScreenHight)];
-   _BigScrollView.contentSize=BSSizeMake(kScreenWidth,kScreenHight + 400);
+   _BigScrollView =[[UIScrollView alloc]initWithFrame:BSRectMake(0,0 , SCREEN_WIDTH,SCREEN_HEIGHT)];
+   _BigScrollView.contentSize=BSSizeMake(SCREEN_WIDTH,SCREEN_HEIGHT + 400);
    _BigScrollView.backgroundColor = [UIColor colorWithRed:242/255.0 green:242/255.0 blue:242/255.0 alpha:1];
    _BigScrollView.showsVerticalScrollIndicator = NO;
    [self.view addSubview:_BigScrollView];
@@ -64,14 +64,14 @@
    UIView *topView = [[UIView alloc]init];
    
    topView.backgroundColor = [UIColor colorWithRed:97/255.0 green:18/255.0 blue:15/255.0 alpha:1];
-   topView.frame = BSRectMake(0, 0, kScreenWidth, 64);
+   topView.frame = BSRectMake(0, 0, SCREEN_WIDTH, 64);
    
    // 添加搜索框
    KTLifeSearchBar *searchBar =[[KTLifeSearchBar alloc] init];
-   searchBar.centerX = kScreenWidth*0.5 - 70;
-   searchBar.centerY = 60*0.5;
-   searchBar.width = 180;
-   searchBar.height = 30;
+   searchBar.centerX = BSMarginX(SCREEN_WIDTH*0.5 - 70);
+   searchBar.centerY = BSMarginY(60*0.5);
+   searchBar.width = BSMarginX(180);
+   searchBar.height = BSMarginY(30);
    
    searchBar.delegate = self;
    self.searchBar = searchBar;
@@ -96,7 +96,7 @@
 //2个按钮
 -(void)initTwo
 {
-   UIButton *titBtn = [[UIButton alloc]initWithFrame:BSRectMake(15, 440 + 44 , 100, 26)];
+   UIButton *titBtn = [[UIButton alloc]initWithFrame:BSRectMake(15, 390 + NAVIGATION_ADD_STATUS_HEIGHT , 100, 26)];
    [titBtn setImage:[UIImage imageNamed:@"xy"] forState:UIControlStateNormal];
    [titBtn setTitle:@"预约服务" forState:UIControlStateNormal];
    [titBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
@@ -105,10 +105,10 @@
    
    
    CGFloat X = 10;
-   CGFloat Y = 440 + 44 + 26;
+   CGFloat Y = 420 + NAVIGATION_ADD_STATUS_HEIGHT;
    //SMview.frame = CGRectMake(X, Y,300 , 110);
     
-   UIView *SMview = [[UIView alloc]initWithFrame:BSRectMake(X, Y,300 , 110)];
+   UIView *SMview = [[UIView alloc]initWithFrame:BSRectMake(X, Y,300 , 100)];
     
     SMview.backgroundColor = [UIColor colorWithRed:255/255.0 green:255/255.0 blue:255/255.0 alpha:1];
    NSArray *tuPian = [NSArray arrayWithObjects:@"98xc",@"98ss",nil];
@@ -116,7 +116,7 @@
    for(int i=0;i<2;i++)
    {
       UIButton *btn = [[UIButton alloc]init];
-      CGFloat margin = ((kScreenWidth / 4) - 50)/2;
+      CGFloat margin = ((SCREEN_WIDTH / 4) - 50)/2;
       CGFloat x = margin + ((margin *2) + 40) * i;
       CGFloat y = 10;
       if(i>=4)
@@ -143,22 +143,17 @@
    
    SMview.layer.cornerRadius = 5;// 边框的圆角
    
-  
 
    [_BigScrollView addSubview:SMview];
 
     
 }
 
-
-
-
-
 // 5个按钮
 - (void)initCommonTools
 {
    
-   UIButton *titBtn = [[UIButton alloc]initWithFrame:BSRectMake(10, 200 + 44 , 100,26)];
+   UIButton *titBtn = [[UIButton alloc]initWithFrame:BSRectMake(10, 190 + NAVIGATIONBAR_HEIGHT , 90,26)];
    [titBtn setImage:[UIImage imageNamed:@"xy"] forState:UIControlStateNormal];
   
    [titBtn setTitle:@"便捷服务" forState:UIControlStateNormal];
@@ -169,19 +164,19 @@
    UIView *BGview = [[UIView alloc]init];
    CGFloat X = 10;
    CGFloat Y = 200 + 44 + 26;
-   BGview.frame = BSRectMake(X, Y,300 , 200);
+   BGview.frame = BSRectMake(X, Y,300 , 180);
    BGview.backgroundColor = [UIColor colorWithRed:255/255.0 green:255/255.0 blue:255/255.0 alpha:1];
    NSArray *tuPian = [NSArray arrayWithObjects:@"98xc",@"98ss",@"98bj",@"98cs",@"98jz",nil];
    NSArray *mingzi = [NSArray arrayWithObjects:@"洗车",@"送水",@"保洁",@"超市",@"家政",nil];
    for(int i=0;i<5;i++)
    {
       UIButton *btn = [[UIButton alloc]init];
-      CGFloat margin = ((kScreenWidth / 4) - 50)/2;
+      CGFloat margin = ((SCREEN_WIDTH / 4) - 50)/2;
       CGFloat x = BSMarginX(margin) + ((BSMarginX(margin )*2) + BSMarginX(35)) * i;
-      CGFloat y = 10;
+      CGFloat y = 6;
       if(i>=4)
       {
-         y = 110;
+         y = 84;
          x = BSMarginX(margin) + ((BSMarginX(margin ) *2) + BSMarginX(35)) * (i - 4);
       }
       CGFloat w = 72;
@@ -210,15 +205,12 @@
    
 }
 
-// 。。。。。垃圾代码
 - (void)btnClick:(UIButton *)btn
 {
-   
-   
    TableViewController *tableVC = [[TableViewController alloc]init];
    UINavigationController* nav = [[UINavigationController alloc]initWithRootViewController:tableVC];
    [self presentViewController:nav animated:YES completion:nil];
-   // youcuo
+
 }
 
 
@@ -226,15 +218,15 @@
 - (void)initImgPlay{
    
    UIScrollView *scV = [[UIScrollView alloc]init];
-   scV.frame = BSRectMake(0, 64, kScreenWidth, kScreenHight *0.3);
+   scV.frame = BSRectMake(0, 64, SCREEN_WIDTH, SCREEN_HEIGHT *0.3);
    scV.backgroundColor = [UIColor redColor];
    
    [self.view addSubview:scV];
    self.scrollView = scV;
    
    int count = 6;
-   CGFloat imgW = kScreenWidth;
-   CGFloat imgH = kScreenHight *0.3;
+   CGFloat imgW = SCREEN_WIDTH;
+   CGFloat imgH = SCREEN_HEIGHT *0.3;
    for (int i = 0; i < count; i++){
       UIImageView *imageView = [[UIImageView alloc] init];
       NSString *imgName = [NSString stringWithFormat:@"img_%02d", i+1];
@@ -264,9 +256,6 @@
    
    //6.定时器
    [self startTimer];
-   
-   
-   
    // 添加page
    UIPageControl *pageVC = [[UIPageControl alloc]init];
    pageVC.numberOfPages = count;

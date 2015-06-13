@@ -37,6 +37,14 @@
 #define STATUS_HEIGHT 20
 
 
+#define CONTENT_HIGH (SCREEN_HEIGHT-NAVIGATIONBAR_HEIGHT)
+
+
+/**
+ *  状态栏加上导航栏的高度
+ */
+#define NAVIGATION_ADD_STATUS_HEIGHT (NAVIGATIONBAR_HEIGHT+STATUS_HEIGHT)
+
 /**
  * 适配度
  */
@@ -53,7 +61,6 @@
 
 #define IS_IPHONE_6 (IS_IPHONE && ([[UIScreen mainScreen] nativeScale] == 2.0f)&&([[UIScreen mainScreen] bounds].size.height-667)==0)
 
-#define CONTENT_HIGH (SCREEN_HEIGHT-NAVIGATIONBAR_HEIGHT)
 
 /**
  *获取IOS版本
@@ -61,10 +68,6 @@
 #define IOS_VERSION [[[UIDevice currentDevice] systemVersion] floatValue];
 
 
-/**
- *  状态栏加上导航栏的高度
- */
-#define NAVIGATION_ADD_STATUS_HEIGHT (NAVIGATIONBAR_HEIGHT+STATUS_HEIGHT)
 
 //UIAlertView
 #define KT_AlertView_(a) [[[UIAlertView alloc]initWithTitle:@"提示" message:a delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show]

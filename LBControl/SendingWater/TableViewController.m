@@ -27,7 +27,6 @@
 
 #define Main_Screen_Height      [[UIScreen mainScreen] bounds].size.height
 #define Main_Screen_Width       [[UIScreen mainScreen] bounds].size.width
-static const CGFloat MJDuration = 2.0;
 
 //#define Url  @"http://192.168.1.103:8090/water/waterinformations/1/0/10"
 
@@ -164,6 +163,8 @@ static const CGFloat MJDuration = 2.0;
          blockArray:^(NSMutableArray *warters, NSError *error,ErrorMessage *errorMessage) {
              if (!error) {
                  [self.waterSendings addObjectsFromArray:warters];
+             }else{
+                 
              }
              if (errorMessage) {
                  NSLog(@"已经是最后一条数据");
