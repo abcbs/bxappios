@@ -7,19 +7,19 @@
 //
 
 #import "YYHMantleModelSerializer.h"
-
-#import <Mantle/Mantle.h>
+#import "MJExtension.h"
+//#import <Mantle/Mantle.h>
 
 @implementation YYHMantleModelSerializer
 
 #pragma mark - YYHModelSerialization
 
 - (id)modelForJSONDictionary:(NSDictionary *)jsonDictionary modelClass:(Class)modelClass error:(NSError *__autoreleasing *)error {
-    return [MTLJSONAdapter modelOfClass:modelClass fromJSONDictionary:jsonDictionary error:error];
+    return [modelClass objectWithKeyValues:jsonDictionary ];
 }
 
 - (id)modelsForJSONArray:(NSArray *)jsonArray modelClass:(Class)modelClass error:(NSError *__autoreleasing *)error {
-    return [MTLJSONAdapter modelsOfClass:modelClass fromJSONArray:jsonArray error:error];
+    return [ modelClass objectWithKeyValues:jsonArray ];
 }
 
 @end

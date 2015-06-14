@@ -12,6 +12,8 @@
 #import "Conf.h"
 #import "ErrorMessage.h"
 
+#import "BSHTTPNetworking.h"
+
 @implementation ShoppingCart
 
 - (instancetype)initWithDic:(NSDictionary *)dic{
@@ -54,10 +56,9 @@
         if ([[result objectForKey:@"errorCode"] isEqualToString:@"0000"]) {
            
             NSObject *resultArr= [responseObject objectForKey:@"responseBody"];
-            NSLog(@"%@",resultArr);
-//            for (NSDictionary *dict in resultArr) {
-//                shoppingCart.currentCount=[dict valueForKeyPath:@""];
-//             }
+            NSLog(@"当前订购数量为%@",resultArr);
+            shoppingCart.currentCount=(NSNumber *)resultArr;
+            
             if (block) {
                 ErrorMessage *error = [ErrorMessage initWith:result];
                 block(nil,error);

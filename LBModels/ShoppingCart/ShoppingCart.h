@@ -14,13 +14,13 @@
 
 @property (nonatomic, assign) NSString *countorder;
 
-@property (nonatomic, assign) NSString *businessProductId;
+@property (nonatomic, assign) NSNumber *businessProductId;
 
-@property (nonatomic, assign) long ID;
+@property (nonatomic, assign) long id;
 
 @property (nonatomic, assign)NSString *sessionId;
 
-@property (nonatomic, assign) NSString *currentCount;
+@property (nonatomic, assign) NSNumber *currentCount;
 
 - (instancetype)initWithDic:(NSDictionary *)dic;
 

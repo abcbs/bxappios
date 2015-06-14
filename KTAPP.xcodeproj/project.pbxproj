@@ -179,6 +179,7 @@
 		8474331D1B2A92B400B030C4 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 847433191B2A92B400B030C4 /* LoginViewController.m */; };
 		8474331E1B2A92B400B030C4 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8474331B1B2A92B400B030C4 /* RegisterViewController.m */; };
 		847433211B2A934000B030C4 /* applyShop.m in Sources */ = {isa = PBXBuildFile; fileRef = 847433201B2A934000B030C4 /* applyShop.m */; };
+		847566491B2E157800E835A2 /* BSHTTPNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 847566481B2E157800E835A2 /* BSHTTPNetworking.m */; };
 		84820A4E1B285D960093B87B /* MSWaterSendingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84820A4C1B285D960093B87B /* MSWaterSendingCell.m */; };
 		84820A4F1B285D960093B87B /* MSWaterSendingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84820A4D1B285D960093B87B /* MSWaterSendingCell.xib */; };
 		84820A5B1B285ECA0093B87B /* KTInformationConfViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84820A511B285EC90093B87B /* KTInformationConfViewController.m */; };
@@ -188,6 +189,7 @@
 		84820A601B285ECA0093B87B /* KTWaterDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84820A591B285ECA0093B87B /* KTWaterDetailsViewController.m */; };
 		84820A611B285ECA0093B87B /* KTWaterDetailsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84820A5A1B285ECA0093B87B /* KTWaterDetailsViewController.storyboard */; };
 		84820A641B285F320093B87B /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84820A631B285F320093B87B /* TableViewController.m */; };
+		848E9B5F1B2C4478001DCE9F /* BSTableViewRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 848E9B5E1B2C4478001DCE9F /* BSTableViewRefresh.m */; };
 		84A076541B21AA39001CE3A2 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A076531B21AA39001CE3A2 /* Social.framework */; };
 		84A076561B21AA47001CE3A2 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A076551B21AA46001CE3A2 /* Accounts.framework */; };
 		84A076581B21AA7D001CE3A2 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A076571B21AA7D001CE3A2 /* CoreMotion.framework */; };
@@ -483,6 +485,8 @@
 		8474331B1B2A92B400B030C4 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		8474331F1B2A934000B030C4 /* applyShop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = applyShop.h; sourceTree = "<group>"; };
 		847433201B2A934000B030C4 /* applyShop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = applyShop.m; sourceTree = "<group>"; };
+		847566471B2E157800E835A2 /* BSHTTPNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSHTTPNetworking.h; sourceTree = "<group>"; };
+		847566481B2E157800E835A2 /* BSHTTPNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSHTTPNetworking.m; sourceTree = "<group>"; };
 		84820A4B1B285D960093B87B /* MSWaterSendingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSWaterSendingCell.h; sourceTree = "<group>"; };
 		84820A4C1B285D960093B87B /* MSWaterSendingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSWaterSendingCell.m; sourceTree = "<group>"; };
 		84820A4D1B285D960093B87B /* MSWaterSendingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MSWaterSendingCell.xib; sourceTree = "<group>"; };
@@ -497,6 +501,9 @@
 		84820A5A1B285ECA0093B87B /* KTWaterDetailsViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = KTWaterDetailsViewController.storyboard; sourceTree = "<group>"; };
 		84820A621B285F320093B87B /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		84820A631B285F320093B87B /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		848E9B5D1B2C4478001DCE9F /* BSTableViewRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSTableViewRefresh.h; sourceTree = "<group>"; };
+		848E9B5E1B2C4478001DCE9F /* BSTableViewRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSTableViewRefresh.m; sourceTree = "<group>"; };
+		848E9B611B2C44AD001DCE9F /* BSUIAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUIAdapter.h; sourceTree = "<group>"; };
 		84A076531B21AA39001CE3A2 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		84A076551B21AA46001CE3A2 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		84A076571B21AA7D001CE3A2 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
@@ -504,6 +511,7 @@
 		84A0765B1B21AA9A001CE3A2 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		84A0765D1B21AAA7001CE3A2 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		84A0765F1B21AAC8001CE3A2 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		84B93B7C1B2DDB0500C11E56 /* BSTableList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSTableList.h; sourceTree = "<group>"; };
 		84BA96431B2829D500388B58 /* Conf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Conf.h; sourceTree = "<group>"; };
 		84BA96441B2829D500388B58 /* Conf.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Conf.m; sourceTree = "<group>"; };
 		84BA96451B2829D500388B58 /* ErrorMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ErrorMessage.h; sourceTree = "<group>"; };
@@ -547,7 +555,6 @@
 		84BA96731B2829D500388B58 /* ShoppingCart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingCart.m; sourceTree = "<group>"; };
 		84BA96751B2829D500388B58 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		84BA96761B2829D500388B58 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
-		84D358CD1B2B0DA600CCEE8B /* BSUIAdapter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BSUIAdapter.h; path = BSUIConfig/BSUIAdapter.h; sourceTree = "<group>"; };
 		A04366A91AD7B550005842EE /* 民生小区.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "民生小区.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A04366AD1AD7B550005842EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A04366AE1AD7B550005842EE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -1032,6 +1039,33 @@
 			path = LoginRegister;
 			sourceTree = "<group>";
 		};
+		847566461B2E157800E835A2 /* BSCommunication */ = {
+			isa = PBXGroup;
+			children = (
+				847566471B2E157800E835A2 /* BSHTTPNetworking.h */,
+				847566481B2E157800E835A2 /* BSHTTPNetworking.m */,
+			);
+			path = BSCommunication;
+			sourceTree = "<group>";
+		};
+		848E9B5C1B2C4478001DCE9F /* BSUIComponent */ = {
+			isa = PBXGroup;
+			children = (
+				848E9B5D1B2C4478001DCE9F /* BSTableViewRefresh.h */,
+				848E9B5E1B2C4478001DCE9F /* BSTableViewRefresh.m */,
+				84B93B7C1B2DDB0500C11E56 /* BSTableList.h */,
+			);
+			path = BSUIComponent;
+			sourceTree = "<group>";
+		};
+		848E9B601B2C44AD001DCE9F /* BSUISetting */ = {
+			isa = PBXGroup;
+			children = (
+				848E9B611B2C44AD001DCE9F /* BSUIAdapter.h */,
+			);
+			path = BSUISetting;
+			sourceTree = "<group>";
+		};
 		84BA96411B2829D500388B58 /* LBModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -1306,7 +1340,9 @@
 		84D358CB1B2B0C0500CCEE8B /* BSFramework */ = {
 			isa = PBXGroup;
 			children = (
-				84D358CD1B2B0DA600CCEE8B /* BSUIAdapter.h */,
+				848E9B601B2C44AD001DCE9F /* BSUISetting */,
+				847566461B2E157800E835A2 /* BSCommunication */,
+				848E9B5C1B2C4478001DCE9F /* BSUIComponent */,
 			);
 			path = BSFramework;
 			sourceTree = "<group>";
@@ -1803,6 +1839,7 @@
 				842043741B2991770002C868 /* DLSlideView.m in Sources */,
 				84820A4E1B285D960093B87B /* MSWaterSendingCell.m in Sources */,
 				8474331C1B2A92B400B030C4 /* ForgetViewController.m in Sources */,
+				848E9B5F1B2C4478001DCE9F /* BSTableViewRefresh.m in Sources */,
 				84BA96891B2829D500388B58 /* User.m in Sources */,
 				8474331D1B2A92B400B030C4 /* LoginViewController.m in Sources */,
 				0E915F981B0C394800F47478 /* ValidateCode.m in Sources */,
@@ -1852,6 +1889,7 @@
 				84BA967E1B2829D500388B58 /* MyOrderModel.m in Sources */,
 				A0F0C3EB1B10209500CE406D /* JoinShoppingCartResult.m in Sources */,
 				842043731B2991770002C868 /* DLCustomSlideView.m in Sources */,
+				847566491B2E157800E835A2 /* BSHTTPNetworking.m in Sources */,
 				A0F0C3F11B10209500CE406D /* JoinShoppingCartParams.m in Sources */,
 				842042B11B2984D80002C868 /* KTCartTableView.m in Sources */,
 				84BA96781B2829D500388B58 /* ErrorMessage.m in Sources */,

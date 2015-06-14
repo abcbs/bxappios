@@ -11,6 +11,7 @@
 @protocol YYHModelSerialization <NSObject>
 
 - (id)modelsForJSONArray:(NSArray *)jsonArray modelClass:(Class)modelClass error:(NSError **)error;
+
 - (id)modelForJSONDictionary:(NSDictionary *)jsonDictionary modelClass:(Class)modelClass error:(NSError **)error;
 
 @end

@@ -10,7 +10,7 @@
 #import "YYHModelRoute.h"
 
 #if defined(__has_include)
-#if __has_include("Mantle.h")
+#if __has_include("MJExtension.h")
 #define HAS_MANTLE YES
 
 #import "YYHMantleModelSerializer.h"
@@ -222,7 +222,7 @@ NSString * const YYHModelRouterErrorDomain = @"com.yayuhh.YYHModelRouterError";
                                        NSLocalizedDescriptionKey: NSLocalizedString(@"Model serialization failure", @""),
                                        NSLocalizedFailureReasonErrorKey: [NSString stringWithFormat:NSLocalizedString(@"Model serialization resulted in nil value. Expected object of type %@ from the key path '%@'", @""), NSStringFromClass(modelRoute.modelClass), modelRoute.keyPath],
                                        };
-            failure([NSError errorWithDomain:YYHModelRouterErrorDomain code:YYHModelRouterErrorSerialization userInfo:userInfo]);
+            #pragma mark 开始进入刷新状态([NSError errorWithDomain:YYHModelRouterErrorDomain code:YYHModelRouterErrorSerialization userInfo:userInfo]);
         }
     };
 }

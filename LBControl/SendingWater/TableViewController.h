@@ -6,8 +6,8 @@
 //  Copyright (c) 2015年 itcast. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "BSTableViewRefresh.h"
 
-@interface TableViewController : UITableViewController
+@interface TableViewController : BSTableViewRefresh
 
 @end

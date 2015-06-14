@@ -63,10 +63,6 @@
 
 @implementation KTWaterDetailsViewController
 
-
-
-
-
 -(void)viewDidLoad {
     [super viewDidLoad];
     
@@ -130,9 +126,6 @@
     }else{
         page++;
     }
-    
-    
-    
     //self.pageControl.currentPage = page;
     
     [self.scrollView setContentOffset:CGPointMake(page * self.scrollView.frame.size.width,0)animated:YES];
@@ -179,10 +172,7 @@
 }
 
 
-
 #pragma mark  ---  商品详细信息
-
-
 - (void)waterDetail {
     
   
@@ -206,18 +196,6 @@
 
 
 - (IBAction)addCart:(id)sender {
-  //判断是否登录
-//    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-//    NSString *userName = [userDefaults objectForKey:@"username"];
-//    NSString *password = [userDefaults objectForKey:@"password"];
-//     if (userName.length == 0 && password.length == 0) {
-
-//     
-//         NSUserDefaults *userDefaults=[NSUserDefaults standardUserDefaults];
-//         NSString *sessionID = [userDefaults objectForKey:@"sessionId"];
-//         NSLog(@"%@========",sessionID);
-
-
     //判断是否登录
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     
@@ -232,15 +210,9 @@
    
     else
     {
-        
-        
-       
         //调用服务端接口
-
-        [self addCard:sessionID  addCount:self.carNumText.titleLabel.text addID:self.waterSending.id];
-        
-      
-      
+        [self addCard:sessionID  addCount:self.carNumText.titleLabel.text
+                addID:[[NSNumber alloc] initWithLong:self.waterSending.id]];
         
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:@"加入购物车成功" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:@"进入购物车", nil];
         
@@ -252,14 +224,14 @@
 }
 
 
--(void) addCard:(NSString *)sessionId  addCount:(NSString *)addCount addID:(int)ptid
+-(void) addCard:(NSString *)sessionId  addCount:(NSString *)addCount addID:(NSNumber *)ptid
 {
     ShoppingCart *shoppingCart=[[ShoppingCart alloc] init];
     shoppingCart.sessionId=sessionId;
     shoppingCart.countorder=addCount;
-    // shoppingCart.businessProductId=businessProductId;
+    shoppingCart.businessProductId=ptid;
     //int pid=self.waterSending.id;
-    shoppingCart.ID =self.waterSending.id;
+    shoppingCart.id =self.waterSending.id;
     
     [ShoppingCart addCart:shoppingCart
                blockArray:^(NSError *error,ErrorMessage *errorMessage) {
@@ -271,32 +243,7 @@
                    }
                }
      
-     
      ];
-    //    JoinShoppingCartParams *params = [JoinShoppingCartParams param];
-    //      //    给这三个参数
-    //    params.sessionId = sessionId;
-    //    params.shoppingCart.count =[NSNumber numberWithLongLong:[addCount longLongValue]];
-    //    params.shoppingCart.businessProductId = [NSNumber numberWithLongLong:[businessProductId longLongValue]];
-    //
-    //    [JoinShoppingCartRequest joinShoppingCartWith:params block:^(JoinShoppingCartResult *result, NSError *error, BasicHeader *headr) {
-    //        if (result) {
-    //            NSLog(@"成功  购物车当前产品的数量%@",result.responseBody);
-    //        }
-    //
-    //
-    //        if (headr) {
-    //            NSLog(@"失败 原因  %@",headr.message);
-    //        }
-    //
-    //        if (error) {
-    //            NSLog(@"网路异常 %ld  %@",error.code,error.userInfo);
-    //        }
-    //        
-    //        
-    //        
-    //    }];
-    //}
     
 }
 
@@ -349,32 +296,7 @@
          }
      }
      ];
-    CommodityEvaluationParams *params = [CommodityEvaluationParams param];
-    params.productId = [NSNumber numberWithInt:self.waterSending.id];
-    params.maxId = [NSNumber numberWithInt:1];
-    params.dataCount = [NSNumber numberWithInt:cellCount];
-    [CommodityEvaluationRequest commodityEvaluationWith:params block:^(CommodityEvaluationResult *result, NSError *error, BasicHeader *headr) {
-        
-        if (result) {
-            
-            CommodityEvaluationList *list = [result.responseBody firstObject];
-            self.comment.text = list.comment;
-            self.username.text = list.username;
-            self.commodityList = list;
-//            for (CommodityEvaluationList *list in result.responseBody) {
-//                NSLog(@"-信息列表--%@",list.keyValues);
-//            }
-        }
-        
-        if (headr) {
-            NSLog(@"请求不成功  %@",headr.message);
-        }
-        
-        if (error) {
-            NSLog(@"网路异常 %ld  %@",error.code,error.userInfo);
-        }
-        
-    }];
+
 }
 
 
