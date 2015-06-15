@@ -10,6 +10,7 @@
 #import "KTLifeSearchBar.h"
 #import "KTlifeViewController.h"
 #import "SetViewController.h"
+#import "KTLifeIndexController.h"
 
 @interface KTTarBarController ()
 
@@ -37,11 +38,11 @@
     {
         
         
-        KTlifeViewController *life = [self addControllerWithClass:[KTlifeViewController class] title:@"生活服务" nomalimage:@"shfwh"selectedImage:@"shfws"];
+        KTLifeIndexController *life = [self addControllerWithClass:[KTLifeIndexController class] title:@"生活服务" nomalimage:@"shfwh"selectedImage:@"shfws"];
        
         UINavigationController *lifeNav = [[UINavigationController alloc]initWithRootViewController:life];
         
-        UIViewController *shops = [self addControllerWithClass:[UIViewController class] title:@"信誉商家" nomalimage:@"xysjh" selectedImage:@"xysjs"];
+        KTlifeViewController *shops = [self addControllerWithClass:[KTlifeViewController class] title:@"信誉商家" nomalimage:@"xysjh" selectedImage:@"xysjs"];
         UINavigationController *shopsNav = [[UINavigationController alloc]initWithRootViewController:shops];
         
         UIViewController *service = [self addControllerWithClass:[UIViewController class] title:@"便捷服务" nomalimage:@"bjfw" selectedImage:@"bjfwh"];
