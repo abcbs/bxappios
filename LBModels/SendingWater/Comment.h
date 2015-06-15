@@ -5,6 +5,8 @@
 //  Created by LouJQ on 15-5-8.
 //  Copyright (c) 2015年 itcast. All rights reserved.
 //
+#import "MJExtension.h"
+
 @interface Comment : NSObject
 
 @property (nonatomic, copy) NSString *comment;

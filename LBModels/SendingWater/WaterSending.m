@@ -11,6 +11,7 @@
 #import "Conf.h"
 #import "ErrorMessage.h"
 #import "BSHTTPNetworking.h"
+#import "YYHModelRouter.h"
 
 @implementation WaterSending
 
@@ -52,37 +53,22 @@
     NSString *pathparam = [NSString stringWithFormat:@"%d/%d", (int)maxId,dataCount];
     NSLog(@"pathparam:%@", pathparam);
     
-    NSString *url=[[Conf urlWaterList]  stringByAppendingString:pathparam];
-    
-    NSLog(@"url:%@", url);
-    
-   // AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    BSHTTPNetworking *manager=[BSHTTPNetworking manager];
-    [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSDictionary *result = [responseObject objectForKey:@"responseHeader"];
-          if ([[result objectForKey:@"errorCode"] isEqualToString:@"0000"]) {
-            NSArray *resultArr = [responseObject objectForKey:@"responseBody"];
-             NSMutableArray *mutableWater = [NSMutableArray arrayWithCapacity:[resultArr count]];
-            for (NSDictionary *dict in resultArr) {
-                 WaterSending *ws = [WaterSending waterSendingWithDic:dict];
-                 [mutableWater addObject:ws];
+    NSString *restParam=[[Conf urlWaterList]  stringByAppendingString:pathparam];
+    BSHTTPNetworking *bsHttp=[BSHTTPNetworking httpManager];
+    [bsHttp get:restParam
+            pathPattern:WATER_LIST_SCHEMA
+            modelClass:[WaterSending class]
+            keyPath:@"waterSending"
+        block:^(NSMutableArray *waters,NSError *error, ErrorMessage *bsErrorMessage){
+            if (block&&waters!=nil) {
+                block(waters,nil,nil);
+            }else if(block&&error){
+                block(nil,error,nil);
+            }else{
+                block(nil,nil,bsErrorMessage);
             }
-            if (block) {
-                  block([NSMutableArray arrayWithArray:mutableWater], nil,nil);
-            }
-          }else{
-            ErrorMessage *error = [ErrorMessage initWith:result];
-            block([NSMutableArray array], nil,error);
-            return ;
         }
-       
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        if (block) {
-            block([NSMutableArray array], error,nil);
-        }
-        NSLog(@"失败结果: %@", error);
-        
-    }];
+     ];
     return  nil;
 }
 @end

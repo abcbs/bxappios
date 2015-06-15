@@ -8,12 +8,17 @@
 
 #import "YYHModelRouter.h"
 #import "YYHModelRoute.h"
+#import "YYHMantleModelSerializer.h"
+#import "ErrorMessage.h"
+#import "MJExtension.h"
+
 
 #if defined(__has_include)
 #if __has_include("MJExtension.h")
 #define HAS_MANTLE YES
 
-#import "YYHMantleModelSerializer.h"
+
+
 #endif
 #endif
 
@@ -204,26 +209,43 @@ NSString * const YYHModelRouterErrorDomain = @"com.yayuhh.YYHModelRouterError";
                                                                                      success:(YYHModelRequestSuccess)success
                                                                                      failure:(YYHModelRequestFailure)failure {
     return ^(NSURLSessionDataTask *task, id responseObject) {
-        if (modelRoute.keyPath != nil) {
-            responseObject = [responseObject valueForKeyPath:modelRoute.keyPath];
-        }
+        NSError *serializationError = nil;        //检查返回的是否为业务异常数据
+        //[ErrorMessage class] keyPath:@"responseHeader"];
+        NSObject *businessError = [responseObject valueForKeyPath:@"responseHeader"];
         
-        NSError *serializationError = nil;
-        id model = [self serializedModelForResponseObject:responseObject modelClass:modelRoute.modelClass error:&serializationError];
+        ErrorMessage  *businessErrorModel= [self serializedModelForResponseObject:businessError modelClass:[ErrorMessage class] error:&serializationError];
         
         if (serializationError && failure) {
             failure(serializationError);
         }
+        //业务处理成功
+        if ([[businessErrorModel errorCode] isEqualToString:@"0000"]) {
+            //处理ResponseBody
+            NSObject *bussinessObject= [responseObject
+                                        valueForKeyPath:@"responseBody"];
+            if(bussinessObject !=nil){
         
-        if (success && model) {
-            success(task, responseObject, model);
-        } else if (failure) {
+                id model = [self serializedModelForResponseObject:bussinessObject modelClass:modelRoute.modelClass error:&serializationError];
+           
+                if (serializationError && failure) {
+                    failure(serializationError);
+                }
+            
+                if (success && model) {
+                    success(task, responseObject, model);
+                }
+            }
+            //
+        }else if(success && businessErrorModel){
+            success(task, businessError, businessErrorModel);
+        }else if (failure) {
             NSDictionary *userInfo = @{
                                        NSLocalizedDescriptionKey: NSLocalizedString(@"Model serialization failure", @""),
                                        NSLocalizedFailureReasonErrorKey: [NSString stringWithFormat:NSLocalizedString(@"Model serialization resulted in nil value. Expected object of type %@ from the key path '%@'", @""), NSStringFromClass(modelRoute.modelClass), modelRoute.keyPath],
                                        };
             #pragma mark 开始进入刷新状态([NSError errorWithDomain:YYHModelRouterErrorDomain code:YYHModelRouterErrorSerialization userInfo:userInfo]);
         }
+        
     };
 }
 
@@ -243,7 +265,8 @@ NSString * const YYHModelRouterErrorDomain = @"com.yayuhh.YYHModelRouterError";
     if ([responseObject isKindOfClass:[NSDictionary class]]) {
         return [self serializedModelForJSONDictionary:responseObject modelClass:modelClass error:error];
     } else if ([responseObject isKindOfClass:[NSArray class]]) {
-        return [self serializedModelsForJSONArray:responseObject modelClass:modelClass error:error];
+        return [self serializedModelsForJSONArray:responseObject
+                                       modelClass:modelClass ];
     }
     return nil;
 }
@@ -256,9 +279,11 @@ NSString * const YYHModelRouterErrorDomain = @"com.yayuhh.YYHModelRouterError";
     }
 }
 
-- (id)serializedModelsForJSONArray:(NSArray *)jsonArray modelClass:(Class)modelClass error:(NSError **)error {
+- (id)serializedModelsForJSONArray:(NSArray *)jsonArray modelClass:(Class)modelClass {
     if (self.modelSerializer) {
-        return [self.modelSerializer modelsForJSONArray:jsonArray modelClass:modelClass error:error];
+        return [self.modelSerializer
+                objectArrayWithKeyValuesArray:jsonArray
+                modelClass:modelClass];
     } else {
         return jsonArray;
     }

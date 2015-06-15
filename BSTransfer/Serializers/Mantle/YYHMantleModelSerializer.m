@@ -22,4 +22,10 @@
     return [ modelClass objectWithKeyValues:jsonArray ];
 }
 
+
+- (id)objectArrayWithKeyValuesArray:(NSArray *)jsonArray
+                         modelClass:(Class)modelClass
+{
+    return [ modelClass objectArrayWithKeyValuesArray:jsonArray ];
+}
 @end

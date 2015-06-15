@@ -28,10 +28,16 @@ NSString *const WATER_SHOPPCART_USERCARTS=@"shoppingcart/usercarts";
 NSString *const WATER_SHOPPCART_DELCARTLIST = @"shoppingcart/delcartlist";
 NSString *const WATER_SHOPPCART_UPDATECART = @"shoppingcart/updatecart";
 
+/**
+ 
+ */
++(NSString *)urlBase
+{
+    return [[NSString alloc] initWithString:KBS_URL];
+}
 +(NSString *)urlWaterList{
-    NSString * url=[[[[NSString alloc] initWithString:KBS_URL]
-                     stringByAppendingString:WATER_LIST]
-     stringByAppendingString:WATER_CATA];
+    NSString * url=[[[NSString alloc] initWithString:WATER_LIST]
+                         stringByAppendingString:WATER_CATA];
      return url;
 }
 

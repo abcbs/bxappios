@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "ErrorMessage.h"
+#import "MJExtension.h"
 
 @interface WaterSending : NSObject
 

@@ -7,12 +7,11 @@
 //
 
 #import "WaterSendingDetails.h"
-#import "AFNetworking.h"
 #import "Conf.h"
 #import "ErrorMessage.h"
 #import "WaterSending.h"
 #import "Comment.h"
-
+#import "BSHTTPNetworking.h"
 
 @implementation WaterSendingDetails
 
@@ -53,7 +52,7 @@
     __block WaterSendingDetails * waterSendingDetails=[[self alloc] initWaterDetailsWithWaterSending:waterSending];
     NSLog(@"url:%@", url);
     
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    BSHTTPNetworking *manager = [BSHTTPNetworking manager];
     [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSDictionary *result = [responseObject objectForKey:@"responseHeader"];
         if ([[result objectForKey:@"errorCode"] isEqualToString:@"0000"]) {

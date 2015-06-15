@@ -112,11 +112,20 @@
              if (!error) {
                  [self.dataTable addObjectsFromArray:warters];
              }else{
+                 //服务端没有启动或者系统异常
+                 UIAlertView*alert = [[UIAlertView alloc]initWithTitle:@"提示"
+                    message:error.description delegate:nil
+                    cancelButtonTitle:@"确定"
+                    otherButtonTitles:nil];
                  
+                 [alert show];
+               
              }
              if (errorMessage) {
                  NSLog(@"已经是最后一条数据");
                  [self.tableView.footer noticeNoMoreData];
+             }else{
+                 
              }
              [self.tableView reloadData];
          }

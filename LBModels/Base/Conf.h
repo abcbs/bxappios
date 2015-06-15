@@ -87,6 +87,7 @@
 //验证码接口
 #define Validate_url [[[NSString alloc] initWithString:KBS_URL]stringByAppendingString:@"user/generatecode"];
 
+
 #pragma mark--异常信息管理
 #define Success @"0000"  //成功
 #define NULL_OR_BLACK @"1000"//查询结果为空或 未查询到相应数据
@@ -101,6 +102,8 @@
 #define INSERT_EXCEPTION @"2002" //数据插入异常
 #define UPDATE_EXCEPTION @"2003" //数据更新异常
 
+#define WATER_LIST_SCHEMA @"water/waterinformations/1001/:id/:count"
+
 /**
  *送水列表的列宽度
  */
@@ -110,6 +113,8 @@ extern NSString *const KBS_URL;
 extern NSString *const WATER_LIST;
 
 extern NSString *const WATER_CATA;
+
+
 
 extern NSString *const WATER_DETAIL_COMMENT;
 
@@ -121,6 +126,11 @@ extern NSString *const WATER_SHOPPCART_USERCARTS;
 extern NSString *const WATER_SHOPPCART_DELCARTLIST;
 
 extern NSString *const WATER_SHOPPCART_UPDATECART;
+
+/**
+ 
+ */
++(NSString *)urlBase;
 
 +(NSString *)urlWaterList;
 +(NSString *)urlWaterDetailComment;

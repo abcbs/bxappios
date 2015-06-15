@@ -14,4 +14,8 @@
 
 - (id)modelForJSONDictionary:(NSDictionary *)jsonDictionary modelClass:(Class)modelClass error:(NSError **)error;
 
+- (id)objectArrayWithKeyValuesArray:(NSArray *)jsonArray
+                         modelClass:(Class)modelClass;
+
+
 @end

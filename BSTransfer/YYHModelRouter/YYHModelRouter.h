@@ -79,4 +79,6 @@ typedef void (^YYHModelRequestFailure)(NSError *error);
 
 - (NSString *)requestPathForModelPath:(NSString *)modelPath;
 
+- (id)serializedModelForResponseObject:(id)responseObject modelClass:(Class)modelClass error:(NSError **)error;
+
 @end

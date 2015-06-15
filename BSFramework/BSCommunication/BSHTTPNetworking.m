@@ -8,12 +8,15 @@
 #import <Foundation/Foundation.h>
 #import "BSHTTPNetworking.h"
 #import "AFNetworking.h"
+#import "YYHModelRouter.h"
+#import "Conf.h"
+#import "ErrorMessage.h"
 
-#import <Availability.h>
 @interface BSHTTPNetworking ()
 
 @property (nonatomic, strong) AFHTTPRequestOperationManager *bsmanager;
 
+@property (nonatomic, strong) YYHModelRouter *router;
 
 @end
 
@@ -21,17 +24,63 @@
 
 @synthesize bsmanager;
 
+@synthesize router;
+
 
 
 + (instancetype)manager {
-    return [[self alloc] initWithManager:nil];
+    return [[self alloc] initWithManager];
 }
 
-- (instancetype)init {
-    return [self initWithManager:nil];
+
+
++(instancetype)httpManager
+{
+    return [[self alloc] initWithBaseURL];
 }
 
-- (instancetype)initWithManager:(AFHTTPRequestOperationManager *)manager
+- (instancetype)initWithBaseURL{
+    self = [super init];
+    if (!self) {
+        return nil;
+    }
+    if(!self.router) {
+        self.router=  [[YYHModelRouter alloc]
+                       initWithBaseURL:[NSURL URLWithString:[Conf urlBase]]];
+    }
+    return self;
+}
+
+
+
+-(void)get:(NSString *)restPath pathPattern:(NSString * )pathPattern
+modelClass:(Class)modelClass keyPath:(NSString *)keyPath
+     block:(void (^)(NSMutableArray *waters
+                     , NSError *error,ErrorMessage *bsErrorMessage))block
+{
+    
+    [BSHTTPNetworking httpManager];
+    
+    [router routeGET:pathPattern modelClass:[modelClass class] keyPath:keyPath];
+    
+    [router GET:restPath parameters:nil success:^(NSURLSessionDataTask *task, id responseObject, id model) {
+        if (block&&![model isKindOfClass:[ErrorMessage class]]) {
+            block([NSMutableArray arrayWithArray:model],nil,nil);
+        }else if(block&& [model isKindOfClass:[ErrorMessage class]]){
+             block(nil,nil,model);
+        }
+    }
+     
+    failure:^(NSError *error) {
+        if (block) {
+            block(nil,error,nil);
+        }
+        
+    }];
+
+}
+
+- (instancetype)initWithManager
 {
     self = [super init];
     if (!self) {
