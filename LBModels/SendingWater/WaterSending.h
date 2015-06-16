@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "ErrorMessage.h"
 #import "MJExtension.h"
+#import "BSHTTPNetworking.h"
 
 @interface WaterSending : NSObject
 
@@ -43,7 +44,7 @@
 
 + (NSMutableArray *)waterSending;
 
-+ (NSMutableArray *)listWaterList:(long)maxId dataCount:(int)dataCount
-                       blockArray:(void (^)(NSMutableArray *waters, NSError *error,ErrorMessage *errorMessage))block;
++ (void)listWaterList:(long)maxId dataCount:(int)dataCount
+                       block:(BSHTTPResponse)block;
 
 @end

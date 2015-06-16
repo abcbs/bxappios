@@ -46,8 +46,8 @@
 }
 
 
-+ (NSMutableArray *)listWaterList:(long)maxId dataCount:(int)dataCount
-                       blockArray:(void (^)(NSMutableArray *waters, NSError *error,ErrorMessage *errorMessage))block
++ (void)listWaterList:(long)maxId dataCount:(int)dataCount
+                            block:(BSHTTPResponse)block
 {
 
     NSString *pathparam = [NSString stringWithFormat:@"%d/%d", (int)maxId,dataCount];
@@ -59,16 +59,10 @@
             pathPattern:WATER_LIST_SCHEMA
             modelClass:[WaterSending class]
             keyPath:@"waterSending"
-        block:^(NSObject *waters,NSError *error, ErrorMessage *bsErrorMessage){
-            if (block&&waters!=nil) {
-                block((NSMutableArray *)waters,nil,nil);
-            }else if(block&&error){
-                block(nil,error,nil);
-            }else{
-                block(nil,nil,bsErrorMessage);
-            }
-        }
+            block:(BSHTTPResponse)block
+     
      ];
-    return  nil;
+    
 }
+
 @end

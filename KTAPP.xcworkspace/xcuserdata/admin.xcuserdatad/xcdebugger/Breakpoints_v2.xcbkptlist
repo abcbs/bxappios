@@ -287,7 +287,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "59"
             endingLineNumber = "59"
-            landmarkName = "+listWaterList:dataCount:blockArray:"
+            landmarkName = "+listWaterList:dataCount:block:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -298,28 +298,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LBModels/SendingWater/WaterSendingDetails.m"
-            timestampString = "456139984.488673"
+            timestampString = "456170116.783348"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
             landmarkName = "+listProductUrls:dataCount:blockArray:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LBControl/SendingWater/KTWaterDetailsViewController.m"
-            timestampString = "456131182.686167"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "292"
-            endingLineNumber = "292"
-            landmarkName = "-loadCommentData:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -342,31 +326,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BSFramework/BSCommunication/BSHTTPNetworking.m"
-            timestampString = "456136705.968262"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
-            landmarkName = "-get:pathPattern:modelClass:keyPath:block:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BSFramework/BSCommunication/BSHTTPNetworking.m"
-            timestampString = "456140487.608922"
+            timestampString = "456172782.39296"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "155"
-            endingLineNumber = "155"
+            startingLineNumber = "269"
+            endingLineNumber = "269"
             landmarkName = "-GET:parameters:success:failure:"
             landmarkType = "5">
          </BreakpointContent>
@@ -374,16 +342,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BSFramework/BSCommunication/BSHTTPNetworking.m"
-            timestampString = "456140487.608922"
+            timestampString = "456172782.39296"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "165"
-            endingLineNumber = "165"
-            landmarkName = "-requestSuccessBlockWithDefault:success:failure:"
+            startingLineNumber = "300"
+            endingLineNumber = "300"
+            landmarkName = "-requestSuccessBlockWithAFHTTPRequestOperation:failure:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BSFramework/BSCommunication/BSHTTPNetworking.m"
+            timestampString = "456172782.39296"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "233"
+            endingLineNumber = "233"
+            landmarkName = "-block:failure:errorUILabel:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -393,62 +377,94 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BSFramework/BSCommunication/BSHTTPNetworking.m"
-            timestampString = "456140487.608922"
+            filePath = "BSFramework/BSUISetting/BSUIComponentView.m"
+            timestampString = "456162967.086935"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "174"
-            endingLineNumber = "174"
-            landmarkName = "-requestFailureBlockWithDefault:success:failure:"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "+instance"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BSFramework/BSCommunication/BSHTTPNetworking.m"
-            timestampString = "456140487.608922"
+            timestampString = "456172782.39296"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "166"
-            endingLineNumber = "166"
-            landmarkName = "-requestSuccessBlockWithDefault:success:failure:"
+            startingLineNumber = "195"
+            endingLineNumber = "195"
+            landmarkName = "-post:pathPattern:parameters:modelClass:keyPath:block:errorUILabel:"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__67-[BSHTTPNetworking requestSuccessBlockWithDefault:success:failure:]_block_invoke"
-                  moduleName = "&#x6c11;&#x751f;&#x5c0f;&#x533a;"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/KT-APP-BS/BSFramework/BSCommunication/BSHTTPNetworking.m"
-                  timestampString = "456140488.065957"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "167"
-                  endingLineNumber = "167"
-                  offsetFromSymbolStart = "85">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__67-[BSHTTPNetworking requestSuccessBlockWithDefault:success:failure:]_block_invoke"
-                  moduleName = "&#x6c11;&#x751f;&#x5c0f;&#x533a;"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/KT-APP-BS/BSFramework/BSCommunication/BSHTTPNetworking.m"
-                  timestampString = "456140488.066307"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "167"
-                  endingLineNumber = "167"
-                  offsetFromSymbolStart = "101">
-               </Location>
-            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LBControl/SendingWater/KTWaterDetailsViewController.m"
+            timestampString = "456170363.026731"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "281"
+            endingLineNumber = "281"
+            landmarkName = "-loadCommentData:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LBModels/SendingWater/WaterSendingDetails.m"
+            timestampString = "456170691.03253"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "+listComments:maxId:dataCount:errorUILabel:blockArray:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LBModels/SendingWater/WaterSending.m"
+            timestampString = "456170702.214864"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "+listWaterList:dataCount:block:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LBModels/SendingWater/WaterSendingDetails.m"
+            timestampString = "456170719.108155"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "+listComments:maxId:dataCount:errorUILabel:blockArray:"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -40,8 +40,10 @@
 }
 
 
-+ (void)listComments:(WaterSending *)waterSending maxId:(long)maxId dataCount:(int)dataCount
-                 blockArray:(void (^)(WaterSendingDetails * waterSendingDetails,NSError *error,ErrorMessage *errorMessage))block
++ (void) listComments:(WaterSending *)waterSending maxId:(long)maxId
+            dataCount:(int)dataCount
+         errorUILabel:( UILabel *)errorUILabel
+           blockArray:(BSHTTPResponse)block
 {
     
     NSString *pathparam = [NSString stringWithFormat:@"%d/%ld/%d",
@@ -49,24 +51,16 @@
     NSLog(@"pathparam:%@", pathparam);
     
     NSString *url=[[Conf urlWaterDetailComment]  stringByAppendingString:pathparam];
-    __block WaterSendingDetails * waterSendingDetails=[[self alloc] initWaterDetailsWithWaterSending:waterSending];
+
     NSLog(@"url:%@", url);
     NSString *restParam=[[Conf urlWaterDetailComment]  stringByAppendingString:pathparam];
-    //BSHTTPNetworking *bsHttp=[BSHTTPNetworking httpManager];
+ 
     [BSHTTPNetworking httpGET:restParam
     pathPattern:WATER_DETAIL_COMMENT_SCHEMA
      modelClass:[Comment class]
         keyPath:@"Comment"
-          block:^(NSObject *waters,NSError *error, ErrorMessage *bsErrorMessage){
-              if (block&&waters!=nil) {
-                  NSArray *comments=(NSArray *)waters;
-                  [waterSendingDetails.comments addObjectsFromArray:comments];                  waterSendingDetails.firstComment= [comments firstObject];                  block((WaterSendingDetails *)waters,nil,nil);
-              }else if(block&&error){
-                  block(nil,error,nil);
-              }else{
-                  block(nil,nil,bsErrorMessage);
-              }
-          }
+        block:(BSHTTPResponse)block
+        errorUILabel:errorUILabel
      ];
     }
 

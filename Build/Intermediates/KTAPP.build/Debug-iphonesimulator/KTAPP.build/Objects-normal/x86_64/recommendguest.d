@@ -1,4 +1,4 @@
 dependencies: \
-  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/KT-APP-BS/LBControl/recommendguest.m \
-  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/KT-APP-BS/LBControl/recommendguest.h \
-  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/KT-APP-BS/LBModels/Base/Conf.h
+  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/LBControl/recommendguest.m \
+  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/LBControl/recommendguest.h \
+  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/LBModels/Base/Conf.h

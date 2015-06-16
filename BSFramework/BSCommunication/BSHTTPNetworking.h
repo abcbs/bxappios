@@ -9,11 +9,26 @@
 #import <Foundation/Foundation.h>
 #import "AFNetworking.h"
 #import "ErrorMessage.h"
+/**
+ * <returntype>(^blockname)(list of arguments)=^(arguments){body}
+ *
+ *
+ */
 
-typedef void (^BSHTTPRequestSuccess)(AFHTTPRequestOperation *operation, id responseObject);
+typedef void (^BSAFRequestSuccess)
+    (AFHTTPRequestOperation *operation, id responseObject);
 
-typedef void (^BSHTTPRequestFailure)(AFHTTPRequestOperation *operation, NSError *error);
+typedef void (^BSAFRequestFailure)
+    (AFHTTPRequestOperation *operation, NSError *error);
 
+typedef void (^BSHTTPRequestSuccess)
+    (NSURLSessionDataTask *task, id responseObject, id model);
+
+typedef void (^BSHTTPRequestFailure)(NSError *error);
+
+typedef void (^BSHTTPResponse)(NSObject *response,
+                               NSError *error,
+                               ErrorMessage *bsErrorMessage);
 
 @interface BSHTTPNetworking : NSObject
 
@@ -26,41 +41,74 @@ typedef void (^BSHTTPRequestFailure)(AFHTTPRequestOperation *operation, NSError 
 
 
 - (AFHTTPRequestOperation *)GET:(NSString *)URLString
-                     parameters:(id)parameters
-                        success:(BSHTTPRequestSuccess)success
-                        failure:(BSHTTPRequestFailure)failure;
+                            parameters:(id)parameters
+                            success:(BSAFRequestSuccess)success
+                            failure:(BSAFRequestFailure)failure;
 
 - (AFHTTPRequestOperation *)POST:(NSString *)URLString
-                      parameters:(id)parameters
-                         success:(BSHTTPRequestSuccess)success
-                         failure:(BSHTTPRequestFailure)failure;
+                            parameters:(id)parameters
+                            success:(BSAFRequestSuccess)success
+                            failure:(BSAFRequestFailure)failure;
 
-+(void)httpGET:(NSString *)restPath pathPattern:(NSString * )pathPattern
-    modelClass:(Class)modelClass keyPath:(NSString *)keyPath
-         block:(void (^)(NSObject *response,
-                         NSError *error,ErrorMessage *bsErrorMessage))block;
++(void)httpGET:(NSString *)restPath
+    pathPattern:(NSString * )pathPattern
+    modelClass:(Class)modelClass
+    keyPath:(NSString *)keyPath
+    block:(BSHTTPResponse)block
+    errorUILabel:( UILabel *)errorUILabel;
 
++(void)httpGET:(NSString *)restPath
+   pathPattern:(NSString * )pathPattern
+    modelClass:(Class)modelClass
+       keyPath:(NSString *)keyPath
+         block:(BSHTTPResponse)block;
 /**
  * Http Restful Get ,Data Model Descrited JMExtension
  */
--(void)get:(NSString *)restPath pathPattern:(NSString * )pathPattern
-     modelClass:(Class)modelClass keyPath:(NSString *)keyPath
-     block:(void (^)(NSObject *response,
-           NSError *error,ErrorMessage *bsErrorMessage))block;
+-(void)get:(NSString *)restPath
+    pathPattern:(NSString * )pathPattern
+    modelClass:(Class)modelClass
+    keyPath:(NSString *)keyPath
+    block:(BSHTTPResponse)block
+    errorUILabel:( UILabel *)errorUILabel;
 
+-(void)get:(NSString *)restPath
+    pathPattern:(NSString * )pathPattern
+    modelClass:(Class)modelClass
+    keyPath:(NSString *)keyPath
+    block:(BSHTTPResponse)block;
 
-+(void)httpPOST:(NSString *)restPath pathPattern:(NSString * )pathPattern
++(void)httpPOST:(NSString *)restPath
+        pathPattern:(NSString * )pathPattern
+        parameters:(id)parameters
+        modelClass:(Class)modelClass
+        keyPath:(NSString *)keyPath
+        block:(BSHTTPResponse)block
+        errorUILabel:( UILabel *)errorUILabel;
+
++(void)httpPOST:(NSString *)restPath
+    pathPattern:(NSString * )pathPattern
      parameters:(id)parameters
-     modelClass:(Class)modelClass keyPath:(NSString *)keyPath
-         block:(void (^)(NSObject *response,
-                         NSError *error,ErrorMessage *bsErrorMessage))block;
+     modelClass:(Class)modelClass
+        keyPath:(NSString *)keyPath
+          block:(BSHTTPResponse)block;
 
 /**
  * Http Restful Post ,Data Model Descrited JMExtension
  */
--(void)post:(NSString *)restPath pathPattern:(NSString * )pathPattern
- parameters:(id)parameters
- modelClass:(Class)modelClass keyPath:(NSString *)keyPath
-     block:(void (^)(NSObject *response,
-                     NSError *error,ErrorMessage *bsErrorMessage))block;
+-(void)post:(NSString *)restPath
+    pathPattern:(NSString * )pathPattern
+    parameters:(id)parameters
+    modelClass:(Class)modelClass
+    keyPath:(NSString *)keyPath
+    block:(BSHTTPResponse)block
+    errorUILabel:( UILabel *)errorUILabel;
+
+-(void)post:(NSString *)restPath
+pathPattern:(NSString * )pathPattern
+    parameters:(id)parameters
+    modelClass:(Class)modelClass
+    keyPath:(NSString *)keyPath
+    block:(BSHTTPResponse)block;
+
 @end

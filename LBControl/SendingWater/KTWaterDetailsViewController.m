@@ -277,24 +277,18 @@
 
 #pragma mark  ---  网络请求
 - (void)loadCommentData:(int)cellCount
-{
-    
-    
-    [WaterSendingDetails listComments:self.waterSending maxId:1 dataCount:cellCount
-     blockArray:^(WaterSendingDetails *waterSendingDetails, NSError *error,ErrorMessage *errorMessage) {
-         if (!error) {
-            self.waterSendingDetails=waterSendingDetails;
-             Comment * cmm=[[self.waterSendingDetails comments] firstObject];
-             self.comment.text=[cmm comment];
-             self.username.text=[cmm username];
- 
-         }
-         if (errorMessage) {
-             NSLog(@"本产品没有评论");
-             self.comment.text=@"";
-             self.username.text=[errorMessage message];
-         }
-     }
+{    
+    [WaterSendingDetails listComments:self.waterSending maxId:1
+                            dataCount:cellCount
+                            errorUILabel:self.username
+    //块的使用方式
+    blockArray:^(NSObject *waterSendingDetails, NSError *error,ErrorMessage *errorMessage) {
+            self.waterSendingDetails=(WaterSendingDetails *)waterSendingDetails;
+            Comment * cmm=[[self.waterSendingDetails comments] firstObject];
+            self.comment.text=[cmm comment];
+            self.username.text=[cmm username];
+
+        }
      ];
 
 }

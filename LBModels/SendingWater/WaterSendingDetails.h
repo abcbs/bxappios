@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "BSHTTPNetworking.h"
 
 @class ErrorMessage;
 @class WaterSending;
@@ -31,11 +32,15 @@
 
 //+ (void)waterSendingDetails:(long)productId;
 
-+ (void) listComments:(WaterSending *)waterSending maxId:(long)maxId dataCount:(int)dataCount
-          blockArray:(void (^)(WaterSendingDetails * waterSendingDetails,NSError *error,ErrorMessage *errorMessage))block;
++ (void) listComments:(WaterSending *)waterSending maxId:(long)maxId
+            dataCount:(int)dataCount
+            errorUILabel:( UILabel *)errorUILabel
+            blockArray:(BSHTTPResponse)block;
 
 
-+ (WaterSendingDetails *)listProductUrls:(WaterSending *)waterSending dataCount:(int)dataCount
-                      blockArray:(void (^)( NSError *error,ErrorMessage *errorMessage))block;
++ (WaterSendingDetails *)listProductUrls:(WaterSending *)waterSending
+                                dataCount:(int)dataCount
+                                errorUILabel:( UILabel *)errorUILabel
+                                blockArray:(BSHTTPResponse)block;
 
 @end

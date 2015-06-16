@@ -16,7 +16,7 @@
 
 #import "BSTableViewRefresh.h"
 #import "ErrorMessage.h"
-
+#import "BSUIComponentView.h"
 
 //#define Url  @"http://192.168.1.103:8090/water/waterinformations/1/0/10"
 
@@ -108,25 +108,9 @@
         
         [WaterSending
          listWaterList:warterId dataCount:cellCount
-         blockArray:^(NSMutableArray *warters, NSError *error,ErrorMessage *errorMessage) {
-             if (!error) {
-                 [self.dataTable addObjectsFromArray:warters];
-             }else{
-                 //服务端没有启动或者系统异常
-                 UIAlertView*alert = [[UIAlertView alloc]initWithTitle:@"提示"
-                    message:error.description delegate:nil
-                    cancelButtonTitle:@"确定"
-                    otherButtonTitles:nil];
-                 
-                 [alert show];
-               
-             }
-             if (errorMessage) {
-                 NSLog(@"已经是最后一条数据");
-                 [self.tableView.footer noticeNoMoreData];
-             }else{
-                 
-             }
+         //块的使用方式
+         block:^(NSObject *response, NSError *error,ErrorMessage *errorMessage) {
+             [self.dataTable addObjectsFromArray:(NSArray *)response];
              [self.tableView reloadData];
          }
          
