@@ -20,11 +20,6 @@
 #import "ViewShoppingCartRequest.h"
 #import "ViewShoppingCartParams.h"
 
-
-
-
-
-
 @interface KTCartTableView ()
 //<UITableViewDelegate,UITableViewDataSource,KTFooterViewDelegate>
 <UITableViewDelegate,UITableViewDataSource>

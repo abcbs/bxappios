@@ -103,6 +103,12 @@
 #define UPDATE_EXCEPTION @"2003" //数据更新异常
 
 #define WATER_LIST_SCHEMA @"water/waterinformations/1001/:id/:count"
+/**
+ *送水详情评论信息
+ */
+#define WATER_DETAIL_COMMENT_SCHEMA @"productcomment/productcomments/:productid/:maxId/:dataCount"
+
+
 
 /**
  *送水列表的列宽度

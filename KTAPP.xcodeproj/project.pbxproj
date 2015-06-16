@@ -246,13 +246,13 @@
 		847433211B2A934000B030C4 /* applyShop.m in Sources */ = {isa = PBXBuildFile; fileRef = 847433201B2A934000B030C4 /* applyShop.m */; };
 		84820A4E1B285D960093B87B /* MSWaterSendingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84820A4C1B285D960093B87B /* MSWaterSendingCell.m */; };
 		84820A4F1B285D960093B87B /* MSWaterSendingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84820A4D1B285D960093B87B /* MSWaterSendingCell.xib */; };
-		84820A5B1B285ECA0093B87B /* KTInformationConfViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84820A511B285EC90093B87B /* KTInformationConfViewController.m */; };
-		84820A5C1B285ECA0093B87B /* KTInformationConfViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84820A521B285EC90093B87B /* KTInformationConfViewController.storyboard */; };
-		84820A5E1B285ECA0093B87B /* KTOnlinePayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84820A561B285EC90093B87B /* KTOnlinePayViewController.m */; };
-		84820A5F1B285ECA0093B87B /* KTOnlinePayViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84820A571B285ECA0093B87B /* KTOnlinePayViewController.storyboard */; };
 		84820A601B285ECA0093B87B /* KTWaterDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84820A591B285ECA0093B87B /* KTWaterDetailsViewController.m */; };
 		84820A611B285ECA0093B87B /* KTWaterDetailsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84820A5A1B285ECA0093B87B /* KTWaterDetailsViewController.storyboard */; };
 		84820A641B285F320093B87B /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84820A631B285F320093B87B /* TableViewController.m */; };
+		8487F1851B3005C100F0F7B2 /* KTInformationConfViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8487F1801B3005C100F0F7B2 /* KTInformationConfViewController.m */; };
+		8487F1861B3005C100F0F7B2 /* KTInformationConfViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8487F1811B3005C100F0F7B2 /* KTInformationConfViewController.storyboard */; };
+		8487F1871B3005C100F0F7B2 /* KTOnlinePayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8487F1831B3005C100F0F7B2 /* KTOnlinePayViewController.m */; };
+		8487F1881B3005C100F0F7B2 /* KTOnlinePayViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8487F1841B3005C100F0F7B2 /* KTOnlinePayViewController.storyboard */; };
 		84A076541B21AA39001CE3A2 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A076531B21AA39001CE3A2 /* Social.framework */; };
 		84A076561B21AA47001CE3A2 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A076551B21AA46001CE3A2 /* Accounts.framework */; };
 		84A076581B21AA7D001CE3A2 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A076571B21AA7D001CE3A2 /* CoreMotion.framework */; };
@@ -642,17 +642,17 @@
 		84820A4B1B285D960093B87B /* MSWaterSendingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSWaterSendingCell.h; sourceTree = "<group>"; };
 		84820A4C1B285D960093B87B /* MSWaterSendingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSWaterSendingCell.m; sourceTree = "<group>"; };
 		84820A4D1B285D960093B87B /* MSWaterSendingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MSWaterSendingCell.xib; sourceTree = "<group>"; };
-		84820A501B285EC90093B87B /* KTInformationConfViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTInformationConfViewController.h; sourceTree = "<group>"; };
-		84820A511B285EC90093B87B /* KTInformationConfViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTInformationConfViewController.m; sourceTree = "<group>"; };
-		84820A521B285EC90093B87B /* KTInformationConfViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = KTInformationConfViewController.storyboard; sourceTree = "<group>"; };
-		84820A551B285EC90093B87B /* KTOnlinePayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTOnlinePayViewController.h; sourceTree = "<group>"; };
-		84820A561B285EC90093B87B /* KTOnlinePayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTOnlinePayViewController.m; sourceTree = "<group>"; };
-		84820A571B285ECA0093B87B /* KTOnlinePayViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = KTOnlinePayViewController.storyboard; sourceTree = "<group>"; };
 		84820A581B285ECA0093B87B /* KTWaterDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTWaterDetailsViewController.h; sourceTree = "<group>"; };
 		84820A591B285ECA0093B87B /* KTWaterDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTWaterDetailsViewController.m; sourceTree = "<group>"; };
 		84820A5A1B285ECA0093B87B /* KTWaterDetailsViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = KTWaterDetailsViewController.storyboard; sourceTree = "<group>"; };
 		84820A621B285F320093B87B /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		84820A631B285F320093B87B /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		8487F17F1B3005C100F0F7B2 /* KTInformationConfViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTInformationConfViewController.h; sourceTree = "<group>"; };
+		8487F1801B3005C100F0F7B2 /* KTInformationConfViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTInformationConfViewController.m; sourceTree = "<group>"; };
+		8487F1811B3005C100F0F7B2 /* KTInformationConfViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = KTInformationConfViewController.storyboard; sourceTree = "<group>"; };
+		8487F1821B3005C100F0F7B2 /* KTOnlinePayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTOnlinePayViewController.h; sourceTree = "<group>"; };
+		8487F1831B3005C100F0F7B2 /* KTOnlinePayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTOnlinePayViewController.m; sourceTree = "<group>"; };
+		8487F1841B3005C100F0F7B2 /* KTOnlinePayViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = KTOnlinePayViewController.storyboard; sourceTree = "<group>"; };
 		84A076531B21AA39001CE3A2 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		84A076551B21AA46001CE3A2 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		84A076571B21AA7D001CE3A2 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
@@ -1614,6 +1614,12 @@
 		84BA96941B282A0500388B58 /* PayManager */ = {
 			isa = PBXGroup;
 			children = (
+				8487F17F1B3005C100F0F7B2 /* KTInformationConfViewController.h */,
+				8487F1801B3005C100F0F7B2 /* KTInformationConfViewController.m */,
+				8487F1811B3005C100F0F7B2 /* KTInformationConfViewController.storyboard */,
+				8487F1821B3005C100F0F7B2 /* KTOnlinePayViewController.h */,
+				8487F1831B3005C100F0F7B2 /* KTOnlinePayViewController.m */,
+				8487F1841B3005C100F0F7B2 /* KTOnlinePayViewController.storyboard */,
 				8474330E1B2A915C00B030C4 /* cardBinding.h */,
 				8474330F1B2A915C00B030C4 /* cardBinding.m */,
 				847433101B2A915C00B030C4 /* myWallet.h */,
@@ -1627,12 +1633,6 @@
 			children = (
 				84820A621B285F320093B87B /* TableViewController.h */,
 				84820A631B285F320093B87B /* TableViewController.m */,
-				84820A501B285EC90093B87B /* KTInformationConfViewController.h */,
-				84820A511B285EC90093B87B /* KTInformationConfViewController.m */,
-				84820A521B285EC90093B87B /* KTInformationConfViewController.storyboard */,
-				84820A551B285EC90093B87B /* KTOnlinePayViewController.h */,
-				84820A561B285EC90093B87B /* KTOnlinePayViewController.m */,
-				84820A571B285ECA0093B87B /* KTOnlinePayViewController.storyboard */,
 				84820A581B285ECA0093B87B /* KTWaterDetailsViewController.h */,
 				84820A591B285ECA0093B87B /* KTWaterDetailsViewController.m */,
 				84820A5A1B285ECA0093B87B /* KTWaterDetailsViewController.storyboard */,
@@ -1995,6 +1995,7 @@
 				847432EB1B2A8DCC00B030C4 /* WaitPaymentDetail.xib in Resources */,
 				0E78E3C41AEBA4DD0098840B /* register-1.png in Resources */,
 				0E6E842C1B2AC6940088DA6A /* im_paihao.png in Resources */,
+				8487F1861B3005C100F0F7B2 /* KTInformationConfViewController.storyboard in Resources */,
 				0E6E842B1B2AC6940088DA6A /* im_kaika.png in Resources */,
 				0E6E84361B2AC6940088DA6A /* tuhongse.png in Resources */,
 				0E6E84311B2AC6940088DA6A /* jl_01.png in Resources */,
@@ -2032,7 +2033,6 @@
 				847432DC1B2A8CE500B030C4 /* MyOrderCell.xib in Resources */,
 				0E78E3B11AEBA4DD0098840B /* a8.png in Resources */,
 				0E78E3C91AEBA4DD0098840B /* register-head.png in Resources */,
-				84820A5F1B285ECA0093B87B /* KTOnlinePayViewController.storyboard in Resources */,
 				0E78E3BF1AEBA4DD0098840B /* login-1.png in Resources */,
 				0E78E3C71AEBA4DD0098840B /* register-4.png in Resources */,
 				0ECED4781B0F639600737354 /* ljzf(1).png in Resources */,
@@ -2048,6 +2048,7 @@
 				0E8377081B02EAC000782034 /* f-1.png in Resources */,
 				0E78E3C61AEBA4DD0098840B /* register-3.png in Resources */,
 				A14656F81ADEB5A400571E9A /* KTFooterView.xib in Resources */,
+				8487F1881B3005C100F0F7B2 /* KTOnlinePayViewController.storyboard in Resources */,
 				0E6E84281B2AC6940088DA6A /* im_activity.png in Resources */,
 				0E83776C1B0372C900782034 /* der.png in Resources */,
 				0E78E3BA1AEBA4DD0098840B /* forget password-2.png in Resources */,
@@ -2096,7 +2097,6 @@
 				843DA8841B21D56300924AE6 /* Resource.bundle in Resources */,
 				0ECED4621B0ECD7200737354 /* qxdd.png in Resources */,
 				0EBA61551B060204008B6053 /* zffs_01.png in Resources */,
-				84820A5C1B285ECA0093B87B /* KTInformationConfViewController.storyboard in Resources */,
 				843DA8871B21D56300924AE6 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				0E78E3AF1AEBA4DD0098840B /* a6.png in Resources */,
 				0E6E84271B2AC6940088DA6A /* huihua.png in Resources */,
@@ -2204,6 +2204,8 @@
 				0E6E84691B2ACFF00088DA6A /* recommendCard.m in Sources */,
 				0E09D56B1B2E6CDF0025A6F2 /* DropDownListView.m in Sources */,
 				8474331C1B2A92B400B030C4 /* ForgetViewController.m in Sources */,
+				8487F1851B3005C100F0F7B2 /* KTInformationConfViewController.m in Sources */,
+				8487F1871B3005C100F0F7B2 /* KTOnlinePayViewController.m in Sources */,
 				84BA96891B2829D500388B58 /* User.m in Sources */,
 				0E6E848E1B2AD03E0088DA6A /* enquireController.m in Sources */,
 				8474331D1B2A92B400B030C4 /* LoginViewController.m in Sources */,
@@ -2237,7 +2239,6 @@
 				8474331E1B2A92B400B030C4 /* RegisterViewController.m in Sources */,
 				0E6E847F1B2AD0200088DA6A /* UIView+SZ.m in Sources */,
 				84BA96801B2829D500388B58 /* orderDetailOneModel.m in Sources */,
-				84820A5E1B285ECA0093B87B /* KTOnlinePayViewController.m in Sources */,
 				0E6E848D1B2AD03E0088DA6A /* queueController.m in Sources */,
 				A146573B1ADED1ED00571E9A /* EHNetwork.m in Sources */,
 				A0F0C3EE1B10209500CE406D /* BasicParams.m in Sources */,
@@ -2272,7 +2273,6 @@
 				84BA96781B2829D500388B58 /* ErrorMessage.m in Sources */,
 				84BA96791B2829D500388B58 /* BusinessManager.m in Sources */,
 				847433121B2A915C00B030C4 /* cardBinding.m in Sources */,
-				84820A5B1B285ECA0093B87B /* KTInformationConfViewController.m in Sources */,
 				847432EA1B2A8DCC00B030C4 /* WaitPaymentDetail.m in Sources */,
 				A0F0C3E71B10209500CE406D /* BasicHeader.m in Sources */,
 				84BA96821B2829D500388B58 /* PayManager.m in Sources */,

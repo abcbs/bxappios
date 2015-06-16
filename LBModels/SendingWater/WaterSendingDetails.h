@@ -16,9 +16,9 @@
 
 @property (nonatomic, assign) int id;
 @property (nonatomic, assign) int businessProductId;
-@property (nonatomic,strong,readwrite)NSMutableArray *comments;
+@property (nonatomic,strong,readwrite) NSMutableArray *comments;
 
-@property (nonatomic,strong)NSMutableArray *productUrls;
+@property (nonatomic,strong) NSMutableArray *productUrls;
 
 @property (nonatomic, strong) WaterSending *water;
 

@@ -51,34 +51,23 @@
     NSString *url=[[Conf urlWaterDetailComment]  stringByAppendingString:pathparam];
     __block WaterSendingDetails * waterSendingDetails=[[self alloc] initWaterDetailsWithWaterSending:waterSending];
     NSLog(@"url:%@", url);
-    
-    BSHTTPNetworking *manager = [BSHTTPNetworking manager];
-    [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSDictionary *result = [responseObject objectForKey:@"responseHeader"];
-        if ([[result objectForKey:@"errorCode"] isEqualToString:@"0000"]) {
-            NSArray *resultArr = [responseObject objectForKey:@"responseBody"];
-           for (NSDictionary *dict in resultArr) {
-               
-               [waterSendingDetails.comments addObject: [Comment commentWithDic:dict]];
-               waterSendingDetails.firstComment= [Comment commentWithDic:dict];
-           }
-           if (block) {
-                block(waterSendingDetails, nil,nil);
-            }
- 
-        }else{
-            ErrorMessage *error = [ErrorMessage initWith:result];
-            block( nil,nil,error);
-            return ;
-        }
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        if (block) {
-            block(nil,error,nil);
-        }
-        NSLog(@"失败结果: %@", error);
-        
-    }];
+    NSString *restParam=[[Conf urlWaterDetailComment]  stringByAppendingString:pathparam];
+    //BSHTTPNetworking *bsHttp=[BSHTTPNetworking httpManager];
+    [BSHTTPNetworking httpGET:restParam
+    pathPattern:WATER_DETAIL_COMMENT_SCHEMA
+     modelClass:[Comment class]
+        keyPath:@"Comment"
+          block:^(NSObject *waters,NSError *error, ErrorMessage *bsErrorMessage){
+              if (block&&waters!=nil) {
+                  NSArray *comments=(NSArray *)waters;
+                  [waterSendingDetails.comments addObjectsFromArray:comments];                  waterSendingDetails.firstComment= [comments firstObject];                  block((WaterSendingDetails *)waters,nil,nil);
+              }else if(block&&error){
+                  block(nil,error,nil);
+              }else{
+                  block(nil,nil,bsErrorMessage);
+              }
+          }
+     ];
     }
 
 

@@ -59,9 +59,9 @@
             pathPattern:WATER_LIST_SCHEMA
             modelClass:[WaterSending class]
             keyPath:@"waterSending"
-        block:^(NSMutableArray *waters,NSError *error, ErrorMessage *bsErrorMessage){
+        block:^(NSObject *waters,NSError *error, ErrorMessage *bsErrorMessage){
             if (block&&waters!=nil) {
-                block(waters,nil,nil);
+                block((NSMutableArray *)waters,nil,nil);
             }else if(block&&error){
                 block(nil,error,nil);
             }else{

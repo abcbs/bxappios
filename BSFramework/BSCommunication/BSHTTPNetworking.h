@@ -10,6 +10,11 @@
 #import "AFNetworking.h"
 #import "ErrorMessage.h"
 
+typedef void (^BSHTTPRequestSuccess)(AFHTTPRequestOperation *operation, id responseObject);
+
+typedef void (^BSHTTPRequestFailure)(AFHTTPRequestOperation *operation, NSError *error);
+
+
 @interface BSHTTPNetworking : NSObject
 
 + (instancetype)manager;
@@ -18,26 +23,44 @@
 
 +(instancetype)httpManager;
 
-- (instancetype)initWithBaseURL:(NSURL *)url;
 
 
 - (AFHTTPRequestOperation *)GET:(NSString *)URLString
                      parameters:(id)parameters
-                        success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
-                        failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
+                        success:(BSHTTPRequestSuccess)success
+                        failure:(BSHTTPRequestFailure)failure;
 
 - (AFHTTPRequestOperation *)POST:(NSString *)URLString
                       parameters:(id)parameters
-                         success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
-                         failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
+                         success:(BSHTTPRequestSuccess)success
+                         failure:(BSHTTPRequestFailure)failure;
+
++(void)httpGET:(NSString *)restPath pathPattern:(NSString * )pathPattern
+    modelClass:(Class)modelClass keyPath:(NSString *)keyPath
+         block:(void (^)(NSObject *response,
+                         NSError *error,ErrorMessage *bsErrorMessage))block;
 
 /**
  * Http Restful Get ,Data Model Descrited JMExtension
  */
--(void)get:(NSString *)restPath pathPattern:(NSString * )pathPattern 
+-(void)get:(NSString *)restPath pathPattern:(NSString * )pathPattern
      modelClass:(Class)modelClass keyPath:(NSString *)keyPath
-     block:(void (^)(NSMutableArray *waters,
+     block:(void (^)(NSObject *response,
            NSError *error,ErrorMessage *bsErrorMessage))block;
 
 
++(void)httpPOST:(NSString *)restPath pathPattern:(NSString * )pathPattern
+     parameters:(id)parameters
+     modelClass:(Class)modelClass keyPath:(NSString *)keyPath
+         block:(void (^)(NSObject *response,
+                         NSError *error,ErrorMessage *bsErrorMessage))block;
+
+/**
+ * Http Restful Post ,Data Model Descrited JMExtension
+ */
+-(void)post:(NSString *)restPath pathPattern:(NSString * )pathPattern
+ parameters:(id)parameters
+ modelClass:(Class)modelClass keyPath:(NSString *)keyPath
+     block:(void (^)(NSObject *response,
+                     NSError *error,ErrorMessage *bsErrorMessage))block;
 @end

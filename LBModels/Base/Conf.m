@@ -15,7 +15,7 @@
 
 
 
-NSString *const KBS_URL=@"http://192.168.1.104:8090/";
+NSString *const KBS_URL=@"http://192.168.0.109:8090/";
 NSString *const WATER_LIST=@"water/waterinformations";
 NSString *const WATER_CATA=@"/1001/";
 NSString *const WATER_DETAIL_COMMENT=@"productcomment/productcomments/";
@@ -45,8 +45,7 @@ NSString *const WATER_SHOPPCART_UPDATECART = @"shoppingcart/updatecart";
 
 //NSString *str = @"http://192.168.1.103:8090/productcomment/productcomments/1/0/1";
 +(NSString *)urlWaterDetailComment{
-    NSString * url=[[[NSString alloc] initWithString:KBS_URL]
-                     stringByAppendingString:WATER_DETAIL_COMMENT];
+    NSString * url=[[NSString alloc] initWithString:WATER_DETAIL_COMMENT];
     
     return url;
 }

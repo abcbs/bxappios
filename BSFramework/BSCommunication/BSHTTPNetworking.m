@@ -52,10 +52,21 @@
 }
 
 
++(void)httpGET:(NSString *)restPath pathPattern:(NSString * )pathPattern
+    modelClass:(Class)modelClass keyPath:(NSString *)keyPath
+         block:(void (^)(NSObject *response,
+                         NSError *error,ErrorMessage *bsErrorMessage))block
+{
+    BSHTTPNetworking * bshttp=[self httpManager];
+     [bshttp get:restPath pathPattern:pathPattern modelClass:modelClass keyPath:keyPath block:block
+     ];
+}
+
+
 
 -(void)get:(NSString *)restPath pathPattern:(NSString * )pathPattern
 modelClass:(Class)modelClass keyPath:(NSString *)keyPath
-     block:(void (^)(NSMutableArray *waters
+     block:(void (^)(NSObject *response
                      , NSError *error,ErrorMessage *bsErrorMessage))block
 {
     
@@ -64,21 +75,64 @@ modelClass:(Class)modelClass keyPath:(NSString *)keyPath
     [router routeGET:pathPattern modelClass:[modelClass class] keyPath:keyPath];
     
     [router GET:restPath parameters:nil success:^(NSURLSessionDataTask *task, id responseObject, id model) {
+            if (block&&![model isKindOfClass:[ErrorMessage class]]) {
+                block(model,nil,nil);
+            }else if(block&& [model isKindOfClass:[ErrorMessage class]]){
+                block(nil,nil,model);
+            }
+        }
+     
+        failure:^(NSError *error) {
+            if (block) {
+                block(nil,error,nil);
+            }
+        
+        }
+    ];
+
+}
+
++(void)httpPOST:(NSString *)restPath pathPattern:(NSString * )pathPattern
+     parameters:(id)parameters     modelClass:(Class)modelClass keyPath:(NSString *)keyPath
+          block:(void (^)(NSObject *response,
+                          NSError *error,ErrorMessage *bsErrorMessage))block
+{
+    BSHTTPNetworking * bshttp=[self httpManager];
+    [bshttp  post:restPath pathPattern:pathPattern parameters:parameters  modelClass:modelClass keyPath:keyPath block:block
+     ];}
+
+/**
+ * Http Restful Post ,Data Model Descrited JMExtension
+ */
+-(void)post:(NSString *)restPath pathPattern:(NSString * )pathPattern
+ parameters:(id)parameters
+ modelClass:(Class)modelClass keyPath:(NSString *)keyPath
+      block:(void (^)(NSObject *response,
+                      NSError *error,ErrorMessage *bsErrorMessage))block{
+    
+    [BSHTTPNetworking httpManager];
+    
+    [router routePOST:pathPattern modelClass:[modelClass class] keyPath:keyPath];
+    
+    [router POST:restPath parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject, id model) {
         if (block&&![model isKindOfClass:[ErrorMessage class]]) {
-            block([NSMutableArray arrayWithArray:model],nil,nil);
+            block(model,nil,nil);
         }else if(block&& [model isKindOfClass:[ErrorMessage class]]){
-             block(nil,nil,model);
+            block(nil,nil,model);
         }
     }
      
-    failure:^(NSError *error) {
-        if (block) {
-            block(nil,error,nil);
+        failure:^(NSError *error) {
+            if (block) {
+                block(nil,error,nil);
+            }
+            
         }
-        
-    }];
-
+     ];
+    
 }
+
+
 
 - (instancetype)initWithManager
 {
@@ -95,12 +149,33 @@ modelClass:(Class)modelClass keyPath:(NSString *)keyPath
 
 - (AFHTTPRequestOperation *)GET:(NSString *)URLString
                      parameters:(id)parameters
-                        success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
-                        failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure{
+                        success:(BSHTTPRequestSuccess)success
+                        failure:(BSHTTPRequestFailure)failure{
     
     return [bsmanager GET:URLString parameters:parameters
-                  success:success failure:failure];
+                  success:[self requestSuccessBlockWithDefault:nil success:success failure:failure]
+                  failure:[self requestFailureBlockWithDefault:nil success:success failure:failure]];
     
+}
+
+
+- (void (^)(AFHTTPRequestOperation *operation, id responseObject))requestSuccessBlockWithDefault:(AFHTTPRequestOperation *)operation
+                                                                                     success:(BSHTTPRequestSuccess)success
+                                                                                     failure:(BSHTTPRequestFailure)failure {
+    return ^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSError *serializationError = nil;        //检查返回的是否为业务异常数据
+               
+    };
+}
+
+- (void (^)(AFHTTPRequestOperation *operation, NSError *error))requestFailureBlockWithDefault:(AFHTTPRequestOperation *)operation
+                                                                                  success:(BSHTTPRequestSuccess)success
+                                                                                  failure:(BSHTTPRequestFailure)failure {
+    return ^(AFHTTPRequestOperation *operation, NSError *error) {
+        if (failure) {
+            //failure(error);
+        }
+    };
 }
 
 - (AFHTTPRequestOperation *)POST:(NSString *)URLString
