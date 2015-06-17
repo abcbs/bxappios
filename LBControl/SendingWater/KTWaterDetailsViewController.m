@@ -214,12 +214,6 @@
         [self addCard:sessionID  addCount:self.carNumText.titleLabel.text
                 addID:[[NSNumber alloc] initWithLong:self.waterSending.id]];
         
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:@"加入购物车成功" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:@"进入购物车", nil];
-        
-        [alertView show];
-
-       
-     
     }
 }
 
@@ -234,12 +228,15 @@
     shoppingCart.id =self.waterSending.id;
     
     [ShoppingCart addCart:shoppingCart
-               blockArray:^(NSError *error,ErrorMessage *errorMessage) {
+               blockArray:^(NSObject *response,NSError *error,ErrorMessage *errorMessage) {
                    if (error) {
                        NSLog(@"网络异常");
-                   }
-                   if (errorMessage) {
+                   }else if (errorMessage) {
                        NSLog(@"jiarugouwu%@",errorMessage.message);
+                   }else {
+                       UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:@"加入购物车成功" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:@"进入购物车", nil];
+                       
+                       [alertView show];
                    }
                }
      

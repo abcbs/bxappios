@@ -215,6 +215,7 @@
 		843DA88F1B21D56300924AE6 /* ShareSDKShareActionSheet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 843DA8771B21D56200924AE6 /* ShareSDKShareActionSheet.framework */; };
 		844E50BB1B2F2EE500A69F91 /* BSHTTPNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 844E50B41B2F2EE500A69F91 /* BSHTTPNetworking.m */; };
 		844E50BC1B2F2EE500A69F91 /* BSTableViewRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 844E50B81B2F2EE500A69F91 /* BSTableViewRefresh.m */; };
+		8470D7F01B312185001E2195 /* BSHTTPNetworkingCustmed.m in Sources */ = {isa = PBXBuildFile; fileRef = 8470D7EF1B312185001E2195 /* BSHTTPNetworkingCustmed.m */; };
 		847432D01B2A8AF700B030C4 /* VPImageCropperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 847432CF1B2A8AF700B030C4 /* VPImageCropperViewController.m */; };
 		847432DB1B2A8CE500B030C4 /* MyOrderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 847432D31B2A8CE500B030C4 /* MyOrderCell.m */; };
 		847432DC1B2A8CE500B030C4 /* MyOrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847432D41B2A8CE500B030C4 /* MyOrderCell.xib */; };
@@ -591,6 +592,8 @@
 		844E50B61B2F2EE500A69F91 /* BSTableList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSTableList.h; sourceTree = "<group>"; };
 		844E50B71B2F2EE500A69F91 /* BSTableViewRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSTableViewRefresh.h; sourceTree = "<group>"; };
 		844E50B81B2F2EE500A69F91 /* BSTableViewRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSTableViewRefresh.m; sourceTree = "<group>"; };
+		8470D7EE1B312185001E2195 /* BSHTTPNetworkingCustmed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSHTTPNetworkingCustmed.h; sourceTree = "<group>"; };
+		8470D7EF1B312185001E2195 /* BSHTTPNetworkingCustmed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSHTTPNetworkingCustmed.m; sourceTree = "<group>"; };
 		847432CE1B2A8AF700B030C4 /* VPImageCropperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VPImageCropperViewController.h; sourceTree = "<group>"; };
 		847432CF1B2A8AF700B030C4 /* VPImageCropperViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VPImageCropperViewController.m; sourceTree = "<group>"; };
 		847432D21B2A8CE500B030C4 /* MyOrderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOrderCell.h; sourceTree = "<group>"; };
@@ -1277,6 +1280,8 @@
 			children = (
 				844E50B31B2F2EE500A69F91 /* BSHTTPNetworking.h */,
 				844E50B41B2F2EE500A69F91 /* BSHTTPNetworking.m */,
+				8470D7EE1B312185001E2195 /* BSHTTPNetworkingCustmed.h */,
+				8470D7EF1B312185001E2195 /* BSHTTPNetworkingCustmed.m */,
 			);
 			path = BSCommunication;
 			sourceTree = "<group>";
@@ -2257,6 +2262,7 @@
 				A0F0C3ED1B10209500CE406D /* ViewShoppingCartResult.m in Sources */,
 				0E6E84681B2ACFF00088DA6A /* recommendguest.m in Sources */,
 				847432DF1B2A8CE500B030C4 /* OrderDetailOneCell.m in Sources */,
+				8470D7F01B312185001E2195 /* BSHTTPNetworkingCustmed.m in Sources */,
 				847432DD1B2A8CE500B030C4 /* orderDetailCell.m in Sources */,
 				0E6E845F1B2ACE770088DA6A /* KTLifeIndexController.m in Sources */,
 				84BA967C1B2829D500388B58 /* AFNHelp.m in Sources */,

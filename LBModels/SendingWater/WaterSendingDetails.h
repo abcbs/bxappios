@@ -25,12 +25,6 @@
 
 @property (nonatomic,strong)Comment *firstComment;
 
-- (instancetype)initWaterDetailsWithWaterSending:(WaterSending *)waterSending;
-
-//
-- (instancetype)initWithDic:(NSDictionary *)dic;
-
-//+ (void)waterSendingDetails:(long)productId;
 
 + (void) listComments:(WaterSending *)waterSending maxId:(long)maxId
             dataCount:(int)dataCount
@@ -38,7 +32,7 @@
             blockArray:(BSHTTPResponse)block;
 
 
-+ (WaterSendingDetails *)listProductUrls:(WaterSending *)waterSending
++ (void)listProductUrls:(WaterSending *)waterSending
                                 dataCount:(int)dataCount
                                 errorUILabel:( UILabel *)errorUILabel
                                 blockArray:(BSHTTPResponse)block;

@@ -111,4 +111,13 @@ pathPattern:(NSString * )pathPattern
     keyPath:(NSString *)keyPath
     block:(BSHTTPResponse)block;
 
+
+- (void (^)(AFHTTPRequestOperation *operation, NSError *error))requestFailureBlockWithAFHTTPRequestOperation:(BSAFRequestSuccess)success
+    failure:(BSAFRequestFailure)failure;
+
+- (void (^)(NSError *error))
+    block:(BSHTTPResponse)block
+    failure:(BSHTTPRequestFailure)failure
+    errorUILabel:( UILabel *)errorUILabel;
+
 @end

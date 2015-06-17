@@ -29,6 +29,6 @@
 
 
 +(void)addCart:(ShoppingCart * )shoppingCart
-blockArray:(void (^)(NSError *error,ErrorMessage *errorMessage))block;
+blockArray:(void (^)(NSObject *response,NSError *error,ErrorMessage *errorMessage))block;
 
 @end

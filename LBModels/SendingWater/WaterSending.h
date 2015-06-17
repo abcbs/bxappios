@@ -38,11 +38,7 @@
 @property (nonatomic, copy) NSString *count;
 
 @property (readonly, nonatomic, unsafe_unretained) NSURL *avatarImageURL;
-//
-- (instancetype)initWithDic:(NSDictionary *)dic;
-+ (instancetype)waterSendingWithDic:(NSDictionary *)dic;
 
-+ (NSMutableArray *)waterSending;
 
 + (void)listWaterList:(long)maxId dataCount:(int)dataCount
                        block:(BSHTTPResponse)block;

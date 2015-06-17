@@ -11,7 +11,7 @@
 #import "YYHMantleModelSerializer.h"
 #import "ErrorMessage.h"
 #import "MJExtension.h"
-
+#import "AFNetworking.h"
 
 #if defined(__has_include)
 #if __has_include("MJExtension.h")
@@ -69,6 +69,11 @@ NSString * const YYHModelRouterErrorDomain = @"com.yayuhh.YYHModelRouterError";
     if ((self = [super init])) {
         _baseURL = url;
         _sessionManager = [[AFHTTPSessionManager alloc] initWithBaseURL:_baseURL];
+        
+        _sessionManager.requestSerializer=[AFJSONRequestSerializer serializer];
+        
+        _sessionManager.responseSerializer=[AFJSONResponseSerializer serializer];
+        
 #ifdef HAS_MANTLE
         _modelSerializer = [[YYHMantleModelSerializer alloc] init];
 #endif
@@ -176,6 +181,7 @@ NSString * const YYHModelRouterErrorDomain = @"com.yayuhh.YYHModelRouterError";
 - (void)POST:(NSString *)path parameters:(NSDictionary *)parameters success:(YYHModelRequestSuccess)success failure:(YYHModelRequestFailure)failure {
     YYHModelRoute *modelRoute = [self modelRouteForPath:path method:[YYHModelRoute postRequestMethod]];
     NSAssert(modelRoute != nil, @"Could not find modelRoute for path \"%@\"", path);
+  
     
     [self.sessionManager POST:[self requestPathForModelPath:path]
                   parameters:parameters
@@ -209,7 +215,8 @@ NSString * const YYHModelRouterErrorDomain = @"com.yayuhh.YYHModelRouterError";
                                                                                      success:(YYHModelRequestSuccess)success
                                                                                      failure:(YYHModelRequestFailure)failure {
     return ^(NSURLSessionDataTask *task, id responseObject) {
-        NSError *serializationError = nil;        //检查返回的是否为业务异常数据
+        NSError *serializationError = nil;
+        //检查返回的是否为业务异常数据
         //[ErrorMessage class] keyPath:@"responseHeader"];
         NSObject *businessError = [responseObject valueForKeyPath:@"responseHeader"];
         
@@ -223,6 +230,8 @@ NSString * const YYHModelRouterErrorDomain = @"com.yayuhh.YYHModelRouterError";
             //处理ResponseBody
             NSObject *bussinessObject= [responseObject
                                         valueForKeyPath:@"responseBody"];
+            //
+            NSLog(@"本次请求返回经过转换的信息为\n%@",bussinessObject);
             if(bussinessObject !=nil){
         
                 id model = [self serializedModelForResponseObject:bussinessObject modelClass:modelRoute.modelClass error:&serializationError];
@@ -267,8 +276,23 @@ NSString * const YYHModelRouterErrorDomain = @"com.yayuhh.YYHModelRouterError";
     } else if ([responseObject isKindOfClass:[NSArray class]]) {
         return [self serializedModelsForJSONArray:responseObject
                                        modelClass:modelClass ];
+    }else  if ([responseObject isKindOfClass:[NSObject class]]) {
+        return [self serializedModelsForJSONObject:responseObject
+                                        modelClass:modelClass];
+    }else{
+        //如果没有转换成功则返回原生的响应
+        return responseObject;
     }
-    return nil;
+}
+
+- (id)serializedModelsForJSONObject:(NSObject *)responseObject modelClass:(Class)modelClass {
+    if (self.modelSerializer) {
+        return [self.modelSerializer
+                objectWithKeyValue:responseObject
+                modelClass:modelClass];
+    } else {
+        return responseObject;
+    }
 }
 
 - (id)serializedModelForJSONDictionary:(NSDictionary *)jsonDictionary modelClass:(Class)modelClass error:(NSError **)error {

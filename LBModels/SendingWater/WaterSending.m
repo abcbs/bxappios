@@ -16,44 +16,13 @@
 @implementation WaterSending
 
 
-- (instancetype)initWithDic:(NSDictionary *)dic
-{
-    if (self = [super init]) {
-        [self setValuesForKeysWithDictionary:dic];
-    }
-    return self;
-}
-
-+ (instancetype)waterSendingWithDic:(NSDictionary *)dic
-{
-    return [[self alloc] initWithDic:dic];
-}
-
-+(NSMutableArray *)waterSending
-{
-    
-    
-    NSArray *dicArray = [NSArray arrayWithContentsOfFile:@""];
-    NSMutableArray *tmpArray = [NSMutableArray array];
-    
-    //字典转模型
-    for (NSDictionary *dic in dicArray) {
-        WaterSending *waterSending = [WaterSending waterSendingWithDic:dic];
-        [tmpArray addObject:waterSending];
-    }
-    
-    return tmpArray;
-}
-
-
 + (void)listWaterList:(long)maxId dataCount:(int)dataCount
                             block:(BSHTTPResponse)block
 {
 
     NSString *pathparam = [NSString stringWithFormat:@"%d/%d", (int)maxId,dataCount];
-    NSLog(@"pathparam:%@", pathparam);
     
-    NSString *restParam=[[Conf urlWaterList]  stringByAppendingString:pathparam];
+    NSString *restParam=[WATER_LIST  stringByAppendingString:pathparam];
     BSHTTPNetworking *bsHttp=[BSHTTPNetworking httpManager];
     [bsHttp get:restParam
             pathPattern:WATER_LIST_SCHEMA

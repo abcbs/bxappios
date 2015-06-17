@@ -14,7 +14,7 @@
 {
     //http://{XXXX:XX}/productcomment/productcomments/{productId}/{maxId}/{dataCount}
     
-    NSString *url = [NSString stringWithFormat:@"%@/%@/%@/%@",[Conf urlWaterDetailComment],params.productId,params.maxId,params.dataCount];
+    NSString *url = [NSString stringWithFormat:@"%@/%@/%@/%@",WATER_DETAIL_COMMENT,params.productId,params.maxId,params.dataCount];
     
     [[MiddleNetWorkTool sharedBasicNetWork] getWithUrl:url params:nil success:^(id json) {
         

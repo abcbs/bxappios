@@ -37,23 +37,5 @@
 + (NSMutableArray *)urlWithShoppingCart:(NSString *)sessionId
                        blockArray:(void (^)(NSMutableArray *waters, NSError *error,ErrorMessage *errorMessage))block;
 
-//-(NSArray *)waters
-//{
-//    if(!_waters)
-//    {
-//        [DealCart WithShoppingCart:sessionId
-//                        blockArray:(void (^)(NSMutableArray *waters, NSError *error,ErrorMessage *errorMessage))block
-//         {
-//             if(!error)
-//             {
-//                 _waters = waters;
-//             }else
-//             {
-//                 _waters = nil;
-//             }
-//             
-//         }];
-//    }
-//    return _waters;
-//}
+
 @end

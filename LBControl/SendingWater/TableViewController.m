@@ -105,7 +105,7 @@
 {
     //显示对话框
     [super.HUD showAnimated:YES whileExecutingBlock:^{
-        
+        //获取业务数据方法
         [WaterSending
          listWaterList:warterId dataCount:cellCount
          //块的使用方式
@@ -116,9 +116,6 @@
          
          ];
     } completionBlock:^{
-        //操作执行完后取消对话框
-        //[_HUD removeFromSuperview];
-       // _HUD = nil;
     }];
     
 }

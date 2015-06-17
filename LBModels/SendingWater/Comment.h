@@ -15,8 +15,5 @@
 
 @property (nonatomic, assign) int id;
 
-- (instancetype)initWithDic:(NSDictionary *)dic;
-
-+ (instancetype)commentWithDic:(NSDictionary *)dic;
 
 @end

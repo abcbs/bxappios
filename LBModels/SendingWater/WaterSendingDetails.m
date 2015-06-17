@@ -16,30 +16,6 @@
 @implementation WaterSendingDetails
 
 
-- (instancetype)initWithDic:(NSDictionary *)dic {
-    self = [super init];
-    if (!self) {
-        return nil;
-    }
-    self.water = [[WaterSending alloc] initWithDic:[dic valueForKeyPath:@"water"]];
-  
-    return self;
-}
-
-
-- (instancetype)initWaterDetailsWithWaterSending:(WaterSending *)waterSending
-{
-    self = [super init];
-    if (!self) {
-        return nil;
-    }
-    _water = waterSending;
-    _comments= [NSMutableArray arrayWithCapacity:10];
-    
-    return self;
-}
-
-
 + (void) listComments:(WaterSending *)waterSending maxId:(long)maxId
             dataCount:(int)dataCount
          errorUILabel:( UILabel *)errorUILabel
@@ -48,12 +24,8 @@
     
     NSString *pathparam = [NSString stringWithFormat:@"%d/%ld/%d",
                            waterSending.id,maxId,dataCount];
-    NSLog(@"pathparam:%@", pathparam);
     
-    NSString *url=[[Conf urlWaterDetailComment]  stringByAppendingString:pathparam];
-
-    NSLog(@"url:%@", url);
-    NSString *restParam=[[Conf urlWaterDetailComment]  stringByAppendingString:pathparam];
+    NSString *restParam=[WATER_DETAIL_COMMENT  stringByAppendingString:pathparam];
  
     [BSHTTPNetworking httpGET:restParam
     pathPattern:WATER_DETAIL_COMMENT_SCHEMA
@@ -64,12 +36,12 @@
      ];
     }
 
++ (void)listProductUrls:(WaterSending *)waterSending
+                               dataCount:(int)dataCount
+                            errorUILabel:( UILabel *)errorUILabel
+                              blockArray:(BSHTTPResponse)block
+{
 
-+ (WaterSendingDetails *)listProductUrls:(WaterSending *)waterSending dataCount:(int)dataCount
-             blockArray:(void (^)( NSError *error,ErrorMessage *errorMessage))block{
-    return nil;
-    
 }
-
 
 @end

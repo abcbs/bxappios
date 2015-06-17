@@ -1,5 +1,5 @@
 dependencies: \
-  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/LBControl/PayManager/cardBinding.m \
-  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/LBControl/PayManager/cardBinding.h \
-  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/LBModels/Base/Conf.h \
-  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/LBControl/SystemConfig/userProtocol.h
+  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/KT-APP-BS/LBControl/PayManager/cardBinding.m \
+  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/KT-APP-BS/LBControl/PayManager/cardBinding.h \
+  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/KT-APP-BS/LBModels/Base/Conf.h \
+  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/KT-APP-BS/LBControl/SystemConfig/userProtocol.h

@@ -17,5 +17,7 @@
 - (id)objectArrayWithKeyValuesArray:(NSArray *)jsonArray
                          modelClass:(Class)modelClass;
 
+-(id)objectWithKeyValue:(NSObject *)responseObject
+             modelClass:(Class)modelClass;
 
 @end

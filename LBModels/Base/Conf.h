@@ -102,52 +102,73 @@
 #define INSERT_EXCEPTION @"2002" //数据插入异常
 #define UPDATE_EXCEPTION @"2003" //数据更新异常
 
-#define WATER_LIST_SCHEMA @"water/waterinformations/1001/:id/:count"
-/**
- *送水详情评论信息
- */
-#define WATER_DETAIL_COMMENT_SCHEMA @"productcomment/productcomments/:productid/:maxId/:dataCount"
-
-
-
 /**
  *送水列表的列宽度
  */
-#define WATER_LIST_ROW_HIGH 110;
-
-extern NSString *const KBS_URL;
-extern NSString *const WATER_LIST;
-
-extern NSString *const WATER_CATA;
-
-
-
-extern NSString *const WATER_DETAIL_COMMENT;
-
-extern NSString *const WATER_SHOPPCART_ADDCART;
-
-
-extern NSString *const WATER_SHOPPCART_USERCARTS;
-
-extern NSString *const WATER_SHOPPCART_DELCARTLIST;
-
-extern NSString *const WATER_SHOPPCART_UPDATECART;
+#define WATER_LIST_ROW_HIGH 110
 
 /**
- 
+ *送水分类
  */
-+(NSString *)urlBase;
+#define WATER_CATA @"/1001/"
 
-+(NSString *)urlWaterList;
-+(NSString *)urlWaterDetailComment;
-/** 加入购物车的url */
-//+(NSString *)urlWithAddCart;
-/** 查看购物车的url */
+#pragma mark--功能的请求参数及请求参数模式
+
+
+
+/**
+ *基础URL
+ */
+#define KBS_URL @"http://192.168.0.109:8090/"
+
+/**
+ *送水列表请求模式
+ */
+#define WATER_LIST_SCHEMA @"water/waterinformations/1001/:id/:count"
+
+/**
+ *送水列表请求
+ */
+#define WATER_LIST @"water/waterinformations/1001/"
+
+/**
+ *送水详情评论信息请求模式
+ */
+#define WATER_DETAIL_COMMENT_SCHEMA @"productcomment/productcomments/:productid/:maxId/:dataCount"
+
+/**
+ *送水详情评论请求
+ */
+#define WATER_DETAIL_COMMENT @"productcomment/productcomments/"
+
+/**
+ *购物车某客户选中商品时数量增加
+ */
+#define WATER_SHOPPCART_ADDCART_SCHEMA @"shoppingcart/addcart/:sessionId"
+
+/**
+ *购物车某客户选中商品时数量增加
+ */
+#define WATER_SHOPPCART_ADDCART @"shoppingcart/addcart"
+
+
+/**
+ *购物车列表
+ */
+#define WATER_SHOPPCART_USERCARTS @"shoppingcart/usercarts"
+
+#define  WATER_SHOPPCART_DELCARTLIST @"shoppingcart/delcartlist"
+
+
+#define WATER_SHOPPCART_UPDATECART @"shoppingcart/updatecart"
+
+
 +(NSString *)urlWithShoppingCart;
 
 
 /** jiaru购物车的url */
 +(NSString *)urlWithAddShoppingCart;
+
 /** 删除购物车url */
 +(NSString *)urlWaterShoppingDelcartlist;
 

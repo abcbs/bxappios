@@ -30,14 +30,14 @@
 
 
 + (instancetype)manager {
-    return [[self alloc] initWithManager];
+    return [[super alloc] initWithManager];
 }
 
 
 
 +(instancetype)httpManager
 {
-    return [[self alloc] initWithBaseURL];
+    return [[super alloc] initWithBaseURL];
 }
 
 - (instancetype)initWithBaseURL{
@@ -47,7 +47,7 @@
     }
     if(!self.router) {
         self.router=  [[YYHModelRouter alloc]
-                       initWithBaseURL:[NSURL URLWithString:[Conf urlBase]]];
+                       initWithBaseURL:[NSURL URLWithString:KBS_URL]];
     }
     return self;
 }
@@ -205,7 +205,7 @@
     block:(BSHTTPResponse)block
     errorUILabel:( UILabel *)errorUILabel{
     return ^(NSURLSessionDataTask *task, id responseObject, id model) {
-        NSLog(@"本次请求返回信息为\n%@",responseObject);
+        NSLog(@"本次请求返回信息为\n%@",model);
         if (block&&![model isKindOfClass:[ErrorMessage class]]) {
             block(model,nil,nil);
         }else if(block&& [model isKindOfClass:[ErrorMessage class]]){
