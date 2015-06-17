@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "ErrorMessage.h"
+//#import ""
 @interface CartList : NSObject
 
 
@@ -25,6 +26,7 @@
 @property (nonatomic,copy) NSString *productPreferPrice;
 
 @property (nonatomic, assign) long resourceId;
+
 @property (nonatomic, strong) NSArray *waters;
 
 
@@ -34,7 +36,7 @@
 
 + (NSMutableArray *)cartList;
 
-+ (NSMutableArray *)urlWithShoppingCart:(NSString *)sessionId
++ (void)queryShoppingCart:(NSString *)sessionId
                        blockArray:(void (^)(NSMutableArray *waters, NSError *error,ErrorMessage *errorMessage))block;
 
 

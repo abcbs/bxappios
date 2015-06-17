@@ -122,7 +122,7 @@
 // 点击某一行，进入产品详细页
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"KTWaterDetailsViewController" bundle:nil];
+   UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"KTWaterDetailsViewController" bundle:nil];
     KTWaterDetailsViewController *shoppControl = [storyboard instantiateInitialViewController];
     shoppControl.waterSending = self.dataTable[indexPath.row];
     [self checkLogin:shoppControl waterSending:self.dataTable[indexPath.row]];

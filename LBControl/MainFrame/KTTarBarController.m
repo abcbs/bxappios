@@ -11,6 +11,7 @@
 #import "KTlifeViewController.h"
 #import "SetViewController.h"
 #import "KTLifeIndexController.h"
+#import "KTInfrastructureView.h"
 
 @interface KTTarBarController ()
 
@@ -25,9 +26,8 @@
 {
     if (self = [super init]){
        
-}
-
-     return self;
+    }
+    return self;
 }
 
 
@@ -38,17 +38,19 @@
     {
         
         
-        KTLifeIndexController *life = [self addControllerWithClass:[KTLifeIndexController class] title:@"生活服务" nomalimage:@"shfwh"selectedImage:@"shfws"];
+        UIViewController *life = [self addControllerWithClass:[KTLifeIndexController class] title:@"生活服务" nomalimage:@"shfwh"selectedImage:@"shfws"];
        
-        UINavigationController *lifeNav = [[UINavigationController alloc]initWithRootViewController:life];
         
-        KTlifeViewController *shops = [self addControllerWithClass:[KTlifeViewController class] title:@"信誉商家" nomalimage:@"xysjh" selectedImage:@"xysjs"];
-        UINavigationController *shopsNav = [[UINavigationController alloc]initWithRootViewController:shops];
         
-        UIViewController *service = [self addControllerWithClass:[UIViewController class] title:@"便捷服务" nomalimage:@"bjfw" selectedImage:@"bjfwh"];
-        UINavigationController *serviceNav = [[UINavigationController alloc]initWithRootViewController:service];
-        SetViewController *circle = [self addControllerWithClass:[SetViewController class] title:@"我的圈子" nomalimage:@"wdqzh" selectedImage:@"wdqzs"];
-        UINavigationController *circleNav = [[UINavigationController alloc]initWithRootViewController:circle];
+        UIViewController *shops = [self addControllerWithClass:[KTlifeViewController class] title:@"信誉商家" nomalimage:@"xysjh" selectedImage:@"xysjs"];
+        
+        UIViewController *service = [self addControllerWithClass:[KTInfrastructureView class] title:@"便捷服务" nomalimage:@"bjfw" selectedImage:@"bjfwh"];
+        
+        /*
+      
+        */
+        UIViewController *circle = [self addControllerWithClass:[SetViewController class] title:@"我的圈子" nomalimage:@"wdqzh" selectedImage:@"wdqzs"];
+
        
 
         self.viewControllers = @[life, shops, service,circle];
@@ -89,14 +91,13 @@
     
   
     // 自定义titile的颜色
-    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
-                                                       [UIColor colorWithRed:173/255.0 green:173/255.0 blue:175/255.0 alpha:1], UITextAttributeTextColor,
-                                                       nil] forState:UIControlStateNormal];
+    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor colorWithRed:173/255.0 green:173/255.0 blue:175/255.0 alpha:1],
+        NSForegroundColorAttributeName,nil]
+        forState:UIControlStateNormal];
     
-    
-    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
-                                                       [UIColor colorWithRed:117/255.0 green:1/255.0 blue:1/255.0 alpha:1], UITextAttributeTextColor,
-                                                       nil] forState:UIControlStateSelected];
+    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor colorWithRed:117/255.0 green:1/255.0 blue:1/255.0 alpha:1],
+        NSForegroundColorAttributeName,nil]
+        forState:UIControlStateSelected];
     return vc;
 }
 @end

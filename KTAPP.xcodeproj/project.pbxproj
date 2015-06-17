@@ -260,6 +260,8 @@
 		84A0765C1B21AA9A001CE3A2 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A0765B1B21AA9A001CE3A2 /* MediaPlayer.framework */; };
 		84A0765E1B21AAA7001CE3A2 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A0765D1B21AAA7001CE3A2 /* CoreText.framework */; };
 		84A076601B21AAC8001CE3A2 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A0765F1B21AAC8001CE3A2 /* AddressBook.framework */; };
+		84AA511B1B31E5180087B749 /* KTInfrastructureView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84AA511A1B31E5180087B749 /* KTInfrastructureView.storyboard */; };
+		84AA51241B31ECED0087B749 /* KTInfrastructureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AA51231B31ECED0087B749 /* KTInfrastructureView.m */; };
 		84BA96771B2829D500388B58 /* Conf.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BA96441B2829D500388B58 /* Conf.m */; };
 		84BA96781B2829D500388B58 /* ErrorMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BA96461B2829D500388B58 /* ErrorMessage.m */; };
 		84BA96791B2829D500388B58 /* BusinessManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BA96491B2829D500388B58 /* BusinessManager.m */; };
@@ -660,6 +662,9 @@
 		84A0765B1B21AA9A001CE3A2 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		84A0765D1B21AAA7001CE3A2 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		84A0765F1B21AAC8001CE3A2 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		84AA511A1B31E5180087B749 /* KTInfrastructureView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = KTInfrastructureView.storyboard; sourceTree = "<group>"; };
+		84AA51221B31ECED0087B749 /* KTInfrastructureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTInfrastructureView.h; sourceTree = "<group>"; };
+		84AA51231B31ECED0087B749 /* KTInfrastructureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTInfrastructureView.m; sourceTree = "<group>"; };
 		84BA96431B2829D500388B58 /* Conf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Conf.h; sourceTree = "<group>"; };
 		84BA96441B2829D500388B58 /* Conf.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Conf.m; sourceTree = "<group>"; };
 		84BA96451B2829D500388B58 /* ErrorMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ErrorMessage.h; sourceTree = "<group>"; };
@@ -875,7 +880,6 @@
 			isa = PBXGroup;
 			children = (
 				0E6E84471B2ACBFE0088DA6A /* View */,
-				0E6E84461B2ACBF50088DA6A /* Model */,
 			);
 			name = "shops(信誉商家)";
 			sourceTree = "<group>";
@@ -946,13 +950,6 @@
 				0E6E84661B2ACFF00088DA6A /* recommendCard.m */,
 			);
 			name = "Recommend(推荐)";
-			sourceTree = "<group>";
-		};
-		0E6E84461B2ACBF50088DA6A /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Model;
 			sourceTree = "<group>";
 		};
 		0E6E84471B2ACBFE0088DA6A /* View */ = {
@@ -1610,6 +1607,9 @@
 				8420429F1B2983B40002C868 /* AppDelegate.m */,
 				842042A01B2983B40002C868 /* LaunchScreen.xib */,
 				842042A11B2983B40002C868 /* Main.storyboard */,
+				84AA511A1B31E5180087B749 /* KTInfrastructureView.storyboard */,
+				84AA51221B31ECED0087B749 /* KTInfrastructureView.h */,
+				84AA51231B31ECED0087B749 /* KTInfrastructureView.m */,
 			);
 			path = MainFrame;
 			sourceTree = "<group>";
@@ -2062,6 +2062,7 @@
 				0E78E3B61AEBA4DD0098840B /* 4个人设置-3忘记密码.jpg in Resources */,
 				0E6E843D1B2AC6940088DA6A /* ww.png in Resources */,
 				0E78E3C11AEBA4DD0098840B /* login-3.png in Resources */,
+				84AA511B1B31E5180087B749 /* KTInfrastructureView.storyboard in Resources */,
 				0E83770C1B02EC2B00782034 /* tu-00_01.png in Resources */,
 				0E6E845B1B2ACD5A0088DA6A /* adsCell.xib in Resources */,
 				843DA88D1B21D56300924AE6 /* ShareSDKFlatShareViewUI.bundle in Resources */,
@@ -2210,6 +2211,7 @@
 				8487F1851B3005C100F0F7B2 /* KTInformationConfViewController.m in Sources */,
 				8487F1871B3005C100F0F7B2 /* KTOnlinePayViewController.m in Sources */,
 				84BA96891B2829D500388B58 /* User.m in Sources */,
+				84AA51241B31ECED0087B749 /* KTInfrastructureView.m in Sources */,
 				0E6E848E1B2AD03E0088DA6A /* enquireController.m in Sources */,
 				8474331D1B2A92B400B030C4 /* LoginViewController.m in Sources */,
 				0E915F981B0C394800F47478 /* ValidateCode.m in Sources */,

@@ -205,39 +205,17 @@
 
 - (void)loadmore
 {
-//    [CartList
-//     cartList:(NSString *)cartId businessProductId:(NSString *)businessProductId
-//     blockArray:^(NSMutableArray *warters, NSError *error,ErrorMessage *errorMessage) {
-//         if (!error) {
-//             NSArray *array = [self.modelList arrayByAddingObjectsFromArray:warters];
-//             self.modelList = (NSMutableArray *)array;
-//             [self.KTCarttableView reloadData];
-//             [MBProgressHUD hideHUD];
-//             // 关闭刷新提示
-//             [self.KTCarttableView footerEndRefreshing];
-//         }
-//         
-//     }
-//     ];
+
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     
     NSString *sessionID = [userDefaults objectForKey:@"sessionId"];
-    [CartList urlWithShoppingCart:sessionID blockArray:^(NSMutableArray *waters, NSError *error, ErrorMessage *errorMessage) {
-        
+    [CartList queryShoppingCart:sessionID blockArray:^(NSMutableArray *waters, NSError *error, ErrorMessage *errorMessage) {
         if (waters) {
             self.modelList = waters;
             [self.KTCarttableView reloadData];
     
         }
-        if (error) {
-            NSLog(@"--wangluoyichang--");
-        }
-        if (errorMessage) {
-            NSLog(@"--gouwuche-%@",errorMessage.message);
-        }
-        
     }];
-    
     
 }
 

@@ -155,7 +155,10 @@
 /**
  *购物车列表
  */
-#define WATER_SHOPPCART_USERCARTS @"shoppingcart/usercarts"
+#define WATER_SHOPPCART_USERCARTS_SCHEMA @"shoppingcart/usercarts/:sessionId"
+
+#define WATER_SHOPPCART_USERCARTS @"shoppingcart/usercarts/"
+
 
 #define  WATER_SHOPPCART_DELCARTLIST @"shoppingcart/delcartlist"
 

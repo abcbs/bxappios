@@ -7,8 +7,6 @@
 //
 
 #import "ShoppingCart.h"
-#import "AFNetworking.h"
-#import "AFAppDotNetAPIClient.h"
 #import "Conf.h"
 #import "ErrorMessage.h"
 
