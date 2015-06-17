@@ -183,8 +183,9 @@
     block:(BSHTTPResponse)block
     errorUILabel:( UILabel *)errorUILabel
 {
-    NSLog(@"本次请求路径为%@",restPath);
-    NSLog(@"本次请求参数%@",parameters);
+    
+    NSLog(@"本次请求路径为\t%@",restPath);
+    NSLog(@"本次请求参数\t%@",parameters);
     NSLog(@"本次请求方法POST");
     
     [BSHTTPNetworking httpManager];
@@ -230,8 +231,9 @@
     errorUILabel:( UILabel *)errorUILabel
 {
     return ^(NSError *error) {
+        NSLog(@"系统出现异常，详细信息:\n%@",error);
         if (block) {
-             //block(nil,error,nil);
+            
             if (errorUILabel) {
                 errorUILabel.text=error.description;
             }else{

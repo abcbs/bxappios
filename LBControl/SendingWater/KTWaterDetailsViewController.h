@@ -11,18 +11,14 @@
 #import "WaterSending.h"
 #import "WaterSendingDetails.h"
 #import "CommodityEvaluationRequest.h"
+#import "ShoppingCart.h"
+
 @interface KTWaterDetailsViewController : UIViewController
 
-@property (strong, nonatomic) CommodityEvaluationList *commodityList;
-
-@property (assign, nonatomic) WaterSendingDetails *ID;
+@property (strong, nonatomic) WaterSendingDetails *waterSendingDetails;
 
 @property (nonatomic, strong) WaterSending *waterSending;
-@property (strong, nonatomic)  UILabel *test;
 
-//@property (nonatomic, strong) UIButton *minusBtn;//加按钮
-//@property (nonatomic, strong) UIButton *addBtn;// 减按钮
-//@property (nonatomic, strong) UILabel *numLabel;
-
+@property (nonatomic, strong) ShoppingCart *shoppingCart;
 
 @end

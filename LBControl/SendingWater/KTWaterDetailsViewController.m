@@ -47,13 +47,10 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *comment;
 @property (weak, nonatomic) IBOutlet UILabel *username;
+
 - (IBAction)addCart:(id)sender;
 - (IBAction)watchMore:(id)sender;
 
-
-//@property (nonatomic, assign)NSInteger currentNum;
-
-@property (nonatomic, strong) WaterSendingDetails *waterSendingDetails;
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
@@ -63,9 +60,13 @@
 
 @implementation KTWaterDetailsViewController
 
+@synthesize shoppingCart;
+
 -(void)viewDidLoad {
     [super viewDidLoad];
-    
+    if (shoppingCart==nil) {
+        shoppingCart=[[ShoppingCart alloc]init];
+    }
     self.view.backgroundColor = [UIColor whiteColor];
     
     // 初始化图片轮播起
@@ -214,34 +215,32 @@
         [self addCard:sessionID  addCount:self.carNumText.titleLabel.text
                 addID:[[NSNumber alloc] initWithLong:self.waterSending.id]];
         
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:@"加入购物车成功" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:@"进入购物车", nil];
+        
+        [alertView show];
+        
     }
 }
 
 
--(void) addCard:(NSString *)sessionId  addCount:(NSString *)addCount addID:(NSNumber *)ptid
+-(void) addCard:(NSString *)sessionId
+       addCount:(NSString *)addCount addID:(NSNumber *)ptid
 {
-    ShoppingCart *shoppingCart=[[ShoppingCart alloc] init];
+
     shoppingCart.sessionId=sessionId;
     shoppingCart.countorder=addCount;
     shoppingCart.businessProductId=ptid;
-    //int pid=self.waterSending.id;
     shoppingCart.id =self.waterSending.id;
     
     [ShoppingCart addCart:shoppingCart
-               blockArray:^(NSObject *response,NSError *error,ErrorMessage *errorMessage) {
-                   if (error) {
-                       NSLog(@"网络异常");
-                   }else if (errorMessage) {
-                       NSLog(@"jiarugouwu%@",errorMessage.message);
-                   }else {
-                       UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:@"加入购物车成功" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:@"进入购物车", nil];
-                       
-                       [alertView show];
-                   }
-               }
+               blockArray:^(NSObject *response,NSError *error,ErrorMessage *errorMessage){
+                        shoppingCart.currentCount=(NSNumber *)response;
+                   
+                   [self.carNumText setTitle:[NSString stringWithFormat:@"%d",[(NSNumber *)response intValue ]] forState:UIControlStateNormal];
+                }
      
      ];
-    
+
 }
 
 #pragma mark UIAlertdelegate代理方法
@@ -249,19 +248,12 @@
     if (buttonIndex == 0) {
         // 你试试是0还是1     取消就取消
     }else if(buttonIndex == 1){
-        //  确定就跳转的代码
-                     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"KTCartTableView" bundle:nil];
-                     KTCartTableView *login = [storyboard instantiateInitialViewController];
-                     //login.waterSending = self.waterSending;
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"KTCartTableView" bundle:nil];
         
-                     // [self.navigationController pushViewController:login animated:YES];
-//        NSArray *arrayTmp = [self.waterSendingArray  copy];
-//        login.modelList = arrayTmp;
-       
+        KTCartTableView *login = [storyboard instantiateInitialViewController];
+
         
-    //    NSLog(@"购物车数组%@",login.modelList);
-        
-    [self presentViewController:login animated:YES completion:nil];
+        [self presentViewController:login animated:YES completion:nil];
         
         
     }
@@ -284,6 +276,7 @@
             Comment * cmm=[[self.waterSendingDetails comments] firstObject];
             self.comment.text=[cmm comment];
             self.username.text=[cmm username];
+     
 
         }
      ];
@@ -301,10 +294,15 @@
     WaterSending *ws=[self.waterSendings lastObject];
     return ws.id;
 }
- */
+ 
 -(int )pageCount{
     return 10;
 }
+*/
+
+/**
+ *数量增加
+ */
 - (IBAction)plusCarNum:(UIButton *)sender {
     
 
@@ -316,6 +314,9 @@
 
 
 }
+/**
+ *数量减少
+ */
 - (IBAction)cutCarNum:(UIButton *)sender {
 
     int currentCount = (int)[self.carNumText.titleLabel.text integerValue];

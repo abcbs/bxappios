@@ -12,23 +12,18 @@
 
 @interface ShoppingCart : NSObject
 
-@property (nonatomic, assign) NSString *countorder;
+@property (nonatomic, strong) NSString *countorder;
 
-@property (nonatomic, assign) NSNumber *businessProductId;
+@property (nonatomic, strong) NSNumber *businessProductId;
 
 @property (nonatomic, assign) long id;
 
-@property (nonatomic, assign)NSString *sessionId;
+@property (nonatomic, strong)NSString *sessionId;
 
-@property (nonatomic, assign) NSNumber *currentCount;
-
-- (instancetype)initWithDic:(NSDictionary *)dic;
-
-+ (instancetype)initShoppingCartWithDic:(NSDictionary *)dic;
-
+@property (nonatomic, strong) NSNumber *currentCount;
 
 
 +(void)addCart:(ShoppingCart * )shoppingCart
-blockArray:(void (^)(NSObject *response,NSError *error,ErrorMessage *errorMessage))block;
+blockArray:(void (^)(NSObject *response, NSError *error,ErrorMessage *errorMessage))block;
 
 @end

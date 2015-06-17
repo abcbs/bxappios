@@ -12,13 +12,12 @@
 #import "KTFooterView.h"
 #import "EHNetwork.h"
 #import "KTWaterDetailsViewController.h"
-
+#import "LoginViewController.h"
 
 #import "BSTableViewRefresh.h"
 #import "ErrorMessage.h"
 #import "BSUIComponentView.h"
 
-//#define Url  @"http://192.168.1.103:8090/water/waterinformations/1/0/10"
 
 @interface TableViewController ()
 
@@ -124,10 +123,41 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
      UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"KTWaterDetailsViewController" bundle:nil];
-    KTWaterDetailsViewController *login2 = [storyboard instantiateInitialViewController];
-    login2.waterSending = self.dataTable[indexPath.row];
-    [self.navigationController pushViewController:login2 animated:YES];
+    KTWaterDetailsViewController *shoppControl = [storyboard instantiateInitialViewController];
+    shoppControl.waterSending = self.dataTable[indexPath.row];
+    [self checkLogin:shoppControl waterSending:self.dataTable[indexPath.row]];
+    [self.navigationController pushViewController:shoppControl animated:YES];
     
+    
+}
+
+-(void)checkLogin:(KTWaterDetailsViewController *)shoppControl
+     waterSending:(WaterSending *)waterSending
+{
+    //判断是否登录
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    
+    NSString *sessionID = [userDefaults objectForKey:@"sessionId"];
+    if (sessionID.length == 0) {
+        LoginViewController  *nv = [[LoginViewController  alloc]init];
+        
+        [self presentViewController:nv animated:YES completion:nil];
+    }
+    ShoppingCart *shoppingCart =[[ShoppingCart alloc] init];
+    shoppingCart.sessionId=sessionID;
+    shoppingCart.currentCount=[[NSNumber alloc] initWithLong:0];
+    shoppingCart.businessProductId=[[NSNumber alloc]
+                                    initWithLong:waterSending.id];
+    [self getCard:shoppingCart];
+    shoppControl.shoppingCart=shoppingCart;
+}
+
+-(void) getCard:(ShoppingCart *)shoppingCart
+
+{
+    [ShoppingCart addCart:shoppingCart
+               blockArray:nil
+     ];
     
 }
 
