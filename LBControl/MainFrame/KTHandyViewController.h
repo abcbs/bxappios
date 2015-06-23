@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreBluetooth/CoreBluetooth.h>
 
 @interface KTHandyViewController : UIViewController
 
@@ -14,6 +15,6 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *showSwitchValue;
 
-
+@property (nonatomic, strong) CBPeripheralManager *manager;
 
 @end

@@ -16,8 +16,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    //字体为白色
     [self.navigationController.navigationBar setBarStyle:UIBarStyleBlack];
+    //背景为红色
     [self.navigationController.navigationBar setBackgroundColor
      :[UIColor redColor]];
 }
