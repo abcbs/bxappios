@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BluetoothMainController : UITableViewController
+@interface BSBLEMainController : UITableViewController
 
 @end

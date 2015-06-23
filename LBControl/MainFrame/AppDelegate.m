@@ -25,7 +25,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     AppDelegate *myDelegate = [[UIApplication sharedApplication] delegate];
-    float iosVersion=IOS_VERSION;
+    //float iosVersion=IOS_VERSION;
     
     if(IS_IPHONE5){
         myDelegate.autoSizeScaleX = 1.0;

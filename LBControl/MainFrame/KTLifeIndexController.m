@@ -10,7 +10,7 @@
 #import "UIView+Frame.h"
 #import "Conf.h"
 #import "KTLifeIndexCell.h"
-#import "ADTImagePlayer.h"
+#import "BSFCRollingADImageUIView.h"
 #import "recommendController.h"
 #import "communicateController.h"
 #import "communicate.h"
@@ -21,19 +21,13 @@
 
 #define kScreenWidth [UIScreen mainScreen].bounds.size.width
 #define kScreenHight [UIScreen mainScreen].bounds.size.height
-@interface KTLifeIndexController ()<UIScrollViewDelegate,UITableViewDataSource,UITableViewDelegate,imagePlayerDelegate>
+
+@interface KTLifeIndexController ()<UIScrollViewDelegate,UITableViewDataSource,UITableViewDelegate,BSImagePlayerDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, copy) NSArray *imageNameArray;
 
-//@property (strong, nonatomic)IBOutlet UIScrollView *scrollView;
-//@property (strong, nonatomic)IBOutlet UIPageControl *pageControl;
-
-
-@property (nonatomic, weak) UIView *imageView;
-@property (nonatomic, weak) ADTImagePlayer *imagePlayer;
-
-
+@property (nonatomic, weak) BSFCRollingADImageUIView *imagePlayer;
 
 @end
 
@@ -53,7 +47,9 @@
         _tableView = [[UITableView alloc]initWithFrame:BSRectMake(NAVIGATIONBAR_X, NAVIGATIONBAR_Y, SCREEN_WIDTH, SCREEN_HEIGHT-NAVIGATION_ADD_STATUS_HEIGHT) style:UITableViewStyleGrouped];
         self.tableView.dataSource =self;
         self.tableView.delegate = self;
+        
         self.imageNameArray = @[@"tuhongse.png",@"tukuaihuang.png",@"tulvse.png",@"tukuailvse.png",@"tukuail.png"];
+        
         UINib *nib = [UINib nibWithNibName:@"KTLifeIndexCell" bundle:nil];
         [self.tableView registerNib:nib forCellReuseIdentifier:@"KTLifeIndexCell"];
         //设置每个section之间的间隙
@@ -73,30 +69,25 @@
     [self.view addSubview:self.tableView];
     //添加头部图片轮播器
     [self addImagePlay];
+    
+    self.tableView.tableHeaderView = self.imagePlayer;
 }
 
 /**
  *  添加头部图片轮播器
  */
 - (void)addImagePlay{
-    
-    ADTImagePlayer *imagePlayer = [ADTImagePlayer imagePlayer];
-    imagePlayer.playerDelegate = self;
-    self.imagePlayer = imagePlayer;
-    [imagePlayer setPageControlPositionToBottom:40];
-    self.tableView.tableHeaderView = self.imagePlayer;
-
     //
     NSMutableArray *tempArray = [NSMutableArray array];
     for (int i = 0; i < 5; i++){
         NSString *imgName = [NSString stringWithFormat:@"img_0%d.jpg",i+1];
         [tempArray addObject:imgName];
     }
-    [self.imagePlayer setImageNames:tempArray];
+    
+    self.imagePlayer =[BSFCRollingADImageUIView initADImageUIViewWith:tempArray playerDelegate:self urls:nil];
+    
     
 }
-
-
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
 
@@ -119,9 +110,11 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
     return 30;
 }
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 120;
 }
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.row == 0) {
         recommendController *vc1 = [[recommendController alloc]init];

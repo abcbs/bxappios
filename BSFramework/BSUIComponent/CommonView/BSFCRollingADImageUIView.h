@@ -20,24 +20,23 @@
  *  图片单击跳转URL
  */
 @property (nonatomic, copy) NSString *urlVideo;
+
 @end
 
 
+@class BSFCRollingADImageUIView;
 
+@protocol BSImagePlayerDelegate <NSObject>
 
-
-@class ADTImagePlayer;
-
-@protocol imagePlayerDelegate <NSObject>
 @optional
-- (void)imagePlayer:(ADTImagePlayer *)imagePlayer willLoadURL:(NSURL *)URL;
+- (void)imagePlayer:(BSFCRollingADImageUIView *)imagePlayer willLoadURL:(NSURL *)URL;
 
 @end
 
 
-@interface ADTImagePlayer : UIView
+@interface BSFCRollingADImageUIView : UIView
 
-@property (nonatomic, weak) id <imagePlayerDelegate> playerDelegate;
+@property (nonatomic, weak) id <BSImagePlayerDelegate> playerDelegate;
 
 /**
  *  根据图片名称进行创建
@@ -60,6 +59,10 @@
 
 
 + (instancetype)imagePlayer;
+
++(BSFCRollingADImageUIView *)initADImageUIViewWith:(NSMutableArray *)imagesNames
+                                    playerDelegate:(id<BSImagePlayerDelegate> )player
+                                              urls:(NSMutableArray *)urls;
 
 /**
  *  设置pageControl距离底部的位置

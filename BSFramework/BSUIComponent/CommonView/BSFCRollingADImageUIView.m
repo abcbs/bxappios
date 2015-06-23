@@ -6,8 +6,10 @@
 //  Copyright (c) 2014年 adt. All rights reserved.
 //
 
-#import "ADTImagePlayer.h"
+#import "BSFCRollingADImageUIView.h"
+
 #import "UIImageView+AFNetWorking.h"
+
 #import "UIView+Frame.h"
 @implementation ImageAndURLModel
 
@@ -27,7 +29,7 @@
 
 
 
-@interface ADTImagePlayer() <UIScrollViewDelegate>
+@interface BSFCRollingADImageUIView() <UIScrollViewDelegate>
 {
     NSInteger _count;
     NSInteger _valueToBottom;
@@ -43,8 +45,22 @@
 
 @end
 
-@implementation ADTImagePlayer
+@implementation BSFCRollingADImageUIView
 
++(BSFCRollingADImageUIView *)initADImageUIViewWith:(NSMutableArray *)imagesNames
+                                    playerDelegate:(id<BSImagePlayerDelegate> )player
+                                              urls:(NSMutableArray *)urls
+{
+    
+    BSFCRollingADImageUIView *imagePlayer = [BSFCRollingADImageUIView imagePlayer];
+    
+    [imagePlayer setPageControlPositionToBottom:40];
+    [imagePlayer setImageNames:imagesNames];
+    
+    imagePlayer.playerDelegate = player;
+    return imagePlayer;
+    
+}
 
 + (instancetype)imagePlayer
 {

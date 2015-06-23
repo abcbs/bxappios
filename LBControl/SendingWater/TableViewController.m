@@ -10,18 +10,15 @@
 #import "MSWaterSendingCell.h"
 
 #import "KTFooterView.h"
-#import "EHNetwork.h"
 #import "KTWaterDetailsViewController.h"
 #import "LoginViewController.h"
 
 #import "BSTableViewRefresh.h"
-#import "ErrorMessage.h"
+
 #import "BSUIComponentView.h"
 #import "AppDelegate.h"
 
 @interface TableViewController ()
-
-@property (nonatomic, strong) EHNetwork *mNetwork;
 
 
 @end
@@ -46,8 +43,6 @@
     
     
     //[self loadMoreData:[self firstDataId] dataCount:1];
-    // 初始化网络请求
-    self.mNetwork = [[EHNetwork alloc] init];
 
 }
 

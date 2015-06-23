@@ -1,26 +1,27 @@
 //
-//  BluetoothMainController.m
+//  BSBLEDetailTableViewController.m
 //  KTAPP
 //
 //  Created by admin on 15/6/23.
 //  Copyright (c) 2015年 itcast. All rights reserved.
 //
 
-#import "BluetoothMainController.h"
+#import "BSBLEDetailTableViewController.h"
 
-@interface BluetoothMainController ()
+@interface BSBLEDetailTableViewController ()
 
 @end
 
-@implementation BluetoothMainController
+@implementation BSBLEDetailTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //字体为白色
-    [self.navigationController.navigationBar setBarStyle:UIBarStyleBlack];
-    //背景为红色
-    [self.navigationController.navigationBar setBackgroundColor
-     :[UIColor redColor]];
+    
+    // Uncomment the following line to preserve selection between presentations.
+    // self.clearsSelectionOnViewWillAppear = NO;
+    
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning {
