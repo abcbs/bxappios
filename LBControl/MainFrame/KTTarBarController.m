@@ -11,7 +11,7 @@
 #import "KTlifeViewController.h"
 #import "SetViewController.h"
 #import "KTLifeIndexController.h"
-#import "KTInfrastructureView.h"
+#import "KTHandyViewController.h"
 
 @interface KTTarBarController ()
 
@@ -44,11 +44,10 @@
         
         UIViewController *shops = [self addControllerWithClass:[KTlifeViewController class] title:@"信誉商家" nomalimage:@"xysjh" selectedImage:@"xysjs"];
         
-        UIViewController *service = [self addControllerWithClass:[KTInfrastructureView class] title:@"便捷服务" nomalimage:@"bjfw" selectedImage:@"bjfwh"];
+        UIViewController *service = [self addControllerWithClass:[KTHandyViewController class] title:@"便捷服务" nomalimage:@"bjfw" selectedImage:@"bjfwh"];
+    
         
-        /*
-      
-        */
+    
         UIViewController *circle = [self addControllerWithClass:[SetViewController class] title:@"我的圈子" nomalimage:@"wdqzh" selectedImage:@"wdqzs"];
 
        

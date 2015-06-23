@@ -21,6 +21,9 @@
 #import "myWallet.h"
 #import "applyShop.h"
 #import "Demo1ViewController.h"
+#import "AppDelegate.h"
+
+
 @interface SetViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic, retain) UITableView *tableView;
 @property (nonatomic, copy) NSArray *textArray;
@@ -32,6 +35,7 @@
 @synthesize tableView = _tableView;
 @synthesize textArray = _textArray;
 @synthesize imageNameArray = _imageNameArray;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -50,7 +54,8 @@
     [self.view addSubview:self.tableView];
     
     //红色界面
-    UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 65)];
+    UIImageView *imageView = [[UIImageView alloc]initWithFrame:BSRectMake(NAVIGATIONBAR_X, NAVIGATIONBAR_Y,
+                                                                          NAVIGATIONBAR_WIDTH, NAVIGATIONBAR_HEIGHT)];
     NSString *imageName = [NSString stringWithFormat:@"生活圈.jpg"];
     imageView.image = [UIImage imageNamed:imageName];
     [self.view addSubview:imageView];

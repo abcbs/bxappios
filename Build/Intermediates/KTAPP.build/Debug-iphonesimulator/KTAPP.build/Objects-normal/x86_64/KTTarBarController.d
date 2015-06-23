@@ -1,8 +1,8 @@
 dependencies: \
-  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/KT-APP-BS/LBControl/MainFrame/KTTarBarController.m \
-  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/KT-APP-BS/LBControl/MainFrame/KTTarBarController.h \
-  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/KT-APP-BS/LBControl/MainFrame/KTLifeSearchBar.h \
-  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/KT-APP-BS/LBControl/MainFrame/KTlifeViewController.h \
-  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/KT-APP-BS/LBControl/SystemConfig/SetViewController.h \
-  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/KT-APP-BS/LBControl/MainFrame/KTLifeIndexController.h \
-  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/KT-APP-BS/LBControl/MainFrame/KTInfrastructureView.h
+  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/LBControl/MainFrame/KTTarBarController.m \
+  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/LBControl/MainFrame/KTTarBarController.h \
+  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/LBControl/MainFrame/KTLifeSearchBar.h \
+  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/LBControl/MainFrame/KTlifeViewController.h \
+  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/LBControl/SystemConfig/SetViewController.h \
+  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/LBControl/MainFrame/KTLifeIndexController.h \
+  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/LBControl/MainFrame/KTHandyViewController.h

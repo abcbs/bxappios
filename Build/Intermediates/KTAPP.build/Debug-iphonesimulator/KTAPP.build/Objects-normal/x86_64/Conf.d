@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/KT-APP-BS/LBModels/Base/Conf.m \
-  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/KT-APP-BS/LBModels/Base/Conf.h
+  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/LBModels/Base/Conf.m \
+  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/LBModels/Base/Conf.h

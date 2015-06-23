@@ -16,7 +16,6 @@
 #import "WeiboSDK.h"
 #import "Conf.h"
 
-
 @interface AppDelegate ()
     
 @end
@@ -70,23 +69,12 @@
     //                     tencentOAuthCls:[TencentOAuth class]];
     
     // 1.初始化自定义Log
-   
-    //1.创建Windows
-    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+
+     //默认颜色
     self.window.backgroundColor = [UIColor whiteColor];
+    self.window.tintColor = [UIColor redColor];
     
-    //2.创建根控制器
     
-    KTTarBarController *tabBarVC = [[KTTarBarController alloc] init];
-    
-    self.window.rootViewController = tabBarVC;
-    
-    //3.显示windows
-    [self.window makeKeyAndVisible];
-    //4
-    
-
-
     return YES;
 }
 

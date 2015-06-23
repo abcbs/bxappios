@@ -60,18 +60,20 @@
 - (void)initTopView
 {
    // 隐藏导航条
-   self.navigationController.navigationBar.hidden = YES;
+   //self.navigationController.navigationBar.hidden = YES;
    UIView *topView = [[UIView alloc]init];
    
    topView.backgroundColor = [UIColor colorWithRed:97/255.0 green:18/255.0 blue:15/255.0 alpha:1];
-   topView.frame = BSRectMake(0, 0, SCREEN_WIDTH, 64);
+    
+   topView.frame = BSRectMake(NAVIGATIONBAR_X, NAVIGATIONBAR_Y,
+                              NAVIGATIONBAR_WIDTH, NAVIGATIONBAR_HEIGHT);
    
    // 添加搜索框
    KTLifeSearchBar *searchBar =[[KTLifeSearchBar alloc] init];
-   searchBar.centerX = BSMarginX(SCREEN_WIDTH*0.5 - 70);
-   searchBar.centerY = BSMarginY(60*0.5);
+   searchBar.centerX = BSMarginX(NAVIGATIONBAR_WIDTH*0.5 - 70);
+   searchBar.centerY = BSMarginY(NAVIGATIONBAR_Y+22);
    searchBar.width = BSMarginX(180);
-   searchBar.height = BSMarginY(30);
+   searchBar.height = BSMarginY(NAVIGATIONBAR_HEIGHT-28);
    
    searchBar.delegate = self;
    self.searchBar = searchBar;
@@ -81,14 +83,15 @@
    [leftBtn setTitle:@"生活圈" forState:UIControlStateNormal];
    leftBtn.titleLabel.font = [UIFont systemFontOfSize:14];
    [leftBtn setTitleColor:[UIColor colorWithRed:255 green:255 blue:255 alpha:1] forState:UIControlStateNormal];
-   leftBtn.frame = BSRectMake(0, 31, 80, 30);
+   leftBtn.frame = BSRectMake(0, NAVIGATIONBAR_Y+22, 80,
+                              NAVIGATIONBAR_HEIGHT-28);
    [topView addSubview:leftBtn];
    
    // 右侧按钮
    UIButton *rightBtn = [[UIButton alloc]init];
    [rightBtn setBackgroundImage:[UIImage imageNamed:@"icon_district"] forState:UIControlStateNormal];
    [rightBtn setBackgroundImage:[UIImage imageNamed:@"icon_map_highlighted"] forState:UIControlStateHighlighted];
-   rightBtn.frame = BSRectMake(CGRectGetMaxX(searchBar.frame)+10, 27, 37, 37);
+   rightBtn.frame = BSRectMake(CGRectGetMaxX(searchBar.frame)+10, NAVIGATIONBAR_Y+12, 37, NAVIGATIONBAR_HEIGHT-16);
    [topView addSubview:rightBtn];
    [self.view addSubview:topView];
 }
@@ -153,7 +156,7 @@
 - (void)initCommonTools
 {
    
-   UIButton *titBtn = [[UIButton alloc]initWithFrame:BSRectMake(10, 190 + NAVIGATIONBAR_HEIGHT , 90,26)];
+   UIButton *titBtn = [[UIButton alloc]initWithFrame:BSRectMake(10, 178 + NAVIGATIONBAR_HEIGHT , 90,26)];
    [titBtn setImage:[UIImage imageNamed:@"xy"] forState:UIControlStateNormal];
   
    [titBtn setTitle:@"便捷服务" forState:UIControlStateNormal];
@@ -207,11 +210,20 @@
 
 - (void)btnClick:(UIButton *)btn
 {
-   TableViewController *tableVC = [[TableViewController alloc]init];
-   UINavigationController* nav = [[UINavigationController alloc]initWithRootViewController:tableVC];
-   [self presentViewController:nav animated:YES completion:nil];
-
+    //TableViewController *shoppControl = [[TableViewController alloc]init];
+    
+    UIStoryboard *storyboard = [UIStoryboard
+                                storyboardWithName:@"KTWaterDetailsViewController" bundle:nil];
+    
+    TableViewController *shoppControl = [storyboard instantiateViewControllerWithIdentifier:@"TableViewController"];
+    
+    UINavigationController* nav = [[UINavigationController alloc]  initWithRootViewController:shoppControl];
+    
+    [self presentViewController:nav animated:YES completion:nil];
+    
+     
 }
+     
 
 
 //图片轮播起//

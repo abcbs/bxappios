@@ -1,6 +1,0 @@
-framework module LBControl {
-  umbrella header "LBControl.h"
-
-  export *
-  module * { export * }
-}

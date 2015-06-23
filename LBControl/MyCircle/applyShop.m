@@ -8,6 +8,8 @@
 
 #import "applyShop.h"
 #import "Conf.h"
+#import "AppDelegate.h"
+
 @interface applyShop ()
 
 @end
@@ -19,8 +21,11 @@
     // Do any additional setup after  loading the view.
     self.view.backgroundColor = [UIColor colorWithRed:0.225 green:0.225 blue:0.225 alpha:0.1];
     //红色界面
-    UIImageView *imageView1 = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 65)];
+    UIImageView *imageView1 = [[UIImageView alloc]initWithFrame:
+                               BSRectMake(NAVIGATIONBAR_X, NAVIGATIONBAR_Y,
+                                          NAVIGATIONBAR_WIDTH, NAVIGATIONBAR_HEIGHT)];
     NSString *imageName = [NSString stringWithFormat:@"yhkbd_01.png"];
+    
     imageView1.image = [UIImage imageNamed:imageName];
     [self.view addSubview:imageView1];
     //返回按钮

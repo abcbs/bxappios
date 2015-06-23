@@ -17,7 +17,7 @@
 #import "BSTableViewRefresh.h"
 #import "ErrorMessage.h"
 #import "BSUIComponentView.h"
-
+#import "AppDelegate.h"
 
 @interface TableViewController ()
 
@@ -39,13 +39,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //[self setupRefresh];
+    
+    [self.navigationController.navigationBar setBarStyle:UIBarStyleBlack];
+    [self.navigationController.navigationBar setBackgroundColor
+     :[UIColor redColor]];
+    
+    
+    //[self loadMoreData:[self firstDataId] dataCount:1];
     // 初始化网络请求
     self.mNetwork = [[EHNetwork alloc] init];
 
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:self action:@selector(backClick)];
 }
-
 
 
 #pragma mark 开始进入刷新状态
@@ -77,9 +81,8 @@
 }
 
 
-- (void)backClick
-{
-    [self dismissViewControllerAnimated:YES completion:nil];
+- (IBAction)backClick:(id)sender{
+     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark ----- tableView的代理方法
@@ -107,12 +110,14 @@
         //获取业务数据方法
         [WaterSending
          listWaterList:warterId dataCount:cellCount
+         //屏蔽弹出信息
+         errorUILabel:[[UILabel alloc] init]
          //块的使用方式
          block:^(NSObject *response, NSError *error,ErrorMessage *errorMessage) {
              [self.dataTable addObjectsFromArray:(NSArray *)response];
+             // 2.刷新表格UI 刷新表格
              [self.tableView reloadData];
-         }
-         
+            }
          ];
     } completionBlock:^{
     }];
@@ -123,12 +128,14 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"KTWaterDetailsViewController" bundle:nil];
-    KTWaterDetailsViewController *shoppControl = [storyboard instantiateInitialViewController];
+    KTWaterDetailsViewController *shoppControl = [storyboard instantiateViewControllerWithIdentifier:@"KTWaterDetailsViewController"];
     shoppControl.waterSending = self.dataTable[indexPath.row];
+    
     [self checkLogin:shoppControl waterSending:self.dataTable[indexPath.row]];
-    [self.navigationController pushViewController:shoppControl animated:YES];
     
-    
+    //[self.navigationController pushViewController:shoppControl animated:YES];
+   
+    [self.navigationController presentViewController:shoppControl animated:YES completion:nil   ];
 }
 
 -(void)checkLogin:(KTWaterDetailsViewController *)shoppControl
@@ -170,7 +177,6 @@
     WaterSending *ws=[self.dataTable lastObject];
     return ws.id;
 }
-
 
 
 @end

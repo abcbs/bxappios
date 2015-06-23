@@ -41,9 +41,9 @@
     self.productName.text = self.carlist.productName;// self.waterSending.name;
     self.productIntroduce.text = [NSString stringWithFormat:@"商品简介 : %@",self.carlist.productIntroduce];
     
-    self.productSalePrice.text =[NSString stringWithFormat:@"￥%d",self.carlist.productSalePrice];
+    self.productSalePrice.text =[NSString stringWithFormat:@"￥%@",self.carlist.productSalePrice];
     
-    self.productPreferPrice.text =[NSString stringWithFormat:@"￥%d",self.carlist.productPreferPrice];
+    self.productPreferPrice.text =[NSString stringWithFormat:@"￥%@",self.carlist.productPreferPrice];
     
 }
 

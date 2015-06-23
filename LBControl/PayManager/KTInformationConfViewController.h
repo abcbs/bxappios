@@ -10,4 +10,7 @@
 
 @interface KTInformationConfViewController : UIViewController
 
+- (IBAction)backClick:(id)sender;
+
+
 @end

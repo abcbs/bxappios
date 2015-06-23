@@ -95,7 +95,7 @@
 }
 
 -(int )pageCount{
-    return CONTENT_HIGH/WATER_LIST_ROW_HIGH;
+    return CONTENT_HIGH/WATER_LIST_ROW_HIGH+2;
 }
 
 -(long )firstDataId{

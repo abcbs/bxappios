@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/KT-APP-BS/LBControl/MyOrderItems/AlreadyCommit.m \
-  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/KT-APP-BS/LBControl/MyOrderItems/AlreadyCommit.h
+  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/LBControl/MyOrderItems/AlreadyCommit.m \
+  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/LBControl/MyOrderItems/AlreadyCommit.h

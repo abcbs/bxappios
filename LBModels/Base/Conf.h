@@ -29,12 +29,28 @@
 /**
  *  导航栏高度
  */
-#define NAVIGATIONBAR_HEIGHT 44
+#define NAVIGATIONBAR_HEIGHT 66
+
+/**
+ *  导航宽度
+ */
+#define NAVIGATIONBAR_WIDTH (SCREEN_WIDTH)
+
+/**
+ * 导航栏X坐标
+ */
+#define NAVIGATIONBAR_X 0
+
+
+/**
+ * 导航栏X坐标
+ */
+#define NAVIGATIONBAR_Y 0
 
 /**
  *  状态栏高度
  */
-#define STATUS_HEIGHT 20
+#define STATUS_HEIGHT 22
 
 
 #define CONTENT_HIGH (SCREEN_HEIGHT-NAVIGATIONBAR_HEIGHT)
@@ -51,15 +67,15 @@
 #define scale (CGFloat)[[UIScreen mainScreen] scale]
 
 
-#define IS_IPHONE (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+#define IS_IPHONE (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
 
 
 #define IS_IPHONE5 (([[UIScreen mainScreen] bounds].size.height-568)?NO:YES)
 
 
-#define IS_IPHONE_6PLUS (IS_IPHONE && [[UIScreen mainScreen] nativeScale] == 3.0f)
+#define IS_IPHONE_6PLUS (IS_IPHONE && [[UIScreen mainScreen] nativeScale] == 3.0f)
 
-#define IS_IPHONE_6 (IS_IPHONE && ([[UIScreen mainScreen] nativeScale] == 2.0f)&&([[UIScreen mainScreen] bounds].size.height-667)==0)
+#define IS_IPHONE_6 (IS_IPHONE && ([[UIScreen mainScreen] nativeScale] == 2.0f)&&([[UIScreen mainScreen] bounds].size.height-667)==0)
 
 
 /**
@@ -119,7 +135,7 @@
 /**
  *基础URL
  */
-#define KBS_URL @"http://192.168.1.104:8090/"
+#define KBS_URL @"http://192.168.0.109:8090/"
 
 /**
  *送水列表请求模式
@@ -167,6 +183,7 @@
 
 
 +(NSString *)urlWithShoppingCart;
+
 
 
 /** jiaru购物车的url */

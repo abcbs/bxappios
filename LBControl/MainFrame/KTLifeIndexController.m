@@ -17,6 +17,8 @@
 #import "appointmentController.h"
 #import "lifeServiceController.h"
 #import "bankController.h"
+#import "AppDelegate.h"
+
 #define kScreenWidth [UIScreen mainScreen].bounds.size.width
 #define kScreenHight [UIScreen mainScreen].bounds.size.height
 @interface KTLifeIndexController ()<UIScrollViewDelegate,UITableViewDataSource,UITableViewDelegate,imagePlayerDelegate>
@@ -24,8 +26,8 @@
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, copy) NSArray *imageNameArray;
 
-@property (strong, nonatomic)IBOutlet UIScrollView *scrollView;
-@property (strong, nonatomic)IBOutlet UIPageControl *pageControl;
+//@property (strong, nonatomic)IBOutlet UIScrollView *scrollView;
+//@property (strong, nonatomic)IBOutlet UIPageControl *pageControl;
 
 
 @property (nonatomic, weak) UIView *imageView;
@@ -48,7 +50,7 @@
 
 -(UITableView *)tableView{
     if (_tableView == nil) {
-        _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0,0, SCREEN_WIDTH, SCREEN_HEIGHT-NAVIGATION_ADD_STATUS_HEIGHT) style:UITableViewStyleGrouped];
+        _tableView = [[UITableView alloc]initWithFrame:BSRectMake(NAVIGATIONBAR_X, NAVIGATIONBAR_Y, SCREEN_WIDTH, SCREEN_HEIGHT-NAVIGATION_ADD_STATUS_HEIGHT) style:UITableViewStyleGrouped];
         self.tableView.dataSource =self;
         self.tableView.delegate = self;
         self.imageNameArray = @[@"tuhongse.png",@"tukuaihuang.png",@"tulvse.png",@"tukuailvse.png",@"tukuail.png"];
@@ -143,13 +145,5 @@
     }
 
 }
-
-
-
-
-
-
-
-
 
 @end

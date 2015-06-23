@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C2043" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Nez-jc-Dso">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+    </dependencies>
+    <scenes>
+        <!--我的圈子-->
+        <scene sceneID="qc1-Wc-aUI">
+            <objects>
+                <viewController storyboardIdentifier="SetViewController" title="我的圈子" id="DRI-Bb-9SC" customClass="SetViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wwX-ne-qHB"/>
+                        <viewControllerLayoutGuide type="bottom" id="VsO-Dj-WWM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZN2-DM-icg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" tag="40" title="我的圈子" image="wdqzh" id="w86-cA-7QV"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h9c-Qb-2b8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-226" y="625"/>
+        </scene>
+        <!--首页-->
+        <scene sceneID="M02-M7-g6e">
+            <objects>
+                <viewController storyboardIdentifier="KTLifeIndexController" title="首页" id="nEd-Zh-9gZ" customClass="KTLifeIndexController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GTI-7B-ssq"/>
+                        <viewControllerLayoutGuide type="bottom" id="9lD-FZ-8NU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="c07-mn-yPo">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" tag="10" title="首页" image="shfwh" id="YtB-6q-pXq"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eaZ-Ud-cad" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="148" y="-407"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="GME-Dr-gLk">
+            <objects>
+                <tabBarController id="Nez-jc-Dso" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="yel-Xd-uYx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="nEd-Zh-9gZ" kind="relationship" relationship="viewControllers" id="u5d-M9-agD"/>
+                        <segue destination="mb0-RB-fed" kind="relationship" relationship="viewControllers" id="xiy-PC-SOj"/>
+                        <segue destination="a0Q-KS-9Dv" kind="relationship" relationship="viewControllers" id="7lT-Ct-d2o"/>
+                        <segue destination="DRI-Bb-9SC" kind="relationship" relationship="viewControllers" id="6Oi-1W-zvc"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kkO-ZQ-EzP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-422" y="-92"/>
+        </scene>
+        <!--便民服务-->
+        <scene sceneID="ncP-xx-ARr">
+            <objects>
+                <viewController storyboardIdentifier="KTHandyViewController" title="便民服务" id="a0Q-KS-9Dv" customClass="KTHandyViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="etU-BL-Yvg"/>
+                        <viewControllerLayoutGuide type="bottom" id="EsE-1o-k4d"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JjC-cp-FrE">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2hU-Oc-v9e">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <color key="barTintColor" red="0.3803921569" green="0.070588235289999995" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="便民服务" id="zCG-vz-vXw"/>
+                                </items>
+                            </navigationBar>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Eo-a5-3xf">
+                                <rect key="frame" x="144" y="253" width="51" height="31"/>
+                            </switch>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="便民服务" image="xysjh" id="fON-xn-DDD"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F3h-3T-mQq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="148" y="228"/>
+        </scene>
+        <!--生活服务-->
+        <scene sceneID="v46-eF-8qa">
+            <objects>
+                <viewController storyboardIdentifier="KTlifeViewController" title="便捷服务" id="mb0-RB-fed" userLabel="生活服务" customClass="KTlifeViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="va1-JI-Pyq"/>
+                        <viewControllerLayoutGuide type="bottom" id="hfC-UX-fWx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="A87-0A-sJ4">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" tag="30" title="生活服务" image="bjfw" id="ZWR-eQ-B1d" userLabel="生活服务"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QaW-2d-M4s" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-651" y="625"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bjfw" width="29" height="29"/>
+        <image name="shfwh" width="29" height="29"/>
+        <image name="wdqzh" width="29" height="29"/>
+        <image name="xysjh" width="29" height="29"/>
+    </resources>
+</document>

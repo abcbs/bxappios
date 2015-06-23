@@ -34,14 +34,17 @@
 {
     return KBS_URL;
 }
+
 +(NSString *)urlWaterList{
     NSString * url=[WATER_LIST
                          stringByAppendingString:WATER_CATA];
      return url;
 }
 
-
-
++(NSString *)urlWithShoppingCart{
+    NSString *url = [KBS_URL stringByAppendingString:WATER_SHOPPCART_USERCARTS];
+    return url;
+}
 //NSString *str = @"http://192.168.1.103:8090/productcomment/productcomments/1/0/1";
 +(NSString *)urlWaterDetailComment{
     NSString * url=WATER_DETAIL_COMMENT;
@@ -49,21 +52,6 @@
     return url;
 }
 
-/**
- *
- */
-+ (NSString *)urlWithShoppingCart
-{
-    //urlWithShoppingCart
-   return @"http://192.168.1.104:8090/shoppingcart/usercarts";
-}
-
-
-+(NSString *)urlWithAddShoppingCart{
-    NSString *url= [KBS_URL
-                    stringByAppendingString:WATER_SHOPPCART_ADDCART];
-    return url;
-}
 
 +(NSString *)urlWaterShoppingDelcartlist{
     NSString *url = [KBS_URL stringByAppendingString:WATER_SHOPPCART_DELCARTLIST];

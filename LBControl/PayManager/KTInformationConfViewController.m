@@ -25,10 +25,11 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)comeback:(UIButton *)sender {
+
+- (void)backClick
+{
     [self dismissViewControllerAnimated:YES completion:nil];
 }
-
 
 - (IBAction)commentOrder:(UIButton *)sender {
     
@@ -38,5 +39,7 @@
     
     
     [self presentViewController:login3 animated:YES completion:nil];
+}
+- (IBAction)backClick:(id)sender {
 }
 @end

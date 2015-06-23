@@ -61,13 +61,18 @@
 @implementation KTWaterDetailsViewController
 
 @synthesize shoppingCart;
+@synthesize waterSending;
+
 
 -(void)viewDidLoad {
     [super viewDidLoad];
     if (shoppingCart==nil) {
         shoppingCart=[[ShoppingCart alloc]init];
     }
-    self.view.backgroundColor = [UIColor whiteColor];
+    
+    [self.navigationController.navigationBar setBarStyle:UIBarStyleBlack];
+    [self.navigationController.navigationBar setBackgroundColor
+     :[UIColor redColor]];
     
     // 初始化图片轮播起
    [self initImgPlay];
@@ -77,7 +82,10 @@
     [self productcomments];
 }
 
-
+- (void)backClick
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 - (void)initImgPlay{
    
         //循环生成5张图片，依次添加到scrollView中
@@ -336,4 +344,6 @@
 }
 
 
+- (IBAction)backButton:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];}
 @end

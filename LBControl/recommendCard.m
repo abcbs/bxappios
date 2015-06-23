@@ -127,7 +127,7 @@
 #pragma mark -- dropDownListDelegate
 -(void) chooseAtSection:(NSInteger)section index:(NSInteger)index
 {
-    NSLog(@"童大爷选了section:%d ,index:%d",section,index);
+    NSLog(@"童大爷选了section:%ld ,index:%ld",(long)section,(long)index);
 }
 
 #pragma mark -- dropdownList DataSource

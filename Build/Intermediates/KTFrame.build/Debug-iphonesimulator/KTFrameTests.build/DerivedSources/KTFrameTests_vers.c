@@ -1,1 +1,0 @@
- const unsigned char KTFrameTestsVersionString[] __attribute__ ((used)) = "@(#)PROGRAM:KTFrameTests  PROJECT:KTFrame-1" "\n"; const double KTFrameTestsVersionNumber __attribute__ ((used)) = (double)1.;
