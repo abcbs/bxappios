@@ -7,7 +7,7 @@
 //
 
 #import "Conf.h"
-
+#import "AppDelegate.h"
 
 #import "AFNetworkReachabilityManager.h"
 @implementation Conf
@@ -62,6 +62,20 @@
     NSString *url = [KBS_URL stringByAppendingString:WATER_SHOPPCART_UPDATECART];
     return url;
 }
+
++(void)navigationControllerHeader:(UINavigationController *)navigationController{
+    [navigationController.navigationBar setBarStyle:UIBarStyleBlack];
+    [navigationController.navigationBar setBackgroundColor
+     :[UIColor redColor]];
+}
+
++(UIImageView *)navigationHeaderWithImage:(NSString *)imageName{
+    UIImageView *imageView = [[UIImageView alloc]initWithFrame:BSRectMake(NAVIGATIONBAR_X, NAVIGATIONBAR_Y,
+                                                                          NAVIGATIONBAR_WIDTH, NAVIGATIONBAR_HEIGHT)];
+    NSString *image = [NSString stringWithFormat:imageName];
+    imageView.image = [UIImage imageNamed:image];
+    return imageView;
+}
 //对异常信息的处理
 //暂无网络
 + (BOOL)isNetwork{
@@ -72,6 +86,7 @@
     else{
         return YES;
     }
+    
     
 }
 

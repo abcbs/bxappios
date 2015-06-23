@@ -59,11 +59,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="ZXZ-ix-0z7">
-                                <rect key="frame" x="141" y="198" width="39" height="37"/>
-                                <color key="pageIndicatorTintColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="currentPageIndicatorTintColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </pageControl>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XlH-VE-jHr">
                                 <rect key="frame" x="5" y="260" width="315" height="138"/>
                                 <subviews>
@@ -156,9 +151,6 @@
                                     <action selector="addCart:" destination="Mzx-y9-RYq" eventType="touchUpInside" id="h1c-vQ-Tq9"/>
                                 </connections>
                             </button>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BgA-m2-lUV">
-                                <rect key="frame" x="101" y="75" width="118" height="125"/>
-                            </scrollView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mfd-sn-wed">
                                 <rect key="frame" x="0.0" y="440" width="320" height="119"/>
                                 <subviews>
@@ -228,6 +220,18 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VPR-u7-VpE" customClass="BSFCRollingADImageUIView">
+                                <rect key="frame" x="0.0" y="64" width="320" height="199"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mUa-js-tR1">
+                                        <rect key="frame" x="128" y="26" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -236,11 +240,10 @@
                     <connections>
                         <outlet property="carNumText" destination="ike-9E-3Sn" id="Z5c-BS-Zeb"/>
                         <outlet property="comment" destination="vZR-Ln-Gs8" id="vof-y6-jgY"/>
+                        <outlet property="imagePlayer" destination="VPR-u7-VpE" id="FB2-bE-41f"/>
                         <outlet property="introduce" destination="sm7-2n-acP" id="e1Q-IL-lt5"/>
-                        <outlet property="pageControl" destination="ZXZ-ix-0z7" id="QZP-vV-XZy"/>
                         <outlet property="preferPrice" destination="W3L-tK-uCS" id="nZp-k0-pzm"/>
                         <outlet property="salePrice" destination="reW-2K-TlZ" id="qll-bY-JTr"/>
-                        <outlet property="scrollView" destination="BgA-m2-lUV" id="DUe-AQ-cfT"/>
                         <outlet property="unitPrice" destination="9PC-9D-z5U" id="Zp2-XE-ZoA"/>
                         <outlet property="username" destination="rMf-jU-yiW" id="vWd-8S-Ua2"/>
                     </connections>

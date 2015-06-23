@@ -36,12 +36,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [self.navigationController.navigationBar setBarStyle:UIBarStyleBlack];
-    [self.navigationController.navigationBar setBackgroundColor
-     :[UIColor redColor]];
-    
-    
+    [Conf navigationControllerHeader:self.navigationController ];
     //[self loadMoreData:[self firstDataId] dataCount:1];
 
 }

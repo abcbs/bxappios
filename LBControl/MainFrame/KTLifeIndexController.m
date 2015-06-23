@@ -51,6 +51,7 @@
         self.imageNameArray = @[@"tuhongse.png",@"tukuaihuang.png",@"tulvse.png",@"tukuailvse.png",@"tukuail.png"];
         
         UINib *nib = [UINib nibWithNibName:@"KTLifeIndexCell" bundle:nil];
+        
         [self.tableView registerNib:nib forCellReuseIdentifier:@"KTLifeIndexCell"];
         //设置每个section之间的间隙
         self.tableView.sectionHeaderHeight = 1;
@@ -85,8 +86,6 @@
     }
     
     self.imagePlayer =[BSFCRollingADImageUIView initADImageUIViewWith:tempArray playerDelegate:self urls:nil];
-    
-    
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{

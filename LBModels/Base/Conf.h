@@ -6,7 +6,7 @@
 //  Copyright (c) 2015年 itcast. All rights reserved.
 //
 #import <Foundation/Foundation.h>
-
+#import <UIKit/UIKit.h>
 
 @interface Conf : NSObject
 
@@ -18,6 +18,12 @@
 
 // objc_msgSend
 #define msgSend(...) ((void (*)(void *, SEL, UIView *))objc_msgSend)(__VA_ARGS__)
+
+/**
+ *基础URL
+ */
+#define KBS_URL @"http://192.168.1.104:8090/"
+
 /**
  *  屏幕宽度;
  */
@@ -128,14 +134,8 @@
  */
 #define WATER_CATA @"/1001/"
 
-#pragma mark--功能的请求参数及请求参数模式
+#pragma mark--功能的请求参数及请求参数模
 
-
-
-/**
- *基础URL
- */
-#define KBS_URL @"http://192.168.0.109:8090/"
 
 /**
  *送水列表请求模式
@@ -194,6 +194,11 @@
 
 /** 更新购物车url */
 +(NSString *)urlWaterShoppingUpdateCart;
+
++(void)navigationControllerHeader:(UINavigationController *)navigationController;
+
++(UIImageView *)navigationHeaderWithImage:(NSString *)imageName;
+
 
 //对异常的处理
 + (BOOL)isNetwork;

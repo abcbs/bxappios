@@ -7,7 +7,7 @@
 //
 
 #import "KTInformationConfViewController.h"
-
+#import "Conf.h"
 @interface KTInformationConfViewController ()
 - (IBAction)commentOrder:(UIButton *)sender;
 
@@ -17,7 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    [Conf navigationControllerHeader:self.navigationController ];
 }
 
 - (void)didReceiveMemoryWarning {

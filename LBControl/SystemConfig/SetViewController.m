@@ -54,10 +54,8 @@
     [self.view addSubview:self.tableView];
     
     //红色界面
-    UIImageView *imageView = [[UIImageView alloc]initWithFrame:BSRectMake(NAVIGATIONBAR_X, NAVIGATIONBAR_Y,
-                                                                          NAVIGATIONBAR_WIDTH, NAVIGATIONBAR_HEIGHT)];
-    NSString *imageName = [NSString stringWithFormat:@"生活圈.jpg"];
-    imageView.image = [UIImage imageNamed:imageName];
+  
+    UIImageView *imageView=[Conf navigationHeaderWithImage:@"生活圈.jpg"];
     [self.view addSubview:imageView];
     
     //头像设置

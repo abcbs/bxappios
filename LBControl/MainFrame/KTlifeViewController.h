@@ -10,4 +10,7 @@
 
 @interface KTlifeViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIView *imagePlayer;
+
+
 @end

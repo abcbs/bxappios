@@ -12,6 +12,7 @@
 #import "WaterSendingDetails.h"
 #import "CommodityEvaluationRequest.h"
 #import "ShoppingCart.h"
+#import "BSFCRollingADImageUIView.h"
 
 @interface KTWaterDetailsViewController : UIViewController
 
