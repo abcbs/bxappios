@@ -10,13 +10,21 @@
 
 @interface KTHandyViewController ()
 
+
+
 @end
 
 @implementation KTHandyViewController
 
+@synthesize showSwitchValue;
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    [self.navigationController.navigationBar setBarStyle:UIBarStyleBlack];
+    [self.navigationController.navigationBar setBackgroundColor
+     :[UIColor redColor]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,4 +42,14 @@
     NSLog(@"提交");
 }
 
+- (IBAction)availBluetoothDevice:(id)sender {
+    NSLog(@"获取蓝牙设备信息");
+    UISwitch *switchButton = (UISwitch*)sender;
+    BOOL isButtonOn = [switchButton isOn];
+    if (isButtonOn) {
+        showSwitchValue.text = @"是";
+    }else {
+        showSwitchValue.text = @"否";
+    }
+}
 @end

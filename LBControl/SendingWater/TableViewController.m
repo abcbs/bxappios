@@ -149,7 +149,7 @@
         LoginViewController  *nv = [[LoginViewController  alloc]init];
         
         [self presentViewController:nv animated:YES completion:nil];
-    }
+    }else{
     ShoppingCart *shoppingCart =[[ShoppingCart alloc] init];
     shoppingCart.sessionId=sessionID;
     shoppingCart.currentCount=[[NSNumber alloc] initWithLong:0];
@@ -157,6 +157,7 @@
                                     initWithLong:waterSending.id];
     [self getCard:shoppingCart];
     shoppControl.shoppingCart=shoppingCart;
+    }
 }
 
 -(void) getCard:(ShoppingCart *)shoppingCart

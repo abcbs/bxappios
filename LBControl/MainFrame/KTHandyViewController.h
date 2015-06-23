@@ -10,4 +10,10 @@
 
 @interface KTHandyViewController : UIViewController
 
+- (IBAction)availBluetoothDevice:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UILabel *showSwitchValue;
+
+
+
 @end

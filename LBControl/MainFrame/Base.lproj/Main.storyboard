@@ -24,6 +24,36 @@
             </objects>
             <point key="canvasLocation" x="-226" y="625"/>
         </scene>
+        <!--周边服务-->
+        <scene sceneID="grD-oy-9vJ">
+            <objects>
+                <tableViewController storyboardIdentifier="BluetoothMainController" id="u0v-m7-mUx" userLabel="周边服务" customClass="BluetoothMainController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="7YF-Cf-VGC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="v4v-aO-tsW">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="v4v-aO-tsW" id="wRG-Yp-UnM">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="u0v-m7-mUx" id="LRD-mu-VqU"/>
+                            <outlet property="delegate" destination="u0v-m7-mUx" id="hLc-H4-XaB"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="ajJ-Re-cte">
+                        <nil key="title"/>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FgX-hh-GYP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-149" y="-779"/>
+        </scene>
         <!--首页-->
         <scene sceneID="M02-M7-g6e">
             <objects>
@@ -42,7 +72,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eaZ-Ud-cad" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="148" y="-407"/>
+            <point key="canvasLocation" x="680" y="-407"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="GME-Dr-gLk">
@@ -59,12 +89,13 @@
                         <segue destination="nEd-Zh-9gZ" kind="relationship" relationship="viewControllers" id="u5d-M9-agD"/>
                         <segue destination="mb0-RB-fed" kind="relationship" relationship="viewControllers" id="xiy-PC-SOj"/>
                         <segue destination="a0Q-KS-9Dv" kind="relationship" relationship="viewControllers" id="7lT-Ct-d2o"/>
+                        <segue destination="o9H-AP-vZR" kind="relationship" relationship="viewControllers" id="FYI-jh-5kf"/>
                         <segue destination="DRI-Bb-9SC" kind="relationship" relationship="viewControllers" id="6Oi-1W-zvc"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kkO-ZQ-EzP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-422" y="-92"/>
+            <point key="canvasLocation" x="-417" y="-93"/>
         </scene>
         <!--便民服务-->
         <scene sceneID="ncP-xx-ARr">
@@ -97,12 +128,24 @@
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Eo-a5-3xf" userLabel="获取蓝牙设备">
                                 <rect key="frame" x="249" y="105" width="51" height="31"/>
+                                <connections>
+                                    <action selector="availBluetoothDevice:" destination="a0Q-KS-9Dv" eventType="valueChanged" id="k0n-dr-XVv"/>
+                                </connections>
                             </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="状态值" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zRT-bO-7ws">
+                                <rect key="frame" x="134" y="110" width="51" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="便民服务" image="xysjh" id="fON-xn-DDD"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="showSwitchValue" destination="zRT-bO-7ws" id="jVd-h2-oWS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F3h-3T-mQq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -128,6 +171,26 @@
             </objects>
             <point key="canvasLocation" x="-651" y="625"/>
         </scene>
+        <!--周边服务-->
+        <scene sceneID="rm5-Mz-Z4D">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="o9H-AP-vZR" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="周边服务" image="xysjh" id="ypv-ec-qad"/>
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="J6w-PE-4UI">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="u0v-m7-mUx" kind="relationship" relationship="rootViewController" id="hOQ-Vw-Mjq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dEn-m8-QPr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-681" y="-779"/>
+        </scene>
     </scenes>
     <resources>
         <image name="bjfw" width="29" height="29"/>
@@ -135,4 +198,5 @@
         <image name="wdqzh" width="29" height="29"/>
         <image name="xysjh" width="29" height="29"/>
     </resources>
+    <color key="tintColor" red="0.3803921569" green="0.070588235289999995" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
 </document>
