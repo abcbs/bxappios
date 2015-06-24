@@ -15,6 +15,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *showSwitchValue;
 
+
 @property (nonatomic, strong) CBPeripheralManager *manager;
 
 @end

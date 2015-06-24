@@ -22,6 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [Conf navigationControllerHeader:self.navigationController ];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -49,4 +50,5 @@
         showSwitchValue.text = @"否";
     }
 }
+
 @end
