@@ -128,6 +128,9 @@
     [self.navigationController presentViewController:shoppControl animated:YES completion:nil   ];
 }
 
+/**
+ *根据是否登录来判断是否到购物车功能页
+ */
 -(void)checkLogin:(KTWaterDetailsViewController *)shoppControl
      waterSending:(WaterSending *)waterSending
 {
@@ -140,13 +143,13 @@
         
         [self presentViewController:nv animated:YES completion:nil];
     }else{
-    ShoppingCart *shoppingCart =[[ShoppingCart alloc] init];
-    shoppingCart.sessionId=sessionID;
-    shoppingCart.currentCount=[[NSNumber alloc] initWithLong:0];
-    shoppingCart.businessProductId=[[NSNumber alloc]
+        ShoppingCart *shoppingCart =[[ShoppingCart alloc] init];
+        shoppingCart.sessionId=sessionID;
+        shoppingCart.currentCount=[[NSNumber alloc] initWithLong:0];
+        shoppingCart.businessProductId=[[NSNumber alloc]
                                     initWithLong:waterSending.id];
-    [self getCard:shoppingCart];
-    shoppControl.shoppingCart=shoppingCart;
+        [self getCard:shoppingCart];
+        shoppControl.shoppingCart=shoppingCart;
     }
 }
 

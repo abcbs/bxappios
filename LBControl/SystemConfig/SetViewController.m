@@ -1,6 +1,6 @@
 //
 //  SetViewController.m
-//  民生小区
+//  主界面，我的圈子
 //
 //  Created by 闫青青 on 15/4/24.
 //  Copyright (c) 2015年 itcast. All rights reserved.

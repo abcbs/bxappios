@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/民生小区/Classes/Controller/LoginRegisterView/SetCell.m \
-  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/民生小区/Classes/Controller/LoginRegisterView/SetCell.h
+  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/LBControl/SystemConfig/SetCell.m \
+  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/LBControl/SystemConfig/SetCell.h
