@@ -76,6 +76,9 @@
     imageView.image = [UIImage imageNamed:image];
     return imageView;
 }
+
+
+
 //对异常信息的处理
 //暂无网络
 + (BOOL)isNetwork{

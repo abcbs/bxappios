@@ -13,26 +13,17 @@
 
 @synthesize header;
 @synthesize vcClass;
+@synthesize headerImageName;
 @synthesize content;
 
 +(instancetype) initWithHeaderVcClassContent:(NSString *)header
-                                      vcClass:(Class)vcClass
-                                    bsContent:(NSMutableArray *)bsContents{
+                                   imageName:(NSString *)imageName                                     vcClass:(Class)vcClass
+                                   bsContent:(NSMutableArray *)bsContents{
     return [[super alloc]
-            initWithHeaderVcClassContent:header vcClass:vcClass bsContentArray:bsContents];
+            initWithHeaderVcClassContent:header imageName:imageName vcClass:vcClass bsContentArray:bsContents];
 }
 
-+(instancetype) initWithHeaderVcClassFirstContent:(NSString *)header
-                                          vcClass:(Class)vcClass
-                                           firstRowTitle:(NSString *)title
-                                   firstRowMethod:(NSString *)method
 
-{
-    BSTableContentObject *bsContent=[BSTableContentObject initContentObject:title methodName:method];
-    
-    return [[super alloc]
-            initWithHeaderVcFirstClassContent:header vcClass:vcClass bsContent:bsContent];
-}
 
 - (instancetype)init{
     self = [super init];
@@ -43,27 +34,17 @@
     return self;
 }
 
--(instancetype)initWithHeaderVcFirstClassContent: (NSString *)tableHeader
-                                    vcClass:(Class)contentClass
-                             bsContent:(BSTableContentObject *)bscontent{
-    self=[self init];
-    if (self.content==nil) {
-        self.content=[NSMutableArray array];
-    }
-    self.header=tableHeader;
-    self.vcClass=contentClass;
-    [self.content addObject:bscontent];
-    return self;
-}
+
 
 -(instancetype)initWithHeaderVcClassContent: (NSString *)tableHeader
-                                    vcClass:(Class)contentClass
+                                  imageName:(NSString *)imageName                                      vcClass:(Class)contentClass
                                   bsContentArray:(NSMutableArray *)bsContents{
     self=[self init];
     if (self.content==nil) {
         self.content=[NSMutableArray array];
     }
     self.header=tableHeader;
+    self.headerImageName=imageName;
     self.vcClass=contentClass;
     [self.content addObjectsFromArray:bsContents];
     return self;

@@ -30,7 +30,7 @@
             modelClass:[WaterSending class]
             keyPath:@"waterSending"
             block:(BSHTTPResponse)block
-            errorUILabel:errorUILabel     
+            errorUILabel:errorUILabel
      ];
     
 }

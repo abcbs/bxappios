@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreBluetooth/CoreBluetooth.h>
+#import "BSUITableViewInitRuntimeController.h"
 
-@interface KTHandyViewController : UIViewController
+@interface KTHandyViewController : BSUITableViewInitRuntimeController
 
 - (IBAction)availBluetoothDevice:(id)sender;
 
@@ -17,5 +18,8 @@
 
 
 @property (nonatomic, strong) CBPeripheralManager *manager;
+
+
+
 
 @end

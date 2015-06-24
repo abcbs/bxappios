@@ -19,5 +19,6 @@
 
 @property (nonatomic,retain)  NSMutableArray *dataTable;
 
+@property (retain, nonatomic) UILabel *errorInfo;
 
 @end

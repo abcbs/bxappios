@@ -26,7 +26,6 @@
 @implementation TableViewController
 
 
-
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -39,7 +38,7 @@
     //改变状态来默认颜色
     [Conf navigationHeader:self.navigationController ];
     //[self loadMoreData:[self firstDataId] dataCount:1];
-
+ 
 }
 
 
@@ -102,7 +101,7 @@
         [WaterSending
          listWaterList:warterId dataCount:cellCount
          //屏蔽弹出信息
-         errorUILabel:[[UILabel alloc] init]
+         errorUILabel:super.errorInfo
          //块的使用方式
          block:^(NSObject *response, NSError *error,ErrorMessage *errorMessage) {
              [self.dataTable addObjectsFromArray:(NSArray *)response];
@@ -114,6 +113,7 @@
     }];
     
 }
+
 
 // 点击某一行，进入产品详细页
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

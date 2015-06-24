@@ -109,6 +109,7 @@
     block:(BSHTTPResponse)block
     errorUILabel:( UILabel *)errorUILabel
 {
+    NSLog(@"本次请求URL\t%@",KBS_URL);
     NSLog(@"本次请求路径为%@",restPath);
     NSLog(@"本次请求方法GET");
     
@@ -183,7 +184,7 @@
     block:(BSHTTPResponse)block
     errorUILabel:( UILabel *)errorUILabel
 {
-    
+    NSLog(@"本次请求URL\t%@",KBS_URL);
     NSLog(@"本次请求路径为\t%@",restPath);
     NSLog(@"本次请求参数\t%@",parameters);
     NSLog(@"本次请求方法POST");
@@ -206,12 +207,14 @@
     block:(BSHTTPResponse)block
     errorUILabel:( UILabel *)errorUILabel{
     return ^(NSURLSessionDataTask *task, id responseObject, id model) {
-        NSLog(@"本次请求返回信息为\n%@",model);
+        
         if (block&&![model isKindOfClass:[ErrorMessage class]]) {
+            
             block(model,nil,nil);
         }else if(block&& [model isKindOfClass:[ErrorMessage class]]){
-            model=(ErrorMessage *)model;
-           
+            ErrorMessage *bserror=model;
+            NSLog(@"本次请求返回信息为\n%@ \tMessage:\t%@",
+                  bserror.errorCode,bserror.message);
             if (errorUILabel) {
                 errorUILabel.text=[(ErrorMessage *)model message ];
             }else{
@@ -236,10 +239,9 @@
             
             if (errorUILabel) {
                 errorUILabel.text=error.description;
-            }else{
+            }else {
                 [BSUIComponentView
-                 confirmUIAlertView:error.description
-             ];
+                 confirmUIAlertView:error.description];
             }
         }
     };

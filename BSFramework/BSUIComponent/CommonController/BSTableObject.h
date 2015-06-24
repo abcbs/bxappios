@@ -13,6 +13,7 @@
 @interface BSTableObject : NSObject
 
     @property (copy, nonatomic) NSString *header;
+    @property (copy, nonatomic) NSString *headerImageName;
     @property (strong, nonatomic) NSMutableArray *content;
     @property (assign, nonatomic) Class vcClass;
 
@@ -20,13 +21,9 @@
  *初始化
  */
 +(instancetype) initWithHeaderVcClassContent:(NSString *)header
-                                     vcClass:(Class)vcClass
+                                   imageName:(NSString *)imageName                                     vcClass:(Class)vcClass
                                    bsContent:(NSMutableArray *)bsContents;
 
-+(instancetype) initWithHeaderVcClassFirstContent:(NSString *)header
-                                          vcClass:(Class)vcClass
-                                    firstRowTitle:(NSString *)title
-                                   firstRowMethod:(NSString *)method;
 
 -(void)addBSTableContent:(BSTableContentObject *)bsContent;
 

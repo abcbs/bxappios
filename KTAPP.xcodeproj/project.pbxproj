@@ -33,7 +33,6 @@
 		842042B01B2984D80002C868 /* KTCartFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 842042AA1B2984D80002C868 /* KTCartFooterView.m */; };
 		842042B11B2984D80002C868 /* KTCartTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 842042AC1B2984D80002C868 /* KTCartTableView.m */; };
 		842042B21B2984D80002C868 /* KTCartTableView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 842042AD1B2984D80002C868 /* KTCartTableView.storyboard */; };
-		842042B51B2985750002C868 /* KTTarBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 842042B41B2985750002C868 /* KTTarBarController.m */; };
 		842042BF1B29881B0002C868 /* YYHMantleModelSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 842042BE1B29881B0002C868 /* YYHMantleModelSerializer.m */; };
 		842042C51B2988410002C868 /* YYHModelRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = 842042C11B2988410002C868 /* YYHModelRoute.m */; };
 		842042C61B2988410002C868 /* YYHModelRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 842042C31B2988410002C868 /* YYHModelRouter.m */; };
@@ -221,7 +220,6 @@
 		847076641B3A9DFB00F28180 /* BSTableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 847076631B3A9DFB00F28180 /* BSTableObject.m */; };
 		847076671B3AA01B00F28180 /* BSTableContentObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 847076661B3AA01B00F28180 /* BSTableContentObject.m */; };
 		847076711B3AB21300F28180 /* UIViewController+BSTableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 847076701B3AB21300F28180 /* UIViewController+BSTableObject.m */; };
-		847076741B3AB4BD00F28180 /* BSTableViewAutoLoadController.m in Sources */ = {isa = PBXBuildFile; fileRef = 847076731B3AB4BD00F28180 /* BSTableViewAutoLoadController.m */; };
 		847432D01B2A8AF700B030C4 /* VPImageCropperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 847432CF1B2A8AF700B030C4 /* VPImageCropperViewController.m */; };
 		847432DB1B2A8CE500B030C4 /* MyOrderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 847432D31B2A8CE500B030C4 /* MyOrderCell.m */; };
 		847432DC1B2A8CE500B030C4 /* MyOrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847432D41B2A8CE500B030C4 /* MyOrderCell.xib */; };
@@ -291,6 +289,7 @@
 		84BA96871B2829D500388B58 /* CartList.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BA96711B2829D500388B58 /* CartList.m */; };
 		84BA96881B2829D500388B58 /* ShoppingCart.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BA96731B2829D500388B58 /* ShoppingCart.m */; };
 		84BA96891B2829D500388B58 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BA96761B2829D500388B58 /* User.m */; };
+		84C06D9B1B3AF3BA000BB45C /* BSUITableViewInitRuntimeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C06D9A1B3AF3BA000BB45C /* BSUITableViewInitRuntimeController.m */; };
 		84E97AB71B307535001D4100 /* BSUIComponentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E97AB61B307535001D4100 /* BSUIComponentView.m */; };
 		A04366AF1AD7B550005842EE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A04366AE1AD7B550005842EE /* main.m */; };
 		A04366BA1AD7B550005842EE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A04366B91AD7B550005842EE /* Images.xcassets */; };
@@ -376,8 +375,6 @@
 		842042AB1B2984D80002C868 /* KTCartTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTCartTableView.h; sourceTree = "<group>"; };
 		842042AC1B2984D80002C868 /* KTCartTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTCartTableView.m; sourceTree = "<group>"; };
 		842042AD1B2984D80002C868 /* KTCartTableView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = KTCartTableView.storyboard; sourceTree = "<group>"; };
-		842042B31B2985750002C868 /* KTTarBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTTarBarController.h; sourceTree = "<group>"; };
-		842042B41B2985750002C868 /* KTTarBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTTarBarController.m; sourceTree = "<group>"; };
 		842042BD1B29881B0002C868 /* YYHMantleModelSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYHMantleModelSerializer.h; sourceTree = "<group>"; };
 		842042BE1B29881B0002C868 /* YYHMantleModelSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYHMantleModelSerializer.m; sourceTree = "<group>"; };
 		842042C01B2988410002C868 /* YYHModelRoute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYHModelRoute.h; sourceTree = "<group>"; };
@@ -614,8 +611,6 @@
 		847076661B3AA01B00F28180 /* BSTableContentObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSTableContentObject.m; sourceTree = "<group>"; };
 		8470766F1B3AB21300F28180 /* UIViewController+BSTableObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+BSTableObject.h"; sourceTree = "<group>"; };
 		847076701B3AB21300F28180 /* UIViewController+BSTableObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+BSTableObject.m"; sourceTree = "<group>"; };
-		847076721B3AB4BD00F28180 /* BSTableViewAutoLoadController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSTableViewAutoLoadController.h; sourceTree = "<group>"; };
-		847076731B3AB4BD00F28180 /* BSTableViewAutoLoadController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSTableViewAutoLoadController.m; sourceTree = "<group>"; };
 		847432CE1B2A8AF700B030C4 /* VPImageCropperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VPImageCropperViewController.h; sourceTree = "<group>"; };
 		847432CF1B2A8AF700B030C4 /* VPImageCropperViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VPImageCropperViewController.m; sourceTree = "<group>"; };
 		847432D21B2A8CE500B030C4 /* MyOrderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOrderCell.h; sourceTree = "<group>"; };
@@ -737,6 +732,8 @@
 		84BA96731B2829D500388B58 /* ShoppingCart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingCart.m; sourceTree = "<group>"; };
 		84BA96751B2829D500388B58 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		84BA96761B2829D500388B58 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		84C06D991B3AF3BA000BB45C /* BSUITableViewInitRuntimeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUITableViewInitRuntimeController.h; sourceTree = "<group>"; };
+		84C06D9A1B3AF3BA000BB45C /* BSUITableViewInitRuntimeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUITableViewInitRuntimeController.m; sourceTree = "<group>"; };
 		84E97AB51B307535001D4100 /* BSUIComponentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUIComponentView.h; sourceTree = "<group>"; };
 		84E97AB61B307535001D4100 /* BSUIComponentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUIComponentView.m; sourceTree = "<group>"; };
 		A04366A91AD7B550005842EE /* 民生小区.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "民生小区.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1422,8 +1419,8 @@
 				847076661B3AA01B00F28180 /* BSTableContentObject.m */,
 				8470766F1B3AB21300F28180 /* UIViewController+BSTableObject.h */,
 				847076701B3AB21300F28180 /* UIViewController+BSTableObject.m */,
-				847076721B3AB4BD00F28180 /* BSTableViewAutoLoadController.h */,
-				847076731B3AB4BD00F28180 /* BSTableViewAutoLoadController.m */,
+				84C06D991B3AF3BA000BB45C /* BSUITableViewInitRuntimeController.h */,
+				84C06D9A1B3AF3BA000BB45C /* BSUITableViewInitRuntimeController.m */,
 			);
 			path = CommonController;
 			sourceTree = "<group>";
@@ -1668,8 +1665,6 @@
 				0E6E845E1B2ACE770088DA6A /* KTLifeIndexController.xib */,
 				842042C71B298EF30002C868 /* KTlifeViewController.h */,
 				842042C81B298EF30002C868 /* KTlifeViewController.m */,
-				842042B31B2985750002C868 /* KTTarBarController.h */,
-				842042B41B2985750002C868 /* KTTarBarController.m */,
 				8420429E1B2983B40002C868 /* AppDelegate.h */,
 				8420429F1B2983B40002C868 /* AppDelegate.m */,
 				847B308A1B3290DD007003D7 /* Main.storyboard */,
@@ -2250,7 +2245,6 @@
 				84BA96841B2829D500388B58 /* Comment.m in Sources */,
 				842042B01B2984D80002C868 /* KTCartFooterView.m in Sources */,
 				8480581B1B39AEEF005817D7 /* BSTableViewRefreshController.m in Sources */,
-				842042B51B2985750002C868 /* KTTarBarController.m in Sources */,
 				A0F0C3F51B10209500CE406D /* CommodityEvaluationRequest.m in Sources */,
 				A0F0C3F01B10209500CE406D /* DeleteShoppingCartParams.m in Sources */,
 				84820A641B285F320093B87B /* TableViewController.m in Sources */,
@@ -2258,10 +2252,10 @@
 				8420437B1B2992FA0002C868 /* KTLifeSearchBar.m in Sources */,
 				842042AE1B2984D80002C868 /* KTCarCell.m in Sources */,
 				A14656F71ADEB5A400571E9A /* KTFooterView.m in Sources */,
+				84C06D9B1B3AF3BA000BB45C /* BSUITableViewInitRuntimeController.m in Sources */,
 				847076311B3A8AF800F28180 /* communicateController.m in Sources */,
 				84BA967D1B2829D500388B58 /* Delcartlist.m in Sources */,
 				A0F0C3F61B10209500CE406D /* DeleteShoppingCartRequest.m in Sources */,
-				847076741B3AB4BD00F28180 /* BSTableViewAutoLoadController.m in Sources */,
 				848058151B39A377005817D7 /* BSFCRollingADImageUIView.m in Sources */,
 				84820A601B285ECA0093B87B /* KTWaterDetailsViewController.m in Sources */,
 				842043781B2991770002C868 /* DLUtility.m in Sources */,

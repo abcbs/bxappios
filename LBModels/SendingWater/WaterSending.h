@@ -41,7 +41,7 @@
 
 
 + (void)listWaterList:(long)maxId dataCount:(int)dataCount
-                       errorUILabel:( UILabel *)errorUILabel 
+                       errorUILabel:( UILabel *)errorUILabel
                        block:(BSHTTPResponse)block;
 
 @end

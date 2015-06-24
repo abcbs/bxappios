@@ -89,8 +89,6 @@
  */
 #define IOS_VERSION [[[UIDevice currentDevice] systemVersion] floatValue];
 
-
-
 //UIAlertView
 #define KT_AlertView_(a) [[[UIAlertView alloc]initWithTitle:@"提示" message:a delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show]
 
@@ -206,7 +204,6 @@
  *应用实例：communicate.h
  */
 +(UIImageView *)navigationHeaderWithImage:(NSString *)imageName;
-
 
 //对异常的处理
 + (BOOL)isNetwork;

@@ -8,9 +8,15 @@
 
 #import "KTHandyViewController.h"
 #import "Conf.h"
+#import "AppDelegate.h"
+#import "BSUITableViewInitRuntimeController.h"
+#import "BSTableObject.h"
+#import "BSTableContentObject.h"
+#import "TableViewController.h"
+
 @interface KTHandyViewController ()
 
-
+//@property (retain, nonatomic) BSFCInitRuntimeTableView *bsTableView;
 
 @end
 
@@ -21,8 +27,25 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [Conf navigationHeader:self.navigationController ];
+    //[Conf navigationHeader:self.navigationController ];
+    /**
+     NSArray *tuPian = [NSArray arrayWithObjects:@"98xc",@"98ss",nil];
+     NSArray *mingzi = [NSArray arrayWithObjects:@"洗车",@"送水",nil];
+     TableViewController     
+     */
     
+    /**
+     UIButton *titBtn = [[UIButton alloc]initWithFrame:BSRectMake(15, 156 , 100, 26)];
+     [titBtn setImage:[UIImage imageNamed:@"xy"] forState:UIControlStateNormal];
+     [titBtn setTitle:@"预约服务" forState:UIControlStateNormal];
+     [titBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+     titBtn.userInteractionEnabled = NO;
+     */
+    BSTableContentObject *bsContent=[BSTableContentObject initContentObject:@"送水" methodName:nil imageName:@"98ss" vcClass:[TableViewController class]];
+    
+    BSTableObject *bsTable=[BSTableObject initWithHeaderVcClassContent:@"预约服务" imageName:@"xy" vcClass:nil bsContent:nil];
+    [bsTable addBSTableContent:bsContent];
+    [super.bSTableObjects addObject:bsTable];
 }
 
 - (void)didReceiveMemoryWarning {

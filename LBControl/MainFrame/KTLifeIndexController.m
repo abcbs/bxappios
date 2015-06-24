@@ -92,6 +92,7 @@
 
     return 5;
 }
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
 
       KTLifeIndexCell *cell = [tableView dequeueReusableCellWithIdentifier:@"KTLifeIndexCell"];

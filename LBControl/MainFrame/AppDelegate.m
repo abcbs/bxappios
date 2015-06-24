@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "KTTarBarController.h"
+//#import "KTTarBarController.h"
 #import <ShareSDK/ShareSDK.h>
 #import <TencentOpenAPI/QQApiInterface.h>
 #import <TencentOpenAPI/TencentOAuth.h>
@@ -15,6 +15,7 @@
 #import "WeiboApi.h"
 #import "WeiboSDK.h"
 #import "Conf.h"
+#import "AFNetworkActivityIndicatorManager.h"
 
 @interface AppDelegate ()
     
@@ -68,9 +69,13 @@
     //                   qqApiInterfaceCls:[QQApiInterface class]
     //                     tencentOAuthCls:[TencentOAuth class]];
     
-    // 1.初始化自定义Log
+    //self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
+    
+    
 
-     //默认颜色
+    //默认颜色
     self.window.backgroundColor = [UIColor whiteColor];
     self.window.tintColor = [UIColor redColor];
     

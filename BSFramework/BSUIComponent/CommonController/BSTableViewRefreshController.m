@@ -11,14 +11,20 @@
 #import "MBProgressHUD.h"
 #import "MJRefresh.h"
 #import "Conf.h"
+#import "AppDelegate.h"
 
+@interface BSTableViewRefreshController()
+
+
+
+@end
 
 
 @implementation BSTableViewRefreshController
 
 @synthesize HUD;
 @synthesize dataTable;
-
+@synthesize errorInfo;
 
 - (void)viewDidLoad {
     if(!HUD){
@@ -31,7 +37,9 @@
         //设置对话框文字
         HUD.labelText = @"请稍等";
     }
+
     [self setupRefresh];
+    [self tableFooter];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -56,6 +64,17 @@
     [self.tableView removeFooter];
     [HUD removeFromSuperview];
     HUD = nil;
+    //[super ];
+}
+
+- (void) viewDidUnload{
+    NSLog(@"TableView dealloc");
+    [self.tableView removeHeader ];
+    
+    [self.tableView removeFooter];
+    [HUD removeFromSuperview];
+    HUD = nil;
+    [super viewDidUnload];
 }
 
 /**
@@ -74,6 +93,15 @@
                                        refreshingAction:@selector(footerRereshing)];
     [self.tableView.footer setTitle:@"已经是最后一条"
                            forState:MJRefreshFooterStateNoMoreData];
+}
+
+-(void)tableFooter{
+    errorInfo.text=@"";
+    errorInfo.frame=BSRectMake(NAVIGATIONBAR_X, NAVIGATIONBAR_Y,
+                               NAVIGATIONBAR_WIDTH, NAVIGATIONBAR_HEIGHT);
+    [errorInfo setFont:[UIFont fontWithName:@"Helvetica-BoldOblique" size:10]];
+    [errorInfo setTextColor:[UIColor redColor]];
+    [self.tableView.footer addSubview:errorInfo];
 }
 
 #pragma mark 列表下拉下载上拉更新需实现的方法

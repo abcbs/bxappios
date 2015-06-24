@@ -43,4 +43,5 @@ static BSUIComponentView *instance=nil;
 }
 
 
+
 @end
