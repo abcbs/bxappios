@@ -19,9 +19,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     //红色界面
-    UIImageView *imageView1 = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width-270, 65)];
-    NSString *imageName = [NSString stringWithFormat:@"jl_01.png"];
-    imageView1.image = [UIImage imageNamed:imageName];
+    UIImageView *imageView1 = [Conf navigationHeaderWithImage:@"jl_01.png"];
+    //NSString *imageName = [NSString stringWithFormat:@"jl_01.png"];
+    //imageView1.image = [UIImage imageNamed:imageName];
     [self.view addSubview:imageView1];
     //返回按钮
     UIButton *backButton = [[UIButton alloc]initWithFrame:CGRectMake(self.view.bounds.size.width*0.0425, self.view.bounds.size.height*0.052916, self.view.bounds.size.width*0.038125, self.view.bounds.size.width*0.040125)];

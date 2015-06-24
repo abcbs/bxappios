@@ -13,12 +13,6 @@
 		0E511A541AF07DBF00BF1D03 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E511A531AF07DBF00BF1D03 /* UIKit.framework */; };
 		0E511A561AF08DFC00BF1D03 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E511A551AF08DFC00BF1D03 /* AssetsLibrary.framework */; };
 		0E511A581AF08E2500BF1D03 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E511A571AF08E2500BF1D03 /* MobileCoreServices.framework */; };
-		0E6E84541B2ACD5A0088DA6A /* KTLifeIndexCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E6E84491B2ACD5A0088DA6A /* KTLifeIndexCell.m */; };
-		0E6E84551B2ACD5A0088DA6A /* KTLifeIndexCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E6E844A1B2ACD5A0088DA6A /* KTLifeIndexCell.xib */; };
-		0E6E84581B2ACD5A0088DA6A /* communicateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E6E844F1B2ACD5A0088DA6A /* communicateCell.m */; };
-		0E6E84591B2ACD5A0088DA6A /* communicateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E6E84501B2ACD5A0088DA6A /* communicateCell.xib */; };
-		0E6E845A1B2ACD5A0088DA6A /* adsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E6E84521B2ACD5A0088DA6A /* adsCell.m */; };
-		0E6E845B1B2ACD5A0088DA6A /* adsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E6E84531B2ACD5A0088DA6A /* adsCell.xib */; };
 		0E6E845F1B2ACE770088DA6A /* KTLifeIndexController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E6E845D1B2ACE770088DA6A /* KTLifeIndexController.m */; };
 		0E6E84601B2ACE770088DA6A /* KTLifeIndexController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E6E845E1B2ACE770088DA6A /* KTLifeIndexController.xib */; };
 		0E8377521B033E9700782034 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E8377511B033E9700782034 /* SystemConfiguration.framework */; };
@@ -218,6 +212,12 @@
 		847076501B3A8C4500F28180 /* DropDownListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8470764A1B3A8C4500F28180 /* DropDownListView.m */; };
 		847076511B3A8C4500F28180 /* enquireController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8470764C1B3A8C4500F28180 /* enquireController.m */; };
 		847076521B3A8C4500F28180 /* queueController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8470764E1B3A8C4500F28180 /* queueController.m */; };
+		847076561B3A8E1200F28180 /* communicateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 847076541B3A8E1200F28180 /* communicateCell.m */; };
+		847076571B3A8E1200F28180 /* communicateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847076551B3A8E1200F28180 /* communicateCell.xib */; };
+		8470765B1B3A8F1400F28180 /* adsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 847076591B3A8F1400F28180 /* adsCell.m */; };
+		8470765C1B3A8F1400F28180 /* adsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8470765A1B3A8F1400F28180 /* adsCell.xib */; };
+		847076601B3A8FB900F28180 /* KTLifeIndexCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8470765E1B3A8FB900F28180 /* KTLifeIndexCell.m */; };
+		847076611B3A8FB900F28180 /* KTLifeIndexCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8470765F1B3A8FB900F28180 /* KTLifeIndexCell.xib */; };
 		847432D01B2A8AF700B030C4 /* VPImageCropperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 847432CF1B2A8AF700B030C4 /* VPImageCropperViewController.m */; };
 		847432DB1B2A8CE500B030C4 /* MyOrderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 847432D31B2A8CE500B030C4 /* MyOrderCell.m */; };
 		847432DC1B2A8CE500B030C4 /* MyOrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847432D41B2A8CE500B030C4 /* MyOrderCell.xib */; };
@@ -339,15 +339,6 @@
 		0E511A531AF07DBF00BF1D03 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0E511A551AF08DFC00BF1D03 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		0E511A571AF08E2500BF1D03 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
-		0E6E84481B2ACD5A0088DA6A /* KTLifeIndexCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTLifeIndexCell.h; sourceTree = "<group>"; };
-		0E6E84491B2ACD5A0088DA6A /* KTLifeIndexCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTLifeIndexCell.m; sourceTree = "<group>"; };
-		0E6E844A1B2ACD5A0088DA6A /* KTLifeIndexCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KTLifeIndexCell.xib; sourceTree = "<group>"; };
-		0E6E844E1B2ACD5A0088DA6A /* communicateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = communicateCell.h; sourceTree = "<group>"; };
-		0E6E844F1B2ACD5A0088DA6A /* communicateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = communicateCell.m; sourceTree = "<group>"; };
-		0E6E84501B2ACD5A0088DA6A /* communicateCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = communicateCell.xib; sourceTree = "<group>"; };
-		0E6E84511B2ACD5A0088DA6A /* adsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = adsCell.h; sourceTree = "<group>"; };
-		0E6E84521B2ACD5A0088DA6A /* adsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = adsCell.m; sourceTree = "<group>"; };
-		0E6E84531B2ACD5A0088DA6A /* adsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = adsCell.xib; sourceTree = "<group>"; };
 		0E6E845C1B2ACE770088DA6A /* KTLifeIndexController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTLifeIndexController.h; sourceTree = "<group>"; };
 		0E6E845D1B2ACE770088DA6A /* KTLifeIndexController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTLifeIndexController.m; sourceTree = "<group>"; };
 		0E6E845E1B2ACE770088DA6A /* KTLifeIndexController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KTLifeIndexController.xib; sourceTree = "<group>"; };
@@ -604,6 +595,15 @@
 		8470764C1B3A8C4500F28180 /* enquireController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = enquireController.m; sourceTree = "<group>"; };
 		8470764D1B3A8C4500F28180 /* queueController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = queueController.h; sourceTree = "<group>"; };
 		8470764E1B3A8C4500F28180 /* queueController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = queueController.m; sourceTree = "<group>"; };
+		847076531B3A8E1200F28180 /* communicateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = communicateCell.h; sourceTree = "<group>"; };
+		847076541B3A8E1200F28180 /* communicateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = communicateCell.m; sourceTree = "<group>"; };
+		847076551B3A8E1200F28180 /* communicateCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = communicateCell.xib; sourceTree = "<group>"; };
+		847076581B3A8F1400F28180 /* adsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = adsCell.h; sourceTree = "<group>"; };
+		847076591B3A8F1400F28180 /* adsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = adsCell.m; sourceTree = "<group>"; };
+		8470765A1B3A8F1400F28180 /* adsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = adsCell.xib; sourceTree = "<group>"; };
+		8470765D1B3A8FB900F28180 /* KTLifeIndexCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTLifeIndexCell.h; sourceTree = "<group>"; };
+		8470765E1B3A8FB900F28180 /* KTLifeIndexCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTLifeIndexCell.m; sourceTree = "<group>"; };
+		8470765F1B3A8FB900F28180 /* KTLifeIndexCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KTLifeIndexCell.xib; sourceTree = "<group>"; };
 		847432CE1B2A8AF700B030C4 /* VPImageCropperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VPImageCropperViewController.h; sourceTree = "<group>"; };
 		847432CF1B2A8AF700B030C4 /* VPImageCropperViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VPImageCropperViewController.m; sourceTree = "<group>"; };
 		847432D21B2A8CE500B030C4 /* MyOrderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOrderCell.h; sourceTree = "<group>"; };
@@ -843,30 +843,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0E6E84401B2AC84C0088DA6A /* shops(信誉商家) */ = {
-			isa = PBXGroup;
-			children = (
-				0E6E84471B2ACBFE0088DA6A /* View */,
-			);
-			name = "shops(信誉商家)";
-			sourceTree = "<group>";
-		};
-		0E6E84471B2ACBFE0088DA6A /* View */ = {
-			isa = PBXGroup;
-			children = (
-				0E6E84481B2ACD5A0088DA6A /* KTLifeIndexCell.h */,
-				0E6E84491B2ACD5A0088DA6A /* KTLifeIndexCell.m */,
-				0E6E844A1B2ACD5A0088DA6A /* KTLifeIndexCell.xib */,
-				0E6E844E1B2ACD5A0088DA6A /* communicateCell.h */,
-				0E6E844F1B2ACD5A0088DA6A /* communicateCell.m */,
-				0E6E84501B2ACD5A0088DA6A /* communicateCell.xib */,
-				0E6E84511B2ACD5A0088DA6A /* adsCell.h */,
-				0E6E84521B2ACD5A0088DA6A /* adsCell.m */,
-				0E6E84531B2ACD5A0088DA6A /* adsCell.xib */,
-			);
-			name = View;
-			sourceTree = "<group>";
-		};
 		0E915F951B0C393200F47478 /* 验证码 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1249,6 +1225,9 @@
 		847076261B3A8AF800F28180 /* Exchange */ = {
 			isa = PBXGroup;
 			children = (
+				847076531B3A8E1200F28180 /* communicateCell.h */,
+				847076541B3A8E1200F28180 /* communicateCell.m */,
+				847076551B3A8E1200F28180 /* communicateCell.xib */,
 				847076271B3A8AF800F28180 /* communicate.h */,
 				847076281B3A8AF800F28180 /* communicate.m */,
 				847076291B3A8AF800F28180 /* communicate.xib */,
@@ -1264,6 +1243,9 @@
 		847076341B3A8B9000F28180 /* ReservationService */ = {
 			isa = PBXGroup;
 			children = (
+				847076581B3A8F1400F28180 /* adsCell.h */,
+				847076591B3A8F1400F28180 /* adsCell.m */,
+				8470765A1B3A8F1400F28180 /* adsCell.xib */,
 				847076351B3A8B9000F28180 /* addressController.h */,
 				847076361B3A8B9000F28180 /* addressController.m */,
 				847076371B3A8B9000F28180 /* appointmentController.h */,
@@ -1656,6 +1638,9 @@
 		84BA96931B282A0500388B58 /* MainFrame */ = {
 			isa = PBXGroup;
 			children = (
+				8470765D1B3A8FB900F28180 /* KTLifeIndexCell.h */,
+				8470765E1B3A8FB900F28180 /* KTLifeIndexCell.m */,
+				8470765F1B3A8FB900F28180 /* KTLifeIndexCell.xib */,
 				842043791B2992FA0002C868 /* KTLifeSearchBar.h */,
 				8420437A1B2992FA0002C868 /* KTLifeSearchBar.m */,
 				0E6E845C1B2ACE770088DA6A /* KTLifeIndexController.h */,
@@ -1790,7 +1775,6 @@
 			isa = PBXGroup;
 			children = (
 				8442682C1B36C05F006E7F7D /* Resources */,
-				0E6E84401B2AC84C0088DA6A /* shops(信誉商家) */,
 				8420435F1B2991770002C868 /* DLSlideView */,
 				843DA8501B21D56200924AE6 /* ShareSDK-iOS-v2.11.0 */,
 				A14656DF1ADEB5A400571E9A /* Classes */,
@@ -2051,6 +2035,7 @@
 				847432EB1B2A8DCC00B030C4 /* WaitPaymentDetail.xib in Resources */,
 				8487F1861B3005C100F0F7B2 /* KTInformationConfViewController.storyboard in Resources */,
 				844268FE1B36C05F006E7F7D /* 3.jpg in Resources */,
+				8470765C1B3A8F1400F28180 /* adsCell.xib in Resources */,
 				844269081B36C05F006E7F7D /* im_activity.png in Resources */,
 				844269021B36C05F006E7F7D /* dianhua.png in Resources */,
 				844268DE1B36C05F006E7F7D /* 银行卡绑定-1.png in Resources */,
@@ -2060,6 +2045,7 @@
 				844268B11B36C05F006E7F7D /* a6.png in Resources */,
 				847432FA1B2A8E5500B030C4 /* AlreadyPayment.xib in Resources */,
 				8442691B1B36C05F006E7F7D /* tulvse.png in Resources */,
+				847076611B3A8FB900F28180 /* KTLifeIndexCell.xib in Resources */,
 				844268F21B36C05F006E7F7D /* radio_unchecked.png in Resources */,
 				847432DE1B2A8CE500B030C4 /* orderDetailCell.xib in Resources */,
 				844268D01B36C05F006E7F7D /* ddlb_01.png in Resources */,
@@ -2106,6 +2092,7 @@
 				844268F31B36C05F006E7F7D /* radio_unchecked@2x.png in Resources */,
 				844268FF1B36C05F006E7F7D /* 322.png in Resources */,
 				844268D51B36C05F006E7F7D /* ljzf.png in Resources */,
+				847076571B3A8E1200F28180 /* communicateCell.xib in Resources */,
 				84820A611B285ECA0093B87B /* KTWaterDetailsViewController.storyboard in Resources */,
 				84578F781B35E80700C3A4EA /* LaunchScreen.xib in Resources */,
 				844268AD1B36C05F006E7F7D /* a11.png in Resources */,
@@ -2130,7 +2117,6 @@
 				844268C81B36C05F006E7F7D /* wodexiaoxi.png in Resources */,
 				844268D21B36C05F006E7F7D /* dfkbb.png in Resources */,
 				844268AA1B36C05F006E7F7D /* a-1.png in Resources */,
-				0E6E845B1B2ACD5A0088DA6A /* adsCell.xib in Resources */,
 				843DA88D1B21D56300924AE6 /* ShareSDKFlatShareViewUI.bundle in Resources */,
 				844269061B36C05F006E7F7D /* hs.png in Resources */,
 				844269071B36C05F006E7F7D /* huihua.png in Resources */,
@@ -2167,7 +2153,6 @@
 				8470761B1B3A5F7800F28180 /* SetCell.xib in Resources */,
 				844268EC1B36C05F006E7F7D /* login-2.png in Resources */,
 				844268F91B36C05F006E7F7D /* register-4.png in Resources */,
-				0E6E84551B2ACD5A0088DA6A /* KTLifeIndexCell.xib in Resources */,
 				844268DB1B36C05F006E7F7D /* yzf000.png in Resources */,
 				844268C21B36C05F006E7F7D /* LoginPicture.png in Resources */,
 				844268CC1B36C05F006E7F7D /* 生活圈.jpg in Resources */,
@@ -2175,7 +2160,6 @@
 				844268FD1B36C05F006E7F7D /* 2.jpg in Resources */,
 				844268F11B36C05F006E7F7D /* radio_checked@2x.png in Resources */,
 				844268EE1B36C05F006E7F7D /* login-4.png in Resources */,
-				0E6E84591B2ACD5A0088DA6A /* communicateCell.xib in Resources */,
 				847432F81B2A8E5500B030C4 /* AlreadyCommit.xib in Resources */,
 				8442691F1B36C05F006E7F7D /* yyfw9_01.png in Resources */,
 				844268FC1B36C05F006E7F7D /* 1.jpg in Resources */,
@@ -2236,17 +2220,16 @@
 				8470763F1B3A8B9000F28180 /* cleaning.m in Sources */,
 				847433081B2A908000B030C4 /* SystemSet.m in Sources */,
 				A0F0C3E61B10209500CE406D /* BasicBody.m in Sources */,
-				0E6E84541B2ACD5A0088DA6A /* KTLifeIndexCell.m in Sources */,
 				847433021B2A8F4A00B030C4 /* WaitPayment.m in Sources */,
 				8470763D1B3A8B9000F28180 /* addressController.m in Sources */,
 				842043771B2991770002C868 /* DLTabedSlideView.m in Sources */,
+				847076561B3A8E1200F28180 /* communicateCell.m in Sources */,
 				847076501B3A8C4500F28180 /* DropDownListView.m in Sources */,
 				A05E9BDF1AE79DD5008C97C9 /* KTTabBarButton.m in Sources */,
 				A0F0C3EC1B10209500CE406D /* UpdateShoppingCartResult.m in Sources */,
 				84BA96841B2829D500388B58 /* Comment.m in Sources */,
 				842042B01B2984D80002C868 /* KTCartFooterView.m in Sources */,
 				8480581B1B39AEEF005817D7 /* BSTableViewRefresh.m in Sources */,
-				0E6E84581B2ACD5A0088DA6A /* communicateCell.m in Sources */,
 				842042B51B2985750002C868 /* KTTarBarController.m in Sources */,
 				A0F0C3F51B10209500CE406D /* CommodityEvaluationRequest.m in Sources */,
 				A0F0C3F01B10209500CE406D /* DeleteShoppingCartParams.m in Sources */,
@@ -2263,6 +2246,7 @@
 				842043781B2991770002C868 /* DLUtility.m in Sources */,
 				842042C51B2988410002C868 /* YYHModelRoute.m in Sources */,
 				84BA96861B2829D500388B58 /* WaterSendingDetails.m in Sources */,
+				8470765B1B3A8F1400F28180 /* adsCell.m in Sources */,
 				842043741B2991770002C868 /* DLSlideView.m in Sources */,
 				84820A4E1B285D960093B87B /* MSWaterSendingCell.m in Sources */,
 				8474331C1B2A92B400B030C4 /* ForgetViewController.m in Sources */,
@@ -2330,9 +2314,9 @@
 				84BA967E1B2829D500388B58 /* MyOrderModel.m in Sources */,
 				A0F0C3EB1B10209500CE406D /* JoinShoppingCartResult.m in Sources */,
 				844E50BB1B2F2EE500A69F91 /* BSHTTPNetworking.m in Sources */,
+				847076601B3A8FB900F28180 /* KTLifeIndexCell.m in Sources */,
 				842043731B2991770002C868 /* DLCustomSlideView.m in Sources */,
 				8404B8551B393F1E002AF13A /* BSBLEMainController.m in Sources */,
-				0E6E845A1B2ACD5A0088DA6A /* adsCell.m in Sources */,
 				A0F0C3F11B10209500CE406D /* JoinShoppingCartParams.m in Sources */,
 				842042B11B2984D80002C868 /* KTCartTableView.m in Sources */,
 				84BA96781B2829D500388B58 /* ErrorMessage.m in Sources */,

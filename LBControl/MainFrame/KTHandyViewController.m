@@ -21,7 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [Conf navigationControllerHeader:self.navigationController ];
+    [Conf navigationHeader:self.navigationController ];
     
 }
 

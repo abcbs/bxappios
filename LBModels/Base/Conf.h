@@ -195,8 +195,16 @@
 /** 更新购物车url */
 +(NSString *)urlWaterShoppingUpdateCart;
 
-+(void)navigationControllerHeader:(UINavigationController *)navigationController;
+/**
+ *默认改变iOS提供工具栏的颜色，如TableViewController
+ *应用实例：KTlifeViewController
+ */
++(void)navigationHeader:(UINavigationController *)navigationController;
 
+/**
+ *使用图像自定义头部信息
+ *应用实例：communicate.h
+ */
 +(UIImageView *)navigationHeaderWithImage:(NSString *)imageName;
 
 

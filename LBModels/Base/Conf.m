@@ -63,7 +63,7 @@
     return url;
 }
 
-+(void)navigationControllerHeader:(UINavigationController *)navigationController{
++(void)navigationHeader:(UINavigationController *)navigationController{
     [navigationController.navigationBar setBarStyle:UIBarStyleBlack];
     [navigationController.navigationBar setBackgroundColor
      :[UIColor redColor]];

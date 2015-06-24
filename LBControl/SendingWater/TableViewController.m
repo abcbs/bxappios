@@ -36,7 +36,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [Conf navigationControllerHeader:self.navigationController ];
+    //改变状态来默认颜色
+    [Conf navigationHeader:self.navigationController ];
     //[self loadMoreData:[self firstDataId] dataCount:1];
 
 }

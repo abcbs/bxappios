@@ -34,7 +34,7 @@
 - (void)viewDidLoad {
     
    [super viewDidLoad];
-   [Conf navigationControllerHeader:self.navigationController ];
+   [Conf navigationHeader:self.navigationController ];
    [AppDelegate storyBoradAutoLay:self.view];
     _BigScrollView =[[UIScrollView alloc]initWithFrame:BSRectMake(NAVIGATIONBAR_X,NAVIGATIONBAR_HEIGHT+178 , SCREEN_WIDTH,SCREEN_HEIGHT*0.7)];
    _BigScrollView.contentSize=BSSizeMake(SCREEN_WIDTH,SCREEN_HEIGHT + 400);

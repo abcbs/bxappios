@@ -17,7 +17,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [Conf navigationControllerHeader:self.navigationController ];
+    //改变状态栏默认颜色与样式
+    [Conf navigationHeader:self.navigationController ];
 }
 
 - (void)didReceiveMemoryWarning {
