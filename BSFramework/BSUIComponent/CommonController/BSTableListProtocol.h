@@ -1,6 +1,7 @@
 //
 //  BSTableList.h
 //  KTAPP
+//采用JMfresh和MBProgressHUD实现上拉更新下拉下载功能定义的实现协议类
 //
 //  Created by admin on 15/6/14.
 //  Copyright (c) 2015年 itcast. All rights reserved.
@@ -8,7 +9,7 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol BSTableList <NSObject>
+@protocol BSTableListProtocol <NSObject>
 
 -(long )firstDataId;
 

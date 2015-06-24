@@ -6,9 +6,9 @@
 //  Copyright (c) 2015年 itcast. All rights reserved.
 //
 
-#import "BSTableViewRefresh.h"
+#import "BSTableViewRefreshController.h"
 
-@interface TableViewController : BSTableViewRefresh
+@interface TableViewController : BSTableViewRefreshController
 
 - (IBAction)backClick:(id)sender;
 

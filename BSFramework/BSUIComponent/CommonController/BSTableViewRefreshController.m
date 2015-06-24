@@ -6,7 +6,7 @@
 //  Copyright (c) 2015年 itcast. All rights reserved.
 //
 
-#import "BSTableViewRefresh.h"
+#import "BSTableViewRefreshController.h"
 
 #import "MBProgressHUD.h"
 #import "MJRefresh.h"
@@ -14,7 +14,7 @@
 
 
 
-@implementation BSTableViewRefresh
+@implementation BSTableViewRefreshController
 
 @synthesize HUD;
 @synthesize dataTable;

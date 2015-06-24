@@ -13,7 +13,7 @@
 #import "KTWaterDetailsViewController.h"
 #import "LoginViewController.h"
 
-#import "BSTableViewRefresh.h"
+#import "BSTableViewRefreshController.h"
 
 #import "BSUIComponentView.h"
 #import "AppDelegate.h"

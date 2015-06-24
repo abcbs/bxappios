@@ -24,7 +24,7 @@
 
 CG_INLINE CGRect BSRectMake(CGFloat x, CGFloat y, CGFloat width, CGFloat height)
 {
-    AppDelegate *myDelegate = [[UIApplication sharedApplication] delegate];
+    AppDelegate *myDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     CGRect rect;
     rect.origin.x = x * myDelegate.autoSizeScaleX;
     rect.origin.y = y * myDelegate.autoSizeScaleY;
@@ -35,7 +35,7 @@ CG_INLINE CGRect BSRectMake(CGFloat x, CGFloat y, CGFloat width, CGFloat height)
 
 
 CG_INLINE CGSize BSSizeMake(CGFloat width, CGFloat height){
-    AppDelegate *myDelegate = [[UIApplication sharedApplication] delegate];
+    AppDelegate *myDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     CGSize size;
     size.height=size.width = width * myDelegate.autoSizeScaleX;
     size.height = height * myDelegate.autoSizeScaleY;
@@ -44,14 +44,14 @@ CG_INLINE CGSize BSSizeMake(CGFloat width, CGFloat height){
 }
 
 CG_INLINE CGFloat BSMarginX(CGFloat x){
-    AppDelegate *myDelegate = [[UIApplication sharedApplication] delegate];
+    AppDelegate *myDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     return  x / myDelegate.autoSizeScaleX;
     
 }
 
 
 CG_INLINE CGFloat BSMarginY(CGFloat y){
-    AppDelegate *myDelegate = [[UIApplication sharedApplication] delegate];
+    AppDelegate *myDelegate =(AppDelegate *)[[UIApplication sharedApplication] delegate];
     return  y / myDelegate.autoSizeScaleY;
     
 }

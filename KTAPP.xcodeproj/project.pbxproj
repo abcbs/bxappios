@@ -218,6 +218,10 @@
 		8470765C1B3A8F1400F28180 /* adsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8470765A1B3A8F1400F28180 /* adsCell.xib */; };
 		847076601B3A8FB900F28180 /* KTLifeIndexCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8470765E1B3A8FB900F28180 /* KTLifeIndexCell.m */; };
 		847076611B3A8FB900F28180 /* KTLifeIndexCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8470765F1B3A8FB900F28180 /* KTLifeIndexCell.xib */; };
+		847076641B3A9DFB00F28180 /* BSTableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 847076631B3A9DFB00F28180 /* BSTableObject.m */; };
+		847076671B3AA01B00F28180 /* BSTableContentObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 847076661B3AA01B00F28180 /* BSTableContentObject.m */; };
+		847076711B3AB21300F28180 /* UIViewController+BSTableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 847076701B3AB21300F28180 /* UIViewController+BSTableObject.m */; };
+		847076741B3AB4BD00F28180 /* BSTableViewAutoLoadController.m in Sources */ = {isa = PBXBuildFile; fileRef = 847076731B3AB4BD00F28180 /* BSTableViewAutoLoadController.m */; };
 		847432D01B2A8AF700B030C4 /* VPImageCropperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 847432CF1B2A8AF700B030C4 /* VPImageCropperViewController.m */; };
 		847432DB1B2A8CE500B030C4 /* MyOrderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 847432D31B2A8CE500B030C4 /* MyOrderCell.m */; };
 		847432DC1B2A8CE500B030C4 /* MyOrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847432D41B2A8CE500B030C4 /* MyOrderCell.xib */; };
@@ -251,7 +255,7 @@
 		8480580B1B39A0E9005817D7 /* BSBLEDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8480580A1B39A0E9005817D7 /* BSBLEDetailTableViewController.m */; };
 		848058151B39A377005817D7 /* BSFCRollingADImageUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 848058131B39A377005817D7 /* BSFCRollingADImageUIView.m */; };
 		848058161B39A377005817D7 /* ADTImagePlayer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848058141B39A377005817D7 /* ADTImagePlayer.xib */; };
-		8480581B1B39AEEF005817D7 /* BSTableViewRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 8480581A1B39AEEF005817D7 /* BSTableViewRefresh.m */; };
+		8480581B1B39AEEF005817D7 /* BSTableViewRefreshController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8480581A1B39AEEF005817D7 /* BSTableViewRefreshController.m */; };
 		84820A4E1B285D960093B87B /* MSWaterSendingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84820A4C1B285D960093B87B /* MSWaterSendingCell.m */; };
 		84820A4F1B285D960093B87B /* MSWaterSendingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84820A4D1B285D960093B87B /* MSWaterSendingCell.xib */; };
 		84820A601B285ECA0093B87B /* KTWaterDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84820A591B285ECA0093B87B /* KTWaterDetailsViewController.m */; };
@@ -604,6 +608,14 @@
 		8470765D1B3A8FB900F28180 /* KTLifeIndexCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTLifeIndexCell.h; sourceTree = "<group>"; };
 		8470765E1B3A8FB900F28180 /* KTLifeIndexCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTLifeIndexCell.m; sourceTree = "<group>"; };
 		8470765F1B3A8FB900F28180 /* KTLifeIndexCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KTLifeIndexCell.xib; sourceTree = "<group>"; };
+		847076621B3A9DFB00F28180 /* BSTableObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSTableObject.h; sourceTree = "<group>"; };
+		847076631B3A9DFB00F28180 /* BSTableObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSTableObject.m; sourceTree = "<group>"; };
+		847076651B3AA01B00F28180 /* BSTableContentObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSTableContentObject.h; sourceTree = "<group>"; };
+		847076661B3AA01B00F28180 /* BSTableContentObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSTableContentObject.m; sourceTree = "<group>"; };
+		8470766F1B3AB21300F28180 /* UIViewController+BSTableObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+BSTableObject.h"; sourceTree = "<group>"; };
+		847076701B3AB21300F28180 /* UIViewController+BSTableObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+BSTableObject.m"; sourceTree = "<group>"; };
+		847076721B3AB4BD00F28180 /* BSTableViewAutoLoadController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSTableViewAutoLoadController.h; sourceTree = "<group>"; };
+		847076731B3AB4BD00F28180 /* BSTableViewAutoLoadController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSTableViewAutoLoadController.m; sourceTree = "<group>"; };
 		847432CE1B2A8AF700B030C4 /* VPImageCropperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VPImageCropperViewController.h; sourceTree = "<group>"; };
 		847432CF1B2A8AF700B030C4 /* VPImageCropperViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VPImageCropperViewController.m; sourceTree = "<group>"; };
 		847432D21B2A8CE500B030C4 /* MyOrderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOrderCell.h; sourceTree = "<group>"; };
@@ -658,9 +670,9 @@
 		848058121B39A377005817D7 /* BSFCRollingADImageUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSFCRollingADImageUIView.h; sourceTree = "<group>"; };
 		848058131B39A377005817D7 /* BSFCRollingADImageUIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSFCRollingADImageUIView.m; sourceTree = "<group>"; };
 		848058141B39A377005817D7 /* ADTImagePlayer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ADTImagePlayer.xib; sourceTree = "<group>"; };
-		848058181B39AEEF005817D7 /* BSTableList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSTableList.h; sourceTree = "<group>"; };
-		848058191B39AEEF005817D7 /* BSTableViewRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSTableViewRefresh.h; sourceTree = "<group>"; };
-		8480581A1B39AEEF005817D7 /* BSTableViewRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSTableViewRefresh.m; sourceTree = "<group>"; };
+		848058181B39AEEF005817D7 /* BSTableListProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSTableListProtocol.h; sourceTree = "<group>"; };
+		848058191B39AEEF005817D7 /* BSTableViewRefreshController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSTableViewRefreshController.h; sourceTree = "<group>"; };
+		8480581A1B39AEEF005817D7 /* BSTableViewRefreshController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSTableViewRefreshController.m; sourceTree = "<group>"; };
 		84820A4B1B285D960093B87B /* MSWaterSendingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSWaterSendingCell.h; sourceTree = "<group>"; };
 		84820A4C1B285D960093B87B /* MSWaterSendingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSWaterSendingCell.m; sourceTree = "<group>"; };
 		84820A4D1B285D960093B87B /* MSWaterSendingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MSWaterSendingCell.xib; sourceTree = "<group>"; };
@@ -1401,9 +1413,17 @@
 		848058171B39AEEF005817D7 /* CommonController */ = {
 			isa = PBXGroup;
 			children = (
-				848058181B39AEEF005817D7 /* BSTableList.h */,
-				848058191B39AEEF005817D7 /* BSTableViewRefresh.h */,
-				8480581A1B39AEEF005817D7 /* BSTableViewRefresh.m */,
+				848058181B39AEEF005817D7 /* BSTableListProtocol.h */,
+				848058191B39AEEF005817D7 /* BSTableViewRefreshController.h */,
+				8480581A1B39AEEF005817D7 /* BSTableViewRefreshController.m */,
+				847076621B3A9DFB00F28180 /* BSTableObject.h */,
+				847076631B3A9DFB00F28180 /* BSTableObject.m */,
+				847076651B3AA01B00F28180 /* BSTableContentObject.h */,
+				847076661B3AA01B00F28180 /* BSTableContentObject.m */,
+				8470766F1B3AB21300F28180 /* UIViewController+BSTableObject.h */,
+				847076701B3AB21300F28180 /* UIViewController+BSTableObject.m */,
+				847076721B3AB4BD00F28180 /* BSTableViewAutoLoadController.h */,
+				847076731B3AB4BD00F28180 /* BSTableViewAutoLoadController.m */,
 			);
 			path = CommonController;
 			sourceTree = "<group>";
@@ -2229,7 +2249,7 @@
 				A0F0C3EC1B10209500CE406D /* UpdateShoppingCartResult.m in Sources */,
 				84BA96841B2829D500388B58 /* Comment.m in Sources */,
 				842042B01B2984D80002C868 /* KTCartFooterView.m in Sources */,
-				8480581B1B39AEEF005817D7 /* BSTableViewRefresh.m in Sources */,
+				8480581B1B39AEEF005817D7 /* BSTableViewRefreshController.m in Sources */,
 				842042B51B2985750002C868 /* KTTarBarController.m in Sources */,
 				A0F0C3F51B10209500CE406D /* CommodityEvaluationRequest.m in Sources */,
 				A0F0C3F01B10209500CE406D /* DeleteShoppingCartParams.m in Sources */,
@@ -2241,6 +2261,7 @@
 				847076311B3A8AF800F28180 /* communicateController.m in Sources */,
 				84BA967D1B2829D500388B58 /* Delcartlist.m in Sources */,
 				A0F0C3F61B10209500CE406D /* DeleteShoppingCartRequest.m in Sources */,
+				847076741B3AB4BD00F28180 /* BSTableViewAutoLoadController.m in Sources */,
 				848058151B39A377005817D7 /* BSFCRollingADImageUIView.m in Sources */,
 				84820A601B285ECA0093B87B /* KTWaterDetailsViewController.m in Sources */,
 				842043781B2991770002C868 /* DLUtility.m in Sources */,
@@ -2257,6 +2278,7 @@
 				847076521B3A8C4500F28180 /* queueController.m in Sources */,
 				0E915F981B0C394800F47478 /* ValidateCode.m in Sources */,
 				84BA96881B2829D500388B58 /* ShoppingCart.m in Sources */,
+				847076711B3AB21300F28180 /* UIViewController+BSTableObject.m in Sources */,
 				A0BE5E4A1B02E4310086551D /* RegistUtil.m in Sources */,
 				A0F0C3F21B10209500CE406D /* UpdateShoppingCartParams.m in Sources */,
 				842042C91B298EF30002C868 /* KTlifeViewController.m in Sources */,
@@ -2297,6 +2319,7 @@
 				84578F581B35E12600C3A4EA /* KTHandyViewController.m in Sources */,
 				847076401B3A8B9000F28180 /* UIView+SZ.m in Sources */,
 				8470762F1B3A8AF800F28180 /* communicate.m in Sources */,
+				847076671B3AA01B00F28180 /* BSTableContentObject.m in Sources */,
 				847432E51B2A8D6800B030C4 /* SystemSetCell.m in Sources */,
 				84BA967A1B2829D500388B58 /* CustomerManager.m in Sources */,
 				847076511B3A8C4500F28180 /* enquireController.m in Sources */,
@@ -2319,6 +2342,7 @@
 				8404B8551B393F1E002AF13A /* BSBLEMainController.m in Sources */,
 				A0F0C3F11B10209500CE406D /* JoinShoppingCartParams.m in Sources */,
 				842042B11B2984D80002C868 /* KTCartTableView.m in Sources */,
+				847076641B3A9DFB00F28180 /* BSTableObject.m in Sources */,
 				84BA96781B2829D500388B58 /* ErrorMessage.m in Sources */,
 				84BA96791B2829D500388B58 /* BusinessManager.m in Sources */,
 				847433121B2A915C00B030C4 /* cardBinding.m in Sources */,
