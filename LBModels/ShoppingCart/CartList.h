@@ -1,7 +1,7 @@
 //
 //  CartList.h
 //  民生小区
-//
+//  购物车列表
 //  Created by 罗芳芳 on 15/5/8.
 //  Copyright (c) 2015年 itcast. All rights reserved.
 //
@@ -29,12 +29,6 @@
 
 @property (nonatomic, strong) NSArray *waters;
 
-
-
-- (instancetype)initWithDic:(NSDictionary *)dic;
-+ (instancetype)cartListWithDict:(NSDictionary *)dic;
-
-+ (NSMutableArray *)cartList;
 
 + (void)queryShoppingCart:(NSString *)sessionId
                        blockArray:(void (^)(NSMutableArray *waters, NSError *error,ErrorMessage *errorMessage))block;

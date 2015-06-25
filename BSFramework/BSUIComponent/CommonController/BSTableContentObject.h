@@ -14,9 +14,9 @@
 @property (copy, nonatomic) NSString *title;
 @property (copy, nonatomic) NSString *method;
 @property (copy, nonatomic) NSString *imageName;
-@property (copy, nonatomic) Class vcClass;
+@property (copy, nonatomic) NSString * vcClass;
 
--(instancetype)initContentObject:(NSString *)title methodName:(NSString *)name imageName:(NSString *)imageName vcClass:(Class)clzz;
+-(instancetype)initWithContentObject:(NSString *)title methodName:(NSString *)name imageName:(NSString *)imageName vcClass:(NSString *)clzz;
 
-+(instancetype)initContentObject:(NSString *)title methodName:(NSString *)name imageName:(NSString *)imageName vcClass:(Class)clzz;
++(instancetype)initWithContentObject:(NSString *)title methodName:(NSString *)name imageName:(NSString *)imageName vcClass:(NSString *)clzz;
 @end

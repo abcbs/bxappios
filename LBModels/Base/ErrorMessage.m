@@ -21,4 +21,11 @@
     return [[self alloc] initWithDic:dic];
 }
 
+-(NSString *)description
+
+{
+    return [NSString stringWithFormat:@"错误信息，编码: %@ 错误信息: %@",
+            self.errorCode,self.message];
+    
+}
 @end

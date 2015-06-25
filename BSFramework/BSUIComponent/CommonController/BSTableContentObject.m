@@ -10,7 +10,8 @@
 
 @implementation BSTableContentObject
 
--(instancetype)initContentObject:(NSString *)title methodName:(NSString *)name imageName:(NSString *)imageName vcClass:(Class)clzz{
+
+-(instancetype)initWithContentObject:(NSString *)title methodName:(NSString *)name imageName:(NSString *)imageName vcClass:(NSString *)clzz{
     self = [super init];
     if (!self) {
         return nil;
@@ -22,8 +23,16 @@
     return self;
 }
 
-+(instancetype)initContentObject:(NSString *)title methodName:(NSString *)name imageName:(NSString *)imageName vcClass:(Class)clzz
++(instancetype)initWithContentObject:(NSString *)title methodName:(NSString *)name imageName:(NSString *)imageName vcClass:(NSString *)clzz
 {
-    return [[super alloc] initContentObject:title methodName:name imageName:imageName vcClass:clzz];
+    return [[super alloc] initWithContentObject:title methodName:name imageName:imageName vcClass:clzz];
+}
+
+-(NSString *)description
+
+{
+    return [NSString stringWithFormat:@"标题: %@ \t控制器实现类: %@\t方法:%@\t显示图片:%@",
+            self.title,self.vcClass,self.method,self.imageName];
+    
 }
 @end

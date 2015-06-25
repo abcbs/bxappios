@@ -213,8 +213,8 @@
             block(model,nil,nil);
         }else if(block&& [model isKindOfClass:[ErrorMessage class]]){
             ErrorMessage *bserror=model;
-            NSLog(@"本次请求返回信息为\n%@ \tMessage:\t%@",
-                  bserror.errorCode,bserror.message);
+            NSLog(@"本次请求返回信息为%@",
+                  bserror.description);
             if (errorUILabel) {
                 errorUILabel.text=[(ErrorMessage *)model message ];
             }else{

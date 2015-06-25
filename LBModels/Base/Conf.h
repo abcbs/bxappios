@@ -24,6 +24,8 @@
  */
 #define KBS_URL @"http://192.168.1.104:8090/"
 
+#pragma mark--iOS显示适配
+
 /**
  *  屏幕宽度;
  */
@@ -108,19 +110,8 @@
 #define Validate_url [[[NSString alloc] initWithString:KBS_URL]stringByAppendingString:@"user/generatecode"];
 
 
-#pragma mark--异常信息管理
-#define Success @"0000"  //成功
-#define NULL_OR_BLACK @"1000"//查询结果为空或 未查询到相应数据
-#define RESOURCE_NOT_EXISTS @"1001" //资源不存在
-#define PARAMS_ERROR @"1002" //参数错误
-#define LOGIN_FAIL @"1003" //用户名或密码错误导致登录失败
-#define REGISTER_FAIL @"1004" //注册失败
-#define ADD_CART_FAIL @"1005" //加入购物车失败
-#define UPDATE_CART_FAIL @"1006" //更新购物车失败
-//系统异常类
-#define QUERY_EXCEPTION @"2001" //查询出现异常
-#define INSERT_EXCEPTION @"2002" //数据插入异常
-#define UPDATE_EXCEPTION @"2003" //数据更新异常
+
+#pragma mark--功能的请求参数及请求参数模
 
 /**
  *送水列表的列宽度
@@ -131,9 +122,6 @@
  *送水分类
  */
 #define WATER_CATA @"/1001/"
-
-#pragma mark--功能的请求参数及请求参数模
-
 
 /**
  *送水列表请求模式
@@ -178,6 +166,29 @@
 
 
 #define WATER_SHOPPCART_UPDATECART @"shoppingcart/updatecart"
+
+
+#pragma mark--异常信息管理
+#define Success @"0000"  //成功
+#define NULL_OR_BLACK @"1000"//查询结果为空或 未查询到相应数据
+#define RESOURCE_NOT_EXISTS @"1001" //资源不存在
+#define PARAMS_ERROR @"1002" //参数错误
+#define LOGIN_FAIL @"1003" //用户名或密码错误导致登录失败
+#define REGISTER_FAIL @"1004" //注册失败
+#define ADD_CART_FAIL @"1005" //加入购物车失败
+#define UPDATE_CART_FAIL @"1006" //更新购物车失败
+//系统异常类
+#define QUERY_EXCEPTION @"2001" //查询出现异常
+#define INSERT_EXCEPTION @"2002" //数据插入异常
+#define UPDATE_EXCEPTION @"2003" //数据更新异常
+
+
+#pragma mark--公共机制适配
+
+/**
+ *表格默认的列数
+ */
+#define BSTABLE_CONTENT_COLUMN_NUMBER 1
 
 
 +(NSString *)urlWithShoppingCart;

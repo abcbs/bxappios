@@ -16,35 +16,6 @@
 
 @implementation CartList
 
-- (instancetype)initWithDic:(NSDictionary *)dic
-{
-    if (self = [super init]) {
-        [self setValuesForKeysWithDictionary:dic];
-    }
-    return self;
-}
-
-     
-+ (instancetype)cartListWithDict:(NSDictionary *)dic
-{
-    return [[self alloc] initWithDic:dic];
-}
-+(NSMutableArray *)cartList
-{
-    
-    
-    NSArray *dicArray = [NSArray arrayWithContentsOfFile:@""];
-    NSMutableArray *tmpArray = [NSMutableArray array];
-    
-    //字典转模型
-    for (NSDictionary *dic in dicArray) {
-        CartList *waterSending = [CartList cartListWithDict:dic];
-        [tmpArray addObject:waterSending];
-    }
-    
-    return tmpArray;
-}
-
 //  waters 是购物车中商品的列表
 +(void)queryShoppingCart:(NSString *)sessionId
 blockArray:(void (^)(NSMutableArray *waters, NSError *error,ErrorMessage *errorMessage))block;
@@ -62,6 +33,9 @@ blockArray:(void (^)(NSMutableArray *waters, NSError *error,ErrorMessage *errorM
      ];
  }
 
-
+-(NSString *)description{
+    return [NSString stringWithFormat:@"购物车列表，产品数量:%ld 商家产品ID:%@ \t商品名称:%@\t产品优惠价:%@",
+            self.cartId,self.businessProductId,self.productName,self.productPreferPrice];
+}
 
 @end

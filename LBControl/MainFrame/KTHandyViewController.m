@@ -10,7 +10,7 @@
 #import "Conf.h"
 #import "AppDelegate.h"
 #import "BSUITableViewInitRuntimeController.h"
-#import "BSTableObject.h"
+#import "BSTableSection.h"
 #import "BSTableContentObject.h"
 #import "TableViewController.h"
 
@@ -41,11 +41,16 @@
      [titBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
      titBtn.userInteractionEnabled = NO;
      */
-    BSTableContentObject *bsContent=[BSTableContentObject initContentObject:@"送水" methodName:nil imageName:@"98ss" vcClass:[TableViewController class]];
+    BSTableContentObject *bsContent=[BSTableContentObject initWithContentObject:@"送水" methodName:nil imageName:@"98ss" vcClass:@"TableViewController"];
+    NSMutableArray *arry= [NSMutableArray arrayWithObject: bsContent];
     
-    BSTableObject *bsTable=[BSTableObject initWithHeaderVcClassContent:@"预约服务" imageName:@"xy" vcClass:nil bsContent:nil];
-    [bsTable addBSTableContent:bsContent];
-    [super.bSTableObjects addObject:bsTable];
+    BSTableSection *bsTable=[BSTableSection initWithHeaderVcClassContent:@"预约服务" imageName:@"xy" vcClass:nil storyboard:@"KTWaterDetailsViewController" bsContent:arry];
+    
+    BSTableContentObject *bsCar=[BSTableContentObject initWithContentObject:@"洗车" methodName:nil imageName:@"98xc" vcClass:@"TableViewController"];
+    [bsTable addBSTableContent:bsCar sectionHeader:@"预约服务"];
+    
+    [bsTable addBSTableContent:bsCar sectionHeader:@"测试服务"];
+    [super setValue:bsTable forKey:@"bSTableObjects"];
 }
 
 - (void)didReceiveMemoryWarning {
