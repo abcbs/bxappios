@@ -217,6 +217,10 @@
 +(UIImageView *)navigationHeaderWithImage:(NSString *)imageName;
 
 //对异常的处理
-+ (BOOL)isNetwork;
+///+ (BOOL)isNetwork;
 
+extern  NSString *bsNetstatus;
+
++(void)handleNetworkError:(NSError *)error;
++(NSInteger )checkNetWork;
 @end

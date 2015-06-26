@@ -236,7 +236,7 @@
     return ^(NSError *error) {
         NSLog(@"系统出现异常，详细信息:\n%@",error);
         if (block) {
-            
+            [Conf handleNetworkError:error];
             if (errorUILabel) {
                 errorUILabel.text=error.description;
             }else {

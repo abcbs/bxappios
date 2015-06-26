@@ -89,8 +89,22 @@
     else{
         return YES;
     }
-    
-    
+}
+
+
+ NSString *bsNetstatus=@"正常状态";
+
++(void)handleNetworkError:(NSError *)error{
+    if (error.code==-1001) {
+        bsNetstatus=@"系统连接超时";
+    }
+}
+
++(NSInteger )checkNetWork{
+    if ([bsNetstatus isEqualToString:@"系统连接超时"]) {
+        return -1001;
+    }
+    return 0;
 }
 
 @end

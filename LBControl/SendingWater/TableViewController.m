@@ -35,10 +35,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //改变状态来默认颜色
-    [Conf navigationHeader:self.navigationController ];
-    //[self loadMoreData:[self firstDataId] dataCount:1];
- 
+    
 }
 
 
@@ -76,43 +73,37 @@
 }
 
 #pragma mark ----- tableView的代理方法
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{  //加载的数据放在大数组里面,tableView有多少数据是靠这数组来算
-    NSLog(@"%ld", (unsigned long)self.dataTable.count);
-    return self.dataTable.count;
-}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    MSWaterSendingCell *cell = [MSWaterSendingCell cellWithTableView:tableView];
+    MSWaterSendingCell *cell = [MSWaterSendingCell
+                                cellWithTableView:tableView];
     WaterSending *model = self.dataTable[indexPath.row];
     cell.model = model;
     return cell;
 }
 
-
-
 - (void)loadMoreData:(long) warterId dataCount:(int)cellCount
 {
-    //显示对话框
-    [super.HUD showAnimated:YES whileExecutingBlock:^{
-        //获取业务数据方法
-        [WaterSending
-         listWaterList:warterId dataCount:cellCount
-         //屏蔽弹出信息
-         errorUILabel:super.errorInfo
-         //块的使用方式
-         block:^(NSObject *response, NSError *error,ErrorMessage *errorMessage) {
-             [self.dataTable addObjectsFromArray:(NSArray *)response];
-             // 2.刷新表格UI 刷新表格
-             [self.tableView reloadData];
-            }
-         ];
-    } completionBlock:^{
-    }];
-    
+    //使用进度栏
+    [super.HUD showWhileExecuting:@selector(loadWaterList: dataCount:) onTarget:self withObject:nil animated:YES];
 }
+
+-(void)loadWaterList:(long) warterId dataCount:(int)cellCount{
+    [WaterSending
+     listWaterList:warterId dataCount:cellCount
+     //屏蔽弹出信息
+     errorUILabel:super.errorInfo
+     //块的使用方式
+     block:^(NSObject *response, NSError *error,ErrorMessage *errorMessage) {
+         [self.dataTable addObjectsFromArray:(NSArray *)response];
+         // 2.刷新表格UI 刷新表格
+         [self.tableView reloadData];
+     }
+     ];
+}
+
 
 
 // 点击某一行，进入产品详细页

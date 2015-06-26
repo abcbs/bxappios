@@ -47,10 +47,6 @@
     if (cell == nil){
         cell = [[[NSBundle mainBundle] loadNibNamed:@"MSWaterSendingCell" owner:nil options:nil] firstObject];
     }
-    
-//    if (cell == nil) {
-//        cell = [[MSWaterSendingCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
-//    }
     return  cell;
 }
 
@@ -75,11 +71,6 @@
     self.preferPrice.text  = [NSString stringWithFormat:@"￥%d",model.preferPrice];
     //销售状态
     self.salePrice.text = [NSString stringWithFormat:@"￥%d",model.salePrice];
-    
-    // sdwebIMge
-    //    if(model.productUrl == nil) return;
-    //    NSURL *url = [NSURL URLWithString:model.productUrl];
-    //    [self.mIconImageView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"a9"] options:SDWebImageRetryFailed |SDWebImageLowPriority];
 }
 
 
@@ -100,21 +91,11 @@
 }
 
 - (IBAction)goBuy:(UIButton *)sender {
-//    // 获取跳转到的控制器
-//    KTWaterDetailsViewController *detail = [[KTWaterDetailsViewController alloc] init];
-//    //控制器传值到下一个控制器, 也就是正向传值
-//    detail.waterSending = self.model;
-//    // 推出到指定控制器
-//    [self.viewController.navigationController pushViewController:detail animated:YES];
-  
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"KTWaterDetailsViewController" bundle:nil];
     KTWaterDetailsViewController *login2 = [storyboard instantiateInitialViewController];
     login2.waterSending = self.model;
     [self.viewController.navigationController pushViewController:login2 animated:YES];
 }
-
-
-
 
 @end

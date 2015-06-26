@@ -15,7 +15,7 @@
 
 @interface BSTableViewRefreshController()
 
-
+@property (nonatomic, retain) NSTimer *timer;
 
 @end
 
@@ -27,17 +27,19 @@
 @synthesize errorInfo;
 
 - (void)viewDidLoad {
+    //改变状态来默认颜色
+    [Conf navigationHeader:self.navigationController ];
     if(!HUD){
         HUD = [[MBProgressHUD alloc] initWithView:self.view];
-        [self.view addSubview:HUD];
-        
+ 
         //如果设置此属性则当前的view置于后台
-        //_HUD.dimBackground = YES;
+        //HUD.dimBackground = YES;
         HUD.mode = MBProgressHUDModeDeterminate;
         //设置对话框文字
         HUD.labelText = @"请稍等";
+        HUD.delegate = self;
+        [self.view addSubview:HUD];
     }
-
     [self setupRefresh];
     [self tableFooter];
 }
@@ -59,21 +61,42 @@
 - (void)dealloc
 {
     NSLog(@"TableView dealloc");
-    [self.tableView removeHeader ];
-    
-    [self.tableView removeFooter];
-    [HUD removeFromSuperview];
-    HUD = nil;
-    //[super ];
+    self.tableView=nil;
+    self.dataTable=nil;
+    self.HUD=nil;
 }
 
-- (void) viewDidUnload{
-    NSLog(@"TableView dealloc");
-    [self.tableView removeHeader ];
+- (void)viewDidAppear:(BOOL)animated{
+    NSLog(@"对象的视图已经加入到窗口时调用");
+    [self progressTracking];
     
+   _timer= [NSTimer scheduledTimerWithTimeInterval:0.01
+           target:self selector:@selector(progressTracking) userInfo:self repeats:YES];
+     
+
+}
+
+- (void)progressTracking
+{
+    [HUD showWhileExecuting:@selector(process) onTarget:self withObject:nil animated:YES];
+    usleep(500);
+}
+
+-(void)process{
+    
+    while([Conf checkNetWork]!=0){
+        [HUD hide:YES];
+        if (_timer) {
+            [_timer invalidate];
+        }
+    }
+}
+- (void) viewDidUnload{
+    NSLog( @"TableView dealloc%@",self.description);
+    [self.tableView removeHeader ];
     [self.tableView removeFooter];
     [HUD removeFromSuperview];
-    HUD = nil;
+    [self.dataTable removeAllObjects];
     [super viewDidUnload];
 }
 
@@ -102,6 +125,12 @@
     [errorInfo setFont:[UIFont fontWithName:@"Helvetica-BoldOblique" size:10]];
     [errorInfo setTextColor:[UIColor redColor]];
     [self.tableView.footer addSubview:errorInfo];
+}
+
+#pragma mark ----- tableView的代理方法
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.dataTable.count;
 }
 
 #pragma mark 列表下拉下载上拉更新需实现的方法

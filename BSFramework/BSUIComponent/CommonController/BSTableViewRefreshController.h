@@ -13,7 +13,7 @@
 #import "MJRefresh.h"
 #import "BSTableListProtocol.h"
 
-@interface BSTableViewRefreshController : UITableViewController<BSTableListProtocol>
+@interface BSTableViewRefreshController : UITableViewController<BSTableListProtocol,MBProgressHUDDelegate>
 
 @property (nonatomic, retain) MBProgressHUD *HUD;
 
