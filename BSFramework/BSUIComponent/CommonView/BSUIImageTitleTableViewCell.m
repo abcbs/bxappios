@@ -7,7 +7,20 @@
 //
 
 #import "BSUIImageTitleTableViewCell.h"
+#import "BSUIFrameworkHeader.h"
 
 @implementation BSUIImageTitleTableViewCell
 
+@synthesize cellImage;
+@synthesize cellName;
+
+-(UITableViewCell *)viewCellWithBSContentObject:(BSTableContentObject *)bsContentObject{
+    self.cellName.text =[bsContentObject title];
+    self.cellImage.image=[UIImage imageNamed:[bsContentObject imageName]];
+    return self;
+}
+
+-(void)dealloc{
+    self.cellImage.image=nil;
+}
 @end

@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BSUIFrameworkHeader.h"
 
 @interface KTLifeIndexCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *bigImage;
+
+-(UITableViewCell *)viewCellWithBSContentObject:(BSTableContentObject *)bsContentObject;
 
 @end

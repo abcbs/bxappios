@@ -19,9 +19,11 @@
 
 
 @synthesize sectionTitle;
-@synthesize cellClass;
 @synthesize headerViewClass;
 @synthesize sectionImageName;
+@synthesize cellIdentifier;
+@synthesize cellClass;
+
 @synthesize colCapatibilty;
 @synthesize storyboardName;
 @synthesize sections;
@@ -31,32 +33,37 @@
 +(instancetype) initWithHeaderVcClassContent:(NSString *)header
                                    imageName:(NSString *)imageName
                              headerViewClass:(Class )headerViewClzz//章节View
-                                   cellClass:(Class )cellClass//表格View
+                                  cellIdentifier:(NSString *)cellIdentifier//表格View
+                                   cellClass:(Class)cellClzz//表格实现类
                                   storyboard:(NSString *)storyboard
                                    bsContent:(NSMutableArray *)bsContents{
     return [[super alloc]
             initWithHeaderVcClassContent:header imageName:imageName
-            headerViewClass:headerViewClzz cellClass:cellClass storyboard:storyboard  colCapatibilty:BSTABLE_CONTENT_COLUMN_NUMBER
+            headerViewClass:headerViewClzz cellIdentifier:cellIdentifier
+            cellClass:cellClzz  storyboard:storyboard  colCapatibilty:BSTABLE_CONTENT_COLUMN_NUMBER
             bsContentArray:bsContents];
 }
 
 +(instancetype) initWithHeaderVcClassContent:(NSString *)header
                                    imageName:(NSString *)imageName
                              headerViewClass:(Class )headerViewClzz//章节View
-                                   cellClass:(Class )cellClass//表格View
+                                   cellIdentifier:(NSString *)cellIdentifier//表格View
+                                   cellClass:(Class)cellClzz//表格实现类
                                   storyboard:(NSString *)storyboard
                               colCapatibilty:(NSInteger)capatbility
                                    bsContent:(NSMutableArray *)bsContents{
     return [[super alloc]
             initWithHeaderVcClassContent:header imageName:imageName
-             headerViewClass:headerViewClzz cellClass:cellClass  storyboard:storyboard   colCapatibilty:capatbility
+             headerViewClass:headerViewClzz cellIdentifier:cellIdentifier  cellClass:cellClzz
+            storyboard:storyboard   colCapatibilty:capatbility
             bsContentArray:bsContents];
 }
 
 +(instancetype)initWithHeaderAndContentObject:(NSString *)header
                                     imageName:(NSString *)imageName
                               headerViewClass:(Class )headerViewClzz//章节View
-                                    cellClass:(Class )cellClass//表格View
+                                    cellIdentifier:(NSString *)cellIdentifier//表格View
+                                    cellClass:(Class)cellClzz//表格实现类
                                    storyboard:(NSString *)storyboard
                                         title:(NSString *)title
                                    methodName:(NSString *)methodName
@@ -70,7 +77,8 @@
     NSMutableArray *bsArray=[NSMutableArray arrayWithObject:bs];
     return [[self alloc] initWithHeaderVcClassContent:header imageName:imageName
                                                headerViewClass:headerViewClzz
-                                            cellClass:cellClass
+                                            cellIdentifier:cellIdentifier
+                                            cellClass:cellClzz
                                            storyboard:storyboard
             
                                        colCapatibilty:BSTABLE_CONTENT_COLUMN_NUMBER
@@ -82,7 +90,8 @@
 +(instancetype)initWithHeaderAndContentObject:(NSString *)header
                                     imageName:(NSString *)imageName
                               headerViewClass:(Class )headerViewClzz//章节View
-                                    cellClass:(Class )cellClass//表格View
+                                  cellIdentifier:(NSString *)cellIdentifier//表格View
+                                    cellClass:(Class)cellClzz//表格实现类
                                    storyboard:(NSString *)storyboard
                                colCapatibilty:(NSInteger)capatbility
                                         title:(NSString *)title
@@ -97,7 +106,8 @@
     NSMutableArray *bsArray=[NSMutableArray arrayWithObject:bs];
     return [[self alloc] initWithHeaderVcClassContent:header imageName:imageName
                                                headerViewClass:headerViewClzz
-                                            cellClass:cellClass
+                                            cellIdentifier:cellIdentifier
+                                            cellClass:cellClzz
                                            storyboard:storyboard
             
                                        colCapatibilty:capatbility
@@ -112,12 +122,14 @@
 +(instancetype) initWithHeaderVcClassContent:(NSString *)header
                                    imageName:(NSString *)imageName
                              headerViewClass:(Class )headerViewClzz//章节View
-                                   cellClass:(Class )cellClass//表格View
+                                   cellIdentifier:(NSString *)cellIdentifier//表格View
+                                   cellClass:(Class)cellClzz//表格实现类
                               colCapatibilty:(NSInteger)capatbility
                                    bsContent:(NSMutableArray *)bsContents{
     return [[super alloc]
             initWithHeaderVcClassContent:header imageName:imageName
-             headerViewClass:headerViewClzz cellClass:cellClass storyboard:nil
+            headerViewClass:headerViewClzz
+            cellIdentifier:cellIdentifier cellClass:cellClzz  storyboard:nil
             colCapatibilty:BSTABLE_CONTENT_COLUMN_NUMBER
             bsContentArray:bsContents];
 }
@@ -129,22 +141,37 @@
 +(instancetype) initWithHeaderVcClassContent:(NSString *)header
                                    imageName:(NSString *)imageName
                              headerViewClass:(Class )headerViewClzz//章节View
-                                   cellClass:(Class )cellClass//表格View
-
-                                   bsContent:(NSMutableArray *)bsContents{
+                                     bsContent:(NSMutableArray *)bsContents{
     return [[super alloc]
             initWithHeaderVcClassContent:header imageName:imageName
-             headerViewClass:headerViewClzz cellClass:cellClass  storyboard:nil   colCapatibilty:BSTABLE_CONTENT_COLUMN_NUMBER
+            headerViewClass:headerViewClzz cellIdentifier:nil cellClass:nil
+            storyboard:nil   colCapatibilty:BSTABLE_CONTENT_COLUMN_NUMBER
             bsContentArray:bsContents];
     
 }
+
++(instancetype) initWithHeaderVcClassContent:(NSString *)header
+                                   imageName:(NSString *)imageName
+                             headerViewClass:(Class )headerViewClzz//章节View
+                             cellIdentifier:(NSString * )cellIdentifier//表格View
+                                   cellClass:(Class)cellClzz//表格实现类
+                                   bsContent:(NSMutableArray *)bsContents{
+    return [[super alloc]
+            initWithHeaderVcClassContent:header imageName:imageName
+            headerViewClass:headerViewClzz cellIdentifier:cellIdentifier
+            cellClass:cellClzz
+            storyboard:nil   colCapatibilty:BSTABLE_CONTENT_COLUMN_NUMBER
+            bsContentArray:bsContents];
+}
+
 /**
  *初始化一个TableSection，每行的具体内容由bsContent数组提供
  */
 +(instancetype)initWithHeaderAndContentObject:(NSString *)header
                                     imageName:(NSString *)imageName
                               headerViewClass:(Class )headerViewClzz//章节View
-                                    cellClass:(Class )cellClass//表格View
+                                   cellIdentifier:(NSString *)cellIdentifier//表格View
+                                    cellClass:(Class)cellClzz//表格实现类
                                colCapatibilty:(NSInteger)capatbility
                                         title:(NSString *)title
                                    methodName:(NSString *)methodName
@@ -159,7 +186,8 @@
     NSMutableArray *bsArray=[NSMutableArray arrayWithObject:bs];
     return [[self alloc] initWithHeaderVcClassContent:header imageName:imageName
                                                headerViewClass:headerViewClzz
-                                            cellClass:cellClass
+                                            cellIdentifier:cellIdentifier
+                                            cellClass:cellClzz
                                            storyboard:nil
             
                                        colCapatibilty:capatbility
@@ -175,7 +203,8 @@
 +(instancetype)initWithHeaderAndContentObject:(NSString *)header
                                     imageName:(NSString *)imageName
                               headerViewClass:(Class )headerViewClzz//章节View
-                                    cellClass:(Class )cellClass//表格View
+                                    cellIdentifier:(NSString *)cellIdentifier//表格View
+                                    cellClass:(Class)cellClzz//表格实现类
                                         title:(NSString *)title
                                    methodName:(NSString *)methodName
                              contentImageName:(NSString *)contentImageName
@@ -188,7 +217,9 @@
     NSMutableArray *bsArray=[NSMutableArray arrayWithObject:bs];
     return [[self alloc] initWithHeaderVcClassContent:header imageName:imageName
                                       headerViewClass:headerViewClzz
-                                            cellClass:cellClass storyboard:nil
+                                            cellIdentifier:cellIdentifier
+                                            cellClass:cellClzz
+                                           storyboard:nil
                                        colCapatibilty:BSTABLE_CONTENT_COLUMN_NUMBER
                                        bsContentArray:bsArray];
     
@@ -199,7 +230,8 @@
 -(instancetype)initWithHeaderVcClassContent: (NSString *)tableHeader
                                   imageName:(NSString *)imageName
                             headerViewClass:(Class )headerViewClzz//章节View
-                                  cellClass:(Class )cellClass//表格View
+                                  cellIdentifier:(NSString *)cIdentifier//表格View
+                                  cellClass:(Class)cellClzz//表格实现类
                                  storyboard:(NSString *)storyboard
                              colCapatibilty:(NSInteger)capatbility
                              bsContentArray:(NSMutableArray *)bsContents{
@@ -213,7 +245,8 @@
     self.storyboardName=storyboard;
 
     self.headerViewClass=headerViewClzz;
-    self.cellClass=cellClass;
+    self.cellIdentifier=cIdentifier;
+    self.cellClass=cellClzz;
     //每行的列数最小值应当比一大
     if (capatbility<1) {
         self.colCapatibilty= BSTABLE_CONTENT_COLUMN_NUMBER;

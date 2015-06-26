@@ -7,11 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BSUIFrameworkHeader.h"
 
 @interface BSUIImageTitleTableViewCell : UITableViewCell
+{
+    
+}
+@property (weak, nonatomic) IBOutlet UIImageView *cellImage;
 
-@property (weak, nonatomic) IBOutlet UIView *cellImage;
+@property (weak, nonatomic) IBOutlet UILabel *cellName;
 
-@property (weak, nonatomic) IBOutlet UIView *cellName;
+
+-(UITableViewCell *)viewCellWithBSContentObject:(BSTableContentObject *)bsContentObject;
 
 @end

@@ -9,7 +9,11 @@
 #import "BSTableContentObject.h"
 
 @implementation BSTableContentObject
-
+@synthesize title;
+@synthesize method;
+@synthesize vcClass;
+@synthesize imageName;
+@synthesize colClass;
 
 -(instancetype)initWithContentObject:(NSString *)title methodName:(NSString *)name
                            imageName:(NSString *)imageName vcClass:(NSString *)clzzName colClass:(Class)clzz{

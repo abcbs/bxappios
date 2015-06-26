@@ -33,9 +33,14 @@
      */
     @property (assign, nonatomic) NSString *selectionKey;
     /**
-     *UITableViewCell名称
+     *UITableViewCell名称，在故事板中为表示，在NIB为实现
      */
+    @property (assign, nonatomic) NSString *cellIdentifier;
+    /**
+    *UITableViewCell名称，在故事板中为表示，在NIB为实现
+    */
     @property (assign, nonatomic) Class cellClass;
+
     /**
      *标题的View
      */
@@ -53,7 +58,8 @@
 +(instancetype) initWithHeaderVcClassContent:(NSString *)header//章节标题
                                    imageName:(NSString *)imageName//章节图标
                              headerViewClass:(Class )headerViewClzz//章节View
-                                   cellClass:(Class )cellClass//表格View
+                                   cellIdentifier:(NSString *)cellIdentifier//表格View
+                                   cellClass:(Class)cellClzz//表格实现类
                                   storyboard:(NSString *)storyboard
                               colCapatibilty:(NSInteger)capatbility
                                    bsContent:(NSMutableArray *)bsContents;
@@ -65,7 +71,8 @@
 +(instancetype) initWithHeaderVcClassContent:(NSString *)header
                                    imageName:(NSString *)imageName
                              headerViewClass:(Class )headerViewClzz//章节View
-                                   cellClass:(Class )cellClass//表格View
+                                   cellIdentifier:(NSString *)cellIdentifier//表格View
+                                   cellClass:(Class)cellClzz//表格实现类
                                   storyboard:(NSString *)storyboard
                                    bsContent:(NSMutableArray *)bsContents;
 
@@ -75,7 +82,8 @@
 +(instancetype)initWithHeaderAndContentObject:(NSString *)header
                                     imageName:(NSString *)imageName
                               headerViewClass:(Class )headerViewClzz//章节View
-                                    cellClass:(Class )cellClass//表格View
+                                    cellIdentifier:(NSString *)cellIdentifier//表格View
+                                    cellClass:(Class)cellClzz//表格实现类
                                    storyboard:(NSString *)storyboard
                                colCapatibilty:(NSInteger)capatbility
                                         title:(NSString *)title
@@ -91,7 +99,8 @@
 +(instancetype)initWithHeaderAndContentObject:(NSString *)header
                                     imageName:(NSString *)imageName
                               headerViewClass:(Class )headerViewClzz//章节View
-                                    cellClass:(Class )cellClass//表格View
+                                    cellIdentifier:(NSString *)cellIdentifier//表格View
+                                    cellClass:(Class)cellClzz//表格实现类
                                    storyboard:(NSString *)storyboard
                                         title:(NSString *)title
                                    methodName:(NSString *)methodName
@@ -106,7 +115,8 @@
 +(instancetype) initWithHeaderVcClassContent:(NSString *)header
                                    imageName:(NSString *)imageName
                              headerViewClass:(Class )headerViewClzz//章节View
-                                   cellClass:(Class )cellClass//表格View
+                                  cellIdentifier:(NSString *)cellIdentifier//表格View
+                                   cellClass:(Class)cellClzz//表格实现类
                               colCapatibilty:(NSInteger)capatbility
                                    bsContent:(NSMutableArray *)bsContents;
 
@@ -117,7 +127,8 @@
 +(instancetype) initWithHeaderVcClassContent:(NSString *)header
                                    imageName:(NSString *)imageName
                              headerViewClass:(Class )headerViewClzz//章节View
-                                   cellClass:(Class )cellClass//表格View
+                                   cellIdentifier:(NSString * )cellIdentifier//表格View
+                                   cellClass:(Class)cellClzz//表格实现类
                                     bsContent:(NSMutableArray *)bsContents;
 
 /**
@@ -126,7 +137,8 @@
 +(instancetype)initWithHeaderAndContentObject:(NSString *)header
                                     imageName:(NSString *)imageName
                               headerViewClass:(Class )headerViewClzz//章节View
-                                    cellClass:(Class )cellClass//表格View
+                                    cellIdentifier:(NSString *)cellIdentifier//表格View
+                                    cellClass:(Class)cellClzz//表格实现类
                                colCapatibilty:(NSInteger)capatbility
                                         title:(NSString *)title
                                    methodName:(NSString *)methodName
@@ -141,7 +153,8 @@
 +(instancetype)initWithHeaderAndContentObject:(NSString *)header
                                     imageName:(NSString *)imageName
                               headerViewClass:(Class )headerViewClzz//章节View
-                                    cellClass:(Class )cellClass//表格View
+                                    cellIdentifier:(NSString *)cellIdentifier//表格View
+                                    cellClass:(Class)cellClzz//表格实现类
                                         title:(NSString *)title
                                    methodName:(NSString *)methodName
                              contentImageName:(NSString *)contentImageName

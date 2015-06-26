@@ -42,13 +42,18 @@
  */
 #import "BSUITableViewInitRuntimeController.h"
 
+#import "BSTableViewRefreshController.h"
 /**
  *表格视图根据配置模型自动跳转页面的实现
- *表格的每行一列方式
+ *表格的每行一列方式，包括图标和标题
  */
 #import "BSUIImageTitleTableViewCell.h"
 
-
+/**
+ *表格视图根据配置模型自动跳转页面的实现
+ *表格的每行一列方式，只有图标
+ */
+#import "BSUISingleImageTableViewCell.h"
 /*
  *UI的公共小组件，例如弹出窗口
  */

@@ -64,20 +64,60 @@
     
     long section=indexPath.section;
     long row=indexPath.row;
-    BSTableContentObject *bsContentObject=(BSTableContentObject *)[self bsContentObject:section row:row];
-    NSString *ID = bsContentObject.vcClass;
-    UITableViewCell *cell=[self uiTableViewCellWithIdentifier:ID];
-    
-    if (cell==nil) {
-        cell=[[UITableViewCell alloc]init];
-    }
-    cell.textLabel.text =bsContentObject.title;
-    return cell;
+    return [self processTableViewCell:section row:row];
+   
 }
 
+-(UITableViewCell *)processTableViewCell:(NSInteger)section row:(NSInteger)row
+{
+    BSTableContentObject *bsContentObject=(BSTableContentObject *)[self bsContentObject:section row:row];
+    
+    NSString *ID = [self.bSTableObjects cellIdentifier];
+    UITableViewCell *cell=[self uiTableViewCellWithIdentifier:ID];
+    if (cell==nil) {
+        UINib *nib = [UINib nibWithNibName:ID bundle:nil];
+        
+        [self.tableView registerNib:nib forCellReuseIdentifier:ID];
+    }
+    Class clzz=[self cellIdentifierWithSection:section];
+    return [self processTableViewCell:clzz bsContentObject:bsContentObject];
+
+}
+
+/**
+ *公共方法，需要继承或单独实现，来完成单元格绘制
+ */
+-(UITableViewCell *)processTableViewCell:(Class) cellClass
+    bsContentObject:(BSTableContentObject *)bsContentObject{
+    NSString *ID = [self.bSTableObjects cellIdentifier];
+    id cell=[self uiTableViewCellWithIdentifier:ID];
+    if (cell==nil) {
+        cell=[[cellClass alloc]init];
+    }
+    NSString *method=@"viewCellWithBSContentObject";
+    if (bsContentObject.method!=nil) {
+        method=bsContentObject.method;
+    }
+    //[vc setValue:exam.methods[indexPath.row] forKeyPath:@"method"];
+    
+    //return [cell setValue:method forKeyPath:@"method"];
+    return [cell viewCellWithBSContentObject:bsContentObject];
+
+}
+
+/**
+ *私有方法，根据章节获得它的cell标示
+ */
+-(Class) cellIdentifierWithSection:(NSInteger)section{
+    return [self.bSTableObjects cellClass];
+}
+
+/**
+ *私有方法 根据配置获得UI的实现
+ */
 -(id)uiTableViewCellWithIdentifier:(NSString*)identifer
 {
-    return
+       return
     [self.tableView dequeueReusableCellWithIdentifier:identifer];
 }
 
@@ -133,8 +173,6 @@
     
     UIViewController *vc =[[clzz alloc] init];
     
-    //[self presentViewController:nav animated:YES completion:nil];
-    //[self.presentViewController pushViewController:vc animated:YES];
     [self presentViewController:vc animated:NO completion:nil];}
 
 /**
@@ -156,7 +194,7 @@
  *是否是使用故事板进行跳转，如果是YES则使用故事板方式跳转，否则使用手工方式
  */
 -(BOOL)useStoryboard:(NSInteger)section row:(NSInteger)row{
-    //return [self.bSTableObjects useStorybord];
+
     NSString *vcClassName=[self vcControllerName:section row:row];
     if (vcClassName==nil) {
         return NO;
