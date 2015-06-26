@@ -92,19 +92,29 @@
 }
 
 
- NSString *bsNetstatus=@"正常状态";
+NSString *bsNetstatus=@"缺省状态";
 
 +(void)handleNetworkError:(NSError *)error{
-    if (error.code==-1001) {
+    if (error==nil) {
+        bsNetstatus=@"系统连接正常";
+    }
+    if (error.code<0) {
         bsNetstatus=@"系统连接超时";
+    }else{
+        bsNetstatus=@"系统连接正常";
     }
 }
+
 
 +(NSInteger )checkNetWork{
     if ([bsNetstatus isEqualToString:@"系统连接超时"]) {
         return -1001;
+        
+    }else if([bsNetstatus isEqualToString:@"缺省状态"]){
+        return NSIntegerMax;
+    }else {
+        return networkRight;
     }
-    return 0;
 }
 
 @end

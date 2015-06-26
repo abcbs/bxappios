@@ -47,7 +47,7 @@
     
     BSTableSection *bsTable=[BSTableSection initWithHeaderVcClassContent:@"预约服务" imageName:@"xy" vcClass:nil storyboard:@"KTWaterDetailsViewController" bsContent:arry];
     
-    BSTableContentObject *bsCar=[BSTableContentObject initWithContentObject:@"洗车" methodName:nil imageName:@"98xc" colClass:[recommendController class]];
+    BSTableContentObject *bsCar=[BSTableContentObject initWithContentObject:@"推荐" methodName:nil imageName:@"98xc" colClass:[recommendController class]];
     [bsTable addBSTableContent:bsCar sectionHeader:@"预约服务"];
     
     [bsTable addBSTableContent:bsCar sectionHeader:@"测试服务"];

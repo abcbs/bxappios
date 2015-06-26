@@ -207,7 +207,7 @@
     block:(BSHTTPResponse)block
     errorUILabel:( UILabel *)errorUILabel{
     return ^(NSURLSessionDataTask *task, id responseObject, id model) {
-        
+        [Conf handleNetworkError:nil];
         if (block&&![model isKindOfClass:[ErrorMessage class]]) {
             
             block(model,nil,nil);

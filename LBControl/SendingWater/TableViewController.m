@@ -84,24 +84,26 @@
     return cell;
 }
 
+
 - (void)loadMoreData:(long) warterId dataCount:(int)cellCount
 {
-    //使用进度栏
-    [super.HUD showWhileExecuting:@selector(loadWaterList: dataCount:) onTarget:self withObject:nil animated:YES];
-}
-
--(void)loadWaterList:(long) warterId dataCount:(int)cellCount{
-    [WaterSending
-     listWaterList:warterId dataCount:cellCount
-     //屏蔽弹出信息
-     errorUILabel:super.errorInfo
-     //块的使用方式
-     block:^(NSObject *response, NSError *error,ErrorMessage *errorMessage) {
-         [self.dataTable addObjectsFromArray:(NSArray *)response];
-         // 2.刷新表格UI 刷新表格
-         [self.tableView reloadData];
-     }
-     ];
+    //显示对话框
+    [super.HUD showAnimated:YES whileExecutingBlock:^{
+        //获取业务数据方法
+        [WaterSending
+         listWaterList:warterId dataCount:cellCount
+         //屏蔽弹出信息
+         errorUILabel:super.errorInfo
+         //块的使用方式
+         block:^(NSObject *response, NSError *error,ErrorMessage *errorMessage) {
+             [self.dataTable addObjectsFromArray:(NSArray *)response];
+             // 2.刷新表格UI 刷新表格
+             [self.tableView reloadData];
+         }
+         ];
+    } completionBlock:^{
+        //[super.HUD hide:YES];
+    }];
 }
 
 

@@ -68,9 +68,7 @@
 
 - (void)viewDidAppear:(BOOL)animated{
     NSLog(@"对象的视图已经加入到窗口时调用");
-    [self progressTracking];
-    
-   _timer= [NSTimer scheduledTimerWithTimeInterval:0.01
+   _timer= [NSTimer scheduledTimerWithTimeInterval:0.1
            target:self selector:@selector(progressTracking) userInfo:self repeats:YES];
      
 
@@ -84,7 +82,7 @@
 
 -(void)process{
     
-    while([Conf checkNetWork]!=0){
+    while([Conf checkNetWork]!=networkRight){
         [HUD hide:YES];
         if (_timer) {
             [_timer invalidate];
@@ -109,13 +107,16 @@
     [self.tableView addLegendHeaderWithRefreshingTarget:self
                                        refreshingAction:@selector(headerRereshing)];
     self.tableView.header.updatedTimeHidden = YES;
-    [self.tableView.header beginRefreshing];
+    
+    
     
     // 2.上拉加载更多(进入刷新状态就会调用self的footerRereshing)
     [self.tableView addLegendFooterWithRefreshingTarget:self
                                        refreshingAction:@selector(footerRereshing)];
-    [self.tableView.footer setTitle:@"已经是最后一条"
+    [self.tableView.footer setTitle:@""
                            forState:MJRefreshFooterStateNoMoreData];
+    [self.tableView.header beginRefreshing];
+    
 }
 
 -(void)tableFooter{

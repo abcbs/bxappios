@@ -221,6 +221,15 @@
 
 extern  NSString *bsNetstatus;
 
+/*
+ *网络连接系统正常
+ */
+#define networkRight 10000000
+
 +(void)handleNetworkError:(NSError *)error;
+
+/**
+ *默认返回0，表示目前还没有网络信息返回
+ */
 +(NSInteger )checkNetWork;
 @end
