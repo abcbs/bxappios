@@ -21,21 +21,13 @@
 
 @synthesize sectionTitle;
 @synthesize vcClass;
-@synthesize headerImageName;
+@synthesize sectionImageName;
 @synthesize colCapatibilty;
 @synthesize storyboardName;
 @synthesize sections;
 @synthesize content;
 
-/*
--(NSMutableArray *)content{
-    if (_content==nil) {
-        _content=[[NSMutableArray alloc]init];
-    }
-    return _content;
-}
-*/
-
+#pragma mark--故事板实现跳转
 +(instancetype) initWithHeaderVcClassContent:(NSString *)header
                                    imageName:(NSString *)imageName
                                      vcClass:(NSString *)vcClass
@@ -43,7 +35,7 @@
                                    bsContent:(NSMutableArray *)bsContents{
     return [[super alloc]
             initWithHeaderVcClassContent:header imageName:imageName
-            vcClass:vcClass storyboard:storyboard colCapatibilty:BSTABLE_CONTENT_COLUMN_NUMBER
+            vcClass:vcClass storyboard:storyboard colClass:nil colCapatibilty:BSTABLE_CONTENT_COLUMN_NUMBER
             bsContentArray:bsContents];
 }
 
@@ -55,7 +47,7 @@
                                    bsContent:(NSMutableArray *)bsContents{
     return [[super alloc]
             initWithHeaderVcClassContent:header imageName:imageName
-            vcClass:vcClass storyboard:storyboard colCapatibilty:capatbility
+            vcClass:vcClass  storyboard:storyboard colClass:nil  colCapatibilty:capatbility
             bsContentArray:bsContents];
 }
 
@@ -63,7 +55,6 @@
                                     imageName:(NSString *)imageName
                                       vcClass:(NSString *)vcClass
                                    storyboard:(NSString *)storyboard
-                                      bsContent:(NSMutableArray *)bsContents
                                         title:(NSString *)title
                                    methodName:(NSString *)methodName
                              contentImageName:(NSString *)contentImageName
@@ -76,6 +67,7 @@
     NSMutableArray *bsArray=[NSMutableArray arrayWithObject:bs];
     return [[self alloc] initWithHeaderVcClassContent:header imageName:imageName
                                               vcClass:vcClass storyboard:storyboard
+                                             colClass:nil
                                        colCapatibilty:BSTABLE_CONTENT_COLUMN_NUMBER
                                        bsContentArray:bsArray];
     
@@ -87,7 +79,6 @@
                                       vcClass:(NSString *)vcClass
                                    storyboard:(NSString *)storyboard
                                colCapatibilty:(NSInteger)capatbility
-                                    bsContent:(NSMutableArray *)bsContents
                                         title:(NSString *)title
                                    methodName:(NSString *)methodName
                                     contentImageName:(NSString *)contentImageName
@@ -100,15 +91,101 @@
     NSMutableArray *bsArray=[NSMutableArray arrayWithObject:bs];
     return [[self alloc] initWithHeaderVcClassContent:header imageName:imageName
                                               vcClass:vcClass storyboard:storyboard
+                                             colClass:nil
                                        colCapatibilty:capatbility
                                        bsContentArray:bsArray];
 
 }
 
+#pragma mark--手工编码
+/**
+ *初始化一个TableSection，每行的具体内容由bsContent数组提供
+ */
++(instancetype) initWithHeaderVcClassContent:(NSString *)header
+                                   imageName:(NSString *)imageName
+                                    colClass:(Class )clzz
+                              colCapatibilty:(NSInteger)capatbility
+                                   bsContent:(NSMutableArray *)bsContents{
+    return [[super alloc]
+            initWithHeaderVcClassContent:header imageName:imageName
+            vcClass:nil storyboard:nil colClass:clzz colCapatibilty:BSTABLE_CONTENT_COLUMN_NUMBER
+            bsContentArray:bsContents];
+}
+
+/**
+ *初始化，初始化时每一章节有一行数据，默认每行的列数colCapatibilty为系统提供的默认值，
+ *由BSTABLE_CONTENT_COLUMN_NUMBER
+ */
++(instancetype) initWithHeaderVcClassContent:(NSString *)header
+                                   imageName:(NSString *)imageName
+                                    colClass:(Class )clzz
+
+                                   bsContent:(NSMutableArray *)bsContents{
+    return [[super alloc]
+            initWithHeaderVcClassContent:header imageName:imageName
+            vcClass:nil  storyboard:nil colClass:clzz  colCapatibilty:BSTABLE_CONTENT_COLUMN_NUMBER
+            bsContentArray:bsContents];
+    
+}
+/**
+ *初始化一个TableSection，每行的具体内容由bsContent数组提供
+ */
++(instancetype)initWithHeaderAndContentObject:(NSString *)header
+                                    imageName:(NSString *)imageName
+                                     colClass:(Class )clzz
+                               colCapatibilty:(NSInteger)capatbility
+                                        title:(NSString *)title
+                                   methodName:(NSString *)methodName
+                             contentImageName:(NSString *)contentImageName
+                               contentVCClass:(NSString *)contentClzz{
+    
+    BSTableContentObject *bs=[BSTableContentObject
+                              initWithContentObject:title
+                              methodName:methodName
+                              imageName:contentImageName
+                              vcClass:contentClzz];
+    NSMutableArray *bsArray=[NSMutableArray arrayWithObject:bs];
+    return [[self alloc] initWithHeaderVcClassContent:header imageName:imageName
+                                              vcClass:nil storyboard:nil
+                                             colClass:clzz
+                                       colCapatibilty:capatbility
+                                       bsContentArray:bsArray];
+    
+    }
+
+/**
+ *初始化，初始化时每一章节有一行数据，默认每行的列数colCapatibilty为系统提供的默认值，
+ *由BSTABLE_CONTENT_COLUMN_NUMBER
+ *
+ */
++(instancetype)initWithHeaderAndContentObject:(NSString *)header
+                                    imageName:(NSString *)imageName
+                                     colClass:(Class )clzz
+                                        title:(NSString *)title
+                                   methodName:(NSString *)methodName
+                             contentImageName:(NSString *)contentImageName
+                               contentVCClass:(NSString *)contentClzz{
+    BSTableContentObject *bs=[BSTableContentObject
+                              initWithContentObject:title
+                              methodName:methodName
+                              imageName:contentImageName
+                              vcClass:contentClzz];
+    NSMutableArray *bsArray=[NSMutableArray arrayWithObject:bs];
+    return [[self alloc] initWithHeaderVcClassContent:header imageName:imageName
+                                              vcClass:nil storyboard:nil
+                                             colClass:clzz
+                                       colCapatibilty:BSTABLE_CONTENT_COLUMN_NUMBER
+                                       bsContentArray:bsArray];
+    
+}
+
+
+
 -(instancetype)initWithHeaderVcClassContent: (NSString *)tableHeader
                                   imageName:(NSString *)imageName
                                     vcClass:(NSString *)contentClass
                                  storyboard:(NSString *)storyboard
+                                   colClass:(Class )clzz
                              colCapatibilty:(NSInteger)capatbility
                              bsContentArray:(NSMutableArray *)bsContents{
     self = [super init];
@@ -117,9 +194,13 @@
     }
     self.sectionTitle=tableHeader;
 
-    self.headerImageName=imageName;
+    self.sectionImageName=imageName;
     self.storyboardName=storyboard;
-    if (capatbility>BSTABLE_CONTENT_COLUMN_NUMBER) {
+    self.colClass=clzz;
+    //每行的列数最小值应当比一大
+    if (capatbility<1) {
+        self.colCapatibilty= BSTABLE_CONTENT_COLUMN_NUMBER;
+    }else{
         self.colCapatibilty= capatbility;
     }
 
@@ -130,12 +211,6 @@
     if (self.sections==nil) {
         self.sections=[NSMutableDictionary dictionary];
     }
-    /*
-    BSTableRow *row=[BSTableRow initWithContentArray:bsContents];
-    if (row) {
-        [self.content addObject:row];
-    }
-    */
     [self.content addObject:tableHeader];
     [self sectionArray:tableHeader bsContents:bsContents];
     return self;
@@ -174,7 +249,12 @@
 -(NSInteger) currentRowNumber:(NSInteger)section{
     NSString *title=[self.content objectAtIndex:section];
     NSMutableArray *arrays=[self.sections objectForKey:title];
-    return [arrays count];
+    long cap=[arrays count]/colCapatibilty;
+    //每行至少有一列数据
+    if (cap<1) {
+        cap=1;
+    }
+    return cap;
 }
 
 /*
@@ -191,8 +271,16 @@
     return [self.content objectAtIndex:section];
 }
 
+/**
+ *判断是否是故事板实现
+ */
+-(BOOL)useStorybord{
+    return YES;
+}
+
+
 -(NSString *)description{//description
     return [NSString stringWithFormat:@"表格数据章节信息\t header:%@\timageName:%@\t单元格数据%lu",
-            self.sectionTitle,self.headerImageName, (unsigned long)[self.content count]];
+            self.sectionTitle,self.sectionImageName, (unsigned long)[self.content count]];
 }
 @end

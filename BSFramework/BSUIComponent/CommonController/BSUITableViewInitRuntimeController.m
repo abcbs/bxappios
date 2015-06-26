@@ -67,7 +67,7 @@
     
     long section=indexPath.section;
     long row=indexPath.row;
-    BSTableContentObject *bsContentObject=[self bsContentObject:section row:row];
+    BSTableContentObject *bsContentObject=(BSTableContentObject *)[self bsContentObject:section row:row];
     NSString *ID = bsContentObject.vcClass;
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:ID];
     if (cell==nil) {
@@ -106,17 +106,85 @@
 {
     long section=indexPath.section;
     long row=indexPath.row;
-    BSTableSection *bsTable = self.bSTableObjects;
-    BSTableContentObject *bsContent= [self bsContentObject:section row:row];
-    NSLog(@"转向界面的信息\t%@",bsContent.description);
+    [self prepareNavigationView:section row:row];
+}
+
+-(void)prepareNavigationView:(NSInteger)section row:(NSInteger)row{
+    if ([self useStoryboard:section row:row]==YES) {
+        NSString *vcClassName=[self vcControllerName:section row:row];
+        [self prepareControllWithStorybord:vcClassName];
+    }else{
+        Class clzz=[self vcControlleClass:section row:row];
+        [self prepareControllWithNib:clzz];
+    }
+   
+}
+
+/**
+ *以手工方式实现的Controller的跳转
+ */
+-(void)prepareControllWithNib:(Class)clzz{
+    
+    
+    UIViewController *vc =[[clzz alloc] init];
+    
+    //[self presentViewController:nav animated:YES completion:nil];
+    //[self.presentViewController pushViewController:vc animated:YES];
+    [self presentViewController:vc animated:NO completion:nil];}
+
+/**
+ *以故事板实现的Controller的跳转
+ */
+-(void)prepareControllWithStorybord:(NSString *)vcClassName{
+    
     UIStoryboard *storyboard = [UIStoryboard
-                                storyboardWithName:bsTable.storyboardName bundle:nil];
+                                storyboardWithName:[self storyboardName] bundle:nil];
     
-    UIViewController *shoppControl = [storyboard instantiateViewControllerWithIdentifier:bsContent.vcClass];
+    UIViewController *goControl = [storyboard instantiateViewControllerWithIdentifier:vcClassName];
     
-    UINavigationController* nav = [[UINavigationController alloc]  initWithRootViewController:shoppControl];
+    UINavigationController* nav = [[UINavigationController alloc]  initWithRootViewController:goControl];
     
-    [self presentViewController:nav animated:YES completion:nil];    //
+    [self presentViewController:nav animated:YES completion:nil];
+}
+
+/**
+ *是否是使用故事板进行跳转，如果是YES则使用故事板方式跳转，否则使用手工方式
+ */
+-(BOOL)useStoryboard:(NSInteger)section row:(NSInteger)row{
+    //return [self.bSTableObjects useStorybord];
+    NSString *vcClassName=[self vcControllerName:section row:row];
+    if (vcClassName==nil) {
+        return NO;
+    }else{
+        return YES;
+    }
+}
+/**
+ *获取跳转Controller的名称,故事板跳转方式
+ */
+-(NSString *)vcControllerName:(NSInteger)section row:(NSInteger)row{
+    NSString *vcName=((BSTableContentObject *)[self bsContentObject:section row:row]).vcClass;
+    if (vcName==nil) {
+        return [self.bSTableObjects vcClass];
+    }else{
+        return vcName;
+    }
+}
+
+/**
+ *获取跳转Controller的类定义,手工编码方式
+ */
+-(Class)vcControlleClass:(NSInteger)section row:(NSInteger)row{
+    Class clzz=((BSTableContentObject *)[self bsContentObject:section row:row]).colClass;
+    if (clzz==nil) {
+        return [self.bSTableObjects colClass];
+    }else{
+        return clzz;
+    }
+}
+
+-(NSString *)storyboardName{
+    return self.bSTableObjects.storyboardName;
 }
 
 -(NSString *)titleForHeaderInSection:(NSInteger)section{
@@ -132,7 +200,7 @@
     return [self.bSTableObjects currentRowNumber:section];
 }
 
--(BSTableContentObject *) bsContentObject:(NSInteger)section row:(NSInteger)row{
+-(NSObject *) bsContentObject:(NSInteger)section row:(NSInteger)row{
     BSTableSection *bsTable = self.bSTableObjects;
     NSString *sectionTitle = bsTable.sectionTitle;
     NSMutableArray *bsArray= [bsTable sectionData:sectionTitle];

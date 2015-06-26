@@ -17,13 +17,25 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
+/**
+ *获取章节的头信息
+ */
 -(NSString *)titleForHeaderInSection:(NSInteger)section;
 
+/**
+ *当前章节的数量
+ */
 -(NSInteger)currentSectionNumber;
 
+/**
+ *当前章节行数
+ */
 -(NSInteger) rowSectionNumber:(NSInteger)section;
 
--(BSTableContentObject *) bsContentObject:(NSInteger)section row:(NSInteger)row;
+/**
+ *当前行的数据信息
+ */
+-(NSObject *) bsContentObject:(NSInteger)section row:(NSInteger)row;
 
 -(NSMutableArray *)indexes;
 

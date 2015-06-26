@@ -11,21 +11,28 @@
 @implementation BSTableContentObject
 
 
--(instancetype)initWithContentObject:(NSString *)title methodName:(NSString *)name imageName:(NSString *)imageName vcClass:(NSString *)clzz{
+-(instancetype)initWithContentObject:(NSString *)title methodName:(NSString *)name
+                           imageName:(NSString *)imageName vcClass:(NSString *)clzzName colClass:(Class)clzz{
     self = [super init];
     if (!self) {
         return nil;
     }
     self.title=title;
     self.method=name;
-    self.vcClass=clzz;
+    self.vcClass=clzzName;
     self.imageName=imageName;
+    self.colClass=clzz;
     return self;
 }
 
-+(instancetype)initWithContentObject:(NSString *)title methodName:(NSString *)name imageName:(NSString *)imageName vcClass:(NSString *)clzz
++(instancetype)initWithContentObject:(NSString *)title methodName:(NSString *)name imageName:(NSString *)imageName colClass:(Class)clzz{
+    return [[super alloc] initWithContentObject:title methodName:name
+                                      imageName:imageName vcClass:nil colClass:clzz];}
+
++(instancetype)initWithContentObject:(NSString *)title methodName:(NSString *)name imageName:(NSString *)imageName vcClass:(NSString *)clzzName
 {
-    return [[super alloc] initWithContentObject:title methodName:name imageName:imageName vcClass:clzz];
+    return [[super alloc] initWithContentObject:title methodName:name
+                                      imageName:imageName vcClass:clzzName colClass:nil];
 }
 
 -(NSString *)description
