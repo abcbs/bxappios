@@ -10,5 +10,11 @@
 #define KTAPP_BSCMFrameworkHeader_h
 
 #import "Conf.h"
+#import "ErrorMessage.h"
+#pragma mark--第三方网络组件
+
+#import "AFNetworking.h"
+
+#import "YYHModelRouter.h"
 
 #endif

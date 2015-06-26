@@ -12,10 +12,15 @@
 #define KTAPP_BSUIFramework_h
 
 #import "Conf.h"
+#import "ErrorMessage.h"
 
 /**
  *第三方UI相关组件
  */
+#import "MBProgressHUD.h"
+#import "MJRefresh.h"
+#import "UIImageView+AFNetWorking.h"
+#import "UIView+Frame.h"
 
 /**
  *自动轮播实现

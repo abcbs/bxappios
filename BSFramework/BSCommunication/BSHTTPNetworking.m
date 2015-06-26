@@ -7,11 +7,11 @@
 //
 #import <Foundation/Foundation.h>
 #import "BSHTTPNetworking.h"
-#import "AFNetworking.h"
-#import "YYHModelRouter.h"
-#import "Conf.h"
-#import "ErrorMessage.h"
-#import "BSUIComponentView.h"
+
+
+#import "BSUIFrameworkHeader.h"
+
+#import "BSCMFrameworkHeader.h"
 
 @interface BSHTTPNetworking ()
 

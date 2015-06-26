@@ -7,8 +7,7 @@
 //
 
 #import "BSTableSection.h"
-#import "BSTableContentObject.h"
-#import "Conf.h"
+#import "BSUIFrameworkHeader.h"
 
 @interface BSTableSection()
 

@@ -14,6 +14,7 @@ dependencies: \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/LBControl/MainFrame/AppDelegate.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/BSFramework/BSUIFrameworkHeader.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/BSFramework/Base/Conf.h \
+  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/BSFramework/Base/ErrorMessage.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/BSFramework/BSUIComponent/CommonController/BSTableSection.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/BSFramework/BSUIComponent/CommonController/BSTableContentObject.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/BSFramework/BSUIComponent/CommonController/UIViewController+BSTableObject.h \

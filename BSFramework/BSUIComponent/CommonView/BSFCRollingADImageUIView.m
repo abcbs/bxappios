@@ -7,10 +7,8 @@
 //
 
 #import "BSFCRollingADImageUIView.h"
+#import "BSUIFrameworkHeader.h"
 
-#import "UIImageView+AFNetWorking.h"
-
-#import "UIView+Frame.h"
 @implementation ImageAndURLModel
 
 -(NSString *)urlPictute

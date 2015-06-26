@@ -9,8 +9,7 @@
 
 #import <UIKit/UIKit.h>
 
-#import "MBProgressHUD.h"
-#import "MJRefresh.h"
+#import "BSUIFrameworkHeader.h"
 #import "BSTableListProtocol.h"
 
 @interface BSTableViewRefreshController : UITableViewController<BSTableListProtocol,MBProgressHUDDelegate>
