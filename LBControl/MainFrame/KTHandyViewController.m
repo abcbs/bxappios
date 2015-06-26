@@ -44,8 +44,8 @@
      */
     BSTableContentObject *bsContent=[BSTableContentObject initWithContentObject:@"送水" methodName:nil imageName:@"98ss" vcClass:@"TableViewController"];
     NSMutableArray *arry= [NSMutableArray arrayWithObject: bsContent];
-    
-    BSTableSection *bsTable=[BSTableSection initWithHeaderVcClassContent:@"预约服务" imageName:@"xy" vcClass:nil storyboard:@"KTWaterDetailsViewController" bsContent:arry];
+     
+    BSTableSection *bsTable=[BSTableSection initWithHeaderVcClassContent:@"预约服务" imageName:@"xy" headerViewClass:nil cellClass:nil storyboard:@"KTWaterDetailsViewController" bsContent:arry];
     
     BSTableContentObject *bsCar=[BSTableContentObject initWithContentObject:@"推荐" methodName:nil imageName:@"98xc" colClass:[recommendController class]];
     [bsTable addBSTableContent:bsCar sectionHeader:@"预约服务"];

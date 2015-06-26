@@ -37,6 +37,9 @@
  */
 -(NSObject *) bsContentObject:(NSInteger)section row:(NSInteger)row;
 
+/**
+ *暂时没有使用
+ */
 -(NSMutableArray *)indexes;
 
 @end

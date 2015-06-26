@@ -59,6 +59,7 @@
     return bsTable;
 }
 
+
 /**
  * 每行需要个性化时，需要重写方法
  */
@@ -69,13 +70,21 @@
     long row=indexPath.row;
     BSTableContentObject *bsContentObject=(BSTableContentObject *)[self bsContentObject:section row:row];
     NSString *ID = bsContentObject.vcClass;
-    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:ID];
+    UITableViewCell *cell=[self uiTableViewCellWithIdentifier:ID];
+    
     if (cell==nil) {
         cell=[[UITableViewCell alloc]init];
     }
     cell.textLabel.text =bsContentObject.title;
     return cell;
 }
+
+-(id)uiTableViewCellWithIdentifier:(NSString*)identifer
+{
+    return
+    [self.tableView dequeueReusableCellWithIdentifier:identifer];
+}
+
 
 
 /**
@@ -163,24 +172,15 @@
  *获取跳转Controller的名称,故事板跳转方式
  */
 -(NSString *)vcControllerName:(NSInteger)section row:(NSInteger)row{
-    NSString *vcName=((BSTableContentObject *)[self bsContentObject:section row:row]).vcClass;
-    if (vcName==nil) {
-        return [self.bSTableObjects vcClass];
-    }else{
-        return vcName;
-    }
+    return ((BSTableContentObject *)[self bsContentObject:section row:row]).vcClass;
+
 }
 
 /**
  *获取跳转Controller的类定义,手工编码方式
  */
 -(Class)vcControlleClass:(NSInteger)section row:(NSInteger)row{
-    Class clzz=((BSTableContentObject *)[self bsContentObject:section row:row]).colClass;
-    if (clzz==nil) {
-        return [self.bSTableObjects colClass];
-    }else{
-        return clzz;
-    }
+    return ((BSTableContentObject *)[self bsContentObject:section row:row]).colClass;
 }
 
 -(NSString *)storyboardName{
