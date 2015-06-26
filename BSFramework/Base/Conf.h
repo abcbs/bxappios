@@ -91,6 +91,11 @@
  */
 #define IOS_VERSION [[[UIDevice currentDevice] systemVersion] floatValue];
 
+#pragma mark --获取宽度和高度，及其适配方法
+extern float autoSizeScaleX;
+extern float autoSizeScaleY;
+
+
 //UIAlertView
 #define KT_AlertView_(a) [[[UIAlertView alloc]initWithTitle:@"提示" message:a delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show]
 

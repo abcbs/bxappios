@@ -6,7 +6,7 @@ dependencies: \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/LBModels/Discard/LoginMessage.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/LBControl/LoginRegister/RegisterViewController.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/LBModels/Discard/SendMessage.h \
-  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/LBModels/Base/Conf.h \
+  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/BSFramework/Base/Conf.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/LBControl/SystemConfig/SystemSet.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/民生小区/ShareSDK-iOS-v2.11.0/ShareSDK.framework/Headers/ShareSDK.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/民生小区/ShareSDK-iOS-v2.11.0/Core/ShareSDKCoreService.framework/Headers/ShareSDKCoreService.h \

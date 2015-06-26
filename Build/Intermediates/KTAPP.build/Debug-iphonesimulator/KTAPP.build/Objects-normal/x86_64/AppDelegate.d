@@ -53,4 +53,4 @@ dependencies: \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/民生小区/ShareSDK-iOS-v2.11.0/Extend/TencentWeiboSDK/WeiboApi.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/民生小区/ShareSDK-iOS-v2.11.0/Extend/TencentWeiboSDK/WeiboApiObject.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/民生小区/ShareSDK-iOS-v2.11.0/Extend/SinaWeiboSDK/WeiboSDK.h \
-  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/LBModels/Base/Conf.h
+  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/BSFramework/Base/Conf.h

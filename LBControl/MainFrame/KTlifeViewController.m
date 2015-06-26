@@ -10,10 +10,12 @@
 #import "KTLifeSearchBar.h"
 //#import "KTTarBarController.h"
 #import "UIView+Frame.h"
-#import "Conf.h"
+
 #import "TableViewController.h"
-#import "AppDelegate.h"
-#import "BSFCRollingADImageUIView.h"
+
+
+#import "BSUIFrameworkHeader.h"
+
 
 @interface KTlifeViewController ()<UITextFieldDelegate,UITableViewDelegate,BSImagePlayerDelegate>
 {
@@ -35,7 +37,7 @@
     
    [super viewDidLoad];
    [Conf navigationHeader:self.navigationController ];
-   [AppDelegate storyBoradAutoLay:self.view];
+   //[AppDelegate storyBoradAutoLay:self.view];
     _BigScrollView =[[UIScrollView alloc]initWithFrame:BSRectMake(NAVIGATIONBAR_X,NAVIGATIONBAR_HEIGHT+178 , SCREEN_WIDTH,SCREEN_HEIGHT*0.7)];
    _BigScrollView.contentSize=BSSizeMake(SCREEN_WIDTH,SCREEN_HEIGHT + 200);
    _BigScrollView.backgroundColor = [UIColor colorWithRed:242/255.0 green:242/255.0 blue:242/255.0 alpha:1];

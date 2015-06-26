@@ -7,25 +7,11 @@
 //
 
 #import "Conf.h"
-#import "AppDelegate.h"
+#import "BSUIFrameworkHeader.h"
 
-#import "AFNetworkReachabilityManager.h"
 @implementation Conf
 
 
-
-//NSString *const KBS_URL=@"http://192.168.0.109:8090/";
-//NSString *const WATER_LIST=@"water/waterinformations";
-//NSString *const WATER_CATA=@"/1001/";
-//NSString *const WATER_DETAIL_COMMENT=@"productcomment/productcomments/";
-
-
-//NSString *const WATER_SHOPPCART = @"shoppingcart/usercarts";
-
-//NSString *const WATER_SHOPPCART_ADDCART=@"shoppingcart/addcart";
-//NSString *const WATER_SHOPPCART_USERCARTS=@"shoppingcart/usercarts";
-//NSString *const WATER_SHOPPCART_DELCARTLIST = @"shoppingcart/delcartlist";
-//NSString *const WATER_SHOPPCART_UPDATECART = @"shoppingcart/updatecart";
 
 /**
  
@@ -77,19 +63,9 @@
     return imageView;
 }
 
-
-
-//对异常信息的处理
-//暂无网络
-+ (BOOL)isNetwork{
-    AFNetworkReachabilityManager *manager = [[AFNetworkReachabilityManager alloc]init];
-    if(manager.networkReachabilityStatus == AFNetworkReachabilityStatusNotReachable){
-        return NO;
-    }
-    else{
-        return YES;
-    }
-}
+#pragma mark --适配的实现
+float autoSizeScaleX=1.0;
+float autoSizeScaleY=1.0;
 
 
 NSString *bsNetstatus=@"缺省状态";

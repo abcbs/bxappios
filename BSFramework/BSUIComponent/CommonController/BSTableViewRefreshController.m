@@ -8,10 +8,9 @@
 
 #import "BSTableViewRefreshController.h"
 
-#import "MBProgressHUD.h"
-#import "MJRefresh.h"
-#import "Conf.h"
-#import "AppDelegate.h"
+
+#import "BSUIFrameworkHeader.h"
+
 
 @interface BSTableViewRefreshController()
 

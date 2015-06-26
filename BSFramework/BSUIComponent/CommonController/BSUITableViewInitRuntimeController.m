@@ -7,12 +7,8 @@
 //
 
 #import "BSUITableViewInitRuntimeController.h"
-#import "BSTableSection.h"
-#import "BSTableContentObject.h"
-#import "UIViewController+BSTableObject.h"
-#import "AppDelegate.h"
-#import "Conf.h"
 
+#import "BSUIFrameworkHeader.h"
 
 @interface BSUITableViewInitRuntimeController ()
 

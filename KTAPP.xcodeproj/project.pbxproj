@@ -192,6 +192,9 @@
 		84578F531B35D11D00C3A4EA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84578F521B35D11D00C3A4EA /* ViewController.m */; };
 		84578F581B35E12600C3A4EA /* KTHandyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84578F571B35E12600C3A4EA /* KTHandyViewController.m */; };
 		84578F781B35E80700C3A4EA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84578F7A1B35E80700C3A4EA /* LaunchScreen.xib */; };
+		845A02231B3DA1F3007F5327 /* BSUIImageTitleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 845A02221B3DA1F3007F5327 /* BSUIImageTitleTableViewCell.m */; };
+		845A022C1B3DABF0007F5327 /* Conf.m in Sources */ = {isa = PBXBuildFile; fileRef = 845A02291B3DABF0007F5327 /* Conf.m */; };
+		845A022D1B3DABF0007F5327 /* ErrorMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 845A022B1B3DABF0007F5327 /* ErrorMessage.m */; };
 		8470761A1B3A5F7800F28180 /* SetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 847076181B3A5F7800F28180 /* SetCell.m */; };
 		8470761B1B3A5F7800F28180 /* SetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847076191B3A5F7800F28180 /* SetCell.xib */; };
 		847076231B3A89F000F28180 /* recommendCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 8470761E1B3A89F000F28180 /* recommendCard.m */; };
@@ -270,8 +273,6 @@
 		84A0765C1B21AA9A001CE3A2 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A0765B1B21AA9A001CE3A2 /* MediaPlayer.framework */; };
 		84A0765E1B21AAA7001CE3A2 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A0765D1B21AAA7001CE3A2 /* CoreText.framework */; };
 		84A076601B21AAC8001CE3A2 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A0765F1B21AAC8001CE3A2 /* AddressBook.framework */; };
-		84BA96771B2829D500388B58 /* Conf.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BA96441B2829D500388B58 /* Conf.m */; };
-		84BA96781B2829D500388B58 /* ErrorMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BA96461B2829D500388B58 /* ErrorMessage.m */; };
 		84BA96791B2829D500388B58 /* BusinessManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BA96491B2829D500388B58 /* BusinessManager.m */; };
 		84BA967A1B2829D500388B58 /* CustomerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BA964C1B2829D500388B58 /* CustomerManager.m */; };
 		84BA967B1B2829D500388B58 /* AFAppDotNetAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BA964F1B2829D500388B58 /* AFAppDotNetAPIClient.m */; };
@@ -560,6 +561,16 @@
 		84578F771B35E7F700C3A4EA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		84578F791B35E80700C3A4EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		84578F7B1B35E81900C3A4EA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		845A02211B3DA1F3007F5327 /* BSUIImageTitleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUIImageTitleTableViewCell.h; sourceTree = "<group>"; };
+		845A02221B3DA1F3007F5327 /* BSUIImageTitleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUIImageTitleTableViewCell.m; sourceTree = "<group>"; };
+		845A02241B3DA669007F5327 /* BSUIFrameworkHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSUIFrameworkHeader.h; sourceTree = "<group>"; };
+		845A02251B3DA7B7007F5327 /* BLModelsHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BLModelsHeader.h; sourceTree = "<group>"; };
+		845A02261B3DA83E007F5327 /* LBController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBController.h; sourceTree = "<group>"; };
+		845A02281B3DABF0007F5327 /* Conf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Conf.h; sourceTree = "<group>"; };
+		845A02291B3DABF0007F5327 /* Conf.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Conf.m; sourceTree = "<group>"; };
+		845A022A1B3DABF0007F5327 /* ErrorMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ErrorMessage.h; sourceTree = "<group>"; };
+		845A022B1B3DABF0007F5327 /* ErrorMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ErrorMessage.m; sourceTree = "<group>"; };
+		845A022E1B3DB13B007F5327 /* BSCMFrameworkHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSCMFrameworkHeader.h; sourceTree = "<group>"; };
 		847076171B3A5F7800F28180 /* SetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetCell.h; sourceTree = "<group>"; };
 		847076181B3A5F7800F28180 /* SetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetCell.m; sourceTree = "<group>"; };
 		847076191B3A5F7800F28180 /* SetCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SetCell.xib; sourceTree = "<group>"; };
@@ -689,10 +700,6 @@
 		84A0765B1B21AA9A001CE3A2 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		84A0765D1B21AAA7001CE3A2 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		84A0765F1B21AAC8001CE3A2 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
-		84BA96431B2829D500388B58 /* Conf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Conf.h; sourceTree = "<group>"; };
-		84BA96441B2829D500388B58 /* Conf.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Conf.m; sourceTree = "<group>"; };
-		84BA96451B2829D500388B58 /* ErrorMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ErrorMessage.h; sourceTree = "<group>"; };
-		84BA96461B2829D500388B58 /* ErrorMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ErrorMessage.m; sourceTree = "<group>"; };
 		84BA96481B2829D500388B58 /* BusinessManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusinessManager.h; sourceTree = "<group>"; };
 		84BA96491B2829D500388B58 /* BusinessManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusinessManager.m; sourceTree = "<group>"; };
 		84BA964B1B2829D500388B58 /* CustomerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomerManager.h; sourceTree = "<group>"; };
@@ -714,7 +721,6 @@
 		84BA965C1B2829D500388B58 /* RegistModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistModel.m; sourceTree = "<group>"; };
 		84BA965D1B2829D500388B58 /* SendMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SendMessage.h; sourceTree = "<group>"; };
 		84BA965E1B2829D500388B58 /* ValidateMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValidateMessage.h; sourceTree = "<group>"; };
-		84BA965F1B2829D500388B58 /* LBModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBModel.h; sourceTree = "<group>"; };
 		84BA96611B2829D500388B58 /* OrderHeaderManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderHeaderManager.h; sourceTree = "<group>"; };
 		84BA96631B2829D500388B58 /* PayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayManager.h; sourceTree = "<group>"; };
 		84BA96641B2829D500388B58 /* PayManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayManager.m; sourceTree = "<group>"; };
@@ -1218,6 +1224,17 @@
 			path = BSUISetting;
 			sourceTree = "<group>";
 		};
+		845A02271B3DABF0007F5327 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				845A02281B3DABF0007F5327 /* Conf.h */,
+				845A02291B3DABF0007F5327 /* Conf.m */,
+				845A022A1B3DABF0007F5327 /* ErrorMessage.h */,
+				845A022B1B3DABF0007F5327 /* ErrorMessage.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 		8470761C1B3A89F000F28180 /* Recommend */ = {
 			isa = PBXGroup;
 			children = (
@@ -1403,6 +1420,8 @@
 				848058121B39A377005817D7 /* BSFCRollingADImageUIView.h */,
 				848058131B39A377005817D7 /* BSFCRollingADImageUIView.m */,
 				848058141B39A377005817D7 /* ADTImagePlayer.xib */,
+				845A02211B3DA1F3007F5327 /* BSUIImageTitleTableViewCell.h */,
+				845A02221B3DA1F3007F5327 /* BSUIImageTitleTableViewCell.m */,
 			);
 			path = CommonView;
 			sourceTree = "<group>";
@@ -1428,30 +1447,18 @@
 		84BA96411B2829D500388B58 /* LBModels */ = {
 			isa = PBXGroup;
 			children = (
-				84BA96421B2829D500388B58 /* Base */,
 				84BA96471B2829D500388B58 /* Business */,
 				84BA964A1B2829D500388B58 /* Customer */,
 				84BA964D1B2829D500388B58 /* Discard */,
-				84BA965F1B2829D500388B58 /* LBModel.h */,
 				84BA96601B2829D500388B58 /* OrderItem */,
 				84BA96621B2829D500388B58 /* Pay */,
 				84BA96651B2829D500388B58 /* Product */,
 				84BA96681B2829D500388B58 /* SendingWater */,
 				84BA966F1B2829D500388B58 /* ShoppingCart */,
 				84BA96741B2829D500388B58 /* User */,
+				845A02251B3DA7B7007F5327 /* BLModelsHeader.h */,
 			);
 			path = LBModels;
-			sourceTree = "<group>";
-		};
-		84BA96421B2829D500388B58 /* Base */ = {
-			isa = PBXGroup;
-			children = (
-				84BA96431B2829D500388B58 /* Conf.h */,
-				84BA96441B2829D500388B58 /* Conf.m */,
-				84BA96451B2829D500388B58 /* ErrorMessage.h */,
-				84BA96461B2829D500388B58 /* ErrorMessage.m */,
-			);
-			path = Base;
 			sourceTree = "<group>";
 		};
 		84BA96471B2829D500388B58 /* Business */ = {
@@ -1648,6 +1655,7 @@
 				84BA96941B282A0500388B58 /* PayManager */,
 				84BA96951B282A0500388B58 /* SendingWater */,
 				84BA96961B282A0500388B58 /* UserManager */,
+				845A02261B3DA83E007F5327 /* LBController.h */,
 			);
 			path = LBControl;
 			sourceTree = "<group>";
@@ -1719,9 +1727,12 @@
 		84D358CB1B2B0C0500CCEE8B /* BSFramework */ = {
 			isa = PBXGroup;
 			children = (
+				845A02271B3DABF0007F5327 /* Base */,
 				844E50B21B2F2EE500A69F91 /* BSCommunication */,
 				844E50B51B2F2EE500A69F91 /* BSUIComponent */,
 				844E50B91B2F2EE500A69F91 /* BSUISetting */,
+				845A02241B3DA669007F5327 /* BSUIFrameworkHeader.h */,
+				845A022E1B3DB13B007F5327 /* BSCMFrameworkHeader.h */,
 			);
 			path = BSFramework;
 			sourceTree = "<group>";
@@ -2276,6 +2287,7 @@
 				A0BE5E4A1B02E4310086551D /* RegistUtil.m in Sources */,
 				A0F0C3F21B10209500CE406D /* UpdateShoppingCartParams.m in Sources */,
 				842042C91B298EF30002C868 /* KTlifeViewController.m in Sources */,
+				845A022D1B3DABF0007F5327 /* ErrorMessage.m in Sources */,
 				842043721B2991770002C868 /* DLLRUCache.m in Sources */,
 				84BA96831B2829D500388B58 /* ProductManager.m in Sources */,
 				842042BF1B29881B0002C868 /* YYHMantleModelSerializer.m in Sources */,
@@ -2285,10 +2297,10 @@
 				84E97AB71B307535001D4100 /* BSUIComponentView.m in Sources */,
 				84BA967F1B2829D500388B58 /* orderDetailModel.m in Sources */,
 				A0F0C3F41B10209500CE406D /* MiddleNetWorkTool.m in Sources */,
+				845A02231B3DA1F3007F5327 /* BSUIImageTitleTableViewCell.m in Sources */,
 				84BA96811B2829D500388B58 /* RegistModel.m in Sources */,
 				847076231B3A89F000F28180 /* recommendCard.m in Sources */,
 				847433211B2A934000B030C4 /* applyShop.m in Sources */,
-				84BA96771B2829D500388B58 /* Conf.m in Sources */,
 				847076251B3A89F000F28180 /* recommendguest.m in Sources */,
 				84BA96851B2829D500388B58 /* WaterSending.m in Sources */,
 				847432F91B2A8E5500B030C4 /* AlreadyPayment.m in Sources */,
@@ -2337,7 +2349,7 @@
 				A0F0C3F11B10209500CE406D /* JoinShoppingCartParams.m in Sources */,
 				842042B11B2984D80002C868 /* KTCartTableView.m in Sources */,
 				847076641B3A9DFB00F28180 /* BSTableSection.m in Sources */,
-				84BA96781B2829D500388B58 /* ErrorMessage.m in Sources */,
+				845A022C1B3DABF0007F5327 /* Conf.m in Sources */,
 				84BA96791B2829D500388B58 /* BusinessManager.m in Sources */,
 				847433121B2A915C00B030C4 /* cardBinding.m in Sources */,
 				847432EA1B2A8DCC00B030C4 /* WaitPaymentDetail.m in Sources */,

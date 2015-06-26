@@ -8,7 +8,7 @@
 
 #import "KTLifeIndexController.h"
 #import "UIView+Frame.h"
-#import "Conf.h"
+
 #import "KTLifeIndexCell.h"
 #import "BSFCRollingADImageUIView.h"
 #import "recommendController.h"
@@ -18,6 +18,8 @@
 #import "lifeServiceController.h"
 #import "bankController.h"
 #import "AppDelegate.h"
+
+#import "BSUIFrameworkHeader.h"
 
 #define kScreenWidth [UIScreen mainScreen].bounds.size.width
 #define kScreenHight [UIScreen mainScreen].bounds.size.height
