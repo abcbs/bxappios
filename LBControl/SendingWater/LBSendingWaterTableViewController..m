@@ -5,25 +5,23 @@
 //  Created by L on 15/4/13.
 //  Copyright (c) 2015年 itcast. All rights reserved.
 //
+#import "LBSendingWaterTableViewController.h"
 
-#import "TableViewController.h"
+#import "BSUIFrameworkHeader.h"
+
 #import "MSWaterSendingCell.h"
 
 #import "KTFooterView.h"
 #import "KTWaterDetailsViewController.h"
 #import "LoginViewController.h"
 
-#import "BSTableViewRefreshController.h"
 
-#import "BSUIComponentView.h"
-#import "AppDelegate.h"
-
-@interface TableViewController ()
+@interface LBSendingWaterTableViewController ()
 
 
 @end
 
-@implementation TableViewController
+@implementation LBSendingWaterTableViewController
 
 
 - (void)viewWillAppear:(BOOL)animated

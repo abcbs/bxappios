@@ -9,10 +9,10 @@
 #import "BSTableContentObject.h"
 
 @implementation BSTableContentObject
-@synthesize title;
+@synthesize colTitle;
 @synthesize method;
 @synthesize vcClass;
-@synthesize imageName;
+@synthesize colImageName;
 @synthesize colClass;
 
 -(instancetype)initWithContentObject:(NSString *)title methodName:(NSString *)name
@@ -21,10 +21,10 @@
     if (!self) {
         return nil;
     }
-    self.title=title;
+    self.colTitle=title;
     self.method=name;
     self.vcClass=clzzName;
-    self.imageName=imageName;
+    self.colImageName=imageName;
     self.colClass=clzz;
     return self;
 }
@@ -43,7 +43,7 @@
 
 {
     return [NSString stringWithFormat:@"标题: %@ \t控制器实现类: %@\t方法:%@\t显示图片:%@",
-            self.title,self.vcClass,self.method,self.imageName];
+            self.colTitle,self.vcClass,self.method,self.colImageName];
     
 }
 @end

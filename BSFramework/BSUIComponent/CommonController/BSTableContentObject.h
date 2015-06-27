@@ -11,9 +11,9 @@
 
 @interface BSTableContentObject : NSObject
 
-@property (copy, nonatomic) NSString *title;
+@property (copy, nonatomic) NSString *colTitle;
 @property (copy, nonatomic) NSString *method;
-@property (copy, nonatomic) NSString *imageName;
+@property (copy, nonatomic) NSString *colImageName;
 @property (copy, nonatomic) NSString * vcClass;
 @property (copy, nonatomic) Class     colClass;
 

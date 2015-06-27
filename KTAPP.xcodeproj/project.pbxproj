@@ -13,8 +13,6 @@
 		0E511A541AF07DBF00BF1D03 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E511A531AF07DBF00BF1D03 /* UIKit.framework */; };
 		0E511A561AF08DFC00BF1D03 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E511A551AF08DFC00BF1D03 /* AssetsLibrary.framework */; };
 		0E511A581AF08E2500BF1D03 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E511A571AF08E2500BF1D03 /* MobileCoreServices.framework */; };
-		0E6E845F1B2ACE770088DA6A /* KTLifeIndexController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E6E845D1B2ACE770088DA6A /* KTLifeIndexController.m */; };
-		0E6E84601B2ACE770088DA6A /* KTLifeIndexController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E6E845E1B2ACE770088DA6A /* KTLifeIndexController.xib */; };
 		0E8377521B033E9700782034 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E8377511B033E9700782034 /* SystemConfiguration.framework */; };
 		0E8377541B033EAB00782034 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E8377531B033EAB00782034 /* QuartzCore.framework */; };
 		0E8377561B033EBD00782034 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E8377551B033EBD00782034 /* CoreTelephony.framework */; };
@@ -44,7 +42,6 @@
 		842043761B2991770002C868 /* DLScrollTabbarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8420436C1B2991770002C868 /* DLScrollTabbarView.m */; };
 		842043771B2991770002C868 /* DLTabedSlideView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8420436F1B2991770002C868 /* DLTabedSlideView.m */; };
 		842043781B2991770002C868 /* DLUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 842043711B2991770002C868 /* DLUtility.m */; };
-		8420437B1B2992FA0002C868 /* KTLifeSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 8420437A1B2992FA0002C868 /* KTLifeSearchBar.m */; };
 		843DA8781B21D56200924AE6 /* CopyConnection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 843DA8521B21D56200924AE6 /* CopyConnection.framework */; };
 		843DA8791B21D56300924AE6 /* FacebookConnection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 843DA8531B21D56200924AE6 /* FacebookConnection.framework */; };
 		843DA87A1B21D56300924AE6 /* MailConnection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 843DA8541B21D56200924AE6 /* MailConnection.framework */; };
@@ -256,6 +253,7 @@
 		8474331D1B2A92B400B030C4 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 847433191B2A92B400B030C4 /* LoginViewController.m */; };
 		8474331E1B2A92B400B030C4 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8474331B1B2A92B400B030C4 /* RegisterViewController.m */; };
 		847433211B2A934000B030C4 /* applyShop.m in Sources */ = {isa = PBXBuildFile; fileRef = 847433201B2A934000B030C4 /* applyShop.m */; };
+		8474DEA31B3F004B00D9DE36 /* KTLBNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8474DEA21B3F004B00D9DE36 /* KTLBNavigationController.m */; };
 		847B30881B3290DD007003D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 847B308A1B3290DD007003D7 /* Main.storyboard */; };
 		8480580B1B39A0E9005817D7 /* BSBLEDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8480580A1B39A0E9005817D7 /* BSBLEDetailTableViewController.m */; };
 		848058151B39A377005817D7 /* BSFCRollingADImageUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 848058131B39A377005817D7 /* BSFCRollingADImageUIView.m */; };
@@ -265,7 +263,7 @@
 		84820A4F1B285D960093B87B /* MSWaterSendingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84820A4D1B285D960093B87B /* MSWaterSendingCell.xib */; };
 		84820A601B285ECA0093B87B /* KTWaterDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84820A591B285ECA0093B87B /* KTWaterDetailsViewController.m */; };
 		84820A611B285ECA0093B87B /* KTWaterDetailsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84820A5A1B285ECA0093B87B /* KTWaterDetailsViewController.storyboard */; };
-		84820A641B285F320093B87B /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84820A631B285F320093B87B /* TableViewController.m */; };
+		84820A641B285F320093B87B /* LBSendingWaterTableViewController..m in Sources */ = {isa = PBXBuildFile; fileRef = 84820A631B285F320093B87B /* LBSendingWaterTableViewController..m */; };
 		8487F1851B3005C100F0F7B2 /* KTInformationConfViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8487F1801B3005C100F0F7B2 /* KTInformationConfViewController.m */; };
 		8487F1861B3005C100F0F7B2 /* KTInformationConfViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8487F1811B3005C100F0F7B2 /* KTInformationConfViewController.storyboard */; };
 		8487F1871B3005C100F0F7B2 /* KTOnlinePayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8487F1831B3005C100F0F7B2 /* KTOnlinePayViewController.m */; };
@@ -344,9 +342,6 @@
 		0E511A531AF07DBF00BF1D03 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0E511A551AF08DFC00BF1D03 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		0E511A571AF08E2500BF1D03 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
-		0E6E845C1B2ACE770088DA6A /* KTLifeIndexController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTLifeIndexController.h; sourceTree = "<group>"; };
-		0E6E845D1B2ACE770088DA6A /* KTLifeIndexController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTLifeIndexController.m; sourceTree = "<group>"; };
-		0E6E845E1B2ACE770088DA6A /* KTLifeIndexController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KTLifeIndexController.xib; sourceTree = "<group>"; };
 		0E8377511B033E9700782034 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		0E8377531B033EAB00782034 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		0E8377551B033EBD00782034 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
@@ -402,8 +397,6 @@
 		8420436F1B2991770002C868 /* DLTabedSlideView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLTabedSlideView.m; sourceTree = "<group>"; };
 		842043701B2991770002C868 /* DLUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLUtility.h; sourceTree = "<group>"; };
 		842043711B2991770002C868 /* DLUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLUtility.m; sourceTree = "<group>"; };
-		842043791B2992FA0002C868 /* KTLifeSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTLifeSearchBar.h; sourceTree = "<group>"; };
-		8420437A1B2992FA0002C868 /* KTLifeSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTLifeSearchBar.m; sourceTree = "<group>"; };
 		843DA8521B21D56200924AE6 /* CopyConnection.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CopyConnection.framework; sourceTree = "<group>"; };
 		843DA8531B21D56200924AE6 /* FacebookConnection.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookConnection.framework; sourceTree = "<group>"; };
 		843DA8541B21D56200924AE6 /* MailConnection.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MailConnection.framework; sourceTree = "<group>"; };
@@ -566,7 +559,7 @@
 		845A02221B3DA1F3007F5327 /* BSUIImageTitleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUIImageTitleTableViewCell.m; sourceTree = "<group>"; };
 		845A02241B3DA669007F5327 /* BSUIFrameworkHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSUIFrameworkHeader.h; sourceTree = "<group>"; };
 		845A02251B3DA7B7007F5327 /* BLModelsHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BLModelsHeader.h; sourceTree = "<group>"; };
-		845A02261B3DA83E007F5327 /* LBController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBController.h; sourceTree = "<group>"; };
+		845A02261B3DA83E007F5327 /* LBControllerHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBControllerHeader.h; sourceTree = "<group>"; };
 		845A02281B3DABF0007F5327 /* Conf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Conf.h; sourceTree = "<group>"; };
 		845A02291B3DABF0007F5327 /* Conf.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Conf.m; sourceTree = "<group>"; };
 		845A022A1B3DABF0007F5327 /* ErrorMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ErrorMessage.h; sourceTree = "<group>"; };
@@ -680,6 +673,8 @@
 		8474331B1B2A92B400B030C4 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		8474331F1B2A934000B030C4 /* applyShop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = applyShop.h; sourceTree = "<group>"; };
 		847433201B2A934000B030C4 /* applyShop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = applyShop.m; sourceTree = "<group>"; };
+		8474DEA11B3F004B00D9DE36 /* KTLBNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTLBNavigationController.h; sourceTree = "<group>"; };
+		8474DEA21B3F004B00D9DE36 /* KTLBNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTLBNavigationController.m; sourceTree = "<group>"; };
 		847B30891B3290DD007003D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		848058091B39A0E9005817D7 /* BSBLEDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSBLEDetailTableViewController.h; sourceTree = "<group>"; };
 		8480580A1B39A0E9005817D7 /* BSBLEDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSBLEDetailTableViewController.m; sourceTree = "<group>"; };
@@ -695,8 +690,8 @@
 		84820A581B285ECA0093B87B /* KTWaterDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTWaterDetailsViewController.h; sourceTree = "<group>"; };
 		84820A591B285ECA0093B87B /* KTWaterDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTWaterDetailsViewController.m; sourceTree = "<group>"; };
 		84820A5A1B285ECA0093B87B /* KTWaterDetailsViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = KTWaterDetailsViewController.storyboard; sourceTree = "<group>"; };
-		84820A621B285F320093B87B /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
-		84820A631B285F320093B87B /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		84820A621B285F320093B87B /* LBSendingWaterTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBSendingWaterTableViewController.h; sourceTree = "<group>"; };
+		84820A631B285F320093B87B /* LBSendingWaterTableViewController..m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBSendingWaterTableViewController..m; sourceTree = "<group>"; };
 		8487F17F1B3005C100F0F7B2 /* KTInformationConfViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTInformationConfViewController.h; sourceTree = "<group>"; };
 		8487F1801B3005C100F0F7B2 /* KTInformationConfViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTInformationConfViewController.m; sourceTree = "<group>"; };
 		8487F1811B3005C100F0F7B2 /* KTInformationConfViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = KTInformationConfViewController.storyboard; sourceTree = "<group>"; };
@@ -1667,7 +1662,7 @@
 				84BA96941B282A0500388B58 /* PayManager */,
 				84BA96951B282A0500388B58 /* SendingWater */,
 				84BA96961B282A0500388B58 /* UserManager */,
-				845A02261B3DA83E007F5327 /* LBController.h */,
+				845A02261B3DA83E007F5327 /* LBControllerHeader.h */,
 			);
 			path = LBControl;
 			sourceTree = "<group>";
@@ -1678,11 +1673,6 @@
 				8470765D1B3A8FB900F28180 /* KTLifeIndexCell.h */,
 				8470765E1B3A8FB900F28180 /* KTLifeIndexCell.m */,
 				8470765F1B3A8FB900F28180 /* KTLifeIndexCell.xib */,
-				842043791B2992FA0002C868 /* KTLifeSearchBar.h */,
-				8420437A1B2992FA0002C868 /* KTLifeSearchBar.m */,
-				0E6E845C1B2ACE770088DA6A /* KTLifeIndexController.h */,
-				0E6E845D1B2ACE770088DA6A /* KTLifeIndexController.m */,
-				0E6E845E1B2ACE770088DA6A /* KTLifeIndexController.xib */,
 				842042C71B298EF30002C868 /* KTlifeViewController.h */,
 				842042C81B298EF30002C868 /* KTlifeViewController.m */,
 				8420429E1B2983B40002C868 /* AppDelegate.h */,
@@ -1693,6 +1683,8 @@
 				84578F561B35E12600C3A4EA /* KTHandyViewController.h */,
 				84578F571B35E12600C3A4EA /* KTHandyViewController.m */,
 				84578F7A1B35E80700C3A4EA /* LaunchScreen.xib */,
+				8474DEA11B3F004B00D9DE36 /* KTLBNavigationController.h */,
+				8474DEA21B3F004B00D9DE36 /* KTLBNavigationController.m */,
 			);
 			path = MainFrame;
 			sourceTree = "<group>";
@@ -1717,8 +1709,8 @@
 		84BA96951B282A0500388B58 /* SendingWater */ = {
 			isa = PBXGroup;
 			children = (
-				84820A621B285F320093B87B /* TableViewController.h */,
-				84820A631B285F320093B87B /* TableViewController.m */,
+				84820A621B285F320093B87B /* LBSendingWaterTableViewController.h */,
+				84820A631B285F320093B87B /* LBSendingWaterTableViewController..m */,
 				84820A581B285ECA0093B87B /* KTWaterDetailsViewController.h */,
 				84820A591B285ECA0093B87B /* KTWaterDetailsViewController.m */,
 				84820A5A1B285ECA0093B87B /* KTWaterDetailsViewController.storyboard */,
@@ -2086,7 +2078,6 @@
 				844268C71B36C05F006E7F7D /* wodeqianbao.png in Resources */,
 				844268D11B36C05F006E7F7D /* dfk00.png in Resources */,
 				847B30881B3290DD007003D7 /* Main.storyboard in Resources */,
-				0E6E84601B2ACE770088DA6A /* KTLifeIndexController.xib in Resources */,
 				848058161B39A377005817D7 /* ADTImagePlayer.xib in Resources */,
 				844268EA1B36C05F006E7F7D /* login-0.png in Resources */,
 				844268A91B36C05F006E7F7D /* 640-90.png in Resources */,
@@ -2255,9 +2246,8 @@
 				8480581B1B39AEEF005817D7 /* BSTableViewRefreshController.m in Sources */,
 				A0F0C3F51B10209500CE406D /* CommodityEvaluationRequest.m in Sources */,
 				A0F0C3F01B10209500CE406D /* DeleteShoppingCartParams.m in Sources */,
-				84820A641B285F320093B87B /* TableViewController.m in Sources */,
+				84820A641B285F320093B87B /* LBSendingWaterTableViewController..m in Sources */,
 				A0F0C3F91B10209500CE406D /* ViewShoppingCartRequest.m in Sources */,
-				8420437B1B2992FA0002C868 /* KTLifeSearchBar.m in Sources */,
 				842042AE1B2984D80002C868 /* KTCarCell.m in Sources */,
 				A14656F71ADEB5A400571E9A /* KTFooterView.m in Sources */,
 				84C06D9B1B3AF3BA000BB45C /* BSUITableViewInitRuntimeController.m in Sources */,
@@ -2281,6 +2271,7 @@
 				8474331D1B2A92B400B030C4 /* LoginViewController.m in Sources */,
 				847076521B3A8C4500F28180 /* queueController.m in Sources */,
 				0E915F981B0C394800F47478 /* ValidateCode.m in Sources */,
+				8474DEA31B3F004B00D9DE36 /* KTLBNavigationController.m in Sources */,
 				84BA96881B2829D500388B58 /* ShoppingCart.m in Sources */,
 				847076711B3AB21300F28180 /* UIViewController+BSTableObject.m in Sources */,
 				A0F0C3F21B10209500CE406D /* UpdateShoppingCartParams.m in Sources */,
@@ -2330,7 +2321,6 @@
 				A0F0C3ED1B10209500CE406D /* ViewShoppingCartResult.m in Sources */,
 				847432DF1B2A8CE500B030C4 /* OrderDetailOneCell.m in Sources */,
 				847432DD1B2A8CE500B030C4 /* orderDetailCell.m in Sources */,
-				0E6E845F1B2ACE770088DA6A /* KTLifeIndexController.m in Sources */,
 				84BA967C1B2829D500388B58 /* AFNHelp.m in Sources */,
 				847433131B2A915C00B030C4 /* myWallet.m in Sources */,
 				847076241B3A89F000F28180 /* recommendController.m in Sources */,

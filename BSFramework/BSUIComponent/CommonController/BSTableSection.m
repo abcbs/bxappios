@@ -3,7 +3,7 @@
 //  KTAPP
 //
 //  Created by admin on 15/6/24.
-//  Copyright (c) 2015年 itcast. All rights reserved.
+//  Copyright (c) 2015年 KingTeller. All rights reserved.
 //
 
 #import "BSTableSection.h"
@@ -242,6 +242,7 @@
     self.sectionTitle=tableHeader;
 
     self.sectionImageName=imageName;
+    
     self.storyboardName=storyboard;
 
     self.headerViewClass=headerViewClzz;

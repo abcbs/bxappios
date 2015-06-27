@@ -58,7 +58,7 @@
 +(UIImageView *)navigationHeaderWithImage:(NSString *)imageName{
     UIImageView *imageView = [[UIImageView alloc]initWithFrame:BSRectMake(NAVIGATIONBAR_X, NAVIGATIONBAR_Y,
                                                                           NAVIGATIONBAR_WIDTH, NAVIGATIONBAR_HEIGHT)];
-    NSString *image = [NSString stringWithFormat:imageName];
+    NSString *image =imageName;
     imageView.image = [UIImage imageNamed:image];
     return imageView;
 }

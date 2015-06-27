@@ -3,7 +3,7 @@
 //  KTAPP
 //
 //  Created by admin on 15/6/13.
-//  Copyright (c) 2015年 itcast. All rights reserved.
+//  Copyright (c) 2015年 KingTeller. All rights reserved.
 //
 
 #import "BSTableViewRefreshController.h"
@@ -80,7 +80,7 @@
 
 -(void)process{
     
-    while([Conf checkNetWork]!=networkRight){
+    while([Conf checkNetWork]==networkRight){
         [HUD hide:YES];
         if (_timer) {
             [_timer invalidate];

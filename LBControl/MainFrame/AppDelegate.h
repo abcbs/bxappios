@@ -13,11 +13,6 @@
 @property (strong, nonatomic) UIWindow *window;
 
 
-
-
-+(void)storyBoradAutoLay:(UIView *)allView;
-
-
 @end
 
 

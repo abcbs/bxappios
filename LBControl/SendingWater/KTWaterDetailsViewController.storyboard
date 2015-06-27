@@ -7,7 +7,7 @@
         <!--送水列表-->
         <scene sceneID="gR9-Wm-0IA">
             <objects>
-                <tableViewController storyboardIdentifier="TableViewController" title="送水列表" modalPresentationStyle="pageSheet" hidesBottomBarWhenPushed="YES" id="lTH-FO-Da1" userLabel="送水列表" customClass="TableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="LBSendingWaterTableViewController" title="送水列表" modalPresentationStyle="pageSheet" hidesBottomBarWhenPushed="YES" id="lTH-FO-Da1" userLabel="送水列表" customClass="LBSendingWaterTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="OqC-ru-vy1">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

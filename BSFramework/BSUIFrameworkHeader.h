@@ -54,6 +54,7 @@
  *表格的每行一列方式，只有图标
  */
 #import "BSUISingleImageTableViewCell.h"
+
 /*
  *UI的公共小组件，例如弹出窗口
  */

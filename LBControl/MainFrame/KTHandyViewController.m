@@ -7,15 +7,10 @@
 //
 
 #import "KTHandyViewController.h"
-#import "Conf.h"
-#import "AppDelegate.h"
-#import "BSUITableViewInitRuntimeController.h"
-#import "BSTableSection.h"
-#import "BSTableContentObject.h"
-#import "TableViewController.h"
-#import "recommendController.h"
 
-#import "KTLifeIndexCell.h"
+
+#import "LBControllerHeader.h"
+
 #import "BSUIFrameworkHeader.h"
 
 
@@ -32,33 +27,66 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //[Conf navigationHeader:self.navigationController ];
-    /**
-     NSArray *tuPian = [NSArray arrayWithObjects:@"98xc",@"98ss",nil];
-     NSArray *mingzi = [NSArray arrayWithObjects:@"洗车",@"送水",nil];
-     TableViewController     
-     */
+ 
+    BSTableSection *bsTable=[BSTableSection initWithHeaderVcClassContent:@"首页"//章节显示标题
+        imageName:@"tuhongse"//章节显示图标
+        headerViewClass:nil//章节显示视图
+        cellIdentifier:@"BSUISingleImageTableViewCell"//采用的TableViewCell
+        cellClass:[BSUISingleImageTableViewCell class]//TableViewCell实现
+        storyboard:nil bsContent:nil];
     
-    /**
-     UIButton *titBtn = [[UIButton alloc]initWithFrame:BSRectMake(15, 156 , 100, 26)];
-     [titBtn setImage:[UIImage imageNamed:@"xy"] forState:UIControlStateNormal];
-     [titBtn setTitle:@"预约服务" forState:UIControlStateNormal];
-     [titBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-     titBtn.userInteractionEnabled = NO;
-     */
-    BSTableContentObject *bsContent=[BSTableContentObject initWithContentObject:@"送水" methodName:nil imageName:@"tukuaihuang.png" vcClass:@"TableViewController"];
-    NSMutableArray *arry= [NSMutableArray arrayWithObject: bsContent];
-     
-    BSTableSection *bsTable=[BSTableSection initWithHeaderVcClassContent:@"预约服务"
-        imageName:@"tuhongse" headerViewClass:nil
-        cellIdentifier:@"BSUISingleImageTableViewCell"
-        cellClass:[BSUISingleImageTableViewCell class]
-        storyboard:@"KTWaterDetailsViewController" bsContent:arry];
+    //推荐
+    BSTableContentObject *recommend=[BSTableContentObject initWithContentObject:@"推荐"
+        methodName:nil imageName:@"tuhongse.png"
+        colClass:[recommendController class]];
     
-    BSTableContentObject *bsCar=[BSTableContentObject initWithContentObject:@"推荐" methodName:nil imageName:@"tuhongse.png" colClass:[recommendController class]];
+    [bsTable addBSTableContent:recommend sectionHeader:@"首页"];
+    
+    //交流
+    BSTableContentObject *commu=[BSTableContentObject
+        initWithContentObject:@"交流"
+        methodName:nil imageName:@"tukuaihuang.png"
+        colClass:[communicate class]];
+    
+    [bsTable addBSTableContent:commu sectionHeader:@"首页"];
+
+    
+    BSTableContentObject *appointment=[BSTableContentObject initWithContentObject:@"预约服务" methodName:nil imageName:@"tulvse.png"
+        colClass:[appointmentController class]];
+    
+    [bsTable addBSTableContent:appointment sectionHeader:@"首页"];
+    
+     BSTableContentObject *lifeService=[BSTableContentObject initWithContentObject:@"生活服务" methodName:nil imageName:@"tukuailvse.png"
+         colClass:[lifeServiceController class]];
+    
+    [bsTable addBSTableContent:lifeService sectionHeader:@"首页"];
+    
+    
+    BSTableContentObject *bank=[BSTableContentObject
+        initWithContentObject:@"银行业务预约"
+        methodName:nil
+        imageName:@"tukuail.png"
+        colClass:[bankController class]];
+    
+    [bsTable addBSTableContent:bank sectionHeader:@"首页"];
+    
+    /*
+     NSMutableArray *arry= [NSMutableArray arrayWithObject: recommendController];
+    
+    BSTableSection *bsTable=[BSTableSection initWithHeaderVcClassContent:@"首页"//章节显示标题
+        imageName:@"tuhongse"//章节显示图标
+        headerViewClass:nil//章节显示视图
+        cellIdentifier:@"BSUISingleImageTableViewCell"//采用的TableViewCell
+        cellClass:[BSUISingleImageTableViewCell class]//采用的TableViewCell实现
+        storyboard:nil bsContent:arry];
+    
+    //BSTableContentObject *bsCar=[BSTableContentObject initWithContentObject:@"推荐" methodName:nil imageName:@"tuhongse.png" colClass:[recommendController class]];
+    
     [bsTable addBSTableContent:bsCar sectionHeader:@"预约服务"];
     
-    [bsTable addBSTableContent:bsCar sectionHeader:@"测试服务"];
+    //[bsTable addBSTableContent:bsCar sectionHeader:@"预约服务"];
+    */
+    //定义完表格的数据之后，把它赋值为父类
     [super setValue:bsTable forKey:@"bSTableObjects"];
 }
 
@@ -67,6 +95,14 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark -表格样式
+
+/**
+ *改变行的高度（实现主个代理方法后 rowHeight 设定的高度无效）
+ */
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 130;
+}
 
 #pragma mark - Navigation
 

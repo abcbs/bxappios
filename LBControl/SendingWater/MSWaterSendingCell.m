@@ -10,7 +10,7 @@
 #import "WaterSending.h"
 #import "UIImageView+WebCache.h"
 #import "MJExtension.h"
-#import "TableViewController.h"
+#import "LBSendingWaterTableViewController.h"
 #import "KTWaterDetailsViewController.h"
 
 @interface MSWaterSendingCell ()<UITableViewDelegate>

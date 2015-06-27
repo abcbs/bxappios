@@ -111,7 +111,7 @@
         <!--首页-->
         <scene sceneID="M02-M7-g6e">
             <objects>
-                <viewController storyboardIdentifier="KTLifeIndexController" title="首页" id="nEd-Zh-9gZ" customClass="KTLifeIndexController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="KTLifeIndexController" title="首页" id="nEd-Zh-9gZ" customClass="KTLBNavigationController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="GTI-7B-ssq"/>
                         <viewControllerLayoutGuide type="bottom" id="9lD-FZ-8NU"/>
@@ -119,14 +119,23 @@
                     <view key="view" contentMode="scaleToFill" id="c07-mn-yPo">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="xaR-1J-9Z0">
+                                <rect key="frame" x="0.0" y="-10" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" tag="10" title="首页" image="shfwh" id="YtB-6q-pXq"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="tableView" destination="xaR-1J-9Z0" id="gB5-Pu-FKk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eaZ-Ud-cad" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="-415"/>
+            <point key="canvasLocation" x="144" y="-436"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="GME-Dr-gLk">
@@ -193,16 +202,16 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="left" fixedFrame="YES" directionalLockEnabled="YES" alwaysBounceVertical="YES" pagingEnabled="YES" indicatorStyle="white" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelectionDuringEditing="YES" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="7bI-kQ-bJ0">
-                                <rect key="frame" x="-5" y="279" width="320" height="308"/>
+                                <rect key="frame" x="0.0" y="-32" width="320" height="500"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BSUIImageTitleTableViewCell" rowHeight="114" id="xKc-3R-L8E" userLabel="图标和标题" customClass="BSUIImageTitleTableViewCell">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BSUIImageTitleTableViewCell" rowHeight="7" id="xKc-3R-L8E" userLabel="图标和标题" customClass="BSUIImageTitleTableViewCell">
+                                        <rect key="frame" x="-5" y="170" width="320" height="114"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xKc-3R-L8E" id="obx-Zj-nsz">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="F5FDF769-25D5-46EA-8FBC-8C0A2100E002" translatesAutoresizingMaskIntoConstraints="NO" id="5xB-kA-hRX" userLabel="firstImage">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="3F3EA17D-B679-4425-8A59-E32BA2BAF8DB" translatesAutoresizingMaskIntoConstraints="NO" id="5xB-kA-hRX" userLabel="firstImage">
                                                     <rect key="frame" x="31" y="20" width="38" height="38"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="firstName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G49-4z-vJD">
@@ -218,14 +227,14 @@
                                             <outlet property="cellName" destination="G49-4z-vJD" id="i8E-Hi-2tL"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="BSUISingleImageTableViewCell" rowHeight="4" id="Ldx-ID-FCZ" userLabel="图标栏" customClass="BSUISingleImageTableViewCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="BSUISingleImageTableViewCell" rowHeight="111" id="Ldx-ID-FCZ" userLabel="图标栏" customClass="BSUISingleImageTableViewCell">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ldx-ID-FCZ" id="Lmg-KM-gZF">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DA5-NX-q0R">
-                                                    <rect key="frame" x="0.0" y="-38" width="320" height="80"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -334,7 +343,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="F5FDF769-25D5-46EA-8FBC-8C0A2100E002" width="49" height="49">
+        <image name="3F3EA17D-B679-4425-8A59-E32BA2BAF8DB" width="49" height="49">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw

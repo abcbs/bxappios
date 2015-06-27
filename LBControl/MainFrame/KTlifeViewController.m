@@ -7,12 +7,8 @@
 //
 
 #import "KTlifeViewController.h"
-#import "KTLifeSearchBar.h"
-//#import "KTTarBarController.h"
-#import "UIView+Frame.h"
-
-#import "TableViewController.h"
-
+//#import "KTLifeSearchBar.h"
+#import "LBSendingWaterTableViewController.h"
 
 #import "BSUIFrameworkHeader.h"
 
@@ -23,7 +19,7 @@
     
     
 }
-@property (nonatomic, strong)KTLifeSearchBar *searchBar;
+//@property (nonatomic, strong)KTLifeSearchBar *searchBar;
 @property (nonatomic,strong) UIScrollView *BigScrollView;
 
 @end
@@ -175,7 +171,7 @@
      UIStoryboard *storyboard = [UIStoryboard
                                 storyboardWithName:@"KTWaterDetailsViewController" bundle:nil];
     
-    TableViewController *shoppControl = [storyboard instantiateViewControllerWithIdentifier:@"TableViewController"];
+    LBSendingWaterTableViewController *shoppControl = [storyboard instantiateViewControllerWithIdentifier:@"LBSendingWaterTableViewController"];
     
     UINavigationController* nav = [[UINavigationController alloc]  initWithRootViewController:shoppControl];
     

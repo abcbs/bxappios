@@ -15,7 +15,7 @@
 @property (retain, nonatomic) BSTableSection *bSTableObjects;
 
 
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (retain, nonatomic) IBOutlet UITableView *tableView;
 
 /**
  *获取章节的头信息

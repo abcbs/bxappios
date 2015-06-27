@@ -23,7 +23,7 @@
 
 -(UITableViewCell *)viewCellWithBSContentObject:(BSTableContentObject *)bsContentObject{
     
-    self.bigImage.image=[UIImage imageNamed:[bsContentObject imageName]];
+    self.bigImage.image=[UIImage imageNamed:[bsContentObject colImageName]];
     return self;
 }
 

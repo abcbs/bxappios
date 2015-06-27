@@ -6,9 +6,9 @@
 //  Copyright (c) 2015年 itcast. All rights reserved.
 //
 
-#import "BSTableViewRefreshController.h"
+#import "BSUIFrameworkHeader.h"
 
-@interface TableViewController : BSTableViewRefreshController
+@interface LBSendingWaterTableViewController: BSTableViewRefreshController
 
 - (IBAction)backClick:(id)sender;
 
