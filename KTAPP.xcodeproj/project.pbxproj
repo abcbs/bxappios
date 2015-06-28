@@ -185,6 +185,7 @@
 		8442691D1B36C05F006E7F7D /* ww.png in Resources */ = {isa = PBXBuildFile; fileRef = 844268A61B36C05F006E7F7D /* ww.png */; };
 		8442691E1B36C05F006E7F7D /* yuan.png in Resources */ = {isa = PBXBuildFile; fileRef = 844268A71B36C05F006E7F7D /* yuan.png */; };
 		8442691F1B36C05F006E7F7D /* yyfw9_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 844268A81B36C05F006E7F7D /* yyfw9_01.png */; };
+		844A32031B4032790045CA6C /* BSUITableViewCommonController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844A32021B4032790045CA6C /* BSUITableViewCommonController.m */; };
 		844E50BB1B2F2EE500A69F91 /* BSHTTPNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 844E50B41B2F2EE500A69F91 /* BSHTTPNetworking.m */; };
 		84578F531B35D11D00C3A4EA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84578F521B35D11D00C3A4EA /* ViewController.m */; };
 		84578F581B35E12600C3A4EA /* KTHandyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84578F571B35E12600C3A4EA /* KTHandyViewController.m */; };
@@ -548,6 +549,8 @@
 		844268A61B36C05F006E7F7D /* ww.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ww.png; sourceTree = "<group>"; };
 		844268A71B36C05F006E7F7D /* yuan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yuan.png; sourceTree = "<group>"; };
 		844268A81B36C05F006E7F7D /* yyfw9_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yyfw9_01.png; sourceTree = "<group>"; };
+		844A32011B4032790045CA6C /* BSUITableViewCommonController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUITableViewCommonController.h; sourceTree = "<group>"; };
+		844A32021B4032790045CA6C /* BSUITableViewCommonController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUITableViewCommonController.m; sourceTree = "<group>"; };
 		844E50B31B2F2EE500A69F91 /* BSHTTPNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSHTTPNetworking.h; sourceTree = "<group>"; };
 		844E50B41B2F2EE500A69F91 /* BSHTTPNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSHTTPNetworking.m; sourceTree = "<group>"; };
 		84578F511B35D11D00C3A4EA /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -1459,6 +1462,8 @@
 				84C06D9A1B3AF3BA000BB45C /* BSUITableViewInitRuntimeController.m */,
 				8474DEB31B3F7D0600D9DE36 /* BSUICommonController.h */,
 				8474DEB41B3F7D0600D9DE36 /* BSUICommonController.m */,
+				844A32011B4032790045CA6C /* BSUITableViewCommonController.h */,
+				844A32021B4032790045CA6C /* BSUITableViewCommonController.m */,
 			);
 			path = CommonController;
 			sourceTree = "<group>";
@@ -2354,6 +2359,7 @@
 				845A022C1B3DABF0007F5327 /* Conf.m in Sources */,
 				84BA96791B2829D500388B58 /* BusinessManager.m in Sources */,
 				847433121B2A915C00B030C4 /* cardBinding.m in Sources */,
+				844A32031B4032790045CA6C /* BSUITableViewCommonController.m in Sources */,
 				847432EA1B2A8DCC00B030C4 /* WaitPaymentDetail.m in Sources */,
 				8470764F1B3A8C4500F28180 /* bankController.m in Sources */,
 				A0F0C3E71B10209500CE406D /* BasicHeader.m in Sources */,

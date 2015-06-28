@@ -16,7 +16,8 @@
 #import "NavigationProcess.h"
 
 #import "BSUICommonController.h"
-#import "NavigationProcess.h"
+#import "BSUITableViewCommonController.h"
+
 /**
  *第三方UI相关组件
  */

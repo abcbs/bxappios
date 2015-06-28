@@ -72,7 +72,7 @@ NSString *bsNetstatus=@"缺省状态";
 
 +(NSInteger )checkNetWork{
     if ([bsNetstatus isEqualToString:@"系统连接超时"]) {
-        return -1001;
+        return networkError;
         
     }else if([bsNetstatus isEqualToString:@"缺省状态"]){
         return NSIntegerMax;

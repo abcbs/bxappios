@@ -91,4 +91,12 @@
     return nil;
 }
 
+/**
+ *覆盖，调整
+ *每个section底部标题高度
+ */
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return BSMarginY(4);
+}
+
 @end

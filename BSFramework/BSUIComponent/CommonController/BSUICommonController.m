@@ -14,7 +14,7 @@
   [self dismissViewControllerAnimated:YES completion:nil];
 }
 - (void)doneClick{
-    
+    NSLog(@"子类应当继承此方法实现完成功能");
 }
 
 @end

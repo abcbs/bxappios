@@ -140,7 +140,7 @@
 {
     
     UIView *headerView=[[UIView alloc] initWithFrame:BSRectMake( NAVIGATIONBAR_X, NAVIGATIONBAR_Y,NAVIGATIONBAR_WIDTH, NAVIGATIONBAR_HEIGHT)];
-    //[headerView setBackgroundColor:[UIColor darkTextColor]];
+    [headerView setBackgroundColor:[UIColor redColor]];
     
     UILabel *headNameLabel=[[UILabel alloc]initWithFrame:BSRectMake(NAVIGATIONBAR_X+NAVIGATIONBAR_WIDTH*0.3, NAVIGATIONBAR_Y,NAVIGATIONBAR_WIDTH/3, NAVIGATIONBAR_HEIGHT)];
     if (title) {

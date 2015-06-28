@@ -80,7 +80,7 @@
 
 -(void)process{
     
-    while([Conf checkNetWork]==networkRight){
+    while([Conf checkNetWork]==networkRight||[Conf checkNetWork]==networkError){
         [HUD hide:YES];
         if (_timer) {
             [_timer invalidate];

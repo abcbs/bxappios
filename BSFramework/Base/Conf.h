@@ -229,7 +229,7 @@ extern  NSString *bsNetstatus;
  *网络连接系统正常
  */
 #define networkRight 10000000
-
+#define networkError -1001
 +(void)handleNetworkError:(NSError *)error;
 
 /**

@@ -62,19 +62,19 @@
  *改变行的高度（实现主个代理方法后 rowHeight 设定的高度无效）
  */
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 120;
+    return BSMarginY(120);
 }
 
 /**
  *每个section底部标题高度（实现这个代理方法后前面 sectionHeaderHeight 设定的高度无效）
  */
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return 20;
+    return BSMarginY(20);
 }
 
 //每个section头部标题高度（实现这个代理方法后前面 sectionFooterHeight 设定的高度无效）
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
-    return 1;
+    return BSMarginY(1);
 }
 
 /**
