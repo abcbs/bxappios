@@ -6,7 +6,6 @@ dependencies: \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/LBModels/Discard/LoginMessage.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/LBControl/LoginRegister/RegisterViewController.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/LBModels/Discard/SendMessage.h \
-  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/BSFramework/Base/Conf.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/LBControl/SystemConfig/SystemSet.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/民生小区/ShareSDK-iOS-v2.11.0/ShareSDK.framework/Headers/ShareSDK.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/民生小区/ShareSDK-iOS-v2.11.0/Core/ShareSDKCoreService.framework/Headers/ShareSDKCoreService.h \
@@ -60,4 +59,20 @@ dependencies: \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/LBControl/MyOrderItems/Demo1ViewController.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/民生小区/DLSlideView-0.8.1/DLSlideView/DLTabedSlideView.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/民生小区/DLSlideView-0.8.1/DLSlideView/DLTabbarView/DLSlideTabbarProtocol.h \
-  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/LBControl/MainFrame/AppDelegate.h
+  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/BSFramework/BSUIFrameworkHeader.h \
+  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/BSFramework/Base/Conf.h \
+  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/BSFramework/Base/ErrorMessage.h \
+  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/BSFramework/BSUISetting/NavigationProcess.h \
+  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/BSFramework/BSUIComponent/CommonController/BSUICommonController.h \
+  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/BSFramework/BSUISetting/UIView+Frame.h \
+  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/BSFramework/BSUIComponent/CommonView/BSFCRollingADImageUIView.h \
+  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/BSFramework/BSUIComponent/CommonController/BSTableSection.h \
+  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/BSFramework/BSUIComponent/CommonController/BSTableContentObject.h \
+  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/BSFramework/BSUIComponent/CommonController/UIViewController+BSTableObject.h \
+  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/BSFramework/BSUIComponent/CommonController/BSUITableViewInitRuntimeController.h \
+  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/BSFramework/BSUIComponent/CommonController/BSTableViewRefreshController.h \
+  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/BSFramework/BSUIComponent/CommonController/BSTableListProtocol.h \
+  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/BSFramework/BSUIComponent/CommonView/BSUIImageTitleTableViewCell.h \
+  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/BSFramework/BSUIComponent/CommonView/BSUISingleImageTableViewCell.h \
+  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/BSFramework/BSUISetting/BSUIComponentView.h \
+  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/BSFramework/BSUISetting/BSUIBlockButton.h

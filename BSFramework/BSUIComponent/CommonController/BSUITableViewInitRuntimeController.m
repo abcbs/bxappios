@@ -238,23 +238,30 @@ titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
  */
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
-    long section=indexPath.section;
-    long row=indexPath.row;
-    return [self processTableViewCell:section row:row];
-   
-}
+    @try {
+        long section=indexPath.section;
+        long row=indexPath.row;
+        return [self processTableViewCell:section row:row];
+    }
+    @catch (NSException *exception) {
+        NSLog(@"画单元格时出现错误\t%@",exception.reason);
+    }
+ }
 
 /**
  *选中单元格响应事件
  *本方法在子类中不建议重写，如果重写在意味着本组件控制的现实逻辑不起作用
  */
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    long section=indexPath.section;
-    long row=indexPath.row;
-    [self prepareNavigationView:section row:row];
-
-}
+    @try {
+        long section=indexPath.section;
+        long row=indexPath.row;
+        [self prepareNavigationView:section row:row];
+    }
+    @catch (NSException *exception) {
+        NSLog(@"选中单元格响应事件\t%@",exception.reason);
+    }
+  }
 
 #pragma mark -以下是表格组件的具体实现私有方法
 /**
