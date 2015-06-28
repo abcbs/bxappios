@@ -7,7 +7,7 @@
 //
 
 #import "BSBLEMainController.h"
-#import "Conf.h"
+#import "BSUIFrameworkHeader.h"
 @interface BSBLEMainController ()
 
 @end
@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [Conf navigationHeader:self.navigationController];
+    [BSUIComponentView navigationHeader:self.navigationController];
 }
 
 - (void)didReceiveMemoryWarning {

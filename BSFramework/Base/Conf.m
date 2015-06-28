@@ -49,19 +49,7 @@
     return url;
 }
 
-+(void)navigationHeader:(UINavigationController *)navigationController{
-    [navigationController.navigationBar setBarStyle:UIBarStyleBlack];
-    [navigationController.navigationBar setBackgroundColor
-     :[UIColor redColor]];
-}
 
-+(UIImageView *)navigationHeaderWithImage:(NSString *)imageName{
-    UIImageView *imageView = [[UIImageView alloc]initWithFrame:BSRectMake(NAVIGATIONBAR_X, NAVIGATIONBAR_Y,
-                                                                          NAVIGATIONBAR_WIDTH, NAVIGATIONBAR_HEIGHT)];
-    NSString *image =imageName;
-    imageView.image = [UIImage imageNamed:image];
-    return imageView;
-}
 
 #pragma mark --适配的实现
 float autoSizeScaleX=1.0;
@@ -93,4 +81,10 @@ NSString *bsNetstatus=@"缺省状态";
     }
 }
 
++(NSString *)appInfo{
+    NSString *executableFile = [[[NSBundle mainBundle] infoDictionary] objectForKey:(NSString *)kCFBundleExecutableKey];    //获取项目名称
+    
+    NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:(NSString *)kCFBundleVersionKey];      //获取项目版本号
+    return executableFile;
+}
 @end

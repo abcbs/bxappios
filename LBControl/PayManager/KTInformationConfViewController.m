@@ -7,7 +7,8 @@
 //
 
 #import "KTInformationConfViewController.h"
-#import "Conf.h"
+#import "BSUIFrameworkHeader.h"
+
 @interface KTInformationConfViewController ()
 - (IBAction)commentOrder:(UIButton *)sender;
 
@@ -18,7 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     //改变状态栏默认颜色与样式
-    [Conf navigationHeader:self.navigationController ];
+    [BSUIComponentView navigationHeader:self.navigationController ];
 }
 
 - (void)didReceiveMemoryWarning {

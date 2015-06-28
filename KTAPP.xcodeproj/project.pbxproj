@@ -254,6 +254,8 @@
 		8474331E1B2A92B400B030C4 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8474331B1B2A92B400B030C4 /* RegisterViewController.m */; };
 		847433211B2A934000B030C4 /* applyShop.m in Sources */ = {isa = PBXBuildFile; fileRef = 847433201B2A934000B030C4 /* applyShop.m */; };
 		8474DEA31B3F004B00D9DE36 /* KTLBNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8474DEA21B3F004B00D9DE36 /* KTLBNavigationController.m */; };
+		8474DEAB1B3F474700D9DE36 /* BSUIBlockButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8474DEAA1B3F474700D9DE36 /* BSUIBlockButton.m */; };
+		8474DEB51B3F7D0600D9DE36 /* BSUICommonController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8474DEB41B3F7D0600D9DE36 /* BSUICommonController.m */; };
 		847B30881B3290DD007003D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 847B308A1B3290DD007003D7 /* Main.storyboard */; };
 		8480580B1B39A0E9005817D7 /* BSBLEDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8480580A1B39A0E9005817D7 /* BSBLEDetailTableViewController.m */; };
 		848058151B39A377005817D7 /* BSFCRollingADImageUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 848058131B39A377005817D7 /* BSFCRollingADImageUIView.m */; };
@@ -675,6 +677,11 @@
 		847433201B2A934000B030C4 /* applyShop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = applyShop.m; sourceTree = "<group>"; };
 		8474DEA11B3F004B00D9DE36 /* KTLBNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTLBNavigationController.h; sourceTree = "<group>"; };
 		8474DEA21B3F004B00D9DE36 /* KTLBNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTLBNavigationController.m; sourceTree = "<group>"; };
+		8474DEA91B3F474700D9DE36 /* BSUIBlockButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUIBlockButton.h; sourceTree = "<group>"; };
+		8474DEAA1B3F474700D9DE36 /* BSUIBlockButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUIBlockButton.m; sourceTree = "<group>"; };
+		8474DEAC1B3F606C00D9DE36 /* NavigationProcess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationProcess.h; sourceTree = "<group>"; };
+		8474DEB31B3F7D0600D9DE36 /* BSUICommonController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUICommonController.h; sourceTree = "<group>"; };
+		8474DEB41B3F7D0600D9DE36 /* BSUICommonController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUICommonController.m; sourceTree = "<group>"; };
 		847B30891B3290DD007003D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		848058091B39A0E9005817D7 /* BSBLEDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSBLEDetailTableViewController.h; sourceTree = "<group>"; };
 		8480580A1B39A0E9005817D7 /* BSBLEDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSBLEDetailTableViewController.m; sourceTree = "<group>"; };
@@ -1223,6 +1230,9 @@
 				845A02341B3DBA7E007F5327 /* UIView+Frame.m */,
 				84E97AB51B307535001D4100 /* BSUIComponentView.h */,
 				84E97AB61B307535001D4100 /* BSUIComponentView.m */,
+				8474DEA91B3F474700D9DE36 /* BSUIBlockButton.h */,
+				8474DEAA1B3F474700D9DE36 /* BSUIBlockButton.m */,
+				8474DEAC1B3F606C00D9DE36 /* NavigationProcess.h */,
 			);
 			path = BSUISetting;
 			sourceTree = "<group>";
@@ -1447,6 +1457,8 @@
 				847076701B3AB21300F28180 /* UIViewController+BSTableObject.m */,
 				84C06D991B3AF3BA000BB45C /* BSUITableViewInitRuntimeController.h */,
 				84C06D9A1B3AF3BA000BB45C /* BSUITableViewInitRuntimeController.m */,
+				8474DEB31B3F7D0600D9DE36 /* BSUICommonController.h */,
+				8474DEB41B3F7D0600D9DE36 /* BSUICommonController.m */,
 			);
 			path = CommonController;
 			sourceTree = "<group>";
@@ -2230,6 +2242,7 @@
 				A0F0C3E91B10209500CE406D /* CommodityEvaluationResult.m in Sources */,
 				A0F0C3EF1B10209500CE406D /* CommodityEvaluationParams.m in Sources */,
 				847432DB1B2A8CE500B030C4 /* MyOrderCell.m in Sources */,
+				8474DEB51B3F7D0600D9DE36 /* BSUICommonController.m in Sources */,
 				8470761A1B3A5F7800F28180 /* SetCell.m in Sources */,
 				8470763F1B3A8B9000F28180 /* cleaning.m in Sources */,
 				847433081B2A908000B030C4 /* SystemSet.m in Sources */,
@@ -2306,6 +2319,7 @@
 				847432FB1B2A8E5500B030C4 /* Demo1ViewController.m in Sources */,
 				8474331E1B2A92B400B030C4 /* RegisterViewController.m in Sources */,
 				84BA96801B2829D500388B58 /* orderDetailOneModel.m in Sources */,
+				8474DEAB1B3F474700D9DE36 /* BSUIBlockButton.m in Sources */,
 				8480580B1B39A0E9005817D7 /* BSBLEDetailTableViewController.m in Sources */,
 				A0F0C3EE1B10209500CE406D /* BasicParams.m in Sources */,
 				842043761B2991770002C868 /* DLScrollTabbarView.m in Sources */,

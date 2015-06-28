@@ -12,8 +12,6 @@
 
 @interface BSUITableViewInitRuntimeController ()
 
-
-
 @end
 
 @implementation BSUITableViewInitRuntimeController
@@ -22,13 +20,27 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [Conf navigationHeader:self.navigationController ];
+    
+    [BSUIComponentView initNarHeaderWithIndexView:self
+                                          title:nil
+     ];
+    
     self.tableView.dataSource =self;
     self.tableView.delegate = self;
     
 }
 
+- (void)backButtonClick
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
+- (void)backClick{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+- (void)doneClick{
+    NSLog(@"子类需要实例");
+}
 /*
  本方法在故事板中已经定义，则应当注销，否则子类需要实现
  */

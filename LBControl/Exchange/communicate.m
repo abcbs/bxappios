@@ -7,7 +7,7 @@
 //
 
 #import "communicate.h"
-#import "Conf.h"
+#import "BSUIFrameworkHeader.h"
 #import "communicateCell.h"
 #import "communicateController.h"
 @interface communicate ()<UITableViewDataSource,UITableViewDelegate,communicateCellDelegate>
@@ -19,7 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     //红色界面
-    UIImageView *imageView1 = [Conf navigationHeaderWithImage:@"jl_01.png"];
+    UIImageView *imageView1 = [BSUIComponentView navigationHeaderWithImage:@"jl_01.png"];
     //NSString *imageName = [NSString stringWithFormat:@"jl_01.png"];
     //imageView1.image = [UIImage imageNamed:imageName];
     [self.view addSubview:imageView1];

@@ -5,19 +5,17 @@
 //  Created by 罗芳芳 on 15/4/27.
 //  Copyright (c) 2015年 itcast. All rights reserved.
 //
-#define kScreenWidth [UIScreen mainScreen].bounds.size.width
-#define kScreenHeight [UIScreen mainScreen].bounds.size.height
 
+#import "BSUIFrameworkHeader.h"
 
 #import "UIImageView+WebCache.h"
+
 #import "MSWaterSendingCell.h"
 #import "WaterSending.h"
 #import "KTWaterDetailsViewController.h"
 #import "AFNetworking.h"
 #import "WaterSendingDetails.h"
-#import "MBProgressHUD.h"
-#import "MJRefresh.h"
-#import "MJExtension.h"
+
 
 #import "KTCartTableView.h"
 #import "Comment.h"
@@ -29,7 +27,8 @@
 #import "CommodityEvaluationRequest.h"
 #import "JoinShoppingCartRequest.h"
 #import "ViewShoppingCartResult.h"
-#import "BSFCRollingADImageUIView.h"
+
+
 
 
 @interface KTWaterDetailsViewController ()<BSImagePlayerDelegate>
@@ -68,7 +67,7 @@
     if (shoppingCart==nil) {
         shoppingCart=[[ShoppingCart alloc]init];
     }
-   [Conf navigationHeader:self.navigationController ];
+   [BSUIComponentView navigationHeader:self.navigationController ];
     
     // 初始化图片轮播起
    [self initImgPlay];

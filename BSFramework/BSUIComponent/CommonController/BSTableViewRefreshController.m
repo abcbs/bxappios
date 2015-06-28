@@ -26,7 +26,7 @@
 
 - (void)viewDidLoad {
     //改变状态来默认颜色
-    [Conf navigationHeader:self.navigationController ];
+    [BSUIComponentView navigationHeader:self.navigationController ];
     if(!HUD){
         HUD = [[MBProgressHUD alloc] initWithView:self.view];
  
@@ -160,6 +160,13 @@
 
 -(long )lastDataId{
     return 0;
+}
+
+- (void)backClick{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+- (void)doneClick{
+    NSLog(@"默认为同返回一致的动作");
 }
 
 @end

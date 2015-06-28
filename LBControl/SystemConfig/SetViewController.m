@@ -10,18 +10,15 @@
 #import "SetCell.h"
 #import "LoginViewController.h"
 #import "RegisterViewController.h"
-#import "Conf.h"
 #import "SystemSet.h"
 #import <ShareSDK/ShareSDK.h>
 #import <TencentOpenAPI/QQApiInterface.h>
 #import <TencentOpenAPI/TencentOAuth.h>
-//#import "WXApi.h"
-//#import "WeiboApi.h"
-//#import "WeiboSDK.h"
 #import "myWallet.h"
 #import "applyShop.h"
 #import "Demo1ViewController.h"
-#import "AppDelegate.h"
+
+#import "BSUIFrameworkHeader.h"
 
 
 @interface SetViewController ()<UITableViewDataSource,UITableViewDelegate>
@@ -55,9 +52,10 @@
     
     //红色界面
   
-    UIImageView *imageView=[Conf navigationHeaderWithImage:@"生活圈.jpg"];
-    [self.view addSubview:imageView];
-    
+    //UIImageView *imageView=[BSUIComponentView navigationHeaderWithImage:@"生活圈.jpg"];
+    //[self.view addSubview:imageView];
+    [BSUIComponentView navigationHeaderWithImage:@"生活圈.jpg"
+                                            view:self.view];
     //头像设置
     UIButton *iconButton = [[UIButton alloc] initWithFrame:CGRectMake(self.view.bounds.size.width/2-45, 70, 90, 90)];
     [iconButton setBackgroundImage:[UIImage imageNamed:@"LoginPicture.png"] forState:UIControlStateNormal];

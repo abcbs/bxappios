@@ -43,6 +43,7 @@
 + (instancetype)cellWithTableView:(UITableView *)tableView
 {
     static NSString *ID = @"cell";
+    //从NIB中获取
     MSWaterSendingCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
     if (cell == nil){
         cell = [[[NSBundle mainBundle] loadNibNamed:@"MSWaterSendingCell" owner:nil options:nil] firstObject];
@@ -77,6 +78,7 @@
 
 #pragma mark - 懒加载
 // 获取view对应的控制器
+
 - (UIViewController *)viewController
 {
     for (UIView* next = [self superview]; next; next = next.superview) {
@@ -93,9 +95,10 @@
 - (IBAction)goBuy:(UIButton *)sender {
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"KTWaterDetailsViewController" bundle:nil];
-    KTWaterDetailsViewController *login2 = [storyboard instantiateInitialViewController];
-    login2.waterSending = self.model;
-    [self.viewController.navigationController pushViewController:login2 animated:YES];
+    KTWaterDetailsViewController *shoppControl = [storyboard instantiateViewControllerWithIdentifier:@"KTWaterDetailsViewController"];
+        
+    shoppControl.waterSending = _model;
+    [self.viewController.navigationController pushViewController:shoppControl animated:YES];
 }
 
 @end

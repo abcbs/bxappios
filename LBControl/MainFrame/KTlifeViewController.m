@@ -32,11 +32,11 @@
 - (void)viewDidLoad {
     
    [super viewDidLoad];
-   [Conf navigationHeader:self.navigationController ];
+   [BSUIComponentView navigationHeader:self.navigationController ];
    //[AppDelegate storyBoradAutoLay:self.view];
     _BigScrollView =[[UIScrollView alloc]initWithFrame:BSRectMake(NAVIGATIONBAR_X,NAVIGATIONBAR_HEIGHT+178 , SCREEN_WIDTH,SCREEN_HEIGHT*0.7)];
    _BigScrollView.contentSize=BSSizeMake(SCREEN_WIDTH,SCREEN_HEIGHT + 200);
-   _BigScrollView.backgroundColor = [UIColor colorWithRed:242/255.0 green:242/255.0 blue:242/255.0 alpha:1];
+   _BigScrollView.backgroundColor = [BSUIComponentView backgroundColor];
    //_BigScrollView.showsVerticalScrollIndicator = NO;
     
    [self.view addSubview:_BigScrollView];
@@ -71,7 +71,8 @@
     
    UIView *SMview = [[UIView alloc]initWithFrame:BSRectMake(X, Y,300 , 80)];
     
-    SMview.backgroundColor = [UIColor colorWithRed:255/255.0 green:255/255.0 blue:255/255.0 alpha:1];
+    SMview.backgroundColor = [BSUIComponentView backgroundColor];
+    
    NSArray *tuPian = [NSArray arrayWithObjects:@"98xc",@"98ss",nil];
    NSArray *mingzi = [NSArray arrayWithObjects:@"洗车",@"送水",nil];
    for(int i=0;i<2;i++)

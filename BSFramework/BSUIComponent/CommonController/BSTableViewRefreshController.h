@@ -12,7 +12,7 @@
 #import "BSUIFrameworkHeader.h"
 #import "BSTableListProtocol.h"
 
-@interface BSTableViewRefreshController : UITableViewController<BSTableListProtocol,MBProgressHUDDelegate>
+@interface BSTableViewRefreshController : UITableViewController<BSTableListProtocol,MBProgressHUDDelegate,NavigationProcess>
 
 @property (nonatomic, retain) MBProgressHUD *HUD;
 

@@ -27,7 +27,7 @@
 #pragma mark--iOS显示适配
 
 /**
- *  屏幕宽度;
+ *  屏幕宽度
  */
 #define SCREEN_WIDTH [[UIScreen mainScreen] bounds].size.width
 /**
@@ -60,7 +60,9 @@
  */
 #define STATUS_HEIGHT 22
 
-
+/**
+ *内容高度应当是屏幕高度减去状态栏和导航栏高度
+ */
 #define CONTENT_HIGH (SCREEN_HEIGHT-NAVIGATIONBAR_HEIGHT)
 
 
@@ -98,6 +100,8 @@ extern float autoSizeScaleY;
 
 //UIAlertView
 #define KT_AlertView_(a) [[[UIAlertView alloc]initWithTitle:@"提示" message:a delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show]
+
+
 
 #pragma mark--对URL统一管理
 //登录
@@ -164,6 +168,7 @@ extern float autoSizeScaleY;
  */
 #define WATER_SHOPPCART_USERCARTS_SCHEMA @"shoppingcart/usercarts/:sessionId"
 
+
 #define WATER_SHOPPCART_USERCARTS @"shoppingcart/usercarts/"
 
 
@@ -188,10 +193,15 @@ extern float autoSizeScaleY;
 #define UPDATE_EXCEPTION @"2003" //数据更新异常
 
 
-#pragma mark--公共机制适配
+#pragma mark--公共机制显示相关配置信息
 
 /**
- *表格默认的列数
+ *标题栏，缺省的图片
+ */
+#define NAVIGATION_IMAGE @"ckxq-122"
+
+/**
+ *自动跳转功能表格默认的列数
  */
 #define BSTABLE_CONTENT_COLUMN_NUMBER 1
 
@@ -209,17 +219,6 @@ extern float autoSizeScaleY;
 /** 更新购物车url */
 +(NSString *)urlWaterShoppingUpdateCart;
 
-/**
- *默认改变iOS提供工具栏的颜色，如TableViewController
- *应用实例：KTlifeViewController
- */
-+(void)navigationHeader:(UINavigationController *)navigationController;
-
-/**
- *使用图像自定义头部信息
- *应用实例：communicate.h
- */
-+(UIImageView *)navigationHeaderWithImage:(NSString *)imageName;
 
 //对异常的处理
 ///+ (BOOL)isNetwork;
@@ -237,4 +236,7 @@ extern  NSString *bsNetstatus;
  *默认返回0，表示目前还没有网络信息返回
  */
 +(NSInteger )checkNetWork;
+
+
++(NSString *)appInfo;
 @end

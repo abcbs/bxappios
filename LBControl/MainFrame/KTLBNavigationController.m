@@ -83,4 +83,12 @@
     self.imagePlayer =[BSFCRollingADImageUIView initADImageUIViewWith:tempArray playerDelegate:self urls:nil];
 }
 
+/**
+ *覆盖父类实现，不显示章节标题
+ */
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    return nil;
+}
+
 @end

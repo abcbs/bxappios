@@ -40,7 +40,6 @@
 #pragma mark 开始进入刷新状态
 - (void)headerRereshing
 {
-
     //1.网络加载数据
     [self loadMoreData:[self firstDataId] dataCount:[super pageCount]];
     // 2.刷新表格UI
@@ -65,7 +64,9 @@
     
 }
 
-
+/**
+ *处理返回按钮
+ */
 - (IBAction)backClick:(id)sender{
      [self dismissViewControllerAnimated:YES completion:nil];
 }
@@ -74,10 +75,11 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    //送水列表的TableViewCell
     MSWaterSendingCell *cell = [MSWaterSendingCell
                                 cellWithTableView:tableView];
     WaterSending *model = self.dataTable[indexPath.row];
+    //model自身定义
     cell.model = model;
     return cell;
 }

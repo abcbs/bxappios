@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "BSTableSection.h"
+#import "BSUIFrameworkHeader.h"
 
 
-@interface BSUITableViewInitRuntimeController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+@interface BSUITableViewInitRuntimeController :
+    BSUICommonController<UITableViewDataSource,UITableViewDelegate,NavigationProcess>
 
 @property (retain, nonatomic) BSTableSection *bSTableObjects;
 
