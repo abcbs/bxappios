@@ -119,7 +119,7 @@
     
     //[self.navigationController pushViewController:shoppControl animated:YES];
    
-    [self.navigationController presentViewController:shoppControl animated:YES completion:nil   ];
+ 
 }
 
 /**
@@ -144,6 +144,8 @@
                                     initWithLong:waterSending.id];
         [self getCard:shoppingCart];
         shoppControl.shoppingCart=shoppingCart;
+        //如果登陆，则进入购物车
+        [self.navigationController presentViewController:shoppControl animated:YES completion:nil   ];
     }
 }
 

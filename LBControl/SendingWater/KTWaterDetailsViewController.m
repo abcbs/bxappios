@@ -67,7 +67,7 @@
     if (shoppingCart==nil) {
         shoppingCart=[[ShoppingCart alloc]init];
     }
-   [BSUIComponentView navigationHeader:self.navigationController ];
+   //[BSUIComponentView navigationHeader:self.navigationController ];
     
     // 初始化图片轮播起
    [self initImgPlay];

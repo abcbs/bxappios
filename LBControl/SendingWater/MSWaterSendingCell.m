@@ -9,9 +9,9 @@
 #import "MSWaterSendingCell.h"
 #import "WaterSending.h"
 #import "UIImageView+WebCache.h"
-#import "MJExtension.h"
 #import "LBSendingWaterTableViewController.h"
 #import "KTWaterDetailsViewController.h"
+#import "LBControllerHeader.h"
 
 @interface MSWaterSendingCell ()<UITableViewDelegate>
 
@@ -98,7 +98,41 @@
     KTWaterDetailsViewController *shoppControl = [storyboard instantiateViewControllerWithIdentifier:@"KTWaterDetailsViewController"];
         
     shoppControl.waterSending = _model;
-    [self.viewController.navigationController pushViewController:shoppControl animated:YES];
+    [self checkLogin:shoppControl waterSending:_model];
+    
+    //
+}
+-(void)checkLogin:(KTWaterDetailsViewController *)shoppControl
+     waterSending:(WaterSending *)waterSending{
+    //判断是否登录
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    
+    NSString *sessionID = [userDefaults objectForKey:@"sessionId"];
+    if (sessionID.length == 0) {
+        LoginViewController  *nv = [[LoginViewController  alloc]init];
+        
+        //[self presentViewController:nv animated:YES completion:nil];
+        [self.viewController.navigationController
+         pushViewController:nv animated:YES] ;
+    }else{
+        ShoppingCart *shoppingCart =[[ShoppingCart alloc] init];
+        shoppingCart.sessionId=sessionID;
+        shoppingCart.currentCount=[[NSNumber alloc] initWithLong:0];
+        shoppingCart.businessProductId=[[NSNumber alloc]
+                                        initWithLong:waterSending.id];
+        [self getCard:shoppingCart];
+        shoppControl.shoppingCart=shoppingCart;
+        
+        [self.viewController.navigationController pushViewController:shoppControl animated:YES];
+    }
 }
 
+-(void) getCard:(ShoppingCart *)shoppingCart
+
+{
+    [ShoppingCart addCart:shoppingCart
+               blockArray:nil
+     ];
+    
+}
 @end
