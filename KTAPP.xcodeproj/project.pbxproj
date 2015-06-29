@@ -186,6 +186,7 @@
 		8442691E1B36C05F006E7F7D /* yuan.png in Resources */ = {isa = PBXBuildFile; fileRef = 844268A71B36C05F006E7F7D /* yuan.png */; };
 		8442691F1B36C05F006E7F7D /* yyfw9_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 844268A81B36C05F006E7F7D /* yyfw9_01.png */; };
 		844A32031B4032790045CA6C /* BSUITableViewCommonController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844A32021B4032790045CA6C /* BSUITableViewCommonController.m */; };
+		844A32061B4064310045CA6C /* BSUIBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 844A32051B4064310045CA6C /* BSUIBarButtonItem.m */; };
 		844E50BB1B2F2EE500A69F91 /* BSHTTPNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 844E50B41B2F2EE500A69F91 /* BSHTTPNetworking.m */; };
 		84578F531B35D11D00C3A4EA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84578F521B35D11D00C3A4EA /* ViewController.m */; };
 		84578F581B35E12600C3A4EA /* KTHandyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84578F571B35E12600C3A4EA /* KTHandyViewController.m */; };
@@ -551,6 +552,8 @@
 		844268A81B36C05F006E7F7D /* yyfw9_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yyfw9_01.png; sourceTree = "<group>"; };
 		844A32011B4032790045CA6C /* BSUITableViewCommonController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUITableViewCommonController.h; sourceTree = "<group>"; };
 		844A32021B4032790045CA6C /* BSUITableViewCommonController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUITableViewCommonController.m; sourceTree = "<group>"; };
+		844A32041B4064310045CA6C /* BSUIBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUIBarButtonItem.h; sourceTree = "<group>"; };
+		844A32051B4064310045CA6C /* BSUIBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUIBarButtonItem.m; sourceTree = "<group>"; };
 		844E50B31B2F2EE500A69F91 /* BSHTTPNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSHTTPNetworking.h; sourceTree = "<group>"; };
 		844E50B41B2F2EE500A69F91 /* BSHTTPNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSHTTPNetworking.m; sourceTree = "<group>"; };
 		84578F511B35D11D00C3A4EA /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -1236,6 +1239,8 @@
 				8474DEA91B3F474700D9DE36 /* BSUIBlockButton.h */,
 				8474DEAA1B3F474700D9DE36 /* BSUIBlockButton.m */,
 				8474DEAC1B3F606C00D9DE36 /* NavigationProcess.h */,
+				844A32041B4064310045CA6C /* BSUIBarButtonItem.h */,
+				844A32051B4064310045CA6C /* BSUIBarButtonItem.m */,
 			);
 			path = BSUISetting;
 			sourceTree = "<group>";
@@ -2291,6 +2296,7 @@
 				0E915F981B0C394800F47478 /* ValidateCode.m in Sources */,
 				8474DEA31B3F004B00D9DE36 /* KTLBNavigationController.m in Sources */,
 				84BA96881B2829D500388B58 /* ShoppingCart.m in Sources */,
+				844A32061B4064310045CA6C /* BSUIBarButtonItem.m in Sources */,
 				847076711B3AB21300F28180 /* UIViewController+BSTableObject.m in Sources */,
 				A0F0C3F21B10209500CE406D /* UpdateShoppingCartParams.m in Sources */,
 				842042C91B298EF30002C868 /* KTlifeViewController.m in Sources */,

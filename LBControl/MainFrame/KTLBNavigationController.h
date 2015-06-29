@@ -7,10 +7,10 @@
 //
 
 #import "BSUITableViewInitRuntimeController.h"
-
-@interface KTLBNavigationController : BSUITableViewInitRuntimeController
+#import "BSUIFrameworkHeader.h"
+@interface KTLBNavigationController : BSUITableViewInitRuntimeController<NavigationProcess>
 
 //@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
-
+-(void)touchAction;
 @end

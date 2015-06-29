@@ -11,11 +11,13 @@
 @implementation BSUIBlockButton
 @synthesize block;
 
-- (id)initWithFrame:(CGRect)frame
+- (id)initWithFrame:(CGRect)frame target:(UIViewController *)target action:(SEL)action
 {
     self = [super initWithFrame:frame];
     if (self) {
-        [self addTarget:self action:@selector(touchAction:) forControlEvents:UIControlEventTouchUpInside];
+        [self addTarget:target
+                 action:action
+       forControlEvents:UIControlEventTouchUpInside];
         
     }
     return self;

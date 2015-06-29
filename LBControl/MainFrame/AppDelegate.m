@@ -14,9 +14,9 @@
 #import "WXApi.h"
 #import "WeiboApi.h"
 #import "WeiboSDK.h"
-#import "Conf.h"
-#import "AFNetworkActivityIndicatorManager.h"
 
+#import "AFNetworkActivityIndicatorManager.h"
+#import "BSUIFrameworkHeader.h"
 @interface AppDelegate ()
     
 @end
@@ -79,7 +79,8 @@
     self.window.backgroundColor = [UIColor whiteColor];
     self.window.tintColor = [UIColor redColor];
     
-    
+    //[BSUIComponentView initNarHeaderWithIndexView:self.window.rootViewController                                            title:nil];
+    //[BSUIComponentView navigationHeader:self.window.rootViewController.navigationController];
     return YES;
 }
 

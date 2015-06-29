@@ -81,10 +81,25 @@ NSString *bsNetstatus=@"缺省状态";
     }
 }
 
++(NSString *)appVersion{
+      NSDictionary *dic=[Conf mainBundle];
+      return [dic objectForKey:(NSString *)kCFBundleVersionKey];
+}
+
++(NSDictionary *) mainBundle{
+    return [[NSBundle mainBundle] infoDictionary] ;
+}
 +(NSString *)appInfo{
-    NSString *executableFile = [[[NSBundle mainBundle] infoDictionary] objectForKey:(NSString *)kCFBundleExecutableKey];    //获取项目名称
+    NSString *infoPlistPath=[[NSBundle mainBundle]
+                        pathForResource:@"InfoPlist" ofType:@"strings" ];
     
-    NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:(NSString *)kCFBundleVersionKey];      //获取项目版本号
-    return executableFile;
+    NSDictionary *infoPlistDic=[NSDictionary dictionaryWithContentsOfFile:infoPlistPath];
+    NSString *appProjectName=[infoPlistDic valueForKey:@"CFBundleDisplayName"];
+    //NSArray *data = [NSArray arrayWithContentsOfFile:dataPath];
+    
+    //NSDictionary *dic=[Conf mainBundle];
+    //获取项目名称
+   // NSString *executableFile = [dic objectForKey:(NSString *)kCFBundleExecutableKey];
+    return appProjectName;
 }
 @end

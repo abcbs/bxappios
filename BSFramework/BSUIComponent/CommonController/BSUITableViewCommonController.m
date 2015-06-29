@@ -7,9 +7,22 @@
 //
 
 #import "BSUITableViewCommonController.h"
-
+#import "BSUIFrameworkHeader.h"
 @implementation BSUITableViewCommonController
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    [BSUIComponentView initNavigationHeaderWithDefault:self
+                                     navigationProcess:self title:nil
+     ];
+    
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    NSLog(@"BSUICommonController viewDidAppear 对象的视图已经加入到窗口时调用");
+    
+}
 - (void)backClick{
     [self dismissViewControllerAnimated:YES completion:nil];
 }

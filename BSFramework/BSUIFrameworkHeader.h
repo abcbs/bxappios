@@ -15,6 +15,12 @@
 #import "ErrorMessage.h"
 #import "NavigationProcess.h"
 
+/**
+ *避免使用selector方法的实现
+ */
+#import "BSUIBlockButton.h"
+#import "BSUIBarButtonItem.h"
+
 #import "BSUICommonController.h"
 #import "BSUITableViewCommonController.h"
 
@@ -59,11 +65,11 @@
  */
 #import "BSUISingleImageTableViewCell.h"
 
-/*
+/**
  *UI的公共小组件，例如弹出窗口
  */
 #import "BSUIComponentView.h"
-#import "BSUIBlockButton.h"
+
 
 
 CG_INLINE CGRect BSRectMake(CGFloat x, CGFloat y, CGFloat width, CGFloat height)

@@ -61,7 +61,7 @@
     
     [bsTable addBSTableContent:bank sectionHeader:@"首页"];
     
-
+    
     [super setValue:bsTable forKey:@"bSTableObjects"];
     
     [self addImagePlay];

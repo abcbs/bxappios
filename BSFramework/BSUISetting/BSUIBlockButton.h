@@ -14,7 +14,11 @@
 typedef void (^TouchButton)(BSUIBlockButton*);
 
 @interface BSUIBlockButton : UIButton
+
+
     @property(nonatomic,copy) TouchButton block;
+
+- (id)initWithFrame:(CGRect)frame target:(UIViewController *)target action:(SEL)action;
 @end
 
 

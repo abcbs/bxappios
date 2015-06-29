@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import <CoreFoundation/CoreFoundation.h>
+#import "BSUIFrameworkHeader.h"
 
 @interface BSUIComponentView : NSObject
 
@@ -50,12 +51,23 @@
 
 /**
  *头部默认信息
+ *此表头有两个按钮，返回和确定
  */
 +(void)initNarHeaderWithDefault:(UIViewController *)currentController
                           title:(NSString *)title;
 
+
 +(void)initNarHeaderWithIndexView:(UIViewController *)currentController
                             title:(NSString *)title;
 
++(void )initNavigationHeaderWithDefault:(UIViewController *)viewController
+                      navigationProcess:(id<NavigationProcess>) navigationProcess
+                                  title:(NSString *)title;
+
+
++(BSUIBarButtonItem *)backBarButtonItem:(id<NavigationProcess>) navigationProcess target:(UIViewController *)target title:(NSString *)title image:(NSString *)image;
+
+
++(BSUIBarButtonItem *)okBarButtonItem:(id<NavigationProcess>) navigationProcess  target:(UIViewController *)target title:(NSString *)title image:(NSString *)image;
 
 @end

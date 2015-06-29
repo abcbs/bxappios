@@ -21,13 +21,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [BSUIComponentView initNarHeaderWithIndexView:self
-                                          title:nil
-     ];
-    
+    //[BSUIComponentView initNarHeaderWithIndexView:self  title:@"首页导航"    ];
+   
     self.tableView.dataSource =self;
     self.tableView.delegate = self;
-    
+
 }
 
 - (void)backButtonClick

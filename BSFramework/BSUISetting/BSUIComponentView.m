@@ -42,12 +42,18 @@
     
 }
 
+/**
+ *头部状态栏颜色设置
+ */
 +(void)navigationHeader:(UINavigationController *)navigationController{
     [navigationController.navigationBar setBarStyle:UIBarStyleBlack];
     [navigationController.navigationBar setBackgroundColor
      :[UIColor redColor]];
 }
 
+/**
+ *头部图像设置，需手工添加到具体页面
+ */
 +(UIImageView *)navigationHeaderWithImage:(NSString *)imageName{
     UIImageView *imageView = [[UIImageView alloc]initWithFrame:BSRectMake(NAVIGATIONBAR_X, NAVIGATIONBAR_Y,
                                                                           NAVIGATIONBAR_WIDTH, NAVIGATIONBAR_HEIGHT)];
@@ -56,7 +62,9 @@
     return imageView;
 }
 
-
+/**
+ *头部图像设置，需提供调用也的View
+ */
 +(void)navigationHeaderWithImage:(NSString *)imageName view:(UIView *)view
 {
     NSString *defaultImage=NAVIGATION_IMAGE;
@@ -79,55 +87,51 @@
     return  [UIColor colorWithRed:0.234 green:0.234 blue:0.234 alpha:0.1];
 }
 
-+(void)initNarHeaderWithDefault:(UIViewController *)currentController
++(void )initNavigationHeaderWithDefault:(UIViewController *)viewController
+                      navigationProcess:(id<NavigationProcess>) navigationProcess
+                                  title:(NSString *)title{
+    
+    UINavigationItem *navigationItem=viewController.navigationItem;
+    
+    //BSUIBlockButton *backButton = [BSUIComponentView backNavButton:navigationProcess
+    //                                                         title:title image:nil];
+    
+
+    UIBarButtonItem *myButton = [[UIBarButtonItem alloc]
+                                  initWithTitle:@"myButton"
+                                  style:UIBarButtonItemStylePlain
+                                  target:self
+                                 action:@selector(backButton:)];
+    
+    navigationItem.leftBarButtonItem = myButton;
+   
+}
+
+/**
+ *带有表头，以普通View代替系统提供的导航栏
+ */
++(void)initNarHeaderWithDefault:(BSUICommonController *)currentController
                           title:(NSString *)title //定义块类型
     {
     
-    UIView *headerView=[[UIView alloc] initWithFrame:BSRectMake( NAVIGATIONBAR_X, NAVIGATIONBAR_Y,NAVIGATIONBAR_WIDTH, NAVIGATIONBAR_HEIGHT)];
+    UIView *headerView=[BSUIComponentView headerView];
         
-    [headerView setBackgroundColor:[UIColor colorWithRed:0.79 green:0.12 blue:0 alpha:0.90]];
-    
-    BSUIBlockButton *backButton = [[BSUIBlockButton alloc]initWithFrame:BSRectMake(NAVIGATIONBAR_X+NAVIGATIONBAR_WIDTH*0.05,
-        NAVIGATIONBAR_Y+STATUS_HEIGHT,NAVIGATIONBAR_HEIGHT/3, NAVIGATIONBAR_HEIGHT/3)];
-    [backButton setBackgroundImage:[UIImage imageNamed:@"login-2.png"]
-                          forState:UIControlStateNormal];
-    [backButton setBlock:^(BSUIBlockButton *button){
-        [currentController dismissViewControllerAnimated:YES completion:nil];
-    }];
-   
-    //[backButton setBackgroundColor:[UIColor whiteColor]];
-    [backButton setTintColor:[UIColor whiteColor]];
+       
+        BSUIBlockButton *backButton = [BSUIComponentView backNavButton:currentController target:currentController
+                                                              title:title image:nil];
+
+        
     [headerView addSubview:backButton];
     
-    UILabel *headNameLabel=[[UILabel alloc]initWithFrame:BSRectMake(NAVIGATIONBAR_X+NAVIGATIONBAR_WIDTH*0.3, NAVIGATIONBAR_Y,NAVIGATIONBAR_WIDTH/3, NAVIGATIONBAR_HEIGHT)];
-    if (title) {
-        [headNameLabel setText:title];
-    }else{
-        [headNameLabel setText:[Conf appInfo]];
-    }
-    [headNameLabel setText:[Conf appInfo]];
-    [headNameLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:20]];
-    [headNameLabel setTextAlignment: NSTextAlignmentCenter];
-    [headNameLabel setTextColor:[UIColor whiteColor]];
+    UILabel *headNameLabel=[BSUIComponentView labelNav:title];
+    
    
     [headerView addSubview:headNameLabel];
 
         
-        
-  BSUIBlockButton *okButton = [[BSUIBlockButton alloc]initWithFrame:BSRectMake(NAVIGATIONBAR_X+NAVIGATIONBAR_WIDTH*0.8, NAVIGATIONBAR_Y+STATUS_HEIGHT,NAVIGATIONBAR_HEIGHT/3, NAVIGATIONBAR_HEIGHT/3)];
- 
-        
-    [okButton setBackgroundImage:[UIImage imageNamed:@"login-2.png"]
-                              forState:UIControlStateNormal];
-    [okButton setBlock:^(BSUIBlockButton *button){
-            id<NavigationProcess> cc=currentController;
-            [cc doneClick];
-        }];
-
-    [okButton setTintColor:[UIColor whiteColor]];
-      
-
-
+        BSUIBlockButton *okButton =[BSUIComponentView okNavButton:currentController target:currentController
+                                                           title:title image:nil];
+  
     [headerView addSubview:okButton];
         
     [currentController.view addSubview:headerView];
@@ -135,28 +139,145 @@
     
 }
 
+//NS_ENUM_DEPRECATED_IOS(2_0, 8_0, "Use UIBarButtonItemStylePlain when minimum deployment target is iOS7 or later
+/**
+ *状态栏，默认使用
+ */
 +(void)initNarHeaderWithIndexView:(UIViewController *)currentController
                           title:(NSString *)title //定义块类型
 {
     
-    UIView *headerView=[[UIView alloc] initWithFrame:BSRectMake( NAVIGATIONBAR_X, NAVIGATIONBAR_Y,NAVIGATIONBAR_WIDTH, NAVIGATIONBAR_HEIGHT)];
-    [headerView setBackgroundColor:[UIColor redColor]];
+    UIView *headerView=[BSUIComponentView headerView];
     
+    UILabel *headNameLabel=[BSUIComponentView labelNav:title];
+    
+    [headerView addSubview:headNameLabel];
+    
+    [currentController.view addSubview:headerView];
+    
+    /*
+    @try {
+        UIToolbar *mycustomToolBar;
+        NSMutableArray *mycustomButtons = [[NSMutableArray alloc] init];
+        UIBarButtonItem *myButton1 = [BSUIComponentView backBarButtonItem:currentController target:currentController title:title image:nil];
+        
+        myButton1.width = 40;
+        [mycustomButtons addObject: myButton1];
+        UIBarButtonItem *myButton2 = [BSUIComponentView okBarButtonItem:currentController target:currentController title:title image:nil];
+        
+        myButton2.width = 40;
+        [mycustomButtons addObject: myButton2];
+        
+        mycustomToolBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0.0f, 0.0f,320.0f, 44.0f)];
+       // mycustomToolBar.center = CGPointMake(160.0f,200.0f);
+        mycustomToolBar.barStyle = UIBarStyleDefault;
+        [mycustomToolBar setItems:mycustomButtons animated:YES];
+        [mycustomToolBar sizeToFit];
+        [currentController.view addSubview:mycustomToolBar];
+        currentController.navigationItem.titleView = mycustomToolBar;
+        }
+    @catch (NSException *exception) {
+        NSLog(@"状态栏错误");
+    }
+    */
+    
+}
+
+#pragma mark -表头导航按钮的私有方法定义
+/**
+ *私有方法
+ *统一的头部返回按钮
+ */
++(BSUIBlockButton *)backNavButton:(id<NavigationProcess>) navigationProcess
+                            target:(UIViewController *)target
+                            title:(NSString *)title image:(NSString *)image{
+    BSUIBlockButton *backButton = [[BSUIBlockButton alloc]initWithFrame:BSRectMake(NAVIGATIONBAR_X+NAVIGATIONBAR_WIDTH*0.05,
+                                                                                   NAVIGATIONBAR_Y+STATUS_HEIGHT,NAVIGATIONBAR_HEIGHT/3, NAVIGATIONBAR_HEIGHT/3)
+                                   target:target
+                                                                 action:@selector(backClick)];
+    [backButton setBackgroundImage:[UIImage imageNamed:@"login-2.png"]
+                          forState:UIControlStateNormal];
+    [backButton setBlock:^(BSUIBlockButton *button){
+        [navigationProcess backClick];
+    }];
+    
+    //[backButton setBackgroundColor:[UIColor whiteColor]];
+    [backButton setTintColor:[UIColor whiteColor]];
+    
+    return backButton;
+    
+}
+
+
+/**
+ *私有方法
+ *头部导航的确定按钮
+ */
++(BSUIBlockButton *)okNavButton:(id<NavigationProcess>) navigationProcess
+                            target:(UIViewController *)target
+                          title:(NSString *)title image:(NSString *)image {
+    BSUIBlockButton *okButton = [[BSUIBlockButton alloc]initWithFrame:BSRectMake(NAVIGATIONBAR_X+NAVIGATIONBAR_WIDTH*0.85,
+                                                                                 NAVIGATIONBAR_Y+STATUS_HEIGHT,NAVIGATIONBAR_HEIGHT/3, NAVIGATIONBAR_HEIGHT/3)
+                                 target:target
+                                 action:@selector(doneClick)];
+    [okButton setBackgroundImage:[UIImage imageNamed:@"login-2.png"]
+                        forState:UIControlStateNormal];
+    [okButton setBlock:^(BSUIBlockButton *button){
+        [navigationProcess backClick];
+    }];
+    //[okButton setBackgroundColor:[UIColor whiteColor]];
+    [okButton setTintColor:[UIColor whiteColor]];
+    return okButton;
+    
+}
++(BSUIBarButtonItem *)okBarButtonItem:(id<NavigationProcess>) navigationProcess  target:(UIViewController *)target title:(NSString *)title image:(NSString *)image{
+    BSUIBarButtonItem *okButtonItem = [[BSUIBarButtonItem alloc]
+                                  initWithTitle:title
+                                  target:target
+                                       action:@selector(doneClick)];
+ 
+    return okButtonItem;
+}
+
++(BSUIBarButtonItem *)backBarButtonItem:(id<NavigationProcess>) navigationProcess target:(UIViewController *)target title:(NSString *)title image:(NSString *)image{
+    BSUIBarButtonItem *backButtonItem = [[BSUIBarButtonItem alloc]
+                                       initWithTitle:title
+                                         target:target
+                                         action:@selector(backClick)
+];
+   
+    return backButtonItem;
+}
+
+
+/*
+ *私有方法
+ *头部的导航条标签
+ */
++(UILabel *)labelNav:(NSString *)title{
     UILabel *headNameLabel=[[UILabel alloc]initWithFrame:BSRectMake(NAVIGATIONBAR_X+NAVIGATIONBAR_WIDTH*0.3, NAVIGATIONBAR_Y,NAVIGATIONBAR_WIDTH/3, NAVIGATIONBAR_HEIGHT)];
     if (title) {
         [headNameLabel setText:title];
     }else{
         [headNameLabel setText:[Conf appInfo]];
     }
-    [headNameLabel setText:[Conf appInfo]];
     [headNameLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:20]];
     [headNameLabel setTextAlignment: NSTextAlignmentCenter];
-    //[headNameLabel setTextColor:[UIColor whiteColor]];
+    [headNameLabel setTextColor:[UIColor whiteColor]];
     
-    [headerView addSubview:headNameLabel];
+    return headNameLabel;
+}
+
+/*
+ *私有方法
+ *统一的头部UIView
+ */
++(UIView *)headerView{
+    UIView *headerView=[[UIView alloc] initWithFrame:BSRectMake( NAVIGATIONBAR_X, NAVIGATIONBAR_Y,NAVIGATIONBAR_WIDTH, NAVIGATIONBAR_HEIGHT)];
     
-    [currentController.view addSubview:headerView];
+    [headerView setBackgroundColor:[UIColor colorWithRed:0.79 green:0.12 blue:0 alpha:0.90]];
     
+    return headerView;
 }
 
 @end

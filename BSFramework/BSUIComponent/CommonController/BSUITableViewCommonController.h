@@ -10,4 +10,7 @@
 #import "BSUIFrameworkHeader.h"
 @interface BSUITableViewCommonController : UITableViewController<NavigationProcess>
 
+- (void)backClick;
+- (void)doneClick;
+
 @end
