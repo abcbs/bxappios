@@ -41,7 +41,6 @@ dependencies: \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/LBControl/MainFrame/AppDelegate.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/LBControl/Exchange/communicate.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/LBModels/Discard/communicateMessage.h \
-  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/LBControl/Recommend/recommendController.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/LBControl/ReservationService/appointmentController.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/LBControl/LifeService/lifeServiceController.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/LBControl/BankBusinessBooking/bankController.h \

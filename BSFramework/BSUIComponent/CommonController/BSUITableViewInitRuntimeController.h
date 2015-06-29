@@ -24,6 +24,11 @@
 -(NSString *)titleForHeaderInSection:(NSInteger)section;
 
 /**
+ *设置分割线风格，默认为没有分割线
+ */
+-(void)setSeparatorStyle:(UITableViewCellSeparatorStyle *)separatorStyle;
+
+/**
  *当前章节的数量
  */
 -(NSInteger)currentSectionNumber;

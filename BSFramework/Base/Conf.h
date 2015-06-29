@@ -118,8 +118,6 @@ extern float autoSizeScaleY;
 //验证码接口
 #define Validate_url [[[NSString alloc] initWithString:KBS_URL]stringByAppendingString:@"user/generatecode"];
 
-
-
 #pragma mark--功能的请求参数及请求参数模
 
 /**
@@ -195,6 +193,7 @@ extern float autoSizeScaleY;
 
 #pragma mark--公共机制显示相关配置信息
 
+#pragma mark--运行时表格运行组件BSUITableViewInitRuntimeController配置
 /**
  *标题栏，缺省的图片
  */
@@ -204,6 +203,7 @@ extern float autoSizeScaleY;
  *自动跳转功能表格默认的列数
  */
 #define BSTABLE_CONTENT_COLUMN_NUMBER 1
+
 
 
 +(NSString *)urlWithShoppingCart;

@@ -17,7 +17,6 @@
  *主页
  */
 #import "communicate.h"
-#import "recommendController.h"
 #import "appointmentController.h"
 #import "lifeServiceController.h"
 #import "lifeServiceController.h"
@@ -41,7 +40,6 @@
 
 
 
-#import "KTLifeIndexCell.h"
 /**
  *送水模块
  */

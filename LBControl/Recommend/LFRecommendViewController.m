@@ -15,6 +15,7 @@
 
 - (void)viewDidLoad {
     self.title=@"金融推荐";
+    
     [super viewDidLoad];
     
     BSTableSection *bsTable=[BSTableSection initWithHeaderVcClassContent:@"金融推荐"//章节显示标题
@@ -47,8 +48,7 @@
     
        
     [super setValue:bsTable forKey:@"bSTableObjects"];
-    
-
+    //[self setSeparatorStyle :UITableViewCellSeparatorStyleNone];
     
 }
 

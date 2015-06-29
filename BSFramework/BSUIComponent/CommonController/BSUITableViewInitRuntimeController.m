@@ -24,9 +24,8 @@
     //[BSUIComponentView initNarHeaderWithIndexView:self  title:@"首页导航"    ];
     if (tableView==nil) {
         self.tableView = [[UITableView alloc]initWithFrame:BSRectMake(NAVIGATIONBAR_X, NAVIGATIONBAR_HEIGHT, SCREEN_WIDTH, SCREEN_HEIGHT-NAVIGATION_ADD_STATUS_HEIGHT) style:UITableViewStyleGrouped];
+            self.tableView.separatorStyle=UITableViewCellSeparatorStyleNone;
         
-        self.tableView.separatorStyle=UITableViewCellSeparatorStyleNone;
-
         [self.view addSubview: tableView];
     }
     self.tableView.dataSource =self;
@@ -34,6 +33,11 @@
     
 }
 
+-(void)setSeparatorStyle:(UITableViewCellSeparatorStyle *)separatorStyle{
+    if (self.tableView) {
+        self.tableView.separatorStyle=*(separatorStyle);
+    }
+}
 - (void)backButtonClick
 {
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -278,14 +282,15 @@ titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
 -(UITableViewCell *)processTableViewCell:(Class) cellClass
     bsContentObject:(BSTableContentObject *)bsContentObject{
     NSString *ID = [self.bSTableObjects cellIdentifier];
-    NSString *method=@"viewCellWithBSContentObject";
-    if (bsContentObject.method==nil) {
-        bsContentObject.method=method;
-    }
+   
     id cell=[self uiTableViewCellWithIdentifier:ID];
     if (cell==nil) {//没有在NIB或者故事板中定义
         return [self handProcessTableViewCell:cellClass
                      bsContentObject:bsContentObject];
+    }
+    //不是手工编码根据配置的方法执行具体的方法
+    if (bsContentObject.method) {
+        [cell setValue:bsContentObject.method forKeyPath:@"method"];
     }
     return [cell viewCellWithBSContentObject:bsContentObject];
 
@@ -293,11 +298,15 @@ titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
 
 /**
  *手工处理时，由于没有NIB的绑定，需要手工添加到视图中
+ *目前默认标示为Section提供的，而且是一个章节，在多章节之后，这里的判断要么来自具体的章节，要么来自BSContentObject
  */
 -(UITableViewCell *)handProcessTableViewCell:(Class) cellClass
     bsContentObject:(BSTableContentObject *)bsContentObject{
     id cell=[[cellClass alloc]initWithStyle:UITableViewCellStyleDefault
             reuseIdentifier:[self.bSTableObjects cellIdentifier]];
+    if (bsContentObject.method) {
+        [cell setValue:bsContentObject.method forKeyPath:@"method"];
+    }
     return [cell viewCellWithHandBSContentObject:bsContentObject];
     
 }
@@ -375,11 +384,13 @@ titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     if (([self canUseStoryBord:section row:row])&&
         [self useStoryboard:section row:row]) {
+        BSTableContentObject *bs=[self currentBSContentObject:section row:row];
         NSString *vcClassName=[self vcControllerName:section row:row];
-        [self prepareControllWithStorybord:vcClassName];
+        [self prepareControllWithStorybord:vcClassName bsContentObject:bs];
     }else{
         Class clzz=[self vcControlleClass:section row:row];
-        [self prepareControllWithNib:clzz];
+        BSTableContentObject *bs=[self currentBSContentObject:section row:row];
+        [self prepareControllWithNib:clzz bsContentObject:bs];
     }
    
 }
@@ -400,7 +411,7 @@ titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
 /**
  *以手工方式实现的Controller的跳转
  */
--(void)prepareControllWithNib:(Class)clzz{
+-(void)prepareControllWithNib:(Class)clzz bsContentObject:(BSTableContentObject*)bsContentObject{
     
     UIViewController *vc =[[clzz alloc] init];
     
@@ -410,13 +421,18 @@ titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
 /**
  *以故事板实现的Controller的跳转
  */
--(void)prepareControllWithStorybord:(NSString *)vcClassName{
+-(void)prepareControllWithStorybord:(NSString *)vcClassName bsContentObject:(BSTableContentObject*)bsContentObject{
     
     UIStoryboard *storyboard = [UIStoryboard
                                 storyboardWithName:[self storyboardName] bundle:nil];
     
     UIViewController *goControl = [storyboard instantiateViewControllerWithIdentifier:vcClassName];
     
+    //不是手工编码根据配置的方法执行具体的方法
+    if (bsContentObject.method) {
+        [goControl setValue:bsContentObject.method forKeyPath:@"method"];
+    }
+
     UINavigationController* nav = [[UINavigationController alloc]  initWithRootViewController:goControl];
     
     [self presentViewController:nav animated:YES completion:nil];
@@ -433,6 +449,13 @@ titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
     }else{
         return YES;
     }
+}
+
+/**
+ *
+ */
+-(BSTableContentObject *)currentBSContentObject:(NSInteger)section row:(NSInteger)row{
+    return ((BSTableContentObject *)[self bsContentObject:section row:row]);
 }
 /**
  *获取跳转Controller的名称,故事板跳转方式

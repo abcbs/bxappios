@@ -11,6 +11,7 @@ dependencies: \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/LBControl/SendingWater/LBSendingWaterTableViewController.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/BSFramework/BSUIFrameworkHeader.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/BSFramework/BSUISetting/NavigationProcess.h \
+  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/BSFramework/Basic-Demo/ClassForSelectors.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/BSFramework/BSUISetting/BSUIBlockButton.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/BSFramework/BSUISetting/BSUIBarButtonItem.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/BSFramework/BSUIComponent/CommonController/BSUICommonController.h \
@@ -41,13 +42,11 @@ dependencies: \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/LBControl/MainFrame/AppDelegate.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/LBControl/Exchange/communicate.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/LBModels/Discard/communicateMessage.h \
-  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/LBControl/Recommend/recommendController.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/LBControl/ReservationService/appointmentController.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/LBControl/LifeService/lifeServiceController.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/LBControl/BankBusinessBooking/bankController.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/LBControl/Recommend/LFRecommendViewController.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/LBControl/Recommend/recommendguest.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/LBControl/Recommend/recommendCard.h \
-  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/LBControl/MainFrame/KTLifeIndexCell.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/LBControl/LoginRegister/LoginViewController.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/LBModels/Discard/LoginMessage.h

@@ -14,6 +14,10 @@
 @synthesize vcClass;
 @synthesize colImageName;
 @synthesize colClass;
+@synthesize neededMethodData;
+@synthesize styleDiction;
+@synthesize action;
+@synthesize data;
 
 -(instancetype)initWithContentObject:(NSString *)title methodName:(NSString *)name
                            imageName:(NSString *)imageName vcClass:(NSString *)clzzName colClass:(Class)clzz{

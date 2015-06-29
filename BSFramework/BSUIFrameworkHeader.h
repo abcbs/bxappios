@@ -15,6 +15,7 @@
 #import "ErrorMessage.h"
 #import "NavigationProcess.h"
 
+#import "ClassForSelectors.h"
 /**
  *避免使用selector方法的实现
  */

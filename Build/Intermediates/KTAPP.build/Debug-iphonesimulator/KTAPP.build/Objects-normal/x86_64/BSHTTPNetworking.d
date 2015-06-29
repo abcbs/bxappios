@@ -8,6 +8,7 @@ dependencies: \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/BSTransfer/YYHModelRouter/YYHModelSerialization.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/BSFramework/BSUIFrameworkHeader.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/BSFramework/BSUISetting/NavigationProcess.h \
+  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/BSFramework/Basic-Demo/ClassForSelectors.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/BSFramework/BSUISetting/BSUIBlockButton.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/BSFramework/BSUISetting/BSUIBarButtonItem.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/BSFramework/BSUIComponent/CommonController/BSUICommonController.h \
