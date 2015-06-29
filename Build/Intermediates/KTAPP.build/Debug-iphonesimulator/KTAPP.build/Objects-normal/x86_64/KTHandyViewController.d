@@ -29,6 +29,9 @@ dependencies: \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/LBControl/ReservationService/appointmentController.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/LBControl/LifeService/lifeServiceController.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/LBControl/BankBusinessBooking/bankController.h \
+  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/LBControl/Recommend/LFRecommendViewController.h \
+  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/LBControl/Recommend/recommendguest.h \
+  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/LBControl/Recommend/recommendCard.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/LBControl/MainFrame/KTLifeIndexCell.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/LBControl/SendingWater/KTWaterDetailsViewController.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/LBModels/SendingWater/WaterSending.h \

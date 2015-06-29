@@ -220,7 +220,7 @@
                                                                                  NAVIGATIONBAR_Y+STATUS_HEIGHT,NAVIGATIONBAR_HEIGHT/3, NAVIGATIONBAR_HEIGHT/3)
                                  target:target
                                  action:@selector(doneClick)];
-    [okButton setBackgroundImage:[UIImage imageNamed:@"login-2.png"]
+    [okButton setBackgroundImage:[UIImage imageNamed:@"im_chao"]
                         forState:UIControlStateNormal];
     [okButton setBlock:^(BSUIBlockButton *button){
         [navigationProcess backClick];

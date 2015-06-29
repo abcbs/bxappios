@@ -198,6 +198,8 @@
 		845A02351B3DBA7E007F5327 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 845A02341B3DBA7E007F5327 /* UIView+Frame.m */; };
 		845A02381B3DBADD007F5327 /* RegistUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 845A02371B3DBADD007F5327 /* RegistUtil.m */; };
 		845A02411B3DE9FE007F5327 /* BSUISingleImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 845A02401B3DE9FE007F5327 /* BSUISingleImageTableViewCell.m */; };
+		8469CD691B4121F000EF6757 /* LFRecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8469CD681B4121F000EF6757 /* LFRecommendViewController.m */; };
+		8469CD6D1B4122D400EF6757 /* LFRecommend.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8469CD6C1B4122D400EF6757 /* LFRecommend.storyboard */; };
 		8470761A1B3A5F7800F28180 /* SetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 847076181B3A5F7800F28180 /* SetCell.m */; };
 		8470761B1B3A5F7800F28180 /* SetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847076191B3A5F7800F28180 /* SetCell.xib */; };
 		847076231B3A89F000F28180 /* recommendCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 8470761E1B3A89F000F28180 /* recommendCard.m */; };
@@ -582,6 +584,9 @@
 		845A02371B3DBADD007F5327 /* RegistUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistUtil.m; sourceTree = "<group>"; };
 		845A023F1B3DE9FE007F5327 /* BSUISingleImageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUISingleImageTableViewCell.h; sourceTree = "<group>"; };
 		845A02401B3DE9FE007F5327 /* BSUISingleImageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUISingleImageTableViewCell.m; sourceTree = "<group>"; };
+		8469CD671B4121F000EF6757 /* LFRecommendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFRecommendViewController.h; sourceTree = "<group>"; };
+		8469CD681B4121F000EF6757 /* LFRecommendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFRecommendViewController.m; sourceTree = "<group>"; };
+		8469CD6C1B4122D400EF6757 /* LFRecommend.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LFRecommend.storyboard; sourceTree = "<group>"; };
 		847076171B3A5F7800F28180 /* SetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetCell.h; sourceTree = "<group>"; };
 		847076181B3A5F7800F28180 /* SetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetCell.m; sourceTree = "<group>"; };
 		847076191B3A5F7800F28180 /* SetCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SetCell.xib; sourceTree = "<group>"; };
@@ -1265,6 +1270,9 @@
 				847076201B3A89F000F28180 /* recommendController.m */,
 				847076211B3A89F000F28180 /* recommendguest.h */,
 				847076221B3A89F000F28180 /* recommendguest.m */,
+				8469CD671B4121F000EF6757 /* LFRecommendViewController.h */,
+				8469CD681B4121F000EF6757 /* LFRecommendViewController.m */,
+				8469CD6C1B4122D400EF6757 /* LFRecommend.storyboard */,
 			);
 			path = Recommend;
 			sourceTree = "<group>";
@@ -2125,6 +2133,7 @@
 				844268E71B36C05F006E7F7D /* forget password-3.png in Resources */,
 				8442691A1B36C05F006E7F7D /* tukuailvse.png in Resources */,
 				844268B51B36C05F006E7F7D /* APP-000-640-1136-4寸规格.jpg in Resources */,
+				8469CD6D1B4122D400EF6757 /* LFRecommend.storyboard in Resources */,
 				844268F31B36C05F006E7F7D /* radio_unchecked@2x.png in Resources */,
 				844268FF1B36C05F006E7F7D /* 322.png in Resources */,
 				844268D51B36C05F006E7F7D /* ljzf.png in Resources */,
@@ -2286,6 +2295,7 @@
 				84BA96861B2829D500388B58 /* WaterSendingDetails.m in Sources */,
 				8470765B1B3A8F1400F28180 /* adsCell.m in Sources */,
 				842043741B2991770002C868 /* DLSlideView.m in Sources */,
+				8469CD691B4121F000EF6757 /* LFRecommendViewController.m in Sources */,
 				84820A4E1B285D960093B87B /* MSWaterSendingCell.m in Sources */,
 				8474331C1B2A92B400B030C4 /* ForgetViewController.m in Sources */,
 				8487F1851B3005C100F0F7B2 /* KTInformationConfViewController.m in Sources */,

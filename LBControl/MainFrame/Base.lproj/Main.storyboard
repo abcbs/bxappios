@@ -226,17 +226,17 @@
                                 <rect key="frame" x="0.0" y="66" width="320" height="500"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BSUIImageTitleTableViewCell" rowHeight="7" id="xKc-3R-L8E" userLabel="图标和标题" customClass="BSUIImageTitleTableViewCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BSUIImageTitleTableViewCell" rowHeight="152" id="xKc-3R-L8E" userLabel="图标和标题" customClass="BSUIImageTitleTableViewCell">
                                         <rect key="frame" x="-5" y="170" width="320" height="114"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xKc-3R-L8E" id="obx-Zj-nsz">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="E77BCB29-75D3-4A58-ACCC-2D43C32A5F52" translatesAutoresizingMaskIntoConstraints="NO" id="5xB-kA-hRX" userLabel="firstImage">
-                                                    <rect key="frame" x="31" y="20" width="38" height="38"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="A98D8A69-2D61-4C27-A85B-10E219602042" translatesAutoresizingMaskIntoConstraints="NO" id="5xB-kA-hRX" userLabel="firstImage">
+                                                    <rect key="frame" x="97" y="0.0" width="107" height="100"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="firstName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G49-4z-vJD">
-                                                    <rect key="frame" x="31" y="66" width="81" height="21"/>
+                                                    <rect key="frame" x="110" y="113" width="81" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -255,7 +255,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DA5-NX-q0R">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
+                                                    <rect key="frame" x="0.0" y="90" width="320" height="120"/>
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -364,7 +364,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="E77BCB29-75D3-4A58-ACCC-2D43C32A5F52" width="49" height="49">
+        <image name="A98D8A69-2D61-4C27-A85B-10E219602042" width="49" height="49">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw

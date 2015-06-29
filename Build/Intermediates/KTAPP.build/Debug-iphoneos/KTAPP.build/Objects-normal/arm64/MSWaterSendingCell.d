@@ -11,6 +11,8 @@ dependencies: \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/LBControl/SendingWater/LBSendingWaterTableViewController.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/BSFramework/BSUIFrameworkHeader.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/BSFramework/BSUISetting/NavigationProcess.h \
+  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/BSFramework/BSUISetting/BSUIBlockButton.h \
+  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/BSFramework/BSUISetting/BSUIBarButtonItem.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/BSFramework/BSUIComponent/CommonController/BSUICommonController.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/BSFramework/BSUIComponent/CommonController/BSUITableViewCommonController.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/BSFramework/BSUISetting/UIView+Frame.h \
@@ -24,7 +26,6 @@ dependencies: \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/BSFramework/BSUIComponent/CommonView/BSUIImageTitleTableViewCell.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/BSFramework/BSUIComponent/CommonView/BSUISingleImageTableViewCell.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/BSFramework/BSUISetting/BSUIComponentView.h \
-  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/BSFramework/BSUISetting/BSUIBlockButton.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/LBControl/SendingWater/KTWaterDetailsViewController.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/LBModels/SendingWater/WaterSendingDetails.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/民生小区/Classes/Controller/request/RequestTool/CommodityEvaluationRequest.h \
@@ -44,6 +45,9 @@ dependencies: \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/LBControl/ReservationService/appointmentController.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/LBControl/LifeService/lifeServiceController.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/LBControl/BankBusinessBooking/bankController.h \
+  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/LBControl/Recommend/LFRecommendViewController.h \
+  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/LBControl/Recommend/recommendguest.h \
+  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/LBControl/Recommend/recommendCard.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/LBControl/MainFrame/KTLifeIndexCell.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/LBControl/LoginRegister/LoginViewController.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/LBModels/Discard/LoginMessage.h

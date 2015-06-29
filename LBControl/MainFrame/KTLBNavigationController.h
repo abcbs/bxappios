@@ -10,7 +10,6 @@
 #import "BSUIFrameworkHeader.h"
 @interface KTLBNavigationController : BSUITableViewInitRuntimeController<NavigationProcess>
 
-//@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 
--(void)touchAction;
 @end

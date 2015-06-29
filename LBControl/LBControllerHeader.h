@@ -23,6 +23,24 @@
 #import "lifeServiceController.h"
 #import "bankController.h"
 
+/**
+ *金融业务，推荐主页
+ */
+#import "LFRecommendViewController.h"
+
+/**
+ *推荐客户
+ */
+
+#import "recommendguest.h"
+
+/**
+ *推荐开卡
+ */
+#import "recommendCard.h"
+
+
+
 #import "KTLifeIndexCell.h"
 /**
  *送水模块

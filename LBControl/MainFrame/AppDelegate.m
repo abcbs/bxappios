@@ -79,7 +79,7 @@
     self.window.backgroundColor = [UIColor whiteColor];
     self.window.tintColor = [UIColor redColor];
     
-    //[BSUIComponentView initNarHeaderWithIndexView:self.window.rootViewController                                            title:nil];
+    [BSUIComponentView initNarHeaderWithIndexView:self.window.rootViewController                                            title:nil];
     //[BSUIComponentView navigationHeader:self.window.rootViewController.navigationController];
     return YES;
 }

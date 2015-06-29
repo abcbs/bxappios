@@ -21,18 +21,14 @@
 }
 
 -(UITableViewCell *)viewCellWithHandBSContentObject:(BSTableContentObject *)bsContentObject{
-    //UILabel *lable=[[UILabel alloc]initWithFrame:<#(CGRect)#>];
-    UILabel *lable=[[UILabel alloc]init];
-    lable.width=BSMarginX(SCREEN_WIDTH);
-    lable.height=BSMarginY(115);
-    lable.text=[bsContentObject colTitle];
-    [self.contentView addSubview:lable];
-    
+     
     UIImageView *cell=
     [[UIImageView alloc] initWithImage:[UIImage imageNamed:[bsContentObject colImageName]]];
-    cell.width=BSMarginX(SCREEN_WIDTH);
-    cell.height=BSMarginY(115);
+    [cell setFrame:BSRectMake(SCREEN_WIDTH/3, 10, 100, 100)];
+    UILabel *lable=[[UILabel alloc]initWithFrame:(BSRectMake(SCREEN_WIDTH/3+20, 110, 110, 30))];
     
+    lable.text=[bsContentObject colTitle];
+    [self.contentView addSubview:lable];
     [self.contentView addSubview:cell];
     return self;
 }

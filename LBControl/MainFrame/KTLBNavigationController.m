@@ -16,6 +16,8 @@
 @end
 
 @implementation KTLBNavigationController
+@dynamic tableView;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -24,12 +26,12 @@
                                                          headerViewClass:nil//章节显示视图
                                                           cellIdentifier:@"BSUISingleImageTableViewCell"//采用的TableViewCell
                                                                cellClass:[BSUISingleImageTableViewCell class]//TableViewCell实现
-                                                              storyboard:nil bsContent:nil];
+                                                              storyboard:@"LFRecommend" bsContent:nil];
     
     //推荐
     BSTableContentObject *recommend=[BSTableContentObject initWithContentObject:@"推荐"
                                                                      methodName:nil imageName:@"tuhongse.png"
-                                                                       colClass:[recommendController class]];
+                                                                       colClass:[LFRecommendViewController class]];
     
     [bsTable addBSTableContent:recommend sectionHeader:@"首页"];
     

@@ -22,10 +22,16 @@
     [super viewDidLoad];
     
     //[BSUIComponentView initNarHeaderWithIndexView:self  title:@"首页导航"    ];
-   
+    if (tableView==nil) {
+        self.tableView = [[UITableView alloc]initWithFrame:BSRectMake(NAVIGATIONBAR_X, NAVIGATIONBAR_HEIGHT, SCREEN_WIDTH, SCREEN_HEIGHT-NAVIGATION_ADD_STATUS_HEIGHT) style:UITableViewStyleGrouped];
+        
+        self.tableView.separatorStyle=UITableViewCellSeparatorStyleNone;
+
+        [self.view addSubview: tableView];
+    }
     self.tableView.dataSource =self;
     self.tableView.delegate = self;
-
+    
 }
 
 - (void)backButtonClick
@@ -39,21 +45,6 @@
 - (void)doneClick{
     NSLog(@"子类需要实例");
 }
-/*
- 本方法在故事板中已经定义，则应当注销，否则子类需要实现
- */
-/*
--(UITableView *)tableView{
-    if (self.tableView == nil) {
-        self.tableView = [[UITableView alloc]initWithFrame:BSRectMake(NAVIGATIONBAR_X, NAVIGATIONBAR_Y, SCREEN_WIDTH, SCREEN_HEIGHT-NAVIGATION_ADD_STATUS_HEIGHT) style:UITableViewStyleGrouped];
-        self.tableView.dataSource =self;
-        self.tableView.delegate = self;
-
-        [self.view addSubview: tableView];
-    }
-    return self.tableView;
-}
-*/
 
 #pragma mark -以下三个方法是控制高度，在实现中需要子类根据具体情况处理
 /**
