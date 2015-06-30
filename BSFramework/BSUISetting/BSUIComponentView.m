@@ -8,10 +8,17 @@
 
 #import "BSUIComponentView.h"
 #import "BSUIFrameworkHeader.h"
-
+#import "BSUIBlockButton.h"
+#import "BSUIBarButtonItem.h"
 
 #define CONFIRM_TITLE @"错误提示"
 #define CONFIRM_BUTTON_NAME @"确定"
+
+@interface BSUIComponentView ()
+
+@property (strong,nonatomic) UIViewController *rootUIViewController;
+
+@end
 
 @implementation BSUIComponentView
 
@@ -116,9 +123,8 @@
     
     UIView *headerView=[BSUIComponentView headerView];
         
-       
-        BSUIBlockButton *backButton = [BSUIComponentView backNavButton:currentController target:currentController
-                                                              title:title image:nil];
+    BSUIBlockButton *backButton = [BSUIComponentView backNavButton:currentController target:currentController
+        title:title image:nil];
 
         
     [headerView addSubview:backButton];
@@ -129,33 +135,44 @@
     [headerView addSubview:headNameLabel];
 
         
-        BSUIBlockButton *okButton =[BSUIComponentView okNavButton:currentController target:currentController
+   BSUIBlockButton *okButton =[BSUIComponentView okNavButton:currentController target:currentController
                                                            title:title image:nil];
   
     [headerView addSubview:okButton];
         
     [currentController.view addSubview:headerView];
-    
-    
 }
+
 
 //NS_ENUM_DEPRECATED_IOS(2_0, 8_0, "Use UIBarButtonItemStylePlain when minimum deployment target is iOS7 or later
 /**
  *状态栏，默认使用
  */
+
 +(void)initNarHeaderWithIndexView:(UIViewController *)currentController
-                          title:(NSString *)title //定义块类型
+                            title:(NSString *)title //定义块类型
 {
-    
     UIView *headerView=[BSUIComponentView headerView];
+    
     
     UILabel *headNameLabel=[BSUIComponentView labelNav:title];
     
+    
     [headerView addSubview:headNameLabel];
     
-    [currentController.view addSubview:headerView];
     
-    /*
+    BSUIBlockButton *okButton =[BSUIComponentView okNavButton:currentController target:currentController
+                                                        title:title image:nil];
+    
+    [headerView addSubview:okButton];
+    
+    [currentController.view addSubview:headerView];
+}
+/*
++(void)initNarHeaderWithIndexView:(UIViewController *)currentController
+                          title:(NSString *)title //定义块类型
+{
+
     @try {
         UIToolbar *mycustomToolBar;
         NSMutableArray *mycustomButtons = [[NSMutableArray alloc] init];
@@ -179,10 +196,8 @@
     @catch (NSException *exception) {
         NSLog(@"状态栏错误");
     }
-    */
-    
-}
-
+ }
+*/
 #pragma mark -表头导航按钮的私有方法定义
 /**
  *私有方法
@@ -217,10 +232,10 @@
                             target:(UIViewController *)target
                           title:(NSString *)title image:(NSString *)image {
     BSUIBlockButton *okButton = [[BSUIBlockButton alloc]initWithFrame:BSRectMake(NAVIGATIONBAR_X+NAVIGATIONBAR_WIDTH*0.85,
-                                                                                 NAVIGATIONBAR_Y+STATUS_HEIGHT,NAVIGATIONBAR_HEIGHT/3, NAVIGATIONBAR_HEIGHT/3)
+                                                                                 NAVIGATIONBAR_Y+STATUS_HEIGHT+4,NAVIGATIONBAR_HEIGHT/3, NAVIGATIONBAR_HEIGHT/3)
                                  target:target
                                  action:@selector(doneClick)];
-    [okButton setBackgroundImage:[UIImage imageNamed:@"im_chao"]
+    [okButton setBackgroundImage:[UIImage imageNamed:@"im_search"]
                         forState:UIControlStateNormal];
     [okButton setBlock:^(BSUIBlockButton *button){
         [navigationProcess backClick];

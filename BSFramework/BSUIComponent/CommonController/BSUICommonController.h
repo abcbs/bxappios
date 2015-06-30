@@ -11,8 +11,6 @@
 
 @interface BSUICommonController : UIViewController<NavigationProcess>
 
-@property(nonatomic, strong) NSString *navTitle;
-
 - (void)backClick;
 - (void)doneClick;
 

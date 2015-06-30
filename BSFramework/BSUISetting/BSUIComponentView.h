@@ -10,6 +10,8 @@
 #import <UIKit/UIKit.h>
 #import <CoreFoundation/CoreFoundation.h>
 #import "BSUIFrameworkHeader.h"
+#import "BSUIBarButtonItem.h"
+#import "BSUIBlockButton.h"
 
 @interface BSUIComponentView : NSObject
 
@@ -59,6 +61,7 @@
 
 +(void)initNarHeaderWithIndexView:(UIViewController *)currentController
                             title:(NSString *)title;
+
 
 +(void )initNavigationHeaderWithDefault:(UIViewController *)viewController
                       navigationProcess:(id<NavigationProcess>) navigationProcess

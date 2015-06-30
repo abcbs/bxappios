@@ -24,6 +24,7 @@
 /**
  *NIB和故事板方式的标示Identifer
  */
+
 @property (copy, nonatomic) NSString * vcClass;
 /**
  *手工编码时需要提供的实现类ViewController
@@ -51,10 +52,17 @@
  *以SEL方式传递参数的数据
  */
 @property (assign,nonatomic)id  data;
+
+/**
+ *在故事板跳转中，故事板的名称
+ */
+@property (copy,nonatomic) NSString *storybordName;
+
 /**
  *表格的具体Cell在实现中所需的样式
  */
 @property (assign ,nonatomic) NSMutableDictionary *styleDiction;
+
 /**
  *使用故事板跳转，默认方式
  */

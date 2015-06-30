@@ -67,8 +67,8 @@
     [super setValue:bsTable forKey:@"bSTableObjects"];
     
     [self addImagePlay];
-    
     self.tableView.tableHeaderView = self.imagePlayer;
+    //[self.view  addSubview: self.imagePlayer];
 }
 
 /**

@@ -48,7 +48,7 @@
     
        
     [super setValue:bsTable forKey:@"bSTableObjects"];
-    //[self setSeparatorStyle :UITableViewCellSeparatorStyleNone];
+    
     
 }
 

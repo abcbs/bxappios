@@ -18,34 +18,12 @@
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 
-/**
- *获取章节的头信息
- */
--(NSString *)titleForHeaderInSection:(NSInteger)section;
 
 /**
  *设置分割线风格，默认为没有分割线
  */
 -(void)setSeparatorStyle:(UITableViewCellSeparatorStyle *)separatorStyle;
 
-/**
- *当前章节的数量
- */
--(NSInteger)currentSectionNumber;
 
-/**
- *当前章节行数
- */
--(NSInteger) rowSectionNumber:(NSInteger)section;
-
-/**
- *当前行的数据信息
- */
--(NSObject *) bsContentObject:(NSInteger)section row:(NSInteger)row;
-
-/**
- *暂时没有使用
- */
--(NSMutableArray *)indexes;
 
 @end

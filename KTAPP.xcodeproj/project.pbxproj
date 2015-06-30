@@ -198,6 +198,10 @@
 		845A02351B3DBA7E007F5327 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 845A02341B3DBA7E007F5327 /* UIView+Frame.m */; };
 		845A02381B3DBADD007F5327 /* RegistUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 845A02371B3DBADD007F5327 /* RegistUtil.m */; };
 		845A02411B3DE9FE007F5327 /* BSUISingleImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 845A02401B3DE9FE007F5327 /* BSUISingleImageTableViewCell.m */; };
+		8460AE7A1B42569300022280 /* BSTableViewCellData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8460AE791B42569300022280 /* BSTableViewCellData.m */; };
+		8460AE7D1B42578B00022280 /* BSTableViewMultCellData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8460AE7C1B42578B00022280 /* BSTableViewMultCellData.m */; };
+		8460AE801B4259BE00022280 /* BSUITabBarCommonController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8460AE7F1B4259BE00022280 /* BSUITabBarCommonController.m */; };
+		8460AE831B426E4C00022280 /* BSContentObjectNavigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8460AE821B426E4C00022280 /* BSContentObjectNavigation.m */; };
 		8469CD691B4121F000EF6757 /* LFRecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8469CD681B4121F000EF6757 /* LFRecommendViewController.m */; };
 		8469CD6D1B4122D400EF6757 /* LFRecommend.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8469CD6C1B4122D400EF6757 /* LFRecommend.storyboard */; };
 		8470761A1B3A5F7800F28180 /* SetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 847076181B3A5F7800F28180 /* SetCell.m */; };
@@ -298,6 +302,9 @@
 		84C06D9B1B3AF3BA000BB45C /* BSUITableViewInitRuntimeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C06D9A1B3AF3BA000BB45C /* BSUITableViewInitRuntimeController.m */; };
 		84E97AB71B307535001D4100 /* BSUIComponentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E97AB61B307535001D4100 /* BSUIComponentView.m */; };
 		84EBA00B1B416E37003309F6 /* ClassForSelectors.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EBA00A1B416E37003309F6 /* ClassForSelectors.m */; };
+		84EBA0101B4187FE003309F6 /* BSUIMultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84EBA00F1B4187FE003309F6 /* BSUIMultTableViewCell.xib */; };
+		84EBA0131B4189E0003309F6 /* LBLiferServiceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EBA0121B4189E0003309F6 /* LBLiferServiceController.m */; };
+		84EBA0161B41A307003309F6 /* KTLBMainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EBA0151B41A307003309F6 /* KTLBMainTabBarController.m */; };
 		A04366AF1AD7B550005842EE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A04366AE1AD7B550005842EE /* main.m */; };
 		A04366BA1AD7B550005842EE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A04366B91AD7B550005842EE /* Images.xcassets */; };
 		A05E9BDF1AE79DD5008C97C9 /* KTTabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A05E9BDE1AE79DD5008C97C9 /* KTTabBarButton.m */; };
@@ -582,6 +589,14 @@
 		845A02371B3DBADD007F5327 /* RegistUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistUtil.m; sourceTree = "<group>"; };
 		845A023F1B3DE9FE007F5327 /* BSUISingleImageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUISingleImageTableViewCell.h; sourceTree = "<group>"; };
 		845A02401B3DE9FE007F5327 /* BSUISingleImageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUISingleImageTableViewCell.m; sourceTree = "<group>"; };
+		8460AE781B42569300022280 /* BSTableViewCellData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSTableViewCellData.h; sourceTree = "<group>"; };
+		8460AE791B42569300022280 /* BSTableViewCellData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSTableViewCellData.m; sourceTree = "<group>"; };
+		8460AE7B1B42578B00022280 /* BSTableViewMultCellData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSTableViewMultCellData.h; sourceTree = "<group>"; };
+		8460AE7C1B42578B00022280 /* BSTableViewMultCellData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSTableViewMultCellData.m; sourceTree = "<group>"; };
+		8460AE7E1B4259BE00022280 /* BSUITabBarCommonController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUITabBarCommonController.h; sourceTree = "<group>"; };
+		8460AE7F1B4259BE00022280 /* BSUITabBarCommonController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUITabBarCommonController.m; sourceTree = "<group>"; };
+		8460AE811B426E4C00022280 /* BSContentObjectNavigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSContentObjectNavigation.h; sourceTree = "<group>"; };
+		8460AE821B426E4C00022280 /* BSContentObjectNavigation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSContentObjectNavigation.m; sourceTree = "<group>"; };
 		8469CD671B4121F000EF6757 /* LFRecommendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFRecommendViewController.h; sourceTree = "<group>"; };
 		8469CD681B4121F000EF6757 /* LFRecommendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFRecommendViewController.m; sourceTree = "<group>"; };
 		8469CD6C1B4122D400EF6757 /* LFRecommend.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LFRecommend.storyboard; sourceTree = "<group>"; };
@@ -760,6 +775,11 @@
 		84E97AB61B307535001D4100 /* BSUIComponentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUIComponentView.m; sourceTree = "<group>"; };
 		84EBA0091B416E37003309F6 /* ClassForSelectors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassForSelectors.h; sourceTree = "<group>"; };
 		84EBA00A1B416E37003309F6 /* ClassForSelectors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassForSelectors.m; sourceTree = "<group>"; };
+		84EBA00F1B4187FE003309F6 /* BSUIMultTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSUIMultTableViewCell.xib; sourceTree = "<group>"; };
+		84EBA0111B4189E0003309F6 /* LBLiferServiceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBLiferServiceController.h; sourceTree = "<group>"; };
+		84EBA0121B4189E0003309F6 /* LBLiferServiceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBLiferServiceController.m; sourceTree = "<group>"; };
+		84EBA0141B41A307003309F6 /* KTLBMainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTLBMainTabBarController.h; sourceTree = "<group>"; };
+		84EBA0151B41A307003309F6 /* KTLBMainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTLBMainTabBarController.m; sourceTree = "<group>"; };
 		A04366A91AD7B550005842EE /* 民生小区.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "民生小区.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A04366AD1AD7B550005842EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A04366AE1AD7B550005842EE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -1311,6 +1331,8 @@
 			children = (
 				847076421B3A8BE200F28180 /* lifeServiceController.h */,
 				847076431B3A8BE200F28180 /* lifeServiceController.m */,
+				84EBA0111B4189E0003309F6 /* LBLiferServiceController.h */,
+				84EBA0121B4189E0003309F6 /* LBLiferServiceController.m */,
 			);
 			path = LifeService;
 			sourceTree = "<group>";
@@ -1448,6 +1470,7 @@
 				845A02221B3DA1F3007F5327 /* BSUIImageTitleTableViewCell.m */,
 				845A023F1B3DE9FE007F5327 /* BSUISingleImageTableViewCell.h */,
 				845A02401B3DE9FE007F5327 /* BSUISingleImageTableViewCell.m */,
+				84EBA00F1B4187FE003309F6 /* BSUIMultTableViewCell.xib */,
 			);
 			path = CommonView;
 			sourceTree = "<group>";
@@ -1470,6 +1493,14 @@
 				8474DEB41B3F7D0600D9DE36 /* BSUICommonController.m */,
 				844A32011B4032790045CA6C /* BSUITableViewCommonController.h */,
 				844A32021B4032790045CA6C /* BSUITableViewCommonController.m */,
+				8460AE781B42569300022280 /* BSTableViewCellData.h */,
+				8460AE791B42569300022280 /* BSTableViewCellData.m */,
+				8460AE7B1B42578B00022280 /* BSTableViewMultCellData.h */,
+				8460AE7C1B42578B00022280 /* BSTableViewMultCellData.m */,
+				8460AE7E1B4259BE00022280 /* BSUITabBarCommonController.h */,
+				8460AE7F1B4259BE00022280 /* BSUITabBarCommonController.m */,
+				8460AE811B426E4C00022280 /* BSContentObjectNavigation.h */,
+				8460AE821B426E4C00022280 /* BSContentObjectNavigation.m */,
 			);
 			path = CommonController;
 			sourceTree = "<group>";
@@ -1705,6 +1736,8 @@
 				84578F7A1B35E80700C3A4EA /* LaunchScreen.xib */,
 				8474DEA11B3F004B00D9DE36 /* KTLBNavigationController.h */,
 				8474DEA21B3F004B00D9DE36 /* KTLBNavigationController.m */,
+				84EBA0141B41A307003309F6 /* KTLBMainTabBarController.h */,
+				84EBA0151B41A307003309F6 /* KTLBMainTabBarController.m */,
 			);
 			path = MainFrame;
 			sourceTree = "<group>";
@@ -2205,6 +2238,7 @@
 				844268F11B36C05F006E7F7D /* radio_checked@2x.png in Resources */,
 				844268EE1B36C05F006E7F7D /* login-4.png in Resources */,
 				847432F81B2A8E5500B030C4 /* AlreadyCommit.xib in Resources */,
+				84EBA0101B4187FE003309F6 /* BSUIMultTableViewCell.xib in Resources */,
 				8442691F1B36C05F006E7F7D /* yyfw9_01.png in Resources */,
 				844268FC1B36C05F006E7F7D /* 1.jpg in Resources */,
 				844268D61B36C05F006E7F7D /* qxdd.png in Resources */,
@@ -2260,18 +2294,22 @@
 				A0F0C3E91B10209500CE406D /* CommodityEvaluationResult.m in Sources */,
 				A0F0C3EF1B10209500CE406D /* CommodityEvaluationParams.m in Sources */,
 				847432DB1B2A8CE500B030C4 /* MyOrderCell.m in Sources */,
+				8460AE801B4259BE00022280 /* BSUITabBarCommonController.m in Sources */,
 				8474DEB51B3F7D0600D9DE36 /* BSUICommonController.m in Sources */,
 				8470761A1B3A5F7800F28180 /* SetCell.m in Sources */,
 				8470763F1B3A8B9000F28180 /* cleaning.m in Sources */,
 				847433081B2A908000B030C4 /* SystemSet.m in Sources */,
 				A0F0C3E61B10209500CE406D /* BasicBody.m in Sources */,
 				847433021B2A8F4A00B030C4 /* WaitPayment.m in Sources */,
+				8460AE7D1B42578B00022280 /* BSTableViewMultCellData.m in Sources */,
 				8470763D1B3A8B9000F28180 /* addressController.m in Sources */,
 				842043771B2991770002C868 /* DLTabedSlideView.m in Sources */,
 				847076561B3A8E1200F28180 /* communicateCell.m in Sources */,
 				847076501B3A8C4500F28180 /* DropDownListView.m in Sources */,
 				A05E9BDF1AE79DD5008C97C9 /* KTTabBarButton.m in Sources */,
 				A0F0C3EC1B10209500CE406D /* UpdateShoppingCartResult.m in Sources */,
+				8460AE7A1B42569300022280 /* BSTableViewCellData.m in Sources */,
+				84EBA0131B4189E0003309F6 /* LBLiferServiceController.m in Sources */,
 				84BA96841B2829D500388B58 /* Comment.m in Sources */,
 				842042B01B2984D80002C868 /* KTCartFooterView.m in Sources */,
 				8480581B1B39AEEF005817D7 /* BSTableViewRefreshController.m in Sources */,
@@ -2308,8 +2346,10 @@
 				844A32061B4064310045CA6C /* BSUIBarButtonItem.m in Sources */,
 				847076711B3AB21300F28180 /* UIViewController+BSTableObject.m in Sources */,
 				A0F0C3F21B10209500CE406D /* UpdateShoppingCartParams.m in Sources */,
+				84EBA0161B41A307003309F6 /* KTLBMainTabBarController.m in Sources */,
 				842042C91B298EF30002C868 /* KTlifeViewController.m in Sources */,
 				845A022D1B3DABF0007F5327 /* ErrorMessage.m in Sources */,
+				8460AE831B426E4C00022280 /* BSContentObjectNavigation.m in Sources */,
 				842043721B2991770002C868 /* DLLRUCache.m in Sources */,
 				84BA96831B2829D500388B58 /* ProductManager.m in Sources */,
 				845A02381B3DBADD007F5327 /* RegistUtil.m in Sources */,

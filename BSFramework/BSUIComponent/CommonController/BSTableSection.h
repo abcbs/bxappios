@@ -166,13 +166,17 @@
 
 #pragma mark--以下是获取配置信息的一般方法
 
+/**
+ *获取指定章节索引具体章节中得某行数据
+ */
+-(BSTableContentObject *) currentContentObject:(NSInteger)section row:(NSInteger)row;
 /*
  *根据章节标题获取每个章节的数据
  */
 -(NSMutableArray *) sectionData:(NSString *)title;
 
 /*
- *根据章节标题获取每个章节的总列数
+ *根据章节标题获取每个章节的总行数
  */
 -(NSInteger) currentRowNumber:(NSInteger)section;
 
@@ -186,10 +190,38 @@
  */
 -(NSString *)currentSectionTitle:(NSInteger)section;
 
+
+/**
+ *判断是否配置故事板，如果配置了则返回YES，
+ *当前仅仅判断是否在BSTableSection是否有该字段，如果没有则返回NO
+ */
+-(BOOL)canUseStoryBord:(NSInteger)section row:(NSInteger)row;
+
+/**
+ *是否是使用故事板进行跳转，如果是YES则使用故事板方式跳转，否则使用手工方式
+ */
+-(BOOL)useStoryboard:(NSInteger)section row:(NSInteger)row;
+
+/**
+ *获取跳转Controller的名称,故事板跳转方式
+ */
+-(NSString *)vcControllerName:(NSInteger)section row:(NSInteger)row;
+
+/**
+ *获取跳转Controller的类定义,手工编码方式
+ */
+-(Class)vcControlleClass:(NSInteger)section row:(NSInteger)row;
+
 /**
  *判断是故事板实现还是手工编码实现
  */
 -(BOOL)useStorybord;
+
+/**
+ *根据章节section获取本章节的规定的列数，
+ *也就是当前章节的colCapatibilty
+ */
+-(NSInteger)currentCapatibilty:(NSInteger)section;
 
 @end
 
