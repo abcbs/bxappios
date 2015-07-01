@@ -11,7 +11,8 @@
 #import "LBControllerHeader.h"
 
 @interface LBLiferServiceController ()
-
+@property (nonatomic, weak) BSFCRollingADImageUIView *imagePlayer;
+@property (nonatomic, copy) NSArray *imageNameArray;
 @end
 
 @implementation LBLiferServiceController
@@ -29,7 +30,7 @@
                               cellClass:[BSUIFiveColTableViewCell class]//TableViewCell实现
                             
                               storyboard:@"KTWaterDetailsViewController"
-                              colCapatibilty:5//每个章节的row数量
+                              colCapatibilty:4//每个章节的row数量
                               bsContent:nil];
     
 
@@ -65,59 +66,22 @@
     
     [bsTable addBSTableContent:tech sectionHeader:@"便捷服务"];
     
-    //超市1
-    tech=[BSTableContentObject initWithContentObject:@"超市1" methodName:nil imageName:@"98cs" colClass:nil];
-    
-    [bsTable addBSTableContent:tech sectionHeader:@"便捷服务"];
-
-    //超市2
-    tech=[BSTableContentObject initWithContentObject:@"超市2" methodName:nil imageName:@"98cs" colClass:nil];
-    
-    [bsTable addBSTableContent:tech sectionHeader:@"便捷服务"];
-
-    
-    tech=[BSTableContentObject initWithContentObject:@"超市3" methodName:nil imageName:@"98cs" colClass:nil];
-    
-    [bsTable addBSTableContent:tech sectionHeader:@"便捷服务"];
-    
-    
-    tech=[BSTableContentObject initWithContentObject:@"超市4" methodName:nil imageName:@"98cs" colClass:nil];
-    
-    [bsTable addBSTableContent:tech sectionHeader:@"便捷服务"];
-    
- 
-    tech=[BSTableContentObject initWithContentObject:@"超市5" methodName:nil imageName:@"98cs" colClass:nil];
-    
-    [bsTable addBSTableContent:tech sectionHeader:@"便捷服务"];
     
     //预约服务
     BSTableContentObject *appointment=[BSTableContentObject initWithContentObject:@"洗车" methodName:nil imageName:@"98xc" colClass:nil];
     
     [bsTable addBSTableContent:appointment sectionHeader:@"预约服务"];
     
+    //配置错误
     BSTableContentObject *lifeService=[BSTableContentObject initWithContentObject:@"送水" methodName:nil imageName:@"98ss" colClass:[LBSendingWaterTableViewController class]];
     
     [bsTable addBSTableContent:lifeService sectionHeader:@"预约服务"];
-     //配置错误
-    lifeService=[BSTableContentObject initWithContentObject:@"送水" methodName:nil imageName:@"98ss" colClass:[LBSendingWaterTableViewController class]];
     
-    [bsTable addBSTableContent:lifeService sectionHeader:@"预约服务"];
-
-    
-   BSTableContentObject *marking=[BSTableContentObject initWithContentObject:@"洗车" methodName:nil imageName:@"98xc" colClass:nil];
-    
-    [bsTable addBSTableContent:marking sectionHeader:@"预约服务"];
-   
-    lifeService=[BSTableContentObject initWithContentObject:@"送水2" methodName:nil imageName:@"98ss" colClass:[LBSendingWaterTableViewController class]];
-    
-    [bsTable addBSTableContent:lifeService sectionHeader:@"预约服务"];
-    
-    lifeService=[BSTableContentObject initWithContentObject:@"送水3" methodName:nil imageName:@"98ss" colClass:[LBSendingWaterTableViewController class]];
-    
-    [bsTable addBSTableContent:lifeService sectionHeader:@"预约服务"];
-
       
     [super setValue:bsTable forKey:@"bSTableObjects"];
+    
+    [self addImagePlay];
+    self.tableView.tableHeaderView = self.imagePlayer;
 }
 
 /**
@@ -141,5 +105,19 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+/**
+ *  添加头部图片轮播器
+ */
+- (void)addImagePlay{
+    //
+    NSMutableArray *tempArray = [NSMutableArray array];
+    for (int i = 0; i < 5; i++){
+        NSString *imgName = [NSString stringWithFormat:@"img_0%d.jpg",i+1];
+        [tempArray addObject:imgName];
+    }
+    
+    self.imagePlayer =[BSFCRollingADImageUIView initADImageUIViewWith:tempArray playerDelegate:self urls:nil];
+}
 
 @end

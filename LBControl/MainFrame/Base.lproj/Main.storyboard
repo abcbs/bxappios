@@ -108,10 +108,10 @@
             </objects>
             <point key="canvasLocation" x="-301" y="-779"/>
         </scene>
-        <!--金融服务-->
+        <!--生活服务-->
         <scene sceneID="nT7-CQ-aXk">
             <objects>
-                <viewController storyboardIdentifier="LBLiferServiceController" title="金融服务" id="mt7-We-5hf" userLabel="金融服务" customClass="LBLiferServiceController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LBLiferServiceController" title="生活服务" id="mt7-We-5hf" userLabel="生活服务" customClass="LBLiferServiceController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="g4v-xM-8BC"/>
                         <viewControllerLayoutGuide type="bottom" id="SFl-VI-pyO"/>
@@ -127,7 +127,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="金融服务" image="icon-1x-02" id="rcz-B2-17t"/>
+                    <tabBarItem key="tabBarItem" title="生活服务" image="shfwh" id="rcz-B2-17t"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WRu-p0-hcr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -176,11 +176,11 @@
                     </tabBar>
                     <connections>
                         <segue destination="nEd-Zh-9gZ" kind="relationship" relationship="viewControllers" id="u5d-M9-agD"/>
-                        <segue destination="mb0-RB-fed" kind="relationship" relationship="viewControllers" id="f3T-or-aOZ"/>
                         <segue destination="mt7-We-5hf" kind="relationship" relationship="viewControllers" id="nx3-mH-aCT"/>
-                        <segue destination="DRI-Bb-9SC" kind="relationship" relationship="viewControllers" id="6Oi-1W-zvc"/>
                         <segue destination="o9H-AP-vZR" kind="relationship" relationship="viewControllers" id="FYI-jh-5kf"/>
+                        <segue destination="DRI-Bb-9SC" kind="relationship" relationship="viewControllers" id="6Oi-1W-zvc"/>
                         <segue destination="a0Q-KS-9Dv" kind="relationship" relationship="viewControllers" id="Lnz-fZ-UC8"/>
+                        <segue destination="mb0-RB-fed" kind="relationship" relationship="viewControllers" id="f3T-or-aOZ"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kkO-ZQ-EzP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -238,7 +238,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xKc-3R-L8E" id="obx-Zj-nsz">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="224AE601-89F1-4046-BCFD-DA41203BD985" translatesAutoresizingMaskIntoConstraints="NO" id="5xB-kA-hRX" userLabel="firstImage">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="688A6B52-9757-42E8-A19B-4202D934ED84" translatesAutoresizingMaskIntoConstraints="NO" id="5xB-kA-hRX" userLabel="firstImage">
                                                     <rect key="frame" x="97" y="0.0" width="107" height="100"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="firstName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G49-4z-vJD">
@@ -288,10 +288,10 @@
             </objects>
             <point key="canvasLocation" x="144" y="215"/>
         </scene>
-        <!--生活服务-->
+        <!--生活服务原-->
         <scene sceneID="v46-eF-8qa">
             <objects>
-                <viewController storyboardIdentifier="KTlifeViewController" title="便捷服务" id="mb0-RB-fed" userLabel="生活服务" customClass="KTlifeViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="KTlifeViewController" title="金融服务" id="mb0-RB-fed" userLabel="生活服务原" customClass="KTlifeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="va1-JI-Pyq"/>
                         <viewControllerLayoutGuide type="bottom" id="hfC-UX-fWx"/>
@@ -322,27 +322,12 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <accessibility key="accessibilityConfiguration" label=""/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r0d-kf-B2J" userLabel="imagePlayer">
-                                <rect key="frame" x="0.0" y="66" width="320" height="178"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Image Player" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y3S-vt-Vdk">
-                                        <rect key="frame" x="110" y="69" width="100" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="生活服务" image="shfwh" id="Ygo-8m-5sk"/>
-                    <navigationItem key="navigationItem" title="生活服务" id="Pv1-IC-1Lv"/>
+                    <tabBarItem key="tabBarItem" title="金融服务" image="shfwh" id="Ygo-8m-5sk"/>
+                    <navigationItem key="navigationItem" title="金融服务" id="Pv1-IC-1Lv"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                    <connections>
-                        <outlet property="imagePlayer" destination="r0d-kf-B2J" id="GyD-vT-ebl"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QaW-2d-M4s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -370,7 +355,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="224AE601-89F1-4046-BCFD-DA41203BD985" width="49" height="49">
+        <image name="688A6B52-9757-42E8-A19B-4202D934ED84" width="49" height="49">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw

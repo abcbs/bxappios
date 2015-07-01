@@ -50,6 +50,8 @@
         return self;
     }
     @try {
+        
+        [self setContentMode:UIViewContentModeCenter];
         BSTableContentObject *bs=(BSTableContentObject *)bscArray[0];
         //第一个列数据
         [self.imgButton setImage:[UIImage imageNamed:[bs colImageName]] forState:UIControlStateNormal];

@@ -34,7 +34,6 @@
 		842042BF1B29881B0002C868 /* YYHMantleModelSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 842042BE1B29881B0002C868 /* YYHMantleModelSerializer.m */; };
 		842042C51B2988410002C868 /* YYHModelRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = 842042C11B2988410002C868 /* YYHModelRoute.m */; };
 		842042C61B2988410002C868 /* YYHModelRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 842042C31B2988410002C868 /* YYHModelRouter.m */; };
-		842042C91B298EF30002C868 /* KTlifeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 842042C81B298EF30002C868 /* KTlifeViewController.m */; };
 		842043721B2991770002C868 /* DLLRUCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 842043631B2991770002C868 /* DLLRUCache.m */; };
 		842043731B2991770002C868 /* DLCustomSlideView.m in Sources */ = {isa = PBXBuildFile; fileRef = 842043651B2991770002C868 /* DLCustomSlideView.m */; };
 		842043741B2991770002C868 /* DLSlideView.m in Sources */ = {isa = PBXBuildFile; fileRef = 842043671B2991770002C868 /* DLSlideView.m */; };
@@ -391,8 +390,6 @@
 		842042C21B2988410002C868 /* YYHModelRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYHModelRouter.h; sourceTree = "<group>"; };
 		842042C31B2988410002C868 /* YYHModelRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYHModelRouter.m; sourceTree = "<group>"; };
 		842042C41B2988410002C868 /* YYHModelSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYHModelSerialization.h; sourceTree = "<group>"; };
-		842042C71B298EF30002C868 /* KTlifeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTlifeViewController.h; sourceTree = "<group>"; };
-		842042C81B298EF30002C868 /* KTlifeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTlifeViewController.m; sourceTree = "<group>"; };
 		842043611B2991770002C868 /* DLCacheProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLCacheProtocol.h; sourceTree = "<group>"; };
 		842043621B2991770002C868 /* DLLRUCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLLRUCache.h; sourceTree = "<group>"; };
 		842043631B2991770002C868 /* DLLRUCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLLRUCache.m; sourceTree = "<group>"; };
@@ -1711,18 +1708,18 @@
 		84BA96921B282A0500388B58 /* LBControl */ = {
 			isa = PBXGroup;
 			children = (
+				84BA96931B282A0500388B58 /* MainFrame */,
 				847076451B3A8C4500F28180 /* BankBusinessBooking */,
-				847076411B3A8BE200F28180 /* LifeService */,
+				8470761C1B3A89F000F28180 /* Recommend */,
 				847076341B3A8B9000F28180 /* ReservationService */,
 				847076261B3A8AF800F28180 /* Exchange */,
-				8470761C1B3A89F000F28180 /* Recommend */,
+				847432CD1B2A8AF700B030C4 /* MyCircle */,
 				847433151B2A92B400B030C4 /* LoginRegister */,
 				847432E11B2A8D6800B030C4 /* SystemConfig */,
 				847432D11B2A8CE500B030C4 /* MyOrderItems */,
-				847432CD1B2A8AF700B030C4 /* MyCircle */,
 				842042A51B2984D80002C868 /* ShoppingCart */,
-				84BA96931B282A0500388B58 /* MainFrame */,
 				84BA96941B282A0500388B58 /* PayManager */,
+				847076411B3A8BE200F28180 /* LifeService */,
 				84BA96951B282A0500388B58 /* SendingWater */,
 				84BA96961B282A0500388B58 /* UserManager */,
 				845A02261B3DA83E007F5327 /* LBControllerHeader.h */,
@@ -1733,8 +1730,6 @@
 		84BA96931B282A0500388B58 /* MainFrame */ = {
 			isa = PBXGroup;
 			children = (
-				842042C71B298EF30002C868 /* KTlifeViewController.h */,
-				842042C81B298EF30002C868 /* KTlifeViewController.m */,
 				8420429E1B2983B40002C868 /* AppDelegate.h */,
 				8420429F1B2983B40002C868 /* AppDelegate.m */,
 				847B308A1B3290DD007003D7 /* Main.storyboard */,
@@ -2356,7 +2351,6 @@
 				847076711B3AB21300F28180 /* UIViewController+BSTableObject.m in Sources */,
 				A0F0C3F21B10209500CE406D /* UpdateShoppingCartParams.m in Sources */,
 				84EBA0161B41A307003309F6 /* KTLBMainTabBarController.m in Sources */,
-				842042C91B298EF30002C868 /* KTlifeViewController.m in Sources */,
 				845A022D1B3DABF0007F5327 /* ErrorMessage.m in Sources */,
 				8460AE831B426E4C00022280 /* BSContentObjectNavigation.m in Sources */,
 				842043721B2991770002C868 /* DLLRUCache.m in Sources */,

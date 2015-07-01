@@ -1,7 +1,7 @@
 //
 //  lifeServiceController.m
 //  民生小区
-//
+//  生活服务，预约服务
 //  Created by 闫青青 on 15/6/10.
 //  Copyright (c) 2015年 itcast. All rights reserved.
 //
