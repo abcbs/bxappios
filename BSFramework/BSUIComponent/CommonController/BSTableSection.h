@@ -171,11 +171,16 @@
  */
 -(BSTableContentObject *) currentContentObject:(NSInteger)section row:(NSInteger)row;
 
-
-/*
- *根据章节标题获取每个章节的数据
+/**
+ *每行显示多个元素时，根据章节和行数获取实际的数据
  */
--(NSMutableArray *) sectionData:(NSString *)title;
+-(NSMutableArray*) currentContentArray:(NSInteger)section row:(NSInteger)row;
+
+/**
+ *根据章节section获取本章节的规定的列数，
+ *也就是当前章节的colCapatibilty
+ */
+-(NSInteger)currentCapatibilty:(NSInteger)section;
 
 /*
  *根据章节标题获取每个章节的总行数
@@ -192,14 +197,15 @@
  */
 -(NSString *)currentSectionTitle:(NSInteger)section;
 
-
+/**
+ *行选择是否有效
+ */
+-(BOOL)canClickRowEvent:(NSInteger)section;
 /**
  *判断是否配置故事板，如果配置了则返回YES，
  *当前仅仅判断是否在BSTableSection是否有该字段，如果没有则返回NO
  */
 -(BOOL)canUseStoryBord:(NSInteger)section row:(NSInteger)row;
-
-
 
 /**
  *获取跳转Controller的名称,故事板跳转方式
@@ -211,17 +217,6 @@
  */
 -(Class)vcControlleClass:(NSInteger)section row:(NSInteger)row;
 
-
-/**
- *根据章节section获取本章节的规定的列数，
- *也就是当前章节的colCapatibilty
- */
--(NSInteger)currentCapatibilty:(NSInteger)section;
-
-/**
- *每行显示多个元素时，根据章节和行数获取实际的数据
- */
--(NSMutableArray*) currentContentArray:(NSInteger)section row:(NSInteger)row;
 
 @end
 

@@ -73,7 +73,10 @@
     [bsTable addBSTableContent:appointment sectionHeader:@"预约服务"];
     
     //配置错误
+    /*
     BSTableContentObject *lifeService=[BSTableContentObject initWithContentObject:@"送水" methodName:nil imageName:@"98ss" colClass:[LBSendingWaterTableViewController class]];
+    */
+     BSTableContentObject *lifeService=[BSTableContentObject initWithContentObject:@"送水" methodName:nil imageName:@"98ss" colClass:nil];
     
     [bsTable addBSTableContent:lifeService sectionHeader:@"预约服务"];
     

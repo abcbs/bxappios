@@ -56,13 +56,6 @@
     return dataTable;
 }
 
-- (void)dealloc
-{
-    NSLog(@"TableView dealloc");
-    self.tableView=nil;
-    self.dataTable=nil;
-    self.HUD=nil;
-}
 
 - (void)viewDidAppear:(BOOL)animated{
     NSLog(@"对象的视图已经加入到窗口时调用");
@@ -82,17 +75,28 @@
     
     while([Conf checkNetWork]==networkRight||[Conf checkNetWork]==networkError){
         [HUD hide:YES];
-        if (_timer) {
+        if (_timer!=nil) {
             [_timer invalidate];
         }
     }
 }
+
+- (void)dealloc
+{
+    NSLog(@"TableView dealloc");
+    self.tableView=nil;
+    self.dataTable=nil;
+    self.HUD=nil;
+    self.timer=nil;
+}
+
 - (void) viewDidUnload{
     NSLog( @"TableView dealloc%@",self.description);
     [self.tableView removeHeader ];
     [self.tableView removeFooter];
     [HUD removeFromSuperview];
     [self.dataTable removeAllObjects];
+    [self.timer invalidate];
     [super viewDidUnload];
 }
 
@@ -167,6 +171,10 @@
 }
 - (void)doneClick{
     NSLog(@"默认为同返回一致的动作");
+}
+
+-(void)navigating:(BSTableContentObject*)bsContentObject{
+    
 }
 
 @end
