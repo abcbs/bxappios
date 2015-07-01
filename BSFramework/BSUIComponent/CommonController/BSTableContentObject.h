@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import <UIKit/UIKit.h>
 
 @interface BSTableContentObject : NSObject
 
@@ -63,6 +63,15 @@
  */
 @property (assign ,nonatomic) NSMutableDictionary *styleDiction;
 
+/**
+ *此变量没有提供和其他变量一起初始化的方法，在运行时会根据列的容量设置
+ */
+@property (assign,nonatomic)NSInteger colCapatibilty;
+
+/**
+ *此变量没有提供和其他变量一起初始化的方法，在运行时会根据列的容量设置
+ */
+@property (assign,nonatomic)UIViewController *callerViewController;
 /**
  *使用故事板跳转，默认方式
  */

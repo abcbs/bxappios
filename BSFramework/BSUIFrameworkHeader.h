@@ -64,7 +64,10 @@
  *表格的每行一列方式，包括图标和标题
  */
 #import "BSUIImageTitleTableViewCell.h"
-
+/**
+ *多列以事件方式实现
+ */
+#import "BSUIFiveColTableViewCell.h"
 /**
  *表格视图根据配置模型自动跳转页面的实现
  *表格的每行一列方式，只有图标

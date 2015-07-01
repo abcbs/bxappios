@@ -247,9 +247,9 @@ titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
         NSInteger colNumber=[self.bSTableObjects currentCapatibilty:section];
         if (colNumber>1) {//默认情况
             //[BSTableViewCellData];
-            return [[BSTableViewMultCellData initWithTableSelection:self.bSTableObjects tableView:self.tableView] processTableViewCell:section row:row];
+            return [[BSTableViewMultCellData initWithTableSelection:self bsTableSection:self.bSTableObjects tableView:self.tableView] processTableViewCell:section row:row];
         }
-        return [[BSTableViewCellData initWithTableSelection:self.bSTableObjects tableView:self.tableView] processTableViewCell:section row:row];
+        return [[BSTableViewCellData initWithTableSelection:self bsTableSection:self.bSTableObjects tableView:self.tableView] processTableViewCell:section row:row];
     }
     @catch (NSException *exception) {
         NSLog(@"画单元格时出现错误\t%@",exception.reason);

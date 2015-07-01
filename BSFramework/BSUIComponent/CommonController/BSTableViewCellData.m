@@ -16,15 +16,17 @@
 
 @synthesize bSTableObjects;
 @synthesize tableView;
+@synthesize controller;
 
-+(instancetype)initWithTableSelection:(BSTableSection *)bsTableSection tableView:(UITableView *)table{
-    id bs=[[super alloc]initWithTableSelection:bsTableSection tableView:table];
++(instancetype)initWithTableSelection:(UIViewController *)viewController bsTableSection:(BSTableSection *)bsTableSection tableView:(UITableView *)table{
+    id bs=[[super alloc]initWithTableSelection:viewController bsTableSection:bsTableSection tableView:table];
     return bs;
 }
 
--(instancetype)initWithTableSelection:(BSTableSection *)bsTableSection tableView:(UITableView *)table{
+-(instancetype)initWithTableSelection:(UIViewController *)viewController bsTableSection:(BSTableSection *)bsTableSection tableView:(UITableView *)table{
     self.bSTableObjects=bsTableSection;
     self.tableView=table;
+    self.controller=viewController;
     return self;
 }
 
@@ -41,7 +43,7 @@
         
     }
     Class clzz=[self cellIdentifierWithSection:section];
-    BSTableContentObject *bsContentObject=(BSTableContentObject *)[self currentContentObject:section row:row];
+    id bsContentObject=(BSTableContentObject *)[self currentContentObject:section row:row];
     return [self processTableViewCell:clzz bsContentObject:bsContentObject];
     
 }
@@ -56,27 +58,34 @@
 
 
 /**
- *显示单元格
- *公共方法，需要继承或单独实现，来完成单元格绘制
+ *显示单元格，需根据表格为数组方式重载
+ *公共方法，
  */
 -(UITableViewCell *)processTableViewCell:(Class) cellClass
                          bsContentObject:(BSTableContentObject *)bsContentObject{
-    NSString *ID = [self.bSTableObjects cellIdentifier];
+    NSString *Identifier = [self.bSTableObjects cellIdentifier];
     
-    id cell=[self uiTableViewCellWithIdentifier:ID];
+    id cell=[self uiTableViewCellWithIdentifier:Identifier];
     if (cell==nil) {//没有在NIB或者故事板中定义
         return [self handProcessTableViewCell:cellClass
                               bsContentObject:bsContentObject];
     }
     //不是手工编码根据配置的方法执行具体的方法
-    if (bsContentObject.method) {
-        [cell setValue:bsContentObject.method forKeyPath:@"method"];
-    }
+    //if (bsContentObject.method) {
+    //    [cell setValue:bsContentObject.method forKeyPath:@"method"];
+    //}
     //不是手工处理直接调用TableViewCell的方法viewCellWithBSContentObject
-    return [cell viewCellWithBSContentObject:bsContentObject];
+    return [self autoProcessTableViewCell:cell bsContentObject:bsContentObject];
     
 }
 
+/**
+ *公有方法，需要在实现表格为数组数据时继承
+ *NIB或故事板自动完成表格需要继承或单独实现，来完成单元格绘制
+ */
+-(UITableViewCell *)autoProcessTableViewCell:(id)cell bsContentObject:(BSTableContentObject *)bsContentObject{
+    return [cell viewCellWithBSContentObject:bsContentObject];
+}
 /**
  *手工处理时，由于没有NIB的绑定，需要手工添加到视图中
  *目前默认标示为Section提供的，而且是一个章节，在多章节之后，这里的判断要么来自具体的章节，要么来自BSContentObject

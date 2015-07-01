@@ -7,6 +7,7 @@
 //
 
 #import "BSTableContentObject.h"
+#import <UIKit/UIKit.h>
 
 @implementation BSTableContentObject
 @synthesize colTitle;
@@ -19,6 +20,8 @@
 @synthesize action;
 @synthesize data;
 @synthesize storybordName;
+@synthesize colCapatibilty;
+@synthesize callerViewController;
 
 -(instancetype)initWithContentObject:(NSString *)title methodName:(NSString *)name
                            imageName:(NSString *)imageName vcClass:(NSString *)clzzName colClass:(Class)clzz{

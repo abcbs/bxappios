@@ -8,8 +8,9 @@
 
 #import "BSUIImageTitleTableViewCell.h"
 #import "BSUIFrameworkHeader.h"
+#import "BSUITableCellOperation.h"
 
-@interface BSUISingleImageTableViewCell : UITableViewCell
+@interface BSUISingleImageTableViewCell : UITableViewCell<BSUITableCellOperation>
 
 
 @property (weak, nonatomic)  UIImageView *cellImge;
@@ -23,5 +24,7 @@
  *手工编码的调用方法
  */
 -(UITableViewCell *)viewCellWithHandBSContentObject:(BSTableContentObject *)bsContentObject;
+
+
 
 @end

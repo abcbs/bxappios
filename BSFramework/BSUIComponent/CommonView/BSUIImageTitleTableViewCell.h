@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "BSUIFrameworkHeader.h"
+#import "BSUITableCellOperation.h"
 
-@interface BSUIImageTitleTableViewCell : UITableViewCell
+@interface BSUIImageTitleTableViewCell : UITableViewCell<BSUITableCellOperation>
 {
     
 }

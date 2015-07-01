@@ -25,10 +25,10 @@
                              initWithHeaderVcClassContent:@"便捷服务"//章节显示标题
                               imageName:@"xy"//章节显示图标
                               headerViewClass:nil//章节显示视图
-                              cellIdentifier:@"BSUISingleImageTableViewCell"//采用的TableViewCell
-                              cellClass:[BSUISingleImageTableViewCell class]//TableViewCell实现
+                              cellIdentifier:@"BSUIFiveColTableViewCell"//采用的TableViewCell
+                              cellClass:[BSUIFiveColTableViewCell class]//TableViewCell实现
                             
-                              storyboard:@"Main"
+                              storyboard:@"KTWaterDetailsViewController"
                               colCapatibilty:5//每个章节的row数量
                               bsContent:nil];
     
@@ -43,10 +43,39 @@
     BSTableContentObject *commu=[BSTableContentObject
                                  initWithContentObject:@"送水"
                                  methodName:nil imageName:@"98ss"
-                                 colClass:nil];
+                                 vcClass:@"LBSendingWaterTableViewController"];
     
     [bsTable addBSTableContent:commu sectionHeader:@"便捷服务"];
    
+    
+    BSTableContentObject *bank=[BSTableContentObject
+                                initWithContentObject:@"保洁"
+                                methodName:nil
+                                imageName:@"98bj"
+                                colClass:nil];
+    [bsTable addBSTableContent:bank sectionHeader:@"便捷服务"];
+    
+    
+    BSTableContentObject *tech=[BSTableContentObject initWithContentObject:@"家政" methodName:nil imageName:@"98jz" colClass:nil];
+    
+    [bsTable addBSTableContent:tech sectionHeader:@"便捷服务"];
+    
+    //超市
+    tech=[BSTableContentObject initWithContentObject:@"超市" methodName:nil imageName:@"98cs" colClass:nil];
+    
+    [bsTable addBSTableContent:tech sectionHeader:@"便捷服务"];
+    //超市
+    tech=[BSTableContentObject initWithContentObject:@"超市1" methodName:nil imageName:@"98cs" colClass:nil];
+    
+    [bsTable addBSTableContent:tech sectionHeader:@"便捷服务"];
+
+    //超市2
+    tech=[BSTableContentObject initWithContentObject:@"超市" methodName:nil imageName:@"98cs" colClass:nil];
+    
+    [bsTable addBSTableContent:tech sectionHeader:@"便捷服务"];
+
+    
+    
     //预约服务
     BSTableContentObject *appointment=[BSTableContentObject initWithContentObject:@"洗车" methodName:nil imageName:@"98xc" colClass:nil];
     
@@ -58,22 +87,12 @@
     
     [bsTable addBSTableContent:lifeService sectionHeader:@"预约服务"];
     
+   
     
-     BSTableContentObject *bank=[BSTableContentObject
-                                initWithContentObject:@"保洁"
-                                methodName:nil
-                                imageName:@"98bj"
-                                colClass:nil];
-    
-    [bsTable addBSTableContent:bank sectionHeader:@"预约服务"];
-    
-      BSTableContentObject *marking=[BSTableContentObject initWithContentObject:@"98cs" methodName:nil imageName:@"98xc" colClass:nil];
+   BSTableContentObject *marking=[BSTableContentObject initWithContentObject:@"洗车" methodName:nil imageName:@"98xc" colClass:nil];
     
     [bsTable addBSTableContent:marking sectionHeader:@"预约服务"];
 
-    BSTableContentObject *tech=[BSTableContentObject initWithContentObject:@"家政" methodName:nil imageName:@"98jz" colClass:nil];
-    
-    [bsTable addBSTableContent:tech sectionHeader:@"便捷服务"];
     
       
     [super setValue:bsTable forKey:@"bSTableObjects"];

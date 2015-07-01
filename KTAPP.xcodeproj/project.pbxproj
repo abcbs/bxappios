@@ -202,6 +202,8 @@
 		8460AE7D1B42578B00022280 /* BSTableViewMultCellData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8460AE7C1B42578B00022280 /* BSTableViewMultCellData.m */; };
 		8460AE801B4259BE00022280 /* BSUITabBarCommonController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8460AE7F1B4259BE00022280 /* BSUITabBarCommonController.m */; };
 		8460AE831B426E4C00022280 /* BSContentObjectNavigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8460AE821B426E4C00022280 /* BSContentObjectNavigation.m */; };
+		846541ED1B42C47300DE2BC1 /* BSUIFiveColTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 846541EB1B42C47300DE2BC1 /* BSUIFiveColTableViewCell.m */; };
+		846541EE1B42C47300DE2BC1 /* BSUIFiveColTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 846541EC1B42C47300DE2BC1 /* BSUIFiveColTableViewCell.xib */; };
 		8469CD691B4121F000EF6757 /* LFRecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8469CD681B4121F000EF6757 /* LFRecommendViewController.m */; };
 		8469CD6D1B4122D400EF6757 /* LFRecommend.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8469CD6C1B4122D400EF6757 /* LFRecommend.storyboard */; };
 		8470761A1B3A5F7800F28180 /* SetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 847076181B3A5F7800F28180 /* SetCell.m */; };
@@ -302,7 +304,6 @@
 		84C06D9B1B3AF3BA000BB45C /* BSUITableViewInitRuntimeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C06D9A1B3AF3BA000BB45C /* BSUITableViewInitRuntimeController.m */; };
 		84E97AB71B307535001D4100 /* BSUIComponentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E97AB61B307535001D4100 /* BSUIComponentView.m */; };
 		84EBA00B1B416E37003309F6 /* ClassForSelectors.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EBA00A1B416E37003309F6 /* ClassForSelectors.m */; };
-		84EBA0101B4187FE003309F6 /* BSUIMultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84EBA00F1B4187FE003309F6 /* BSUIMultTableViewCell.xib */; };
 		84EBA0131B4189E0003309F6 /* LBLiferServiceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EBA0121B4189E0003309F6 /* LBLiferServiceController.m */; };
 		84EBA0161B41A307003309F6 /* KTLBMainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EBA0151B41A307003309F6 /* KTLBMainTabBarController.m */; };
 		A04366AF1AD7B550005842EE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A04366AE1AD7B550005842EE /* main.m */; };
@@ -597,6 +598,11 @@
 		8460AE7F1B4259BE00022280 /* BSUITabBarCommonController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUITabBarCommonController.m; sourceTree = "<group>"; };
 		8460AE811B426E4C00022280 /* BSContentObjectNavigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSContentObjectNavigation.h; sourceTree = "<group>"; };
 		8460AE821B426E4C00022280 /* BSContentObjectNavigation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSContentObjectNavigation.m; sourceTree = "<group>"; };
+		846541EA1B42C47300DE2BC1 /* BSUIFiveColTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUIFiveColTableViewCell.h; sourceTree = "<group>"; };
+		846541EB1B42C47300DE2BC1 /* BSUIFiveColTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUIFiveColTableViewCell.m; sourceTree = "<group>"; };
+		846541EC1B42C47300DE2BC1 /* BSUIFiveColTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSUIFiveColTableViewCell.xib; sourceTree = "<group>"; };
+		846541EF1B42C8A400DE2BC1 /* BSUITableCellOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUITableCellOperation.h; sourceTree = "<group>"; };
+		846541F01B42C97400DE2BC1 /* BSUITableMultCellOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUITableMultCellOperation.h; sourceTree = "<group>"; };
 		8469CD671B4121F000EF6757 /* LFRecommendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFRecommendViewController.h; sourceTree = "<group>"; };
 		8469CD681B4121F000EF6757 /* LFRecommendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFRecommendViewController.m; sourceTree = "<group>"; };
 		8469CD6C1B4122D400EF6757 /* LFRecommend.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LFRecommend.storyboard; sourceTree = "<group>"; };
@@ -775,7 +781,6 @@
 		84E97AB61B307535001D4100 /* BSUIComponentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUIComponentView.m; sourceTree = "<group>"; };
 		84EBA0091B416E37003309F6 /* ClassForSelectors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassForSelectors.h; sourceTree = "<group>"; };
 		84EBA00A1B416E37003309F6 /* ClassForSelectors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassForSelectors.m; sourceTree = "<group>"; };
-		84EBA00F1B4187FE003309F6 /* BSUIMultTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSUIMultTableViewCell.xib; sourceTree = "<group>"; };
 		84EBA0111B4189E0003309F6 /* LBLiferServiceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBLiferServiceController.h; sourceTree = "<group>"; };
 		84EBA0121B4189E0003309F6 /* LBLiferServiceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBLiferServiceController.m; sourceTree = "<group>"; };
 		84EBA0141B41A307003309F6 /* KTLBMainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTLBMainTabBarController.h; sourceTree = "<group>"; };
@@ -1470,7 +1475,11 @@
 				845A02221B3DA1F3007F5327 /* BSUIImageTitleTableViewCell.m */,
 				845A023F1B3DE9FE007F5327 /* BSUISingleImageTableViewCell.h */,
 				845A02401B3DE9FE007F5327 /* BSUISingleImageTableViewCell.m */,
-				84EBA00F1B4187FE003309F6 /* BSUIMultTableViewCell.xib */,
+				846541EA1B42C47300DE2BC1 /* BSUIFiveColTableViewCell.h */,
+				846541EB1B42C47300DE2BC1 /* BSUIFiveColTableViewCell.m */,
+				846541EC1B42C47300DE2BC1 /* BSUIFiveColTableViewCell.xib */,
+				846541EF1B42C8A400DE2BC1 /* BSUITableCellOperation.h */,
+				846541F01B42C97400DE2BC1 /* BSUITableMultCellOperation.h */,
 			);
 			path = CommonView;
 			sourceTree = "<group>";
@@ -2098,6 +2107,7 @@
 				844268B31B36C05F006E7F7D /* a8.png in Resources */,
 				844268E91B36C05F006E7F7D /* forget password-head.png in Resources */,
 				844268E01B36C05F006E7F7D /* 银行卡绑定-6.png in Resources */,
+				846541EE1B42C47300DE2BC1 /* BSUIFiveColTableViewCell.xib in Resources */,
 				844269111B36C05F006E7F7D /* jl_01.png in Resources */,
 				844268DD1B36C05F006E7F7D /* zffs_01.png in Resources */,
 				844268E41B36C05F006E7F7D /* der.png in Resources */,
@@ -2238,7 +2248,6 @@
 				844268F11B36C05F006E7F7D /* radio_checked@2x.png in Resources */,
 				844268EE1B36C05F006E7F7D /* login-4.png in Resources */,
 				847432F81B2A8E5500B030C4 /* AlreadyCommit.xib in Resources */,
-				84EBA0101B4187FE003309F6 /* BSUIMultTableViewCell.xib in Resources */,
 				8442691F1B36C05F006E7F7D /* yyfw9_01.png in Resources */,
 				844268FC1B36C05F006E7F7D /* 1.jpg in Resources */,
 				844268D61B36C05F006E7F7D /* qxdd.png in Resources */,
@@ -2400,6 +2409,7 @@
 				847432D01B2A8AF700B030C4 /* VPImageCropperViewController.m in Sources */,
 				A0F0C3EA1B10209500CE406D /* DeleteShoppingCartResult.m in Sources */,
 				A0F0C3F81B10209500CE406D /* UpdateShoppingCartRequest.m in Sources */,
+				846541ED1B42C47300DE2BC1 /* BSUIFiveColTableViewCell.m in Sources */,
 				842042A21B2983B40002C868 /* AppDelegate.m in Sources */,
 				84BA967E1B2829D500388B58 /* MyOrderModel.m in Sources */,
 				84EBA00B1B416E37003309F6 /* ClassForSelectors.m in Sources */,
