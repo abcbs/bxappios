@@ -15,23 +15,14 @@
  *根据章节和每个章节的数据数目获取行信息
  */
 -(NSObject *)currentContentObject:(NSInteger)section row:(NSInteger)row{
-    NSMutableArray *bsArray=[NSMutableArray arrayWithCapacity:[self.bSTableObjects currentCapatibilty:section]];
-    BSTableContentObject * bc= ((BSTableContentObject *)[self.bSTableObjects currentContentObject:section row:row]);
-    //列容量
-    bc.colCapatibilty=self.bSTableObjects.colCapatibilty;
-    //调用者控制器
-    bc.callerViewController=self.controller;
-    //是否使用故事板
-    bc.canUseStoryboard=[self.bSTableObjects canUseStoryBord:section row:row];
-
-    [bsArray addObject:bc];
-    bc= ((BSTableContentObject *)[self.bSTableObjects currentContentObject:section row:row+1]);
-    bc.colCapatibilty=self.bSTableObjects.colCapatibilty;
-    bc.storybordName=self.bSTableObjects.storyboardName;
-    bc.callerViewController=self.controller;
-    bc.canUseStoryboard=[self.bSTableObjects canUseStoryBord:section row:row+1];
-
-    [bsArray addObject:bc];
+    NSMutableArray *bsArray=[self.bSTableObjects  currentContentArray:section row:row];
+    //BSTableContentObject * bc=nil;
+    for ( BSTableContentObject * bc in bsArray) {
+        //调用者控制器
+        bc.callerViewController=self.controller;
+    }
+    
+    NSLog(@"BSTableViewMultCellData,单列数据为\t%ld",bsArray.count);
    return bsArray;
 }
 

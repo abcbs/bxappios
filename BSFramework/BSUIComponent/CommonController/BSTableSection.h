@@ -170,6 +170,8 @@
  *获取指定章节索引具体章节中得某行数据
  */
 -(BSTableContentObject *) currentContentObject:(NSInteger)section row:(NSInteger)row;
+
+
 /*
  *根据章节标题获取每个章节的数据
  */
@@ -215,6 +217,11 @@
  *也就是当前章节的colCapatibilty
  */
 -(NSInteger)currentCapatibilty:(NSInteger)section;
+
+/**
+ *每行显示多个元素时，根据章节和行数获取实际的数据
+ */
+-(NSMutableArray*) currentContentArray:(NSInteger)section row:(NSInteger)row;
 
 @end
 

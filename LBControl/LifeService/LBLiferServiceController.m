@@ -64,38 +64,67 @@
     tech=[BSTableContentObject initWithContentObject:@"超市" methodName:nil imageName:@"98cs" colClass:nil];
     
     [bsTable addBSTableContent:tech sectionHeader:@"便捷服务"];
-    //超市
+    
+    //超市1
     tech=[BSTableContentObject initWithContentObject:@"超市1" methodName:nil imageName:@"98cs" colClass:nil];
     
     [bsTable addBSTableContent:tech sectionHeader:@"便捷服务"];
 
     //超市2
-    tech=[BSTableContentObject initWithContentObject:@"超市" methodName:nil imageName:@"98cs" colClass:nil];
+    tech=[BSTableContentObject initWithContentObject:@"超市2" methodName:nil imageName:@"98cs" colClass:nil];
     
     [bsTable addBSTableContent:tech sectionHeader:@"便捷服务"];
 
     
+    tech=[BSTableContentObject initWithContentObject:@"超市3" methodName:nil imageName:@"98cs" colClass:nil];
+    
+    [bsTable addBSTableContent:tech sectionHeader:@"便捷服务"];
+    
+    
+    tech=[BSTableContentObject initWithContentObject:@"超市4" methodName:nil imageName:@"98cs" colClass:nil];
+    
+    [bsTable addBSTableContent:tech sectionHeader:@"便捷服务"];
+    
+ 
+    tech=[BSTableContentObject initWithContentObject:@"超市5" methodName:nil imageName:@"98cs" colClass:nil];
+    
+    [bsTable addBSTableContent:tech sectionHeader:@"便捷服务"];
     
     //预约服务
     BSTableContentObject *appointment=[BSTableContentObject initWithContentObject:@"洗车" methodName:nil imageName:@"98xc" colClass:nil];
     
     [bsTable addBSTableContent:appointment sectionHeader:@"预约服务"];
     
-    
-    
     BSTableContentObject *lifeService=[BSTableContentObject initWithContentObject:@"送水" methodName:nil imageName:@"98ss" colClass:[LBSendingWaterTableViewController class]];
     
     [bsTable addBSTableContent:lifeService sectionHeader:@"预约服务"];
+     //配置错误
+    lifeService=[BSTableContentObject initWithContentObject:@"送水" methodName:nil imageName:@"98ss" colClass:[LBSendingWaterTableViewController class]];
     
-   
+    [bsTable addBSTableContent:lifeService sectionHeader:@"预约服务"];
+
     
    BSTableContentObject *marking=[BSTableContentObject initWithContentObject:@"洗车" methodName:nil imageName:@"98xc" colClass:nil];
     
     [bsTable addBSTableContent:marking sectionHeader:@"预约服务"];
-
+   
+    lifeService=[BSTableContentObject initWithContentObject:@"送水2" methodName:nil imageName:@"98ss" colClass:[LBSendingWaterTableViewController class]];
     
+    [bsTable addBSTableContent:lifeService sectionHeader:@"预约服务"];
+    
+    lifeService=[BSTableContentObject initWithContentObject:@"送水3" methodName:nil imageName:@"98ss" colClass:[LBSendingWaterTableViewController class]];
+    
+    [bsTable addBSTableContent:lifeService sectionHeader:@"预约服务"];
+
       
     [super setValue:bsTable forKey:@"bSTableObjects"];
+}
+
+/**
+ *改变行的高度（实现主个代理方法后 rowHeight 设定的高度无效）
+ */
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return BSMarginY(90);
 }
 
 - (void)didReceiveMemoryWarning {

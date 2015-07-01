@@ -17,7 +17,7 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *imgButton;
 
-
+/*
 @property (weak, nonatomic) IBOutlet UIButton *scButton;
 
 
@@ -37,5 +37,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *fiveLabel;
 
 @property (weak, nonatomic) IBOutlet UIButton *thirdButton;
-
+*/
 @end

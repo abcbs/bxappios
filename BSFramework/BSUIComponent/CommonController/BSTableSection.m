@@ -303,12 +303,20 @@
  *当前章节共计几行数据
  */
 -(NSInteger) currentRowNumber:(NSInteger)section{
-    NSString *title=[self.content objectAtIndex:section];
+    NSString *title=[self currentSectionTitle:section];
     NSMutableArray *arrays=[self.sections objectForKey:title];
-    long cap=[arrays count]/colCapatibilty;
-    //每行至少有一列数据
-    if (cap<1) {
-        cap=1;
+    long realSize=[arrays count];
+    if (self.colCapatibilty==1) {//如果一行中列的容量为一，则返回数据数组
+        return realSize;
+    }
+    long cap=realSize/self.colCapatibilty;
+    if (cap==0) {
+        return 1;//不够满一列，则返回是一列
+    }
+    long remainder=realSize%self.colCapatibilty;
+    //每行至少有一列数据,//当有不是一满列时，应当增加一行
+    if (remainder!=0) {
+        ++cap;
     }
     return cap;
 }
@@ -341,8 +349,7 @@
         NSString *title = [self currentSectionTitle:section];
         NSMutableArray *bsArray= [self sectionData:title];
         return[bsArray objectAtIndex:row];
-        
-    }
+     }
     @catch (NSException *exception) {
         NSLog(@"BSUITableViewInitRuntimeController bsContentObject每行现实的数据，它在BSTableSection，出现错误，\t\%@",exception.reason);
     }
@@ -350,6 +357,41 @@
 }
 
 
+/**
+ *每行显示多个元素时，根据章节和行数获取实际的数据
+ *因为每行的容量不是一，此处传入的row是colCapatibilty的倍数
+ */
+-(NSMutableArray*) currentContentArray:(NSInteger)section row:(NSInteger)row{
+    
+    NSString *title=[self currentSectionTitle:section];
+    NSMutableArray *arrays=[self.sections objectForKey:title];
+    //不满一行
+    long realSize=[arrays count];
+    //算得需要执行本方法的位置
+    long rangeFirst=colCapatibilty*(row);
+    long rangeLast=colCapatibilty*(row+1);
+    if(rangeLast>realSize){
+        rangeLast=realSize;
+    }
+    NSMutableArray *capArray=[[NSMutableArray alloc]init];
+    long capPos=0;
+    BSTableContentObject *bo=nil;
+    for (capPos=rangeFirst; capPos<rangeLast; capPos++) {
+        bo=(BSTableContentObject *)[arrays objectAtIndex:capPos];
+        //列容量
+        if (bo.colCapatibilty==0) {
+            bo.colCapatibilty=self.colCapatibilty;
+        }
+        if (bo.canUseStoryboard==NO) {
+            bo.canUseStoryboard=[self canUseStoryBord:section row:capPos];
+        }
+        if (bo.storybordName==nil) {
+            bo.storybordName=self.storyboardName;
+        }
+        [capArray addObject:bo];
+    }
+    return capArray;
+}
 
 /**
  *判断是否配置故事板，如果配置了则返回YES，
