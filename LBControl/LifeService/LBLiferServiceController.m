@@ -91,7 +91,7 @@
  *改变行的高度（实现主个代理方法后 rowHeight 设定的高度无效）
  */
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return BSMarginY(90);
+    return BSMarginY(60);
 }
 
 - (void)didReceiveMemoryWarning {
