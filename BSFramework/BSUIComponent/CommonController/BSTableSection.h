@@ -197,10 +197,7 @@
  */
 -(BOOL)canUseStoryBord:(NSInteger)section row:(NSInteger)row;
 
-/**
- *是否是使用故事板进行跳转，如果是YES则使用故事板方式跳转，否则使用手工方式
- */
--(BOOL)useStoryboard:(NSInteger)section row:(NSInteger)row;
+
 
 /**
  *获取跳转Controller的名称,故事板跳转方式
@@ -212,10 +209,6 @@
  */
 -(Class)vcControlleClass:(NSInteger)section row:(NSInteger)row;
 
-/**
- *判断是故事板实现还是手工编码实现
- */
--(BOOL)useStorybord;
 
 /**
  *根据章节section获取本章节的规定的列数，

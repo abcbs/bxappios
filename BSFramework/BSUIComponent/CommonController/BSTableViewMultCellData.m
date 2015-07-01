@@ -17,14 +17,20 @@
 -(NSObject *)currentContentObject:(NSInteger)section row:(NSInteger)row{
     NSMutableArray *bsArray=[NSMutableArray arrayWithCapacity:[self.bSTableObjects currentCapatibilty:section]];
     BSTableContentObject * bc= ((BSTableContentObject *)[self.bSTableObjects currentContentObject:section row:row]);
+    //列容量
     bc.colCapatibilty=self.bSTableObjects.colCapatibilty;
+    //调用者控制器
     bc.callerViewController=self.controller;
-    
+    //是否使用故事板
+    bc.canUseStoryboard=[self.bSTableObjects canUseStoryBord:section row:row];
+
     [bsArray addObject:bc];
     bc= ((BSTableContentObject *)[self.bSTableObjects currentContentObject:section row:row+1]);
     bc.colCapatibilty=self.bSTableObjects.colCapatibilty;
     bc.storybordName=self.bSTableObjects.storyboardName;
     bc.callerViewController=self.controller;
+    bc.canUseStoryboard=[self.bSTableObjects canUseStoryBord:section row:row+1];
+
     [bsArray addObject:bc];
    return bsArray;
 }
@@ -52,6 +58,9 @@
     
 }
 
-
+/**
+ *根据章节和行索引判断是否需要故事板跳转
+ */
+ 
 
 @end

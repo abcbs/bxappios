@@ -62,7 +62,7 @@
  *每个section底部标题高度（实现这个代理方法后前面 sectionHeaderHeight 设定的高度无效）
  */
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return BSMarginY(20);
+    return BSMarginY(30);
 }
 
 //每个section头部标题高度（实现这个代理方法后前面 sectionFooterHeight 设定的高度无效）
@@ -300,19 +300,10 @@ titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
  */
 -(void)prepareNavigationView:(NSInteger)section row:(NSInteger)row{
     
-    if (([self.bSTableObjects canUseStoryBord:section row:row])&&
-        [self.bSTableObjects useStoryboard:section row:row]) {
-        BSTableContentObject *bs=[self.bSTableObjects currentContentObject:section row:row];
-        //NSString *vcClassName=[self.bSTableObjects vcControllerName:section row:row];
-        //bs.vcClass=vcClassName;
-        [BSContentObjectNavigation prepareControllWithStorybord:self bsContentObject:bs];
-    }else{
-        //Class clzz=[self.bSTableObjects vcControlleClass:section row:row];
-        BSTableContentObject *bs=[self.bSTableObjects currentContentObject:section row:row];
-        //bs.colClass=clzz;
-        [BSContentObjectNavigation prepareControllWithNib:self bsContentObject:bs];
-    }
-   
+
+   BSTableContentObject *bs=[self.bSTableObjects currentContentObject:section row:row];
+   bs.canUseStoryboard=[self.bSTableObjects canUseStoryBord:section row:row];
+   [BSContentObjectNavigation navigatingControllWithStorybord:self bsContentObject:bs];
 }
 
 @end

@@ -22,6 +22,7 @@
 @synthesize storybordName;
 @synthesize colCapatibilty;
 @synthesize callerViewController;
+@synthesize canUseStoryboard;
 
 -(instancetype)initWithContentObject:(NSString *)title methodName:(NSString *)name
                            imageName:(NSString *)imageName vcClass:(NSString *)clzzName colClass:(Class)clzz{

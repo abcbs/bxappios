@@ -11,15 +11,7 @@
 
 @interface BSContentObjectNavigation : NSObject
 
++(void)navigatingControllWithStorybord:(UIViewController *)viewController bsContentObject:(BSTableContentObject*)bsContentObject;
 
-/**
- *在故事板跳转中，BSTableContentObject中的storybordName和vcClass不能为空。
- */
-+(void)prepareControllWithStorybord:(UIViewController *)viewController bsContentObject:(BSTableContentObject*)bsContentObject;
-
-/**
- *以手工方式实现的Controller的跳转
- */
-+(void)prepareControllWithNib:(UIViewController *)viewController bsContentObject:(BSTableContentObject*)bsContentObject;
 
 @end

@@ -72,6 +72,8 @@
  *此变量没有提供和其他变量一起初始化的方法，在运行时会根据列的容量设置
  */
 @property (assign,nonatomic)UIViewController *callerViewController;
+@property (assign,nonatomic)BOOL canUseStoryboard;
+
 /**
  *使用故事板跳转，默认方式
  */

@@ -8,9 +8,16 @@
 
 #import "BSContentObjectNavigation.h"
 #import <UIKit/UIKit.h>
+#import "BSCMFrameworkHeader.h"
 @implementation BSContentObjectNavigation
 
-
++(void)navigatingControllWithStorybord:(UIViewController *)viewController bsContentObject:(BSTableContentObject*)bsContentObject{
+    if (bsContentObject.canUseStoryboard) {
+        [BSContentObjectNavigation prepareControllWithStorybord:viewController bsContentObject:bsContentObject];
+    }else{
+        [BSContentObjectNavigation prepareControllWithNib:viewController bsContentObject:bsContentObject];
+    }
+}
 
 /**
  *以故事板实现的Controller的跳转

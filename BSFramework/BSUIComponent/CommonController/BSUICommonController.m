@@ -43,4 +43,10 @@
     NSLog(@"子类应当继承此方法实现完成功能");
 }
 
+/**
+ *页面跳转公共方法
+ */
+-(void)navigating:(BSTableContentObject*)bsContentObject{
+    [BSContentObjectNavigation navigatingControllWithStorybord:self       bsContentObject:bsContentObject];
+}
 @end

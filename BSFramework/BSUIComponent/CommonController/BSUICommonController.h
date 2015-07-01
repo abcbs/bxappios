@@ -11,7 +11,13 @@
 
 @interface BSUICommonController : UIViewController<NavigationProcess>
 
+/**
+ *公共回退方法
+ */
 - (void)backClick;
+/**
+ *公共确定方法
+ */
 - (void)doneClick;
 
 @end

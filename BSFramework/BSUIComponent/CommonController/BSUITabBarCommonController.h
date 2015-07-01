@@ -13,6 +13,7 @@
 
 - (void)backClick;
 - (void)doneClick;
+-(void)navigating:(BSTableContentObject*)bsContentObject;
 
 
 @end

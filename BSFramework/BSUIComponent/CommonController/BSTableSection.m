@@ -349,25 +349,15 @@
     
 }
 
-/**
- *判断是否是故事板实现
- */
--(BOOL)useStorybord{
-    return YES;
-}
+
 
 /**
  *判断是否配置故事板，如果配置了则返回YES，
  *当前仅仅判断是否在BSTableSection是否有该字段，如果没有则返回NO
  */
 -(BOOL)canUseStoryBord:(NSInteger)section row:(NSInteger)row{
-    if ([self storyboardName]==nil) {
-        return NO;
-    }else{
-        return YES;
-    }
+    return (([self storyboardName])&&([self useStoryboard:section row:row]));
 }
-
 /**
  *是否是使用故事板进行跳转，如果是YES则使用故事板方式跳转，否则使用手工方式
  */
