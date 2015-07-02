@@ -21,6 +21,7 @@
 #import "BSUICommonController.h"
 #import "BSUITableViewCommonController.h"
 #import "BSUITabBarCommonController.h"
+#import "BSUITableViewCommonController.h"
 
 /**
  *第三方UI相关组件

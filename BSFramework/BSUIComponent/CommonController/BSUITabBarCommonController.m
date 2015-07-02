@@ -7,7 +7,7 @@
 //
 
 #import "BSUITabBarCommonController.h"
-
+#import "BSCMFrameworkHeader.h"
 @interface BSUITabBarCommonController ()
 
 @end

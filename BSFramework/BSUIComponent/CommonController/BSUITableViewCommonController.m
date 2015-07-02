@@ -8,6 +8,8 @@
 
 #import "BSUITableViewCommonController.h"
 #import "BSUIFrameworkHeader.h"
+#import "BSCMFrameworkHeader.h"
+
 @implementation BSUITableViewCommonController
 
 - (void)viewDidLoad {
@@ -21,8 +23,9 @@
 
 - (void)viewDidAppear:(BOOL)animated{
     NSLog(@"BSUICommonController viewDidAppear 对象的视图已经加入到窗口时调用");
-    
+
 }
+
 - (void)backClick{
     [self dismissViewControllerAnimated:YES completion:nil];
 }

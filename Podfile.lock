@@ -1,4 +1,7 @@
 PODS:
+  - AFNetworkActivityLogger (2.0.4):
+    - AFNetworking/NSURLConnection (~> 2.0)
+    - AFNetworking/NSURLSession (~> 2.0)
   - AFNetworking (2.5.4):
     - AFNetworking/NSURLConnection (= 2.5.4)
     - AFNetworking/NSURLSession (= 2.5.4)
@@ -39,6 +42,7 @@ PODS:
   - SDWebImage/Core (3.7.2)
 
 DEPENDENCIES:
+  - AFNetworkActivityLogger
   - AFNetworking
   - CocoaLumberjack
   - Mantle
@@ -48,6 +52,7 @@ DEPENDENCIES:
   - SDWebImage
 
 SPEC CHECKSUMS:
+  AFNetworkActivityLogger: 121486778117d53b3ab1c61d264b88081d0c3eee
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
   CocoaLumberjack: a6f77d987d65dc7ba86b0f84db7d0b9084f77bcb
   Mantle: 967fd31ea0220890b2e76589198996b534bb3fb1

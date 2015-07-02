@@ -15,8 +15,8 @@
 #import "WeiboApi.h"
 #import "WeiboSDK.h"
 
-#import "AFNetworkActivityIndicatorManager.h"
 #import "BSUIFrameworkHeader.h"
+#import "BSCMFrameworkHeader.h"
 @interface AppDelegate ()
     
 @end
@@ -25,25 +25,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    //AppDelegate *myDelegate = [[UIApplication sharedApplication] delegate];
-    //float iosVersion=IOS_VERSION;
     
-    if(IS_IPHONE5){
-        autoSizeScaleX = 1.0;
-        autoSizeScaleY = 1.0;
-        
-    }else if (IS_IPHONE_6PLUS){
-        autoSizeScaleX = 1.29375;
-        autoSizeScaleY=1.2957;
- 
-    }else if(IS_IPHONE_6){
-        autoSizeScaleX=1.171875;
-        autoSizeScaleY=1.17429577;
-    }else {
-        autoSizeScaleX = 1.0;
-        autoSizeScaleY = 1.0;
-
-    }
     
     // Override point for customization after application launch.
     //添加第三方平台
@@ -70,10 +52,12 @@
     //                     tencentOAuthCls:[TencentOAuth class]];
     
     //self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    
+    //网络日志监控
+    [[AFNetworkActivityLogger sharedLogger] startLogging];
+    //网络可用性监控
     [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
-    
-    
+    //网络变化监控
+    [[AFNetworkReachabilityManager sharedManager] startMonitoring];
 
     //默认颜色
     self.window.backgroundColor = [UIColor whiteColor];

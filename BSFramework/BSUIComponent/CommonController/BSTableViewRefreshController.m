@@ -9,7 +9,7 @@
 #import "BSTableViewRefreshController.h"
 
 #import "BSUIFrameworkHeader.h"
-
+#import "BSCMFrameworkHeader.h"
 
 @interface BSTableViewRefreshController()
 
@@ -66,6 +66,7 @@
 
 - (void)viewDidAppear:(BOOL)animated{
     NSLog(@"对象的视图已经加入到窗口时调用");
+    
    _timer= [NSTimer scheduledTimerWithTimeInterval:0.1
            target:self selector:@selector(progressTracking) userInfo:self repeats:YES];
      
