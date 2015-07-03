@@ -317,6 +317,10 @@
 		84EBA00B1B416E37003309F6 /* ClassForSelectors.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EBA00A1B416E37003309F6 /* ClassForSelectors.m */; };
 		84EBA0131B4189E0003309F6 /* LBLiferServiceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EBA0121B4189E0003309F6 /* LBLiferServiceController.m */; };
 		84EBA0161B41A307003309F6 /* KTLBMainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EBA0151B41A307003309F6 /* KTLBMainTabBarController.m */; };
+		84EFAA261B46B698005A5DDF /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84EFAA191B46B698005A5DDF /* MainStoryboard.storyboard */; };
+		84EFAA271B46B698005A5DDF /* LeDiscovery.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EFAA1C1B46B698005A5DDF /* LeDiscovery.m */; };
+		84EFAA281B46B698005A5DDF /* LeTemperatureAlarmService.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EFAA1E1B46B698005A5DDF /* LeTemperatureAlarmService.m */; };
+		84EFAA2B1B46B698005A5DDF /* BSBLEViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EFAA231B46B698005A5DDF /* BSBLEViewController.m */; };
 		A04366AF1AD7B550005842EE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A04366AE1AD7B550005842EE /* main.m */; };
 		A04366BA1AD7B550005842EE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A04366B91AD7B550005842EE /* Images.xcassets */; };
 		A05E9BDF1AE79DD5008C97C9 /* KTTabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A05E9BDE1AE79DD5008C97C9 /* KTTabBarButton.m */; };
@@ -805,6 +809,13 @@
 		84EBA0121B4189E0003309F6 /* LBLiferServiceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBLiferServiceController.m; sourceTree = "<group>"; };
 		84EBA0141B41A307003309F6 /* KTLBMainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTLBMainTabBarController.h; sourceTree = "<group>"; };
 		84EBA0151B41A307003309F6 /* KTLBMainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTLBMainTabBarController.m; sourceTree = "<group>"; };
+		84EFAA1A1B46B698005A5DDF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		84EFAA1B1B46B698005A5DDF /* LeDiscovery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeDiscovery.h; sourceTree = "<group>"; };
+		84EFAA1C1B46B698005A5DDF /* LeDiscovery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeDiscovery.m; sourceTree = "<group>"; };
+		84EFAA1D1B46B698005A5DDF /* LeTemperatureAlarmService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeTemperatureAlarmService.h; sourceTree = "<group>"; };
+		84EFAA1E1B46B698005A5DDF /* LeTemperatureAlarmService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeTemperatureAlarmService.m; sourceTree = "<group>"; };
+		84EFAA221B46B698005A5DDF /* BSBLEViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSBLEViewController.h; sourceTree = "<group>"; };
+		84EFAA231B46B698005A5DDF /* BSBLEViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSBLEViewController.m; sourceTree = "<group>"; };
 		A04366A91AD7B550005842EE /* 民生小区.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "民生小区.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A04366AD1AD7B550005842EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A04366AE1AD7B550005842EE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -1485,20 +1496,6 @@
 			path = BLEController;
 			sourceTree = "<group>";
 		};
-		848058061B39A097005817D7 /* BLEModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = BLEModel;
-			sourceTree = "<group>";
-		};
-		848058071B39A097005817D7 /* BLEService */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = BLEService;
-			sourceTree = "<group>";
-		};
 		848058081B39A097005817D7 /* BLEView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1687,9 +1684,8 @@
 		84BA968B1B2829F300388B58 /*  Bluetooth */ = {
 			isa = PBXGroup;
 			children = (
+				84EFAA141B46B698005A5DDF /* BLE-Demo-TSensor */,
 				848058051B39A097005817D7 /* BLEController */,
-				848058061B39A097005817D7 /* BLEModel */,
-				848058071B39A097005817D7 /* BLEService */,
 				848058081B39A097005817D7 /* BLEView */,
 				8404B8531B393F1E002AF13A /* BSBLEMainController.h */,
 				8404B8541B393F1E002AF13A /* BSBLEMainController.m */,
@@ -1850,6 +1846,20 @@
 				84EBA00A1B416E37003309F6 /* ClassForSelectors.m */,
 			);
 			path = "Basic-Demo";
+			sourceTree = "<group>";
+		};
+		84EFAA141B46B698005A5DDF /* BLE-Demo-TSensor */ = {
+			isa = PBXGroup;
+			children = (
+				84EFAA191B46B698005A5DDF /* MainStoryboard.storyboard */,
+				84EFAA1B1B46B698005A5DDF /* LeDiscovery.h */,
+				84EFAA1C1B46B698005A5DDF /* LeDiscovery.m */,
+				84EFAA1D1B46B698005A5DDF /* LeTemperatureAlarmService.h */,
+				84EFAA1E1B46B698005A5DDF /* LeTemperatureAlarmService.m */,
+				84EFAA221B46B698005A5DDF /* BSBLEViewController.h */,
+				84EFAA231B46B698005A5DDF /* BSBLEViewController.m */,
+			);
+			path = "BLE-Demo-TSensor";
 			sourceTree = "<group>";
 		};
 		A0028F341ADE4D5500747D8A /* Frameworks */ = {
@@ -2227,6 +2237,7 @@
 				844268AD1B36C05F006E7F7D /* a11.png in Resources */,
 				A14656F81ADEB5A400571E9A /* KTFooterView.xib in Resources */,
 				844268B41B36C05F006E7F7D /* a9.png in Resources */,
+				84EFAA261B46B698005A5DDF /* MainStoryboard.storyboard in Resources */,
 				844269141B36C05F006E7F7D /* pp.png in Resources */,
 				8487F1881B3005C100F0F7B2 /* KTOnlinePayViewController.storyboard in Resources */,
 				8442690A1B36C05F006E7F7D /* im_information_you.png in Resources */,
@@ -2348,6 +2359,7 @@
 				847432DB1B2A8CE500B030C4 /* MyOrderCell.m in Sources */,
 				8460AE801B4259BE00022280 /* BSUITabBarCommonController.m in Sources */,
 				8474DEB51B3F7D0600D9DE36 /* BSUICommonController.m in Sources */,
+				84EFAA281B46B698005A5DDF /* LeTemperatureAlarmService.m in Sources */,
 				8470761A1B3A5F7800F28180 /* SetCell.m in Sources */,
 				0ED64D6C1B462E8C00510534 /* messageModifyController.m in Sources */,
 				847433081B2A908000B030C4 /* SystemSet.m in Sources */,
@@ -2376,6 +2388,7 @@
 				84BA967D1B2829D500388B58 /* Delcartlist.m in Sources */,
 				0ED64D641B462D4A00510534 /* CDPDatePicker.m in Sources */,
 				A0F0C3F61B10209500CE406D /* DeleteShoppingCartRequest.m in Sources */,
+				84EFAA2B1B46B698005A5DDF /* BSBLEViewController.m in Sources */,
 				848058151B39A377005817D7 /* BSFCRollingADImageUIView.m in Sources */,
 				845A02411B3DE9FE007F5327 /* BSUISingleImageTableViewCell.m in Sources */,
 				84820A601B285ECA0093B87B /* KTWaterDetailsViewController.m in Sources */,
@@ -2419,6 +2432,7 @@
 				847076251B3A89F000F28180 /* recommendguest.m in Sources */,
 				84BA96851B2829D500388B58 /* WaterSending.m in Sources */,
 				847432F91B2A8E5500B030C4 /* AlreadyPayment.m in Sources */,
+				84EFAA271B46B698005A5DDF /* LeDiscovery.m in Sources */,
 				842043751B2991770002C868 /* DLFixedTabbarView.m in Sources */,
 				847432F71B2A8E5500B030C4 /* AlreadyCommit.m in Sources */,
 				A0F0C3E81B10209500CE406D /* BasicResponse.m in Sources */,
@@ -2505,6 +2519,14 @@
 				84578F771B35E7F700C3A4EA /* en */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		84EFAA191B46B698005A5DDF /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84EFAA1A1B46B698005A5DDF /* en */,
+			);
+			name = MainStoryboard.storyboard;
 			sourceTree = "<group>";
 		};
 		DFD86AB21AFC5886000AB8E6 /* InfoPlist.strings */ = {
