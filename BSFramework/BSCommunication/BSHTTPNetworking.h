@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "AFNetworking.h"
-#import "ErrorMessage.h"
+
+#import "BSCMFrameworkHeader.h"
 /**
  * <returntype>(^blockname)(list of arguments)=^(arguments){body}
  *

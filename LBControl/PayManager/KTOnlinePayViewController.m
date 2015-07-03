@@ -7,6 +7,7 @@
 //
 
 #import "KTOnlinePayViewController.h"
+#import "BSUIFrameworkHeader.h"
 
 @interface KTOnlinePayViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *cartText;
@@ -17,7 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    [BSUIComponentView navigationHeader:self.navigationController ];
 }
 
 - (void)didReceiveMemoryWarning {

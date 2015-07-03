@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/民生小区/Classes/Other/EHNetwork.m \
-  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/民生小区/Classes/Other/EHNetwork.h
+  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/BSFramework/BSCommunication/EHNetwork.m \
+  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/BSFramework/BSCommunication/EHNetwork.h

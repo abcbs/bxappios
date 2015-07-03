@@ -1,4 +1,4 @@
 dependencies: \
-  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/LBControl/lifeServiceController.m \
-  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/LBControl/lifeServiceController.h \
-  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/LBModels/Base/Conf.h
+  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/LBControl/LifeService/lifeServiceController.m \
+  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/LBControl/LifeService/lifeServiceController.h \
+  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/BSFramework/Base/Conf.h

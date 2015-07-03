@@ -1,6 +1,6 @@
 //
 //  SetViewController.m
-//  民生小区
+//  主界面，我的圈子
 //
 //  Created by 闫青青 on 15/4/24.
 //  Copyright (c) 2015年 itcast. All rights reserved.
@@ -10,18 +10,15 @@
 #import "SetCell.h"
 #import "LoginViewController.h"
 #import "RegisterViewController.h"
-#import "Conf.h"
 #import "SystemSet.h"
 #import <ShareSDK/ShareSDK.h>
 #import <TencentOpenAPI/QQApiInterface.h>
 #import <TencentOpenAPI/TencentOAuth.h>
-//#import "WXApi.h"
-//#import "WeiboApi.h"
-//#import "WeiboSDK.h"
 #import "myWallet.h"
 #import "applyShop.h"
 #import "Demo1ViewController.h"
-#import "AppDelegate.h"
+
+#import "BSUIFrameworkHeader.h"
 
 
 @interface SetViewController ()<UITableViewDataSource,UITableViewDelegate>
@@ -54,12 +51,11 @@
     [self.view addSubview:self.tableView];
     
     //红色界面
-    UIImageView *imageView = [[UIImageView alloc]initWithFrame:BSRectMake(NAVIGATIONBAR_X, NAVIGATIONBAR_Y,
-                                                                          NAVIGATIONBAR_WIDTH, NAVIGATIONBAR_HEIGHT)];
-    NSString *imageName = [NSString stringWithFormat:@"生活圈.jpg"];
-    imageView.image = [UIImage imageNamed:imageName];
-    [self.view addSubview:imageView];
-    
+  
+    //UIImageView *imageView=[BSUIComponentView navigationHeaderWithImage:@"生活圈.jpg"];
+    //[self.view addSubview:imageView];
+    [BSUIComponentView navigationHeaderWithImage:@"生活圈.jpg"
+                                            view:self.view];
     //头像设置
     UIButton *iconButton = [[UIButton alloc] initWithFrame:CGRectMake(self.view.bounds.size.width/2-45, 70, 90, 90)];
     [iconButton setBackgroundImage:[UIImage imageNamed:@"LoginPicture.png"] forState:UIControlStateNormal];

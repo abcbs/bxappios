@@ -7,11 +7,11 @@
 //
 #import <Foundation/Foundation.h>
 #import "BSHTTPNetworking.h"
-#import "AFNetworking.h"
-#import "YYHModelRouter.h"
-#import "Conf.h"
-#import "ErrorMessage.h"
-#import "BSUIComponentView.h"
+
+
+#import "BSUIFrameworkHeader.h"
+
+#import "BSCMFrameworkHeader.h"
 
 @interface BSHTTPNetworking ()
 
@@ -109,6 +109,7 @@
     block:(BSHTTPResponse)block
     errorUILabel:( UILabel *)errorUILabel
 {
+    NSLog(@"本次请求URL\t%@",KBS_URL);
     NSLog(@"本次请求路径为%@",restPath);
     NSLog(@"本次请求方法GET");
     
@@ -183,7 +184,7 @@
     block:(BSHTTPResponse)block
     errorUILabel:( UILabel *)errorUILabel
 {
-    
+    NSLog(@"本次请求URL\t%@",KBS_URL);
     NSLog(@"本次请求路径为\t%@",restPath);
     NSLog(@"本次请求参数\t%@",parameters);
     NSLog(@"本次请求方法POST");
@@ -206,12 +207,14 @@
     block:(BSHTTPResponse)block
     errorUILabel:( UILabel *)errorUILabel{
     return ^(NSURLSessionDataTask *task, id responseObject, id model) {
-        NSLog(@"本次请求返回信息为\n%@",model);
+        [Conf handleNetworkError:nil];
         if (block&&![model isKindOfClass:[ErrorMessage class]]) {
+            
             block(model,nil,nil);
         }else if(block&& [model isKindOfClass:[ErrorMessage class]]){
-            model=(ErrorMessage *)model;
-           
+            ErrorMessage *bserror=model;
+            NSLog(@"本次请求返回信息为%@",
+                  bserror.description);
             if (errorUILabel) {
                 errorUILabel.text=[(ErrorMessage *)model message ];
             }else{
@@ -233,13 +236,12 @@
     return ^(NSError *error) {
         NSLog(@"系统出现异常，详细信息:\n%@",error);
         if (block) {
-            
+            [Conf handleNetworkError:error];
             if (errorUILabel) {
                 errorUILabel.text=error.description;
-            }else{
+            }else {
                 [BSUIComponentView
-                 confirmUIAlertView:error.description
-             ];
+                 confirmUIAlertView:error.description];
             }
         }
     };

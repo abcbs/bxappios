@@ -5,19 +5,17 @@
 //  Created by 罗芳芳 on 15/4/27.
 //  Copyright (c) 2015年 itcast. All rights reserved.
 //
-#define kScreenWidth [UIScreen mainScreen].bounds.size.width
-#define kScreenHeight [UIScreen mainScreen].bounds.size.height
 
+#import "BSUIFrameworkHeader.h"
 
 #import "UIImageView+WebCache.h"
+
 #import "MSWaterSendingCell.h"
 #import "WaterSending.h"
 #import "KTWaterDetailsViewController.h"
 #import "AFNetworking.h"
 #import "WaterSendingDetails.h"
-#import "MBProgressHUD.h"
-#import "MJRefresh.h"
-#import "MJExtension.h"
+
 
 #import "KTCartTableView.h"
 #import "Comment.h"
@@ -30,8 +28,10 @@
 #import "JoinShoppingCartRequest.h"
 #import "ViewShoppingCartResult.h"
 
-@interface KTWaterDetailsViewController ()
 
+
+
+@interface KTWaterDetailsViewController ()<BSImagePlayerDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *introduce;
 
@@ -49,12 +49,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *username;
 
 - (IBAction)addCart:(id)sender;
+
 - (IBAction)watchMore:(id)sender;
 
-
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
-@property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
-@property (nonatomic, strong) NSTimer *timer;
+@property (weak, nonatomic) IBOutlet BSFCRollingADImageUIView *imagePlayer;
 
 @end
 
@@ -69,13 +67,11 @@
     if (shoppingCart==nil) {
         shoppingCart=[[ShoppingCart alloc]init];
     }
-    
-    [self.navigationController.navigationBar setBarStyle:UIBarStyleBlack];
-    [self.navigationController.navigationBar setBackgroundColor
-     :[UIColor redColor]];
+   //[BSUIComponentView navigationHeader:self.navigationController ];
     
     // 初始化图片轮播起
    [self initImgPlay];
+    
     //商品详细信息
     [self waterDetail];
     
@@ -86,97 +82,19 @@
 {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
 - (void)initImgPlay{
-   
-        //循环生成5张图片，依次添加到scrollView中
-    int count = 3;
-    CGFloat imgW = 150;
-    CGFloat imgH = 150;
-    for (int i = 0; i < count; i++){
-        
-        UIImageView *imageView = [[UIImageView alloc] init];
-        [self.scrollView addSubview:imageView];
-        //
-        NSString *imgName = [NSString stringWithFormat:@"img_%02d",i+1];
-        imageView.image = [UIImage imageNamed:imgName];
-        
-        //frame
-        CGFloat imgY = 0;
-        CGFloat imgX = i * imgW;
-        imageView.frame = CGRectMake(imgX, imgY,imgW, imgH);
+
+    NSMutableArray *tempArray = [NSMutableArray array];
+    for (int i = 0; i < 5; i++){
+        NSString *imgName = [NSString stringWithFormat:@"img_0%d.jpg",i+1];
+        [tempArray addObject:imgName];
     }
     
-    //2设置scrollView的滚动范围
-    self.scrollView.contentSize = CGSizeMake(count * imgW, 0);
+    //修改轮播的实现方式
+    UIView *imagePlayer =[BSFCRollingADImageUIView initADImageUIViewWith:tempArray playerDelegate:self urls:nil];
     
-    self.scrollView.showsHorizontalScrollIndicator = NO;
-    
-    //3.启用分页
-    self.scrollView.pagingEnabled = YES;
-    
-    //设置分页控件
-    self.pageControl.numberOfPages = count;
-    
-    //5.设置代理
-    self.scrollView.delegate = self;
-    
-    //6.定时器
-    [self startTimer];
-    
-    
-    
-}
-
--(void)nextImage
-{
-    NSInteger page = self.pageControl.currentPage;
-    if (page == self.pageControl.numberOfPages - 1){
-        page = 0;
-    }else{
-        page++;
-    }
-    //self.pageControl.currentPage = page;
-    
-    [self.scrollView setContentOffset:CGPointMake(page * self.scrollView.frame.size.width,0)animated:YES];
-}
-#pragma mark - scrollView的代理方法
-//正在滚动
--(void)scrollViewDidScroll:(UIScrollView *)scrollView
-{
-    //当前页面
-    int page = (scrollView.contentOffset.x + 0.5 *scrollView.frame.size.width)/scrollView.frame.size.width;
-    self.pageControl.currentPage = page;
-    
-}
-//开始滚动
--(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
-{
-    [self stopTimer];
-}
-//停止滚动
--(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
-{
-    [self startTimer];
-    
-}
-
-/**
- *   开启定时器
- */
--(void)startTimer
-{
-    NSTimer *timer = [NSTimer timerWithTimeInterval:2.0  target:self selector:@selector(nextImage)userInfo:nil repeats:YES];
-    
-    NSRunLoop *loop = [NSRunLoop currentRunLoop];
-    [loop addTimer:timer forMode:NSRunLoopCommonModes];
-    self.timer = timer;
-    
-   }
--(void)stopTimer
-{
-    
-    [self.timer invalidate];
-    
+    [self.imagePlayer addSubview:imagePlayer];
     
 }
 
@@ -272,7 +190,7 @@
 
 
 
-#pragma mark  ---  网络请求
+#pragma mark  ---  获取评论信息
 - (void)loadCommentData:(int)cellCount
 {    
     [WaterSendingDetails listComments:self.waterSending maxId:1

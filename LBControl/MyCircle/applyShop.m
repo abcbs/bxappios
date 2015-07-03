@@ -7,8 +7,7 @@
 //
 
 #import "applyShop.h"
-#import "Conf.h"
-#import "AppDelegate.h"
+#import "BSUIFrameworkHeader.h"
 
 @interface applyShop ()
 

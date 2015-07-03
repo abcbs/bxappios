@@ -62,6 +62,7 @@ NSString * const YYHModelRouterErrorDomain = @"com.yayuhh.YYHModelRouterError";
 @end
 
 @implementation YYHModelRouter
+@synthesize netStatus;
 
 #pragma mark - Initialization
 
@@ -73,7 +74,28 @@ NSString * const YYHModelRouterErrorDomain = @"com.yayuhh.YYHModelRouterError";
         _sessionManager.requestSerializer=[AFJSONRequestSerializer serializer];
         
         _sessionManager.responseSerializer=[AFJSONResponseSerializer serializer];
+        [_sessionManager.reachabilityManager
+            setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+            switch (status) {
+                case AFNetworkReachabilityStatusReachableViaWWAN:
+                    NSLog(@"目前网络状态WWAN");
+                    netStatus=@"WAN";
+                    break;
+                    
+                case AFNetworkReachabilityStatusReachableViaWiFi:
+                    NSLog(@"目前网络为WiFi");
+                    netStatus=@"WiFi";
+                    break;
+                case AFNetworkReachabilityStatusNotReachable:
+                    NSLog(@"目前没有网络环境");
+                    netStatus=@"NoNet";
+                    break;
+                default:
+                    break;
+            }
+        }];
         
+        [_sessionManager.reachabilityManager startMonitoring];
 #ifdef HAS_MANTLE
         _modelSerializer = [[YYHMantleModelSerializer alloc] init];
 #endif
@@ -248,11 +270,8 @@ NSString * const YYHModelRouterErrorDomain = @"com.yayuhh.YYHModelRouterError";
         }else if(success && businessErrorModel){
             success(task, businessError, businessErrorModel);
         }else if (failure) {
-            NSDictionary *userInfo = @{
-                                       NSLocalizedDescriptionKey: NSLocalizedString(@"Model serialization failure", @""),
-                                       NSLocalizedFailureReasonErrorKey: [NSString stringWithFormat:NSLocalizedString(@"Model serialization resulted in nil value. Expected object of type %@ from the key path '%@'", @""), NSStringFromClass(modelRoute.modelClass), modelRoute.keyPath],
-                                       };
-            #pragma mark 开始进入刷新状态([NSError errorWithDomain:YYHModelRouterErrorDomain code:YYHModelRouterErrorSerialization userInfo:userInfo]);
+            
+            failure(serializationError);
         }
         
     };

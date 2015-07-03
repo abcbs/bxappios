@@ -9,9 +9,9 @@
 #import "MSWaterSendingCell.h"
 #import "WaterSending.h"
 #import "UIImageView+WebCache.h"
-#import "MJExtension.h"
-#import "TableViewController.h"
+#import "LBSendingWaterTableViewController.h"
 #import "KTWaterDetailsViewController.h"
+#import "LBControllerHeader.h"
 
 @interface MSWaterSendingCell ()<UITableViewDelegate>
 
@@ -43,14 +43,11 @@
 + (instancetype)cellWithTableView:(UITableView *)tableView
 {
     static NSString *ID = @"cell";
+    //从NIB中获取
     MSWaterSendingCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
     if (cell == nil){
         cell = [[[NSBundle mainBundle] loadNibNamed:@"MSWaterSendingCell" owner:nil options:nil] firstObject];
     }
-    
-//    if (cell == nil) {
-//        cell = [[MSWaterSendingCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
-//    }
     return  cell;
 }
 
@@ -75,17 +72,13 @@
     self.preferPrice.text  = [NSString stringWithFormat:@"￥%d",model.preferPrice];
     //销售状态
     self.salePrice.text = [NSString stringWithFormat:@"￥%d",model.salePrice];
-    
-    // sdwebIMge
-    //    if(model.productUrl == nil) return;
-    //    NSURL *url = [NSURL URLWithString:model.productUrl];
-    //    [self.mIconImageView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"a9"] options:SDWebImageRetryFailed |SDWebImageLowPriority];
 }
 
 
 
 #pragma mark - 懒加载
 // 获取view对应的控制器
+
 - (UIViewController *)viewController
 {
     for (UIView* next = [self superview]; next; next = next.superview) {
@@ -100,21 +93,46 @@
 }
 
 - (IBAction)goBuy:(UIButton *)sender {
-//    // 获取跳转到的控制器
-//    KTWaterDetailsViewController *detail = [[KTWaterDetailsViewController alloc] init];
-//    //控制器传值到下一个控制器, 也就是正向传值
-//    detail.waterSending = self.model;
-//    // 推出到指定控制器
-//    [self.viewController.navigationController pushViewController:detail animated:YES];
-  
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"KTWaterDetailsViewController" bundle:nil];
-    KTWaterDetailsViewController *login2 = [storyboard instantiateInitialViewController];
-    login2.waterSending = self.model;
-    [self.viewController.navigationController pushViewController:login2 animated:YES];
+    KTWaterDetailsViewController *shoppControl = [storyboard instantiateViewControllerWithIdentifier:@"KTWaterDetailsViewController"];
+        
+    shoppControl.waterSending = _model;
+    [self checkLogin:shoppControl waterSending:_model];
+    
+    //
+}
+-(void)checkLogin:(KTWaterDetailsViewController *)shoppControl
+     waterSending:(WaterSending *)waterSending{
+    //判断是否登录
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    
+    NSString *sessionID = [userDefaults objectForKey:@"sessionId"];
+    if (sessionID.length == 0) {
+        LoginViewController  *nv = [[LoginViewController  alloc]init];
+        
+        //[self presentViewController:nv animated:YES completion:nil];
+        [self.viewController.navigationController
+         pushViewController:nv animated:YES] ;
+    }else{
+        ShoppingCart *shoppingCart =[[ShoppingCart alloc] init];
+        shoppingCart.sessionId=sessionID;
+        shoppingCart.currentCount=[[NSNumber alloc] initWithLong:0];
+        shoppingCart.businessProductId=[[NSNumber alloc]
+                                        initWithLong:waterSending.id];
+        [self getCard:shoppingCart];
+        shoppControl.shoppingCart=shoppingCart;
+        
+        [self.viewController.navigationController pushViewController:shoppControl animated:YES];
+    }
 }
 
+-(void) getCard:(ShoppingCart *)shoppingCart
 
-
-
+{
+    [ShoppingCart addCart:shoppingCart
+               blockArray:nil
+     ];
+    
+}
 @end

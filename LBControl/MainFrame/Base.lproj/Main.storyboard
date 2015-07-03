@@ -22,42 +22,122 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h9c-Qb-2b8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-226" y="625"/>
+            <point key="canvasLocation" x="-206" y="625"/>
         </scene>
         <!--周边服务-->
         <scene sceneID="grD-oy-9vJ">
             <objects>
-                <tableViewController storyboardIdentifier="BluetoothMainController" id="u0v-m7-mUx" userLabel="周边服务" customClass="BluetoothMainController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="7YF-Cf-VGC">
+                <tableViewController storyboardIdentifier="BluetoothMainController" id="u0v-m7-mUx" userLabel="周边服务" customClass="BSBLEMainController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="7YF-Cf-VGC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="v4v-aO-tsW">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="v4v-aO-tsW" id="wRG-Yp-UnM">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
+                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
+                        <sections>
+                            <tableViewSection headerTitle="便捷服务" footerTitle="章节1尾信息" id="wyj-Zs-H8u" userLabel="章节一">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HandyBLEDevices" id="v4v-aO-tsW">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="v4v-aO-tsW" id="wRG-Yp-UnM">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eJ2-QX-fAG">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="xy" translatesAutoresizingMaskIntoConstraints="NO" id="qLD-0C-Jzr">
+                                                            <rect key="frame" x="10" y="11" width="15" height="16"/>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="便捷服务" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fYv-O5-wyo">
+                                                            <rect key="frame" x="32" y="7" width="68" height="26"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </view>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HandyBLEDevices" id="Kx2-4O-Vto">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Kx2-4O-Vto" id="SsE-bk-fxU">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HandyBLEDevices" id="8kB-q6-BXh">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8kB-q6-BXh" id="aEH-ni-tNs">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection id="DgR-gk-YV2" userLabel="章节二">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HandyBLEDevices" id="hDs-n8-fbd">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hDs-n8-fbd" id="1y4-oN-p5A">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HandyBLEDevices" id="ZgE-0j-KUT">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZgE-0j-KUT" id="PNM-eA-Rqu">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HandyBLEDevices" id="PUy-5d-yqn">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PUy-5d-yqn" id="tFe-Y1-Ro5">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
                         <connections>
                             <outlet property="dataSource" destination="u0v-m7-mUx" id="LRD-mu-VqU"/>
                             <outlet property="delegate" destination="u0v-m7-mUx" id="hLc-H4-XaB"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="ajJ-Re-cte">
-                        <nil key="title"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="周边服务" id="ajJ-Re-cte"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FgX-hh-GYP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-149" y="-779"/>
+            <point key="canvasLocation" x="-301" y="-779"/>
+        </scene>
+        <!--生活服务-->
+        <scene sceneID="nT7-CQ-aXk">
+            <objects>
+                <viewController storyboardIdentifier="LBLiferServiceController" title="生活服务" id="mt7-We-5hf" userLabel="生活服务" customClass="LBLiferServiceController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="g4v-xM-8BC"/>
+                        <viewControllerLayoutGuide type="bottom" id="SFl-VI-pyO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Au3-Cb-r0y">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="h2p-Aq-zr4">
+                                <rect key="frame" x="0.0" y="-49" width="320" height="568"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="生活服务" image="shfwh" id="rcz-B2-17t"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WRu-p0-hcr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="144" y="-1081"/>
         </scene>
         <!--首页-->
         <scene sceneID="M02-M7-g6e">
             <objects>
-                <viewController storyboardIdentifier="KTLifeIndexController" title="首页" id="nEd-Zh-9gZ" customClass="KTLifeIndexController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="KTLifeIndexController" title="首页" id="nEd-Zh-9gZ" customClass="KTLBNavigationController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="GTI-7B-ssq"/>
                         <viewControllerLayoutGuide type="bottom" id="9lD-FZ-8NU"/>
@@ -65,19 +145,28 @@
                     <view key="view" contentMode="scaleToFill" id="c07-mn-yPo">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" rowHeight="120" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="xaR-1J-9Z0">
+                                <rect key="frame" x="0.0" y="66" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" tag="10" title="首页" image="shfwh" id="YtB-6q-pXq"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="tableView" destination="xaR-1J-9Z0" id="gB5-Pu-FKk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eaZ-Ud-cad" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="680" y="-407"/>
+            <point key="canvasLocation" x="144" y="-436"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Main Tab Bar Controller-->
         <scene sceneID="GME-Dr-gLk">
             <objects>
-                <tabBarController id="Nez-jc-Dso" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="KTLBMainTabBarController" id="Nez-jc-Dso" customClass="KTLBMainTabBarController" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="yel-Xd-uYx">
@@ -87,10 +176,11 @@
                     </tabBar>
                     <connections>
                         <segue destination="nEd-Zh-9gZ" kind="relationship" relationship="viewControllers" id="u5d-M9-agD"/>
-                        <segue destination="mb0-RB-fed" kind="relationship" relationship="viewControllers" id="xiy-PC-SOj"/>
-                        <segue destination="a0Q-KS-9Dv" kind="relationship" relationship="viewControllers" id="7lT-Ct-d2o"/>
+                        <segue destination="mt7-We-5hf" kind="relationship" relationship="viewControllers" id="nx3-mH-aCT"/>
                         <segue destination="o9H-AP-vZR" kind="relationship" relationship="viewControllers" id="FYI-jh-5kf"/>
                         <segue destination="DRI-Bb-9SC" kind="relationship" relationship="viewControllers" id="6Oi-1W-zvc"/>
+                        <segue destination="a0Q-KS-9Dv" kind="relationship" relationship="viewControllers" id="Lnz-fZ-UC8"/>
+                        <segue destination="mb0-RB-fed" kind="relationship" relationship="viewControllers" id="f3T-or-aOZ"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kkO-ZQ-EzP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -109,52 +199,99 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2hU-Oc-v9e">
-                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
-                                <color key="barTintColor" red="0.3803921569" green="0.070588235289999995" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <textAttributes key="titleTextAttributes">
-                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </textAttributes>
-                                <items>
-                                    <navigationItem title="便民服务" id="zCG-vz-vXw"/>
-                                </items>
-                            </navigationBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="蓝牙设备" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XQP-GD-EwZ">
-                                <rect key="frame" x="58" y="105" width="68" height="31"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Eo-a5-3xf" userLabel="获取蓝牙设备">
-                                <rect key="frame" x="249" y="105" width="51" height="31"/>
-                                <connections>
-                                    <action selector="availBluetoothDevice:" destination="a0Q-KS-9Dv" eventType="valueChanged" id="k0n-dr-XVv"/>
-                                </connections>
-                            </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="状态值" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zRT-bO-7ws">
-                                <rect key="frame" x="134" y="110" width="51" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7TO-NP-kd7" userLabel="设备信息">
+                                <rect key="frame" x="0.0" y="58" width="320" height="53"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wEK-GP-p2q">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="66"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="可用设备" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nqa-yx-dT6">
+                                        <rect key="frame" x="18" y="22" width="68" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8RN-mc-zYm">
+                                        <rect key="frame" x="238" y="17" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="availBluetoothDevice:" destination="a0Q-KS-9Dv" eventType="valueChanged" id="6zR-9M-gZD"/>
+                                        </connections>
+                                    </switch>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="状态" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="18D-6Z-oqp">
+                                        <rect key="frame" x="108" y="22" width="34" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.3803921569" green="0.070588235289999995" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="left" fixedFrame="YES" directionalLockEnabled="YES" alwaysBounceVertical="YES" pagingEnabled="YES" indicatorStyle="white" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelectionDuringEditing="YES" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="7bI-kQ-bJ0">
+                                <rect key="frame" x="0.0" y="66" width="320" height="500"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BSUIImageTitleTableViewCell" rowHeight="152" id="xKc-3R-L8E" userLabel="图标和标题" customClass="BSUIImageTitleTableViewCell">
+                                        <rect key="frame" x="-5" y="170" width="320" height="114"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xKc-3R-L8E" id="obx-Zj-nsz">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="688A6B52-9757-42E8-A19B-4202D934ED84" translatesAutoresizingMaskIntoConstraints="NO" id="5xB-kA-hRX" userLabel="firstImage">
+                                                    <rect key="frame" x="97" y="0.0" width="107" height="100"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="firstName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G49-4z-vJD">
+                                                    <rect key="frame" x="110" y="113" width="81" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="cellImage" destination="5xB-kA-hRX" id="PNq-AM-CT6"/>
+                                            <outlet property="cellName" destination="G49-4z-vJD" id="i8E-Hi-2tL"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="BSUISingleImageTableViewCell" rowHeight="111" id="Ldx-ID-FCZ" userLabel="图标栏" customClass="BSUISingleImageTableViewCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ldx-ID-FCZ" id="Lmg-KM-gZF">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DA5-NX-q0R">
+                                                    <rect key="frame" x="0.0" y="90" width="320" height="120"/>
+                                                </imageView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <connections>
+                                            <outlet property="cellImge" destination="DA5-NX-q0R" id="cEJ-iL-4GM"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="便民服务" image="xysjh" id="fON-xn-DDD"/>
+                    <tabBarItem key="tabBarItem" title="便民服务" image="icon-1x-02" id="yPs-2j-iVR"/>
+                    <navigationItem key="navigationItem" title="便民服务" id="JMc-ht-1TN"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="showSwitchValue" destination="zRT-bO-7ws" id="jVd-h2-oWS"/>
+                        <outlet property="showSwitchValue" destination="18D-6Z-oqp" id="4ae-Cy-W5d"/>
+                        <outlet property="tableView" destination="7bI-kQ-bJ0" id="2DM-ab-ZuG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F3h-3T-mQq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="148" y="228"/>
+            <point key="canvasLocation" x="144" y="215"/>
         </scene>
-        <!--生活服务-->
+        <!--生活服务原-->
         <scene sceneID="v46-eF-8qa">
             <objects>
-                <viewController storyboardIdentifier="KTlifeViewController" title="便捷服务" id="mb0-RB-fed" userLabel="生活服务" customClass="KTlifeViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="KTlifeViewController" title="金融服务" id="mb0-RB-fed" userLabel="生活服务原" customClass="KTlifeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="va1-JI-Pyq"/>
                         <viewControllerLayoutGuide type="bottom" id="hfC-UX-fWx"/>
@@ -162,19 +299,44 @@
                     <view key="view" contentMode="scaleToFill" id="A87-0A-sJ4">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sz7-qT-ggX" userLabel="Head">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="66"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="生活圈" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g77-8U-DJv">
+                                        <rect key="frame" x="8" y="17" width="51" height="44"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <searchBar contentMode="center" fixedFrame="YES" searchBarStyle="prominent" text="商品检索" translatesAutoresizingMaskIntoConstraints="NO" id="GB6-QW-bIC">
+                                        <rect key="frame" x="73" y="16" width="180" height="44"/>
+                                        <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </searchBar>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_map_highlighted" translatesAutoresizingMaskIntoConstraints="NO" id="xb3-uh-1g3">
+                                        <rect key="frame" x="265" y="23" width="38" height="27"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.3803921569" green="0.070588235289999995" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <accessibility key="accessibilityConfiguration" label=""/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" tag="30" title="生活服务" image="bjfw" id="ZWR-eQ-B1d" userLabel="生活服务"/>
+                    <tabBarItem key="tabBarItem" title="金融服务" image="shfwh" id="Ygo-8m-5sk"/>
+                    <navigationItem key="navigationItem" title="金融服务" id="Pv1-IC-1Lv"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QaW-2d-M4s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-651" y="625"/>
+            <point key="canvasLocation" x="-605" y="625"/>
         </scene>
-        <!--周边服务-->
+        <!--周边服务浏览栏-->
         <scene sceneID="rm5-Mz-Z4D">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="o9H-AP-vZR" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="o9H-AP-vZR" userLabel="周边服务浏览栏" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="周边服务" image="xysjh" id="ypv-ec-qad"/>
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
@@ -193,9 +355,222 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bjfw" width="29" height="29"/>
+        <image name="688A6B52-9757-42E8-A19B-4202D934ED84" width="49" height="49">
+            <mutableData key="keyedArchiveRepresentation">
+YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
+GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
+c1dOU0NvbG9ygAKADRIgwAAAgAOAC1h7NDksIDQ5fdIVChYYWk5TLm9iamVjdHOhF4AEgArSFQoaHaIb
+HIAFgAaACRAA0iAKISJfEBROU1RJRkZSZXByZXNlbnRhdGlvboAHgAhPES3yTU0AKgAAJYwAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAaCgMbQBoHQXwyDX61ShS43FoY3/RkHPf8Zhv/9GIa99xaGN+0SRS3ezINfUAaB0EaCgMbAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAHAsDHV8mCmGxSRO031wZ4vxpHf/8ax3//God//xpHf/8Zhr//Hcv//xxJ//8Zhr//God
+//xrHf/8aR3/31wZ4rBJE7NeJgpgGwsDHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAsEgQtkjwQlOFcGeT8bB3//Gwd//xqHf/8aB3//Ggd//xmG//8ZBn//Hs0
+//7hzv/+xqL//HIo//xkGP/8Zxz//Ggd//xqHf/8bB3//Gwd/+BdGeOROxCTKxIELAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABkKAxqOOg+Q7WIb8PxuHf/8ah3//Ggd//xoHf/8aB3//Ggd
+//xmGv/8cyj//r6U///v5f/////////////q3P/9rXn//Gof//xnG//8aB3//Ggd//xoHf/8ah3//G4d
+/+xjG++MORCOGQkCGgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFQhCVXZWhjc/G4d//xpHf/8aB3//Ggd
+//xoHf/8aB3//Ggd//xmG//8cSb//te9//////////////////////////////////6/l//8aB3//Ggc
+//xoHf/8aB3//Ggd//xoHf/8aR3//G4d/9haGNtSIQhTAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAMACYg3D4r4aBz7/Gsd
+//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd//xoHP/8Yxf//bB/////////////////////////////////
+/////////////ZVX//xjFv/8aB3//Ggd//xoHf/8aB3//Ggd//xoHf/8ax3/+Ggc+4Y2DogHAwAIAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwYB
+EKlGEqz8bh3//Gkd//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd//xoHf/8aB3//H43///r3P//////////
+//////////////////////////////////7Qs//8di3//Ggc//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd
+//xpHf/8bB3/qEQTqg4FAQ8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAADgUBD7RJFLf8bh3//Ggd//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd//xoHf/8Zhn//YE8
+///y6v///////////////////////////////////////////////////////una//x0K//8Zhv//Ggd
+//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd//xuHf+xSRO0DgUBDwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAACAMACahFEqv8bh3//Ggd//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd
+//xoHf/8aB3//Gcb//xyKP/9q3n//biM//22iP/9t4j//beK//23iv/9tof//beK//24i//9tYb//rmN
+//2kbf/8bCH//Ggc//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd//xoHf/8aB3//G4d/6dEEakIAwAJAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIg3D4r8bh3//Ggd//xoHf/8aB3//Ggd
+//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd//xoHf/8Zxz//GQY//2JR//9gTz//YZB//2IRP/9iUX//YA5
+//2GQf/9ikf//H01//2KSP/8YRT//Ggc//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd
+//xoHf/8bB3/hjYOiAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFIhCFP6aBz9/Gkd
+//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd//xoHf/8fjf//Hkx
+//x8NP/8fTb//H42//x4MP/8fTT//H43//x3Lv/8fjf//GYb//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd
+//xoHf/8aB3//Ggd//xoHf/8aB3//Gkd//lnHPxQIQhRAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+ABgJAhnbWhje/Gsd//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd
+//xoHf/8aB3//YtJ//2FP//9iEP//YpG//2KR//9gjz//YdD//2LSf/9fzn//Y1J//xlGf/8aB3//Ggd
+//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd//xoHf/8ax3/2VkY3BcJAhgAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAACOOg+Q/G4d//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd
+//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd//2DP//8fjf//YA6//2CPP/9hD3//H00//2AOv/9gz///Hsy
+//2DP//8Zhr//Ggd//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd
+//xuHf+MORCOAAAAAAAAAAAAAAAAAAAAAAAAAAAsEgQt7WIb8PxpHf/8aB3//Ggd//xoHf/8aB3//Ggd
+//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd//xoHf/9hUD//X85//2CPP/9gz7//YU/
+//x+Nv/9gjz//YVB//x8NP/9hUH//GUa//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd
+//xoHf/8aB3//Ggd//xoHf/8aR3/7WEb8CoRBCsAAAAAAAAAAAAAAAAAAAAAkzwQlfxuHf/8aB3//Ggd
+//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd//xoHf/8aB3//YpI
+//2DPv/9h0L//YZB//2FQP/8fTX//YU///2KSP/9fzj//YtJ//xlGf/8aB3//Ggd//xoHf/8aB3//Ggd
+//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd//xuHf+SPA+UAAAAAAAAAAAAAAAAHAwD
+HeReGef8ah3//Ggd//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd
+//xoHf/8aB3//Ggd//x4MP/8dSz//HUr//2QT//9oWf//Zxh//2KR//8dSz//HMp//x4MP/8Zhv//Ggd
+//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd//xoHf/8ah3/410a
+5hsLAxwAAAAAAAAAAGMpC2X8bB3//Ggd//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd
+//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd//xoHf/8Zxv//GQZ//x9Nf//7eH///z7///+/P//6tv//X84
+//xkGP/8Zxv//Ggd//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd
+//xoHf/8aB3//Ggd//xsHf9hKAtjAAAAAAAAAACySRO1/Gwd//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd
+//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd//xoHf/8ZRn//GMX//xkGP/8ZBj//GQY//xjF//+w5v/////
+//////////////////7RtP/8Zhr//GQY//xkGP/8ZBj//GMX//xmG//8aB3//Ggd//xoHf/8aB3//Ggd
+//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd//xoHf/8bB3/sEgTswAAAAAZCQIa4VwZ5PxqHf/8aB3//Ggd
+//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd//xoHf/8Zhr//YE7//2ncP/9soL//bSD
+//2ygv/+uYz///n1/////////////////////////vz//r+W//2ygf/9tIT//bGB//2iaf/8eDD//GUZ
+//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd//xoHf/8aB3//God/99cGeIXCQIYQRoG
+QvtoHP78aR3//Ggd//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd//xoHf/8ZRn//Ztf
+///17///////////////////////////////////////////////////////////////////////////
+/////////////+3h//2RUf/8ZRn//Ggd//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd
+//xpHf/6aRz9PhkHP3wyDX78ax3//Ggd//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd
+//xoHf/8Zhv//Hgw///x6f//////////////////////////////////////////////////////////
+////////////////////////////////////////8ur//H02//xmGv/8aB3//Ggd//xoHf/8aB3//Ggd
+//xoHf/8aB3//Ggd//xoHf/8aB3//Gsd/3oxDXy1ShS4/Gkd//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd
+//xoHf/8aB3//Ggd//xoHf/8aB3//GQX//2ncf/////////////r3//9pG3//Ztf//2cYf/9nGH//Zxh
+//2cYf/9nGH//Zxh//2cYf/9nGH//Zxh//2cYf/9nGH//Zpd//65jf////////////24i//8ZBj//Ggd
+//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd//xpHf+xSRO03FoY3/xpHf/8aB3//Ggd
+//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd//xoHf/8aB3//Ggc//xrH//+3cj////////////9n2X//F8T
+//xkGP/8ZBj//GQY//xkGP/8ZBj//GQY//xkGP/8ZBj//GQY//xkGP/8ZBj//GQY//xiFv/8ah///uTQ
+////////697//HIo//xnG//8aB3//Ggd//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd//xoHf/8aR3/2VgY
+3PRkHPf8aB3//Ggd//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd//xkGf/9i0n///v6
+////////7+L//HMq//xmG//8aB3//Ggd//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd
+//xoHf/8aB3//GIX//2ygf////////////2ZXf/8ZBf//Ggd//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd
+//xoHf/8aB3//Ggd//BjGvP8aB3//Ggd//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd
+//xoHf/8ZRn//sGY/////////////r6W//xkGP/8aB3//Ggd//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd
+//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd//xlGv/9fzj///n0///////+0bT//Gcb//xoHf/8aB3//Ggd
+//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd//xoHf/5Zhv89GQc9/xoHf/8aB3//Ggd//xoHf/8aB3//Ggd
+//xoHf/8aB3//Ggd//xoHf/8Zhv//HYs///w5v////////z7//2JRv/8ZBf//Gcb//xnG//8Zxv//Gcb
+//xnG//8Zxv//Gcb//xnG//8Zxv//Gcb//xnG//8Zxv//Gcb//xnG//8Zxv//GYa//7Qsf////////n0
+//2BPP/8ZRn//Ggd//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd//xoHf/8aB3/8GMa89xaGN/8aR3//Ggd
+//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd//xoHf/8Zxv//F8T//2haP////////////7fyv/8cij//G0i
+//xvJP/8byT//G8k//xvJP/8byT//G8k//xvJP/8byT//G8k//xvJP/8byT//G8k//xvJP/8byT//G8k
+//xpHv/9oWn////////////9sYH//F8U//xnHP/8aB3//Ggd//xoHf/8aB3//Ggd//xoHf/8aB3//Gkd
+/9lYGNy1ShS4/Gkd//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd//xoHf/8Zxv//Gwh//2qdf//7N//////
+////////9Oz//uXT//7m1f/+5tX//ubV//7m1f/+5tX//ubV//7m1f/+5tX//ubV//7m1f/+5tX//ubV
+//7m1f/+5tX//ubV//7m1f/+5dT//ujb//////////////Hp//2gZf/8Zxz//Gcc//xoHf/8aB3//Ggd
+//xoHf/8aB3//Ggd//xpHf+xSRO0fDINfvxrHf/8aB3//Ggd//xoHf/8aB3//Ggd//xoHf/8aBz//Ggd
+//7DnP//////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////ryQ
+//xnG//8aB3//Ggd//xoHf/8aB3//Ggd//xoHf/8ax3/eTENe0EaBkL7aBz+/Gkd//xoHf/8aB3//Ggd
+//xoHf/8aB3//GQY//2KSf///Pv////////////////////////8+v//+PH/////////////////////
+////////////////////////////////////////////////////////////////////////9e//////
+///////////////////////9l1j//GUY//xoHf/8aB3//Ggd//xoHf/8aR3/+mgc/T4YBz8ZCQIa4VwZ
+5PxqHf/8aB3//Ggd//xoHf/8aB3//Ggd//xjF//9pm7///////////////////////7fyf/9iUb//Hsy
+//7Enf//////////////////////////////////////////////////////////////////////////
+///28P/9oWj//Hcw//2gZf//+fX//////////////////smm//xlGf/8aB3//Ggd//xoHf/8aB3//God
+/99cGeIXCQIYAAAAALFJE7T8bB3//Ggd//xoHf/8aB3//Ggd//xoHf/8ZBj//al1////////////////
+///8+//9iUb//GEV//xiF//9gTv///r1////////////////////////////////////////////////
+///////////////////////+uYz//GIV//xlGf/8Zhv//ta8//////////////////7Zvv/8Zhv//Ggd
+//xoHf/8aB3//Ggd//xsHf+vSBKyAAAAAAAAAABjKQtl/Gwd//xoHf/8aB3//Ggd//xoHf/8aB3//GQY
+//2pdf//////////////////+vb//Hcu//xkGP/8YhX//Y5M///8+v//////////////////////////
+/////////////////////////////////////////////aRs//xfFP/8ZRn//G0i//7hz///////////
+///////+2b7//GYb//xoHf/8aB3//Ggd//xoHf/8bB3/YCcKYgAAAAAAAAAAHAwDHeReGef8ah3//Ggd
+//xoHf/8aB3//Ggd//xkGP/9qXX///////////////////////24i//8cyj//YU///7dyP//////////
+//////////////////////////////////////////////////////////////////7dx//8fjf//HYs
+//67jv///////////////////////tm+//xmG//8aB3//Ggd//xoHf/8ah3/410a5hsLAxwAAAAAAAAA
+AAAAAACUPRCW/G4d//xoHf/8aB3//Ggd//xoHf/8ZBj//al1//////////////////////////////Ts
+///79///////////////////////////////////////////////////////////////////////////
+//////////////n0///17/////////////////////////////7Zvv/8Zhv//Ggd//xoHf/8aB3//G4d
+/5E7D5MAAAAAAAAAAAAAAAAAAAAAKxIELO1iG/D8aR3//Ggd//xoHf/8aB3//GQY//2pdf//////////
+////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////+2b7//GYb
+//xoHf/8aB3//Gkd/+1hG/ApEQQqAAAAAAAAAAAAAAAAAAAAAAAAAACOOg+Q/G4d//xoHf/8aB3//Ggd
+//xkGP/9qXX/////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+/////////////tm+//xmG//8aB3//Ggd//xuHf+MORCOAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGAkC
+GdtaGN78ax3//Ggd//xoHf/8ZBj//ap2////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////7Zvv/8Zhv//Ggd//xrHf/ZWRjcFwkCGAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAABRIQhS+Wcc/PxpHf/8aB3//GQY//2kbv//////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////+3sb//GYb//xpHf/5Zxz8UCAI
+UQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIc3D4n8bh3//Ggd//xnG//8cyr//at2
+//2wfv/+38n//////////////////ufX//2xgP/9sX///bGA//2xgP/9sYD//bGA//2xgP/9sYD//bGA
+//2xgP/9sYD//bGA//2xgP/9sYD//bGA//2ufP/+07T///////////////////Xt//21hP/9sYD//Z9k
+//xnG//8bB3/hjYOiAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAwAJqEUS
+qvxuHf/8aB3//Gcb//xkGf/8YRb//r6T//////////////////7Pr//8ZBj//GMY//xkGf/8ZBn//GQZ
+//xkGf/8ZBn//GQZ//xkGf/8ZBn//GQZ//xkGf/8ZBn//GQZ//xkGf/8XhP//aRt////////////////
+///q2v/8ah///GMY//xlGf/8bh3/p0QRqQgDAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAA4FAQ+0SRS3/G4d//xoHf/8aB3//GUZ//67j//////////////////+0LH//Gcc
+//xnHP/8aB3//Ggd//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd//xoHf/8aB3//GMX
+//2haP//////////////////69z//G0i//xnHP/8bh3/sEgTsw4FAQ8AAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwYBEKhGEqv8bh3//Gkd//xkGf/9kVL/////
+/////////////ryR//xjF//8aB3//Ggd//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd
+//xoHf/8aB3//Ggd//xmGv/8fTT///Xt/////////////tm9//xoHP/8bB3/p0QTqQ4FAQ8AAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAwAJhzcP
+ifhoHPv8ax3//GYb//2ncf/+59n//te8//x7M//8Zhv//Ggd//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd
+//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd//xoHf/8aB3//GUZ//2SUv/+5ND//uLP//2PSf/3ZBn6hTcO
+hwcDAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAABSIQhT11gY2vxsHf/8Zxn//HEn//xrIP/8Zhr//Ggd//xoHf/8aB3//Ggd
+//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd//xoHf/8aB3//Ggd//xoHf/8ZRn//HEl
+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
+UgBHAEIAIABwAHIAbwBmAGkAbABHAGUAbgBlAHIAaQENAGsAaQAgAFIARwBCACAAcAByAG8AZgBpAGwA
+UABlAHIAZgBpAGwAIABSAEcAQgAgAGcAZQBuAOgAcgBpAGMAUABlAHIAZgBpAGwAIABSAEcAQgAgAEcA
+ZQBuAOkAcgBpAGMAbwQXBDAEMwQwBDsETAQ9BDgEOQAgBD8EQAQ+BEQEMAQ5BDsAIABSAEcAQgBQAHIA
+bwBmAGkAbAAgAGcA6QBuAOkAcgBpAHEAdQBlACAAUgBWAEKQGnUoACAAUgBHAEIAIIJyX2ljz4/wAFAA
+cgBvAGYAaQBsAG8AIABSAEcAQgAgAGcAZQBuAGUAcgBpAGMAbwBHAGUAbgBlAHIAaQBzAGsAIABSAEcA
+QgAtAHAAcgBvAGYAaQBsx3y8GAAgAFIARwBCACDVBLhc0wzHfABPAGIAZQBjAG4A/QAgAFIARwBCACAA
+cAByAG8AZgBpAGwF5AXoBdUF5AXZBdwAIABSAEcAQgAgBdsF3AXcBdkAQQBsAGwAZwBlAG0AZQBpAG4A
+ZQBzACAAUgBHAEIALQBQAHIAbwBmAGkAbADBAGwAdABhAGwA4QBuAG8AcwAgAFIARwBCACAAcAByAG8A
+ZgBpAGxmbpAaACAAUgBHAEIAIGPPj/Blh072TgCCLAAgAFIARwBCACAw1zDtMNUwoTCkMOsAUAByAG8A
+ZgBpAGwAIABSAEcAQgAgAGcAZQBuAGUAcgBpAGMDkwO1A70DuQO6A8wAIAPAA8EDvwPGA68DuwAgAFIA
+RwBCAFAAZQByAGYAaQBsACAAUgBHAEIAIABnAGUAbgDpAHIAaQBjAG8AQQBsAGcAZQBtAGUAZQBuACAA
+UgBHAEIALQBwAHIAbwBmAGkAZQBsDkIOGw4jDkQOHw4lDkwAIABSAEcAQgAgDhcOMQ5IDicORA4bAEcA
+ZQBuAGUAbAAgAFIARwBCACAAUAByAG8AZgBpAGwAaQBZAGwAZQBpAG4AZQBuACAAUgBHAEIALQBwAHIA
+bwBmAGkAaQBsAGkAVQBuAGkAdwBlAHIAcwBhAGwAbgB5ACAAcAByAG8AZgBpAGwAIABSAEcAQgQeBDEE
+SQQ4BDkAIAQ/BEAEPgREBDgEOwRMACAAUgBHAEIGRQZEBkEAIAYqBjkGMQZKBkEAIABSAEcAQgAgBicG
+RAY5BicGRQBHAGUAbgBlAHIAaQBjACAAUgBHAEIAIABQAHIAbwBmAGkAbABlAEcAZQBuAGUAcgBlAGwA
+IABSAEcAQgAtAGIAZQBzAGsAcgBpAHYAZQBsAHMAZXRleHQAAAAAQ29weXJpZ2h0IDIwMDcgQXBwbGUg
+SW5jLiwgYWxsIHJpZ2h0cyByZXNlcnZlZC4AWFlaIAAAAAAAAPNSAAEAAAABFs9YWVogAAAAAAAAdE0A
+AD3uAAAD0FhZWiAAAAAAAABadQAArHMAABc0WFlaIAAAAAAAACgaAAAVnwAAuDZjdXJ2AAAAAAAAAAEB
+zQAAc2YzMgAAAAAAAQxCAAAF3v//8yYAAAeSAAD9kf//+6L///2jAAAD3AAAwGzSJSYnKFokY2xhc3Nu
+YW1lWCRjbGFzc2VzXxAQTlNCaXRtYXBJbWFnZVJlcKMpKitfEBBOU0JpdG1hcEltYWdlUmVwWk5TSW1h
+Z2VSZXBYTlNPYmplY3TSJSYtLldOU0FycmF5oi0r0iUmMDFeTlNNdXRhYmxlQXJyYXmjMC0r0zM0CjU2
+N1dOU1doaXRlXE5TQ29sb3JTcGFjZUQwIDAAEAOADNIlJjk6V05TQ29sb3KiOSvSJSY8PVdOU0ltYWdl
+ojwrXxAPTlNLZXllZEFyY2hpdmVy0UBBVHJvb3SAAQAIABEAGgAjAC0AMgA3AEYATABXAF4AZQByAHkA
+gQCDAIUAigCMAI4AlwCcAKcAqQCrAK0AsgC1ALcAuQC7AL0AwgDZANsA3S7TLtgu4y7sLv8vAy8WLyEv
+Ki8vLzcvOi8/L04vUi9ZL2Evbi9zL3Uvdy98L4Qvhy+ML5Qvly+pL6wvsQAAAAAAAAIBAAAAAAAAAEIA
+AAAAAAAAAAAAAAAAAC+zA
+</mutableData>
+        </image>
+        <image name="icon-1x-02" width="31" height="31"/>
+        <image name="icon_map_highlighted" width="30" height="30"/>
         <image name="shfwh" width="29" height="29"/>
         <image name="wdqzh" width="29" height="29"/>
+        <image name="xy" width="11" height="11"/>
         <image name="xysjh" width="29" height="29"/>
     </resources>
     <color key="tintColor" red="0.3803921569" green="0.070588235289999995" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>

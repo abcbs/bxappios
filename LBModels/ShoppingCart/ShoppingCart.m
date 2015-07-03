@@ -48,4 +48,9 @@
      */
 }
 
+-(NSString *)description{
+    return [NSString stringWithFormat:@"购物车，商品购量:%@ 商家产品ID:%@ \t当前总量:%@",
+            self.countorder,self.businessProductId,self.currentCount];
+}
+
 @end

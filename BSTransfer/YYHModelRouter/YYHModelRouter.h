@@ -18,7 +18,8 @@ typedef void (^YYHModelRequestFailure)(NSError *error);
 
 @property (nonatomic, strong, readonly) NSURL *baseURL;
 @property (nonatomic, strong, readonly) AFHTTPSessionManager *sessionManager;
-@property (nonatomic, strong) id<YYHModelSerialization> modelSerializer;
+@property (nonatomic, retain) id<YYHModelSerialization> modelSerializer;
+@property (nonatomic, strong) NSString *netStatus;
 
 /**
  Initialize a model router with a base URL.

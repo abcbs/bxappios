@@ -7,15 +7,16 @@
 //
 
 #import "AppDelegate.h"
-#import "KTTarBarController.h"
+//#import "KTTarBarController.h"
 #import <ShareSDK/ShareSDK.h>
 #import <TencentOpenAPI/QQApiInterface.h>
 #import <TencentOpenAPI/TencentOAuth.h>
 #import "WXApi.h"
 #import "WeiboApi.h"
 #import "WeiboSDK.h"
-#import "Conf.h"
 
+#import "BSUIFrameworkHeader.h"
+#import "BSCMFrameworkHeader.h"
 @interface AppDelegate ()
     
 @end
@@ -24,25 +25,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    AppDelegate *myDelegate = [[UIApplication sharedApplication] delegate];
-    float iosVersion=IOS_VERSION;
     
-    if(IS_IPHONE5){
-        myDelegate.autoSizeScaleX = 1.0;
-        myDelegate.autoSizeScaleY = 1.0;
-        
-    }else if (IS_IPHONE_6PLUS){
-        myDelegate.autoSizeScaleX = 1.29375;
-        myDelegate.autoSizeScaleY=1.2957;
- 
-    }else if(IS_IPHONE_6){
-        myDelegate.autoSizeScaleX=1.171875;
-        myDelegate.autoSizeScaleY=1.17429577;
-    }else {
-        myDelegate.autoSizeScaleX = 1.0;
-        myDelegate.autoSizeScaleY = 1.0;
-
-    }
     
     // Override point for customization after application launch.
     //添加第三方平台
@@ -68,13 +51,20 @@
     //                   qqApiInterfaceCls:[QQApiInterface class]
     //                     tencentOAuthCls:[TencentOAuth class]];
     
-    // 1.初始化自定义Log
+    //self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    //网络日志监控
+    [[AFNetworkActivityLogger sharedLogger] startLogging];
+    //网络可用性监控
+    [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
+    //网络变化监控
+    [[AFNetworkReachabilityManager sharedManager] startMonitoring];
 
-     //默认颜色
+    //默认颜色
     self.window.backgroundColor = [UIColor whiteColor];
     self.window.tintColor = [UIColor redColor];
     
-    
+    [BSUIComponentView initNarHeaderWithIndexView:self.window.rootViewController                                            title:self.window.rootViewController.title];
+    //[BSUIComponentView navigationHeader:self.window.rootViewController.navigationController];
     return YES;
 }
 
@@ -107,18 +97,6 @@
 {
     return UIInterfaceOrientationMaskPortrait;
 }
-
-//storyBoard view自动适配
-+ (void)storyBoradAutoLay:(UIView *)allView
-{
-    for (UIView *temp in allView.subviews) {
-        temp.frame = BSRectMake(temp.frame.origin.x, temp.frame.origin.y, temp.frame.size.width, temp.frame.size.height);
-        for (UIView *temp1 in temp.subviews) {
-            temp1.frame = BSRectMake(temp1.frame.origin.x, temp1.frame.origin.y, temp1.frame.size.width, temp1.frame.size.height);
-        }
-    }
-}
-
 
 @end
 

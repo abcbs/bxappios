@@ -30,9 +30,15 @@
             modelClass:[WaterSending class]
             keyPath:@"waterSending"
             block:(BSHTTPResponse)block
-            errorUILabel:errorUILabel     
+            errorUILabel:errorUILabel
      ];
     
 }
+-(NSString *)description
 
+{
+    return [NSString stringWithFormat:@"送水信息，id:%d 产品id:%d \t产品说明:%@\t产品介绍:%@",
+                                       self.id,self.businessId,self.name,self.introduce];
+    
+}
 @end

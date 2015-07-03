@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/民生小区/Classes/Other/RegistUtil.m \
-  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios/民生小区/Classes/Other/RegistUtil.h
+  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/LBControl/LoginRegister/RegistUtil.m \
+  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/LBControl/LoginRegister/RegistUtil.h
