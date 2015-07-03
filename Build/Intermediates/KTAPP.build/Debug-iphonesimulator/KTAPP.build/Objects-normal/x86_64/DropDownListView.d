@@ -1,4 +1,4 @@
 dependencies: \
-  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/LBControl/BankBusinessBooking/DropDownListView.m \
-  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/LBControl/BankBusinessBooking/DropDownListView.h \
-  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/LBControl/BankBusinessBooking/DropDownChooseProtocol.h
+  /Users/fangfangluo/Desktop/Dev/version-git/bxappios/LBControl/BankBusinessBooking/DropDownListView.m \
+  /Users/fangfangluo/Desktop/Dev/version-git/bxappios/LBControl/BankBusinessBooking/DropDownListView.h \
+  /Users/fangfangluo/Desktop/Dev/version-git/bxappios/LBControl/BankBusinessBooking/DropDownChooseProtocol.h

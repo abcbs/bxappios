@@ -229,7 +229,10 @@ titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
  */
 -(NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"将要处理的行indexpath=%@",indexPath);
+    //当一列为多行时，默认的表格选择事件应当屏蔽，仅仅执行具体内容的选择事件
+    if([self.bSTableObjects canClickRowEvent:indexPath.section]){
+        return nil;
+    }
     return indexPath;
 }
 

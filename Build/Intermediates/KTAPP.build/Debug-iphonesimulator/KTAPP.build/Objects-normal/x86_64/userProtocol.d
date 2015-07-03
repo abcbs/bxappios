@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/LBControl/SystemConfig/userProtocol.m \
-  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/LBControl/SystemConfig/userProtocol.h
+  /Users/fangfangluo/Desktop/Dev/version-git/bxappios/LBControl/SystemConfig/userProtocol.m \
+  /Users/fangfangluo/Desktop/Dev/version-git/bxappios/LBControl/SystemConfig/userProtocol.h
