@@ -6,6 +6,10 @@ dependencies: \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/LBModels/Discard/LoginMessage.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/LBControl/LoginRegister/RegisterViewController.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/LBModels/Discard/SendMessage.h \
+<<<<<<< HEAD
+=======
+  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/BSFramework/Base/Conf.h \
+>>>>>>> framework-v01
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/LBControl/SystemConfig/SystemSet.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/民生小区/ShareSDK-iOS-v2.11.0/ShareSDK.framework/Headers/ShareSDK.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/民生小区/ShareSDK-iOS-v2.11.0/Core/ShareSDKCoreService.framework/Headers/ShareSDKCoreService.h \
@@ -59,6 +63,7 @@ dependencies: \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/LBControl/MyOrderItems/Demo1ViewController.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/民生小区/DLSlideView-0.8.1/DLSlideView/DLTabedSlideView.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/民生小区/DLSlideView-0.8.1/DLSlideView/DLTabbarView/DLSlideTabbarProtocol.h \
+<<<<<<< HEAD
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/BSFramework/BSUIFrameworkHeader.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/BSFramework/Base/Conf.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/BSFramework/Base/ErrorMessage.h \
@@ -85,3 +90,7 @@ dependencies: \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/BSFramework/BSUISetting/BSUIComponentView.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/BSFramework/BSUISetting/BSUIBarButtonItem.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/BSFramework/BSUISetting/BSUIBlockButton.h
+=======
+  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/LBControl/LoginRegister/messageModifyController.h \
+  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/LBControl/MainFrame/AppDelegate.h
+>>>>>>> framework-v01

@@ -48,11 +48,19 @@ dependencies: \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/LBControl/MainFrame/AppDelegate.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/LBControl/Exchange/communicate.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/LBModels/Discard/communicateMessage.h \
+<<<<<<< HEAD
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/LBControl/ReservationService/appointmentController.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/LBControl/LifeService/lifeServiceController.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/LBControl/BankBusinessBooking/bankController.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/LBControl/Recommend/LFRecommendViewController.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/LBControl/Recommend/recommendguest.h \
+=======
+  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/LBControl/appointmentController.h \
+  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/LBControl/LifeService/lifeServiceController.h \
+  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/LBControl/BankBusinessBooking/bankController.h \
+  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/LBControl/Recommend/LFRecommendViewController.h \
+  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/LBControl/recommendguest.h \
+>>>>>>> framework-v01
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/LBControl/Recommend/recommendCard.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/LBControl/LoginRegister/LoginViewController.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/LBModels/Discard/LoginMessage.h

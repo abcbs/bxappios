@@ -11,4 +11,9 @@ dependencies: \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/LBModels/Discard/MyOrderModel.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/LBModels/Discard/ValidateMessage.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/BSFramework/Base/Conf.h \
+<<<<<<< HEAD
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/LBControl/LoginRegister/RegistUtil.h
+=======
+  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/LBControl/LoginRegister/RegistUtil.h \
+  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/LBControl/MainFrame/AppDelegate.h
+>>>>>>> framework-v01
