@@ -19,7 +19,7 @@
     [super viewDidLoad];
     //红色界面
     UIImageView *imageView1 = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 65)];
-    NSString *imageName = [NSString stringWithFormat:@"yyfw9_01.png"];
+    NSString *imageName = [NSString stringWithFormat:@"wdcx_01.png"];
     imageView1.image = [UIImage imageNamed:imageName];
     [self.view addSubview:imageView1];
     //返回按钮
