@@ -101,4 +101,8 @@
     return BSMarginY(4);
 }
 
+//覆盖，为了显示最后一条数据
+-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    return BSMarginY(120);
+}
 @end

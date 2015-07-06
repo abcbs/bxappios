@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01AEAFF491B315ECF3091828 /* libPods-KT-FRAME-PK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F966219CD8A0891D6079F0EE /* libPods-KT-FRAME-PK.a */; };
+		05344531CB68FE18F5EF8FE7 /* libPods-KT-RESOURCES.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CE6F7E7D6B9FC2FDCB4EB5D /* libPods-KT-RESOURCES.a */; };
 		06FDBA07377F3472C78B3516 /* libPods-KTAPP.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A87E8CE16BF49FC4F724B09 /* libPods-KTAPP.a */; };
 		0E511A501AF07DAD00BF1D03 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E511A4F1AF07DAD00BF1D03 /* Foundation.framework */; };
 		0E511A521AF07DB800BF1D03 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E511A511AF07DB800BF1D03 /* CoreGraphics.framework */; };
@@ -300,11 +302,85 @@
 		84BA96871B2829D500388B58 /* CartList.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BA96711B2829D500388B58 /* CartList.m */; };
 		84BA96881B2829D500388B58 /* ShoppingCart.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BA96731B2829D500388B58 /* ShoppingCart.m */; };
 		84BA96891B2829D500388B58 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BA96761B2829D500388B58 /* User.m */; };
+		84BF8F631B4AB63C001042F1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BF8F621B4AB63C001042F1 /* main.m */; };
+		84BF8F661B4AB63C001042F1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BF8F651B4AB63C001042F1 /* AppDelegate.m */; };
+		84BF8F691B4AB63C001042F1 /* ProductManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BF8F681B4AB63C001042F1 /* ProductManagerViewController.m */; };
+		84BF8F6C1B4AB63C001042F1 /* OrderManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BF8F6B1B4AB63C001042F1 /* OrderManagerViewController.m */; };
+		84BF8F6F1B4AB63C001042F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84BF8F6D1B4AB63C001042F1 /* Main.storyboard */; };
+		84BF8F711B4AB63C001042F1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84BF8F701B4AB63C001042F1 /* Images.xcassets */; };
+		84BF8F741B4AB63C001042F1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84BF8F721B4AB63C001042F1 /* LaunchScreen.xib */; };
+		84BF8FA71B4ABAE4001042F1 /* BSCMFrameworkHeader.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 845A022E1B3DB13B007F5327 /* BSCMFrameworkHeader.h */; };
+		84BF8FA81B4ABB0C001042F1 /* BSUIFrameworkHeader.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 845A02241B3DA669007F5327 /* BSUIFrameworkHeader.h */; };
+		84BF8FA91B4ABB74001042F1 /* BSUIFrameworkHeader.h in Resources */ = {isa = PBXBuildFile; fileRef = 845A02241B3DA669007F5327 /* BSUIFrameworkHeader.h */; };
+		84BF8FAA1B4ABB83001042F1 /* BSCMFrameworkHeader.h in Resources */ = {isa = PBXBuildFile; fileRef = 845A022E1B3DB13B007F5327 /* BSCMFrameworkHeader.h */; };
+		84BF8FAD1B4ABC88001042F1 /* BSUICommonController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8474DEB41B3F7D0600D9DE36 /* BSUICommonController.m */; };
+		84BF8FC01B4AC21C001042F1 /* libKT-FRAME-PK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84BF8F901B4ABA7E001042F1 /* libKT-FRAME-PK.a */; };
+		84BF8FC41B4AC2FA001042F1 /* Conf.m in Sources */ = {isa = PBXBuildFile; fileRef = 845A02291B3DABF0007F5327 /* Conf.m */; };
+		84BF8FC61B4AC2FA001042F1 /* ErrorMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 845A022B1B3DABF0007F5327 /* ErrorMessage.m */; };
+		84BF8FCA1B4AC2FA001042F1 /* BSHTTPNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 844E50B41B2F2EE500A69F91 /* BSHTTPNetworking.m */; };
+		84BF8FCD1B4AC2FA001042F1 /* BSTableViewRefreshController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8480581A1B39AEEF005817D7 /* BSTableViewRefreshController.m */; };
+		84BF8FCE1B4AC2FA001042F1 /* BSTableSection.h in Sources */ = {isa = PBXBuildFile; fileRef = 847076621B3A9DFB00F28180 /* BSTableSection.h */; };
+		84BF8FCF1B4AC2FA001042F1 /* BSTableSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 847076631B3A9DFB00F28180 /* BSTableSection.m */; };
+		84BF8FD01B4AC2FA001042F1 /* BSTableContentObject.h in Sources */ = {isa = PBXBuildFile; fileRef = 847076651B3AA01B00F28180 /* BSTableContentObject.h */; };
+		84BF8FD11B4AC2FA001042F1 /* BSTableContentObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 847076661B3AA01B00F28180 /* BSTableContentObject.m */; };
+		84BF8FD21B4AC2FA001042F1 /* UIViewController+BSTableObject.h in Sources */ = {isa = PBXBuildFile; fileRef = 8470766F1B3AB21300F28180 /* UIViewController+BSTableObject.h */; };
+		84BF8FD31B4AC2FA001042F1 /* UIViewController+BSTableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 847076701B3AB21300F28180 /* UIViewController+BSTableObject.m */; };
+		84BF8FD41B4AC2FA001042F1 /* BSUITableViewInitRuntimeController.h in Sources */ = {isa = PBXBuildFile; fileRef = 84C06D991B3AF3BA000BB45C /* BSUITableViewInitRuntimeController.h */; };
+		84BF8FD51B4AC2FA001042F1 /* BSUITableViewInitRuntimeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C06D9A1B3AF3BA000BB45C /* BSUITableViewInitRuntimeController.m */; };
+		84BF8FD61B4AC2FA001042F1 /* BSUICommonController.h in Sources */ = {isa = PBXBuildFile; fileRef = 8474DEB31B3F7D0600D9DE36 /* BSUICommonController.h */; };
+		84BF8FD71B4AC2FA001042F1 /* BSUITableViewCommonController.h in Sources */ = {isa = PBXBuildFile; fileRef = 844A32011B4032790045CA6C /* BSUITableViewCommonController.h */; };
+		84BF8FD81B4AC2FA001042F1 /* BSUITableViewCommonController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844A32021B4032790045CA6C /* BSUITableViewCommonController.m */; };
+		84BF8FD91B4AC2FA001042F1 /* BSTableViewCellData.h in Sources */ = {isa = PBXBuildFile; fileRef = 8460AE781B42569300022280 /* BSTableViewCellData.h */; };
+		84BF8FDA1B4AC2FA001042F1 /* BSTableViewCellData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8460AE791B42569300022280 /* BSTableViewCellData.m */; };
+		84BF8FDB1B4AC2FA001042F1 /* BSTableViewMultCellData.h in Sources */ = {isa = PBXBuildFile; fileRef = 8460AE7B1B42578B00022280 /* BSTableViewMultCellData.h */; };
+		84BF8FDC1B4AC2FA001042F1 /* BSTableViewMultCellData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8460AE7C1B42578B00022280 /* BSTableViewMultCellData.m */; };
+		84BF8FDD1B4AC2FA001042F1 /* BSUITabBarCommonController.h in Sources */ = {isa = PBXBuildFile; fileRef = 8460AE7E1B4259BE00022280 /* BSUITabBarCommonController.h */; };
+		84BF8FDE1B4AC2FA001042F1 /* BSUITabBarCommonController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8460AE7F1B4259BE00022280 /* BSUITabBarCommonController.m */; };
+		84BF8FDF1B4AC2FA001042F1 /* BSContentObjectNavigation.h in Sources */ = {isa = PBXBuildFile; fileRef = 8460AE811B426E4C00022280 /* BSContentObjectNavigation.h */; };
+		84BF8FE01B4AC2FA001042F1 /* BSContentObjectNavigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8460AE821B426E4C00022280 /* BSContentObjectNavigation.m */; };
+		84BF8FE11B4AC2FA001042F1 /* BSFCRollingADImageUIView.h in Sources */ = {isa = PBXBuildFile; fileRef = 848058121B39A377005817D7 /* BSFCRollingADImageUIView.h */; };
+		84BF8FE21B4AC2FA001042F1 /* BSFCRollingADImageUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 848058131B39A377005817D7 /* BSFCRollingADImageUIView.m */; };
+		84BF8FE41B4AC2FA001042F1 /* BSUIImageTitleTableViewCell.h in Sources */ = {isa = PBXBuildFile; fileRef = 845A02211B3DA1F3007F5327 /* BSUIImageTitleTableViewCell.h */; };
+		84BF8FE51B4AC2FA001042F1 /* BSUIImageTitleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 845A02221B3DA1F3007F5327 /* BSUIImageTitleTableViewCell.m */; };
+		84BF8FE71B4AC2FA001042F1 /* BSUISingleImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 845A02401B3DE9FE007F5327 /* BSUISingleImageTableViewCell.m */; };
+		84BF8FE91B4AC2FA001042F1 /* BSUIFiveColTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 846541EB1B42C47300DE2BC1 /* BSUIFiveColTableViewCell.m */; };
+		84BF8FF11B4AC2FA001042F1 /* BSUIComponentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E97AB61B307535001D4100 /* BSUIComponentView.m */; };
+		84BF8FF21B4AC2FA001042F1 /* BSUIBlockButton.h in Sources */ = {isa = PBXBuildFile; fileRef = 8474DEA91B3F474700D9DE36 /* BSUIBlockButton.h */; };
+		84BF8FF31B4AC2FA001042F1 /* BSUIBlockButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8474DEAA1B3F474700D9DE36 /* BSUIBlockButton.m */; };
+		84BF8FF61B4AC2FA001042F1 /* BSUIBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 844A32051B4064310045CA6C /* BSUIBarButtonItem.m */; };
+		84BF8FF71B4AC2FA001042F1 /* BSUIFrameworkHeader.h in Sources */ = {isa = PBXBuildFile; fileRef = 845A02241B3DA669007F5327 /* BSUIFrameworkHeader.h */; };
+		84BF8FF81B4AC2FA001042F1 /* BSCMFrameworkHeader.h in Sources */ = {isa = PBXBuildFile; fileRef = 845A022E1B3DB13B007F5327 /* BSCMFrameworkHeader.h */; };
+		84BF8FF91B4AC2FA001042F1 /* YYHMantleModelSerializer.h in Sources */ = {isa = PBXBuildFile; fileRef = 842042BD1B29881B0002C868 /* YYHMantleModelSerializer.h */; };
+		84BF8FFA1B4AC2FA001042F1 /* YYHMantleModelSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 842042BE1B29881B0002C868 /* YYHMantleModelSerializer.m */; };
+		84BF8FFC1B4AC2FA001042F1 /* YYHModelRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = 842042C11B2988410002C868 /* YYHModelRoute.m */; };
+		84BF8FFE1B4AC2FA001042F1 /* YYHModelRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 842042C31B2988410002C868 /* YYHModelRouter.m */; };
+		84BF8FFF1B4AC2FA001042F1 /* YYHModelSerialization.h in Sources */ = {isa = PBXBuildFile; fileRef = 842042C41B2988410002C868 /* YYHModelSerialization.h */; };
+		84BF90421B4AC5DB001042F1 /* BusinessManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BA96491B2829D500388B58 /* BusinessManager.m */; };
+		84BF90441B4AC5DB001042F1 /* CustomerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BA964C1B2829D500388B58 /* CustomerManager.m */; };
+		84BF90461B4AC634001042F1 /* PayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BA96641B2829D500388B58 /* PayManager.m */; };
+		84BF90481B4AC634001042F1 /* ProductManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BA96671B2829D500388B58 /* ProductManager.m */; };
+		84BF904A1B4AC634001042F1 /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BA966A1B2829D500388B58 /* Comment.m */; };
+		84BF904C1B4AC634001042F1 /* WaterSending.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BA966C1B2829D500388B58 /* WaterSending.m */; };
+		84BF904E1B4AC634001042F1 /* WaterSendingDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BA966E1B2829D500388B58 /* WaterSendingDetails.m */; };
+		84BF904F1B4AC634001042F1 /* CartList.h in Sources */ = {isa = PBXBuildFile; fileRef = 84BA96701B2829D500388B58 /* CartList.h */; };
+		84BF90501B4AC634001042F1 /* CartList.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BA96711B2829D500388B58 /* CartList.m */; };
+		84BF90521B4AC634001042F1 /* ShoppingCart.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BA96731B2829D500388B58 /* ShoppingCart.m */; };
+		84BF90531B4AC634001042F1 /* User.h in Sources */ = {isa = PBXBuildFile; fileRef = 84BA96751B2829D500388B58 /* User.h */; };
+		84BF90541B4AC634001042F1 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BA96761B2829D500388B58 /* User.m */; };
+		84BF90551B4AC66C001042F1 /* BLModelsHeader.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 845A02251B3DA7B7007F5327 /* BLModelsHeader.h */; };
+		84BF90561B4AC82C001042F1 /* libKT-MODEL-MODULE.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84BF902B1B4AC55D001042F1 /* libKT-MODEL-MODULE.a */; };
+		84BF90581B4AD23B001042F1 /* ADTImagePlayer.xib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 848058141B39A377005817D7 /* ADTImagePlayer.xib */; };
+		84BF905F1B4AD23B001042F1 /* BSUIFiveColTableViewCell.xib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 846541EC1B42C47300DE2BC1 /* BSUIFiveColTableViewCell.xib */; };
+		84BF90851B4AD49F001042F1 /* KT_RESOURCES.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 84BF90841B4AD49F001042F1 /* KT_RESOURCES.h */; };
+		84BF90871B4AD49F001042F1 /* KT_RESOURCES.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BF90861B4AD49F001042F1 /* KT_RESOURCES.m */; };
+		84BF90991B4AD4E7001042F1 /* Images.xcassets in CopyFiles */ = {isa = PBXBuildFile; fileRef = A04366B91AD7B550005842EE /* Images.xcassets */; };
+		84BF909A1B4AD4FD001042F1 /* libKT-RESOURCES.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84BF90821B4AD49E001042F1 /* libKT-RESOURCES.a */; };
 		84C06D9B1B3AF3BA000BB45C /* BSUITableViewInitRuntimeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C06D9A1B3AF3BA000BB45C /* BSUITableViewInitRuntimeController.m */; };
 		84E97AB71B307535001D4100 /* BSUIComponentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E97AB61B307535001D4100 /* BSUIComponentView.m */; };
 		84EBA00B1B416E37003309F6 /* ClassForSelectors.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EBA00A1B416E37003309F6 /* ClassForSelectors.m */; };
 		84EBA0131B4189E0003309F6 /* LBLiferServiceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EBA0121B4189E0003309F6 /* LBLiferServiceController.m */; };
 		84EBA0161B41A307003309F6 /* KTLBMainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EBA0151B41A307003309F6 /* KTLBMainTabBarController.m */; };
+		9835E70DAB3BBA76AD9E8055 /* libPods-KT-BUSINESS-SELLER.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE8E807F5A1D170C6CFA3891 /* libPods-KT-BUSINESS-SELLER.a */; };
 		A04366AF1AD7B550005842EE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A04366AE1AD7B550005842EE /* main.m */; };
 		A04366BA1AD7B550005842EE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A04366B91AD7B550005842EE /* Images.xcassets */; };
 		A05E9BDF1AE79DD5008C97C9 /* KTTabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A05E9BDE1AE79DD5008C97C9 /* KTTabBarButton.m */; };
@@ -331,9 +407,44 @@
 		A14656F71ADEB5A400571E9A /* KTFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = A14656EF1ADEB5A400571E9A /* KTFooterView.m */; };
 		A14656F81ADEB5A400571E9A /* KTFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A14656F01ADEB5A400571E9A /* KTFooterView.xib */; };
 		DFD86AB01AFC5886000AB8E6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DFD86AB21AFC5886000AB8E6 /* InfoPlist.strings */; };
+		EA79D78216B8C4DE3A174D57 /* libPods-KT-MODEL-MODULE.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E2C128B78CB408DF3C049CDE /* libPods-KT-MODEL-MODULE.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		84BF8F8E1B4ABA7E001042F1 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				84BF90581B4AD23B001042F1 /* ADTImagePlayer.xib in CopyFiles */,
+				84BF905F1B4AD23B001042F1 /* BSUIFiveColTableViewCell.xib in CopyFiles */,
+				84BF8FA81B4ABB0C001042F1 /* BSUIFrameworkHeader.h in CopyFiles */,
+				84BF8FA71B4ABAE4001042F1 /* BSCMFrameworkHeader.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84BF90291B4AC55D001042F1 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				84BF90551B4AC66C001042F1 /* BLModelsHeader.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84BF90801B4AD49E001042F1 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				84BF90991B4AD4E7001042F1 /* Images.xcassets in CopyFiles */,
+				84BF90851B4AD49F001042F1 /* KT_RESOURCES.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		84DD87741B21E92200431F80 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -365,6 +476,11 @@
 		0E8377631B035BB300782034 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		0E915F961B0C394800F47478 /* ValidateCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValidateCode.h; sourceTree = "<group>"; };
 		0E915F971B0C394800F47478 /* ValidateCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValidateCode.m; sourceTree = "<group>"; };
+		15653A4180B1CA7C88B25769 /* Pods-KT-BUSINESS-SELLER.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KT-BUSINESS-SELLER.release.xcconfig"; path = "Pods/Target Support Files/Pods-KT-BUSINESS-SELLER/Pods-KT-BUSINESS-SELLER.release.xcconfig"; sourceTree = "<group>"; };
+		24D3B80807CDF37522D80865 /* Pods-KT-FRAME-PK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KT-FRAME-PK.release.xcconfig"; path = "Pods/Target Support Files/Pods-KT-FRAME-PK/Pods-KT-FRAME-PK.release.xcconfig"; sourceTree = "<group>"; };
+		34039EA61F8DC75DB7E9F783 /* Pods-KT-FRAME-PK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KT-FRAME-PK.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KT-FRAME-PK/Pods-KT-FRAME-PK.debug.xcconfig"; sourceTree = "<group>"; };
+		3953130E7E70B267ECA2B2C8 /* Pods-KT-RESOURCES.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KT-RESOURCES.release.xcconfig"; path = "Pods/Target Support Files/Pods-KT-RESOURCES/Pods-KT-RESOURCES.release.xcconfig"; sourceTree = "<group>"; };
+		3BF24D6D645F73AB82A65C7A /* Pods-KT-BUSINESS-SELLER.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KT-BUSINESS-SELLER.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KT-BUSINESS-SELLER/Pods-KT-BUSINESS-SELLER.debug.xcconfig"; sourceTree = "<group>"; };
 		3FA8299E8FF1437442BD045F /* libPods-BSModel.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BSModel.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4782B1662B7E67AB65626556 /* libPods-KTMODEL.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KTMODEL.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A87E8CE16BF49FC4F724B09 /* libPods-KTAPP.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KTAPP.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -772,6 +888,29 @@
 		84BA96731B2829D500388B58 /* ShoppingCart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingCart.m; sourceTree = "<group>"; };
 		84BA96751B2829D500388B58 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		84BA96761B2829D500388B58 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		84BF8F5E1B4AB63C001042F1 /* KT-BUSINESS-SELLER.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "KT-BUSINESS-SELLER.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		84BF8F611B4AB63C001042F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84BF8F621B4AB63C001042F1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		84BF8F641B4AB63C001042F1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		84BF8F651B4AB63C001042F1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		84BF8F671B4AB63C001042F1 /* ProductManagerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductManagerViewController.h; sourceTree = "<group>"; };
+		84BF8F681B4AB63C001042F1 /* ProductManagerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProductManagerViewController.m; sourceTree = "<group>"; };
+		84BF8F6A1B4AB63C001042F1 /* OrderManagerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderManagerViewController.h; sourceTree = "<group>"; };
+		84BF8F6B1B4AB63C001042F1 /* OrderManagerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderManagerViewController.m; sourceTree = "<group>"; };
+		84BF8F6E1B4AB63C001042F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		84BF8F701B4AB63C001042F1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		84BF8F731B4AB63C001042F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		84BF8F8A1B4ABA24001042F1 /* libPods-KTAPP.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-KTAPP.a"; path = "Pods/../build/Debug-iphoneos/libPods-KTAPP.a"; sourceTree = SOURCE_ROOT; };
+		84BF8F901B4ABA7E001042F1 /* libKT-FRAME-PK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libKT-FRAME-PK.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		84BF8FAF1B4ABF0E001042F1 /* libPods-KT-FRAME-PK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-KT-FRAME-PK.a"; path = "Pods/../build/Debug-iphoneos/libPods-KT-FRAME-PK.a"; sourceTree = SOURCE_ROOT; };
+		84BF8FB61B4AC0EF001042F1 /* libPods-KTAPP.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-KTAPP.a"; path = "Pods/../build/Debug-iphoneos/libPods-KTAPP.a"; sourceTree = SOURCE_ROOT; };
+		84BF8FBA1B4AC1E8001042F1 /* libPods-KTAPP.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-KTAPP.a"; path = "Pods/../build/Debug-iphoneos/libPods-KTAPP.a"; sourceTree = SOURCE_ROOT; };
+		84BF8FBC1B4AC1F5001042F1 /* libPods-KT-FRAME-PK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-KT-FRAME-PK.a"; path = "Pods/../build/Debug-iphoneos/libPods-KT-FRAME-PK.a"; sourceTree = SOURCE_ROOT; };
+		84BF902B1B4AC55D001042F1 /* libKT-MODEL-MODULE.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libKT-MODEL-MODULE.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		84BF90571B4AC981001042F1 /* LSControllerHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSControllerHeader.h; sourceTree = "<group>"; };
+		84BF90821B4AD49E001042F1 /* libKT-RESOURCES.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libKT-RESOURCES.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		84BF90841B4AD49F001042F1 /* KT_RESOURCES.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KT_RESOURCES.h; sourceTree = "<group>"; };
+		84BF90861B4AD49F001042F1 /* KT_RESOURCES.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KT_RESOURCES.m; sourceTree = "<group>"; };
 		84C06D991B3AF3BA000BB45C /* BSUITableViewInitRuntimeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUITableViewInitRuntimeController.h; sourceTree = "<group>"; };
 		84C06D9A1B3AF3BA000BB45C /* BSUITableViewInitRuntimeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUITableViewInitRuntimeController.m; sourceTree = "<group>"; };
 		84E97AB51B307535001D4100 /* BSUIComponentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUIComponentView.h; sourceTree = "<group>"; };
@@ -782,6 +921,8 @@
 		84EBA0121B4189E0003309F6 /* LBLiferServiceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBLiferServiceController.m; sourceTree = "<group>"; };
 		84EBA0141B41A307003309F6 /* KTLBMainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTLBMainTabBarController.h; sourceTree = "<group>"; };
 		84EBA0151B41A307003309F6 /* KTLBMainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTLBMainTabBarController.m; sourceTree = "<group>"; };
+		8FCA45FC7E90066EB24B7BB5 /* Pods-KT-MODEL-MODULE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KT-MODEL-MODULE.release.xcconfig"; path = "Pods/Target Support Files/Pods-KT-MODEL-MODULE/Pods-KT-MODEL-MODULE.release.xcconfig"; sourceTree = "<group>"; };
+		9CE6F7E7D6B9FC2FDCB4EB5D /* libPods-KT-RESOURCES.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KT-RESOURCES.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A04366A91AD7B550005842EE /* 民生小区.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "民生小区.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A04366AD1AD7B550005842EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A04366AE1AD7B550005842EE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -833,12 +974,52 @@
 		A14656EF1ADEB5A400571E9A /* KTFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTFooterView.m; sourceTree = "<group>"; };
 		A14656F01ADEB5A400571E9A /* KTFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KTFooterView.xib; sourceTree = "<group>"; };
 		D1553A4C5F191EED34EC3F38 /* libPods-LBControl.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LBControl.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE8E807F5A1D170C6CFA3891 /* libPods-KT-BUSINESS-SELLER.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KT-BUSINESS-SELLER.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFD86AB11AFC5886000AB8E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E2C128B78CB408DF3C049CDE /* libPods-KT-MODEL-MODULE.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KT-MODEL-MODULE.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8E2EE8D108CE037F8FAF7AD /* libPods-BSTransfer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BSTransfer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC885B589C5660E95E977CD9 /* Pods-KT-RESOURCES.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KT-RESOURCES.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KT-RESOURCES/Pods-KT-RESOURCES.debug.xcconfig"; sourceTree = "<group>"; };
 		F292D073DBA6857868ACD8F5 /* Pods-KTAPP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KTAPP.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KTAPP/Pods-KTAPP.debug.xcconfig"; sourceTree = "<group>"; };
+		F966219CD8A0891D6079F0EE /* libPods-KT-FRAME-PK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KT-FRAME-PK.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC5704F4BEFF5B468EADE5E0 /* Pods-KT-MODEL-MODULE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KT-MODEL-MODULE.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KT-MODEL-MODULE/Pods-KT-MODEL-MODULE.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		84BF8F5B1B4AB63C001042F1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84BF909A1B4AD4FD001042F1 /* libKT-RESOURCES.a in Frameworks */,
+				84BF90561B4AC82C001042F1 /* libKT-MODEL-MODULE.a in Frameworks */,
+				84BF8FC01B4AC21C001042F1 /* libKT-FRAME-PK.a in Frameworks */,
+				9835E70DAB3BBA76AD9E8055 /* libPods-KT-BUSINESS-SELLER.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84BF8F8D1B4ABA7E001042F1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01AEAFF491B315ECF3091828 /* libPods-KT-FRAME-PK.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84BF90281B4AC55D001042F1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA79D78216B8C4DE3A174D57 /* libPods-KT-MODEL-MODULE.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84BF907F1B4AD49E001042F1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05344531CB68FE18F5EF8FE7 /* libPods-KT-RESOURCES.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A04366A61AD7B550005842EE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -905,6 +1086,14 @@
 			children = (
 				F292D073DBA6857868ACD8F5 /* Pods-KTAPP.debug.xcconfig */,
 				820D45CA979EF6E8C16C2E8B /* Pods-KTAPP.release.xcconfig */,
+				3BF24D6D645F73AB82A65C7A /* Pods-KT-BUSINESS-SELLER.debug.xcconfig */,
+				15653A4180B1CA7C88B25769 /* Pods-KT-BUSINESS-SELLER.release.xcconfig */,
+				34039EA61F8DC75DB7E9F783 /* Pods-KT-FRAME-PK.debug.xcconfig */,
+				24D3B80807CDF37522D80865 /* Pods-KT-FRAME-PK.release.xcconfig */,
+				FC5704F4BEFF5B468EADE5E0 /* Pods-KT-MODEL-MODULE.debug.xcconfig */,
+				8FCA45FC7E90066EB24B7BB5 /* Pods-KT-MODEL-MODULE.release.xcconfig */,
+				EC885B589C5660E95E977CD9 /* Pods-KT-RESOURCES.debug.xcconfig */,
+				3953130E7E70B267ECA2B2C8 /* Pods-KT-RESOURCES.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -1785,6 +1974,80 @@
 			path = UserManager;
 			sourceTree = "<group>";
 		};
+		84BF8F5F1B4AB63C001042F1 /* KT-BUSINESS-SELLER */ = {
+			isa = PBXGroup;
+			children = (
+				84BF8F891B4AB879001042F1 /* OrderManagerControl */,
+				84BF8F881B4AB870001042F1 /* SallingManagerControl */,
+				84BF8F871B4AB864001042F1 /* ProductManagerControl */,
+				84BF8F641B4AB63C001042F1 /* AppDelegate.h */,
+				84BF8F651B4AB63C001042F1 /* AppDelegate.m */,
+				84BF8F671B4AB63C001042F1 /* ProductManagerViewController.h */,
+				84BF8F681B4AB63C001042F1 /* ProductManagerViewController.m */,
+				84BF8F6A1B4AB63C001042F1 /* OrderManagerViewController.h */,
+				84BF8F6B1B4AB63C001042F1 /* OrderManagerViewController.m */,
+				84BF8F6D1B4AB63C001042F1 /* Main.storyboard */,
+				84BF8F701B4AB63C001042F1 /* Images.xcassets */,
+				84BF8F721B4AB63C001042F1 /* LaunchScreen.xib */,
+				84BF8F601B4AB63C001042F1 /* Supporting Files */,
+				84BF90571B4AC981001042F1 /* LSControllerHeader.h */,
+			);
+			path = "KT-BUSINESS-SELLER";
+			sourceTree = "<group>";
+		};
+		84BF8F601B4AB63C001042F1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				84BF8F611B4AB63C001042F1 /* Info.plist */,
+				84BF8F621B4AB63C001042F1 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		84BF8F871B4AB864001042F1 /* ProductManagerControl */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ProductManagerControl;
+			sourceTree = "<group>";
+		};
+		84BF8F881B4AB870001042F1 /* SallingManagerControl */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SallingManagerControl;
+			sourceTree = "<group>";
+		};
+		84BF8F891B4AB879001042F1 /* OrderManagerControl */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = OrderManagerControl;
+			sourceTree = "<group>";
+		};
+		84BF8F911B4ABA7E001042F1 /* KT-FRAME-PK */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "KT-FRAME-PK";
+			sourceTree = "<group>";
+		};
+		84BF902C1B4AC55D001042F1 /* KT-MODEL-MODULE */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "KT-MODEL-MODULE";
+			sourceTree = "<group>";
+		};
+		84BF90831B4AD49E001042F1 /* KT-RESOURCES */ = {
+			isa = PBXGroup;
+			children = (
+				84BF90841B4AD49F001042F1 /* KT_RESOURCES.h */,
+				84BF90861B4AD49F001042F1 /* KT_RESOURCES.m */,
+			);
+			path = "KT-RESOURCES";
+			sourceTree = "<group>";
+		};
 		84D358CB1B2B0C0500CCEE8B /* BSFramework */ = {
 			isa = PBXGroup;
 			children = (
@@ -1811,6 +2074,11 @@
 		A0028F341ADE4D5500747D8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				84BF8FBC1B4AC1F5001042F1 /* libPods-KT-FRAME-PK.a */,
+				84BF8FBA1B4AC1E8001042F1 /* libPods-KTAPP.a */,
+				84BF8FB61B4AC0EF001042F1 /* libPods-KTAPP.a */,
+				84BF8FAF1B4ABF0E001042F1 /* libPods-KT-FRAME-PK.a */,
+				84BF8F8A1B4ABA24001042F1 /* libPods-KTAPP.a */,
 				84A0765F1B21AAC8001CE3A2 /* AddressBook.framework */,
 				84A0765D1B21AAA7001CE3A2 /* CoreText.framework */,
 				84A0765B1B21AA9A001CE3A2 /* MediaPlayer.framework */,
@@ -1840,6 +2108,10 @@
 				E8E2EE8D108CE037F8FAF7AD /* libPods-BSTransfer.a */,
 				D1553A4C5F191EED34EC3F38 /* libPods-LBControl.a */,
 				68078520C3A270F91A4F8CF0 /* libPods-LBModel.a */,
+				DE8E807F5A1D170C6CFA3891 /* libPods-KT-BUSINESS-SELLER.a */,
+				F966219CD8A0891D6079F0EE /* libPods-KT-FRAME-PK.a */,
+				E2C128B78CB408DF3C049CDE /* libPods-KT-MODEL-MODULE.a */,
+				9CE6F7E7D6B9FC2FDCB4EB5D /* libPods-KT-RESOURCES.a */,
 			);
 			name = Frameworks;
 			path = "民生小区";
@@ -1854,6 +2126,10 @@
 				84BA968E1B2829FC00388B58 /* BSTransfer */,
 				84BA96411B2829D500388B58 /* LBModels */,
 				84BA96921B282A0500388B58 /* LBControl */,
+				84BF8F5F1B4AB63C001042F1 /* KT-BUSINESS-SELLER */,
+				84BF8F911B4ABA7E001042F1 /* KT-FRAME-PK */,
+				84BF902C1B4AC55D001042F1 /* KT-MODEL-MODULE */,
+				84BF90831B4AD49E001042F1 /* KT-RESOURCES */,
 				A0028F341ADE4D5500747D8A /* Frameworks */,
 				A04366AA1AD7B550005842EE /* Products */,
 				67A658A2709CA6036D46B63C /* Pods */,
@@ -1864,6 +2140,10 @@
 			isa = PBXGroup;
 			children = (
 				A04366A91AD7B550005842EE /* 民生小区.app */,
+				84BF8F5E1B4AB63C001042F1 /* KT-BUSINESS-SELLER.app */,
+				84BF8F901B4ABA7E001042F1 /* libKT-FRAME-PK.a */,
+				84BF902B1B4AC55D001042F1 /* libKT-MODEL-MODULE.a */,
+				84BF90821B4AD49E001042F1 /* libKT-RESOURCES.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -2040,6 +2320,82 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		84BF8F5D1B4AB63C001042F1 /* KT-BUSINESS-SELLER */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84BF8F811B4AB63C001042F1 /* Build configuration list for PBXNativeTarget "KT-BUSINESS-SELLER" */;
+			buildPhases = (
+				84641AFA8DB324EC9803FA5E /* Check Pods Manifest.lock */,
+				84BF8F5A1B4AB63C001042F1 /* Sources */,
+				84BF8F5B1B4AB63C001042F1 /* Frameworks */,
+				84BF8F5C1B4AB63C001042F1 /* Resources */,
+				DF4842331B19BFED0AA8AEBC /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "KT-BUSINESS-SELLER";
+			productName = "KT-BUSINESS-SELLER";
+			productReference = 84BF8F5E1B4AB63C001042F1 /* KT-BUSINESS-SELLER.app */;
+			productType = "com.apple.product-type.application";
+		};
+		84BF8F8F1B4ABA7E001042F1 /* KT-FRAME-PK */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84BF8FA11B4ABA7F001042F1 /* Build configuration list for PBXNativeTarget "KT-FRAME-PK" */;
+			buildPhases = (
+				29886CA2B5ABC2572E970A86 /* Check Pods Manifest.lock */,
+				84BF8F8C1B4ABA7E001042F1 /* Sources */,
+				84BF8F8D1B4ABA7E001042F1 /* Frameworks */,
+				84BF8F8E1B4ABA7E001042F1 /* CopyFiles */,
+				C2C5FED6D9F08BBB72D8E5E2 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "KT-FRAME-PK";
+			productName = "KT-FRAME-PK";
+			productReference = 84BF8F901B4ABA7E001042F1 /* libKT-FRAME-PK.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		84BF902A1B4AC55D001042F1 /* KT-MODEL-MODULE */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84BF903C1B4AC55D001042F1 /* Build configuration list for PBXNativeTarget "KT-MODEL-MODULE" */;
+			buildPhases = (
+				44E48177B429A1850D7F866F /* Check Pods Manifest.lock */,
+				84BF90271B4AC55D001042F1 /* Sources */,
+				84BF90281B4AC55D001042F1 /* Frameworks */,
+				84BF90291B4AC55D001042F1 /* CopyFiles */,
+				415098FDA13BFAE04E26B411 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "KT-MODEL-MODULE";
+			productName = "KT-MODEL-MODULE";
+			productReference = 84BF902B1B4AC55D001042F1 /* libKT-MODEL-MODULE.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		84BF90811B4AD49E001042F1 /* KT-RESOURCES */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84BF90931B4AD49F001042F1 /* Build configuration list for PBXNativeTarget "KT-RESOURCES" */;
+			buildPhases = (
+				DAF046B82F9316E3E300E99C /* Check Pods Manifest.lock */,
+				84BF907E1B4AD49E001042F1 /* Sources */,
+				84BF907F1B4AD49E001042F1 /* Frameworks */,
+				84BF90801B4AD49E001042F1 /* CopyFiles */,
+				C11066FD2620F6E33116430C /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "KT-RESOURCES";
+			productName = "KT-RESOURCES";
+			productReference = 84BF90821B4AD49E001042F1 /* libKT-RESOURCES.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 		A04366A81AD7B550005842EE /* KTAPP */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A04366CC1AD7B550005842EE /* Build configuration list for PBXNativeTarget "KTAPP" */;
@@ -2069,6 +2425,19 @@
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = itcast;
 				TargetAttributes = {
+					84BF8F5D1B4AB63C001042F1 = {
+						CreatedOnToolsVersion = 6.3;
+						DevelopmentTeam = MC8M456VH7;
+					};
+					84BF8F8F1B4ABA7E001042F1 = {
+						CreatedOnToolsVersion = 6.3;
+					};
+					84BF902A1B4AC55D001042F1 = {
+						CreatedOnToolsVersion = 6.3;
+					};
+					84BF90811B4AD49E001042F1 = {
+						CreatedOnToolsVersion = 6.3;
+					};
 					A04366A81AD7B550005842EE = {
 						CreatedOnToolsVersion = 6.1;
 						DevelopmentTeam = MC8M456VH7;
@@ -2090,15 +2459,31 @@
 			projectRoot = "";
 			targets = (
 				A04366A81AD7B550005842EE /* KTAPP */,
+				84BF8F5D1B4AB63C001042F1 /* KT-BUSINESS-SELLER */,
+				84BF8F8F1B4ABA7E001042F1 /* KT-FRAME-PK */,
+				84BF902A1B4AC55D001042F1 /* KT-MODEL-MODULE */,
+				84BF90811B4AD49E001042F1 /* KT-RESOURCES */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		84BF8F5C1B4AB63C001042F1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84BF8F6F1B4AB63C001042F1 /* Main.storyboard in Resources */,
+				84BF8F741B4AB63C001042F1 /* LaunchScreen.xib in Resources */,
+				84BF8F711B4AB63C001042F1 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A04366A71AD7B550005842EE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84BF8FAA1B4ABB83001042F1 /* BSCMFrameworkHeader.h in Resources */,
+				84BF8FA91B4ABB74001042F1 /* BSUIFrameworkHeader.h in Resources */,
 				844268B31B36C05F006E7F7D /* a8.png in Resources */,
 				844268E91B36C05F006E7F7D /* forget password-head.png in Resources */,
 				844268E01B36C05F006E7F7D /* 银行卡绑定-6.png in Resources */,
@@ -2258,6 +2643,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		29886CA2B5ABC2572E970A86 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		2BE6FEEE34AFE15176C0BFB7 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -2271,6 +2671,36 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KTAPP/Pods-KTAPP-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		415098FDA13BFAE04E26B411 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KT-MODEL-MODULE/Pods-KT-MODEL-MODULE-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		44E48177B429A1850D7F866F /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		770E7041AC222A7EA563A6D5 /* Check Pods Manifest.lock */ = {
@@ -2288,9 +2718,170 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		84641AFA8DB324EC9803FA5E /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C11066FD2620F6E33116430C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KT-RESOURCES/Pods-KT-RESOURCES-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C2C5FED6D9F08BBB72D8E5E2 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KT-FRAME-PK/Pods-KT-FRAME-PK-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DAF046B82F9316E3E300E99C /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DF4842331B19BFED0AA8AEBC /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KT-BUSINESS-SELLER/Pods-KT-BUSINESS-SELLER-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		84BF8F5A1B4AB63C001042F1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84BF8F6C1B4AB63C001042F1 /* OrderManagerViewController.m in Sources */,
+				84BF8F661B4AB63C001042F1 /* AppDelegate.m in Sources */,
+				84BF8F691B4AB63C001042F1 /* ProductManagerViewController.m in Sources */,
+				84BF8F631B4AB63C001042F1 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84BF8F8C1B4ABA7E001042F1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84BF8FC41B4AC2FA001042F1 /* Conf.m in Sources */,
+				84BF8FC61B4AC2FA001042F1 /* ErrorMessage.m in Sources */,
+				84BF8FCA1B4AC2FA001042F1 /* BSHTTPNetworking.m in Sources */,
+				84BF8FCD1B4AC2FA001042F1 /* BSTableViewRefreshController.m in Sources */,
+				84BF8FCE1B4AC2FA001042F1 /* BSTableSection.h in Sources */,
+				84BF8FCF1B4AC2FA001042F1 /* BSTableSection.m in Sources */,
+				84BF8FD01B4AC2FA001042F1 /* BSTableContentObject.h in Sources */,
+				84BF8FD11B4AC2FA001042F1 /* BSTableContentObject.m in Sources */,
+				84BF8FD21B4AC2FA001042F1 /* UIViewController+BSTableObject.h in Sources */,
+				84BF8FD31B4AC2FA001042F1 /* UIViewController+BSTableObject.m in Sources */,
+				84BF8FD41B4AC2FA001042F1 /* BSUITableViewInitRuntimeController.h in Sources */,
+				84BF8FD51B4AC2FA001042F1 /* BSUITableViewInitRuntimeController.m in Sources */,
+				84BF8FD61B4AC2FA001042F1 /* BSUICommonController.h in Sources */,
+				84BF8FD71B4AC2FA001042F1 /* BSUITableViewCommonController.h in Sources */,
+				84BF8FD81B4AC2FA001042F1 /* BSUITableViewCommonController.m in Sources */,
+				84BF8FD91B4AC2FA001042F1 /* BSTableViewCellData.h in Sources */,
+				84BF8FDA1B4AC2FA001042F1 /* BSTableViewCellData.m in Sources */,
+				84BF8FDB1B4AC2FA001042F1 /* BSTableViewMultCellData.h in Sources */,
+				84BF8FDC1B4AC2FA001042F1 /* BSTableViewMultCellData.m in Sources */,
+				84BF8FDD1B4AC2FA001042F1 /* BSUITabBarCommonController.h in Sources */,
+				84BF8FDE1B4AC2FA001042F1 /* BSUITabBarCommonController.m in Sources */,
+				84BF8FDF1B4AC2FA001042F1 /* BSContentObjectNavigation.h in Sources */,
+				84BF8FE01B4AC2FA001042F1 /* BSContentObjectNavigation.m in Sources */,
+				84BF8FE11B4AC2FA001042F1 /* BSFCRollingADImageUIView.h in Sources */,
+				84BF8FE21B4AC2FA001042F1 /* BSFCRollingADImageUIView.m in Sources */,
+				84BF8FE41B4AC2FA001042F1 /* BSUIImageTitleTableViewCell.h in Sources */,
+				84BF8FE51B4AC2FA001042F1 /* BSUIImageTitleTableViewCell.m in Sources */,
+				84BF8FE71B4AC2FA001042F1 /* BSUISingleImageTableViewCell.m in Sources */,
+				84BF8FE91B4AC2FA001042F1 /* BSUIFiveColTableViewCell.m in Sources */,
+				84BF8FF11B4AC2FA001042F1 /* BSUIComponentView.m in Sources */,
+				84BF8FF21B4AC2FA001042F1 /* BSUIBlockButton.h in Sources */,
+				84BF8FF31B4AC2FA001042F1 /* BSUIBlockButton.m in Sources */,
+				84BF8FF61B4AC2FA001042F1 /* BSUIBarButtonItem.m in Sources */,
+				84BF8FF71B4AC2FA001042F1 /* BSUIFrameworkHeader.h in Sources */,
+				84BF8FF81B4AC2FA001042F1 /* BSCMFrameworkHeader.h in Sources */,
+				84BF8FF91B4AC2FA001042F1 /* YYHMantleModelSerializer.h in Sources */,
+				84BF8FFA1B4AC2FA001042F1 /* YYHMantleModelSerializer.m in Sources */,
+				84BF8FFC1B4AC2FA001042F1 /* YYHModelRoute.m in Sources */,
+				84BF8FFE1B4AC2FA001042F1 /* YYHModelRouter.m in Sources */,
+				84BF8FFF1B4AC2FA001042F1 /* YYHModelSerialization.h in Sources */,
+				84BF8FAD1B4ABC88001042F1 /* BSUICommonController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84BF90271B4AC55D001042F1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84BF90461B4AC634001042F1 /* PayManager.m in Sources */,
+				84BF90481B4AC634001042F1 /* ProductManager.m in Sources */,
+				84BF904A1B4AC634001042F1 /* Comment.m in Sources */,
+				84BF904C1B4AC634001042F1 /* WaterSending.m in Sources */,
+				84BF904E1B4AC634001042F1 /* WaterSendingDetails.m in Sources */,
+				84BF904F1B4AC634001042F1 /* CartList.h in Sources */,
+				84BF90501B4AC634001042F1 /* CartList.m in Sources */,
+				84BF90521B4AC634001042F1 /* ShoppingCart.m in Sources */,
+				84BF90531B4AC634001042F1 /* User.h in Sources */,
+				84BF90541B4AC634001042F1 /* User.m in Sources */,
+				84BF90421B4AC5DB001042F1 /* BusinessManager.m in Sources */,
+				84BF90441B4AC5DB001042F1 /* CustomerManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84BF907E1B4AD49E001042F1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84BF90871B4AD49F001042F1 /* KT_RESOURCES.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A04366A51AD7B550005842EE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2457,6 +3048,22 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
+		84BF8F6D1B4AB63C001042F1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84BF8F6E1B4AB63C001042F1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		84BF8F721B4AB63C001042F1 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84BF8F731B4AB63C001042F1 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
 		DFD86AB21AFC5886000AB8E6 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -2468,6 +3075,158 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		84BF8F821B4AB63C001042F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3BF24D6D645F73AB82A65C7A /* Pods-KT-BUSINESS-SELLER.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "KT-BUSINESS-SELLER/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$(inherited)";
+			};
+			name = Debug;
+		};
+		84BF8F831B4AB63C001042F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 15653A4180B1CA7C88B25769 /* Pods-KT-BUSINESS-SELLER.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "KT-BUSINESS-SELLER/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$(inherited)";
+			};
+			name = Release;
+		};
+		84BF8FA21B4ABA7F001042F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 34039EA61F8DC75DB7E9F783 /* Pods-KT-FRAME-PK.debug.xcconfig */;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		84BF8FA31B4ABA7F001042F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24D3B80807CDF37522D80865 /* Pods-KT-FRAME-PK.release.xcconfig */;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		84BF903D1B4AC55D001042F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC5704F4BEFF5B468EADE5E0 /* Pods-KT-MODEL-MODULE.debug.xcconfig */;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited)";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		84BF903E1B4AC55D001042F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8FCA45FC7E90066EB24B7BB5 /* Pods-KT-MODEL-MODULE.release.xcconfig */;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited)";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		84BF90941B4AD49F001042F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EC885B589C5660E95E977CD9 /* Pods-KT-RESOURCES.debug.xcconfig */;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited)";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		84BF90951B4AD49F001042F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3953130E7E70B267ECA2B2C8 /* Pods-KT-RESOURCES.release.xcconfig */;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited)";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		A04366CA1AD7B550005842EE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -2617,6 +3376,42 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		84BF8F811B4AB63C001042F1 /* Build configuration list for PBXNativeTarget "KT-BUSINESS-SELLER" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84BF8F821B4AB63C001042F1 /* Debug */,
+				84BF8F831B4AB63C001042F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84BF8FA11B4ABA7F001042F1 /* Build configuration list for PBXNativeTarget "KT-FRAME-PK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84BF8FA21B4ABA7F001042F1 /* Debug */,
+				84BF8FA31B4ABA7F001042F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84BF903C1B4AC55D001042F1 /* Build configuration list for PBXNativeTarget "KT-MODEL-MODULE" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84BF903D1B4AC55D001042F1 /* Debug */,
+				84BF903E1B4AC55D001042F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84BF90931B4AD49F001042F1 /* Build configuration list for PBXNativeTarget "KT-RESOURCES" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84BF90941B4AD49F001042F1 /* Debug */,
+				84BF90951B4AD49F001042F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		A04366A41AD7B550005842EE /* Build configuration list for PBXProject "KTAPP" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
