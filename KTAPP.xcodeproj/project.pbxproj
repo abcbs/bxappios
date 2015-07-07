@@ -242,7 +242,6 @@
 		847432E51B2A8D6800B030C4 /* SystemSetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 847432E31B2A8D6800B030C4 /* SystemSetCell.m */; };
 		847432E61B2A8D6800B030C4 /* SystemSetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847432E41B2A8D6800B030C4 /* SystemSetCell.xib */; };
 		847432EA1B2A8DCC00B030C4 /* WaitPaymentDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 847432E81B2A8DCC00B030C4 /* WaitPaymentDetail.m */; };
-		847432EB1B2A8DCC00B030C4 /* WaitPaymentDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847432E91B2A8DCC00B030C4 /* WaitPaymentDetail.xib */; };
 		847432F71B2A8E5500B030C4 /* AlreadyCommit.m in Sources */ = {isa = PBXBuildFile; fileRef = 847432ED1B2A8E5500B030C4 /* AlreadyCommit.m */; };
 		847432F81B2A8E5500B030C4 /* AlreadyCommit.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847432EE1B2A8E5500B030C4 /* AlreadyCommit.xib */; };
 		847432F91B2A8E5500B030C4 /* AlreadyPayment.m in Sources */ = {isa = PBXBuildFile; fileRef = 847432F01B2A8E5500B030C4 /* AlreadyPayment.m */; };
@@ -320,41 +319,26 @@
 		84BF8FC61B4AC2FA001042F1 /* ErrorMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 845A022B1B3DABF0007F5327 /* ErrorMessage.m */; };
 		84BF8FCA1B4AC2FA001042F1 /* BSHTTPNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 844E50B41B2F2EE500A69F91 /* BSHTTPNetworking.m */; };
 		84BF8FCD1B4AC2FA001042F1 /* BSTableViewRefreshController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8480581A1B39AEEF005817D7 /* BSTableViewRefreshController.m */; };
-		84BF8FCE1B4AC2FA001042F1 /* BSTableSection.h in Sources */ = {isa = PBXBuildFile; fileRef = 847076621B3A9DFB00F28180 /* BSTableSection.h */; };
 		84BF8FCF1B4AC2FA001042F1 /* BSTableSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 847076631B3A9DFB00F28180 /* BSTableSection.m */; };
-		84BF8FD01B4AC2FA001042F1 /* BSTableContentObject.h in Sources */ = {isa = PBXBuildFile; fileRef = 847076651B3AA01B00F28180 /* BSTableContentObject.h */; };
 		84BF8FD11B4AC2FA001042F1 /* BSTableContentObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 847076661B3AA01B00F28180 /* BSTableContentObject.m */; };
-		84BF8FD21B4AC2FA001042F1 /* UIViewController+BSTableObject.h in Sources */ = {isa = PBXBuildFile; fileRef = 8470766F1B3AB21300F28180 /* UIViewController+BSTableObject.h */; };
 		84BF8FD31B4AC2FA001042F1 /* UIViewController+BSTableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 847076701B3AB21300F28180 /* UIViewController+BSTableObject.m */; };
-		84BF8FD41B4AC2FA001042F1 /* BSUITableViewInitRuntimeController.h in Sources */ = {isa = PBXBuildFile; fileRef = 84C06D991B3AF3BA000BB45C /* BSUITableViewInitRuntimeController.h */; };
 		84BF8FD51B4AC2FA001042F1 /* BSUITableViewInitRuntimeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C06D9A1B3AF3BA000BB45C /* BSUITableViewInitRuntimeController.m */; };
-		84BF8FD71B4AC2FA001042F1 /* BSUITableViewCommonController.h in Sources */ = {isa = PBXBuildFile; fileRef = 844A32011B4032790045CA6C /* BSUITableViewCommonController.h */; };
 		84BF8FD81B4AC2FA001042F1 /* BSUITableViewCommonController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844A32021B4032790045CA6C /* BSUITableViewCommonController.m */; };
-		84BF8FD91B4AC2FA001042F1 /* BSTableViewCellData.h in Sources */ = {isa = PBXBuildFile; fileRef = 8460AE781B42569300022280 /* BSTableViewCellData.h */; };
 		84BF8FDA1B4AC2FA001042F1 /* BSTableViewCellData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8460AE791B42569300022280 /* BSTableViewCellData.m */; };
-		84BF8FDB1B4AC2FA001042F1 /* BSTableViewMultCellData.h in Sources */ = {isa = PBXBuildFile; fileRef = 8460AE7B1B42578B00022280 /* BSTableViewMultCellData.h */; };
 		84BF8FDC1B4AC2FA001042F1 /* BSTableViewMultCellData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8460AE7C1B42578B00022280 /* BSTableViewMultCellData.m */; };
-		84BF8FDD1B4AC2FA001042F1 /* BSUITabBarCommonController.h in Sources */ = {isa = PBXBuildFile; fileRef = 8460AE7E1B4259BE00022280 /* BSUITabBarCommonController.h */; };
 		84BF8FDE1B4AC2FA001042F1 /* BSUITabBarCommonController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8460AE7F1B4259BE00022280 /* BSUITabBarCommonController.m */; };
-		84BF8FDF1B4AC2FA001042F1 /* BSContentObjectNavigation.h in Sources */ = {isa = PBXBuildFile; fileRef = 8460AE811B426E4C00022280 /* BSContentObjectNavigation.h */; };
 		84BF8FE01B4AC2FA001042F1 /* BSContentObjectNavigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8460AE821B426E4C00022280 /* BSContentObjectNavigation.m */; };
-		84BF8FE11B4AC2FA001042F1 /* BSFCRollingADImageUIView.h in Sources */ = {isa = PBXBuildFile; fileRef = 848058121B39A377005817D7 /* BSFCRollingADImageUIView.h */; };
 		84BF8FE21B4AC2FA001042F1 /* BSFCRollingADImageUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 848058131B39A377005817D7 /* BSFCRollingADImageUIView.m */; };
-		84BF8FE41B4AC2FA001042F1 /* BSUIImageTitleTableViewCell.h in Sources */ = {isa = PBXBuildFile; fileRef = 845A02211B3DA1F3007F5327 /* BSUIImageTitleTableViewCell.h */; };
 		84BF8FE51B4AC2FA001042F1 /* BSUIImageTitleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 845A02221B3DA1F3007F5327 /* BSUIImageTitleTableViewCell.m */; };
 		84BF8FE71B4AC2FA001042F1 /* BSUISingleImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 845A02401B3DE9FE007F5327 /* BSUISingleImageTableViewCell.m */; };
 		84BF8FE91B4AC2FA001042F1 /* BSUIFiveColTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 846541EB1B42C47300DE2BC1 /* BSUIFiveColTableViewCell.m */; };
 		84BF8FF11B4AC2FA001042F1 /* BSUIComponentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E97AB61B307535001D4100 /* BSUIComponentView.m */; };
-		84BF8FF21B4AC2FA001042F1 /* BSUIBlockButton.h in Sources */ = {isa = PBXBuildFile; fileRef = 8474DEA91B3F474700D9DE36 /* BSUIBlockButton.h */; };
 		84BF8FF31B4AC2FA001042F1 /* BSUIBlockButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8474DEAA1B3F474700D9DE36 /* BSUIBlockButton.m */; };
 		84BF8FF61B4AC2FA001042F1 /* BSUIBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 844A32051B4064310045CA6C /* BSUIBarButtonItem.m */; };
-		84BF8FF71B4AC2FA001042F1 /* BSUIFrameworkHeader.h in Sources */ = {isa = PBXBuildFile; fileRef = 845A02241B3DA669007F5327 /* BSUIFrameworkHeader.h */; };
-		84BF8FF81B4AC2FA001042F1 /* BSCMFrameworkHeader.h in Sources */ = {isa = PBXBuildFile; fileRef = 845A022E1B3DB13B007F5327 /* BSCMFrameworkHeader.h */; };
 		84BF8FF91B4AC2FA001042F1 /* YYHMantleModelSerializer.h in Sources */ = {isa = PBXBuildFile; fileRef = 842042BD1B29881B0002C868 /* YYHMantleModelSerializer.h */; };
 		84BF8FFA1B4AC2FA001042F1 /* YYHMantleModelSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 842042BE1B29881B0002C868 /* YYHMantleModelSerializer.m */; };
 		84BF8FFC1B4AC2FA001042F1 /* YYHModelRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = 842042C11B2988410002C868 /* YYHModelRoute.m */; };
 		84BF8FFE1B4AC2FA001042F1 /* YYHModelRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 842042C31B2988410002C868 /* YYHModelRouter.m */; };
-		84BF8FFF1B4AC2FA001042F1 /* YYHModelSerialization.h in Sources */ = {isa = PBXBuildFile; fileRef = 842042C41B2988410002C868 /* YYHModelSerialization.h */; };
 		84BF90421B4AC5DB001042F1 /* BusinessManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BA96491B2829D500388B58 /* BusinessManager.m */; };
 		84BF90441B4AC5DB001042F1 /* CustomerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BA964C1B2829D500388B58 /* CustomerManager.m */; };
 		84BF90461B4AC634001042F1 /* PayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BA96641B2829D500388B58 /* PayManager.m */; };
@@ -377,10 +361,16 @@
 		84BF909A1B4AD4FD001042F1 /* libKT-RESOURCES.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84BF90821B4AD49E001042F1 /* libKT-RESOURCES.a */; };
 		84C06D9B1B3AF3BA000BB45C /* BSUITableViewInitRuntimeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C06D9A1B3AF3BA000BB45C /* BSUITableViewInitRuntimeController.m */; };
 		84D19FE41B4C36EC00BA25BF /* BSBLEViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D19FDD1B4C36EC00BA25BF /* BSBLEViewController.m */; };
-		84D19FE51B4C36EC00BA25BF /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84D19FDE1B4C36EC00BA25BF /* MainStoryboard.storyboard */; };
 		84D19FE61B4C36EC00BA25BF /* LeDiscovery.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D19FE11B4C36EC00BA25BF /* LeDiscovery.m */; };
 		84D19FE71B4C36EC00BA25BF /* LeTemperatureAlarmService.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D19FE31B4C36EC00BA25BF /* LeTemperatureAlarmService.m */; };
 		84D19FE91B4C3CE900BA25BF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 84D19FE81B4C3CE900BA25BF /* InfoPlist.strings */; };
+		84D19FEB1B4C43E900BA25BF /* BSIFTTHeader.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 84D19FEA1B4C430000BA25BF /* BSIFTTHeader.h */; };
+		84D19FED1B4C440500BA25BF /* BSBLEViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D19FDD1B4C36EC00BA25BF /* BSBLEViewController.m */; };
+		84D19FEF1B4C440500BA25BF /* LeDiscovery.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D19FE11B4C36EC00BA25BF /* LeDiscovery.m */; };
+		84D19FF11B4C440500BA25BF /* LeTemperatureAlarmService.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D19FE31B4C36EC00BA25BF /* LeTemperatureAlarmService.m */; };
+		84D19FF31B4C440500BA25BF /* BSBLEDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8480580A1B39A0E9005817D7 /* BSBLEDetailTableViewController.m */; };
+		84D19FF51B4C440500BA25BF /* BSBLEMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8404B8541B393F1E002AF13A /* BSBLEMainController.m */; };
+		84D19FF81B4C451F00BA25BF /* BSUISingleImageTableViewCell.xib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8476A0451B4BB93100DB2CF0 /* BSUISingleImageTableViewCell.xib */; };
 		84E97AB71B307535001D4100 /* BSUIComponentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E97AB61B307535001D4100 /* BSUIComponentView.m */; };
 		84EBA00B1B416E37003309F6 /* ClassForSelectors.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EBA00A1B416E37003309F6 /* ClassForSelectors.m */; };
 		84EBA0131B4189E0003309F6 /* LBLiferServiceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EBA0121B4189E0003309F6 /* LBLiferServiceController.m */; };
@@ -422,6 +412,8 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				84D19FF81B4C451F00BA25BF /* BSUISingleImageTableViewCell.xib in CopyFiles */,
+				84D19FEB1B4C43E900BA25BF /* BSIFTTHeader.h in CopyFiles */,
 				84BF90581B4AD23B001042F1 /* ADTImagePlayer.xib in CopyFiles */,
 				84BF905F1B4AD23B001042F1 /* BSUIFiveColTableViewCell.xib in CopyFiles */,
 				84BF8FA81B4ABB0C001042F1 /* BSUIFrameworkHeader.h in CopyFiles */,
@@ -920,12 +912,12 @@
 		84C06D9A1B3AF3BA000BB45C /* BSUITableViewInitRuntimeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUITableViewInitRuntimeController.m; sourceTree = "<group>"; };
 		84D19FDC1B4C36EC00BA25BF /* BSBLEViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSBLEViewController.h; sourceTree = "<group>"; };
 		84D19FDD1B4C36EC00BA25BF /* BSBLEViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSBLEViewController.m; sourceTree = "<group>"; };
-		84D19FDF1B4C36EC00BA25BF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		84D19FE01B4C36EC00BA25BF /* LeDiscovery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeDiscovery.h; sourceTree = "<group>"; };
 		84D19FE11B4C36EC00BA25BF /* LeDiscovery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeDiscovery.m; sourceTree = "<group>"; };
 		84D19FE21B4C36EC00BA25BF /* LeTemperatureAlarmService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeTemperatureAlarmService.h; sourceTree = "<group>"; };
 		84D19FE31B4C36EC00BA25BF /* LeTemperatureAlarmService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeTemperatureAlarmService.m; sourceTree = "<group>"; };
 		84D19FE81B4C3CE900BA25BF /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
+		84D19FEA1B4C430000BA25BF /* BSIFTTHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSIFTTHeader.h; sourceTree = "<group>"; };
 		84E97AB51B307535001D4100 /* BSUIComponentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUIComponentView.h; sourceTree = "<group>"; };
 		84E97AB61B307535001D4100 /* BSUIComponentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUIComponentView.m; sourceTree = "<group>"; };
 		84EBA0091B416E37003309F6 /* ClassForSelectors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassForSelectors.h; sourceTree = "<group>"; };
@@ -1839,6 +1831,7 @@
 				84BA968B1B2829F300388B58 /*  Bluetooth */,
 				84BA968C1B2829F300388B58 /* Map */,
 				84BA968D1B2829F300388B58 /* Sensor */,
+				84D19FEA1B4C430000BA25BF /* BSIFTTHeader.h */,
 			);
 			path = BSInfrastructure;
 			sourceTree = "<group>";
@@ -2069,7 +2062,6 @@
 			children = (
 				84D19FDC1B4C36EC00BA25BF /* BSBLEViewController.h */,
 				84D19FDD1B4C36EC00BA25BF /* BSBLEViewController.m */,
-				84D19FDE1B4C36EC00BA25BF /* MainStoryboard.storyboard */,
 				84D19FE01B4C36EC00BA25BF /* LeDiscovery.h */,
 				84D19FE11B4C36EC00BA25BF /* LeDiscovery.m */,
 				84D19FE21B4C36EC00BA25BF /* LeTemperatureAlarmService.h */,
@@ -2451,7 +2443,7 @@
 		A04366A11AD7B550005842EE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = itcast;
 				TargetAttributes = {
 					84BF8F5D1B4AB63C001042F1 = {
@@ -2530,7 +2522,6 @@
 				844268C01B36C05F006E7F7D /* ljt.png in Resources */,
 				8442690D1B36C05F006E7F7D /* im_post.png in Resources */,
 				844268ED1B36C05F006E7F7D /* login-3.png in Resources */,
-				847432EB1B2A8DCC00B030C4 /* WaitPaymentDetail.xib in Resources */,
 				8487F1861B3005C100F0F7B2 /* KTInformationConfViewController.storyboard in Resources */,
 				844268FE1B36C05F006E7F7D /* 3.jpg in Resources */,
 				8470765C1B3A8F1400F28180 /* adsCell.xib in Resources */,
@@ -2640,7 +2631,6 @@
 				844268BD1B36C05F006E7F7D /* gouwu.png in Resources */,
 				844268B21B36C05F006E7F7D /* a7.png in Resources */,
 				844269031B36C05F006E7F7D /* dizhi.png in Resources */,
-				84D19FE51B4C36EC00BA25BF /* MainStoryboard.storyboard in Resources */,
 				842042AF1B2984D80002C868 /* KTCarCell.xib in Resources */,
 				844268AF1B36C05F006E7F7D /* a13.png in Resources */,
 				844268E51B36C05F006E7F7D /* forget password-1.png in Resources */,
@@ -2843,45 +2833,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84D19FED1B4C440500BA25BF /* BSBLEViewController.m in Sources */,
+				84D19FEF1B4C440500BA25BF /* LeDiscovery.m in Sources */,
+				84D19FF11B4C440500BA25BF /* LeTemperatureAlarmService.m in Sources */,
+				84D19FF31B4C440500BA25BF /* BSBLEDetailTableViewController.m in Sources */,
+				84D19FF51B4C440500BA25BF /* BSBLEMainController.m in Sources */,
 				84BF8FC41B4AC2FA001042F1 /* Conf.m in Sources */,
 				84BF8FC61B4AC2FA001042F1 /* ErrorMessage.m in Sources */,
 				84BF8FCA1B4AC2FA001042F1 /* BSHTTPNetworking.m in Sources */,
 				84BF8FCD1B4AC2FA001042F1 /* BSTableViewRefreshController.m in Sources */,
-				84BF8FCE1B4AC2FA001042F1 /* BSTableSection.h in Sources */,
 				84BF8FCF1B4AC2FA001042F1 /* BSTableSection.m in Sources */,
-				84BF8FD01B4AC2FA001042F1 /* BSTableContentObject.h in Sources */,
 				84BF8FD11B4AC2FA001042F1 /* BSTableContentObject.m in Sources */,
-				84BF8FD21B4AC2FA001042F1 /* UIViewController+BSTableObject.h in Sources */,
 				84BF8FD31B4AC2FA001042F1 /* UIViewController+BSTableObject.m in Sources */,
-				84BF8FD41B4AC2FA001042F1 /* BSUITableViewInitRuntimeController.h in Sources */,
 				84BF8FD51B4AC2FA001042F1 /* BSUITableViewInitRuntimeController.m in Sources */,
-				84BF8FD71B4AC2FA001042F1 /* BSUITableViewCommonController.h in Sources */,
 				84BF8FD81B4AC2FA001042F1 /* BSUITableViewCommonController.m in Sources */,
-				84BF8FD91B4AC2FA001042F1 /* BSTableViewCellData.h in Sources */,
 				84BF8FDA1B4AC2FA001042F1 /* BSTableViewCellData.m in Sources */,
-				84BF8FDB1B4AC2FA001042F1 /* BSTableViewMultCellData.h in Sources */,
 				84BF8FDC1B4AC2FA001042F1 /* BSTableViewMultCellData.m in Sources */,
-				84BF8FDD1B4AC2FA001042F1 /* BSUITabBarCommonController.h in Sources */,
 				84BF8FDE1B4AC2FA001042F1 /* BSUITabBarCommonController.m in Sources */,
-				84BF8FDF1B4AC2FA001042F1 /* BSContentObjectNavigation.h in Sources */,
 				84BF8FE01B4AC2FA001042F1 /* BSContentObjectNavigation.m in Sources */,
-				84BF8FE11B4AC2FA001042F1 /* BSFCRollingADImageUIView.h in Sources */,
 				84BF8FE21B4AC2FA001042F1 /* BSFCRollingADImageUIView.m in Sources */,
-				84BF8FE41B4AC2FA001042F1 /* BSUIImageTitleTableViewCell.h in Sources */,
 				84BF8FE51B4AC2FA001042F1 /* BSUIImageTitleTableViewCell.m in Sources */,
 				84BF8FE71B4AC2FA001042F1 /* BSUISingleImageTableViewCell.m in Sources */,
 				84BF8FE91B4AC2FA001042F1 /* BSUIFiveColTableViewCell.m in Sources */,
 				84BF8FF11B4AC2FA001042F1 /* BSUIComponentView.m in Sources */,
-				84BF8FF21B4AC2FA001042F1 /* BSUIBlockButton.h in Sources */,
 				84BF8FF31B4AC2FA001042F1 /* BSUIBlockButton.m in Sources */,
 				84BF8FF61B4AC2FA001042F1 /* BSUIBarButtonItem.m in Sources */,
-				84BF8FF71B4AC2FA001042F1 /* BSUIFrameworkHeader.h in Sources */,
-				84BF8FF81B4AC2FA001042F1 /* BSCMFrameworkHeader.h in Sources */,
 				84BF8FF91B4AC2FA001042F1 /* YYHMantleModelSerializer.h in Sources */,
 				84BF8FFA1B4AC2FA001042F1 /* YYHMantleModelSerializer.m in Sources */,
 				84BF8FFC1B4AC2FA001042F1 /* YYHModelRoute.m in Sources */,
 				84BF8FFE1B4AC2FA001042F1 /* YYHModelRouter.m in Sources */,
-				84BF8FFF1B4AC2FA001042F1 /* YYHModelSerialization.h in Sources */,
 				84BF8FAD1B4ABC88001042F1 /* BSUICommonController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -3098,14 +3078,6 @@
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
-		84D19FDE1B4C36EC00BA25BF /* MainStoryboard.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				84D19FDF1B4C36EC00BA25BF /* en */,
-			);
-			name = MainStoryboard.storyboard;
-			sourceTree = "<group>";
-		};
 		DFD86AB21AFC5886000AB8E6 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -3131,7 +3103,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "KT-BUSINESS-SELLER/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3153,7 +3125,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "KT-BUSINESS-SELLER/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
