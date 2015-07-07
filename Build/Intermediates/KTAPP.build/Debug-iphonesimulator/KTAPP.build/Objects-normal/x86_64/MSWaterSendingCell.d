@@ -4,15 +4,15 @@ dependencies: \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/LBModels/SendingWater/WaterSending.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/BSFramework/Base/ErrorMessage.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/BSFramework/BSCommunication/BSHTTPNetworking.h \
-  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/Build/Products/Debug-iphonesimulator/include/KT-FRAME-PK/BSCMFrameworkHeader.h \
+  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/BSFramework/BSCMFrameworkHeader.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/BSFramework/Base/Conf.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/BSTransfer/YYHModelRouter/YYHModelRouter.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/BSTransfer/YYHModelRouter/YYHModelSerialization.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/LBControl/SendingWater/LBSendingWaterTableViewController.h \
-  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/Build/Products/Debug-iphonesimulator/include/KT-FRAME-PK/BSUIFrameworkHeader.h \
+  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/BSFramework/BSUIFrameworkHeader.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/BSFramework/BSUISetting/NavigationProcess.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/BSFramework/BSUIComponent/CommonController/BSTableContentObject.h \
-  Build/Products/Debug-iphonesimulator/include/KT-FRAME-PK/BSUICommonController.h \
+  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/BSFramework/BSUIComponent/CommonController/BSUICommonController.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/BSFramework/BSUIComponent/CommonController/BSUITableViewCommonController.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/BSFramework/BSUIComponent/CommonController/BSUITabBarCommonController.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/BSFramework/BSUISetting/UIView+Frame.h \

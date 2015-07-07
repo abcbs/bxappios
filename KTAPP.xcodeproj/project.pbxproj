@@ -264,6 +264,8 @@
 		8474DEA31B3F004B00D9DE36 /* KTLBNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8474DEA21B3F004B00D9DE36 /* KTLBNavigationController.m */; };
 		8474DEAB1B3F474700D9DE36 /* BSUIBlockButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8474DEAA1B3F474700D9DE36 /* BSUIBlockButton.m */; };
 		8474DEB51B3F7D0600D9DE36 /* BSUICommonController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8474DEB41B3F7D0600D9DE36 /* BSUICommonController.m */; };
+		8476A03E1B4BAB2000DB2CF0 /* KTLifeIndexCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476A03C1B4BAB2000DB2CF0 /* KTLifeIndexCell.m */; };
+		8476A03F1B4BAB2000DB2CF0 /* KTLifeIndexCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8476A03D1B4BAB2000DB2CF0 /* KTLifeIndexCell.xib */; };
 		847B30881B3290DD007003D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 847B308A1B3290DD007003D7 /* Main.storyboard */; };
 		8480580B1B39A0E9005817D7 /* BSBLEDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8480580A1B39A0E9005817D7 /* BSBLEDetailTableViewController.m */; };
 		848058151B39A377005817D7 /* BSFCRollingADImageUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 848058131B39A377005817D7 /* BSFCRollingADImageUIView.m */; };
@@ -327,7 +329,6 @@
 		84BF8FD31B4AC2FA001042F1 /* UIViewController+BSTableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 847076701B3AB21300F28180 /* UIViewController+BSTableObject.m */; };
 		84BF8FD41B4AC2FA001042F1 /* BSUITableViewInitRuntimeController.h in Sources */ = {isa = PBXBuildFile; fileRef = 84C06D991B3AF3BA000BB45C /* BSUITableViewInitRuntimeController.h */; };
 		84BF8FD51B4AC2FA001042F1 /* BSUITableViewInitRuntimeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C06D9A1B3AF3BA000BB45C /* BSUITableViewInitRuntimeController.m */; };
-		84BF8FD61B4AC2FA001042F1 /* BSUICommonController.h in Sources */ = {isa = PBXBuildFile; fileRef = 8474DEB31B3F7D0600D9DE36 /* BSUICommonController.h */; };
 		84BF8FD71B4AC2FA001042F1 /* BSUITableViewCommonController.h in Sources */ = {isa = PBXBuildFile; fileRef = 844A32011B4032790045CA6C /* BSUITableViewCommonController.h */; };
 		84BF8FD81B4AC2FA001042F1 /* BSUITableViewCommonController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844A32021B4032790045CA6C /* BSUITableViewCommonController.m */; };
 		84BF8FD91B4AC2FA001042F1 /* BSTableViewCellData.h in Sources */ = {isa = PBXBuildFile; fileRef = 8460AE781B42569300022280 /* BSTableViewCellData.h */; };
@@ -818,8 +819,11 @@
 		8474DEA91B3F474700D9DE36 /* BSUIBlockButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUIBlockButton.h; sourceTree = "<group>"; };
 		8474DEAA1B3F474700D9DE36 /* BSUIBlockButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUIBlockButton.m; sourceTree = "<group>"; };
 		8474DEAC1B3F606C00D9DE36 /* NavigationProcess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationProcess.h; sourceTree = "<group>"; };
-		8474DEB31B3F7D0600D9DE36 /* BSUICommonController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUICommonController.h; sourceTree = "<group>"; };
 		8474DEB41B3F7D0600D9DE36 /* BSUICommonController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUICommonController.m; sourceTree = "<group>"; };
+		8476A03B1B4BAB2000DB2CF0 /* KTLifeIndexCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTLifeIndexCell.h; sourceTree = "<group>"; };
+		8476A03C1B4BAB2000DB2CF0 /* KTLifeIndexCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTLifeIndexCell.m; sourceTree = "<group>"; };
+		8476A03D1B4BAB2000DB2CF0 /* KTLifeIndexCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KTLifeIndexCell.xib; sourceTree = "<group>"; };
+		8476A0401B4BAC8C00DB2CF0 /* BSUICommonController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUICommonController.h; sourceTree = "<group>"; };
 		847B30891B3290DD007003D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		848058091B39A0E9005817D7 /* BSBLEDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSBLEDetailTableViewController.h; sourceTree = "<group>"; };
 		8480580A1B39A0E9005817D7 /* BSBLEDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSBLEDetailTableViewController.m; sourceTree = "<group>"; };
@@ -1672,6 +1676,7 @@
 		848058171B39AEEF005817D7 /* CommonController */ = {
 			isa = PBXGroup;
 			children = (
+				8476A0401B4BAC8C00DB2CF0 /* BSUICommonController.h */,
 				848058181B39AEEF005817D7 /* BSTableListProtocol.h */,
 				848058191B39AEEF005817D7 /* BSTableViewRefreshController.h */,
 				8480581A1B39AEEF005817D7 /* BSTableViewRefreshController.m */,
@@ -1683,7 +1688,6 @@
 				847076701B3AB21300F28180 /* UIViewController+BSTableObject.m */,
 				84C06D991B3AF3BA000BB45C /* BSUITableViewInitRuntimeController.h */,
 				84C06D9A1B3AF3BA000BB45C /* BSUITableViewInitRuntimeController.m */,
-				8474DEB31B3F7D0600D9DE36 /* BSUICommonController.h */,
 				8474DEB41B3F7D0600D9DE36 /* BSUICommonController.m */,
 				844A32011B4032790045CA6C /* BSUITableViewCommonController.h */,
 				844A32021B4032790045CA6C /* BSUITableViewCommonController.m */,
@@ -1918,6 +1922,9 @@
 		84BA96931B282A0500388B58 /* MainFrame */ = {
 			isa = PBXGroup;
 			children = (
+				8476A03B1B4BAB2000DB2CF0 /* KTLifeIndexCell.h */,
+				8476A03C1B4BAB2000DB2CF0 /* KTLifeIndexCell.m */,
+				8476A03D1B4BAB2000DB2CF0 /* KTLifeIndexCell.xib */,
 				8420429E1B2983B40002C868 /* AppDelegate.h */,
 				8420429F1B2983B40002C868 /* AppDelegate.m */,
 				847B308A1B3290DD007003D7 /* Main.storyboard */,
@@ -2547,6 +2554,7 @@
 				844268D41B36C05F006E7F7D /* ljzf(1).png in Resources */,
 				844268B61B36C05F006E7F7D /* APP-分-640-1136-4寸.jpg in Resources */,
 				844268B91B36C05F006E7F7D /* d-1.png in Resources */,
+				8476A03F1B4BAB2000DB2CF0 /* KTLifeIndexCell.xib in Resources */,
 				844268CD1B36C05F006E7F7D /* 1.png in Resources */,
 				847432DC1B2A8CE500B030C4 /* MyOrderCell.xib in Resources */,
 				844268B01B36C05F006E7F7D /* a5.png in Resources */,
@@ -2821,7 +2829,6 @@
 				84BF8FD31B4AC2FA001042F1 /* UIViewController+BSTableObject.m in Sources */,
 				84BF8FD41B4AC2FA001042F1 /* BSUITableViewInitRuntimeController.h in Sources */,
 				84BF8FD51B4AC2FA001042F1 /* BSUITableViewInitRuntimeController.m in Sources */,
-				84BF8FD61B4AC2FA001042F1 /* BSUICommonController.h in Sources */,
 				84BF8FD71B4AC2FA001042F1 /* BSUITableViewCommonController.h in Sources */,
 				84BF8FD81B4AC2FA001042F1 /* BSUITableViewCommonController.m in Sources */,
 				84BF8FD91B4AC2FA001042F1 /* BSTableViewCellData.h in Sources */,
@@ -2935,6 +2942,7 @@
 				847076521B3A8C4500F28180 /* queueController.m in Sources */,
 				0E915F981B0C394800F47478 /* ValidateCode.m in Sources */,
 				8474DEA31B3F004B00D9DE36 /* KTLBNavigationController.m in Sources */,
+				8476A03E1B4BAB2000DB2CF0 /* KTLifeIndexCell.m in Sources */,
 				84BA96881B2829D500388B58 /* ShoppingCart.m in Sources */,
 				844A32061B4064310045CA6C /* BSUIBarButtonItem.m in Sources */,
 				847076711B3AB21300F28180 /* UIViewController+BSTableObject.m in Sources */,

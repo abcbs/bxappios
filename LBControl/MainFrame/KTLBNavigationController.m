@@ -9,7 +9,7 @@
 #import "KTLBNavigationController.h"
 #import "LBControllerHeader.h"
 #import "BSUIFrameworkHeader.h"
-
+#import "KTLifeIndexCell.h"
 @interface KTLBNavigationController()<BSImagePlayerDelegate>
     @property (nonatomic, weak) BSFCRollingADImageUIView *imagePlayer;
     @property (nonatomic, copy) NSArray *imageNameArray;
@@ -24,8 +24,8 @@
     BSTableSection *bsTable=[BSTableSection initWithHeaderVcClassContent:@"首页"//章节显示标题
                                                                imageName:@"tuhongse"//章节显示图标
                                                          headerViewClass:nil//章节显示视图
-                                                          cellIdentifier:@"BSUISingleImageTableViewCell"//采用的TableViewCell
-                                                               cellClass:[BSUISingleImageTableViewCell class]//TableViewCell实现
+                                                          cellIdentifier:@"KTLifeIndexCell"//采用的TableViewCell
+                                                               cellClass:[KTLifeIndexCell class]//TableViewCell实现
                                                               storyboard:@"LFRecommend" bsContent:nil];
     
     //推荐
