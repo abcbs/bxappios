@@ -28,6 +28,7 @@
     
         [self.view addSubview: tableView];
     }
+    
     self.tableView.dataSource =self;
     self.tableView.delegate = self;
     
@@ -55,7 +56,26 @@
  *改变行的高度（实现主个代理方法后 rowHeight 设定的高度无效）
  */
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return BSMarginY(120);
+    NSInteger colNumber=[self.bSTableObjects currentCapatibilty:indexPath.section];
+    if (colNumber>1){
+        return BSMarginY(120);
+        
+    }
+    /*
+    if (IS_IPHONE5) {
+        return BSMarginX(122);
+    }else if  (IS_IPHONE_6){
+        return BSMarginY(122);
+        
+    }else if (IS_IPHONE_6PLUS){
+        return BSMarginX(122);
+        
+    }else{
+        return BSMarginX(60);
+    }
+    */
+    return BSMarginX(121);
+     
 }
 
 /**
@@ -67,14 +87,22 @@
 
 //每个section头部标题高度（实现这个代理方法后前面 sectionFooterHeight 设定的高度无效）
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
-    if (IS_IPHONE5) {
-        return BSMarginY(120);
-    }else if  (IS_IPHONE_6){
-        
-    }else if (IS_IPHONE_6PLUS){
-        
+    NSInteger colNumber=[self.bSTableObjects currentCapatibilty:section];
+    if (colNumber>1){
+        return BSMarginY(1);
+
     }
-    return BSMarginY(1);
+    if (IS_IPHONE5) {
+        return BSMarginY(2);
+    }else if  (IS_IPHONE_6){
+        return BSMarginY(1);
+
+    }else if (IS_IPHONE_6PLUS){
+        return BSMarginY(1);
+
+    }else{
+        return BSMarginY(180);
+    }
 }
 
 /**

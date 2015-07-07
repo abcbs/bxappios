@@ -22,6 +22,20 @@
 
 -(UITableViewCell *)viewCellWithBSContentObject:(BSTableContentObject *)bsContentObject{
     self.bigImage.image = [UIImage imageNamed:bsContentObject.colImageName];
+    /*
+    CGFloat height=BSMarginY(120);
+    if (IS_IPHONE5) {
+        height= BSMarginX(120);
+    }else if  (IS_IPHONE_6){
+        height= BSMarginX(120);
+    }else if (IS_IPHONE_6PLUS){
+        height= BSMarginX(120);
+        
+    }else{//4s
+        height =BSMarginX(60);
+    }
+    self.bigImage.height=height;
+     */
     return self;
 }
 
