@@ -67,6 +67,13 @@
 
 //每个section头部标题高度（实现这个代理方法后前面 sectionFooterHeight 设定的高度无效）
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    if (IS_IPHONE5) {
+        return BSMarginY(120);
+    }else if  (IS_IPHONE_6){
+        
+    }else if (IS_IPHONE_6PLUS){
+        
+    }
     return BSMarginY(1);
 }
 
@@ -229,7 +236,10 @@ titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
  */
 -(NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"将要处理的行indexpath=%@",indexPath);
+   NSInteger colNumber=[self.bSTableObjects currentCapatibilty:indexPath.section];
+    if (colNumber>1){
+        return nil;
+    }
     return indexPath;
 }
 
@@ -262,7 +272,6 @@ titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     NSInteger sc=[self.bSTableObjects currentSectionNumber];
-    NSLog(@"表的章节总数为%ld",(long)sc);
     return sc;
 }
 
@@ -272,7 +281,6 @@ titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     NSInteger rows=[self.bSTableObjects currentRowNumber:section];
-    NSLog(@"每个章节的Row为%ld",(long)rows);
     return rows;
 }
 

@@ -12,4 +12,5 @@
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 
+@property (weak, nonatomic) IBOutlet UIImageView *bigImage;
 @end
