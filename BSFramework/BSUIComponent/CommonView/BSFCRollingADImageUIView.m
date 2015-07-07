@@ -56,6 +56,7 @@
     [imagePlayer setImageNames:imagesNames];
     
     imagePlayer.playerDelegate = player;
+   
     return imagePlayer;
     
 }
@@ -103,6 +104,7 @@
     self.pageControl.numberOfPages = count;
     [self setNeedsLayout];
     
+     self.pageControl.width=BSMarginY(SCREEN_WIDTH);
     // 6.添加定时器(每隔2秒调用一次self 的nextImage方法)
     [self addTimer];
     [self setNeedsLayout];
@@ -168,7 +170,6 @@
         UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"entertaiment_kong_back.png"]];
         
         imageView.image = [UIImage imageNamed:self.imageNames[i]];
-        
         [self.scrollView addSubview:imageView];
     }
     // 3.隐藏水平滚动条
@@ -181,10 +182,11 @@
     // 5.设置pageControl的总页数
     self.pageControl.numberOfPages = count;
     self.pageControl.currentPage = 0;
-
+    //适配修改
+    self.scrollView.width=BSMarginX(SCREEN_WIDTH);
     // 6.添加定时器(每隔2秒调用一次self 的nextImage方法)
     [self addTimer];
-    [self setNeedsLayout];
+    //[self setNeedsLayout];
 //    [self layoutSubviews];
     
 }

@@ -61,19 +61,6 @@
         return BSMarginY(120);
         
     }
-    /*
-    if (IS_IPHONE5) {
-        return BSMarginX(122);
-    }else if  (IS_IPHONE_6){
-        return BSMarginY(122);
-        
-    }else if (IS_IPHONE_6PLUS){
-        return BSMarginX(122);
-        
-    }else{
-        return BSMarginX(60);
-    }
-    */
     return BSMarginX(121);
      
 }
