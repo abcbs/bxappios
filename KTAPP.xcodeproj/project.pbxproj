@@ -380,6 +380,7 @@
 		84D19FE51B4C36EC00BA25BF /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84D19FDE1B4C36EC00BA25BF /* MainStoryboard.storyboard */; };
 		84D19FE61B4C36EC00BA25BF /* LeDiscovery.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D19FE11B4C36EC00BA25BF /* LeDiscovery.m */; };
 		84D19FE71B4C36EC00BA25BF /* LeTemperatureAlarmService.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D19FE31B4C36EC00BA25BF /* LeTemperatureAlarmService.m */; };
+		84D19FE91B4C3CE900BA25BF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 84D19FE81B4C3CE900BA25BF /* InfoPlist.strings */; };
 		84E97AB71B307535001D4100 /* BSUIComponentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E97AB61B307535001D4100 /* BSUIComponentView.m */; };
 		84EBA00B1B416E37003309F6 /* ClassForSelectors.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EBA00A1B416E37003309F6 /* ClassForSelectors.m */; };
 		84EBA0131B4189E0003309F6 /* LBLiferServiceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EBA0121B4189E0003309F6 /* LBLiferServiceController.m */; };
@@ -924,6 +925,7 @@
 		84D19FE11B4C36EC00BA25BF /* LeDiscovery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeDiscovery.m; sourceTree = "<group>"; };
 		84D19FE21B4C36EC00BA25BF /* LeTemperatureAlarmService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeTemperatureAlarmService.h; sourceTree = "<group>"; };
 		84D19FE31B4C36EC00BA25BF /* LeTemperatureAlarmService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeTemperatureAlarmService.m; sourceTree = "<group>"; };
+		84D19FE81B4C3CE900BA25BF /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
 		84E97AB51B307535001D4100 /* BSUIComponentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUIComponentView.h; sourceTree = "<group>"; };
 		84E97AB61B307535001D4100 /* BSUIComponentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUIComponentView.m; sourceTree = "<group>"; };
 		84EBA0091B416E37003309F6 /* ClassForSelectors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassForSelectors.h; sourceTree = "<group>"; };
@@ -2013,6 +2015,7 @@
 			children = (
 				84BF8F611B4AB63C001042F1 /* Info.plist */,
 				84BF8F621B4AB63C001042F1 /* main.m */,
+				84D19FE81B4C3CE900BA25BF /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -2499,6 +2502,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84BF8F6F1B4AB63C001042F1 /* Main.storyboard in Resources */,
+				84D19FE91B4C3CE900BA25BF /* InfoPlist.strings in Resources */,
 				84BF8F741B4AB63C001042F1 /* LaunchScreen.xib in Resources */,
 				84BF8F711B4AB63C001042F1 /* Images.xcassets in Resources */,
 			);
