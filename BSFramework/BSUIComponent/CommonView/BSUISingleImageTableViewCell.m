@@ -22,20 +22,12 @@
 
 -(UITableViewCell *)viewCellWithBSContentObject:(BSTableContentObject *)bsContentObject{
     self.bigImage.image = [UIImage imageNamed:bsContentObject.colImageName];
-    /*
+    
     CGFloat height=BSMarginY(120);
-    if (IS_IPHONE5) {
-        height= BSMarginX(120);
-    }else if  (IS_IPHONE_6){
-        height= BSMarginX(120);
-    }else if (IS_IPHONE_6PLUS){
-        height= BSMarginX(120);
-        
-    }else{//4s
-        height =BSMarginX(60);
-    }
+    CGFloat width=BSMarginX(SCREEN_WIDTH);
+    //设置默认的宽度、高度
     self.bigImage.height=height;
-     */
+    self.bigImage.width=width;
     return self;
 }
 
