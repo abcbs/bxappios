@@ -15,7 +15,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-     NSLog(@"BSUICommonController viewDidLoad ");
+     NSLog(@"BSUICommonController viewDidLoad %@",self.description);
     
     [BSUIComponentView initNarHeaderWithDefault:self title: self.title
     ];

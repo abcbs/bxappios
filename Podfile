@@ -12,7 +12,54 @@ target 'KTAPP' do
 	pod 'Mantle'
 end
 
-#target 'BSFramework' do
+target 'KT-BUSINESS-SELLER' do
+        pod 'SDWebImage'
+        pod 'AFNetworking'
+        pod 'MJExtension'
+        pod 'MJRefresh'
+        pod 'CocoaLumberjack'
+        pod 'MBProgressHUD'
+        pod 'AFNetworkActivityLogger'
+        pod 'Mantle'
+end
+
+
+target 'KT-FRAME-PK' do
+        pod 'SDWebImage'
+        pod 'AFNetworking'
+        pod 'MJExtension'
+        pod 'MJRefresh'
+        pod 'CocoaLumberjack'
+        pod 'MBProgressHUD'
+        pod 'AFNetworkActivityLogger'
+        pod 'Mantle'
+end
+
+
+target 'KT-MODEL-MODULE' do
+        pod 'SDWebImage'
+        pod 'AFNetworking'
+        pod 'MJExtension'
+        pod 'MJRefresh'
+        pod 'CocoaLumberjack'
+        pod 'MBProgressHUD'
+        pod 'AFNetworkActivityLogger'
+        pod 'Mantle'
+end
+
+
+target 'KT-RESOURCES' do
+        pod 'SDWebImage'
+        pod 'AFNetworking'
+        pod 'MJExtension'
+        pod 'MJRefresh'
+        pod 'CocoaLumberjack'
+        pod 'MBProgressHUD'
+        pod 'AFNetworkActivityLogger'
+        pod 'Mantle'
+end
+
+
 #	pod 'AFNetworking'
 #	pod 'MJExtension'
 #	pod 'CocoaLumberjack'

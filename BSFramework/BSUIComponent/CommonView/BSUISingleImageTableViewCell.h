@@ -12,9 +12,7 @@
 
 @interface BSUISingleImageTableViewCell : UITableViewCell<BSUITableCellOperation>
 
-
-@property (weak, nonatomic)  UIImageView *cellImge;
-
+@property (weak, nonatomic) IBOutlet UIImageView *bigImage;
 /**
  *NIB或者故事板方式调用方法
  */

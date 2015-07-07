@@ -10,26 +10,27 @@
 #import "BSUIFrameworkHeader.h"
 @implementation BSUISingleImageTableViewCell
 
-@synthesize imageView;
+- (void)awakeFromNib {
+    // Initialization code
+}
+
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+    [super setSelected:selected animated:animated];
+    
+    // Configure the view for the selected state
+}
 
 -(UITableViewCell *)viewCellWithBSContentObject:(BSTableContentObject *)bsContentObject{
-    self.cellImge.image=[UIImage imageNamed:[bsContentObject colImageName]];
-    self.cellImge.width=BSMarginX(SCREEN_WIDTH);
-    self.cellImge.height=BSMarginY(115);
+    self.bigImage.image = [UIImage imageNamed:bsContentObject.colImageName];
     return self;
 }
 
 -(UITableViewCell *)viewCellWithHandBSContentObject:(BSTableContentObject *)bsContentObject{
     
-    UIImageView *cell=
-    [[UIImageView alloc] initWithImage:[UIImage imageNamed:[bsContentObject colImageName]]];
-    cell.width=BSMarginX(SCREEN_WIDTH);
-    cell.height=BSMarginY(115);
-    
-    [self.contentView addSubview:cell];
     return self;
 }
 -(void)dealloc{
-    self.cellImge.image=nil;
+    self.bigImage.image=nil;
 }
+
 @end
