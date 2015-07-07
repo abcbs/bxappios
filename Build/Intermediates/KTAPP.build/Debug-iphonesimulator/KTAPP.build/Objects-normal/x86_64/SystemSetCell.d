@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/LBControl/SystemConfig/SystemSetCell.m \
-  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/LBControl/SystemConfig/SystemSetCell.h
+  /Users/fangfangluo/Desktop/Dev/version-git/bxappios/LBControl/SystemConfig/SystemSetCell.m \
+  /Users/fangfangluo/Desktop/Dev/version-git/bxappios/LBControl/SystemConfig/SystemSetCell.h

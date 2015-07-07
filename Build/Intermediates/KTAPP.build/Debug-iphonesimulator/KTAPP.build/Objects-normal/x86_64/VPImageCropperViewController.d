@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/LBControl/MyCircle/VPImageCropperViewController.m \
-  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/LBControl/MyCircle/VPImageCropperViewController.h
+  /Users/fangfangluo/Desktop/Dev/version-git/bxappios/LBControl/MyCircle/VPImageCropperViewController.m \
+  /Users/fangfangluo/Desktop/Dev/version-git/bxappios/LBControl/MyCircle/VPImageCropperViewController.h

@@ -1,4 +1,5 @@
 dependencies: \
+<<<<<<< HEAD
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/LBControl/ShoppingCart/KTCarCell.m \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/LBControl/ShoppingCart/KTCarCell.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/LBModels/SendingWater/WaterSending.h \
@@ -17,3 +18,23 @@ dependencies: \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/民生小区/Classes/Controller/request/Models/UpdateShoppingCartResult.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/民生小区/Classes/Controller/request/Models/BasicModel/BasicResponse.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/民生小区/Classes/Controller/request/Models/BasicModel/BasicHeader.h
+=======
+  /Users/fangfangluo/Desktop/Dev/version-git/bxappios/LBControl/ShoppingCart/KTCarCell.m \
+  /Users/fangfangluo/Desktop/Dev/version-git/bxappios/LBControl/ShoppingCart/KTCarCell.h \
+  /Users/fangfangluo/Desktop/Dev/version-git/bxappios/LBModels/SendingWater/WaterSending.h \
+  /Users/fangfangluo/Desktop/Dev/version-git/bxappios/BSFramework/Base/ErrorMessage.h \
+  /Users/fangfangluo/Desktop/Dev/version-git/bxappios/BSFramework/BSCommunication/BSHTTPNetworking.h \
+  /Users/fangfangluo/Desktop/Dev/version-git/bxappios/BSFramework/BSCMFrameworkHeader.h \
+  /Users/fangfangluo/Desktop/Dev/version-git/bxappios/BSFramework/Base/Conf.h \
+  /Users/fangfangluo/Desktop/Dev/version-git/bxappios/BSTransfer/YYHModelRouter/YYHModelRouter.h \
+  /Users/fangfangluo/Desktop/Dev/version-git/bxappios/BSTransfer/YYHModelRouter/YYHModelSerialization.h \
+  /Users/fangfangluo/Desktop/Dev/version-git/bxappios/LBModels/ShoppingCart/CartList.h \
+  /Users/fangfangluo/Desktop/Dev/version-git/bxappios/民生小区/Classes/Controller/request/Params/UpdateShoppingCartParams.h \
+  /Users/fangfangluo/Desktop/Dev/version-git/bxappios/民生小区/Classes/Controller/request/Params/BasicParams.h \
+  /Users/fangfangluo/Desktop/Dev/version-git/bxappios/民生小区/Classes/Controller/request/RequestTool/UpdateShoppingCartRequest.h \
+  /Users/fangfangluo/Desktop/Dev/version-git/bxappios/民生小区/Classes/Controller/request/RequestTool/BasicRequest/MiddleNetWorkTool.h \
+  /Users/fangfangluo/Desktop/Dev/version-git/bxappios/民生小区/Classes/Controller/request/Params/Singleton.h \
+  /Users/fangfangluo/Desktop/Dev/version-git/bxappios/民生小区/Classes/Controller/request/Models/UpdateShoppingCartResult.h \
+  /Users/fangfangluo/Desktop/Dev/version-git/bxappios/民生小区/Classes/Controller/request/Models/BasicModel/BasicResponse.h \
+  /Users/fangfangluo/Desktop/Dev/version-git/bxappios/民生小区/Classes/Controller/request/Models/BasicModel/BasicHeader.h
+>>>>>>> fb2815ae2493f8e6274ed28d919d2d1e7f7f62bb

@@ -264,8 +264,13 @@ titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
  */
 -(NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+<<<<<<< HEAD
    NSInteger colNumber=[self.bSTableObjects currentCapatibilty:indexPath.section];
     if (colNumber>1){
+=======
+    //当一列为多行时，默认的表格选择事件应当屏蔽，仅仅执行具体内容的选择事件
+    if([self.bSTableObjects canClickRowEvent:indexPath.section]){
+>>>>>>> fb2815ae2493f8e6274ed28d919d2d1e7f7f62bb
         return nil;
     }
     return indexPath;

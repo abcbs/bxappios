@@ -1,4 +1,5 @@
 dependencies: \
+<<<<<<< HEAD
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/LBControl/PayManager/KTInformationConfViewController.m \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/LBControl/PayManager/KTInformationConfViewController.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/Build/Products/Debug-iphonesimulator/民生小区.app/BSUIFrameworkHeader.h \
@@ -27,3 +28,33 @@ dependencies: \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/BSFramework/BSUISetting/BSUIComponentView.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/BSFramework/BSUISetting/BSUIBarButtonItem.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/BSFramework/BSUISetting/BSUIBlockButton.h
+=======
+  /Users/fangfangluo/Desktop/Dev/version-git/bxappios/LBControl/PayManager/KTInformationConfViewController.m \
+  /Users/fangfangluo/Desktop/Dev/version-git/bxappios/LBControl/PayManager/KTInformationConfViewController.h \
+  /Users/fangfangluo/Desktop/Dev/version-git/bxappios/BSFramework/BSUIFrameworkHeader.h \
+  /Users/fangfangluo/Desktop/Dev/version-git/bxappios/BSFramework/Base/Conf.h \
+  /Users/fangfangluo/Desktop/Dev/version-git/bxappios/BSFramework/Base/ErrorMessage.h \
+  /Users/fangfangluo/Desktop/Dev/version-git/bxappios/BSFramework/BSUISetting/NavigationProcess.h \
+  /Users/fangfangluo/Desktop/Dev/version-git/bxappios/BSFramework/BSUIComponent/CommonController/BSTableContentObject.h \
+  /Users/fangfangluo/Desktop/Dev/version-git/bxappios/BSFramework/BSUIComponent/CommonController/BSUICommonController.h \
+  /Users/fangfangluo/Desktop/Dev/version-git/bxappios/BSFramework/BSUIComponent/CommonController/BSUITableViewCommonController.h \
+  /Users/fangfangluo/Desktop/Dev/version-git/bxappios/BSFramework/BSUIComponent/CommonController/BSUITabBarCommonController.h \
+  /Users/fangfangluo/Desktop/Dev/version-git/bxappios/BSFramework/BSUISetting/UIView+Frame.h \
+  /Users/fangfangluo/Desktop/Dev/version-git/bxappios/BSFramework/BSUIComponent/CommonView/BSFCRollingADImageUIView.h \
+  /Users/fangfangluo/Desktop/Dev/version-git/bxappios/BSFramework/BSUIComponent/CommonController/BSTableSection.h \
+  /Users/fangfangluo/Desktop/Dev/version-git/bxappios/BSFramework/BSUIComponent/CommonController/BSTableViewCellData.h \
+  /Users/fangfangluo/Desktop/Dev/version-git/bxappios/BSFramework/BSUIComponent/CommonController/BSTableViewMultCellData.h \
+  /Users/fangfangluo/Desktop/Dev/version-git/bxappios/BSFramework/BSUIComponent/CommonController/BSContentObjectNavigation.h \
+  /Users/fangfangluo/Desktop/Dev/version-git/bxappios/BSFramework/BSUIComponent/CommonController/UIViewController+BSTableObject.h \
+  /Users/fangfangluo/Desktop/Dev/version-git/bxappios/BSFramework/BSUIComponent/CommonController/BSUITableViewInitRuntimeController.h \
+  /Users/fangfangluo/Desktop/Dev/version-git/bxappios/BSFramework/BSUIComponent/CommonController/BSTableViewRefreshController.h \
+  /Users/fangfangluo/Desktop/Dev/version-git/bxappios/BSFramework/BSUIComponent/CommonController/BSTableListProtocol.h \
+  /Users/fangfangluo/Desktop/Dev/version-git/bxappios/BSFramework/BSUIComponent/CommonView/BSUIImageTitleTableViewCell.h \
+  /Users/fangfangluo/Desktop/Dev/version-git/bxappios/BSFramework/BSUIComponent/CommonView/BSUITableCellOperation.h \
+  /Users/fangfangluo/Desktop/Dev/version-git/bxappios/BSFramework/BSUIComponent/CommonView/BSUIFiveColTableViewCell.h \
+  /Users/fangfangluo/Desktop/Dev/version-git/bxappios/BSFramework/BSUIComponent/CommonView/BSUITableMultCellOperation.h \
+  /Users/fangfangluo/Desktop/Dev/version-git/bxappios/BSFramework/BSUIComponent/CommonView/BSUISingleImageTableViewCell.h \
+  /Users/fangfangluo/Desktop/Dev/version-git/bxappios/BSFramework/BSUISetting/BSUIComponentView.h \
+  /Users/fangfangluo/Desktop/Dev/version-git/bxappios/BSFramework/BSUISetting/BSUIBarButtonItem.h \
+  /Users/fangfangluo/Desktop/Dev/version-git/bxappios/BSFramework/BSUISetting/BSUIBlockButton.h
+>>>>>>> fb2815ae2493f8e6274ed28d919d2d1e7f7f62bb

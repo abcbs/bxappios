@@ -292,12 +292,6 @@
 }
 
 #pragma mark --获取数据逻辑
-/*
- *根据章节标题获取每个章节的数据
- */
--(NSMutableArray *) sectionData:(NSString *)title{
-    return [self.sections objectForKey:title];
-}
 
 /**
  *当前章节共计几行数据
@@ -430,7 +424,17 @@
     return ((BSTableContentObject *)[self currentContentObject:section row:row]).colClass;
 }
 
-
+-(BOOL)canClickRowEvent:(NSInteger)section{
+    return colCapatibilty>BSTABLE_CONTENT_COLUMN_NUMBER;
+}
+#pragma mark -私有方法
+/*
+ *根据章节标题获取每个章节的数据
+ */
+ -(NSMutableArray *) sectionData:(NSString *)title{
+ return [self.sections objectForKey:title];
+ }
+ 
 -(NSString *)description{//description
     return [NSString stringWithFormat:@"表格数据章节信息\t header:%@\timageName:%@\t单元格数据%lu",
             self.sectionTitle,self.sectionImageName, (unsigned long)[self.content count]];

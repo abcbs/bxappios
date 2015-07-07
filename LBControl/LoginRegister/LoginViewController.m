@@ -16,6 +16,7 @@
 #import "Conf.h"
 #import "LoginMessage.h"
 #import "RegistUtil.h"
+#import "AppDelegate.h"
 @interface LoginViewController ()
 @property (strong,nonatomic) UITextField *textField;
 @property (strong,nonatomic) UITextField *passwText;
@@ -38,7 +39,7 @@
     [backButton addTarget:self action:@selector(buttonClicked1:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:backButton];
     //注册按钮
-    UIButton *registButton = [[UIButton alloc]initWithFrame:CGRectMake(self.view.bounds.size.width*0.78125, self.view.bounds.size.height*0.05991, self.view.bounds.size.width*0.140625, self.view.bounds.size.height*0.0430833)];
+    UIButton *registButton = [[UIButton alloc]initWithFrame:CGRectMake(self.view.bounds.size.width*0.78125, self.view.bounds.size.height*0.05091, self.view.bounds.size.width*0.140625, self.view.bounds.size.height*0.0430833)];
     [registButton setBackgroundImage:[UIImage imageNamed:@"login-4.png"] forState:UIControlStateNormal];
     [registButton addTarget:self action:@selector(registButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:registButton];
@@ -83,6 +84,7 @@
     self.loginMessage = messages;
     KT_AlertView_(self.loginMessage);
     if ([self.loginMessage isEqual:@"登录成功"]) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"aaa" object:self userInfo:nil];
         [self dismissViewControllerAnimated:NO completion: nil];
     }
 }
@@ -110,10 +112,13 @@
     _rs.delegate1 = self;
     
     [_rs loginSuccess];
+    
+    //    [[NSNotificationCenter defaultCenter] postNotificationName:@"aaa" object:self userInfo:nil];
     //取出errorCode
     NSUserDefaults *userDefaults=[NSUserDefaults standardUserDefaults];
     _errorLogin = [userDefaults objectForKey:@"responseHeader"];
     if (![[_errorLogin objectForKey:@"errorCode"] isEqualToString:Success]) {
+        
     }
     else if([[_errorLogin objectForKey:@"errorCode"] isEqualToString:Success]){
     }

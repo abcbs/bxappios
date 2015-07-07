@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface cleaning : UIViewController
+@interface cleaning : UIViewController<UIGestureRecognizerDelegate>
+{
+    IBOutlet UIWindow *dateView;
+    IBOutlet UIDatePicker *pick;
+    NSDate *nowDate,*beginDate;
+     int  currentDateItem;
 
+}
 @end

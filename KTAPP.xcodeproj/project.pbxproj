@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+<<<<<<< HEAD
 		01AEAFF491B315ECF3091828 /* libPods-KT-FRAME-PK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F966219CD8A0891D6079F0EE /* libPods-KT-FRAME-PK.a */; };
 		05344531CB68FE18F5EF8FE7 /* libPods-KT-RESOURCES.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CE6F7E7D6B9FC2FDCB4EB5D /* libPods-KT-RESOURCES.a */; };
 		06FDBA07377F3472C78B3516 /* libPods-KTAPP.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A87E8CE16BF49FC4F724B09 /* libPods-KTAPP.a */; };
+=======
+>>>>>>> fb2815ae2493f8e6274ed28d919d2d1e7f7f62bb
 		0E511A501AF07DAD00BF1D03 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E511A4F1AF07DAD00BF1D03 /* Foundation.framework */; };
 		0E511A521AF07DB800BF1D03 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E511A511AF07DB800BF1D03 /* CoreGraphics.framework */; };
 		0E511A541AF07DBF00BF1D03 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E511A531AF07DBF00BF1D03 /* UIKit.framework */; };
@@ -26,6 +29,24 @@
 		0E8377621B035BAB00782034 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E8377611B035BAB00782034 /* libstdc++.dylib */; };
 		0E8377641B035BB300782034 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E8377631B035BB300782034 /* libsqlite3.dylib */; };
 		0E915F981B0C394800F47478 /* ValidateCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E915F971B0C394800F47478 /* ValidateCode.m */; };
+		0ED64D461B46286F00510534 /* libWeiboSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ED64D451B46286F00510534 /* libWeiboSDK.a */; };
+		0ED64D481B46288400510534 /* libTCWeiboSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ED64D471B46288400510534 /* libTCWeiboSDK.a */; };
+		0ED64D4A1B46288D00510534 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ED64D491B46288D00510534 /* libWeChatSDK.a */; };
+		0ED64D501B462CC600510534 /* banking_activity.png in Resources */ = {isa = PBXBuildFile; fileRef = 0ED64D4C1B462CC600510534 /* banking_activity.png */; };
+		0ED64D511B462CC600510534 /* company_business.png in Resources */ = {isa = PBXBuildFile; fileRef = 0ED64D4D1B462CC600510534 /* company_business.png */; };
+		0ED64D521B462CC600510534 /* im_notice.png in Resources */ = {isa = PBXBuildFile; fileRef = 0ED64D4E1B462CC600510534 /* im_notice.png */; };
+		0ED64D531B462CC600510534 /* personal_business.png in Resources */ = {isa = PBXBuildFile; fileRef = 0ED64D4F1B462CC600510534 /* personal_business.png */; };
+		0ED64D5B1B462CF000510534 /* shfw_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 0ED64D541B462CF000510534 /* shfw_01.png */; };
+		0ED64D5C1B462CF000510534 /* tjdd00.png in Resources */ = {isa = PBXBuildFile; fileRef = 0ED64D551B462CF000510534 /* tjdd00.png */; };
+		0ED64D5D1B462CF000510534 /* tjkh_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 0ED64D561B462CF000510534 /* tjkh_01.png */; };
+		0ED64D5E1B462CF000510534 /* tjkk_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 0ED64D571B462CF000510534 /* tjkk_01.png */; };
+		0ED64D5F1B462CF000510534 /* wdcx_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 0ED64D581B462CF000510534 /* wdcx_01.png */; };
+		0ED64D601B462CF000510534 /* yhywyy_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 0ED64D591B462CF000510534 /* yhywyy_01.png */; };
+		0ED64D611B462CF000510534 /* yykk_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 0ED64D5A1B462CF000510534 /* yykk_01.png */; };
+		0ED64D641B462D4A00510534 /* CDPDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ED64D631B462D4A00510534 /* CDPDatePicker.m */; };
+		0ED64D681B462D7A00510534 /* cleaning.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ED64D661B462D7A00510534 /* cleaning.m */; };
+		0ED64D691B462D7A00510534 /* cleaning.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0ED64D671B462D7A00510534 /* cleaning.xib */; };
+		0ED64D6C1B462E8C00510534 /* messageModifyController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ED64D6B1B462E8C00510534 /* messageModifyController.m */; };
 		8404B8551B393F1E002AF13A /* BSBLEMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8404B8541B393F1E002AF13A /* BSBLEMainController.m */; };
 		842042A21B2983B40002C868 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8420429F1B2983B40002C868 /* AppDelegate.m */; };
 		842042AE1B2984D80002C868 /* KTCarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 842042A71B2984D80002C868 /* KTCarCell.m */; };
@@ -59,10 +80,7 @@
 		843DA8851B21D56300924AE6 /* ShareSDKCoreService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 843DA8611B21D56200924AE6 /* ShareSDKCoreService.framework */; };
 		843DA8861B21D56300924AE6 /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 843DA8651B21D56200924AE6 /* TencentOpenAPI.framework */; };
 		843DA8871B21D56300924AE6 /* TencentOpenApi_IOS_Bundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 843DA8661B21D56200924AE6 /* TencentOpenApi_IOS_Bundle.bundle */; };
-		843DA8881B21D56300924AE6 /* libWeiboSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 843DA8681B21D56200924AE6 /* libWeiboSDK.a */; };
 		843DA8891B21D56300924AE6 /* WeiboSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 843DA8691B21D56200924AE6 /* WeiboSDK.bundle */; };
-		843DA88A1B21D56300924AE6 /* libTCWeiboSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 843DA86C1B21D56200924AE6 /* libTCWeiboSDK.a */; };
-		843DA88B1B21D56300924AE6 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 843DA8701B21D56200924AE6 /* libWeChatSDK.a */; };
 		843DA88C1B21D56300924AE6 /* ShareSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 843DA8731B21D56200924AE6 /* ShareSDK.framework */; };
 		843DA88D1B21D56300924AE6 /* ShareSDKFlatShareViewUI.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 843DA8751B21D56200924AE6 /* ShareSDKFlatShareViewUI.bundle */; };
 		843DA88E1B21D56300924AE6 /* ShareSDKFlatShareViewUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 843DA8761B21D56200924AE6 /* ShareSDKFlatShareViewUI.framework */; };
@@ -218,7 +236,6 @@
 		847076331B3A8AF800F28180 /* expressController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8470762E1B3A8AF800F28180 /* expressController.m */; };
 		8470763D1B3A8B9000F28180 /* addressController.m in Sources */ = {isa = PBXBuildFile; fileRef = 847076361B3A8B9000F28180 /* addressController.m */; };
 		8470763E1B3A8B9000F28180 /* appointmentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 847076381B3A8B9000F28180 /* appointmentController.m */; };
-		8470763F1B3A8B9000F28180 /* cleaning.m in Sources */ = {isa = PBXBuildFile; fileRef = 8470763A1B3A8B9000F28180 /* cleaning.m */; };
 		847076401B3A8B9000F28180 /* UIView+SZ.m in Sources */ = {isa = PBXBuildFile; fileRef = 8470763C1B3A8B9000F28180 /* UIView+SZ.m */; };
 		847076441B3A8BE200F28180 /* lifeServiceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 847076431B3A8BE200F28180 /* lifeServiceController.m */; };
 		8470764F1B3A8C4500F28180 /* bankController.m in Sources */ = {isa = PBXBuildFile; fileRef = 847076471B3A8C4500F28180 /* bankController.m */; };
@@ -242,7 +259,6 @@
 		847432E51B2A8D6800B030C4 /* SystemSetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 847432E31B2A8D6800B030C4 /* SystemSetCell.m */; };
 		847432E61B2A8D6800B030C4 /* SystemSetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847432E41B2A8D6800B030C4 /* SystemSetCell.xib */; };
 		847432EA1B2A8DCC00B030C4 /* WaitPaymentDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 847432E81B2A8DCC00B030C4 /* WaitPaymentDetail.m */; };
-		847432EB1B2A8DCC00B030C4 /* WaitPaymentDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847432E91B2A8DCC00B030C4 /* WaitPaymentDetail.xib */; };
 		847432F71B2A8E5500B030C4 /* AlreadyCommit.m in Sources */ = {isa = PBXBuildFile; fileRef = 847432ED1B2A8E5500B030C4 /* AlreadyCommit.m */; };
 		847432F81B2A8E5500B030C4 /* AlreadyCommit.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847432EE1B2A8E5500B030C4 /* AlreadyCommit.xib */; };
 		847432F91B2A8E5500B030C4 /* AlreadyPayment.m in Sources */ = {isa = PBXBuildFile; fileRef = 847432F01B2A8E5500B030C4 /* AlreadyPayment.m */; };
@@ -380,7 +396,14 @@
 		84EBA00B1B416E37003309F6 /* ClassForSelectors.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EBA00A1B416E37003309F6 /* ClassForSelectors.m */; };
 		84EBA0131B4189E0003309F6 /* LBLiferServiceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EBA0121B4189E0003309F6 /* LBLiferServiceController.m */; };
 		84EBA0161B41A307003309F6 /* KTLBMainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EBA0151B41A307003309F6 /* KTLBMainTabBarController.m */; };
+<<<<<<< HEAD
 		9835E70DAB3BBA76AD9E8055 /* libPods-KT-BUSINESS-SELLER.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE8E807F5A1D170C6CFA3891 /* libPods-KT-BUSINESS-SELLER.a */; };
+=======
+		84EFAA261B46B698005A5DDF /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84EFAA191B46B698005A5DDF /* MainStoryboard.storyboard */; };
+		84EFAA271B46B698005A5DDF /* LeDiscovery.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EFAA1C1B46B698005A5DDF /* LeDiscovery.m */; };
+		84EFAA281B46B698005A5DDF /* LeTemperatureAlarmService.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EFAA1E1B46B698005A5DDF /* LeTemperatureAlarmService.m */; };
+		84EFAA2B1B46B698005A5DDF /* BSBLEViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EFAA231B46B698005A5DDF /* BSBLEViewController.m */; };
+>>>>>>> fb2815ae2493f8e6274ed28d919d2d1e7f7f62bb
 		A04366AF1AD7B550005842EE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A04366AE1AD7B550005842EE /* main.m */; };
 		A04366BA1AD7B550005842EE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A04366B91AD7B550005842EE /* Images.xcassets */; };
 		A05E9BDF1AE79DD5008C97C9 /* KTTabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A05E9BDE1AE79DD5008C97C9 /* KTTabBarButton.m */; };
@@ -476,6 +499,7 @@
 		0E8377631B035BB300782034 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		0E915F961B0C394800F47478 /* ValidateCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValidateCode.h; sourceTree = "<group>"; };
 		0E915F971B0C394800F47478 /* ValidateCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValidateCode.m; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		15653A4180B1CA7C88B25769 /* Pods-KT-BUSINESS-SELLER.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KT-BUSINESS-SELLER.release.xcconfig"; path = "Pods/Target Support Files/Pods-KT-BUSINESS-SELLER/Pods-KT-BUSINESS-SELLER.release.xcconfig"; sourceTree = "<group>"; };
 		24D3B80807CDF37522D80865 /* Pods-KT-FRAME-PK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KT-FRAME-PK.release.xcconfig"; path = "Pods/Target Support Files/Pods-KT-FRAME-PK/Pods-KT-FRAME-PK.release.xcconfig"; sourceTree = "<group>"; };
 		34039EA61F8DC75DB7E9F783 /* Pods-KT-FRAME-PK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KT-FRAME-PK.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KT-FRAME-PK/Pods-KT-FRAME-PK.debug.xcconfig"; sourceTree = "<group>"; };
@@ -486,6 +510,29 @@
 		5A87E8CE16BF49FC4F724B09 /* libPods-KTAPP.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KTAPP.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		68078520C3A270F91A4F8CF0 /* libPods-LBModel.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LBModel.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D5EDE42CF9D9F0A52EA2193 /* libPods-BSControl.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BSControl.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+=======
+		0ED64D451B46286F00510534 /* libWeiboSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeiboSDK.a; sourceTree = "<group>"; };
+		0ED64D471B46288400510534 /* libTCWeiboSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTCWeiboSDK.a; sourceTree = "<group>"; };
+		0ED64D491B46288D00510534 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
+		0ED64D4C1B462CC600510534 /* banking_activity.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = banking_activity.png; sourceTree = "<group>"; };
+		0ED64D4D1B462CC600510534 /* company_business.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = company_business.png; sourceTree = "<group>"; };
+		0ED64D4E1B462CC600510534 /* im_notice.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = im_notice.png; sourceTree = "<group>"; };
+		0ED64D4F1B462CC600510534 /* personal_business.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = personal_business.png; sourceTree = "<group>"; };
+		0ED64D541B462CF000510534 /* shfw_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shfw_01.png; sourceTree = "<group>"; };
+		0ED64D551B462CF000510534 /* tjdd00.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tjdd00.png; sourceTree = "<group>"; };
+		0ED64D561B462CF000510534 /* tjkh_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tjkh_01.png; sourceTree = "<group>"; };
+		0ED64D571B462CF000510534 /* tjkk_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tjkk_01.png; sourceTree = "<group>"; };
+		0ED64D581B462CF000510534 /* wdcx_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wdcx_01.png; sourceTree = "<group>"; };
+		0ED64D591B462CF000510534 /* yhywyy_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yhywyy_01.png; sourceTree = "<group>"; };
+		0ED64D5A1B462CF000510534 /* yykk_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yykk_01.png; sourceTree = "<group>"; };
+		0ED64D621B462D4A00510534 /* CDPDatePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDPDatePicker.h; sourceTree = "<group>"; };
+		0ED64D631B462D4A00510534 /* CDPDatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDPDatePicker.m; sourceTree = "<group>"; };
+		0ED64D651B462D7A00510534 /* cleaning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cleaning.h; sourceTree = "<group>"; };
+		0ED64D661B462D7A00510534 /* cleaning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cleaning.m; sourceTree = "<group>"; };
+		0ED64D671B462D7A00510534 /* cleaning.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = cleaning.xib; sourceTree = "<group>"; };
+		0ED64D6A1B462E8C00510534 /* messageModifyController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = messageModifyController.h; sourceTree = "<group>"; };
+		0ED64D6B1B462E8C00510534 /* messageModifyController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = messageModifyController.m; sourceTree = "<group>"; };
+>>>>>>> fb2815ae2493f8e6274ed28d919d2d1e7f7f62bb
 		820D45CA979EF6E8C16C2E8B /* Pods-KTAPP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KTAPP.release.xcconfig"; path = "Pods/Target Support Files/Pods-KTAPP/Pods-KTAPP.release.xcconfig"; sourceTree = "<group>"; };
 		8404B8531B393F1E002AF13A /* BSBLEMainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSBLEMainController.h; sourceTree = "<group>"; };
 		8404B8541B393F1E002AF13A /* BSBLEMainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSBLEMainController.m; sourceTree = "<group>"; };
@@ -539,13 +586,10 @@
 		843DA8621B21D56200924AE6 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/ShareSDKLocalizable.strings"; sourceTree = "<group>"; };
 		843DA8651B21D56200924AE6 /* TencentOpenAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TencentOpenAPI.framework; sourceTree = "<group>"; };
 		843DA8661B21D56200924AE6 /* TencentOpenApi_IOS_Bundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TencentOpenApi_IOS_Bundle.bundle; sourceTree = "<group>"; };
-		843DA8681B21D56200924AE6 /* libWeiboSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeiboSDK.a; sourceTree = "<group>"; };
 		843DA8691B21D56200924AE6 /* WeiboSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = WeiboSDK.bundle; sourceTree = "<group>"; };
 		843DA86A1B21D56200924AE6 /* WeiboSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboSDK.h; sourceTree = "<group>"; };
-		843DA86C1B21D56200924AE6 /* libTCWeiboSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTCWeiboSDK.a; sourceTree = "<group>"; };
 		843DA86D1B21D56200924AE6 /* WeiboApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboApi.h; sourceTree = "<group>"; };
 		843DA86E1B21D56200924AE6 /* WeiboApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboApiObject.h; sourceTree = "<group>"; };
-		843DA8701B21D56200924AE6 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
 		843DA8711B21D56200924AE6 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
 		843DA8721B21D56200924AE6 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
 		843DA8731B21D56200924AE6 /* ShareSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDK.framework; sourceTree = "<group>"; };
@@ -738,8 +782,6 @@
 		847076361B3A8B9000F28180 /* addressController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = addressController.m; sourceTree = "<group>"; };
 		847076371B3A8B9000F28180 /* appointmentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = appointmentController.h; sourceTree = "<group>"; };
 		847076381B3A8B9000F28180 /* appointmentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = appointmentController.m; sourceTree = "<group>"; };
-		847076391B3A8B9000F28180 /* cleaning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cleaning.h; sourceTree = "<group>"; };
-		8470763A1B3A8B9000F28180 /* cleaning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cleaning.m; sourceTree = "<group>"; };
 		8470763B1B3A8B9000F28180 /* UIView+SZ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SZ.h"; sourceTree = "<group>"; };
 		8470763C1B3A8B9000F28180 /* UIView+SZ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SZ.m"; sourceTree = "<group>"; };
 		847076421B3A8BE200F28180 /* lifeServiceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lifeServiceController.h; sourceTree = "<group>"; };
@@ -921,8 +963,18 @@
 		84EBA0121B4189E0003309F6 /* LBLiferServiceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBLiferServiceController.m; sourceTree = "<group>"; };
 		84EBA0141B41A307003309F6 /* KTLBMainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTLBMainTabBarController.h; sourceTree = "<group>"; };
 		84EBA0151B41A307003309F6 /* KTLBMainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTLBMainTabBarController.m; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		8FCA45FC7E90066EB24B7BB5 /* Pods-KT-MODEL-MODULE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KT-MODEL-MODULE.release.xcconfig"; path = "Pods/Target Support Files/Pods-KT-MODEL-MODULE/Pods-KT-MODEL-MODULE.release.xcconfig"; sourceTree = "<group>"; };
 		9CE6F7E7D6B9FC2FDCB4EB5D /* libPods-KT-RESOURCES.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KT-RESOURCES.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+=======
+		84EFAA1A1B46B698005A5DDF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		84EFAA1B1B46B698005A5DDF /* LeDiscovery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeDiscovery.h; sourceTree = "<group>"; };
+		84EFAA1C1B46B698005A5DDF /* LeDiscovery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeDiscovery.m; sourceTree = "<group>"; };
+		84EFAA1D1B46B698005A5DDF /* LeTemperatureAlarmService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeTemperatureAlarmService.h; sourceTree = "<group>"; };
+		84EFAA1E1B46B698005A5DDF /* LeTemperatureAlarmService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeTemperatureAlarmService.m; sourceTree = "<group>"; };
+		84EFAA221B46B698005A5DDF /* BSBLEViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSBLEViewController.h; sourceTree = "<group>"; };
+		84EFAA231B46B698005A5DDF /* BSBLEViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSBLEViewController.m; sourceTree = "<group>"; };
+>>>>>>> fb2815ae2493f8e6274ed28d919d2d1e7f7f62bb
 		A04366A91AD7B550005842EE /* 民生小区.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "民生小区.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A04366AD1AD7B550005842EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A04366AE1AD7B550005842EE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -973,12 +1025,16 @@
 		A14656EE1ADEB5A400571E9A /* KTFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTFooterView.h; sourceTree = "<group>"; };
 		A14656EF1ADEB5A400571E9A /* KTFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTFooterView.m; sourceTree = "<group>"; };
 		A14656F01ADEB5A400571E9A /* KTFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KTFooterView.xib; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		D1553A4C5F191EED34EC3F38 /* libPods-LBControl.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LBControl.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE8E807F5A1D170C6CFA3891 /* libPods-KT-BUSINESS-SELLER.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KT-BUSINESS-SELLER.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFD86AB11AFC5886000AB8E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E2C128B78CB408DF3C049CDE /* libPods-KT-MODEL-MODULE.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KT-MODEL-MODULE.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8E2EE8D108CE037F8FAF7AD /* libPods-BSTransfer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BSTransfer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC885B589C5660E95E977CD9 /* Pods-KT-RESOURCES.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KT-RESOURCES.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KT-RESOURCES/Pods-KT-RESOURCES.debug.xcconfig"; sourceTree = "<group>"; };
+=======
+		DFD86AB11AFC5886000AB8E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+>>>>>>> fb2815ae2493f8e6274ed28d919d2d1e7f7f62bb
 		F292D073DBA6857868ACD8F5 /* Pods-KTAPP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KTAPP.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KTAPP/Pods-KTAPP.debug.xcconfig"; sourceTree = "<group>"; };
 		F966219CD8A0891D6079F0EE /* libPods-KT-FRAME-PK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KT-FRAME-PK.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC5704F4BEFF5B468EADE5E0 /* Pods-KT-MODEL-MODULE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KT-MODEL-MODULE.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KT-MODEL-MODULE/Pods-KT-MODEL-MODULE.debug.xcconfig"; sourceTree = "<group>"; };
@@ -1027,21 +1083,21 @@
 				84A076601B21AAC8001CE3A2 /* AddressBook.framework in Frameworks */,
 				843DA8861B21D56300924AE6 /* TencentOpenAPI.framework in Frameworks */,
 				0E511A561AF08DFC00BF1D03 /* AssetsLibrary.framework in Frameworks */,
-				843DA8881B21D56300924AE6 /* libWeiboSDK.a in Frameworks */,
 				843DA87C1B21D56300924AE6 /* QZoneConnection.framework in Frameworks */,
 				84A0765E1B21AAA7001CE3A2 /* CoreText.framework in Frameworks */,
 				84A0765C1B21AA9A001CE3A2 /* MediaPlayer.framework in Frameworks */,
 				84A0765A1B21AA8D001CE3A2 /* CoreLocation.framework in Frameworks */,
 				84A076581B21AA7D001CE3A2 /* CoreMotion.framework in Frameworks */,
 				0E8377641B035BB300782034 /* libsqlite3.dylib in Frameworks */,
+				0ED64D481B46288400510534 /* libTCWeiboSDK.a in Frameworks */,
 				0E83775E1B033F3F00782034 /* MessageUI.framework in Frameworks */,
 				843DA8821B21D56300924AE6 /* AGCommon.framework in Frameworks */,
 				84A076561B21AA47001CE3A2 /* Accounts.framework in Frameworks */,
 				84A076541B21AA39001CE3A2 /* Social.framework in Frameworks */,
+				0ED64D4A1B46288D00510534 /* libWeChatSDK.a in Frameworks */,
 				843DA8811B21D56300924AE6 /* WeChatConnection.framework in Frameworks */,
 				843DA87B1B21D56300924AE6 /* QQConnection.framework in Frameworks */,
 				843DA87E1B21D56300924AE6 /* SMSConnection.framework in Frameworks */,
-				843DA88B1B21D56300924AE6 /* libWeChatSDK.a in Frameworks */,
 				843DA8851B21D56300924AE6 /* ShareSDKCoreService.framework in Frameworks */,
 				843DA88C1B21D56300924AE6 /* ShareSDK.framework in Frameworks */,
 				0E8377601B035B8F00782034 /* ImageIO.framework in Frameworks */,
@@ -1056,15 +1112,14 @@
 				0E8377621B035BAB00782034 /* libstdc++.dylib in Frameworks */,
 				0E511A521AF07DB800BF1D03 /* CoreGraphics.framework in Frameworks */,
 				843DA8791B21D56300924AE6 /* FacebookConnection.framework in Frameworks */,
+				0ED64D461B46286F00510534 /* libWeiboSDK.a in Frameworks */,
 				0E511A581AF08E2500BF1D03 /* MobileCoreServices.framework in Frameworks */,
-				843DA88A1B21D56300924AE6 /* libTCWeiboSDK.a in Frameworks */,
 				843DA87A1B21D56300924AE6 /* MailConnection.framework in Frameworks */,
 				843DA8801B21D56300924AE6 /* TwitterConnection.framework in Frameworks */,
 				0E511A541AF07DBF00BF1D03 /* UIKit.framework in Frameworks */,
 				0E511A501AF07DAD00BF1D03 /* Foundation.framework in Frameworks */,
 				843DA87F1B21D56300924AE6 /* TencentWeiboConnection.framework in Frameworks */,
 				843DA88F1B21D56300924AE6 /* ShareSDKShareActionSheet.framework in Frameworks */,
-				06FDBA07377F3472C78B3516 /* libPods-KTAPP.a in Frameworks */,
 				843DA8781B21D56200924AE6 /* CopyConnection.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1079,6 +1134,17 @@
 				0E915F971B0C394800F47478 /* ValidateCode.m */,
 			);
 			name = "验证码";
+			sourceTree = "<group>";
+		};
+		0ED64D4B1B462CA600510534 /* 银行资讯 */ = {
+			isa = PBXGroup;
+			children = (
+				0ED64D4C1B462CC600510534 /* banking_activity.png */,
+				0ED64D4D1B462CC600510534 /* company_business.png */,
+				0ED64D4E1B462CC600510534 /* im_notice.png */,
+				0ED64D4F1B462CC600510534 /* personal_business.png */,
+			);
+			name = "银行资讯";
 			sourceTree = "<group>";
 		};
 		67A658A2709CA6036D46B63C /* Pods */ = {
@@ -1216,7 +1282,7 @@
 		843DA8671B21D56200924AE6 /* SinaWeiboSDK */ = {
 			isa = PBXGroup;
 			children = (
-				843DA8681B21D56200924AE6 /* libWeiboSDK.a */,
+				0ED64D451B46286F00510534 /* libWeiboSDK.a */,
 				843DA8691B21D56200924AE6 /* WeiboSDK.bundle */,
 				843DA86A1B21D56200924AE6 /* WeiboSDK.h */,
 			);
@@ -1226,7 +1292,7 @@
 		843DA86B1B21D56200924AE6 /* TencentWeiboSDK */ = {
 			isa = PBXGroup;
 			children = (
-				843DA86C1B21D56200924AE6 /* libTCWeiboSDK.a */,
+				0ED64D471B46288400510534 /* libTCWeiboSDK.a */,
 				843DA86D1B21D56200924AE6 /* WeiboApi.h */,
 				843DA86E1B21D56200924AE6 /* WeiboApiObject.h */,
 			);
@@ -1236,7 +1302,7 @@
 		843DA86F1B21D56200924AE6 /* WeChatSDK */ = {
 			isa = PBXGroup;
 			children = (
-				843DA8701B21D56200924AE6 /* libWeChatSDK.a */,
+				0ED64D491B46288D00510534 /* libWeChatSDK.a */,
 				843DA8711B21D56200924AE6 /* WXApi.h */,
 				843DA8721B21D56200924AE6 /* WXApiObject.h */,
 			);
@@ -1261,6 +1327,7 @@
 				844268671B36C05F006E7F7D /* 登录注册 */,
 				844268831B36C05F006E7F7D /* 轮播图 */,
 				844268871B36C05F006E7F7D /* 首页图 */,
+				0ED64D4B1B462CA600510534 /* 银行资讯 */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -1415,6 +1482,13 @@
 				844268A61B36C05F006E7F7D /* ww.png */,
 				844268A71B36C05F006E7F7D /* yuan.png */,
 				844268A81B36C05F006E7F7D /* yyfw9_01.png */,
+				0ED64D541B462CF000510534 /* shfw_01.png */,
+				0ED64D551B462CF000510534 /* tjdd00.png */,
+				0ED64D561B462CF000510534 /* tjkh_01.png */,
+				0ED64D571B462CF000510534 /* tjkk_01.png */,
+				0ED64D581B462CF000510534 /* wdcx_01.png */,
+				0ED64D591B462CF000510534 /* yhywyy_01.png */,
+				0ED64D5A1B462CF000510534 /* yykk_01.png */,
 			);
 			path = "首页图";
 			sourceTree = "<group>";
@@ -1509,8 +1583,11 @@
 				847076361B3A8B9000F28180 /* addressController.m */,
 				847076371B3A8B9000F28180 /* appointmentController.h */,
 				847076381B3A8B9000F28180 /* appointmentController.m */,
-				847076391B3A8B9000F28180 /* cleaning.h */,
-				8470763A1B3A8B9000F28180 /* cleaning.m */,
+				0ED64D651B462D7A00510534 /* cleaning.h */,
+				0ED64D661B462D7A00510534 /* cleaning.m */,
+				0ED64D671B462D7A00510534 /* cleaning.xib */,
+				0ED64D621B462D4A00510534 /* CDPDatePicker.h */,
+				0ED64D631B462D4A00510534 /* CDPDatePicker.m */,
 				8470763B1B3A8B9000F28180 /* UIView+SZ.h */,
 				8470763C1B3A8B9000F28180 /* UIView+SZ.m */,
 			);
@@ -1617,6 +1694,8 @@
 				847433191B2A92B400B030C4 /* LoginViewController.m */,
 				8474331A1B2A92B400B030C4 /* RegisterViewController.h */,
 				8474331B1B2A92B400B030C4 /* RegisterViewController.m */,
+				0ED64D6A1B462E8C00510534 /* messageModifyController.h */,
+				0ED64D6B1B462E8C00510534 /* messageModifyController.m */,
 			);
 			path = LoginRegister;
 			sourceTree = "<group>";
@@ -1628,20 +1707,6 @@
 				8480580A1B39A0E9005817D7 /* BSBLEDetailTableViewController.m */,
 			);
 			path = BLEController;
-			sourceTree = "<group>";
-		};
-		848058061B39A097005817D7 /* BLEModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = BLEModel;
-			sourceTree = "<group>";
-		};
-		848058071B39A097005817D7 /* BLEService */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = BLEService;
 			sourceTree = "<group>";
 		};
 		848058081B39A097005817D7 /* BLEView */ = {
@@ -1833,9 +1898,8 @@
 		84BA968B1B2829F300388B58 /*  Bluetooth */ = {
 			isa = PBXGroup;
 			children = (
+				84EFAA141B46B698005A5DDF /* BLE-Demo-TSensor */,
 				848058051B39A097005817D7 /* BLEController */,
-				848058061B39A097005817D7 /* BLEModel */,
-				848058071B39A097005817D7 /* BLEService */,
 				848058081B39A097005817D7 /* BLEView */,
 				8404B8531B393F1E002AF13A /* BSBLEMainController.h */,
 				8404B8541B393F1E002AF13A /* BSBLEMainController.m */,
@@ -2072,6 +2136,20 @@
 			path = "Basic-Demo";
 			sourceTree = "<group>";
 		};
+		84EFAA141B46B698005A5DDF /* BLE-Demo-TSensor */ = {
+			isa = PBXGroup;
+			children = (
+				84EFAA191B46B698005A5DDF /* MainStoryboard.storyboard */,
+				84EFAA1B1B46B698005A5DDF /* LeDiscovery.h */,
+				84EFAA1C1B46B698005A5DDF /* LeDiscovery.m */,
+				84EFAA1D1B46B698005A5DDF /* LeTemperatureAlarmService.h */,
+				84EFAA1E1B46B698005A5DDF /* LeTemperatureAlarmService.m */,
+				84EFAA221B46B698005A5DDF /* BSBLEViewController.h */,
+				84EFAA231B46B698005A5DDF /* BSBLEViewController.m */,
+			);
+			path = "BLE-Demo-TSensor";
+			sourceTree = "<group>";
+		};
 		A0028F341ADE4D5500747D8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -2101,6 +2179,7 @@
 				0E511A531AF07DBF00BF1D03 /* UIKit.framework */,
 				0E511A511AF07DB800BF1D03 /* CoreGraphics.framework */,
 				0E511A4F1AF07DAD00BF1D03 /* Foundation.framework */,
+<<<<<<< HEAD
 				5A87E8CE16BF49FC4F724B09 /* libPods-KTAPP.a */,
 				4782B1662B7E67AB65626556 /* libPods-KTMODEL.a */,
 				6D5EDE42CF9D9F0A52EA2193 /* libPods-BSControl.a */,
@@ -2112,6 +2191,8 @@
 				F966219CD8A0891D6079F0EE /* libPods-KT-FRAME-PK.a */,
 				E2C128B78CB408DF3C049CDE /* libPods-KT-MODEL-MODULE.a */,
 				9CE6F7E7D6B9FC2FDCB4EB5D /* libPods-KT-RESOURCES.a */,
+=======
+>>>>>>> fb2815ae2493f8e6274ed28d919d2d1e7f7f62bb
 			);
 			name = Frameworks;
 			path = "民生小区";
@@ -2422,7 +2503,7 @@
 		A04366A11AD7B550005842EE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = itcast;
 				TargetAttributes = {
 					84BF8F5D1B4AB63C001042F1 = {
@@ -2495,12 +2576,14 @@
 				844268CE1B36C05F006E7F7D /* a9-xiao-120.png in Resources */,
 				847432FC1B2A8E5500B030C4 /* Demo1ViewController.xib in Resources */,
 				844268FA1B36C05F006E7F7D /* register-5.png in Resources */,
+				0ED64D531B462CC600510534 /* personal_business.png in Resources */,
 				844268D31B36C05F006E7F7D /* jiantou.png in Resources */,
 				847432FF1B2A8EB100B030C4 /* WaitPaymentDetail.xib in Resources */,
 				844268C01B36C05F006E7F7D /* ljt.png in Resources */,
+				0ED64D601B462CF000510534 /* yhywyy_01.png in Resources */,
 				8442690D1B36C05F006E7F7D /* im_post.png in Resources */,
+				0ED64D521B462CC600510534 /* im_notice.png in Resources */,
 				844268ED1B36C05F006E7F7D /* login-3.png in Resources */,
-				847432EB1B2A8DCC00B030C4 /* WaitPaymentDetail.xib in Resources */,
 				8487F1861B3005C100F0F7B2 /* KTInformationConfViewController.storyboard in Resources */,
 				844268FE1B36C05F006E7F7D /* 3.jpg in Resources */,
 				8470765C1B3A8F1400F28180 /* adsCell.xib in Resources */,
@@ -2508,6 +2591,8 @@
 				844269021B36C05F006E7F7D /* dianhua.png in Resources */,
 				844268DE1B36C05F006E7F7D /* 银行卡绑定-1.png in Resources */,
 				844269131B36C05F006E7F7D /* paiduiquhao.png in Resources */,
+				0ED64D5B1B462CF000510534 /* shfw_01.png in Resources */,
+				0ED64D501B462CC600510534 /* banking_activity.png in Resources */,
 				844268F51B36C05F006E7F7D /* RadioButton-Unselected.png in Resources */,
 				847432E01B2A8CE500B030C4 /* OrderDetailOneCell.xib in Resources */,
 				844268B11B36C05F006E7F7D /* a6.png in Resources */,
@@ -2516,13 +2601,16 @@
 				844268F21B36C05F006E7F7D /* radio_unchecked.png in Resources */,
 				847432DE1B2A8CE500B030C4 /* orderDetailCell.xib in Resources */,
 				844268D01B36C05F006E7F7D /* ddlb_01.png in Resources */,
+				0ED64D5C1B462CF000510534 /* tjdd00.png in Resources */,
 				844268E31B36C05F006E7F7D /* 4个人设置-3登录.jpg in Resources */,
 				8442690E1B36C05F006E7F7D /* im_reservation_baojie.png in Resources */,
 				844268AC1B36C05F006E7F7D /* a10.png in Resources */,
 				844268F81B36C05F006E7F7D /* register-3.png in Resources */,
 				844268B81B36C05F006E7F7D /* c-1.png in Resources */,
+				0ED64D5D1B462CF000510534 /* tjkh_01.png in Resources */,
 				844269041B36C05F006E7F7D /* fabu.png in Resources */,
 				844268DF1B36C05F006E7F7D /* 银行卡绑定-3.png in Resources */,
+				0ED64D611B462CF000510534 /* yykk_01.png in Resources */,
 				844269171B36C05F006E7F7D /* tuijian_01.png in Resources */,
 				844268D91B36C05F006E7F7D /* ywcbb.png in Resources */,
 				844268F01B36C05F006E7F7D /* radio_checked.png in Resources */,
@@ -2531,6 +2619,7 @@
 				844268D11B36C05F006E7F7D /* dfk00.png in Resources */,
 				847B30881B3290DD007003D7 /* Main.storyboard in Resources */,
 				848058161B39A377005817D7 /* ADTImagePlayer.xib in Resources */,
+				0ED64D691B462D7A00510534 /* cleaning.xib in Resources */,
 				844268EA1B36C05F006E7F7D /* login-0.png in Resources */,
 				844268A91B36C05F006E7F7D /* 640-90.png in Resources */,
 				844268CF1B36C05F006E7F7D /* ckxq-122.png in Resources */,
@@ -2543,6 +2632,7 @@
 				844268F41B36C05F006E7F7D /* RadioButton-Selected.png in Resources */,
 				844268D81B36C05F006E7F7D /* yhkbd_01.png in Resources */,
 				844268DA1B36C05F006E7F7D /* ywchh.png in Resources */,
+				0ED64D511B462CC600510534 /* company_business.png in Resources */,
 				844268EB1B36C05F006E7F7D /* login-1.png in Resources */,
 				842042B21B2984D80002C868 /* KTCartTableView.storyboard in Resources */,
 				844268BA1B36C05F006E7F7D /* e-1.png in Resources */,
@@ -2560,11 +2650,13 @@
 				844268FF1B36C05F006E7F7D /* 322.png in Resources */,
 				844268D51B36C05F006E7F7D /* ljzf.png in Resources */,
 				847076571B3A8E1200F28180 /* communicateCell.xib in Resources */,
+				0ED64D5E1B462CF000510534 /* tjkk_01.png in Resources */,
 				84820A611B285ECA0093B87B /* KTWaterDetailsViewController.storyboard in Resources */,
 				84578F781B35E80700C3A4EA /* LaunchScreen.xib in Resources */,
 				844268AD1B36C05F006E7F7D /* a11.png in Resources */,
 				A14656F81ADEB5A400571E9A /* KTFooterView.xib in Resources */,
 				844268B41B36C05F006E7F7D /* a9.png in Resources */,
+				84EFAA261B46B698005A5DDF /* MainStoryboard.storyboard in Resources */,
 				844269141B36C05F006E7F7D /* pp.png in Resources */,
 				8487F1881B3005C100F0F7B2 /* KTOnlinePayViewController.storyboard in Resources */,
 				8442690A1B36C05F006E7F7D /* im_information_you.png in Resources */,
@@ -2604,7 +2696,11 @@
 				844268C91B36C05F006E7F7D /* woyaokaidian.png in Resources */,
 				844268AE1B36C05F006E7F7D /* a12.png in Resources */,
 				844268C51B36C05F006E7F7D /* tu-00_01.png in Resources */,
+<<<<<<< HEAD
 				8476A0461B4BB93100DB2CF0 /* BSUISingleImageTableViewCell.xib in Resources */,
+=======
+				0ED64D5F1B462CF000510534 /* wdcx_01.png in Resources */,
+>>>>>>> fb2815ae2493f8e6274ed28d919d2d1e7f7f62bb
 				8442691C1B36C05F006E7F7D /* vip.png in Resources */,
 				844269151B36C05F006E7F7D /* putong.png in Resources */,
 				844268BD1B36C05F006E7F7D /* gouwu.png in Resources */,
@@ -2891,8 +2987,9 @@
 				847432DB1B2A8CE500B030C4 /* MyOrderCell.m in Sources */,
 				8460AE801B4259BE00022280 /* BSUITabBarCommonController.m in Sources */,
 				8474DEB51B3F7D0600D9DE36 /* BSUICommonController.m in Sources */,
+				84EFAA281B46B698005A5DDF /* LeTemperatureAlarmService.m in Sources */,
 				8470761A1B3A5F7800F28180 /* SetCell.m in Sources */,
-				8470763F1B3A8B9000F28180 /* cleaning.m in Sources */,
+				0ED64D6C1B462E8C00510534 /* messageModifyController.m in Sources */,
 				847433081B2A908000B030C4 /* SystemSet.m in Sources */,
 				A0F0C3E61B10209500CE406D /* BasicBody.m in Sources */,
 				847433021B2A8F4A00B030C4 /* WaitPayment.m in Sources */,
@@ -2917,7 +3014,9 @@
 				84C06D9B1B3AF3BA000BB45C /* BSUITableViewInitRuntimeController.m in Sources */,
 				847076311B3A8AF800F28180 /* communicateController.m in Sources */,
 				84BA967D1B2829D500388B58 /* Delcartlist.m in Sources */,
+				0ED64D641B462D4A00510534 /* CDPDatePicker.m in Sources */,
 				A0F0C3F61B10209500CE406D /* DeleteShoppingCartRequest.m in Sources */,
+				84EFAA2B1B46B698005A5DDF /* BSBLEViewController.m in Sources */,
 				848058151B39A377005817D7 /* BSFCRollingADImageUIView.m in Sources */,
 				845A02411B3DE9FE007F5327 /* BSUISingleImageTableViewCell.m in Sources */,
 				84820A601B285ECA0093B87B /* KTWaterDetailsViewController.m in Sources */,
@@ -2940,6 +3039,7 @@
 				84BA96881B2829D500388B58 /* ShoppingCart.m in Sources */,
 				844A32061B4064310045CA6C /* BSUIBarButtonItem.m in Sources */,
 				847076711B3AB21300F28180 /* UIViewController+BSTableObject.m in Sources */,
+				0ED64D681B462D7A00510534 /* cleaning.m in Sources */,
 				A0F0C3F21B10209500CE406D /* UpdateShoppingCartParams.m in Sources */,
 				84EBA0161B41A307003309F6 /* KTLBMainTabBarController.m in Sources */,
 				845A022D1B3DABF0007F5327 /* ErrorMessage.m in Sources */,
@@ -2960,6 +3060,7 @@
 				847076251B3A89F000F28180 /* recommendguest.m in Sources */,
 				84BA96851B2829D500388B58 /* WaterSending.m in Sources */,
 				847432F91B2A8E5500B030C4 /* AlreadyPayment.m in Sources */,
+				84EFAA271B46B698005A5DDF /* LeDiscovery.m in Sources */,
 				842043751B2991770002C868 /* DLFixedTabbarView.m in Sources */,
 				847432F71B2A8E5500B030C4 /* AlreadyCommit.m in Sources */,
 				A0F0C3E81B10209500CE406D /* BasicResponse.m in Sources */,
@@ -3048,6 +3149,7 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
+<<<<<<< HEAD
 		84BF8F6D1B4AB63C001042F1 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -3062,6 +3164,14 @@
 				84BF8F731B4AB63C001042F1 /* Base */,
 			);
 			name = LaunchScreen.xib;
+=======
+		84EFAA191B46B698005A5DDF /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84EFAA1A1B46B698005A5DDF /* en */,
+			);
+			name = MainStoryboard.storyboard;
+>>>>>>> fb2815ae2493f8e6274ed28d919d2d1e7f7f62bb
 			sourceTree = "<group>";
 		};
 		DFD86AB21AFC5886000AB8E6 /* InfoPlist.strings */ = {

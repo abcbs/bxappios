@@ -2,7 +2,11 @@ dependencies: \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/BSFramework/BSUIComponent/CommonController/BSTableSection.m \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/BSFramework/BSUIComponent/CommonController/BSTableSection.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/BSFramework/BSUIComponent/CommonController/BSTableContentObject.h \
+<<<<<<< HEAD
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/Build/Products/Debug-iphoneos/民生小区.app/BSUIFrameworkHeader.h \
+=======
+  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/BSFramework/BSUIFrameworkHeader.h \
+>>>>>>> fb2815ae2493f8e6274ed28d919d2d1e7f7f62bb
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/BSFramework/Base/Conf.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/BSFramework/Base/ErrorMessage.h \
   /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/BSFramework/BSUISetting/NavigationProcess.h \
