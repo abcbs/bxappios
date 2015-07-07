@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/fangfangluo/Desktop/Dev/version-git/bxappios/LBControl/MyOrderItems/AlreadyPayment.m \
-  /Users/fangfangluo/Desktop/Dev/version-git/bxappios/LBControl/MyOrderItems/AlreadyPayment.h
+  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/LBControl/MyOrderItems/AlreadyPayment.m \
+  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/LBControl/MyOrderItems/AlreadyPayment.h

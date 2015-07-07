@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/fangfangluo/Desktop/Dev/version-git/bxappios/LBControl/MyOrderItems/AlreadyCommit.m \
-  /Users/fangfangluo/Desktop/Dev/version-git/bxappios/LBControl/MyOrderItems/AlreadyCommit.h
+  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/LBControl/MyOrderItems/AlreadyCommit.m \
+  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/LBControl/MyOrderItems/AlreadyCommit.h

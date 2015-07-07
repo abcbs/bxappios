@@ -120,15 +120,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-<<<<<<< HEAD
                             <tableView clipsSubviews="YES" contentMode="center" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="h2p-Aq-zr4">
                                 <rect key="frame" x="0.0" y="-82" width="320" height="568"/>
                                 <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
-=======
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="h2p-Aq-zr4">
-                                <rect key="frame" x="0.0" y="-49" width="320" height="568"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
->>>>>>> fb2815ae2493f8e6274ed28d919d2d1e7f7f62bb
                             </tableView>
                         </subviews>
                     </view>
@@ -240,11 +234,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xKc-3R-L8E" id="obx-Zj-nsz">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-<<<<<<< HEAD
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="7196A181-4B26-421B-869C-2B15287774C0" translatesAutoresizingMaskIntoConstraints="NO" id="5xB-kA-hRX" userLabel="firstImage">
-=======
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="7E7AB12B-A523-4BBE-AD6B-7DEE98B71DEE" translatesAutoresizingMaskIntoConstraints="NO" id="5xB-kA-hRX" userLabel="firstImage">
->>>>>>> fb2815ae2493f8e6274ed28d919d2d1e7f7f62bb
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="587D4C72-FB08-4AA4-B46A-29DC81C5407E" translatesAutoresizingMaskIntoConstraints="NO" id="5xB-kA-hRX" userLabel="firstImage">
                                                     <rect key="frame" x="97" y="0.0" width="107" height="100"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="firstName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G49-4z-vJD">
@@ -361,11 +351,7 @@
         </scene>
     </scenes>
     <resources>
-<<<<<<< HEAD
-        <image name="7196A181-4B26-421B-869C-2B15287774C0" width="49" height="49">
-=======
-        <image name="7E7AB12B-A523-4BBE-AD6B-7DEE98B71DEE" width="49" height="49">
->>>>>>> fb2815ae2493f8e6274ed28d919d2d1e7f7f62bb
+        <image name="587D4C72-FB08-4AA4-B46A-29DC81C5407E" width="49" height="49">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw

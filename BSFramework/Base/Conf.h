@@ -230,7 +230,6 @@ extern  NSString *bsNetstatus;
  */
 #define networkRight 10000000
 #define networkError -1001
-
 +(void)handleNetworkError:(NSError *)error;
 
 /**

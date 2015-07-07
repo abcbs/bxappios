@@ -1,6 +1,6 @@
 //
 //  SetViewController.m
-//  民生小区
+//  主界面，我的圈子
 //
 //  Created by 闫青青 on 15/4/24.
 //  Copyright (c) 2015年 itcast. All rights reserved.
@@ -10,7 +10,6 @@
 #import "SetCell.h"
 #import "LoginViewController.h"
 #import "RegisterViewController.h"
-#import "Conf.h"
 #import "SystemSet.h"
 #import <ShareSDK/ShareSDK.h>
 #import <TencentOpenAPI/QQApiInterface.h>
@@ -18,21 +17,22 @@
 #import "myWallet.h"
 #import "applyShop.h"
 #import "Demo1ViewController.h"
-#import "messageModifyController.h"
-#import "AppDelegate.h"
+
+#import "BSUIFrameworkHeader.h"
+
+
 @interface SetViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic, retain) UITableView *tableView;
 @property (nonatomic, copy) NSArray *textArray;
 @property (nonatomic, copy) NSArray *imageNameArray;
-@property (nonatomic, copy) UIButton *loginButton;
-@property (nonatomic, copy) UIButton *registButton;
-@property (nonatomic,copy) NSString *sessionid;
+
 @end
 
 @implementation SetViewController
 @synthesize tableView = _tableView;
 @synthesize textArray = _textArray;
 @synthesize imageNameArray = _imageNameArray;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -51,11 +51,11 @@
     [self.view addSubview:self.tableView];
     
     //红色界面
-    UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 65)];
-    NSString *imageName = [NSString stringWithFormat:@"生活圈.jpg"];
-    imageView.image = [UIImage imageNamed:imageName];
-    [self.view addSubview:imageView];
-    
+  
+    //UIImageView *imageView=[BSUIComponentView navigationHeaderWithImage:@"生活圈.jpg"];
+    //[self.view addSubview:imageView];
+    [BSUIComponentView navigationHeaderWithImage:@"生活圈.jpg"
+                                            view:self.view];
     //头像设置
     UIButton *iconButton = [[UIButton alloc] initWithFrame:CGRectMake(self.view.bounds.size.width/2-45, 70, 90, 90)];
     [iconButton setBackgroundImage:[UIImage imageNamed:@"LoginPicture.png"] forState:UIControlStateNormal];
@@ -68,59 +68,23 @@
     iconBackImage.image = [UIImage imageNamed:iconBackImageName];
     [self.view addSubview:iconBackImage];
     [self.view addSubview:iconButton];
-    //头像右边的箭头按钮
-    UIButton *arrowBtn = [[UIButton alloc]initWithFrame:CGRectMake(self.view.bounds.size.width-70, 95, 20, 20)];
-    [arrowBtn setImage:[UIImage imageNamed:@"a13.png"] forState:UIControlStateNormal];
-    [arrowBtn addTarget:self action:@selector(arrowMsg:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:arrowBtn];
     
     //登录button
-    _loginButton = [[UIButton alloc]initWithFrame:CGRectMake(23, 130, 60, 25)];
-    [_loginButton setBackgroundImage:[UIImage imageNamed:@"login.png"] forState:UIControlStateNormal];
-    [_loginButton addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    UIButton *loginButton = [[UIButton alloc]initWithFrame:CGRectMake(23, 120, 70, 30)];
+    [loginButton setBackgroundImage:[UIImage imageNamed:@"login.png"] forState:UIControlStateNormal];
+    [loginButton addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
     //注册button
-    _registButton = [[UIButton alloc]initWithFrame:CGRectMake(self.view.bounds.size.width-80, 130,60, 25)];
-    [_registButton setBackgroundImage:[UIImage imageNamed:@"regist.png"] forState:UIControlStateNormal];
-    [_registButton addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:_loginButton];
-    [self.view addSubview:_registButton];
+    UIButton *registButton = [[UIButton alloc]initWithFrame:CGRectMake(self.view.bounds.size.width-90, 120, 70, 30)];
+    [registButton setBackgroundImage:[UIImage imageNamed:@"regist.png"] forState:UIControlStateNormal];
+    [registButton addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:loginButton];
+    [self.view addSubview:registButton];
     //分享button
     UIButton *shareButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 300, SCREEN_WIDTH, 43)];
     //    [shareButton setBackgroundImage:[UIImage imageNamed:@"c-1.png"] forState:UIControlStateNormal];
     shareButton.backgroundColor = [UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:0];
     [shareButton addTarget:self action:@selector(share:) forControlEvents:UIControlEventTouchUpInside];
     [self.tableView addSubview:shareButton];
-    NSUserDefaults *userDefaults=[NSUserDefaults standardUserDefaults];
-    self.sessionid = [userDefaults objectForKey:@"sessionId"];
-    //登录判断，然后做隐藏
-    //    if(self.sessionid != nil){
-    //        loginButton.hidden = YES;
-    //        registButton.hidden = YES;
-    //    }
-    //    else{
-    //        loginButton.hidden = NO;
-    //        registButton.hidden = NO;
-    //    }
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(returnValueFromThirdVC:) name:@"aaa" object:nil];
-}
-- (void)returnValueFromThirdVC:(NSNotification *)noti{
-    
-    NSLog(@"%s",__func__);
-    _loginButton.hidden = YES;
-    _registButton.hidden = YES;
-}
-////代理要实现的协议
-//- (void)sessionIDClick:(NSString *)sessionID{
-//    self.sessionid = sessionID;
-////    KT_AlertView_(self.loginMessage);
-////    if ([self.loginMessage isEqual:@"登录成功"]) {
-////        [self dismissViewControllerAnimated:NO completion: nil];
-////    }
-//}
-//修改资料的button
-- (void)arrowMsg:(UIButton *)sender{
-    messageModifyController *mvc = [[messageModifyController alloc]init];
-    [self presentViewController:mvc animated:NO completion:nil];
 }
 //主界面注册button点击事件
 - (void)click:(UIButton *)sender{
@@ -148,14 +112,14 @@
         setCell.iconImageView.image = [UIImage imageNamed:self.imageNameArray[indexPath.row + 0]];
         setCell.nameLabel.text = self.textArray[indexPath.row + 0];
     }
-    //    else if(indexPath.section == 0&&indexPath.row == 1){
-    //        MyOrder *orderCell = [tableView dequeueReusableCellWithIdentifier:@"MyOrder"];
-    //        if(orderCell == nil){
-    //            NSArray *orderArray = [[NSBundle mainBundle]loadNibNamed:@"MyOrder" owner:nil options:nil];
-    //            orderCell = orderArray[0];
-    //        }
-    //        return orderCell;
-    //    }
+//    else if(indexPath.section == 0&&indexPath.row == 1){
+//        MyOrder *orderCell = [tableView dequeueReusableCellWithIdentifier:@"MyOrder"];
+//        if(orderCell == nil){
+//            NSArray *orderArray = [[NSBundle mainBundle]loadNibNamed:@"MyOrder" owner:nil options:nil];
+//            orderCell = orderArray[0];
+//        }
+//        return orderCell;
+//    }
     else if(indexPath.section == 1){
         setCell.iconImageView.image = [UIImage imageNamed:self.imageNameArray[indexPath.row + 2]];
         setCell.nameLabel.text = self.textArray[indexPath.row + 2];
@@ -198,10 +162,10 @@
     if(indexPath.section == 0&&indexPath.row == 1){
         Demo1ViewController *demo = [[Demo1ViewController alloc]init];
         [self presentViewController:demo animated:NO completion:nil];
-        //        MyOrder *order = [[MyOrder alloc]init];
-        //        [self presentViewController:order animated:NO completion:nil];
+//        MyOrder *order = [[MyOrder alloc]init];
+//        [self presentViewController:order animated:NO completion:nil];
     }
-    else if(indexPath.section == 3&&indexPath.row == 2){
+     else if(indexPath.section == 3&&indexPath.row == 2){
         SystemSet *setVC = [[SystemSet alloc]init];
         [self presentViewController:setVC animated:NO completion:nil];
     }else if (indexPath.section == 1&&indexPath.row == 0){
@@ -260,5 +224,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 @end

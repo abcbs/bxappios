@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/fangfangluo/Desktop/Dev/version-git/bxappios/LBModels/Business/BusinessManager.m \
-  /Users/fangfangluo/Desktop/Dev/version-git/bxappios/LBModels/Business/BusinessManager.h
+  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/LBModels/Business/BusinessManager.m \
+  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/LBModels/Business/BusinessManager.h

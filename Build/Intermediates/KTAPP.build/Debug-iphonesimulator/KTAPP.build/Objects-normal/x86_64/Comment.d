@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/fangfangluo/Desktop/Dev/version-git/bxappios/LBModels/SendingWater/Comment.m \
-  /Users/fangfangluo/Desktop/Dev/version-git/bxappios/LBModels/SendingWater/Comment.h
+  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/LBModels/SendingWater/Comment.m \
+  /Users/fangfangluo/Desktop/Dev/KT-APP-VERSION/bxappios-master/LBModels/SendingWater/Comment.h

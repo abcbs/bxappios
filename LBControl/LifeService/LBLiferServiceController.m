@@ -73,10 +73,7 @@
     [bsTable addBSTableContent:appointment sectionHeader:@"预约服务"];
     
     //配置错误
-    /*
     BSTableContentObject *lifeService=[BSTableContentObject initWithContentObject:@"送水" methodName:nil imageName:@"98ss" colClass:[LBSendingWaterTableViewController class]];
-    */
-     BSTableContentObject *lifeService=[BSTableContentObject initWithContentObject:@"送水" methodName:nil imageName:@"98ss" colClass:nil];
     
     [bsTable addBSTableContent:lifeService sectionHeader:@"预约服务"];
     
@@ -91,7 +88,7 @@
  *改变行的高度（实现主个代理方法后 rowHeight 设定的高度无效）
  */
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return BSMarginY(60);
+    return BSMarginY(90);
 }
 
 - (void)didReceiveMemoryWarning {

@@ -21,9 +21,8 @@
 @property (nonatomic,strong) UITextField *text3;
 @property (nonatomic,strong) UIView *line4;
 @property (nonatomic,strong) UIButton * confirm;
-@property (nonatomic,strong) UITextView *text4;
+@property (nonatomic,strong) UITextField *text4;
 @property (nonatomic,strong) UITextField *text5;
-@property (nonatomic,strong) UIButton *tijiaoButton;
 @property (nonatomic, assign) BOOL isSelect;
 @end
 
@@ -32,12 +31,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     //红色界面
-    UIImageView *imageView1 = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width-270, 65)];
+    UIImageView *imageView1 = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 65)];
     NSString *imageName = [NSString stringWithFormat:@"yyfw9_01.png"];
     imageView1.image = [UIImage imageNamed:imageName];
     [self.view addSubview:imageView1];
     //返回按钮
-    UIButton *backButton = [[UIButton alloc]initWithFrame:CGRectMake(self.view.bounds.size.width*0.0625, self.view.bounds.size.height*0.052916, self.view.bounds.size.width*0.048125, self.view.bounds.size.width*0.048125)];
+    UIButton *backButton = [[UIButton alloc]initWithFrame:CGRectMake(self.view.bounds.size.width*0.0625, self.view.bounds.size.height*0.052916, self.view.bounds.size.width*0.078125, self.view.bounds.size.width*0.078125)];
     [backButton setBackgroundImage:[UIImage imageNamed:@"login-2.png"] forState:UIControlStateNormal];
     [backButton addTarget:self action:@selector(buttonClickeds:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:backButton];
@@ -123,84 +122,21 @@
     [_confirm setImage:[UIImage imageNamed:@"im_information_add.png"] forState:UIControlStateNormal];
     [_view1 addSubview:_confirm];
     
-    _text4 = [[UITextView alloc]initWithFrame:CGRectMake(5, 360, SCREEN_WIDTH-10, 50)];
+    _text4 = [[UITextField alloc]initWithFrame:CGRectMake(5, 360, SCREEN_WIDTH-10, 50)];
     _text4.layer.borderWidth = 1;
     _text4.layer.cornerRadius = 8;
-    //_text4.placeholder = @"请输入预约时间";
-    NSDateFormatter *formatDate = [[NSDateFormatter alloc]init];
-    [formatDate setLocale:[[NSLocale alloc]initWithLocaleIdentifier:@"en_US"]];
-    [formatDate setDateFormat:@"yyyy-MM-dd HH:mm"];
-    nowDate = [NSDate date];
-    _text4.text = @"请输入预约时间";
-     _text4.font = [UIFont systemFontOfSize:20];
-    _text4.textColor = [UIColor lightGrayColor];
-    _text4.textContainerInset = UIEdgeInsetsZero;
-    UIButton *btn = [UIButton  buttonWithType:UIButtonTypeCustom];
-    btn.frame = _text4.bounds;
-    btn.backgroundColor = [UIColor clearColor];
-    
-    [_text4 addSubview:btn];
-    [btn addTarget:self action:@selector(cellTouchAction:) forControlEvents:UIControlEventTouchUpInside];
-    
+    _text4.placeholder = @"请输入预约时间";
     [self.view addSubview:_text4];
     _text5 = [[UITextField alloc]initWithFrame:CGRectMake(5, 415, SCREEN_WIDTH-10, 90)];
     _text5.layer.borderWidth = 1;
     _text5.layer.cornerRadius = 8;
     _text5.placeholder = @"请输入预约描述...";
     [self.view addSubview:_text5];
-    _tijiaoButton = [[UIButton alloc]initWithFrame:CGRectMake(100, 410, 110, 40)];
-    [_tijiaoButton setImage:[UIImage imageNamed:@"tjdd00.png"] forState:UIControlStateNormal];
-    [self.view addSubview:_tijiaoButton];
     _view1.height = 30;
     _text4.y = CGRectGetMaxY(_view1.frame)+10;
     _text5.y = CGRectGetMaxY(_text4.frame)+10;
-    _tijiaoButton.y = CGRectGetMaxY(_text5.frame)+10;
-    
-    dateView.frame = [[UIScreen mainScreen] bounds];
-    pick.backgroundColor = [UIColor whiteColor];
-    //    [self initFView];
-    //    [self initFscrollview];
-    dateView.frame = self.view.bounds;
-    currentDateItem = 1;
-    NSLocale *locale = [[NSLocale alloc] initWithLocaleIdentifier:@"zh_CN"];//设置为中文
-    pick.locale = locale;
-    
-    
-}
--(void)cellTouchAction:(UIButton *)btn{
-    dateView.hidden = NO;
-    currentDateItem = 1;
-}
-- (IBAction)selectedDate:(UIButton *)btn{
-    NSDateFormatter *formatDate = [[NSDateFormatter alloc]init];
-    [formatDate setLocale:[[NSLocale alloc]initWithLocaleIdentifier:@"en_US"]];
-    [formatDate setDateFormat:@"yyyy-MM-dd HH:mm"];
-    
-    NSComparisonResult result;
-    if (currentDateItem==1)
-    {
-        result = [[pick date] compare:[NSDate date]];
-        if (result == NSOrderedDescending) {
-            _text4.text = [formatDate stringFromDate:pick.date];
-            _text4.textColor = [UIColor blackColor];
-        }
-    }
-    else
-    {
-        result = [[pick date] compare:nowDate];
-    }
-    
-    dateView.hidden = YES;
-    
-}
-//点击屏幕空白处去掉键盘
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    [_text5 resignFirstResponder];
-    [_text4 resignFirstResponder];
 
 }
-
 - (void)next:(UIButton *)sender{
     addressController *vc = [[addressController alloc]init];
     [self presentViewController:vc animated:NO completion:nil];
@@ -208,16 +144,16 @@
 //点击 添加新地址 按钮
 //- (void)addressButtonClicked:(UIButton *)sender{
 //    BOOL isClick = self.addressBtn.isSelected;
-//
+//    
 //    if(isClick){
 //        [UIView animateWithDuration:0.5 animations:^{
 //            _view1.height = 150;
 //            _text4.y = CGRectGetMaxY(_view1.frame);
 //            _text5.y  = CGRectGetMaxY(_text4.frame);
 //        }];
-//
+//     
 //        [self.addressBtn setSelected:NO];
-//
+//        
 //    }
 //    else {
 //        [UIView animateWithDuration:0.5 animations:^{
@@ -229,25 +165,23 @@
 //    }
 //}
 - (void)addressButtonClicked:(UIButton *)sender{
-    BOOL isClick = self.addressBtn.isSelected;
+  BOOL isClick = self.addressBtn.isSelected;
     if(isClick){
         [UIView animateWithDuration:0.5 animations:^{
-            _view1.height = 30;
-            _text4.y = CGRectGetMaxY(_view1.frame)+10;
-            _text5.y = CGRectGetMaxY(_text4.frame)+10;
-            _tijiaoButton.y = CGRectGetMaxY(_text5.frame)+10;
-        }];
-        [self.addressBtn setSelected:NO];
+        _view1.height = 30;
+        _text4.y = CGRectGetMaxY(_view1.frame)+10;
+        _text5.y = CGRectGetMaxY(_text4.frame)+10;
+    }];
+     [self.addressBtn setSelected:NO];
     }
     else{
-        [UIView animateWithDuration:0.5 animations:^{
-            _view1.height = 150;
-            _text4.y = CGRectGetMaxY(_view1.frame)+10;
-            _text5.y  = CGRectGetMaxY(_text4.frame)+10;
-            _tijiaoButton.y = CGRectGetMaxY(_text5.frame)+10;
-        }];
+                [UIView animateWithDuration:0.5 animations:^{
+                    _view1.height = 150;
+                    _text4.y = CGRectGetMaxY(_view1.frame)+10;
+                    _text5.y  = CGRectGetMaxY(_text4.frame)+10;
+                }];
         
-        [self.addressBtn setSelected:YES];
+                [self.addressBtn setSelected:YES];
     }
 }
 //单选按钮
@@ -270,13 +204,13 @@
 }
 
 /*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
 
 @end
