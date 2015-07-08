@@ -199,6 +199,8 @@
 		845A02351B3DBA7E007F5327 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 845A02341B3DBA7E007F5327 /* UIView+Frame.m */; };
 		845A02381B3DBADD007F5327 /* RegistUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 845A02371B3DBADD007F5327 /* RegistUtil.m */; };
 		845A02411B3DE9FE007F5327 /* BSUISingleImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 845A02401B3DE9FE007F5327 /* BSUISingleImageTableViewCell.m */; };
+		845D02C21B4CD436001001F7 /* BLEInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 845D02C11B4CD436001001F7 /* BLEInfo.m */; };
+		845D02C51B4D21E0001001F7 /* BLEInfoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 845D02C41B4D21E0001001F7 /* BLEInfoTableViewController.m */; };
 		8460AE7A1B42569300022280 /* BSTableViewCellData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8460AE791B42569300022280 /* BSTableViewCellData.m */; };
 		8460AE7D1B42578B00022280 /* BSTableViewMultCellData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8460AE7C1B42578B00022280 /* BSTableViewMultCellData.m */; };
 		8460AE801B4259BE00022280 /* BSUITabBarCommonController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8460AE7F1B4259BE00022280 /* BSUITabBarCommonController.m */; };
@@ -700,6 +702,10 @@
 		845A02371B3DBADD007F5327 /* RegistUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistUtil.m; sourceTree = "<group>"; };
 		845A023F1B3DE9FE007F5327 /* BSUISingleImageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUISingleImageTableViewCell.h; sourceTree = "<group>"; };
 		845A02401B3DE9FE007F5327 /* BSUISingleImageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUISingleImageTableViewCell.m; sourceTree = "<group>"; };
+		845D02C01B4CD436001001F7 /* BLEInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLEInfo.h; sourceTree = "<group>"; };
+		845D02C11B4CD436001001F7 /* BLEInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLEInfo.m; sourceTree = "<group>"; };
+		845D02C31B4D21E0001001F7 /* BLEInfoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLEInfoTableViewController.h; sourceTree = "<group>"; };
+		845D02C41B4D21E0001001F7 /* BLEInfoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLEInfoTableViewController.m; sourceTree = "<group>"; };
 		8460AE781B42569300022280 /* BSTableViewCellData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSTableViewCellData.h; sourceTree = "<group>"; };
 		8460AE791B42569300022280 /* BSTableViewCellData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSTableViewCellData.m; sourceTree = "<group>"; };
 		8460AE7B1B42578B00022280 /* BSTableViewMultCellData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSTableViewMultCellData.h; sourceTree = "<group>"; };
@@ -1999,6 +2005,8 @@
 				84BF8F721B4AB63C001042F1 /* LaunchScreen.xib */,
 				84BF8F601B4AB63C001042F1 /* Supporting Files */,
 				84BF90571B4AC981001042F1 /* LSControllerHeader.h */,
+				845D02C01B4CD436001001F7 /* BLEInfo.h */,
+				845D02C11B4CD436001001F7 /* BLEInfo.m */,
 			);
 			path = "KT-BUSINESS-SELLER";
 			sourceTree = "<group>";
@@ -2016,6 +2024,8 @@
 		84BF8F871B4AB864001042F1 /* ProductManagerControl */ = {
 			isa = PBXGroup;
 			children = (
+				845D02C31B4D21E0001001F7 /* BLEInfoTableViewController.h */,
+				845D02C41B4D21E0001001F7 /* BLEInfoTableViewController.m */,
 			);
 			path = ProductManagerControl;
 			sourceTree = "<group>";
@@ -2823,7 +2833,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				84BF8F6C1B4AB63C001042F1 /* OrderManagerViewController.m in Sources */,
+				845D02C51B4D21E0001001F7 /* BLEInfoTableViewController.m in Sources */,
 				84BF8F661B4AB63C001042F1 /* AppDelegate.m in Sources */,
+				845D02C21B4CD436001001F7 /* BLEInfo.m in Sources */,
 				84BF8F691B4AB63C001042F1 /* ProductManagerViewController.m in Sources */,
 				84BF8F631B4AB63C001042F1 /* main.m in Sources */,
 			);
