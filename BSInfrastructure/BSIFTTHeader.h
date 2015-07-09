@@ -13,7 +13,27 @@
 #import "LeTemperatureAlarmService.h"
 #import "LeDiscovery.h"
 
+/**
+ *LE的详细信息
+ */
+#import "BLEDeviceDetailsTableViewController.h"
+/**
+ *LE发现设备
+ */
+#import "BLEDevicesTableViewController.h"
+
+/**
+ *LE中心
+ */
+#import "BTLECentralViewController.h"
+
+/**
+ *LE周边
+ */
+#import "BTLEPeripheralViewController.h"
+
 #import "BSBLEDetailTableViewController.h"
 #import "BSBLEMainController.h"
+
 
 #endif
