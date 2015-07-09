@@ -26,7 +26,6 @@
 		0E8377621B035BAB00782034 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E8377611B035BAB00782034 /* libstdc++.dylib */; };
 		0E8377641B035BB300782034 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E8377631B035BB300782034 /* libsqlite3.dylib */; };
 		0E915F981B0C394800F47478 /* ValidateCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E915F971B0C394800F47478 /* ValidateCode.m */; };
-		8404B8551B393F1E002AF13A /* BSBLEMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8404B8541B393F1E002AF13A /* BSBLEMainController.m */; };
 		842042A21B2983B40002C868 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8420429F1B2983B40002C868 /* AppDelegate.m */; };
 		842042AE1B2984D80002C868 /* KTCarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 842042A71B2984D80002C868 /* KTCarCell.m */; };
 		842042AF1B2984D80002C868 /* KTCarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842042A81B2984D80002C868 /* KTCarCell.xib */; };
@@ -344,7 +343,6 @@
 		84BF8FF11B4AC2FA001042F1 /* BSUIComponentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E97AB61B307535001D4100 /* BSUIComponentView.m */; };
 		84BF8FF31B4AC2FA001042F1 /* BSUIBlockButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8474DEAA1B3F474700D9DE36 /* BSUIBlockButton.m */; };
 		84BF8FF61B4AC2FA001042F1 /* BSUIBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 844A32051B4064310045CA6C /* BSUIBarButtonItem.m */; };
-		84BF8FF91B4AC2FA001042F1 /* YYHMantleModelSerializer.h in Sources */ = {isa = PBXBuildFile; fileRef = 842042BD1B29881B0002C868 /* YYHMantleModelSerializer.h */; };
 		84BF8FFA1B4AC2FA001042F1 /* YYHMantleModelSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 842042BE1B29881B0002C868 /* YYHMantleModelSerializer.m */; };
 		84BF8FFC1B4AC2FA001042F1 /* YYHModelRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = 842042C11B2988410002C868 /* YYHModelRoute.m */; };
 		84BF8FFE1B4AC2FA001042F1 /* YYHModelRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 842042C31B2988410002C868 /* YYHModelRouter.m */; };
@@ -378,8 +376,10 @@
 		84D19FEF1B4C440500BA25BF /* LeDiscovery.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D19FE11B4C36EC00BA25BF /* LeDiscovery.m */; };
 		84D19FF11B4C440500BA25BF /* LeTemperatureAlarmService.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D19FE31B4C36EC00BA25BF /* LeTemperatureAlarmService.m */; };
 		84D19FF31B4C440500BA25BF /* BSBLEDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8480580A1B39A0E9005817D7 /* BSBLEDetailTableViewController.m */; };
-		84D19FF51B4C440500BA25BF /* BSBLEMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8404B8541B393F1E002AF13A /* BSBLEMainController.m */; };
 		84D19FF81B4C451F00BA25BF /* BSUISingleImageTableViewCell.xib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8476A0451B4BB93100DB2CF0 /* BSUISingleImageTableViewCell.xib */; };
+		84E71F341B4E5473003089B2 /* BLEDevicesAddTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E71F331B4E5473003089B2 /* BLEDevicesAddTableViewController.m */; };
+		84E71F351B4E5473003089B2 /* BLEDevicesAddTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E71F331B4E5473003089B2 /* BLEDevicesAddTableViewController.m */; };
+		84E71F391B4E60E6003089B2 /* BLCentralExtention.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 84E71F381B4E6023003089B2 /* BLCentralExtention.h */; };
 		84E97AB71B307535001D4100 /* BSUIComponentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E97AB61B307535001D4100 /* BSUIComponentView.m */; };
 		84EBA00B1B416E37003309F6 /* ClassForSelectors.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EBA00A1B416E37003309F6 /* ClassForSelectors.m */; };
 		84EBA0131B4189E0003309F6 /* LBLiferServiceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EBA0121B4189E0003309F6 /* LBLiferServiceController.m */; };
@@ -421,6 +421,7 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				84E71F391B4E60E6003089B2 /* BLCentralExtention.h in CopyFiles */,
 				84D19FF81B4C451F00BA25BF /* BSUISingleImageTableViewCell.xib in CopyFiles */,
 				84D19FEB1B4C43E900BA25BF /* BSIFTTHeader.h in CopyFiles */,
 				84BF90581B4AD23B001042F1 /* ADTImagePlayer.xib in CopyFiles */,
@@ -493,8 +494,6 @@
 		68078520C3A270F91A4F8CF0 /* libPods-LBModel.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LBModel.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D5EDE42CF9D9F0A52EA2193 /* libPods-BSControl.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BSControl.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		820D45CA979EF6E8C16C2E8B /* Pods-KTAPP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KTAPP.release.xcconfig"; path = "Pods/Target Support Files/Pods-KTAPP/Pods-KTAPP.release.xcconfig"; sourceTree = "<group>"; };
-		8404B8531B393F1E002AF13A /* BSBLEMainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSBLEMainController.h; sourceTree = "<group>"; };
-		8404B8541B393F1E002AF13A /* BSBLEMainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSBLEMainController.m; sourceTree = "<group>"; };
 		8420429E1B2983B40002C868 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8420429F1B2983B40002C868 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		842042A61B2984D80002C868 /* KTCarCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTCarCell.h; sourceTree = "<group>"; };
@@ -936,6 +935,9 @@
 		84D19FE31B4C36EC00BA25BF /* LeTemperatureAlarmService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeTemperatureAlarmService.m; sourceTree = "<group>"; };
 		84D19FE81B4C3CE900BA25BF /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
 		84D19FEA1B4C430000BA25BF /* BSIFTTHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSIFTTHeader.h; sourceTree = "<group>"; };
+		84E71F321B4E5473003089B2 /* BLEDevicesAddTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLEDevicesAddTableViewController.h; sourceTree = "<group>"; };
+		84E71F331B4E5473003089B2 /* BLEDevicesAddTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLEDevicesAddTableViewController.m; sourceTree = "<group>"; };
+		84E71F381B4E6023003089B2 /* BLCentralExtention.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLCentralExtention.h; sourceTree = "<group>"; };
 		84E97AB51B307535001D4100 /* BSUIComponentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUIComponentView.h; sourceTree = "<group>"; };
 		84E97AB61B307535001D4100 /* BSUIComponentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUIComponentView.m; sourceTree = "<group>"; };
 		84EBA0091B416E37003309F6 /* ClassForSelectors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassForSelectors.h; sourceTree = "<group>"; };
@@ -1451,6 +1453,9 @@
 				844570CC1B4D63F8000CA1C7 /* BLEDevicesTableViewController.m */,
 				844570C71B4D6323000CA1C7 /* BLEDeviceDetailsTableViewController.h */,
 				844570C81B4D6323000CA1C7 /* BLEDeviceDetailsTableViewController.m */,
+				84E71F321B4E5473003089B2 /* BLEDevicesAddTableViewController.h */,
+				84E71F331B4E5473003089B2 /* BLEDevicesAddTableViewController.m */,
+				84E71F381B4E6023003089B2 /* BLCentralExtention.h */,
 			);
 			path = BLEManager;
 			sourceTree = "<group>";
@@ -1889,8 +1894,6 @@
 				848058061B39A097005817D7 /* BLEModel */,
 				848058071B39A097005817D7 /* BLEService */,
 				848058081B39A097005817D7 /* BLEView */,
-				8404B8531B393F1E002AF13A /* BSBLEMainController.h */,
-				8404B8541B393F1E002AF13A /* BSBLEMainController.m */,
 			);
 			path = " Bluetooth";
 			sourceTree = "<group>";
@@ -2878,11 +2881,11 @@
 				84D19FED1B4C440500BA25BF /* BSBLEViewController.m in Sources */,
 				844570D21B4D672D000CA1C7 /* BLEInfo.m in Sources */,
 				84D19FEF1B4C440500BA25BF /* LeDiscovery.m in Sources */,
+				84E71F351B4E5473003089B2 /* BLEDevicesAddTableViewController.m in Sources */,
 				844570DA1B4D67D5000CA1C7 /* BTLECentralViewController.m in Sources */,
 				84D19FF11B4C440500BA25BF /* LeTemperatureAlarmService.m in Sources */,
 				84D19FF31B4C440500BA25BF /* BSBLEDetailTableViewController.m in Sources */,
 				844570DC1B4D67D5000CA1C7 /* BTLEPeripheralViewController.m in Sources */,
-				84D19FF51B4C440500BA25BF /* BSBLEMainController.m in Sources */,
 				84BF8FC41B4AC2FA001042F1 /* Conf.m in Sources */,
 				84BF8FC61B4AC2FA001042F1 /* ErrorMessage.m in Sources */,
 				84BF8FCA1B4AC2FA001042F1 /* BSHTTPNetworking.m in Sources */,
@@ -2905,7 +2908,6 @@
 				84BF8FF31B4AC2FA001042F1 /* BSUIBlockButton.m in Sources */,
 				84BF8FF61B4AC2FA001042F1 /* BSUIBarButtonItem.m in Sources */,
 				844570CA1B4D6323000CA1C7 /* BLEDeviceDetailsTableViewController.m in Sources */,
-				84BF8FF91B4AC2FA001042F1 /* YYHMantleModelSerializer.h in Sources */,
 				84BF8FFA1B4AC2FA001042F1 /* YYHMantleModelSerializer.m in Sources */,
 				84BF8FFC1B4AC2FA001042F1 /* YYHModelRoute.m in Sources */,
 				84BF8FFE1B4AC2FA001042F1 /* YYHModelRouter.m in Sources */,
@@ -3066,7 +3068,6 @@
 				A0F0C3EB1B10209500CE406D /* JoinShoppingCartResult.m in Sources */,
 				844E50BB1B2F2EE500A69F91 /* BSHTTPNetworking.m in Sources */,
 				842043731B2991770002C868 /* DLCustomSlideView.m in Sources */,
-				8404B8551B393F1E002AF13A /* BSBLEMainController.m in Sources */,
 				A0F0C3F11B10209500CE406D /* JoinShoppingCartParams.m in Sources */,
 				842042B11B2984D80002C868 /* KTCartTableView.m in Sources */,
 				847076641B3A9DFB00F28180 /* BSTableSection.m in Sources */,
@@ -3079,6 +3080,7 @@
 				8470764F1B3A8C4500F28180 /* bankController.m in Sources */,
 				A0F0C3E71B10209500CE406D /* BasicHeader.m in Sources */,
 				84BA96821B2829D500388B58 /* PayManager.m in Sources */,
+				84E71F341B4E5473003089B2 /* BLEDevicesAddTableViewController.m in Sources */,
 				84BA96871B2829D500388B58 /* CartList.m in Sources */,
 				842042C61B2988410002C868 /* YYHModelRouter.m in Sources */,
 			);

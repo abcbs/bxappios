@@ -41,7 +41,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="CQK-Dg-Qvh" kind="presentation" identifier="" trigger="accessoryAction" id="LmL-Xd-vBX"/>
+                                            <segue destination="7rf-na-tgv" kind="showDetail" identifier="BLEConnectionSegue" trigger="accessoryAction" id="430-ym-dr8"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -49,7 +49,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="周边查商品" id="UcK-1h-WMw"/>
+                    <navigationItem key="navigationItem" title="周边查商品" id="UcK-1h-WMw">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="uZJ-Tl-32d">
+                            <connections>
+                                <segue destination="Hax-fJ-WOk" kind="show" identifier="DeviceAddedSegue" id="usd-lj-Py6"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="tableView" destination="7ah-d7-Gte" id="zsD-76-JXw"/>
@@ -57,7 +63,74 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1410" y="-295"/>
+            <point key="canvasLocation" x="532" y="-669"/>
+        </scene>
+        <!--手工添加设备-->
+        <scene sceneID="Rlz-Nk-kI6">
+            <objects>
+                <tableViewController storyboardIdentifier="BLEDevicesAddTableViewController" title="添加设备" id="Hax-fJ-WOk" userLabel="手工添加设备" customClass="BLEDevicesAddTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="HvG-Q9-tNO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection id="4sO-gU-K43">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="0sR-GH-hPt">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0sR-GH-hPt" id="J6U-xg-6ri">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="5ah-4y-R6e">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5ah-4y-R6e" id="KrQ-dD-TKA">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="bKY-1F-5lI">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bKY-1F-5lI" id="r0V-K2-D1L">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection id="5yA-Q7-DSX">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="bNC-4U-lEA">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bNC-4U-lEA" id="NEx-Nv-Tbx">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="flr-ys-2Zf">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="flr-ys-2Zf" id="h1I-fP-abF">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="xx1-RF-9bf">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xx1-RF-9bf" id="6oL-3w-dSO">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="Hax-fJ-WOk" id="INX-Yh-9im"/>
+                            <outlet property="delegate" destination="Hax-fJ-WOk" id="i4F-ZL-mXH"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yzk-Jh-Uiy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1023" y="-930"/>
         </scene>
         <!--设备连接-->
         <scene sceneID="4Ed-qb-neY">
@@ -85,7 +158,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gta-PH-VPY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2247" y="-295"/>
+            <point key="canvasLocation" x="1023" y="-295"/>
         </scene>
         <!--订单管理-->
         <scene sceneID="wg7-f3-ORb">
@@ -163,26 +236,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="532" y="0.0"/>
-        </scene>
-        <!--设备连接导航-->
-        <scene sceneID="VbX-lp-eie">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CQK-Dg-Qvh" userLabel="设备连接导航" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="连接试试" image="second" id="WMQ-cL-WNL"/>
-                    <toolbarItems/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gYR-2l-ccZ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="7rf-na-tgv" kind="relationship" relationship="rootViewController" id="Y5N-kv-E3e"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SZK-x8-dLY" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1815" y="-295"/>
         </scene>
         <!--懒人查找-->
         <scene sceneID="ElA-LX-A7M">
@@ -321,7 +374,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h6u-z9-whM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="980" y="-295"/>
+            <point key="canvasLocation" x="85" y="-669"/>
         </scene>
         <!--订单管理导航-->
         <scene sceneID="Dt8-bg-Cl8">

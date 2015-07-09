@@ -18,7 +18,7 @@
     [BSUIComponentView initNavigationHeaderWithDefault:self
                                      navigationProcess:self title:nil
      ];
-    //[BSUIComponentView navigationHeader:self.navigationController];
+    [BSUIComponentView navigationHeader:self.navigationController];
     
     
 }

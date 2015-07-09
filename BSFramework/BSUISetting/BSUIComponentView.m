@@ -97,21 +97,19 @@
 +(void )initNavigationHeaderWithDefault:(UIViewController *)viewController
                       navigationProcess:(id<NavigationProcess>) navigationProcess
                                   title:(NSString *)title{
-    
+    /*
     UINavigationItem *navigationItem=viewController.navigationItem;
     
     //BSUIBlockButton *backButton = [BSUIComponentView backNavButton:navigationProcess
     //                                                         title:title image:nil];
-    
-
     UIBarButtonItem *myButton = [[UIBarButtonItem alloc]
-                                  initWithTitle:@"myButton"
+                                  initWithTitle:@"确定"
                                   style:UIBarButtonItemStylePlain
                                   target:self
-                                 action:@selector(backButton:)];
+                                  action:nil];
     
     navigationItem.leftBarButtonItem = myButton;
-  
+    */
    
 }
 

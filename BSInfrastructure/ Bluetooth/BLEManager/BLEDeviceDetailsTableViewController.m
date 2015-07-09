@@ -7,6 +7,7 @@
 //
 
 #import "BLEDeviceDetailsTableViewController.h"
+#import "BSIFTTHeader.h"
 
 @implementation BLEDeviceDetailsTableViewController
 

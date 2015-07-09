@@ -8,9 +8,9 @@
 
 #import "BLEDevicesTableViewController.h"
 #import "BLEInfo.h"
+#import "BSIFTTHeader.h"
 
-
-@interface BLEDevicesTableViewController ()
+@interface BLEDevicesTableViewController ()<BLCentralExtention>
 
 @end
 
@@ -156,4 +156,36 @@
     [self.tableView reloadData];
     return YES;
 }
+
+#pragma mark -
+#pragma mark Stroyboard Segue
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    //到连接测试界面:BLEConnectionSegue
+    //
+    if ([segue.identifier isEqualToString:@"BLEConnectionSegue"])
+    {
+        BLEDeviceDetailsTableViewController *evc = (BLEDeviceDetailsTableViewController *)segue.destinationViewController;
+        evc.bleInfoDelegate = self;
+    }else if ([segue.identifier isEqualToString:@"DeviceAddedSegue"]){
+        BLEDevicesAddTableViewController *avc=(BLEDevicesAddTableViewController *)segue.destinationViewController;
+        avc.bleInfoDelegate=self;
+    }
+}
+
+- (void)refreshBLEInfo:(BLEInfo *)bleInfo{
+    NSLog(@"refreshBLEInfo,%@",self.description);
+    
+}
+- (void)addBLEInfo:(BLEInfo *)bleInfo{
+    NSLog(@"addBLEInfo,%@",self.description);
+    
+}
+- (void)editBLEInfo:(BLEInfo *)bleInfo{
+    NSLog(@"addBLEInfo,%@",self.description);
+    
+}
 @end
+
+
