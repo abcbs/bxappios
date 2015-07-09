@@ -111,6 +111,7 @@
                                  action:@selector(backButton:)];
     
     navigationItem.leftBarButtonItem = myButton;
+  
    
 }
 
@@ -137,8 +138,11 @@
         
    BSUIBlockButton *okButton =[BSUIComponentView okNavButton:currentController target:currentController
                                                            title:title image:nil];
-  
-    [headerView addSubview:okButton];
+    
+           [headerView addSubview:okButton];
+        UIColor *cc=[[UIColor alloc] initWithRed:0.45 green:0 blue:0 alpha:1];
+
+        [headerView setBackgroundColor:cc ];
         
     [currentController.view addSubview:headerView];
 }
@@ -165,6 +169,10 @@
                                                         title:title image:nil];
     
     [headerView addSubview:okButton];
+    
+    UIColor *cc=[[UIColor alloc] initWithRed:0.45 green:0 blue:0 alpha:1];
+ 
+    [headerView setBackgroundColor:cc ];
     
     [currentController.view addSubview:headerView];
 }
@@ -270,13 +278,13 @@
  *头部的导航条标签
  */
 +(UILabel *)labelNav:(NSString *)title{
-    UILabel *headNameLabel=[[UILabel alloc]initWithFrame:BSRectMake(NAVIGATIONBAR_X+NAVIGATIONBAR_WIDTH*0.3, NAVIGATIONBAR_Y,NAVIGATIONBAR_WIDTH/3, NAVIGATIONBAR_HEIGHT)];
+    UILabel *headNameLabel=[[UILabel alloc]initWithFrame:BSRectMake(NAVIGATIONBAR_X+NAVIGATIONBAR_WIDTH*0.33, 10,NAVIGATIONBAR_WIDTH/3, NAVIGATIONBAR_HEIGHT)];
     if (title) {
         [headNameLabel setText:title];
     }else{
         [headNameLabel setText:[Conf appInfo]];
     }
-    [headNameLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:20]];
+    //[headNameLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:20]];
     [headNameLabel setTextAlignment: NSTextAlignmentCenter];
     [headNameLabel setTextColor:[UIColor whiteColor]];
     

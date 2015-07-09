@@ -3,7 +3,7 @@
 
 #import "TransferService.h"
 
-@interface BTLECentralViewController () <CBCentralManagerDelegate, CBPeripheralDelegate>
+@interface BTLECentralViewController () <CBCentralManagerDelegate, CBPeripheralDelegate ,UITextViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UITextView   *textview;
 
@@ -294,5 +294,22 @@
     [self.centralManager cancelPeripheralConnection:self.discoveredPeripheral];
 }
 
+/** Adds the 'Done' button to the title bar
+ */
+- (void)textViewDidBeginEditing:(UITextView *)textView
+{
+    // We need to add this manually so we have a way to dismiss the keyboard
+    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"确定" style:UIBarButtonItemStylePlain target:self action:@selector(dismissKeyboard)];
+    self.navigationItem.rightBarButtonItem = rightButton;
+    
+}
+
+
+/** Finishes the editing */
+- (void)dismissKeyboard
+{
+    [self.textview resignFirstResponder];
+    self.navigationItem.rightBarButtonItem = nil;
+}
 
 @end

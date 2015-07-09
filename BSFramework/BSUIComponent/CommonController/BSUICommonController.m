@@ -19,6 +19,7 @@
     
     [BSUIComponentView initNarHeaderWithDefault:self title: self.title
     ];
+    [BSUIComponentView navigationHeader:self.navigationController];
     
 }
 
