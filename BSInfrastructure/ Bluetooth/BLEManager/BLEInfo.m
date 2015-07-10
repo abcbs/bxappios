@@ -13,4 +13,12 @@
 @synthesize discoveredPeripheral;
 @synthesize rssi;
 
+-(void)dealloc{
+    self.rssi=nil;
+    //self.discoveredPeripheral=[CBPeripheral alloc];
+}
+-(void)realse{
+    
+    
+}
 @end

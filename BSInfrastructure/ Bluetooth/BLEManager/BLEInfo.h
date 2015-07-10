@@ -11,7 +11,7 @@
 
 @interface BLEInfo : NSObject
 
-@property (nonatomic, strong) CBPeripheral *discoveredPeripheral;
-@property (nonatomic, strong) NSNumber *rssi;
+@property (nonatomic, retain) CBPeripheral *discoveredPeripheral;
+@property (nonatomic, assign) NSNumber *rssi;
 
 @end

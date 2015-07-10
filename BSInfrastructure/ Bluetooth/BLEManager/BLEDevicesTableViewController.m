@@ -68,12 +68,21 @@
         BOOL isc=[[ble discoveredPeripheral] state] ==CBPeripheralStateConnected;
         
        NSString *state=(isc==YES )? @"Connected" : @"Not connected";
+        NSString *name=@"无名设备";
         if (p.name==nil) {
-            cell.textLabel.text =@"无名设备";
+            name =@"无名设备";
         }else{
-            cell.textLabel.text =p.name ;
+            name=p.name ;
         }
-        cell.detailTextLabel.text=  [[ble.rssi stringValue] stringByAppendingString:state];
+        if(ble.rssi){
+            name=[name stringByAppendingString:[ble.rssi stringValue]];
+        }
+        name=[name stringByAppendingString:state];
+        cell.textLabel.text =name ;
+        if (ble.rssi) {
+            cell.detailTextLabel.text=[ble.rssi stringValue];
+        }
+        //cell.detailTextLabel.text= [ble.rssi stringValue];
         
     }
     return cell;
@@ -92,7 +101,7 @@
 {
     BLEInfo *bleInfo;
     if (tableView == self.tableView)
-    {
+    {//将来的搜索页做准备
         bleInfo = arrayBLE[indexPath.row];
         bleIndex = indexPath.row;
         [self performSegueWithIdentifier:@"BLEConnectionSegue" sender:nil];
@@ -105,6 +114,37 @@
     }
 }
 
+
+/**
+ *自定义划动时delete按钮内容
+ */
+- (NSString *)tableView:(UITableView *)tableView
+titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return @"删除?";
+}
+
+/**
+ *删除
+ */
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    if (editingStyle == UITableViewCellEditingStyleDelete)
+    {
+        // Remove the row from data model
+        long row=indexPath.row;
+        //if (row==0) {
+        //    return;
+        //}
+        [self.arrayBLE removeObjectAtIndex:row];
+        
+        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        
+        //Request table view to reload
+        [tableView reloadData];
+        
+    }
+}
 //实现centralManagerDidUpdateState。
 //当Central Manager被初始化，我们要检查它的状态，以检查运行这个App的设备是不是支持BLE。
 - (void)centralManagerDidUpdateState:(CBCentralManager *)central
@@ -188,6 +228,7 @@
     if ([segue.identifier isEqualToString:@"BLEConnectionSegue"])
     {
         BLEDeviceDetailsTableViewController *evc = (BLEDeviceDetailsTableViewController *)segue.destinationViewController;
+        evc.centralMgr=self.centralMgr;
         evc.bleInfoDelegate = self;
     }else if ([segue.identifier isEqualToString:@"DeviceAddedSegue"]){
         BLEDevicesAddTableViewController *avc=(BLEDevicesAddTableViewController *)segue.destinationViewController;
@@ -214,6 +255,8 @@
     NSLog(@"addBLEInfo,%@",self.description);
     
 }
+
+
 @end
 
 

@@ -38,11 +38,11 @@
 - (IBAction)saveBLEInfo:(id)sender {
     //从视图中获取数据
     NSString *name=self.bleName.text;
-    CBPeripheral *discoveredPeripheral=[[CBPeripheral alloc]init];
+    //CBPeripheral *discoveredPeripheral=[[CBPeripheral alloc]init];
     //discoveredPeripheral.name=name;
     //实例化BLE
     BLEInfo *bleInfo=[[BLEInfo alloc]init];
-    bleInfo.discoveredPeripheral=discoveredPeripheral;
+    //[bleInfo setDiscoveredPeripheral:discoveredPeripheral];
     
     //使用代理做数据处理
     [self.bleInfoDelegate addBLEInfo:bleInfo];
