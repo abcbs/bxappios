@@ -22,8 +22,8 @@
                              
         imageName:nil//章节显示图标
         headerViewClass:nil//章节显示视图
-        cellIdentifier:@"BSUIDefaultTableViewCell"//采用的TableViewCell
-        cellClass:[BSUIDefaultTableViewCell class]//TableViewCell实现
+        cellIdentifier:@"BSUIImageTitleTableViewCell"//采用的TableViewCell
+        cellClass:[BSUIImageTitleTableViewCell class]//TableViewCell实现
         storyboard:@"BLEIFTTUpHoldMain" bsContent:nil];
     
 

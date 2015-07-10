@@ -41,6 +41,8 @@
 		0E8377621B035BAB00782034 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E8377611B035BAB00782034 /* libstdc++.dylib */; };
 		0E8377641B035BB300782034 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E8377631B035BB300782034 /* libsqlite3.dylib */; };
 		0E915F981B0C394800F47478 /* ValidateCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E915F971B0C394800F47478 /* ValidateCode.m */; };
+		1F419A00A37F657FA5AC2D9F /* libPods-KT-BUSINESS-SELLER.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE8E807F5A1D170C6CFA3891 /* libPods-KT-BUSINESS-SELLER.a */; };
+		2914A09D7ADE3C0BFBB1B85F /* libPods-KT-RESOURCES.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CE6F7E7D6B9FC2FDCB4EB5D /* libPods-KT-RESOURCES.a */; };
 		842042A21B2983B40002C868 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8420429F1B2983B40002C868 /* AppDelegate.m */; };
 		842042AE1B2984D80002C868 /* KTCarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 842042A71B2984D80002C868 /* KTCarCell.m */; };
 		842042AF1B2984D80002C868 /* KTCarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842042A81B2984D80002C868 /* KTCarCell.xib */; };
@@ -1102,6 +1104,7 @@
 				84ECE43C1B4FC627003D1AEE /* libKT-FRAME-PK.a in Frameworks */,
 				84ECE43D1B4FC627003D1AEE /* libKT-MODEL-MODULE.a in Frameworks */,
 				84ECE43E1B4FC627003D1AEE /* libKT-RESOURCES.a in Frameworks */,
+				1F419A00A37F657FA5AC2D9F /* libPods-KT-BUSINESS-SELLER.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1125,6 +1128,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2914A09D7ADE3C0BFBB1B85F /* libPods-KT-RESOURCES.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3632,6 +3636,7 @@
 				84ECE3191B4F7A05003D1AEE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A04366A41AD7B550005842EE /* Build configuration list for PBXProject "KTAPP" */ = {
 			isa = XCConfigurationList;
