@@ -22,16 +22,16 @@
                              
         imageName:nil//章节显示图标
         headerViewClass:nil//章节显示视图
-        cellIdentifier:@"BSUIImageTitleTableViewCell"//采用的TableViewCell
-        cellClass:[BSUIImageTitleTableViewCell class]//TableViewCell实现
+        cellIdentifier:@"BSUIDefaultTableViewCell"//采用的TableViewCell
+        cellClass:[BSUIDefaultTableViewCell class]//TableViewCell实现
         storyboard:@"BLEIFTTUpHoldMain" bsContent:nil];
     
 
     
     BSTableContentObject *bank=[BSTableContentObject
-                                initWithContentObject:@"保洁"
+                                initWithContentObject:@"周边服务"
                                 methodName:nil
-                                imageName:@"98bj"
+                                imageName:@"98bj"//实现的控制器，在故事板中
                                 vcClass:@"BLEDevicesTableViewController"];
     
     [bsTable addBSTableContent:bank sectionHeader:@"首页"];

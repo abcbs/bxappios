@@ -24,7 +24,6 @@
     
     self.textLabel.tintColor=[BSUIComponentView navigationColor];
     self.textLabel.text =bsContentObject.colTitle ;
-    
     return self;
 }
 

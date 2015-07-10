@@ -3664,7 +3664,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BSInfrastructure/ Bluetooth/BLETransfer/BTLECentralViewController.m"
@@ -4282,22 +4282,6 @@
             startingLineNumber = "17"
             endingLineNumber = "17"
             landmarkName = "-setSelected:animated:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BSFramework/BSUIComponent/CommonView/BSUIDefaultTableViewCell.m"
-            timestampString = "458214814.369859"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
-            landmarkName = "-viewCellWithBSContentObject:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
