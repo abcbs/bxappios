@@ -30,7 +30,7 @@
     self.window.backgroundColor = [UIColor whiteColor];
     self.window.tintColor = [UIColor redColor];
     
-    //[BSUIComponentView initNarHeaderWithIndexView:self.window.rootViewController                                            title:self.window.rootViewController.title];
+    [BSUIComponentView initNarHeaderWithIndexView:self.window.rootViewController                                            title:self.window.rootViewController.title];
     
     return YES;
 }

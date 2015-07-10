@@ -348,7 +348,21 @@
        
         NSString *title = [self currentSectionTitle:section];
         NSMutableArray *bsArray= [self sectionData:title];
-        return[bsArray objectAtIndex:row];
+        
+        BSTableContentObject * bo=(BSTableContentObject *)[bsArray objectAtIndex:row];
+        if (bo.colCapatibilty==0) {
+            bo.colCapatibilty=self.colCapatibilty;
+        }
+        if (bo.canUseStoryboard==NO) {
+            if (self.storyboardName !=nil) {
+                bo.canUseStoryboard=YES;
+            }
+            //bo.canUseStoryboard=[self useStoryboard:section row:row];
+        }
+        if (bo.storybordName==nil) {
+            bo.storybordName=self.storyboardName;
+        }
+        return bo;
      }
     @catch (NSException *exception) {
         NSLog(@"BSUITableViewInitRuntimeController bsContentObject每行现实的数据，它在BSTableSection，出现错误，\t\%@",exception.reason);
@@ -398,14 +412,16 @@
  *当前仅仅判断是否在BSTableSection是否有该字段，如果没有则返回NO
  */
 -(BOOL)canUseStoryBord:(NSInteger)section row:(NSInteger)row{
-    return (([self storyboardName])&&([self useStoryboard:section row:row]));
+    return ([self useStoryboard:section row:row]);
 }
 /**
  *是否是使用故事板进行跳转，如果是YES则使用故事板方式跳转，否则使用手工方式
  */
 -(BOOL)useStoryboard:(NSInteger)section row:(NSInteger)row{
-    
-    NSString *vcClassName=[self vcControllerName:section row:row];
+    if([self storyboardName]==nil){
+        return NO;
+    }
+     NSString *vcClassName=[self vcControllerName:section row:row];
     if (vcClassName==nil) {
         return NO;
     }else{

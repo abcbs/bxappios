@@ -31,7 +31,7 @@
     //推荐
     BSTableContentObject *recommend=[BSTableContentObject initWithContentObject:@"推荐"
                                                                      methodName:nil imageName:@"tuhongse.png"
-                                                                       colClass:[LFRecommendViewController class]];
+              vcClass:@"LFRecommendViewController"];
     
     [bsTable addBSTableContent:recommend sectionHeader:@"首页"];
     

@@ -10,8 +10,9 @@
 #import "BSUIFrameworkHeader.h"
 
 
-@interface OrderManagerViewController : BSUICommonController
+@interface OrderManagerViewController : BSUITableViewInitRuntimeController
 
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 

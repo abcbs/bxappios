@@ -6,9 +6,24 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		84ECE3161B4F7A05003D1AEE /* KT-AGGREGATE-RESOURCES */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 84ECE3171B4F7A05003D1AEE /* Build configuration list for PBXAggregateTarget "KT-AGGREGATE-RESOURCES" */;
+			buildPhases = (
+			);
+			dependencies = (
+				84ECE31B1B4F7A1A003D1AEE /* PBXTargetDependency */,
+				84ECE31D1B4F7A1A003D1AEE /* PBXTargetDependency */,
+				84ECE31F1B4F7A1A003D1AEE /* PBXTargetDependency */,
+			);
+			name = "KT-AGGREGATE-RESOURCES";
+			productName = "KT-AGGREGATE-RESOURCES";
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		01AEAFF491B315ECF3091828 /* libPods-KT-FRAME-PK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F966219CD8A0891D6079F0EE /* libPods-KT-FRAME-PK.a */; };
-		05344531CB68FE18F5EF8FE7 /* libPods-KT-RESOURCES.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CE6F7E7D6B9FC2FDCB4EB5D /* libPods-KT-RESOURCES.a */; };
 		06FDBA07377F3472C78B3516 /* libPods-KTAPP.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A87E8CE16BF49FC4F724B09 /* libPods-KTAPP.a */; };
 		0E511A501AF07DAD00BF1D03 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E511A4F1AF07DAD00BF1D03 /* Foundation.framework */; };
 		0E511A521AF07DB800BF1D03 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E511A511AF07DB800BF1D03 /* CoreGraphics.framework */; };
@@ -384,6 +399,10 @@
 		84EBA00B1B416E37003309F6 /* ClassForSelectors.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EBA00A1B416E37003309F6 /* ClassForSelectors.m */; };
 		84EBA0131B4189E0003309F6 /* LBLiferServiceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EBA0121B4189E0003309F6 /* LBLiferServiceController.m */; };
 		84EBA0161B41A307003309F6 /* KTLBMainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EBA0151B41A307003309F6 /* KTLBMainTabBarController.m */; };
+		84ECE41C1B4F938C003D1AEE /* BSUISingleImageTableViewCell.xib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8476A0451B4BB93100DB2CF0 /* BSUISingleImageTableViewCell.xib */; };
+		84ECE42D1B4F9BB4003D1AEE /* BSUIDefaultTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84ECE42C1B4F9BB4003D1AEE /* BSUIDefaultTableViewCell.m */; };
+		84ECE42E1B4F9BB4003D1AEE /* BSUIDefaultTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84ECE42C1B4F9BB4003D1AEE /* BSUIDefaultTableViewCell.m */; };
+		84ECE42F1B4FAE33003D1AEE /* BLEIFTTUpHoldMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84ECE3151B4F7974003D1AEE /* BLEIFTTUpHoldMain.storyboard */; };
 		9835E70DAB3BBA76AD9E8055 /* libPods-KT-BUSINESS-SELLER.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE8E807F5A1D170C6CFA3891 /* libPods-KT-BUSINESS-SELLER.a */; };
 		A04366AF1AD7B550005842EE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A04366AE1AD7B550005842EE /* main.m */; };
 		A04366BA1AD7B550005842EE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A04366B91AD7B550005842EE /* Images.xcassets */; };
@@ -413,6 +432,44 @@
 		DFD86AB01AFC5886000AB8E6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DFD86AB21AFC5886000AB8E6 /* InfoPlist.strings */; };
 		EA79D78216B8C4DE3A174D57 /* libPods-KT-MODEL-MODULE.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E2C128B78CB408DF3C049CDE /* libPods-KT-MODEL-MODULE.a */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		84ECE31A1B4F7A1A003D1AEE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A04366A11AD7B550005842EE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84BF8F8F1B4ABA7E001042F1;
+			remoteInfo = "KT-FRAME-PK";
+		};
+		84ECE31C1B4F7A1A003D1AEE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A04366A11AD7B550005842EE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84BF902A1B4AC55D001042F1;
+			remoteInfo = "KT-MODEL-MODULE";
+		};
+		84ECE31E1B4F7A1A003D1AEE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A04366A11AD7B550005842EE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84BF90811B4AD49E001042F1;
+			remoteInfo = "KT-RESOURCES";
+		};
+		84ECE3201B4F7A92003D1AEE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A04366A11AD7B550005842EE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84ECE3161B4F7A05003D1AEE;
+			remoteInfo = "KT-AGGREGATE-RESOURCES";
+		};
+		84ECE3221B4F7A9B003D1AEE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A04366A11AD7B550005842EE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84ECE3161B4F7A05003D1AEE;
+			remoteInfo = "KT-AGGREGATE-RESOURCES";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		84BF8F8E1B4ABA7E001042F1 /* CopyFiles */ = {
@@ -447,6 +504,7 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				84ECE41C1B4F938C003D1AEE /* BSUISingleImageTableViewCell.xib in CopyFiles */,
 				84BF90991B4AD4E7001042F1 /* Images.xcassets in CopyFiles */,
 				84BF90851B4AD49F001042F1 /* KT_RESOURCES.h in CopyFiles */,
 			);
@@ -946,6 +1004,9 @@
 		84EBA0121B4189E0003309F6 /* LBLiferServiceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBLiferServiceController.m; sourceTree = "<group>"; };
 		84EBA0141B41A307003309F6 /* KTLBMainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTLBMainTabBarController.h; sourceTree = "<group>"; };
 		84EBA0151B41A307003309F6 /* KTLBMainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTLBMainTabBarController.m; sourceTree = "<group>"; };
+		84ECE3151B4F7974003D1AEE /* BLEIFTTUpHoldMain.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BLEIFTTUpHoldMain.storyboard; sourceTree = "<group>"; };
+		84ECE42B1B4F9BB4003D1AEE /* BSUIDefaultTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUIDefaultTableViewCell.h; sourceTree = "<group>"; };
+		84ECE42C1B4F9BB4003D1AEE /* BSUIDefaultTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUIDefaultTableViewCell.m; sourceTree = "<group>"; };
 		8FCA45FC7E90066EB24B7BB5 /* Pods-KT-MODEL-MODULE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KT-MODEL-MODULE.release.xcconfig"; path = "Pods/Target Support Files/Pods-KT-MODEL-MODULE/Pods-KT-MODEL-MODULE.release.xcconfig"; sourceTree = "<group>"; };
 		9CE6F7E7D6B9FC2FDCB4EB5D /* libPods-KT-RESOURCES.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KT-RESOURCES.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A04366A91AD7B550005842EE /* 民生小区.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "民生小区.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1041,7 +1102,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				05344531CB68FE18F5EF8FE7 /* libPods-KT-RESOURCES.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1720,6 +1780,8 @@
 				846541EC1B42C47300DE2BC1 /* BSUIFiveColTableViewCell.xib */,
 				846541EF1B42C8A400DE2BC1 /* BSUITableCellOperation.h */,
 				846541F01B42C97400DE2BC1 /* BSUITableMultCellOperation.h */,
+				84ECE42B1B4F9BB4003D1AEE /* BSUIDefaultTableViewCell.h */,
+				84ECE42C1B4F9BB4003D1AEE /* BSUIDefaultTableViewCell.m */,
 			);
 			path = CommonView;
 			sourceTree = "<group>";
@@ -2097,6 +2159,7 @@
 		84BF90831B4AD49E001042F1 /* KT-RESOURCES */ = {
 			isa = PBXGroup;
 			children = (
+				84ECE3151B4F7974003D1AEE /* BLEIFTTUpHoldMain.storyboard */,
 				84BF90841B4AD49F001042F1 /* KT_RESOURCES.h */,
 				84BF90861B4AD49F001042F1 /* KT_RESOURCES.m */,
 			);
@@ -2400,6 +2463,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				84ECE3211B4F7A92003D1AEE /* PBXTargetDependency */,
 			);
 			name = "KT-BUSINESS-SELLER";
 			productName = "KT-BUSINESS-SELLER";
@@ -2477,6 +2541,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				84ECE3231B4F7A9B003D1AEE /* PBXTargetDependency */,
 			);
 			name = KTAPP;
 			productName = "民生小区";
@@ -2505,6 +2570,9 @@
 					84BF90811B4AD49E001042F1 = {
 						CreatedOnToolsVersion = 6.3;
 					};
+					84ECE3161B4F7A05003D1AEE = {
+						CreatedOnToolsVersion = 6.4;
+					};
 					A04366A81AD7B550005842EE = {
 						CreatedOnToolsVersion = 6.1;
 						DevelopmentTeam = MC8M456VH7;
@@ -2530,6 +2598,7 @@
 				84BF8F8F1B4ABA7E001042F1 /* KT-FRAME-PK */,
 				84BF902A1B4AC55D001042F1 /* KT-MODEL-MODULE */,
 				84BF90811B4AD49E001042F1 /* KT-RESOURCES */,
+				84ECE3161B4F7A05003D1AEE /* KT-AGGREGATE-RESOURCES */,
 			);
 		};
 /* End PBXProject section */
@@ -2539,6 +2608,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84ECE42F1B4FAE33003D1AEE /* BLEIFTTUpHoldMain.storyboard in Resources */,
 				84BF8F6F1B4AB63C001042F1 /* Main.storyboard in Resources */,
 				84D19FE91B4C3CE900BA25BF /* InfoPlist.strings in Resources */,
 				84BF8F741B4AB63C001042F1 /* LaunchScreen.xib in Resources */,
@@ -2907,6 +2977,7 @@
 				84BF8FF11B4AC2FA001042F1 /* BSUIComponentView.m in Sources */,
 				84BF8FF31B4AC2FA001042F1 /* BSUIBlockButton.m in Sources */,
 				84BF8FF61B4AC2FA001042F1 /* BSUIBarButtonItem.m in Sources */,
+				84ECE42E1B4F9BB4003D1AEE /* BSUIDefaultTableViewCell.m in Sources */,
 				844570CA1B4D6323000CA1C7 /* BLEDeviceDetailsTableViewController.m in Sources */,
 				84BF8FFA1B4AC2FA001042F1 /* YYHMantleModelSerializer.m in Sources */,
 				84BF8FFC1B4AC2FA001042F1 /* YYHModelRoute.m in Sources */,
@@ -3050,6 +3121,7 @@
 				847076401B3A8B9000F28180 /* UIView+SZ.m in Sources */,
 				8470762F1B3A8AF800F28180 /* communicate.m in Sources */,
 				847076671B3AA01B00F28180 /* BSTableContentObject.m in Sources */,
+				84ECE42D1B4F9BB4003D1AEE /* BSUIDefaultTableViewCell.m in Sources */,
 				847432E51B2A8D6800B030C4 /* SystemSetCell.m in Sources */,
 				84BA967A1B2829D500388B58 /* CustomerManager.m in Sources */,
 				847076511B3A8C4500F28180 /* enquireController.m in Sources */,
@@ -3087,6 +3159,34 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		84ECE31B1B4F7A1A003D1AEE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 84BF8F8F1B4ABA7E001042F1 /* KT-FRAME-PK */;
+			targetProxy = 84ECE31A1B4F7A1A003D1AEE /* PBXContainerItemProxy */;
+		};
+		84ECE31D1B4F7A1A003D1AEE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 84BF902A1B4AC55D001042F1 /* KT-MODEL-MODULE */;
+			targetProxy = 84ECE31C1B4F7A1A003D1AEE /* PBXContainerItemProxy */;
+		};
+		84ECE31F1B4F7A1A003D1AEE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 84BF90811B4AD49E001042F1 /* KT-RESOURCES */;
+			targetProxy = 84ECE31E1B4F7A1A003D1AEE /* PBXContainerItemProxy */;
+		};
+		84ECE3211B4F7A92003D1AEE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 84ECE3161B4F7A05003D1AEE /* KT-AGGREGATE-RESOURCES */;
+			targetProxy = 84ECE3201B4F7A92003D1AEE /* PBXContainerItemProxy */;
+		};
+		84ECE3231B4F7A9B003D1AEE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 84ECE3161B4F7A05003D1AEE /* KT-AGGREGATE-RESOURCES */;
+			targetProxy = 84ECE3221B4F7A9B003D1AEE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		843DA85E1B21D56200924AE6 /* ShareSDKLocalizable.strings */ = {
@@ -3297,6 +3397,20 @@
 			};
 			name = Release;
 		};
+		84ECE3181B4F7A05003D1AEE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		84ECE3191B4F7A05003D1AEE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		A04366CA1AD7B550005842EE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -3481,6 +3595,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		84ECE3171B4F7A05003D1AEE /* Build configuration list for PBXAggregateTarget "KT-AGGREGATE-RESOURCES" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84ECE3181B4F7A05003D1AEE /* Debug */,
+				84ECE3191B4F7A05003D1AEE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 		A04366A41AD7B550005842EE /* Build configuration list for PBXProject "KTAPP" */ = {
 			isa = XCConfigurationList;

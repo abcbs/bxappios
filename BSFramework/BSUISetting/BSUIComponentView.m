@@ -85,9 +85,15 @@
     [view addSubview:imageView];
 }
 
-
+/**
+ *主题颜色
+ */
 +(UIColor *)navigationColor{
     return [[UIColor alloc] initWithRed:0.45 green:0 blue:0 alpha:1];
+}
+
++(UIColor *)tintyColor{
+    return [UIColor whiteColor];
 }
 
 /**
@@ -109,15 +115,16 @@
     
     [bar setTintColor:[UIColor whiteColor ]];
     //BSUIBlockButton *backButton = [BSUIComponentView backNavButton:navigationProcess title:title image:nil];
-    /*
-    UIBarButtonItem *myButton = [[UIBarButtonItem alloc]
-                                  initWithTitle:@"确定"
-                                  style:UIBarButtonItemStylePlain
-                                  target:viewController
-                                 action:@selector(doneClick)];
     
-    navigationItem.rightBarButtonItem = myButton;
-    */
+    UIBarButtonItem *myButton = [[UIBarButtonItem alloc]
+                                  initWithTitle:@"<返回"
+                                  style:UIBarButtonItemStyleDone
+                                  target:viewController
+                                 action:@selector(backClick)];
+    //导航栏左侧按钮
+    myButton.image= [UIImage imageNamed:@"im_return"];
+    navigationItem.leftBarButtonItem = myButton;
+    
    
 }
 
@@ -155,7 +162,7 @@
 
 //NS_ENUM_DEPRECATED_IOS(2_0, 8_0, "Use UIBarButtonItemStylePlain when minimum deployment target is iOS7 or later
 /**
- *状态栏，默认使用
+ *状态栏，默认使用,没有状态栏，使用Button制作。
  */
 
 +(void)initNarHeaderWithIndexView:(UIViewController *)currentController
@@ -176,7 +183,7 @@
     [headerView addSubview:okButton];
     
  
-    [headerView setBackgroundColor:[BSUIComponentView navigationColor] ];
+    //[headerView setBackgroundColor:[BSUIComponentView navigationColor] ];
     
     [currentController.view addSubview:headerView];
 }

@@ -47,6 +47,8 @@
 #import "BSTableViewCellData.h"
 #import "BSTableViewMultCellData.h"
 #import "BSContentObjectNavigation.h"
+#import "BSUIDefaultTableViewCell.h"
+
 /**
  *根据BSContentObject实现页面跳转
  */

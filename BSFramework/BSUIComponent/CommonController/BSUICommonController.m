@@ -16,9 +16,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
      NSLog(@"BSUICommonController viewDidLoad %@",self.description);
+    //没有导航栏，使用Button完成
+    [BSUIComponentView initNarHeaderWithDefault:self title: self.title];
     
-    [BSUIComponentView initNarHeaderWithDefault:self title: self.title
-    ];
+    //iOS有默认导航栏，使用固有的导航栏
+    [BSUIComponentView initNavigationHeaderWithDefault:self
+                                     navigationProcess:self
+                                                 title:self.title];
+    //设置导航栏颜色
     [BSUIComponentView navigationHeader:self.navigationController];
     
 }

@@ -32,7 +32,16 @@
 }
 
 -(UITableViewCell *)viewCellWithHandBSContentObject:(BSTableContentObject *)bsContentObject{
+    //UIImageView *bigImage= [UIImage imageNamed:bsContentObject.colImageName];
+    UIImageView *cell=
+    [[UIImageView alloc] initWithImage:[UIImage imageNamed:[bsContentObject colImageName]]];
     
+    CGFloat height=BSMarginY(120);
+    CGFloat width=BSMarginX(SCREEN_WIDTH);
+    //设置默认的宽度、高度
+    cell.height=height;
+    cell.width=width;
+    [self.contentView addSubview:cell];
     return self;
 }
 -(void)dealloc{
