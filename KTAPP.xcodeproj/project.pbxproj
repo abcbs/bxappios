@@ -329,15 +329,12 @@
 		84BF8F631B4AB63C001042F1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BF8F621B4AB63C001042F1 /* main.m */; };
 		84BF8F661B4AB63C001042F1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BF8F651B4AB63C001042F1 /* AppDelegate.m */; };
 		84BF8F6C1B4AB63C001042F1 /* OrderManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BF8F6B1B4AB63C001042F1 /* OrderManagerViewController.m */; };
-		84BF8F6F1B4AB63C001042F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84BF8F6D1B4AB63C001042F1 /* Main.storyboard */; };
 		84BF8F711B4AB63C001042F1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84BF8F701B4AB63C001042F1 /* Images.xcassets */; };
-		84BF8F741B4AB63C001042F1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84BF8F721B4AB63C001042F1 /* LaunchScreen.xib */; };
 		84BF8FA71B4ABAE4001042F1 /* BSCMFrameworkHeader.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 845A022E1B3DB13B007F5327 /* BSCMFrameworkHeader.h */; };
 		84BF8FA81B4ABB0C001042F1 /* BSUIFrameworkHeader.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 845A02241B3DA669007F5327 /* BSUIFrameworkHeader.h */; };
 		84BF8FA91B4ABB74001042F1 /* BSUIFrameworkHeader.h in Resources */ = {isa = PBXBuildFile; fileRef = 845A02241B3DA669007F5327 /* BSUIFrameworkHeader.h */; };
 		84BF8FAA1B4ABB83001042F1 /* BSCMFrameworkHeader.h in Resources */ = {isa = PBXBuildFile; fileRef = 845A022E1B3DB13B007F5327 /* BSCMFrameworkHeader.h */; };
 		84BF8FAD1B4ABC88001042F1 /* BSUICommonController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8474DEB41B3F7D0600D9DE36 /* BSUICommonController.m */; };
-		84BF8FC01B4AC21C001042F1 /* libKT-FRAME-PK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84BF8F901B4ABA7E001042F1 /* libKT-FRAME-PK.a */; };
 		84BF8FC41B4AC2FA001042F1 /* Conf.m in Sources */ = {isa = PBXBuildFile; fileRef = 845A02291B3DABF0007F5327 /* Conf.m */; };
 		84BF8FC61B4AC2FA001042F1 /* ErrorMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 845A022B1B3DABF0007F5327 /* ErrorMessage.m */; };
 		84BF8FCA1B4AC2FA001042F1 /* BSHTTPNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 844E50B41B2F2EE500A69F91 /* BSHTTPNetworking.m */; };
@@ -374,13 +371,11 @@
 		84BF90531B4AC634001042F1 /* User.h in Sources */ = {isa = PBXBuildFile; fileRef = 84BA96751B2829D500388B58 /* User.h */; };
 		84BF90541B4AC634001042F1 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BA96761B2829D500388B58 /* User.m */; };
 		84BF90551B4AC66C001042F1 /* BLModelsHeader.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 845A02251B3DA7B7007F5327 /* BLModelsHeader.h */; };
-		84BF90561B4AC82C001042F1 /* libKT-MODEL-MODULE.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84BF902B1B4AC55D001042F1 /* libKT-MODEL-MODULE.a */; };
 		84BF90581B4AD23B001042F1 /* ADTImagePlayer.xib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 848058141B39A377005817D7 /* ADTImagePlayer.xib */; };
 		84BF905F1B4AD23B001042F1 /* BSUIFiveColTableViewCell.xib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 846541EC1B42C47300DE2BC1 /* BSUIFiveColTableViewCell.xib */; };
 		84BF90851B4AD49F001042F1 /* KT_RESOURCES.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 84BF90841B4AD49F001042F1 /* KT_RESOURCES.h */; };
 		84BF90871B4AD49F001042F1 /* KT_RESOURCES.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BF90861B4AD49F001042F1 /* KT_RESOURCES.m */; };
 		84BF90991B4AD4E7001042F1 /* Images.xcassets in CopyFiles */ = {isa = PBXBuildFile; fileRef = A04366B91AD7B550005842EE /* Images.xcassets */; };
-		84BF909A1B4AD4FD001042F1 /* libKT-RESOURCES.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84BF90821B4AD49E001042F1 /* libKT-RESOURCES.a */; };
 		84C06D9B1B3AF3BA000BB45C /* BSUITableViewInitRuntimeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C06D9A1B3AF3BA000BB45C /* BSUITableViewInitRuntimeController.m */; };
 		84D19FE41B4C36EC00BA25BF /* BSBLEViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D19FDD1B4C36EC00BA25BF /* BSBLEViewController.m */; };
 		84D19FE61B4C36EC00BA25BF /* LeDiscovery.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D19FE11B4C36EC00BA25BF /* LeDiscovery.m */; };
@@ -402,8 +397,15 @@
 		84ECE41C1B4F938C003D1AEE /* BSUISingleImageTableViewCell.xib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8476A0451B4BB93100DB2CF0 /* BSUISingleImageTableViewCell.xib */; };
 		84ECE42D1B4F9BB4003D1AEE /* BSUIDefaultTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84ECE42C1B4F9BB4003D1AEE /* BSUIDefaultTableViewCell.m */; };
 		84ECE42E1B4F9BB4003D1AEE /* BSUIDefaultTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84ECE42C1B4F9BB4003D1AEE /* BSUIDefaultTableViewCell.m */; };
-		84ECE42F1B4FAE33003D1AEE /* BLEIFTTUpHoldMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84ECE3151B4F7974003D1AEE /* BLEIFTTUpHoldMain.storyboard */; };
-		9835E70DAB3BBA76AD9E8055 /* libPods-KT-BUSINESS-SELLER.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE8E807F5A1D170C6CFA3891 /* libPods-KT-BUSINESS-SELLER.a */; };
+		84ECE4321B4FC29D003D1AEE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84ECE4301B4FC29D003D1AEE /* LaunchScreen.xib */; };
+		84ECE4331B4FC29D003D1AEE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84ECE4311B4FC29D003D1AEE /* Main.storyboard */; };
+		84ECE43C1B4FC627003D1AEE /* libKT-FRAME-PK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84BF8F901B4ABA7E001042F1 /* libKT-FRAME-PK.a */; };
+		84ECE43D1B4FC627003D1AEE /* libKT-MODEL-MODULE.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84BF902B1B4AC55D001042F1 /* libKT-MODEL-MODULE.a */; };
+		84ECE43E1B4FC627003D1AEE /* libKT-RESOURCES.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84BF90821B4AD49E001042F1 /* libKT-RESOURCES.a */; };
+		84ECE43F1B4FC75E003D1AEE /* BLEIFTTUpHoldMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84ECE3151B4F7974003D1AEE /* BLEIFTTUpHoldMain.storyboard */; };
+		84ECE4401B4FC792003D1AEE /* BSUISingleImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8476A0451B4BB93100DB2CF0 /* BSUISingleImageTableViewCell.xib */; };
+		84ECE4411B4FC7A5003D1AEE /* ADTImagePlayer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848058141B39A377005817D7 /* ADTImagePlayer.xib */; };
+		84ECE4421B4FC7C2003D1AEE /* BSUIFiveColTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 846541EC1B42C47300DE2BC1 /* BSUIFiveColTableViewCell.xib */; };
 		A04366AF1AD7B550005842EE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A04366AE1AD7B550005842EE /* main.m */; };
 		A04366BA1AD7B550005842EE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A04366B91AD7B550005842EE /* Images.xcassets */; };
 		A05E9BDF1AE79DD5008C97C9 /* KTTabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A05E9BDE1AE79DD5008C97C9 /* KTTabBarButton.m */; };
@@ -468,6 +470,27 @@
 			proxyType = 1;
 			remoteGlobalIDString = 84ECE3161B4F7A05003D1AEE;
 			remoteInfo = "KT-AGGREGATE-RESOURCES";
+		};
+		84ECE4361B4FC61C003D1AEE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A04366A11AD7B550005842EE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84BF8F8F1B4ABA7E001042F1;
+			remoteInfo = "KT-FRAME-PK";
+		};
+		84ECE4381B4FC61C003D1AEE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A04366A11AD7B550005842EE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84BF902A1B4AC55D001042F1;
+			remoteInfo = "KT-MODEL-MODULE";
+		};
+		84ECE43A1B4FC61C003D1AEE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A04366A11AD7B550005842EE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84BF90811B4AD49E001042F1;
+			remoteInfo = "KT-RESOURCES";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -970,9 +993,7 @@
 		84BF8F651B4AB63C001042F1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		84BF8F6A1B4AB63C001042F1 /* OrderManagerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderManagerViewController.h; sourceTree = "<group>"; };
 		84BF8F6B1B4AB63C001042F1 /* OrderManagerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderManagerViewController.m; sourceTree = "<group>"; };
-		84BF8F6E1B4AB63C001042F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		84BF8F701B4AB63C001042F1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		84BF8F731B4AB63C001042F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		84BF8F8A1B4ABA24001042F1 /* libPods-KTAPP.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-KTAPP.a"; path = "Pods/../build/Debug-iphoneos/libPods-KTAPP.a"; sourceTree = SOURCE_ROOT; };
 		84BF8F901B4ABA7E001042F1 /* libKT-FRAME-PK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libKT-FRAME-PK.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84BF8FAF1B4ABF0E001042F1 /* libPods-KT-FRAME-PK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-KT-FRAME-PK.a"; path = "Pods/../build/Debug-iphoneos/libPods-KT-FRAME-PK.a"; sourceTree = SOURCE_ROOT; };
@@ -1007,6 +1028,9 @@
 		84ECE3151B4F7974003D1AEE /* BLEIFTTUpHoldMain.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BLEIFTTUpHoldMain.storyboard; sourceTree = "<group>"; };
 		84ECE42B1B4F9BB4003D1AEE /* BSUIDefaultTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUIDefaultTableViewCell.h; sourceTree = "<group>"; };
 		84ECE42C1B4F9BB4003D1AEE /* BSUIDefaultTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUIDefaultTableViewCell.m; sourceTree = "<group>"; };
+		84ECE4301B4FC29D003D1AEE /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
+		84ECE4311B4FC29D003D1AEE /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		84ECE4341B4FC50B003D1AEE /* libPods-KT-FRAME-PK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-KT-FRAME-PK.a"; path = "Pods/../build/Debug-iphoneos/libPods-KT-FRAME-PK.a"; sourceTree = SOURCE_ROOT; };
 		8FCA45FC7E90066EB24B7BB5 /* Pods-KT-MODEL-MODULE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KT-MODEL-MODULE.release.xcconfig"; path = "Pods/Target Support Files/Pods-KT-MODEL-MODULE/Pods-KT-MODEL-MODULE.release.xcconfig"; sourceTree = "<group>"; };
 		9CE6F7E7D6B9FC2FDCB4EB5D /* libPods-KT-RESOURCES.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KT-RESOURCES.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A04366A91AD7B550005842EE /* 民生小区.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "民生小区.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1075,10 +1099,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84BF909A1B4AD4FD001042F1 /* libKT-RESOURCES.a in Frameworks */,
-				84BF90561B4AC82C001042F1 /* libKT-MODEL-MODULE.a in Frameworks */,
-				84BF8FC01B4AC21C001042F1 /* libKT-FRAME-PK.a in Frameworks */,
-				9835E70DAB3BBA76AD9E8055 /* libPods-KT-BUSINESS-SELLER.a in Frameworks */,
+				84ECE43C1B4FC627003D1AEE /* libKT-FRAME-PK.a in Frameworks */,
+				84ECE43D1B4FC627003D1AEE /* libKT-MODEL-MODULE.a in Frameworks */,
+				84ECE43E1B4FC627003D1AEE /* libKT-RESOURCES.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2095,6 +2118,8 @@
 		84BF8F5F1B4AB63C001042F1 /* KT-BUSINESS-SELLER */ = {
 			isa = PBXGroup;
 			children = (
+				84ECE4301B4FC29D003D1AEE /* LaunchScreen.xib */,
+				84ECE4311B4FC29D003D1AEE /* Main.storyboard */,
 				84BF8F891B4AB879001042F1 /* OrderManagerControl */,
 				84BF8F881B4AB870001042F1 /* SallingManagerControl */,
 				84BF8F871B4AB864001042F1 /* ProductManagerControl */,
@@ -2102,9 +2127,7 @@
 				84BF8F651B4AB63C001042F1 /* AppDelegate.m */,
 				84BF8F6A1B4AB63C001042F1 /* OrderManagerViewController.h */,
 				84BF8F6B1B4AB63C001042F1 /* OrderManagerViewController.m */,
-				84BF8F6D1B4AB63C001042F1 /* Main.storyboard */,
 				84BF8F701B4AB63C001042F1 /* Images.xcassets */,
-				84BF8F721B4AB63C001042F1 /* LaunchScreen.xib */,
 				84BF8F601B4AB63C001042F1 /* Supporting Files */,
 				84BF90571B4AC981001042F1 /* LSControllerHeader.h */,
 			);
@@ -2205,6 +2228,7 @@
 		A0028F341ADE4D5500747D8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				84ECE4341B4FC50B003D1AEE /* libPods-KT-FRAME-PK.a */,
 				84BF8FBA1B4AC1E8001042F1 /* libPods-KTAPP.a */,
 				84BF8FB61B4AC0EF001042F1 /* libPods-KTAPP.a */,
 				84BF8FAF1B4ABF0E001042F1 /* libPods-KT-FRAME-PK.a */,
@@ -2463,6 +2487,9 @@
 			buildRules = (
 			);
 			dependencies = (
+				84ECE4371B4FC61C003D1AEE /* PBXTargetDependency */,
+				84ECE4391B4FC61C003D1AEE /* PBXTargetDependency */,
+				84ECE43B1B4FC61C003D1AEE /* PBXTargetDependency */,
 				84ECE3211B4F7A92003D1AEE /* PBXTargetDependency */,
 			);
 			name = "KT-BUSINESS-SELLER";
@@ -2608,10 +2635,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84ECE42F1B4FAE33003D1AEE /* BLEIFTTUpHoldMain.storyboard in Resources */,
-				84BF8F6F1B4AB63C001042F1 /* Main.storyboard in Resources */,
+				84ECE4421B4FC7C2003D1AEE /* BSUIFiveColTableViewCell.xib in Resources */,
+				84ECE4411B4FC7A5003D1AEE /* ADTImagePlayer.xib in Resources */,
+				84ECE4401B4FC792003D1AEE /* BSUISingleImageTableViewCell.xib in Resources */,
+				84ECE43F1B4FC75E003D1AEE /* BLEIFTTUpHoldMain.storyboard in Resources */,
+				84ECE4321B4FC29D003D1AEE /* LaunchScreen.xib in Resources */,
+				84ECE4331B4FC29D003D1AEE /* Main.storyboard in Resources */,
 				84D19FE91B4C3CE900BA25BF /* InfoPlist.strings in Resources */,
-				84BF8F741B4AB63C001042F1 /* LaunchScreen.xib in Resources */,
 				84BF8F711B4AB63C001042F1 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -3186,6 +3216,21 @@
 			target = 84ECE3161B4F7A05003D1AEE /* KT-AGGREGATE-RESOURCES */;
 			targetProxy = 84ECE3221B4F7A9B003D1AEE /* PBXContainerItemProxy */;
 		};
+		84ECE4371B4FC61C003D1AEE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 84BF8F8F1B4ABA7E001042F1 /* KT-FRAME-PK */;
+			targetProxy = 84ECE4361B4FC61C003D1AEE /* PBXContainerItemProxy */;
+		};
+		84ECE4391B4FC61C003D1AEE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 84BF902A1B4AC55D001042F1 /* KT-MODEL-MODULE */;
+			targetProxy = 84ECE4381B4FC61C003D1AEE /* PBXContainerItemProxy */;
+		};
+		84ECE43B1B4FC61C003D1AEE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 84BF90811B4AD49E001042F1 /* KT-RESOURCES */;
+			targetProxy = 84ECE43A1B4FC61C003D1AEE /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -3214,22 +3259,6 @@
 				84578F771B35E7F700C3A4EA /* en */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		84BF8F6D1B4AB63C001042F1 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				84BF8F6E1B4AB63C001042F1 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		84BF8F721B4AB63C001042F1 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				84BF8F731B4AB63C001042F1 /* Base */,
-			);
-			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 		DFD86AB21AFC5886000AB8E6 /* InfoPlist.strings */ = {

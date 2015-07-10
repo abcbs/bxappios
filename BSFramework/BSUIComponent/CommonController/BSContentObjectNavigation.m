@@ -37,8 +37,6 @@
     UINavigationController* nav = [[UINavigationController alloc]  initWithRootViewController:goControl];
     
     [viewController presentViewController:nav animated:YES completion:nil];
-    //[viewController prepareForSegue:storyboard sender:nav];
-    [viewController presentedViewController];
 }
 
 /**

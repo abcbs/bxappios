@@ -19,11 +19,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     BSTableSection *bsTable=[BSTableSection initWithHeaderVcClassContent:@"首页"//章节显示标题
-                                                               imageName:nil//章节显示图标
-                                                         headerViewClass:nil//章节显示视图
-                                                          cellIdentifier:@"BSUIDefaultTableViewCell"//采用的TableViewCell
-                                                               cellClass:[BSUIDefaultTableViewCell class]//TableViewCell实现
-                                                              storyboard:@"Main.storyboard" bsContent:nil];
+                             
+        imageName:nil//章节显示图标
+        headerViewClass:nil//章节显示视图
+        cellIdentifier:@"BSUIDefaultTableViewCell"//采用的TableViewCell
+        cellClass:[BSUIDefaultTableViewCell class]//TableViewCell实现
+        storyboard:@"BLEIFTTUpHoldMain" bsContent:nil];
     
 
     
@@ -31,7 +32,7 @@
                                 initWithContentObject:@"保洁"
                                 methodName:nil
                                 imageName:@"98bj"
-                                vcClass:@"BLEDevicesTableViewController class"];
+                                vcClass:@"BLEDevicesTableViewController"];
     
     [bsTable addBSTableContent:bank sectionHeader:@"首页"];
     [super setValue:bsTable forKey:@"bSTableObjects"];
