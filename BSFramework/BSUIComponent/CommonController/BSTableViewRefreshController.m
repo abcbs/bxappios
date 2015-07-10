@@ -25,8 +25,22 @@
 @synthesize errorInfo;
 
 - (void)viewDidLoad {
-    //改变状态来默认颜色
-    [BSUIComponentView navigationHeader:self.navigationController ];
+    
+    if (self.navigationController) {
+        //iOS有默认导航栏，使用固有的导航栏
+        [BSUIComponentView initNavigationHeaderWithDefault:self
+                                         navigationProcess:self
+                                                     title:self.title];
+        
+    }else{
+        //没有导航栏，使用Button完成
+        [BSUIComponentView initNarHeaderWithDefault:self title: self.title];
+        
+    }
+    [BSUIComponentView navigationHeader:self.navigationController];
+    
+
+    
     if(!HUD){
         HUD = [[MBProgressHUD alloc] initWithView:self.view];
  
@@ -168,6 +182,13 @@
 }
 - (void)doneClick{
     NSLog(@"默认为同返回一致的动作");
+}
+
+/**
+ *页面跳转公共方法
+ */
+-(void)navigating:(BSTableContentObject*)bsContentObject{
+    [BSContentObjectNavigation navigatingControllWithStorybord:self       bsContentObject:bsContentObject];
 }
 
 @end

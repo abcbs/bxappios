@@ -283,7 +283,7 @@
         <!--生活圈商家版-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController title="生活圈商家版" id="49e-Tb-3d3" userLabel="生活圈商家版" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="BSUITabBarCommonController" title="生活圈商家版" id="49e-Tb-3d3" userLabel="生活圈商家版" customClass="BSUITabBarCommonController" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">

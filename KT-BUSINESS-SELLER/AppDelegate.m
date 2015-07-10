@@ -31,9 +31,9 @@
     self.window.tintColor = [UIColor redColor];
     
     //一级页面统一的处理方式
-    [BSUIComponentView initNarHeaderWithIndexView:self.window.rootViewController                                            title:self.window.rootViewController.title];
+    //[BSUIComponentView initNarHeaderWithIndexView:self.window.rootViewController                                            title:self.window.rootViewController.title];
     //设置导航栏颜色
-    [BSUIComponentView navigationHeader:self.window.rootViewController.navigationController];
+    //[BSUIComponentView navigationHeader:self.window.rootViewController.navigationController];
     
     return YES;
 }

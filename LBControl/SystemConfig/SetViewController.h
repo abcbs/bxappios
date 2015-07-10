@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface SetViewController : UIViewController
+#import "BSUIFrameworkHeader.h"
+@interface SetViewController : BSUICommonController
 
 @end

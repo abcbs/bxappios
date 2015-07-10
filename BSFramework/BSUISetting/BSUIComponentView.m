@@ -115,7 +115,7 @@
     
     [bar setTintColor:[UIColor whiteColor ]];
     //BSUIBlockButton *backButton = [BSUIComponentView backNavButton:navigationProcess title:title image:nil];
-    
+    /*
     UIBarButtonItem *myButton = [[UIBarButtonItem alloc]
                                   initWithTitle:@"<返回"
                                   style:UIBarButtonItemStyleDone
@@ -124,6 +124,7 @@
     //导航栏左侧按钮
     myButton.image= [UIImage imageNamed:@"im_return"];
     navigationItem.leftBarButtonItem = myButton;
+    */
     
    
 }
@@ -168,24 +169,10 @@
 +(void)initNarHeaderWithIndexView:(UIViewController *)currentController
                             title:(NSString *)title //定义块类型
 {
-    UIView *headerView=[BSUIComponentView headerView];
-    
-    
-    UILabel *headNameLabel=[BSUIComponentView labelNav:title];
-    
-    
-    [headerView addSubview:headNameLabel];
-    
-    
     BSUIBlockButton *okButton =[BSUIComponentView okNavButton:currentController target:currentController
                                                         title:title image:nil];
     
-    [headerView addSubview:okButton];
-    
- 
-    //[headerView setBackgroundColor:[BSUIComponentView navigationColor] ];
-    
-    [currentController.view addSubview:headerView];
+    [currentController.view addSubview:okButton];
 }
 /*
 +(void)initNarHeaderWithIndexView:(UIViewController *)currentController
@@ -250,8 +237,8 @@
 +(BSUIBlockButton *)okNavButton:(id<NavigationProcess>) navigationProcess
                             target:(UIViewController *)target
                           title:(NSString *)title image:(NSString *)image {
-    BSUIBlockButton *okButton = [[BSUIBlockButton alloc]initWithFrame:BSRectMake(NAVIGATIONBAR_X+NAVIGATIONBAR_WIDTH*0.85,
-                                                                                 NAVIGATIONBAR_Y+STATUS_HEIGHT+4,NAVIGATIONBAR_HEIGHT/3, NAVIGATIONBAR_HEIGHT/3)
+    BSUIBlockButton *okButton = [[BSUIBlockButton alloc]initWithFrame:BSRectMake(NAVIGATIONBAR_X+NAVIGATIONBAR_WIDTH*0.75,
+                                                                                 NAVIGATIONBAR_Y+STATUS_HEIGHT+8,NAVIGATIONBAR_HEIGHT/3, NAVIGATIONBAR_HEIGHT/3)
                                  target:target
                                  action:@selector(doneClick)];
     [okButton setBackgroundImage:[UIImage imageNamed:@"im_search"]
@@ -259,7 +246,7 @@
     [okButton setBlock:^(BSUIBlockButton *button){
         [navigationProcess backClick];
     }];
-    //[okButton setBackgroundColor:[UIColor whiteColor]];
+    [okButton setBackgroundColor:[UIColor grayColor]];
     [okButton setTintColor:[UIColor whiteColor]];
     return okButton;
     
@@ -308,7 +295,7 @@
  *统一的头部UIView
  */
 +(UIView *)headerView{
-    UIView *headerView=[[UIView alloc] initWithFrame:BSRectMake( NAVIGATIONBAR_X, NAVIGATIONBAR_Y,NAVIGATIONBAR_WIDTH, NAVIGATIONBAR_HEIGHT)];
+    UIView *headerView=[[UIView alloc] initWithFrame:BSRectMake( NAVIGATIONBAR_X+SCREEN_WIDTH*0.6, NAVIGATIONBAR_Y,100, NAVIGATIONBAR_HEIGHT)];
     
     [headerView setBackgroundColor:[UIColor colorWithRed:0.79 green:0.12 blue:0 alpha:0.90]];
     

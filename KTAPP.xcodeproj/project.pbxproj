@@ -383,6 +383,7 @@
 		84C49FAC1B4FFEFB00029E19 /* BLEIFTTUpHoldMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84ECE3151B4F7974003D1AEE /* BLEIFTTUpHoldMain.storyboard */; };
 		84C4A2471B5018D300029E19 /* tukuail.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 844268A21B36C05F006E7F7D /* tukuail.png */; };
 		84C4A34F1B501AC000029E19 /* tukuail.png in Resources */ = {isa = PBXBuildFile; fileRef = 84C4A34E1B501AC000029E19 /* tukuail.png */; };
+		84C4A3541B504CDF00029E19 /* im_search.png in Resources */ = {isa = PBXBuildFile; fileRef = 84C4A3531B504CDF00029E19 /* im_search.png */; };
 		84D19FE41B4C36EC00BA25BF /* BSBLEViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D19FDD1B4C36EC00BA25BF /* BSBLEViewController.m */; };
 		84D19FE61B4C36EC00BA25BF /* LeDiscovery.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D19FE11B4C36EC00BA25BF /* LeDiscovery.m */; };
 		84D19FE71B4C36EC00BA25BF /* LeTemperatureAlarmService.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D19FE31B4C36EC00BA25BF /* LeTemperatureAlarmService.m */; };
@@ -462,40 +463,12 @@
 			remoteGlobalIDString = 84BF90811B4AD49E001042F1;
 			remoteInfo = "KT-RESOURCES";
 		};
-		84ECE3201B4F7A92003D1AEE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A04366A11AD7B550005842EE /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 84ECE3161B4F7A05003D1AEE;
-			remoteInfo = "KT-AGGREGATE-RESOURCES";
-		};
 		84ECE3221B4F7A9B003D1AEE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A04366A11AD7B550005842EE /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 84ECE3161B4F7A05003D1AEE;
 			remoteInfo = "KT-AGGREGATE-RESOURCES";
-		};
-		84ECE4361B4FC61C003D1AEE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A04366A11AD7B550005842EE /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 84BF8F8F1B4ABA7E001042F1;
-			remoteInfo = "KT-FRAME-PK";
-		};
-		84ECE4381B4FC61C003D1AEE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A04366A11AD7B550005842EE /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 84BF902A1B4AC55D001042F1;
-			remoteInfo = "KT-MODEL-MODULE";
-		};
-		84ECE43A1B4FC61C003D1AEE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A04366A11AD7B550005842EE /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 84BF90811B4AD49E001042F1;
-			remoteInfo = "KT-RESOURCES";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -775,7 +748,6 @@
 		844570D61B4D67D5000CA1C7 /* BTLEPeripheralViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTLEPeripheralViewController.h; sourceTree = "<group>"; };
 		844570D71B4D67D5000CA1C7 /* BTLEPeripheralViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTLEPeripheralViewController.m; sourceTree = "<group>"; };
 		844570D81B4D67D5000CA1C7 /* TransferService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransferService.h; sourceTree = "<group>"; };
-		844A32011B4032790045CA6C /* BSUITableViewCommonController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUITableViewCommonController.h; sourceTree = "<group>"; };
 		844A32021B4032790045CA6C /* BSUITableViewCommonController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUITableViewCommonController.m; sourceTree = "<group>"; };
 		844A32041B4064310045CA6C /* BSUIBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUIBarButtonItem.h; sourceTree = "<group>"; };
 		844A32051B4064310045CA6C /* BSUIBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUIBarButtonItem.m; sourceTree = "<group>"; };
@@ -1014,6 +986,8 @@
 		84C06D991B3AF3BA000BB45C /* BSUITableViewInitRuntimeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUITableViewInitRuntimeController.h; sourceTree = "<group>"; };
 		84C06D9A1B3AF3BA000BB45C /* BSUITableViewInitRuntimeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUITableViewInitRuntimeController.m; sourceTree = "<group>"; };
 		84C4A34E1B501AC000029E19 /* tukuail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tukuail.png; path = "民生小区/Resources/首页图/tukuail.png"; sourceTree = SOURCE_ROOT; };
+		84C4A3521B503E8A00029E19 /* BSUITableViewCommonController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUITableViewCommonController.h; sourceTree = "<group>"; };
+		84C4A3531B504CDF00029E19 /* im_search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = im_search.png; path = "KT-RESOURCES/im_search.png"; sourceTree = SOURCE_ROOT; };
 		84D19FDC1B4C36EC00BA25BF /* BSBLEViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSBLEViewController.h; sourceTree = "<group>"; };
 		84D19FDD1B4C36EC00BA25BF /* BSBLEViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSBLEViewController.m; sourceTree = "<group>"; };
 		84D19FE01B4C36EC00BA25BF /* LeDiscovery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeDiscovery.h; sourceTree = "<group>"; };
@@ -1822,6 +1796,7 @@
 		848058171B39AEEF005817D7 /* CommonController */ = {
 			isa = PBXGroup;
 			children = (
+				84C4A3521B503E8A00029E19 /* BSUITableViewCommonController.h */,
 				8476A0401B4BAC8C00DB2CF0 /* BSUICommonController.h */,
 				848058181B39AEEF005817D7 /* BSTableListProtocol.h */,
 				848058191B39AEEF005817D7 /* BSTableViewRefreshController.h */,
@@ -1835,7 +1810,6 @@
 				84C06D991B3AF3BA000BB45C /* BSUITableViewInitRuntimeController.h */,
 				84C06D9A1B3AF3BA000BB45C /* BSUITableViewInitRuntimeController.m */,
 				8474DEB41B3F7D0600D9DE36 /* BSUICommonController.m */,
-				844A32011B4032790045CA6C /* BSUITableViewCommonController.h */,
 				844A32021B4032790045CA6C /* BSUITableViewCommonController.m */,
 				8460AE781B42569300022280 /* BSTableViewCellData.h */,
 				8460AE791B42569300022280 /* BSTableViewCellData.m */,
@@ -2128,6 +2102,7 @@
 		84BF8F5F1B4AB63C001042F1 /* KT-BUSINESS-SELLER */ = {
 			isa = PBXGroup;
 			children = (
+				84C4A3531B504CDF00029E19 /* im_search.png */,
 				84C4A34E1B501AC000029E19 /* tukuail.png */,
 				84ECE4301B4FC29D003D1AEE /* LaunchScreen.xib */,
 				84ECE4311B4FC29D003D1AEE /* Main.storyboard */,
@@ -2498,10 +2473,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				84ECE4371B4FC61C003D1AEE /* PBXTargetDependency */,
-				84ECE4391B4FC61C003D1AEE /* PBXTargetDependency */,
-				84ECE43B1B4FC61C003D1AEE /* PBXTargetDependency */,
-				84ECE3211B4F7A92003D1AEE /* PBXTargetDependency */,
 			);
 			name = "KT-BUSINESS-SELLER";
 			productName = "KT-BUSINESS-SELLER";
@@ -2647,6 +2618,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84C49FAC1B4FFEFB00029E19 /* BLEIFTTUpHoldMain.storyboard in Resources */,
+				84C4A3541B504CDF00029E19 /* im_search.png in Resources */,
 				84ECE4421B4FC7C2003D1AEE /* BSUIFiveColTableViewCell.xib in Resources */,
 				84ECE4411B4FC7A5003D1AEE /* ADTImagePlayer.xib in Resources */,
 				84ECE4401B4FC792003D1AEE /* BSUISingleImageTableViewCell.xib in Resources */,
@@ -3218,30 +3190,10 @@
 			target = 84BF90811B4AD49E001042F1 /* KT-RESOURCES */;
 			targetProxy = 84ECE31E1B4F7A1A003D1AEE /* PBXContainerItemProxy */;
 		};
-		84ECE3211B4F7A92003D1AEE /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 84ECE3161B4F7A05003D1AEE /* KT-AGGREGATE-RESOURCES */;
-			targetProxy = 84ECE3201B4F7A92003D1AEE /* PBXContainerItemProxy */;
-		};
 		84ECE3231B4F7A9B003D1AEE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 84ECE3161B4F7A05003D1AEE /* KT-AGGREGATE-RESOURCES */;
 			targetProxy = 84ECE3221B4F7A9B003D1AEE /* PBXContainerItemProxy */;
-		};
-		84ECE4371B4FC61C003D1AEE /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 84BF8F8F1B4ABA7E001042F1 /* KT-FRAME-PK */;
-			targetProxy = 84ECE4361B4FC61C003D1AEE /* PBXContainerItemProxy */;
-		};
-		84ECE4391B4FC61C003D1AEE /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 84BF902A1B4AC55D001042F1 /* KT-MODEL-MODULE */;
-			targetProxy = 84ECE4381B4FC61C003D1AEE /* PBXContainerItemProxy */;
-		};
-		84ECE43B1B4FC61C003D1AEE /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 84BF90811B4AD49E001042F1 /* KT-RESOURCES */;
-			targetProxy = 84ECE43A1B4FC61C003D1AEE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

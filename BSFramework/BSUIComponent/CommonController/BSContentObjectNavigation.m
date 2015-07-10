@@ -33,10 +33,14 @@
     if (bsContentObject.method) {
         [goControl setValue:bsContentObject.method forKeyPath:@"method"];
     }
-    
+    /*
     UINavigationController* nav = [[UINavigationController alloc]  initWithRootViewController:goControl];
     
     [viewController presentViewController:nav animated:YES completion:nil];
+     */
+    //送水界面此时没有状态栏
+    //[viewController.navigationController presentModalViewController:goControl animated:YES];
+    [viewController.navigationController pushViewController:goControl animated:YES];
 }
 
 /**
@@ -44,9 +48,12 @@
  */
 +(void)prepareControllWithNib:(UIViewController *)viewController bsContentObject:(BSTableContentObject*)bsContentObject{
     Class clzz =bsContentObject.colClass;
-    UIViewController *vc =[[clzz alloc] init];
+    UIViewController *goControl =[[clzz alloc] init];
     
-    [viewController presentViewController:vc animated:NO completion:nil];
+    //[viewController presentViewController:goControl animated:NO completion:nil];
+    
+    [viewController.navigationController pushViewController:goControl animated:YES];
+
 }
 
 

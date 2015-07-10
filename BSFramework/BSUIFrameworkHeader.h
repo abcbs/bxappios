@@ -16,6 +16,12 @@
 #import "NavigationProcess.h"
 
 /**
+ *跳转功能模型
+ */
+#import "BSTableSection.h"
+#import "BSTableContentObject.h"
+
+/**
  *公共的Controller
  */
 #import "BSUICommonController.h"
@@ -38,11 +44,7 @@
 
 
 
-/**
- *跳转功能模型
- */
-#import "BSTableSection.h"
-#import "BSTableContentObject.h"
+
 
 #import "BSTableViewCellData.h"
 #import "BSTableViewMultCellData.h"
