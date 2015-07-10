@@ -379,6 +379,10 @@
 		84BF90871B4AD49F001042F1 /* KT_RESOURCES.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BF90861B4AD49F001042F1 /* KT_RESOURCES.m */; };
 		84BF90991B4AD4E7001042F1 /* Images.xcassets in CopyFiles */ = {isa = PBXBuildFile; fileRef = A04366B91AD7B550005842EE /* Images.xcassets */; };
 		84C06D9B1B3AF3BA000BB45C /* BSUITableViewInitRuntimeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C06D9A1B3AF3BA000BB45C /* BSUITableViewInitRuntimeController.m */; };
+		84C49FAB1B4FFEA900029E19 /* BLEIFTTUpHoldMain.storyboard in CopyFiles */ = {isa = PBXBuildFile; fileRef = 84ECE3151B4F7974003D1AEE /* BLEIFTTUpHoldMain.storyboard */; };
+		84C49FAC1B4FFEFB00029E19 /* BLEIFTTUpHoldMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84ECE3151B4F7974003D1AEE /* BLEIFTTUpHoldMain.storyboard */; };
+		84C4A2471B5018D300029E19 /* tukuail.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 844268A21B36C05F006E7F7D /* tukuail.png */; };
+		84C4A34F1B501AC000029E19 /* tukuail.png in Resources */ = {isa = PBXBuildFile; fileRef = 84C4A34E1B501AC000029E19 /* tukuail.png */; };
 		84D19FE41B4C36EC00BA25BF /* BSBLEViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D19FDD1B4C36EC00BA25BF /* BSBLEViewController.m */; };
 		84D19FE61B4C36EC00BA25BF /* LeDiscovery.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D19FE11B4C36EC00BA25BF /* LeDiscovery.m */; };
 		84D19FE71B4C36EC00BA25BF /* LeTemperatureAlarmService.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D19FE31B4C36EC00BA25BF /* LeTemperatureAlarmService.m */; };
@@ -404,7 +408,6 @@
 		84ECE43C1B4FC627003D1AEE /* libKT-FRAME-PK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84BF8F901B4ABA7E001042F1 /* libKT-FRAME-PK.a */; };
 		84ECE43D1B4FC627003D1AEE /* libKT-MODEL-MODULE.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84BF902B1B4AC55D001042F1 /* libKT-MODEL-MODULE.a */; };
 		84ECE43E1B4FC627003D1AEE /* libKT-RESOURCES.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84BF90821B4AD49E001042F1 /* libKT-RESOURCES.a */; };
-		84ECE43F1B4FC75E003D1AEE /* BLEIFTTUpHoldMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84ECE3151B4F7974003D1AEE /* BLEIFTTUpHoldMain.storyboard */; };
 		84ECE4401B4FC792003D1AEE /* BSUISingleImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8476A0451B4BB93100DB2CF0 /* BSUISingleImageTableViewCell.xib */; };
 		84ECE4411B4FC7A5003D1AEE /* ADTImagePlayer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848058141B39A377005817D7 /* ADTImagePlayer.xib */; };
 		84ECE4421B4FC7C2003D1AEE /* BSUIFiveColTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 846541EC1B42C47300DE2BC1 /* BSUIFiveColTableViewCell.xib */; };
@@ -529,6 +532,8 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				84C4A2471B5018D300029E19 /* tukuail.png in CopyFiles */,
+				84C49FAB1B4FFEA900029E19 /* BLEIFTTUpHoldMain.storyboard in CopyFiles */,
 				84ECE41C1B4F938C003D1AEE /* BSUISingleImageTableViewCell.xib in CopyFiles */,
 				84BF90991B4AD4E7001042F1 /* Images.xcassets in CopyFiles */,
 				84BF90851B4AD49F001042F1 /* KT_RESOURCES.h in CopyFiles */,
@@ -1008,6 +1013,7 @@
 		84BF90861B4AD49F001042F1 /* KT_RESOURCES.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KT_RESOURCES.m; sourceTree = "<group>"; };
 		84C06D991B3AF3BA000BB45C /* BSUITableViewInitRuntimeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUITableViewInitRuntimeController.h; sourceTree = "<group>"; };
 		84C06D9A1B3AF3BA000BB45C /* BSUITableViewInitRuntimeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUITableViewInitRuntimeController.m; sourceTree = "<group>"; };
+		84C4A34E1B501AC000029E19 /* tukuail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tukuail.png; path = "民生小区/Resources/首页图/tukuail.png"; sourceTree = SOURCE_ROOT; };
 		84D19FDC1B4C36EC00BA25BF /* BSBLEViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSBLEViewController.h; sourceTree = "<group>"; };
 		84D19FDD1B4C36EC00BA25BF /* BSBLEViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSBLEViewController.m; sourceTree = "<group>"; };
 		84D19FE01B4C36EC00BA25BF /* LeDiscovery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeDiscovery.h; sourceTree = "<group>"; };
@@ -2122,6 +2128,7 @@
 		84BF8F5F1B4AB63C001042F1 /* KT-BUSINESS-SELLER */ = {
 			isa = PBXGroup;
 			children = (
+				84C4A34E1B501AC000029E19 /* tukuail.png */,
 				84ECE4301B4FC29D003D1AEE /* LaunchScreen.xib */,
 				84ECE4311B4FC29D003D1AEE /* Main.storyboard */,
 				84BF8F891B4AB879001042F1 /* OrderManagerControl */,
@@ -2639,11 +2646,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84C49FAC1B4FFEFB00029E19 /* BLEIFTTUpHoldMain.storyboard in Resources */,
 				84ECE4421B4FC7C2003D1AEE /* BSUIFiveColTableViewCell.xib in Resources */,
 				84ECE4411B4FC7A5003D1AEE /* ADTImagePlayer.xib in Resources */,
 				84ECE4401B4FC792003D1AEE /* BSUISingleImageTableViewCell.xib in Resources */,
-				84ECE43F1B4FC75E003D1AEE /* BLEIFTTUpHoldMain.storyboard in Resources */,
 				84ECE4321B4FC29D003D1AEE /* LaunchScreen.xib in Resources */,
+				84C4A34F1B501AC000029E19 /* tukuail.png in Resources */,
 				84ECE4331B4FC29D003D1AEE /* Main.storyboard in Resources */,
 				84D19FE91B4C3CE900BA25BF /* InfoPlist.strings in Resources */,
 				84BF8F711B4AB63C001042F1 /* Images.xcassets in Resources */,

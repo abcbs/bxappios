@@ -34,6 +34,22 @@
                                 imageName:@"98bj"//实现的控制器，在故事板中
                                 vcClass:@"BLEDevicesTableViewController"];
     
+    
+    bsTable=[BSTableSection initWithHeaderVcClassContent:@"首页"//章节显示标题
+              imageName:@"tuhongse"//章节显示图标
+              headerViewClass:nil//章节显示视图
+              cellIdentifier:@"BSUISingleImageTableViewCell"//采用的TableViewCell
+              cellClass:[BSUISingleImageTableViewCell class]//TableViewCell实现
+              storyboard:@"BLEIFTTUpHoldMain" bsContent:nil];
+    
+
+    bank=[BSTableContentObject
+                                initWithContentObject:@"银行业务预约"
+                                methodName:nil
+                                imageName:@"tukuail.png"
+                                vcClass:@"BLEDevicesTableViewController"];
+    
+    
     [bsTable addBSTableContent:bank sectionHeader:@"首页"];
     [super setValue:bsTable forKey:@"bSTableObjects"];
 }

@@ -26,8 +26,7 @@
     CGFloat height=BSMarginY(120);
     CGFloat width=BSMarginX(SCREEN_WIDTH);
     //设置默认的宽度、高度
-    self.bigImage.height=height;
-    self.bigImage.width=width;
+    self.bigImage.size= BSSizeMake(width,height);
     return self;
 }
 
@@ -39,8 +38,8 @@
     CGFloat height=BSMarginY(120);
     CGFloat width=BSMarginX(SCREEN_WIDTH);
     //设置默认的宽度、高度
-    cell.height=height;
-    cell.width=width;
+    self.bigImage.size= BSSizeMake(width,height);
+
     [self.contentView addSubview:cell];
     return self;
 }
