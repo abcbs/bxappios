@@ -14,7 +14,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self.bleName setTintColor:[UIColor redColor]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,4 +32,19 @@
 }
 */
 
+- (IBAction)chooseHeaderImages:(id)sender {
+}
+
+- (IBAction)saveBLEInfo:(id)sender {
+    //从视图中获取数据
+    NSString *name=self.bleName.text;
+    CBPeripheral *discoveredPeripheral=[[CBPeripheral alloc]init];
+    //discoveredPeripheral.name=name;
+    //实例化BLE
+    BLEInfo *bleInfo=[[BLEInfo alloc]init];
+    bleInfo.discoveredPeripheral=discoveredPeripheral;
+    
+    //使用代理做数据处理
+    [self.bleInfoDelegate addBLEInfo:bleInfo];
+}
 @end

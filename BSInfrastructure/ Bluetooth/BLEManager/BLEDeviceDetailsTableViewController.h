@@ -10,6 +10,8 @@
 #import <CoreBluetooth/CoreBluetooth.h>
 #import "BSIFTTHeader.h"
 #import "BLEDevicesTableViewController.h"
+#import "BLCentralExtention.h"
+
 //定义服务名称
 #define SECTION_NAME  @"E20A39F4-73F5-4BC4-A12F-17D1AD07A961"
 

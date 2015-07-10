@@ -16,7 +16,7 @@
     [super viewDidLoad];
     
     [BSUIComponentView initNavigationHeaderWithDefault:self
-                                     navigationProcess:self title:nil
+                                     navigationProcess:self title:self.title
      ];
     [BSUIComponentView navigationHeader:self.navigationController];
     

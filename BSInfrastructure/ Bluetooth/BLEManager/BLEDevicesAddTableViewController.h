@@ -13,4 +13,11 @@
 
 @property (weak, nonatomic) id<BLCentralExtention> bleInfoDelegate;
 
+
+@property (weak, nonatomic) IBOutlet UITextField *bleName;
+
+- (IBAction)chooseHeaderImages:(id)sender;
+
+- (IBAction)saveBLEInfo:(id)sender;
+
 @end

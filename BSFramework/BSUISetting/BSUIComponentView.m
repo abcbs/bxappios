@@ -87,9 +87,12 @@
 
 
 +(UIColor *)navigationColor{
-    return [UIColor redColor];
+    return [[UIColor alloc] initWithRed:0.45 green:0 blue:0 alpha:1];
 }
 
+/**
+ *
+ */
 +(UIColor *)backgroundColor{
     return  [UIColor colorWithRed:0.234 green:0.234 blue:0.234 alpha:0.1];
 }
@@ -97,18 +100,23 @@
 +(void )initNavigationHeaderWithDefault:(UIViewController *)viewController
                       navigationProcess:(id<NavigationProcess>) navigationProcess
                                   title:(NSString *)title{
-    /*
+    
     UINavigationItem *navigationItem=viewController.navigationItem;
     
-    //BSUIBlockButton *backButton = [BSUIComponentView backNavButton:navigationProcess
-    //                                                         title:title image:nil];
+    [navigationItem setTitle:title];
+    
+    UINavigationBar *bar = viewController.navigationController.navigationBar;
+    
+    [bar setTintColor:[UIColor whiteColor ]];
+    //BSUIBlockButton *backButton = [BSUIComponentView backNavButton:navigationProcess title:title image:nil];
+    /*
     UIBarButtonItem *myButton = [[UIBarButtonItem alloc]
                                   initWithTitle:@"确定"
                                   style:UIBarButtonItemStylePlain
-                                  target:self
-                                  action:nil];
+                                  target:viewController
+                                 action:@selector(doneClick)];
     
-    navigationItem.leftBarButtonItem = myButton;
+    navigationItem.rightBarButtonItem = myButton;
     */
    
 }
@@ -135,12 +143,11 @@
 
         
    BSUIBlockButton *okButton =[BSUIComponentView okNavButton:currentController target:currentController
-                                                           title:title image:nil];
+         title:title image:nil];
     
-           [headerView addSubview:okButton];
-        UIColor *cc=[[UIColor alloc] initWithRed:0.45 green:0 blue:0 alpha:1];
-
-        [headerView setBackgroundColor:cc ];
+        [headerView addSubview:okButton];
+       
+        [headerView setBackgroundColor:[BSUIComponentView navigationColor] ];
         
     [currentController.view addSubview:headerView];
 }
@@ -168,9 +175,8 @@
     
     [headerView addSubview:okButton];
     
-    UIColor *cc=[[UIColor alloc] initWithRed:0.45 green:0 blue:0 alpha:1];
  
-    [headerView setBackgroundColor:cc ];
+    [headerView setBackgroundColor:[BSUIComponentView navigationColor] ];
     
     [currentController.view addSubview:headerView];
 }
@@ -251,6 +257,7 @@
     return okButton;
     
 }
+
 +(BSUIBarButtonItem *)okBarButtonItem:(id<NavigationProcess>) navigationProcess  target:(UIViewController *)target title:(NSString *)title image:(NSString *)image{
     BSUIBarButtonItem *okButtonItem = [[BSUIBarButtonItem alloc]
                                   initWithTitle:title

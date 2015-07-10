@@ -11,13 +11,14 @@
 #import "BSIFTTHeader.h"
 
 @interface BLEDevicesTableViewController ()<BLCentralExtention>
-
+{
+    NSInteger bleIndex;
+}
 @end
 
 @implementation BLEDevicesTableViewController
 @synthesize centralMgr;
 @synthesize arrayBLE;
-@synthesize tableView;
 
 - (void)viewDidLoad {
     
@@ -28,7 +29,7 @@
     self.arrayBLE = [[NSMutableArray alloc] init];
     
     
-    if (tableView==nil) {
+    if (self.tableView==nil) {
         NSLog(@"tableView is null");
     }else{
         self.tableView.backgroundColor=[UIColor groupTableViewBackgroundColor];
@@ -64,16 +65,15 @@
         BLEInfo *ble=[self.arrayBLE objectAtIndex:indexPath.row];
         
        CBPeripheral *p= ble.discoveredPeripheral;
-    
-       NSString *state=[[ble discoveredPeripheral] isConnected] ? @"Connected" : @"Not connected";
+        BOOL isc=[[ble discoveredPeripheral] state] ==CBPeripheralStateConnected;
+        
+       NSString *state=(isc==YES )? @"Connected" : @"Not connected";
         if (p.name==nil) {
             cell.textLabel.text =@"无名设备";
         }else{
             cell.textLabel.text =p.name ;
         }
         cell.detailTextLabel.text=  [[ble.rssi stringValue] stringByAppendingString:state];
-        //cell.detailTextLabel.text=@"Not connected";
-        
         
     }
     return cell;
@@ -82,6 +82,27 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return arrayBLE.count;
+}
+
+/**
+ *
+ */
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    BLEInfo *bleInfo;
+    if (tableView == self.tableView)
+    {
+        bleInfo = arrayBLE[indexPath.row];
+        bleIndex = indexPath.row;
+        [self performSegueWithIdentifier:@"BLEConnectionSegue" sender:nil];
+        
+    }
+    else
+    {
+        [self performSegueWithIdentifier:@"BLEConnectionSegue" sender:nil];
+        bleIndex = [arrayBLE indexOfObject:bleInfo];
+    }
 }
 
 //实现centralManagerDidUpdateState。
@@ -176,10 +197,17 @@
 
 - (void)refreshBLEInfo:(BLEInfo *)bleInfo{
     NSLog(@"refreshBLEInfo,%@",self.description);
+    [self.arrayBLE removeObjectAtIndex:bleIndex];
+    [self.arrayBLE insertObject:bleInfo atIndex:bleIndex];
+    [self.tableView reloadData];
     
 }
 - (void)addBLEInfo:(BLEInfo *)bleInfo{
     NSLog(@"addBLEInfo,%@",self.description);
+    //[self.arrayBLE removeObjectAtIndex:bleIndex];
+    [self.arrayBLE insertObject:bleInfo atIndex:bleIndex];
+    [self.tableView reloadData];
+    
     
 }
 - (void)editBLEInfo:(BLEInfo *)bleInfo{
