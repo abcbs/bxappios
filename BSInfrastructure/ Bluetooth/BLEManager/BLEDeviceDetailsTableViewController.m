@@ -26,17 +26,28 @@
     _characteristicNum = 0;
 }
 
+
+//CBCentralManagerDelegate
+- (void)centralManagerDidUpdateState:(CBCentralManager *)central{
+     NSLog(@"centralManagerDidUpdateState 状态更新");
+}
+//CBPeripheralManagerDelegate
+- (void)peripheralManagerDidUpdateState:(CBPeripheralManager *)peripheral{
+     NSLog(@"peripheralManagerDidUpdateState 状态更新");
+}
 //可以实现下面的函数，如果连接失败，就会得到回调：
 - (void)centralManager:(CBCentralManager *)central didFailToConnectPeripheral:(CBPeripheral *)peripheral error:(NSError *)error
 {
-    NSLog(@"didFailToConnectPeripheral : %@", error.localizedDescription);
+    NSLog(@"didFailToConnectPeripheral 连接失败 :\n %@", error.localizedDescription);
 }
+
 
 //必须实现didConnectPeripheral，只要连接成功，就能回调到该函数，开始获取服务。
 - (void)centralManager:(CBCentralManager *)central didConnectPeripheral:(CBPeripheral *)peripheral
 {
     
-    [self.arrayServices removeAllObjects];
+    //modified by liujq
+    //[self.arrayServices removeAllObjects];
     
     [_discoveredPeripheral setDelegate:self];
     //discoverServices就是查找该周边设备的服务
@@ -49,14 +60,15 @@
 {
     if (error)
     {
-        NSLog(@"didDiscoverServices : %@", [error localizedDescription]);
-        //        [self cleanup];
+        NSLog(@"didDiscoverServices 获取服务: \n%@",
+              [error localizedDescription]);
+        //[self cleanup];
         return;
     }
     
     for (CBService *s in peripheral.services)
     {
-        NSLog(@"Service found with UUID : %@", s.UUID);
+        NSLog(@"服务的UUID : %@", s.UUID);
         NSMutableDictionary *dic = [[NSMutableDictionary alloc] initWithDictionary:@{SECTION_NAME:s.UUID.description}];
         [self.arrayServices addObject:dic];
         [s.peripheral discoverCharacteristics:nil forService:s];
@@ -69,13 +81,15 @@
 {
     if (error)
     {
-        NSLog(@"didDiscoverCharacteristicsForService error : %@", [error localizedDescription]);
+        NSLog(@"didDiscoverCharacteristicsForService error : %@",
+              [error localizedDescription]);
         return;
     }
     
     for (CBCharacteristic *c in service.characteristics)
     {
         self.characteristicNum++;
+         NSLog(@"获取特性: \n%@", c);
         [peripheral readValueForCharacteristic:c];
     }
 }

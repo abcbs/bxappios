@@ -53,7 +53,7 @@
  *头部状态栏颜色设置
  */
 +(void)navigationHeader:(UINavigationController *)navigationController{
-    [navigationController.navigationBar setBarStyle:UIBarStyleBlack];
+    //[navigationController.navigationBar setBarStyle:UIBarStyleBlack];
     [navigationController.navigationBar setBackgroundColor
      :[UIColor redColor]];
 }
@@ -237,8 +237,8 @@
 +(BSUIBlockButton *)okNavButton:(id<NavigationProcess>) navigationProcess
                             target:(UIViewController *)target
                           title:(NSString *)title image:(NSString *)image {
-    BSUIBlockButton *okButton = [[BSUIBlockButton alloc]initWithFrame:BSRectMake(NAVIGATIONBAR_X+NAVIGATIONBAR_WIDTH*0.75,
-                                                                                 NAVIGATIONBAR_Y+STATUS_HEIGHT+8,NAVIGATIONBAR_HEIGHT/3, NAVIGATIONBAR_HEIGHT/3)
+    BSUIBlockButton *okButton = [[BSUIBlockButton alloc]initWithFrame:BSRectMake(NAVIGATIONBAR_X+NAVIGATIONBAR_WIDTH*0.72,
+                                                                                 NAVIGATIONBAR_Y+STATUS_HEIGHT+10,NAVIGATIONBAR_HEIGHT/3, NAVIGATIONBAR_HEIGHT/3)
                                  target:target
                                  action:@selector(doneClick)];
     [okButton setBackgroundImage:[UIImage imageNamed:@"im_search"]

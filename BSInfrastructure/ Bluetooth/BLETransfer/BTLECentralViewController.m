@@ -36,8 +36,15 @@
     _data = [[NSMutableData alloc] init];
 }
 
+- (void)viewDidAppear:(BOOL)animated{
+    
+   // [super viewDidAppear:<#animated#>];
+    [self  scan];
+    
+}
 - (void)viewWillDisappear:(BOOL)animated
 {
+    [super viewWillDisappear:animated];
     // Don't keep it going while we're not showing.
     [self.centralManager stopScan];
     NSLog(@"Scanning stopped");
@@ -88,6 +95,8 @@
  */
 - (void)centralManager:(CBCentralManager *)central didDiscoverPeripheral:(CBPeripheral *)peripheral advertisementData:(NSDictionary *)advertisementData RSSI:(NSNumber *)RSSI
 {
+    //modified LiuJQ for test
+    /*
     // Reject any where the value is above reasonable range
     if (RSSI.integerValue > -15) {
         return;
@@ -97,7 +106,7 @@
     if (RSSI.integerValue < -35) {
         return;
     }
-    
+    */
     NSLog(@"Discovered %@ at %@", peripheral.name, RSSI);
     
     // Ok, it's in range - have we already seen it?

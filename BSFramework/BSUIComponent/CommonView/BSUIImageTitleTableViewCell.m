@@ -25,7 +25,7 @@
     UIImageView *cell=
     [[UIImageView alloc] initWithImage:[UIImage imageNamed:[bsContentObject colImageName]]];
     [cell setFrame:BSRectMake(SCREEN_WIDTH/3, 10, 100, 100)];
-    UILabel *lable=[[UILabel alloc]initWithFrame:(BSRectMake(SCREEN_WIDTH/3+20, 80, 90, 30))];
+    UILabel *lable=[[UILabel alloc]initWithFrame:(BSRectMake(SCREEN_WIDTH/3+20, 120, 90, 30))];
     
     lable.text=[bsContentObject colTitle];
     [self.contentView addSubview:lable];

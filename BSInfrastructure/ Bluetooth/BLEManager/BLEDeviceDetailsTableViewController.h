@@ -27,7 +27,8 @@ CBPeripheralDelegate
 @property (nonatomic, strong) CBCentralManager *centralMgr;
 @property (nonatomic, strong) CBPeripheral *discoveredPeripheral;
 
-// tableview sections，保存蓝牙设备里面的services字典，字典第一个为service，剩下是特性与值
+// tableview sections，保存蓝牙设备里面的services字典，
+//字典第一个为service，剩下是特性与值
 @property (nonatomic, strong) NSMutableArray *arrayServices;
 
 // 用来记录有多少特性，当全部特性保存完毕，刷新列表

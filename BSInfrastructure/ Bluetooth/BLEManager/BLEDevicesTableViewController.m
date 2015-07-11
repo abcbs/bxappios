@@ -39,6 +39,19 @@
     self.tableView.delegate = self;
 }
 
+- (void)viewDidAppear:(BOOL)animated{
+ 
+    //[self.centralMgr scanForPeripheralsWithServices:nil options:nil];
+    [super viewDidAppear:animated];
+}
+- (void)viewWillDisappear:(BOOL)animated
+{
+    // Don't keep it going while we're not showing.
+    //[centralMgr stopScan];
+    //NSLog(@"Scanning stopped");
+    
+    [super viewWillDisappear:animated];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -74,14 +87,18 @@
         }else{
             name=p.name ;
         }
+        /*
         if(ble.rssi){
             name=[name stringByAppendingString:[ble.rssi stringValue]];
         }
+         */
         name=[name stringByAppendingString:state];
         cell.textLabel.text =name ;
+        /*
         if (ble.rssi) {
             cell.detailTextLabel.text=[ble.rssi stringValue];
         }
+         */
         //cell.detailTextLabel.text= [ble.rssi stringValue];
         
     }
@@ -205,6 +222,8 @@ titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
 - (BOOL)saveBLE:(BLEInfo *)discoveredBLEInfo
 {
     NSLog(@"发现设备，更新数据");
+    //modified LiuJQ for test
+    
     for (BLEInfo *info in self.arrayBLE)
     {
         if ([info.discoveredPeripheral.identifier.UUIDString isEqualToString:discoveredBLEInfo.discoveredPeripheral.identifier.UUIDString])
@@ -229,6 +248,8 @@ titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
     {
         BLEDeviceDetailsTableViewController *evc = (BLEDeviceDetailsTableViewController *)segue.destinationViewController;
         evc.centralMgr=self.centralMgr;
+        BLEInfo *bleInfo=( BLEInfo *)[self.arrayBLE objectAtIndex:bleIndex];
+        evc.discoveredPeripheral=bleInfo.discoveredPeripheral;
         evc.bleInfoDelegate = self;
     }else if ([segue.identifier isEqualToString:@"DeviceAddedSegue"]){
         BLEDevicesAddTableViewController *avc=(BLEDevicesAddTableViewController *)segue.destinationViewController;
