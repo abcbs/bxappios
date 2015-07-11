@@ -100,7 +100,7 @@
     NSUInteger row = [indexPath row];
     return row;
 }
-
+#pragma mark -上面是表格样式的处理
 #pragma mark -表格是否编辑、删除控制标记，默认为否
 /**
  *划动cell是否出现可以编辑
@@ -119,6 +119,13 @@
 
 #pragma mark -章节头信息定义
 /**
+ *用以定制自定义的section头部视图－Header
+ */
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    return nil;
+}
+
+/**
  *章节的标题,自定义表格头信息,设置每个section显示的Title
  *不建议重写此方法，如果重写则不显示章节标题
  */
@@ -127,13 +134,13 @@
     NSString *bsTable= [self.bSTableObjects currentSectionTitle:section];
     return bsTable;
 }
-
-
 /**
- *用以定制自定义的section头部视图－Header
+ *TableView 表的章节数量,指定有多少个分区(Section)
  */
--(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-    return nil;
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    NSInteger sc=[self.bSTableObjects currentSectionNumber];
+    return sc;
 }
 
 #pragma mark -章节尾部
@@ -148,6 +155,87 @@
 -(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
     return nil;
 }
+#pragma mark -表头与表尾处理结束
+
+
+#pragma mark -以下方法不建议重载
+
+/**
+ *每个章节内条目数量
+ */
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    NSInteger rows=[self.bSTableObjects currentRowNumber:section];
+    return rows;
+}
+
+/**
+ * 选中Cell响应事件
+ * 本方法在子类中不建议重写，如果重写在意味着本组件控制的现实逻辑不起作用
+ */
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    @try {
+        long section=indexPath.section;
+        long row=indexPath.row;
+         //根据当前表格设置的列数，选择具体的TableViewCell
+        NSInteger colNumber=[self.bSTableObjects currentCapatibilty:section];
+        if (colNumber>1) {//默认情况
+            //[BSTableViewCellData];
+            return [[BSTableViewMultCellData initWithTableSelection:self bsTableSection:self.bSTableObjects tableView:self.tableView] processTableViewCell:section row:row];
+        }
+        return [[BSTableViewCellData initWithTableSelection:self bsTableSection:self.bSTableObjects tableView:self.tableView] processTableViewCell:section row:row];
+    }
+    @catch (NSException *exception) {
+        NSLog(@"画单元格时出现错误\t%@",exception.reason);
+    }
+ }
+#pragma mark 以上是单元格显示方法
+
+#pragma mark 选中单元格事件
+/**
+ *选中之前执行,判断选中的行
+ */
+-(NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSInteger colNumber=[self.bSTableObjects currentCapatibilty:indexPath.section];
+    if (colNumber>1){
+        return nil;
+    }
+    return indexPath;
+}
+
+/**
+ *选中单元格响应事件
+ *本方法在子类中不建议重写，如果重写在意味着本组件控制的现实逻辑不起作用
+ */
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    @try {
+        long section=indexPath.section;
+        long row=indexPath.row;
+        [self prepareNavigationView:section row:row];
+    }
+    @catch (NSException *exception) {
+        NSLog(@"选中单元格响应事件\t%@",exception.reason);
+    }
+  }
+
+#pragma mark -以下是表格组件的具体实现私有方法
+
+#pragma mark 功能界面跳转方法
+/**
+ *调用具体的TableViewCell，包括NIB实现方式、手工编码实现方式、故事板实现方式
+ *优先默认为故事板实现
+ */
+-(void)prepareNavigationView:(NSInteger)section row:(NSInteger)row{
+    
+
+   BSTableContentObject *bs=[self.bSTableObjects currentContentObject:section row:row];
+   bs.canUseStoryboard=[self.bSTableObjects canUseStoryBord:section row:row];
+   [BSContentObjectNavigation navigatingControllWithStorybord:self bsContentObject:bs];
+}
+#pragma mark -上述方法完成了表格展现与选中。
+#pragma mark -此类暂时不提供编辑功能，下面是编辑功能使用的方法
 
 #pragma mark -行编辑功能，目前为非详细功能，因此不提供编辑功能
 /**
@@ -245,88 +333,4 @@ titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
     NSLog(@"上次选中的行是  \n indexpath=%@",indexPath);
     return indexPath;
 }
-
-/**
- *选中之前执行,判断选中的行
- */
--(NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-   NSInteger colNumber=[self.bSTableObjects currentCapatibilty:indexPath.section];
-    if (colNumber>1){
-        return nil;
-    }
-    return indexPath;
-}
-
-#pragma mark -以下方法不建议重载
-/**
- * 选中Cell响应事件
- * 本方法在子类中不建议重写，如果重写在意味着本组件控制的现实逻辑不起作用
- */
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    @try {
-        long section=indexPath.section;
-        long row=indexPath.row;
-         //根据当前表格设置的列数，选择具体的TableViewCell
-        NSInteger colNumber=[self.bSTableObjects currentCapatibilty:section];
-        if (colNumber>1) {//默认情况
-            //[BSTableViewCellData];
-            return [[BSTableViewMultCellData initWithTableSelection:self bsTableSection:self.bSTableObjects tableView:self.tableView] processTableViewCell:section row:row];
-        }
-        return [[BSTableViewCellData initWithTableSelection:self bsTableSection:self.bSTableObjects tableView:self.tableView] processTableViewCell:section row:row];
-    }
-    @catch (NSException *exception) {
-        NSLog(@"画单元格时出现错误\t%@",exception.reason);
-    }
- }
-
-/**
- *TableView 表的章节数量,指定有多少个分区(Section)
- */
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    NSInteger sc=[self.bSTableObjects currentSectionNumber];
-    return sc;
-}
-
-/**
- *每个章节内条目数量
- */
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    NSInteger rows=[self.bSTableObjects currentRowNumber:section];
-    return rows;
-}
-
-/**
- *选中单元格响应事件
- *本方法在子类中不建议重写，如果重写在意味着本组件控制的现实逻辑不起作用
- */
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    @try {
-        long section=indexPath.section;
-        long row=indexPath.row;
-        [self prepareNavigationView:section row:row];
-    }
-    @catch (NSException *exception) {
-        NSLog(@"选中单元格响应事件\t%@",exception.reason);
-    }
-  }
-
-#pragma mark -以下是表格组件的具体实现私有方法
-
-#pragma mark 功能界面跳转方法
-/**
- *调用具体的TableViewCell，包括NIB实现方式、手工编码实现方式、故事板实现方式
- *优先默认为故事板实现
- */
--(void)prepareNavigationView:(NSInteger)section row:(NSInteger)row{
-    
-
-   BSTableContentObject *bs=[self.bSTableObjects currentContentObject:section row:row];
-   bs.canUseStoryboard=[self.bSTableObjects canUseStoryBord:section row:row];
-   [BSContentObjectNavigation navigatingControllWithStorybord:self bsContentObject:bs];
-}
-
 @end

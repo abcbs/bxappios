@@ -66,13 +66,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     NSString *identifer=@"HandDefaultCell";
-    UITableViewCell *cell=nil;
-    
-    cell=[self.tableView dequeueReusableCellWithIdentifier:identifer];
-    if (!cell)
-    {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifer];
-    }
+    UITableViewCell *cell=[self obtainCellWith:identifer];
     
     if ([self.arrayBLE count]>0) {
         BLEInfo *ble=[self.arrayBLE objectAtIndex:indexPath.row];
@@ -87,19 +81,9 @@
         }else{
             name=p.name ;
         }
-        /*
-        if(ble.rssi){
-            name=[name stringByAppendingString:[ble.rssi stringValue]];
-        }
-         */
-        name=[name stringByAppendingString:state];
-        cell.textLabel.text =name ;
-        /*
-        if (ble.rssi) {
-            cell.detailTextLabel.text=[ble.rssi stringValue];
-        }
-         */
-        //cell.detailTextLabel.text= [ble.rssi stringValue];
+        cell.textLabel.text=name;
+        cell.detailTextLabel.text= [[ble.rssi stringValue]
+                                    stringByAppendingFormat:@"\t连接状态:\t%@",state ];
         
     }
     return cell;

@@ -49,5 +49,14 @@
 -(void)navigating:(BSTableContentObject*)bsContentObject{
     [BSContentObjectNavigation navigatingControllWithStorybord:self       bsContentObject:bsContentObject];
 }
+- (UITableViewCell *)obtainCellWith:(NSString *)identifer{
+        UITableViewCell *cell=nil;
+        cell=[self.tableView dequeueReusableCellWithIdentifier:identifer];
+        if (!cell)
+        {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifer];
+        }
+    return cell;
+}
 
 @end

@@ -10,8 +10,17 @@
 #import "BSUIFrameworkHeader.h"
 @interface BSUITableViewCommonController : UITableViewController<NavigationProcess>
 
+/**
+ *返回方法
+ */
 - (void)backClick;
+/**
+ *默认操作，默认为检索操作
+ */
 - (void)doneClick;
--(void)navigating:(BSTableContentObject*)bsContentObject;
+
+- (void)navigating:(BSTableContentObject*)bsContentObject;
+
+- (UITableViewCell *)obtainCellWith:(NSString *)identifer;
 
 @end

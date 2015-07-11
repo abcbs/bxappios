@@ -9,6 +9,15 @@
 #import "BLEDeviceDetailsTableViewController.h"
 #import "BSIFTTHeader.h"
 
+@interface BLEDeviceDetailsTableViewController ()
+{
+    UILabel *header;
+    //根据服务获取特征值的字典
+    NSMutableDictionary *characteristicDic;
+    NSMutableDictionary *characteristicValueDic;
+}
+@end
+
 @implementation BLEDeviceDetailsTableViewController
 
 //记得把之前的centrlMgr传过来，记得要重新设置delegate：
@@ -26,7 +35,90 @@
     _characteristicNum = 0;
 }
 
+/**
+ *章节的标题,自定义表格头信息,设置每个section显示的Title
+ */
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    if (_arrayServices.count==0) {
+        return @"暂无服务";
+    }
+    NSDictionary *dic= [_arrayServices objectAtIndex:section];
+    NSArray *values = [dic allValues];
+    return [values objectAtIndex:0];
+}
 
+-(void)handleTableHeander:(NSString *)name{
+    if (header==nil) {
+        header=[[UILabel alloc]init];
+        header.size=BSSizeMake(SCREEN_WIDTH*.2, SCREEN_HEIGHT*.1);
+        self.tableView.tableHeaderView = header;
+    }
+
+    header.text=name;
+
+}
+
+/**
+ *TableView 表的章节数量,指定有多少个分区(Section)
+ */
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    if(_arrayServices.count==0){
+        return 1;
+    }
+    return _arrayServices.count;
+}
+
+/**
+ *每个章节内条目数量
+ */
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    if (_arrayServices.count==0) {
+        return 1;
+    }
+    return 2;
+}
+
+/**
+ * 选中Cell响应事件
+ * 本方法在子类中不建议重写，如果重写在意味着本组件控制的现实逻辑不起作用
+ */
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSString *identifer=@"BLEDeviceDetailsTableView";
+    UITableViewCell *cell=[self obtainCellWith:identifer];
+    if (_arrayServices.count==0) {
+        cell.textLabel.text=@"获取不到特征值";
+        cell.detailTextLabel.text=@"获取不到特征值的值";
+        return cell;
+    }
+    if (characteristicDic) {
+        NSDictionary *dic= [_arrayServices objectAtIndex:indexPath.section];
+        NSArray *values = [dic allValues];
+        id key= [values objectAtIndex:0];
+        cell.textLabel.text=[characteristicDic objectForKey:key];
+         NSArray *keys=[characteristicDic allKeys];
+        if (characteristicValueDic) {
+            @try {
+                cell.detailTextLabel.text=[characteristicValueDic
+                                           objectForKey:[keys objectAtIndex:indexPath.section]];
+            }
+            @catch (NSException *exception) {
+                NSLog(@"数据输出时，产生错误\t%@",exception.reason);
+                cell.detailTextLabel.text=exception.reason;
+            }
+        }else{
+            cell.detailTextLabel.text=@"获取不到特征值的值";
+        }
+    }else{
+        cell.textLabel.text=@"获取不到特征值";
+    }
+    
+   
+    return cell;
+
+}
 //CBCentralManagerDelegate
 - (void)centralManagerDidUpdateState:(CBCentralManager *)central{
      NSLog(@"centralManagerDidUpdateState 状态更新");
@@ -45,10 +137,9 @@
 //必须实现didConnectPeripheral，只要连接成功，就能回调到该函数，开始获取服务。
 - (void)centralManager:(CBCentralManager *)central didConnectPeripheral:(CBPeripheral *)peripheral
 {
-    
-    //modified by liujq
-    //[self.arrayServices removeAllObjects];
-    
+    NSString * u=[[NSString alloc]initWithFormat:@"服务%@" ,
+                  _discoveredPeripheral.name ];
+    [self handleTableHeander: u];
     [_discoveredPeripheral setDelegate:self];
     //discoverServices就是查找该周边设备的服务
     [_discoveredPeripheral discoverServices:nil];
@@ -71,8 +162,10 @@
         NSLog(@"服务的UUID : %@", s.UUID);
         NSMutableDictionary *dic = [[NSMutableDictionary alloc] initWithDictionary:@{SECTION_NAME:s.UUID.description}];
         [self.arrayServices addObject:dic];
+        //发现具体服务的特征值
         [s.peripheral discoverCharacteristics:nil forService:s];
     }
+    [self.tableView reloadData];
 }
 
 //4. 获取特性
@@ -85,13 +178,17 @@
               [error localizedDescription]);
         return;
     }
-    
+    if (characteristicDic==nil){
+        characteristicDic=[[NSMutableDictionary alloc]init];
+    }
     for (CBCharacteristic *c in service.characteristics)
     {
         self.characteristicNum++;
-         NSLog(@"获取特性: \n%@", c);
+         NSLog(@"获取特性: \n%@\t 服务名称%@", c,service.UUID.description);
+        [characteristicDic setObject:c.description forKey:service.UUID.description];
         [peripheral readValueForCharacteristic:c];
     }
+    [self.tableView reloadData];
 }
 
 //5. 获取特性值
@@ -103,10 +200,15 @@
     {
         [self.tableView reloadData];
     }
-    
+    if (characteristicValueDic==nil) {
+        characteristicValueDic=[[NSMutableDictionary alloc]init];
+    }
     if (error)
     {
         NSLog(@"didUpdateValueForCharacteristic error : %@", error.localizedDescription);
+        //在尾部记录信息
+         [characteristicValueDic setValue:error.localizedDescription
+                                   forKey:characteristic.UUID.description];
         return;
     }
     
@@ -115,8 +217,8 @@
     if ([stringFromData isEqualToString:@"EOM"])
     {
         NSLog(@"the characteristic text is END");
-        //        [peripheral setNotifyValue:NO forCharacteristic:characteristic];
-        //        [self.centralMgr cancelPeripheralConnection:peripheral];
+        //[peripheral setNotifyValue:NO forCharacteristic:characteristic];
+        //[self.centralMgr cancelPeripheralConnection:peripheral];
     }
     
     for (NSMutableDictionary *dic in self.arrayServices)
@@ -125,7 +227,8 @@
         if ([service isEqual:characteristic.service.UUID.description])
         {
             NSLog(@"characteristic.description : %@", characteristic.UUID.description);
-            [dic setValue:characteristic.value forKey:characteristic.UUID.description];
+            [dic setValue:characteristic.value.description forKey:characteristic.UUID.description];
+            [characteristicValueDic setValue:characteristic.value forKey:characteristic.UUID.description];
         }
     }
 }

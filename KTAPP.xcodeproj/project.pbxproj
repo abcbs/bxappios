@@ -1796,8 +1796,8 @@
 		848058171B39AEEF005817D7 /* CommonController */ = {
 			isa = PBXGroup;
 			children = (
-				84C4A3521B503E8A00029E19 /* BSUITableViewCommonController.h */,
 				8476A0401B4BAC8C00DB2CF0 /* BSUICommonController.h */,
+				8474DEB41B3F7D0600D9DE36 /* BSUICommonController.m */,
 				848058181B39AEEF005817D7 /* BSTableListProtocol.h */,
 				848058191B39AEEF005817D7 /* BSTableViewRefreshController.h */,
 				8480581A1B39AEEF005817D7 /* BSTableViewRefreshController.m */,
@@ -1809,7 +1809,7 @@
 				847076701B3AB21300F28180 /* UIViewController+BSTableObject.m */,
 				84C06D991B3AF3BA000BB45C /* BSUITableViewInitRuntimeController.h */,
 				84C06D9A1B3AF3BA000BB45C /* BSUITableViewInitRuntimeController.m */,
-				8474DEB41B3F7D0600D9DE36 /* BSUICommonController.m */,
+				84C4A3521B503E8A00029E19 /* BSUITableViewCommonController.h */,
 				844A32021B4032790045CA6C /* BSUITableViewCommonController.m */,
 				8460AE781B42569300022280 /* BSTableViewCellData.h */,
 				8460AE791B42569300022280 /* BSTableViewCellData.m */,
