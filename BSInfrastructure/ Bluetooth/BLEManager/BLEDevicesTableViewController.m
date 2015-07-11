@@ -82,9 +82,17 @@
             name=p.name ;
         }
         cell.textLabel.text=name;
-        cell.detailTextLabel.text= [[ble.rssi stringValue]
-                                    stringByAppendingFormat:@"\t连接状态:\t%@",state ];
-        
+        if (ble!=nil&&ble.rssi) {
+            if([ble.rssi isKindOfClass:[NSNumber class]]){
+            cell.detailTextLabel.text= [[ble.rssi stringValue]
+                                        stringByAppendingFormat:@"\t连接状态:\t%@",state ];
+            }else if([ble.rssi isKindOfClass:[NSArray class]]){
+                //NSArray *arrayRssi=(NSArray *)ble.rssi;
+                cell.detailTextLabel.text= [NSString
+                                             stringWithFormat:@"\t连接状态:\t%@",state  ];
+            }
+        }
+          
     }
     return cell;
 }

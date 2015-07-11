@@ -32,7 +32,7 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated{
-    NSLog(@"BSUICommonController viewDidAppear 对象的视图已经加入到窗口时调用");
+    NSLog(@"BSUICommonController viewDidAppear,%@",self.description);
 
 }
 
