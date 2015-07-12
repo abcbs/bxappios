@@ -53,7 +53,7 @@
  *头部状态栏颜色设置
  */
 +(void)navigationHeader:(UINavigationController *)navigationController{
-    //[navigationController.navigationBar setBarStyle:UIBarStyleBlack];
+    [navigationController.navigationBar setBarStyle:UIBarStyleBlack];
     [navigationController.navigationBar setBackgroundColor
      :[UIColor redColor]];
 }

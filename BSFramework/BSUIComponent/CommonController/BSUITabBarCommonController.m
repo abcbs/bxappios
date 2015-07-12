@@ -18,6 +18,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //
+    id<UITabBarControllerDelegate> tabBardDelegate=self;
+    self.delegate = tabBardDelegate ;
+    
     if (self.navigationController) {
         //iOS有默认导航栏，使用固有的导航栏
         /*
@@ -27,11 +31,13 @@
         */
     }else{
         //没有导航栏，使用Button完成
-        [BSUIComponentView initNarHeaderWithIndexView:self                                           title:self.title];
+        [BSUIComponentView initNarHeaderWithIndexView:self
+                                                title:self.title];
         
     }
     //设置导航栏颜色
     [BSUIComponentView navigationHeader:self.navigationController];
+
 
 }
 

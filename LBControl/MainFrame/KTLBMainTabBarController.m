@@ -17,11 +17,77 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //NSArray *controllers=self.viewControllers;
-    //NSArray *views= self.view.subviews;
-    //[self hideTabBar];
+    [self hideTabBar];
     
 }
+
+- (void)setViewControllers:(NSArray *)viewControllers animated:(BOOL)animated{
+    
+}
+/**
+ *控制哪些 ViewController 的标签栏能被点击
+ */
+- ( BOOL )tabBarController:( UITabBarController *)tabBarController shouldSelectViewController :( UIViewController *)viewController{
+    NSLog(@"KTLBMainTabBarController tabBarController:shouldSelectViewController");
+    
+    return YES;
+    
+}
+
+// 选中哪个标签栏
+- ( void )tabBarController:( UITabBarController *)tabBarController didSelectViewController :( UIViewController *)viewController{
+    
+    NSLog(@"KTLBMainTabBarController tabBarController:didSelectViewController");
+
+    
+}
+/*
+ *More view controller 编辑
+ */
+- ( void )tabBarController:( UITabBarController *)tabBarController
+didEndCustomizingViewControllers :( NSArray *)viewControllers
+                   changed:( BOOL )changed{
+    
+    NSLog(@"KTLBMainTabBarController tabBarController:didEndCustomizingViewControllers:changed");
+
+    
+}
+
+// More view controller 将要开始编辑
+- ( void )tabBarController:( UITabBarController *)tabBarController willBeginCustomizingViewControllers :( NSArray *)viewControllers{
+    NSLog(@"KTLBMainTabBarController tabBarController:willBeginCustomizingViewControllers");
+
+}
+
+// More view controller 将要结束编辑
+
+- ( void )tabBarController:( UITabBarController *)tabBarController willEndCustomizingViewControllers :( NSArray *)viewControllers changed:( BOOL )changed{
+    NSLog(@"KTLBMainTabBarController tabBarController:willEndCustomizingViewControllers:changed");
+
+}
+
+- (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item{
+    NSLog(@"KTLBMainTabBarController tabBar:didSelectItem");
+
+}
+
+- (void)tabBar:(UITabBar *)tabBar willBeginCustomizingItems:(NSArray *)items{
+    
+}
+- (void)tabBar:(UITabBar *)tabBar didBeginCustomizingItems:(NSArray *)items{
+    
+}
+- (void)tabBar:(UITabBar *)tabBar willEndCustomizingItems:(NSArray *)items changed:(BOOL)changed{
+    
+    
+}
+/*
+- (void)tabBar:(UITabBar *)tabBar didEndCustomizingItems:(NSArray *)items changed:(BOOL)changed{
+    
+}
+*/
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -36,16 +102,8 @@
 
 
 - (void)hideTabBar {
-    if (self.tabBar.hidden == YES) {
-        return;
-    }
-    UIView *contentView;
-    if ( [[self.view.subviews objectAtIndex:0] isKindOfClass:[UITabBar class]] )
-        contentView = [self.view.subviews objectAtIndex:1];
-    else
-        contentView = [self.view.subviews objectAtIndex:0];
-    contentView.frame = CGRectMake(contentView.bounds.origin.x,  contentView.bounds.origin.y,  contentView.bounds.size.width, contentView.bounds.size.height + self.tabBar.frame.size.height);
-    self.tabBar.hidden = YES;
+    
+    self.tabBar.hidden = NO;
     
 }
 

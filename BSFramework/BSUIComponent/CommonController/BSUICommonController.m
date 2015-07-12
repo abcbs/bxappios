@@ -29,7 +29,6 @@
     }
         //设置导航栏颜色
     [BSUIComponentView navigationHeader:self.navigationController];
-    
 }
 
 
@@ -61,4 +60,5 @@
 -(void)navigating:(BSTableContentObject*)bsContentObject{
     [BSContentObjectNavigation navigatingControllWithStorybord:self       bsContentObject:bsContentObject];
 }
+
 @end

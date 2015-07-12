@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "BSUIFrameworkHeader.h"
 
-@interface KTLBMainTabBarController : BSUITabBarCommonController<UITabBarDelegate>
+@interface KTLBMainTabBarController : BSUITabBarCommonController
 
 
 @end
