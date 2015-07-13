@@ -120,6 +120,10 @@
                                                         <action selector="chooseHeaderImages:" destination="Hax-fJ-WOk" eventType="touchUpInside" id="eb9-a9-Snn"/>
                                                     </connections>
                                                 </button>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dEp-cU-b9n" userLabel="头像展现">
+                                                    <rect key="frame" x="122" y="8" width="95" height="90"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </view>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -143,16 +147,16 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="详细介绍" id="hja-Cg-lFU">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" rowHeight="55" id="XLH-0P-idW">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" rowHeight="62" id="XLH-0P-idW">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XLH-0P-idW" id="gbu-qB-vx7">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" indicatorStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="XXz-IP-hHH">
-                                                    <rect key="frame" x="8" y="4" width="320" height="46"/>
+                                                    <rect key="frame" x="0.0" y="-3" width="320" height="41"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
                                                 </textView>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -163,8 +167,21 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jhv-pw-ZaW">
-                                                    <rect key="frame" x="15" y="21" width="75" height="30"/>
-                                                    <state key="normal" title="多图片展现">
+                                                    <rect key="frame" x="8" y="0.0" width="60" height="30"/>
+                                                    <state key="normal" title="产品图片">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="pickImags:" destination="Hax-fJ-WOk" eventType="touchUpInside" id="MRT-rw-gso"/>
+                                                    </connections>
+                                                </button>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vgv-P3-dvw">
+                                                    <rect key="frame" x="150" y="0.0" width="160" height="50"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </view>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lKL-BQ-qeb">
+                                                    <rect key="frame" x="8" y="20" width="60" height="30"/>
+                                                    <state key="normal" title="图片预览">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                 </button>
@@ -191,6 +208,10 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="bleName" destination="aqx-gf-Quk" id="hUc-Zn-FoK"/>
+                        <outlet property="detailInfoTextField" destination="XXz-IP-hHH" id="80W-hv-ud3"/>
+                        <outlet property="headImage" destination="dEp-cU-b9n" id="b9W-o2-Ej1"/>
+                        <outlet property="previewImages" destination="lKL-BQ-qeb" id="fIE-PN-KdV"/>
+                        <outlet property="signName" destination="6oz-Ie-GzW" id="cOl-ke-dt5"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yzk-Jh-Uiy" userLabel="First Responder" sceneMemberID="firstResponder"/>

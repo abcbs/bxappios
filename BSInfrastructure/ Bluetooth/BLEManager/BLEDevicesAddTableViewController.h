@@ -16,8 +16,20 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *bleName;
 
+@property (weak, nonatomic) IBOutlet UIView *headImage;
+
+@property (weak, nonatomic) IBOutlet UITextView *signName;
+
 - (IBAction)chooseHeaderImages:(id)sender;
 
 - (IBAction)saveBLEInfo:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UITextView *detailInfoTextField;
+
+
+- (IBAction)pickImags:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UIButton *previewImages;
+
 
 @end
