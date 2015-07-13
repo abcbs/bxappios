@@ -73,4 +73,12 @@
 
 +(BSUIBarButtonItem *)okBarButtonItem:(id<NavigationProcess>) navigationProcess  target:(UIViewController *)target title:(NSString *)title image:(NSString *)image;
 
+/**
+ *默认TabBar初始化方法
+ */
++(void)initTabBarWithDefault:(UITabBarController *)tabBarController;
+
++(void)changeTabBarWithNotification:(UIViewController *)uiViewController addedInfo:(NSString *)info;
+
+
 @end

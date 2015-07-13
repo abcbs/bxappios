@@ -68,12 +68,10 @@ didEndCustomizingViewControllers :( NSArray *)viewControllers
 
 - (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item{
     NSLog(@"KTLBMainTabBarController tabBar:didSelectItem");
-
-}
-
-- (void)tabBar:(UITabBar *)tabBar willBeginCustomizingItems:(NSArray *)items{
+    tabBar.tintColor=[BSUIComponentView  navigationColor];
     
 }
+
 - (void)tabBar:(UITabBar *)tabBar didBeginCustomizingItems:(NSArray *)items{
     
 }
@@ -81,12 +79,23 @@ didEndCustomizingViewControllers :( NSArray *)viewControllers
     
     
 }
-/*
+
 - (void)tabBar:(UITabBar *)tabBar didEndCustomizingItems:(NSArray *)items changed:(BOOL)changed{
     
 }
-*/
 
+- (void)tabBar:(UITabBar *)tabBar willBeginCustomizingItems:(NSArray *)items {
+   
+    
+    UIView *l2 = [self.view.subviews objectAtIndex:1];
+    UINavigationBar *l3_0=[l2.subviews objectAtIndex:0];
+    //l3_0代表 configure UINavigationBar
+    [l3_0 setBarStyle:UIBarStyleBlack];
+    UINavigationItem *rightButton=(UINavigationItem *)[l3_0.subviews objectAtIndex:2];
+    //rightButton代表 configure UINavigationBar右侧按钮
+    rightButton.title=@"完成";
+    
+}
 
 
 - (void)didReceiveMemoryWarning {

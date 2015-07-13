@@ -27,7 +27,7 @@
         
     }
     [BSUIComponentView navigationHeader:self.navigationController];
-    
+    [BSUIComponentView changeTabBarWithNotification:self addedInfo:nil];
     
 }
 
@@ -36,6 +36,14 @@
 
 }
 
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    if ((self = [super initWithCoder:aDecoder]))
+    {
+        NSLog(@"init initWithCoder%@",self.description);
+    }
+    return self;
+}
 - (void)backClick{
     [self dismissViewControllerAnimated:YES completion:nil];
 }

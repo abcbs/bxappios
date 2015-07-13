@@ -14,7 +14,10 @@
 #define CONFIRM_TITLE @"错误提示"
 #define CONFIRM_BUTTON_NAME @"确定"
 
-@interface BSUIComponentView ()
+UITabBarController * rootTabBarController;
+
+@interface BSUIComponentView (){
+    }
 
 @property (strong,nonatomic) UIViewController *rootUIViewController;
 
@@ -300,6 +303,44 @@
     [headerView setBackgroundColor:[UIColor colorWithRed:0.79 green:0.12 blue:0 alpha:0.90]];
     
     return headerView;
+}
+
+/**
+ *默认TabBar初始化方法
+ */
++(void)initTabBarWithDefault:(UITabBarController *)tabBarController{
+    //设置tabBar的选中颜色
+    tabBarController.tabBar.tintColor=[BSUIComponentView  navigationColor];
+    //修改more的风格
+    tabBarController.moreNavigationController.navigationBar.barStyle=UIBarStyleBlack;
+    tabBarController.moreNavigationController.navigationBar.backgroundColor=[BSUIComponentView  navigationColor];
+    rootTabBarController=tabBarController;
+}
+
++(void)changeTabBarWithNotification:(UIViewController *)uiViewController addedInfo:(NSString *)info{
+    UITabBar *bar=rootTabBarController.tabBar;
+    UIBarItem *item=bar.items[0];
+    if (info) {
+        NSString *name=[[NSString stringWithString:item.title]stringByAppendingString:info];
+        [BSUIComponentView changeTabMoreWithTitle:name withVC:uiViewController];
+    }
+
+}
+
+
++(void)changeTabMoreWithTitle:(NSString*) title withVC:(UIViewController*)vc{
+    if(vc.tabBarController){
+        if(vc.tabBarController.moreNavigationController){
+            UITabBar *tb = vc.tabBarController.moreNavigationController.tabBarController.tabBar;
+            UIView *tbb=[[tb subviews] lastObject];
+            
+            UIView *v=[[tbb subviews]lastObject];
+        }else{
+            NSLog(@"传入的UIViewController 必须含有tabBarController与moreNavigationController");
+        }
+    }else{
+        NSLog(@"传入的UIViewController 必须含有tabBarController与moreNavigationController");
+    }
 }
 
 @end

@@ -19,8 +19,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     //
-    id<UITabBarControllerDelegate> tabBardDelegate=self;
-    self.delegate = tabBardDelegate ;
+    //id<UITabBarControllerDelegate> tabBardDelegate=self;
+    //self.delegate = tabBardDelegate ;
     
     if (self.navigationController) {
         //iOS有默认导航栏，使用固有的导航栏
@@ -41,6 +41,14 @@
 
 }
 
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    if ((self = [super initWithCoder:aDecoder]))
+    {
+        NSLog(@"init initWithCoder%@",self.description);
+    }
+    return self;
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -48,7 +56,7 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated{
-    NSLog(@"BSUITabBarCommonController viewDidAppear 对象的视图已经加入到窗口时调用");
+    NSLog(@"viewDidAppear\t%@",self.description);
     
 }
 - (void)backClick{

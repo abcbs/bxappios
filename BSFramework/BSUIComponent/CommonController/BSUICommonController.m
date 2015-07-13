@@ -27,16 +27,26 @@
         [BSUIComponentView initNarHeaderWithDefault:self title: self.title];
 
     }
-        //设置导航栏颜色
+    //设置导航栏颜色
     [BSUIComponentView navigationHeader:self.navigationController];
+    //设置Tab栏
+    [BSUIComponentView changeTabBarWithNotification:self addedInfo:nil];
 }
 
 
 - (void)viewDidAppear:(BOOL)animated{
 
-    NSLog(@"BSUICommonController viewDidAppear 对象的视图已经加入到窗口时调用,%@",self.description);
+    NSLog(@"viewDidAppear 对象的视图已经加入到窗口时调用,%@",self.description);
 }
 
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    if ((self = [super initWithCoder:aDecoder]))
+    {
+        NSLog(@"init initWithCoder%@",self.description);
+    }
+    return self;
+}
 
 - (void) viewDidUnload{
     

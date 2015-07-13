@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "BSUIFrameworkHeader.h"
 
-@interface BSUITabBarCommonController : UITabBarController<NavigationProcess,UITabBarControllerDelegate>
+@interface BSUITabBarCommonController : UITabBarController<NavigationProcess>
 
 - (void)backClick;
 - (void)doneClick;
