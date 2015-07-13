@@ -300,6 +300,14 @@
 		84820A601B285ECA0093B87B /* KTWaterDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84820A591B285ECA0093B87B /* KTWaterDetailsViewController.m */; };
 		84820A611B285ECA0093B87B /* KTWaterDetailsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84820A5A1B285ECA0093B87B /* KTWaterDetailsViewController.storyboard */; };
 		84820A641B285F320093B87B /* LBSendingWaterTableViewController..m in Sources */ = {isa = PBXBuildFile; fileRef = 84820A631B285F320093B87B /* LBSendingWaterTableViewController..m */; };
+		848463B11B53A94400568748 /* second_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 848463AD1B53A94400568748 /* second_normal.png */; };
+		848463B21B53A94400568748 /* second_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 848463AD1B53A94400568748 /* second_normal.png */; };
+		848463B31B53A94400568748 /* second_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 848463AE1B53A94400568748 /* second_normal@2x.png */; };
+		848463B41B53A94400568748 /* second_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 848463AE1B53A94400568748 /* second_normal@2x.png */; };
+		848463B51B53A94400568748 /* second_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 848463AF1B53A94400568748 /* second_selected.png */; };
+		848463B61B53A94400568748 /* second_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 848463AF1B53A94400568748 /* second_selected.png */; };
+		848463B71B53A94400568748 /* second_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 848463B01B53A94400568748 /* second_selected@2x.png */; };
+		848463B81B53A94400568748 /* second_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 848463B01B53A94400568748 /* second_selected@2x.png */; };
 		8487F1851B3005C100F0F7B2 /* KTInformationConfViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8487F1801B3005C100F0F7B2 /* KTInformationConfViewController.m */; };
 		8487F1861B3005C100F0F7B2 /* KTInformationConfViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8487F1811B3005C100F0F7B2 /* KTInformationConfViewController.storyboard */; };
 		8487F1871B3005C100F0F7B2 /* KTOnlinePayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8487F1831B3005C100F0F7B2 /* KTOnlinePayViewController.m */; };
@@ -914,6 +922,10 @@
 		84820A5A1B285ECA0093B87B /* KTWaterDetailsViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = KTWaterDetailsViewController.storyboard; sourceTree = "<group>"; };
 		84820A621B285F320093B87B /* LBSendingWaterTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBSendingWaterTableViewController.h; sourceTree = "<group>"; };
 		84820A631B285F320093B87B /* LBSendingWaterTableViewController..m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBSendingWaterTableViewController..m; sourceTree = "<group>"; };
+		848463AD1B53A94400568748 /* second_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second_normal.png; sourceTree = "<group>"; };
+		848463AE1B53A94400568748 /* second_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second_normal@2x.png"; sourceTree = "<group>"; };
+		848463AF1B53A94400568748 /* second_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second_selected.png; sourceTree = "<group>"; };
+		848463B01B53A94400568748 /* second_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second_selected@2x.png"; sourceTree = "<group>"; };
 		8487F17F1B3005C100F0F7B2 /* KTInformationConfViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTInformationConfViewController.h; sourceTree = "<group>"; };
 		8487F1801B3005C100F0F7B2 /* KTInformationConfViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTInformationConfViewController.m; sourceTree = "<group>"; };
 		8487F1811B3005C100F0F7B2 /* KTInformationConfViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = KTInformationConfViewController.storyboard; sourceTree = "<group>"; };
@@ -1348,6 +1360,7 @@
 		8442682C1B36C05F006E7F7D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				848463AC1B53A94400568748 /* TabBarImage */,
 				8442682D1B36C05F006E7F7D /* 个人设置 */,
 				844268521B36C05F006E7F7D /* 我的钱包 */,
 				844268671B36C05F006E7F7D /* 登录注册 */,
@@ -1821,6 +1834,17 @@
 				8460AE821B426E4C00022280 /* BSContentObjectNavigation.m */,
 			);
 			path = CommonController;
+			sourceTree = "<group>";
+		};
+		848463AC1B53A94400568748 /* TabBarImage */ = {
+			isa = PBXGroup;
+			children = (
+				848463AD1B53A94400568748 /* second_normal.png */,
+				848463AE1B53A94400568748 /* second_normal@2x.png */,
+				848463AF1B53A94400568748 /* second_selected.png */,
+				848463B01B53A94400568748 /* second_selected@2x.png */,
+			);
+			path = TabBarImage;
 			sourceTree = "<group>";
 		};
 		84BA96411B2829D500388B58 /* LBModels */ = {
@@ -2617,8 +2641,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				848463B21B53A94400568748 /* second_normal.png in Resources */,
+				848463B41B53A94400568748 /* second_normal@2x.png in Resources */,
 				84C49FAC1B4FFEFB00029E19 /* BLEIFTTUpHoldMain.storyboard in Resources */,
+				848463B81B53A94400568748 /* second_selected@2x.png in Resources */,
 				84C4A3541B504CDF00029E19 /* im_search.png in Resources */,
+				848463B61B53A94400568748 /* second_selected.png in Resources */,
 				84ECE4421B4FC7C2003D1AEE /* BSUIFiveColTableViewCell.xib in Resources */,
 				84ECE4411B4FC7A5003D1AEE /* ADTImagePlayer.xib in Resources */,
 				84ECE4401B4FC792003D1AEE /* BSUISingleImageTableViewCell.xib in Resources */,
@@ -2662,11 +2690,13 @@
 				844268F51B36C05F006E7F7D /* RadioButton-Unselected.png in Resources */,
 				847432E01B2A8CE500B030C4 /* OrderDetailOneCell.xib in Resources */,
 				844268B11B36C05F006E7F7D /* a6.png in Resources */,
+				848463B51B53A94400568748 /* second_selected.png in Resources */,
 				847432FA1B2A8E5500B030C4 /* AlreadyPayment.xib in Resources */,
 				8442691B1B36C05F006E7F7D /* tulvse.png in Resources */,
 				844268F21B36C05F006E7F7D /* radio_unchecked.png in Resources */,
 				847432DE1B2A8CE500B030C4 /* orderDetailCell.xib in Resources */,
 				844268D01B36C05F006E7F7D /* ddlb_01.png in Resources */,
+				848463B71B53A94400568748 /* second_selected@2x.png in Resources */,
 				844268E31B36C05F006E7F7D /* 4个人设置-3登录.jpg in Resources */,
 				8442690E1B36C05F006E7F7D /* im_reservation_baojie.png in Resources */,
 				844268AC1B36C05F006E7F7D /* a10.png in Resources */,
@@ -2718,6 +2748,7 @@
 				844268B41B36C05F006E7F7D /* a9.png in Resources */,
 				844269141B36C05F006E7F7D /* pp.png in Resources */,
 				8487F1881B3005C100F0F7B2 /* KTOnlinePayViewController.storyboard in Resources */,
+				848463B31B53A94400568748 /* second_normal@2x.png in Resources */,
 				8442690A1B36C05F006E7F7D /* im_information_you.png in Resources */,
 				844269181B36C05F006E7F7D /* tukuaihuang.png in Resources */,
 				844268BB1B36C05F006E7F7D /* f-1.png in Resources */,
@@ -2750,6 +2781,7 @@
 				844269121B36C05F006E7F7D /* logo00.png in Resources */,
 				843DA8831B21D56300924AE6 /* ShareSDKLocalizable.strings in Resources */,
 				8442690C1B36C05F006E7F7D /* im_paihao.png in Resources */,
+				848463B11B53A94400568748 /* second_normal.png in Resources */,
 				8442690B1B36C05F006E7F7D /* im_kaika.png in Resources */,
 				844269161B36C05F006E7F7D /* tuhongse.png in Resources */,
 				844268C91B36C05F006E7F7D /* woyaokaidian.png in Resources */,

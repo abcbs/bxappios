@@ -68,8 +68,7 @@ didEndCustomizingViewControllers :( NSArray *)viewControllers
 
 - (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item{
     NSLog(@"KTLBMainTabBarController tabBar:didSelectItem");
-    tabBar.tintColor=[BSUIComponentView  navigationColor];
-    
+     tabBar.tintColor=[BSUIComponentView  navigationColor];
 }
 
 - (void)tabBar:(UITabBar *)tabBar didBeginCustomizingItems:(NSArray *)items{
@@ -84,29 +83,19 @@ didEndCustomizingViewControllers :( NSArray *)viewControllers
     
 }
 
-- (void)tabBar:(UITabBar *)tabBar willBeginCustomizingItems:(NSArray *)items {
-   
+- (void)tabBarController:(UITabBarController *)tabBarController
+{
     
-    UIView *l2 = [self.view.subviews objectAtIndex:1];
-    UINavigationBar *l3_0=[l2.subviews objectAtIndex:0];
-    //l3_0代表 configure UINavigationBar
-    [l3_0 setBarStyle:UIBarStyleBlack];
-    UINavigationItem *rightButton=(UINavigationItem *)[l3_0.subviews objectAtIndex:2];
-    //rightButton代表 configure UINavigationBar右侧按钮
-    rightButton.title=@"完成";
-    
+
 }
-
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
 - (void)viewDidAppear:(BOOL)animated{
-    
-    NSLog(@"KTLBMainTabBarController viewDidAppear 对象的视图已经加入到窗口时调用");
-    //[self hideTabBar];
+     NSLog(@"KTLBMainTabBarController viewDidAppear 对象的视图已经加入到窗口时调用");
+    [self hideTabBar];
 }
 
 

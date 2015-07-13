@@ -324,23 +324,32 @@ UITabBarController * rootTabBarController;
         NSString *name=[[NSString stringWithString:item.title]stringByAppendingString:info];
         [BSUIComponentView changeTabMoreWithTitle:name withVC:uiViewController];
     }
+   // [BSUIComponentView changeTabMoreWithTitle:@"测试" withVC:uiViewController];
 
 }
 
 
 +(void)changeTabMoreWithTitle:(NSString*) title withVC:(UIViewController*)vc{
+    
     if(vc.tabBarController){
         if(vc.tabBarController.moreNavigationController){
             UITabBar *tb = vc.tabBarController.moreNavigationController.tabBarController.tabBar;
-            UIView *tbb=[[tb subviews] lastObject];
+            UIBarItem *selectItem=tb.selectedItem;
             
-            UIView *v=[[tbb subviews]lastObject];
+            //selectItem.title  = title;
+            selectItem.image = [UIImage imageNamed:@"second_normal"];
+            //1.创建图片
+            UIImage *selectmage = [UIImage imageNamed:@"second_selected"];
+            //2. 告诉系统原样显示
+            selectmage = [selectmage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+            
         }else{
             NSLog(@"传入的UIViewController 必须含有tabBarController与moreNavigationController");
         }
     }else{
         NSLog(@"传入的UIViewController 必须含有tabBarController与moreNavigationController");
     }
+    
 }
 
 @end
