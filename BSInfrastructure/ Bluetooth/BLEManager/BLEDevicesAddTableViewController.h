@@ -29,7 +29,8 @@
 
 - (IBAction)pickImags:(id)sender;
 
-@property (weak, nonatomic) IBOutlet UIButton *previewImages;
+- (IBAction)previewImages:(id)sender;
+
 
 
 @end

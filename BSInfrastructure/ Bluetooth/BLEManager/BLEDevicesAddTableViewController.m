@@ -80,9 +80,8 @@
 - (IBAction)pickImags:(id)sender {
 }
 
-
-
-
-- (IBAction)pickImags:(id)sender {
+- (IBAction)previewImages:(id)sender {
 }
+
+
 @end

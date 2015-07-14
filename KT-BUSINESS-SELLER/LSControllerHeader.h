@@ -9,7 +9,6 @@
 #ifndef KTAPP_LSControllerHeader_h
 #define KTAPP_LSControllerHeader_h
 
-#import "OrderManagerViewController.h"
-#import "ProductManagerViewController.h"
+#import "LSMainIndexViewController.h"
 
 #endif

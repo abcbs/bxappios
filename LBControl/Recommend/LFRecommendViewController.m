@@ -74,4 +74,6 @@
  */
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     return BSMarginY(4);
-}@end
+}
+
+@end

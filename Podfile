@@ -48,7 +48,7 @@ target 'KT-MODEL-MODULE' do
 end
 
 
-target 'KT-RESOURCES' do
+target 'KT-LS-Controller' do
         pod 'SDWebImage'
         pod 'AFNetworking'
         pod 'MJExtension'
