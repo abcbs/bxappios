@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="931-wc-C3f">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--商品维护-->
+        <scene sceneID="V3b-go-jQs">
+            <objects>
+                <tableViewController storyboardIdentifier="LBProductMaintainViewController" title="商品维护" id="yrG-Wu-VA4" customClass="LBProductMaintainViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="h4f-AS-EYS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Xzz-jg-bzl">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xzz-jg-bzl" id="nXh-we-P1g">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="yrG-Wu-VA4" id="fiY-HM-r3x"/>
+                            <outlet property="delegate" destination="yrG-Wu-VA4" id="wMv-Kx-PPQ"/>
+                        </connections>
+                    </tableView>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1tH-xU-67S" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="842" y="-299"/>
+        </scene>
+        <!--商家活动公告-->
+        <scene sceneID="EAB-jG-ZOn">
+            <objects>
+                <tableViewController storyboardIdentifier="LBBusinessActivityTableViewController" title="商家活动公告" id="ORo-1c-rXt" userLabel="商家活动公告" customClass="LBBusinessActivityTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Lig-Yg-EQQ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="wQp-3T-1Dg">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wQp-3T-1Dg" id="tMA-70-q4p">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ORo-1c-rXt" id="sQe-cE-dYI"/>
+                            <outlet property="delegate" destination="ORo-1c-rXt" id="PE4-tA-Tg0"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="Jwe-Kk-TJZ"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zIS-dh-omX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1062" y="-533"/>
+        </scene>
+        <!--商品管理TABBAR-->
+        <scene sceneID="vCZ-ro-Dde">
+            <objects>
+                <tabBarController title="商品管理页" id="931-wc-C3f" userLabel="商品管理TABBAR" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="9Ic-D2-cRS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="iid-gH-CKX" kind="relationship" relationship="viewControllers" id="ViF-ef-0r8"/>
+                        <segue destination="LRz-c8-MW1" kind="relationship" relationship="viewControllers" id="iiO-84-N6F"/>
+                        <segue destination="78U-od-WFz" kind="relationship" relationship="viewControllers" id="3Tf-By-xQy"/>
+                        <segue destination="wmU-w2-ScX" kind="relationship" relationship="viewControllers" id="kVa-uV-SVX"/>
+                        <segue destination="io3-8V-yA2" kind="relationship" relationship="viewControllers" id="t3h-Ge-QPL"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S0h-8h-snO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-634" y="110"/>
+        </scene>
+        <!--我的商品-->
+        <scene sceneID="ye1-bB-K5C">
+            <objects>
+                <tableViewController storyboardIdentifier="LBProductListTableViewController" title="我的商品" id="9hT-Y6-rhC" userLabel="我的商品" customClass="LBProductListTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="VVY-E7-8eD">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="bQG-LM-C5R">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bQG-LM-C5R" id="Ga3-EZ-5Yq">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="9hT-Y6-rhC" id="Eqw-Jg-Ygg"/>
+                            <outlet property="delegate" destination="9hT-Y6-rhC" id="44H-AS-kUv"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="YjJ-su-KT9"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wzc-nm-oYq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="382" y="-299"/>
+        </scene>
+        <!--商品上下架-->
+        <scene sceneID="rWO-hC-tRS">
+            <objects>
+                <tableViewController storyboardIdentifier="LBProductUpperLowerViewController" title="上下架管理" id="Dab-4j-4i2" userLabel="商品上下架" customClass="LBProductUpperLowerViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Tzk-c5-Bza">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="aBy-wE-OSt">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aBy-wE-OSt" id="K00-Kk-DEp">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Dab-4j-4i2" id="jOK-V1-ED1"/>
+                            <outlet property="delegate" destination="Dab-4j-4i2" id="Uqz-Qn-MZR"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="bC5-Kl-ILg"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8dN-ow-WxQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-13" y="979"/>
+        </scene>
+        <!--商品浏览-->
+        <scene sceneID="3rO-mH-amU">
+            <objects>
+                <tableViewController storyboardIdentifier="LBProductDetailTableViewController" title="商品浏览" id="L2a-dN-Hft" userLabel="商品浏览" customClass="LBProductDetailTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="aDB-Bh-3r5">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="e6Q-Qg-TOs">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="e6Q-Qg-TOs" id="oTj-g9-a79">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="L2a-dN-Hft" id="S8S-71-Dff"/>
+                            <outlet property="delegate" destination="L2a-dN-Hft" id="aoj-7x-JOk"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="n4w-cZ-I3D"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f6g-ev-bKh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="382" y="345"/>
+        </scene>
+        <!--广告促销-->
+        <scene sceneID="N3h-y1-BTl">
+            <objects>
+                <tableViewController storyboardIdentifier="LBProductADTableViewController" title="广告促销" id="J7w-mr-W84" userLabel="广告促销" customClass="LBProductADTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="bp5-oo-ajc">
+                        <rect key="frame" x="0.0" y="64" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="cFB-S5-ovI">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cFB-S5-ovI" id="Rgg-4G-iHx">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="J7w-mr-W84" id="lAu-Ub-wep"/>
+                            <outlet property="delegate" destination="J7w-mr-W84" id="OEM-E7-QTE"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="eba-kl-sLq"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="49R-GT-4pJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1310" y="973"/>
+        </scene>
+        <!--广告促销导航-->
+        <scene sceneID="9Zr-4u-k6q">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wmU-w2-ScX" userLabel="广告促销导航" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="广告促销" image="wdqzs" id="48H-mZ-syZ"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1xO-fq-2f4">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="J7w-mr-W84" kind="relationship" relationship="rootViewController" id="8qK-fv-IXa"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eEb-lP-uDz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-886" y="973"/>
+        </scene>
+        <!--上下架导航-->
+        <scene sceneID="P98-Te-boJ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="78U-od-WFz" userLabel="上下架导航" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="上下架" image="second_normal.png" id="VmQ-gu-zVM"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="maq-z5-5HG">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Dab-4j-4i2" kind="relationship" relationship="rootViewController" id="SFH-2v-Zy0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dCa-If-eWn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-465" y="973"/>
+        </scene>
+        <!--商品浏览导航-->
+        <scene sceneID="iWo-Tv-QRB">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LRz-c8-MW1" userLabel="商品浏览导航" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="商品浏览" image="second_selected.png" id="WLt-nQ-r3S"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="HGA-8b-L70">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="L2a-dN-Hft" kind="relationship" relationship="rootViewController" id="okb-9k-Z0J"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NDY-iq-VeU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-108" y="351"/>
+        </scene>
+        <!--商品管理导航-->
+        <scene sceneID="Roh-CG-qVz">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iid-gH-CKX" userLabel="商品管理导航" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="商品管理" image="first" id="f7K-aG-z1G"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Avz-XD-ylR">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9hT-Y6-rhC" kind="relationship" relationship="rootViewController" id="eeE-rX-2Lz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6ct-ar-y1G" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-108" y="-299"/>
+        </scene>
+        <!--商家活动公告导航-->
+        <scene sceneID="ZE4-CQ-RHa">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="io3-8V-yA2" userLabel="商家活动公告导航" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="活动公告" image="third_normal.png" id="sPF-ZI-0Kx"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="w2s-Zg-ABm">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ORo-1c-rXt" kind="relationship" relationship="rootViewController" id="ZUF-2S-4AH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="34C-9h-yJ5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-586" y="-533"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="first" width="30" height="30"/>
+        <image name="second_normal.png" width="30" height="30"/>
+        <image name="second_selected.png" width="30" height="30"/>
+        <image name="third_normal.png" width="30" height="30"/>
+        <image name="wdqzs" width="29" height="29"/>
+    </resources>
+</document>

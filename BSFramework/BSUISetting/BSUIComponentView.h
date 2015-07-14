@@ -73,6 +73,10 @@
 
 +(BSUIBarButtonItem *)okBarButtonItem:(id<NavigationProcess>) navigationProcess  target:(UIViewController *)target title:(NSString *)title image:(NSString *)image;
 
++(void)initTableNarHeaderWithDefault:(BSUICommonController *)currentController
+                           tableView:(UITableView *)tableView
+                               title:(NSString *)title;
+
 /**
  *默认TabBar初始化方法
  */

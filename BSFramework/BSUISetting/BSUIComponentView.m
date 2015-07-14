@@ -132,6 +132,50 @@ UITabBarController * rootTabBarController;
    
 }
 
++(UIView *)headerViewNoNar{
+    UIView *headerView=[[UIView alloc] initWithFrame:
+            BSRectMake( NAVIGATIONBAR_X, NAVIGATIONBAR_Y,NAVIGATIONBAR_WIDTH, NAVIGATIONBAR_HEIGHT)];
+    
+    //[headerView setBackgroundColor:[UIColor colorWithRed:0.79 green:0.12 blue:0 alpha:0.90]];
+    
+    return headerView;
+}
+
+/**
+ *带有表头，以普通View代替系统提供的导航栏
+ */
++(void)initTableNarHeaderWithDefault:(BSUICommonController *)currentController
+                           tableView:(UITableView *)tableView
+                          title:(NSString *)title //定义块类型
+{
+    
+    UIView *headerView=[BSUIComponentView headerViewNoNar];
+    if (currentController.navigationItem==nil) {
+        //currentController.navigationItem=[[UINavigationItem alloc]init];
+    }
+    /*
+     BSUIBlockButton *backButton = [BSUIComponentView backNavButton:currentController target:currentController
+     title:title image:nil];
+     
+     
+     [headerView addSubview:backButton];
+     */
+    UILabel *headNameLabel=[BSUIComponentView labelNav:title];
+    
+    
+    [headerView addSubview:headNameLabel];
+    
+    
+    BSUIBlockButton *okButton =[BSUIComponentView okNavButton:currentController target:currentController
+                                                        title:title image:nil];
+    
+    [headerView addSubview:okButton];
+    
+    [headerView setBackgroundColor:[BSUIComponentView navigationColor] ];
+    //tableView.contentInset = UIEdgeInsetsMake(100.0f, 0.0f, 0.0f, 0.0f);
+    [currentController.view addSubview:headerView];
+}
+
 /**
  *带有表头，以普通View代替系统提供的导航栏
  */
@@ -139,14 +183,17 @@ UITabBarController * rootTabBarController;
                           title:(NSString *)title //定义块类型
     {
     
-    UIView *headerView=[BSUIComponentView headerView];
-        
+    UIView *headerView=[BSUIComponentView headerViewNoNar];
+        if (currentController.navigationItem==nil) {
+            //currentController.navigationItem=[[UINavigationItem alloc]init];
+        }
+    /*
     BSUIBlockButton *backButton = [BSUIComponentView backNavButton:currentController target:currentController
         title:title image:nil];
 
         
     [headerView addSubview:backButton];
-    
+    */
     UILabel *headNameLabel=[BSUIComponentView labelNav:title];
     
    
@@ -156,9 +203,9 @@ UITabBarController * rootTabBarController;
    BSUIBlockButton *okButton =[BSUIComponentView okNavButton:currentController target:currentController
          title:title image:nil];
     
-        [headerView addSubview:okButton];
+    [headerView addSubview:okButton];
        
-        [headerView setBackgroundColor:[BSUIComponentView navigationColor] ];
+    [headerView setBackgroundColor:[BSUIComponentView navigationColor] ];
         
     [currentController.view addSubview:headerView];
 }
@@ -216,7 +263,7 @@ UITabBarController * rootTabBarController;
                             target:(UIViewController *)target
                             title:(NSString *)title image:(NSString *)image{
     BSUIBlockButton *backButton = [[BSUIBlockButton alloc]initWithFrame:BSRectMake(NAVIGATIONBAR_X+NAVIGATIONBAR_WIDTH*0.05,
-                                                                                   NAVIGATIONBAR_Y+STATUS_HEIGHT,NAVIGATIONBAR_HEIGHT/3, NAVIGATIONBAR_HEIGHT/3)
+                                                                                   NAVIGATIONBAR_Y+STATUS_HEIGHT+10,NAVIGATIONBAR_HEIGHT/3, NAVIGATIONBAR_HEIGHT/3)
                                    target:target
                                                                  action:@selector(backClick)];
     [backButton setBackgroundImage:[UIImage imageNamed:@"login-2.png"]
@@ -227,7 +274,7 @@ UITabBarController * rootTabBarController;
     
     //[backButton setBackgroundColor:[UIColor whiteColor]];
     [backButton setTintColor:[UIColor whiteColor]];
-    
+    //[backButton setTitle:title forState:UIControlStateNormal];
     return backButton;
     
 }
