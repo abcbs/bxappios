@@ -17,18 +17,16 @@
 
 @interface BusinessBaseDomail : NSObject
 
+//商家基本信息
 @property (retain,nonatomic) BusinessBase *businessBase;
 
+//用户支付工具
 @property (retain,nonatomic) UserPay *userPay;
 
-//主经营范围，废弃，使用productcatalogueid的第一个元素作为主经营范围
-@property (retain,nonatomic) ProductCatalogue *productCatalogue;
+//法人，有支付权限
+@property (retain,nonatomic) UserBase *artificial;
 
-@property (retain,nonatomic) UserBase *userBase;
-
-//经营范围分类
-@property (retain,nonatomic) NSMutableArray *productCatalogues;
-//冗余，或者说重要经营产品的产品分类
-//@property (retain,nonatomic) BusinessCatalogue  *businessCatalogue;
+//联系人，合伙人
+@property (strong,nonatomic) NSMutableArray *contractUsers;
 
 @end

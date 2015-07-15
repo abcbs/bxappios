@@ -10,4 +10,29 @@
 
 @implementation BusinessBaseDomail
 
+- (void)encodeWithCoder:(NSCoder *)aCoder
+{
+    
+    [aCoder encodeObject:_businessBase forKey:@"businessBase"];
+    
+    [aCoder encodeObject:_userPay forKey:@"userPay"];
+    
+    [aCoder encodeObject:_artificial forKey:@"artificial"];
+    
+    [aCoder encodeObject:_contractUsers forKey:@"contractUsers"];
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    _businessBase = [aDecoder decodeObjectForKey:@"businessBase"];
+    
+    _userPay = [aDecoder decodeObjectForKey:@"userPay"];
+   
+    _artificial = [aDecoder decodeObjectForKey:@"artificial"];
+   
+    _contractUsers = [aDecoder decodeObjectForKey:@"contractUsers"];
+    
+    return self;
+}
+
 @end

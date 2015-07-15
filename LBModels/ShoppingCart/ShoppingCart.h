@@ -18,10 +18,20 @@
 
 @property (nonatomic, assign) long id;
 
-@property (nonatomic, strong)NSString *sessionId;
+@property (nonatomic, strong) NSString *sessionId;
 
 @property (nonatomic, strong) NSNumber *currentCount;
 
+@property (nonatomic, assign) NSInteger  userBaseId;
+
+
+@property (nonatomic, assign) NSInteger count;
+
+@property (nonatomic, strong) NSString * isOrdered;
+
+@property (nonatomic, assign) NSInteger orderBaseid;
+
+@property (nonatomic, strong) NSString * status;
 
 +(void)addCart:(ShoppingCart * )shoppingCart
 blockArray:(void (^)(NSObject *response, NSError *error,ErrorMessage *errorMessage))block;

@@ -7,13 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
-@class ProductBase;
-@class BusinessProductAduit;
+@class BusinessProduct;
+@class BusinessProductComment;
 
 @interface BusinessProductDomail : NSObject
+//产品详细信息
+@property (retain,nonatomic) BusinessProduct *pusinessProduct;
 
-@property (retain,nonatomic) ProductBase *productBase;
-
-@property (retain,nonatomic) BusinessProductAduit *businessProductAduit;
+//产品评论信息
+@property (retain,nonatomic) BusinessProductComment *businessProductComment;
 
 @end

@@ -1,7 +1,7 @@
 //
 //  User.h
 //  APP-BS-MODEL
-//
+//  用户注册后，LoginUser ,User,即用户注册信息
 //  Created by admin on 15/6/4.
 //  Copyright (c) 2015年 admin. All rights reserved.
 //

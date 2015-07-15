@@ -14,6 +14,6 @@
 
 @property (nonatomic ,retain)NSString *sex;
 
-@property (assign,nonatomic) NSInteger userBaseId;
+@property (assign,nonatomic) long userBaseId;
 
 @end

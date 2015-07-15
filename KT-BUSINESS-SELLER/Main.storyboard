@@ -122,7 +122,7 @@
         <scene sceneID="hbi-On-oqY">
             <objects>
                 <navigationController title="金融服务" automaticallyAdjustsScrollViewInsets="NO" id="58d-4s-NyQ" userLabel="金融服务导航" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="金融服务" image="second" id="iSY-wO-IrA"/>
+                    <tabBarItem key="tabBarItem" title="金融服务" image="xysjh" id="iSY-wO-IrA"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="pnp-4h-G0X">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -177,8 +177,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="second" width="30" height="30"/>
         <image name="second_normal.png" width="30" height="30"/>
         <image name="second_selected.png" width="30" height="30"/>
+        <image name="xysjh" width="29" height="29"/>
     </resources>
 </document>

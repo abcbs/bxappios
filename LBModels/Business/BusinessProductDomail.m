@@ -10,4 +10,24 @@
 
 @implementation BusinessProductDomail
 
+- (void)encodeWithCoder:(NSCoder *)aCoder
+{
+    
+    [aCoder encodeObject:_pusinessProduct forKey:@"pusinessProduct"];
+     
+    [aCoder encodeObject:_businessProductComment
+                  forKey:@"businessProductComment"];
+   
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    
+    _pusinessProduct= [aDecoder decodeObjectForKey:@"pusinessProduct"];
+    
+    _businessProductComment= [aDecoder decodeObjectForKey:@"businessProductComment"];
+    
+    return self;
+}
+
 @end

@@ -18,7 +18,7 @@
 
 @property (retain,nonatomic) NSDate *startTime;
 
-@property (retain,nonatomic) NSDate *endtime;
+@property (retain,nonatomic) NSDate *endTime;
 //活动地点
 @property (retain,nonatomic) NSString * place;
 

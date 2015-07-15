@@ -18,7 +18,7 @@
 
 @property (assign,nonatomic) NSInteger productBaseId;
 
-@property (retain,nonatomic) NSString * username;
+@property (retain,nonatomic) NSString * userName;
 
 @property (assign,nonatomic) NSInteger userBaseId;
 

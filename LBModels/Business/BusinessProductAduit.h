@@ -1,7 +1,7 @@
 //
 //  BusinessProductAduit.h
 //  KTAPP
-//  商家商品审核
+//  商家商品审核,维护与监管
 //  Created by admin on 15/7/15.
 //  Copyright (c) 2015年 itcast. All rights reserved.
 //

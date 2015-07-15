@@ -9,16 +9,16 @@
 #import <Foundation/Foundation.h>
 #import "UserBase.h"
 #import "UserDetailed.h"
-#import "LoginUser.h"
+#import "User.h"
 
-@class UserBase;
+@class User;
 @class UserDetailed;
 @class LoginUser;
 
 @interface UserInfoDomain : NSObject
 
 
-@property (nonatomic, retain) UserBase *userBase;
+@property (nonatomic, retain) User *userBase;
 
 @property (nonatomic, retain) UserDetailed *userDetailed;
 

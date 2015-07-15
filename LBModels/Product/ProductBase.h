@@ -12,7 +12,7 @@
 @interface ProductBase : NSObject
 
 //id
-@property (assign,nonatomic) NSInteger id;
+@property (assign,nonatomic) long id;
 
 //商品名称
 @property (retain,nonatomic) NSString *name;

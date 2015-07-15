@@ -26,10 +26,19 @@
         cellClass:[BSUIImageTitleTableViewCell class]//TableViewCell实现
         storyboard:@"BLEIFTTUpHoldMain" bsContent:nil];
     
-
+    bsTable=[BSTableSection
+                             initWithHeaderVcClassContent:@"首页"//章节显示标题
+                             imageName:@"xy"//章节显示图标
+                             headerViewClass:nil//章节显示视图
+                             cellIdentifier:@"BSUIFiveColTableViewCell"//采用的TableViewCell
+                             cellClass:[BSUIFiveColTableViewCell class]//TableViewCell实现
+                             
+                             storyboard:@"BLEIFTTUpHoldMain"
+                             colCapatibilty:5//每个章节的row数量
+                             bsContent:nil];
     
     BSTableContentObject *bsnMagamer=[BSTableContentObject
-                                initWithContentObject:@"商品管理"
+                                initWithContentObject:@"管理"
                                 methodName:nil
                                 imageName:@"im_post.png"
                                 vcClass:@"BLEDevicesTableViewController"];
@@ -41,7 +50,7 @@
     
     
     bsnMagamer=[BSTableContentObject
-                                      initWithContentObject:@"广告促销"
+                                      initWithContentObject:@"促销"
                                       methodName:nil
                                       imageName:@"im_activity.png"
                                       vcClass:@"BLEDevicesTableViewController"];
@@ -51,7 +60,7 @@
     
     
     bsnMagamer=[BSTableContentObject
-                initWithContentObject:@"订单管理"
+                initWithContentObject:@"订单"
                 methodName:nil
                 imageName:@"ww.png"
                 vcClass:@"BLEDevicesTableViewController"];
@@ -61,7 +70,7 @@
     
     
     bsnMagamer=[BSTableContentObject
-                initWithContentObject:@"账务管理"
+                initWithContentObject:@"账务"
                 methodName:nil
                 imageName:@"im_paihao.png"
                 vcClass:@"BLEDevicesTableViewController"];
@@ -71,7 +80,7 @@
     
 
     bsnMagamer=[BSTableContentObject
-                initWithContentObject:@"报表管理"
+                initWithContentObject:@"报表"
                 methodName:nil
                 imageName:@"im_kaika.png"
                 vcClass:@"BLEDevicesTableViewController"];
@@ -92,7 +101,7 @@
  *改变行的高度（实现主个代理方法后 rowHeight 设定的高度无效）
  */
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return BSMarginY(160);
+    return BSMarginY(80);
 }
 
 /**

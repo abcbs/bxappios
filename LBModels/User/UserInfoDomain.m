@@ -10,4 +10,29 @@
 
 @implementation UserInfoDomain
 
+- (void)encodeWithCoder:(NSCoder *)aCoder
+{
+    
+    [aCoder encodeObject:_userBase forKey:@"userBase"];
+    
+    [aCoder encodeObject:_userDetailed forKey:@"userDetailed"];
+    
+    [aCoder encodeObject:_loginUser forKey:@"loginUser"];
+    
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    
+    _userBase = [aDecoder decodeObjectForKey:@"userBase"];
+    
+    _userDetailed = [aDecoder decodeObjectForKey:@"userDetailed"];
+    
+    _loginUser = [aDecoder decodeObjectForKey:@"loginUser"];
+
+    return self;
+}
+
+
+
 @end
