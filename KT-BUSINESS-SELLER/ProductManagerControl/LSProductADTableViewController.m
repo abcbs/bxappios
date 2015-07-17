@@ -1,18 +1,18 @@
 //
-//  LBProductMaintainViewController.m
+//  LSProductADTableViewController.m
 //  KTAPP
 //
 //  Created by admin on 15/7/14.
 //  Copyright (c) 2015年 itcast. All rights reserved.
 //
 
-#import "LBProductMaintainViewController.h"
+#import "LSProductADTableViewController.h"
 
-@interface LBProductMaintainViewController ()
+@interface LSProductADTableViewController ()
 
 @end
 
-@implementation LBProductMaintainViewController
+@implementation LSProductADTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

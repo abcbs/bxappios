@@ -1,5 +1,5 @@
 //
-//  LBProductUpperLowerViewController.h
+//  LSProductMaintainViewController.h
 //  KTAPP
 //
 //  Created by admin on 15/7/14.
@@ -8,6 +8,6 @@
 
 #import "BSUITableViewCommonController.h"
 
-@interface LBProductUpperLowerViewController : BSUITableViewCommonController
+@interface LSProductMaintainViewController : BSUITableViewCommonController
 
 @end

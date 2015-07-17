@@ -7,7 +7,7 @@
         <!--商品维护-->
         <scene sceneID="V3b-go-jQs">
             <objects>
-                <tableViewController storyboardIdentifier="LBProductMaintainViewController" title="商品维护" id="yrG-Wu-VA4" customClass="LBProductMaintainViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="LSProductMaintainViewController" title="商品维护" id="yrG-Wu-VA4" customClass="LSProductMaintainViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="h4f-AS-EYS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -34,7 +34,7 @@
         <!--商家活动公告-->
         <scene sceneID="EAB-jG-ZOn">
             <objects>
-                <tableViewController storyboardIdentifier="LBBusinessActivityTableViewController" title="商家活动公告" id="ORo-1c-rXt" userLabel="商家活动公告" customClass="LBBusinessActivityTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="LSBusinessActivityTableViewController" title="商家活动公告" id="ORo-1c-rXt" userLabel="商家活动公告" customClass="LSBusinessActivityTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Lig-Yg-EQQ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -85,7 +85,7 @@
         <!--我的商品-->
         <scene sceneID="ye1-bB-K5C">
             <objects>
-                <tableViewController storyboardIdentifier="LBProductListTableViewController" title="我的商品" id="9hT-Y6-rhC" userLabel="我的商品" customClass="LBProductListTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="LSProductListTableViewController" title="我的商品" id="9hT-Y6-rhC" userLabel="我的商品" customClass="LSProductListTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="VVY-E7-8eD">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -119,7 +119,7 @@
         <!--商品上下架-->
         <scene sceneID="rWO-hC-tRS">
             <objects>
-                <tableViewController storyboardIdentifier="LBProductUpperLowerViewController" title="上下架管理" id="Dab-4j-4i2" userLabel="商品上下架" customClass="LBProductUpperLowerViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="LSProductUpperLowerViewController" title="上下架管理" id="Dab-4j-4i2" userLabel="商品上下架" customClass="LSProductUpperLowerViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Tzk-c5-Bza">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -147,7 +147,7 @@
         <!--新品上市-->
         <scene sceneID="3rO-mH-amU">
             <objects>
-                <tableViewController storyboardIdentifier="LBBusinessProductAduitTableViewController" title="新品上市" id="L2a-dN-Hft" userLabel="新品上市" customClass="LBBusinessProductAduitTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="LSBusinessProductAduitTableViewController" title="新品上市" id="L2a-dN-Hft" userLabel="新品上市" customClass="LSBusinessProductAduitTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="aDB-Bh-3r5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -175,7 +175,7 @@
         <!--商品详细-->
         <scene sceneID="szm-Ss-jQ7">
             <objects>
-                <tableViewController storyboardIdentifier="LBProductDetailTableViewController" title="商品详细" id="Ftj-Qy-NeG" userLabel="商品详细" customClass="LBProductDetailTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="LSProductDetailTableViewController" title="商品详细" id="Ftj-Qy-NeG" userLabel="商品详细" customClass="LSProductDetailTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="blT-22-0w8">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -202,7 +202,7 @@
         <!--广告促销-->
         <scene sceneID="N3h-y1-BTl">
             <objects>
-                <tableViewController storyboardIdentifier="LBProductADTableViewController" title="广告促销" id="J7w-mr-W84" userLabel="广告促销" customClass="LBProductADTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="LSProductADTableViewController" title="广告促销" id="J7w-mr-W84" userLabel="广告促销" customClass="LSProductADTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="bp5-oo-ajc">
                         <rect key="frame" x="0.0" y="64" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

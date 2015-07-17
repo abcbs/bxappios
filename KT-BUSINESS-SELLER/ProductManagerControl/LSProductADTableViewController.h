@@ -1,5 +1,5 @@
 //
-//  LBProductADTableViewController.h
+//  LSProductADTableViewController.h
 //  KTAPP
 //
 //  Created by admin on 15/7/14.
@@ -8,6 +8,6 @@
 
 #import "BSUITableViewCommonController.h"
 
-@interface LBProductADTableViewController : BSUITableViewCommonController
+@interface LSProductADTableViewController : BSUITableViewCommonController
 
 @end

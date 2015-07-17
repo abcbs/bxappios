@@ -1,18 +1,18 @@
 //
-//  LBBusinessActivityTableViewController.m
+//  LSProductUpperLowerViewController.m
 //  KTAPP
 //
 //  Created by admin on 15/7/14.
 //  Copyright (c) 2015年 itcast. All rights reserved.
 //
 
-#import "LBBusinessActivityTableViewController.h"
+#import "LSProductUpperLowerViewController.h"
 
-@interface LBBusinessActivityTableViewController ()
+@interface LSProductUpperLowerViewController ()
 
 @end
 
-@implementation LBBusinessActivityTableViewController
+@implementation LSProductUpperLowerViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
