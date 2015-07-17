@@ -28,15 +28,6 @@
     self.centralMgr = [[CBCentralManager alloc] initWithDelegate:self queue:nil];
     self.arrayBLE = [[NSMutableArray alloc] init];
     
-    
-    if (self.tableView==nil) {
-        NSLog(@"tableView is null");
-    }else{
-        self.tableView.backgroundColor=[UIColor groupTableViewBackgroundColor];
-        self.tableView.frame=BSRectMake(NAVIGATIONBAR_X, NAVIGATIONBAR_HEIGHT, SCREEN_WIDTH, SCREEN_HEIGHT-NAVIGATION_ADD_STATUS_HEIGHT);
-    }
-    self.tableView.dataSource =self;
-    self.tableView.delegate = self;
 }
 
 - (void)viewDidAppear:(BOOL)animated{
@@ -118,7 +109,7 @@
         }
         @catch (NSException *exception) {
             NSLog(@"跳转错误，%@",exception.reason);
-            [self navigating:self storybord:@"BLEIFTTUpHoldMain" identity:@"BLEDevicesTableViewController" canUseStoryboard:YES];
+            [self navigating:self storybord:@"LSBLEIFTTUpHoldMain" identity:@"BLEDevicesTableViewController" canUseStoryboard:YES];
         }
      }
     else

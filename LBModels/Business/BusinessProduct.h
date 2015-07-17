@@ -6,29 +6,38 @@
 //  Copyright (c) 2015年 itcast. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface BusinessProduct : NSObject
 
 @property (assign,nonatomic) NSInteger  id;
+
 //商品分类标示
 @property (assign,nonatomic) NSInteger  productCatalogueId;
+
 //商品基本信息标示
 @property (assign,nonatomic) NSInteger  productBaseId;
+
 //商家名称
 @property (retain,nonatomic) NSString * businessName;
+
 //商品数量
 @property (assign,nonatomic) NSInteger  numbers;
+
 //商品名称
 @property (retain,nonatomic) NSString * name;
+
 //商品介绍
 @property (retain,nonatomic) NSString *introduce;
+
 //商品发布时间
 @property (retain,nonatomic) NSDate * publishTime;
+
 //系统更新时间
 @property (retain,nonatomic) NSDate * updateTime;
 
 @property (retain,nonatomic) NSString * warmPrompt;
+
 //赞
 @property (retain,nonatomic) NSString * prasie;
 
@@ -61,12 +70,19 @@
 //头像资源ID
 @property (assign,nonatomic) NSInteger resourceId;
 
-//商品资源ID
+//资源ID转换之后为UIImage
+@property (strong, nonatomic) UIImage *headerImage;
+
+//商品资源IDs
 @property (strong,nonatomic) NSMutableArray * resourceIds;
+
+//商品资源宣传的图片集
+@property (strong,nonatomic) NSMutableArray * productImages;
 
 //是否降价
 @property (retain,nonatomic) NSString * onSale;
 
 @property (assign,nonatomic) NSInteger order;
+
 
 @end

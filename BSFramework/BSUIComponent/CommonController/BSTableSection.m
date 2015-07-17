@@ -291,6 +291,11 @@
     
 }
 
+#pragma mark --清除数据
+-(void)removeAllObjects{
+    [self.content removeAllObjects];
+    [self.sections removeAllObjects];
+}
 #pragma mark --获取数据逻辑
 /*
  *根据章节标题获取每个章节的数据

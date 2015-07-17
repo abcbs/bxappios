@@ -25,10 +25,9 @@
  *公共的Controller
  */
 #import "BSUICommonController.h"
-#import "BSUITableViewCommonController.h"
 #import "BSUITabBarCommonController.h"
 #import "BSUITableViewCommonController.h"
-
+#import "BSUITableViewCanEditedController.h"
 /**
  *第三方UI相关组件
  */
@@ -41,9 +40,6 @@
  *自动轮播实现
  */
 #import "BSFCRollingADImageUIView.h"
-
-
-
 
 
 #import "BSTableViewCellData.h"
@@ -99,7 +95,7 @@ CG_INLINE CGRect BSRectMake(CGFloat x, CGFloat y, CGFloat width, CGFloat height)
 
 CG_INLINE CGSize BSSizeMake(CGFloat width, CGFloat height){
     CGSize size;
-    size.height=size.width = width * autoSizeScaleX;
+    size.width = width * autoSizeScaleX;
     size.height = height * autoSizeScaleY;
     return size;
     

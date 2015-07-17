@@ -191,4 +191,9 @@
     [BSContentObjectNavigation navigatingControllWithStorybord:self       bsContentObject:bsContentObject];
 }
 
+-(void)navigating:(UIViewController *)callerController storybord:(NSString *)storybordName identity:(NSString *)identity canUseStoryboard:(BOOL)useStoryboard{
+    BSTableContentObject * bsContentObject=[BSTableContentObject initWithController:callerController storybord:storybordName identity:identity canUseStoryboard:useStoryboard];
+    [self navigating:bsContentObject];
+
+}
 @end

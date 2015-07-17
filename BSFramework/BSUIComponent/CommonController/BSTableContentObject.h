@@ -81,12 +81,16 @@
 +(instancetype)initWithContentObject:(NSString *)title methodName:(NSString *)name imageName:(NSString *)imageName vcClass:(NSString *)clzzName;
 
 /**
+ *使用故事板跳转，默认方式
+ */
++(instancetype)initWithContentObject:(NSString *)title methodName:(NSString *)name imageName:(NSString *)imageName vcClass:(NSString *)clzzName storybord:(NSString *)storybordName;
+/**
  *不使用故事板，编码方式或者nib方式跳转
  */
 +(instancetype)initWithContentObject:(NSString *)title methodName:(NSString *)name imageName:(NSString *)imageName colClass:(Class)clzz;
 
 /**
- *在具体的Controller中使用
+ *此方法，在具体的Controller中使用，因此无需图片和标题
  */
 +(instancetype)initWithController:(UIViewController *)callerController storybord:(NSString *)storybordName identity:(NSString *)vcClass canUseStoryboard:(BOOL)useStoryboard;
 

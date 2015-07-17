@@ -28,7 +28,7 @@
     
         [self.view addSubview: tableView];
     }else{
-         self.tableView.separatorStyle=UITableViewCellSeparatorStyleNone;
+        self.tableView.separatorStyle=UITableViewCellSeparatorStyleNone;
     }
     
     self.tableView.dataSource =self;

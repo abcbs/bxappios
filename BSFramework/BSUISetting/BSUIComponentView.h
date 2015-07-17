@@ -85,4 +85,5 @@
 +(void)changeTabBarWithNotification:(UIViewController *)uiViewController addedInfo:(NSString *)info;
 
 
++ (void)autoSytleLay:(UIView *)allView;
 @end

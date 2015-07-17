@@ -7,7 +7,10 @@
 //
 
 #import "BSUITableViewCommonController.h"
+#import "LSProductManagerDelegate.h"
+#import "LBModelsHeader.h"
 
 @interface LSProductListTableViewController : BSUITableViewCommonController
+
 
 @end

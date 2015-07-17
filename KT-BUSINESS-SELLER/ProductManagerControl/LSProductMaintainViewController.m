@@ -16,22 +16,30 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self  modifiedStyle];
+
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void) viewDidUnload{
+    //删除数据
+    [super viewDidUnload];
 }
-*/
 
+- (void)dealloc{
+    
+    
+}
+
+-(void)modifiedStyle{
+    CGSize size=_productName.size;
+    _productName.size=BSSizeMake(size.height,size.width);
+}
+
+- (IBAction)saveProductDate:(id)sender {
+    
+}
 @end

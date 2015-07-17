@@ -37,11 +37,32 @@
     self.colClass=clzz;
     return self;
 }
+-(instancetype)initWithContentObject:(NSString *)title methodName:(NSString *)name imageName:(NSString *)imageName vcClass:(NSString *)clzzName storybord:(NSString *)storybord{
+    self = [super init];
+    if (!self) {
+        return nil;
+    }
+    self.colTitle=title;
+    self.method=name;
+    self.vcClass=clzzName;
+    self.colImageName=imageName;
+    self.storybordName=storybord;
+    self.canUseStoryboard=YES;
+    return self;
 
+    
+    return self;
+    
+}
 +(instancetype)initWithContentObject:(NSString *)title methodName:(NSString *)name imageName:(NSString *)imageName colClass:(Class)clzz{
     return [[super alloc] initWithContentObject:title methodName:name
-                                      imageName:imageName vcClass:nil colClass:clzz];}
+                                      imageName:imageName vcClass:nil colClass:clzz];
+}
 
++(instancetype)initWithContentObject:(NSString *)title methodName:(NSString *)name imageName:(NSString *)imageName vcClass:(NSString *)clzzName storybord:(NSString *)storybordName{
+    return [[super alloc] initWithContentObject:title methodName:name imageName:imageName vcClass:clzzName storybord:storybordName];
+    
+}
 +(instancetype)initWithContentObject:(NSString *)title methodName:(NSString *)name imageName:(NSString *)imageName vcClass:(NSString *)clzzName
 {
     return [[super alloc] initWithContentObject:title methodName:name
@@ -52,6 +73,7 @@
     return [[super alloc] initWithController:callerController
                                    storybord:storybordName identity:vcClass canUseStoryboard:useStoryboard];
 }
+
 
 -(instancetype)initWithController:(UIViewController *)callerController storybord:(NSString *)storybord identity:(NSString *)vc canUseStoryboard:(BOOL)useStoryboard{
     self = [super init];
@@ -64,6 +86,7 @@
     self.canUseStoryboard=useStoryboard;
     return self;
 }
+
 -(NSString *)description
 
 {

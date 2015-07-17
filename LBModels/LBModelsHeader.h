@@ -9,10 +9,12 @@
 #ifndef KTAPP_BLModels_h
 #define KTAPP_BLModels_h
 
-
+/**
+ *送水
+ */
 #import "Comment.h"
 #import "WaterSending.h"
-#import "WaterSendingDetials.h"
+#import "WaterSendingDetails.h"
 
 #import "Resources.h"
 
@@ -72,6 +74,16 @@
 #import "BusinessCartDomain.h"
 #import "ShoppingCartDomain.h"
 #import "ShoppingCartListDomain.h"
+
+/**
+ *用户信息
+ */
+#import "User.h"
+#import "HeadPortraitDomail.h"
+#import "UserInfoDomain.h"
+#import "UserSession.h"
+#import "UserDetailed.h"
+#import "UserBase.h"
 
 
 #endif

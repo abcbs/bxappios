@@ -28,7 +28,7 @@
     
     _sex = [aDecoder decodeObjectForKey:@"sex"];
     
-    _userBaseId = [aDecoder decodeObjectForKey:@"userBaseId"];
+    _userBaseId = [aDecoder decodeIntegerForKey:@"userBaseId"];
     
     return self;
 }

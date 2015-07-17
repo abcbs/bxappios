@@ -52,6 +52,15 @@ UITabBarController * rootTabBarController;
     
 }
 
++ (void)autoSytleLay:(UIView *)allView
+{
+    for (UIView *temp in allView.subviews) {
+        temp.frame = BSRectMake(temp.frame.origin.x, temp.frame.origin.y, temp.frame.size.width, temp.frame.size.height);
+        for (UIView *temp1 in temp.subviews) {
+            temp1.frame = BSRectMake(temp1.frame.origin.x, temp1.frame.origin.y, temp1.frame.size.width, temp1.frame.size.height);
+        }
+    }
+}
 /**
  *头部状态栏颜色设置
  *配置浏览栏颜色

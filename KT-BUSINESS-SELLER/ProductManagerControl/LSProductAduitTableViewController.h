@@ -7,7 +7,8 @@
 //
 
 #import "BSUITableViewCommonController.h"
+#import "LSProductManagerDelegate.h"
 
-@interface LSProductAduitTableViewController : BSUITableViewCommonController
+@interface LSProductAduitTableViewController : BSUITableViewCommonController<LSProductManagerDelegate>
 
 @end

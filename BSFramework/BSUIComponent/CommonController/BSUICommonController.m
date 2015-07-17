@@ -48,8 +48,16 @@
     return self;
 }
 
-- (void) viewDidUnload{
-    
+
+-(void) viewDidDisappear:(BOOL)animated{
+    BSLog(@"BSUICommonController viewDidDisappear,%@",self.description);
+    [super viewDidDisappear:animated];
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    BSLog(@"BSUICommonController viewWillDisappear,%@",self.description);
+    [super viewWillDisappear:animated];
+
 }
 
 - (void)dealloc{
@@ -61,7 +69,7 @@
   
 }
 - (void)doneClick{
-    NSLog(@"子类应当继承此方法实现完成功能");
+    BSLog(@"子类应当继承此方法实现完成功能");
 }
 
 /**
@@ -71,4 +79,9 @@
     [BSContentObjectNavigation navigatingControllWithStorybord:self       bsContentObject:bsContentObject];
 }
 
+-(void)navigating:(UIViewController *)callerController storybord:(NSString *)storybordName identity:(NSString *)identity canUseStoryboard:(BOOL)useStoryboard{
+    BSTableContentObject * bsContentObject=[BSTableContentObject initWithController:callerController storybord:storybordName identity:identity canUseStoryboard:useStoryboard];
+    [self navigating:bsContentObject];
+    
+}
 @end

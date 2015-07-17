@@ -24,7 +24,7 @@
         headerViewClass:nil//章节显示视图
         cellIdentifier:@"BSUIImageTitleTableViewCell"//采用的TableViewCell
         cellClass:[BSUIImageTitleTableViewCell class]//TableViewCell实现
-        storyboard:@"BLEIFTTUpHoldMain" bsContent:nil];
+        storyboard:@"LSBLEIFTTUpHoldMain" bsContent:nil];
     
     bsTable=[BSTableSection
                              initWithHeaderVcClassContent:@"首页"//章节显示标题
@@ -33,7 +33,7 @@
                              cellIdentifier:@"BSUIFiveColTableViewCell"//采用的TableViewCell
                              cellClass:[BSUIFiveColTableViewCell class]//TableViewCell实现
                              
-                             storyboard:@"BLEIFTTUpHoldMain"
+                             storyboard:@"LSBLEIFTTUpHoldMain"
                              colCapatibilty:5//每个章节的row数量
                              bsContent:nil];
     
@@ -41,7 +41,8 @@
                                 initWithContentObject:@"商品"
                                 methodName:nil
                                 imageName:@"im_post.png"
-                                vcClass:@"BLEDevicesTableViewController"];
+                                vcClass:@"LSProductListTableViewController"
+                                storybord:@"LSProductManagerMain"];
     
 
     

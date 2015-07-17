@@ -1,16 +1,18 @@
 //
-//  BSUITableViewCommonController.m
+//  BSUITableViewCanEditedController.m
 //  KTAPP
 //
-//  Created by admin on 15/6/28.
+//  Created by admin on 15/7/18.
 //  Copyright (c) 2015年 itcast. All rights reserved.
 //
 
-#import "BSUITableViewCommonController.h"
-#import "BSUIFrameworkHeader.h"
-#import "BSCMFrameworkHeader.h"
+#import "BSUITableViewCanEditedController.h"
 
-@implementation BSUITableViewCommonController
+@interface BSUITableViewCanEditedController ()
+
+@end
+
+@implementation BSUITableViewCanEditedController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -18,7 +20,7 @@
     if (self.navigationController) {
         //iOS有默认导航栏，使用固有的导航栏
         [BSUIComponentView initNavigationHeaderWithDefault:self
-    navigationProcess:self
+                                         navigationProcess:self
                                                      title:self.title];
         [BSUIComponentView initNavigationHeaderWithDefault:self
                                          navigationProcess:self
@@ -26,12 +28,12 @@
         [BSUIComponentView navigationHeader:self.navigationController];
         
     }else{
-
+        
         //没有导航栏，使用Button完成
         [BSUIComponentView initTableNarHeaderWithDefault:self tableView:self.tableView  title: self.title];
         
     }
-  
+    
     [BSUIComponentView changeTabBarWithNotification:self addedInfo:nil];
     
     if (self.tableView==nil) {
@@ -50,7 +52,7 @@
 
 - (void)viewDidAppear:(BOOL)animated{
     BSLog(@"BSUICommonController viewDidAppear,%@",self.description);
-
+    
 }
 
 
@@ -67,14 +69,14 @@
  */
 -(NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return nil;
+    return indexPath;
 }
 
 #pragma mark --表格处理获取TableViewCell默认
 /**
  *私有方法获取Cell的标示
  */
-- (UITableViewCell *)obtainCellWith:(NSString *)identifer{
+-(UITableViewCell *)obtainCellWith:(NSString *)identifer{
     UITableViewCell *cell=nil;
     cell=[self.tableView dequeueReusableCellWithIdentifier:identifer];
     if (!cell)
@@ -104,6 +106,4 @@
 -(void)navigating:(BSTableContentObject*)bsContentObject{
     [BSContentObjectNavigation navigatingControllWithStorybord:self       bsContentObject:bsContentObject];
 }
-
-
 @end

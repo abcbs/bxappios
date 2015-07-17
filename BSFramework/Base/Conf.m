@@ -86,6 +86,7 @@ NSString *bsNetstatus=@"缺省状态";
 +(NSDictionary *) mainBundle{
     return [[NSBundle mainBundle] infoDictionary] ;
 }
+
 +(NSString *)appInfo{
     NSString *infoPlistPath=[[NSBundle mainBundle]
                         pathForResource:@"InfoPlist" ofType:@"strings" ];
@@ -99,4 +100,6 @@ NSString *bsNetstatus=@"缺省状态";
    // NSString *executableFile = [dic objectForKey:(NSString *)kCFBundleExecutableKey];
     return appProjectName;
 }
+
+
 @end
