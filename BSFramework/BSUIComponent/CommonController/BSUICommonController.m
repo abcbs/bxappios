@@ -36,14 +36,14 @@
 
 - (void)viewDidAppear:(BOOL)animated{
 
-    NSLog(@"viewDidAppear 对象的视图已经加入到窗口时调用,%@",self.description);
+    BSLog(@"viewDidAppear 对象的视图已经加入到窗口时调用,%@",self.description);
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
     if ((self = [super initWithCoder:aDecoder]))
     {
-        NSLog(@"init initWithCoder%@",self.description);
+        BSLog(@"init initWithCoder%@",self.description);
     }
     return self;
 }

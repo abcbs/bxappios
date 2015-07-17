@@ -45,7 +45,7 @@
 {
     if ((self = [super initWithCoder:aDecoder]))
     {
-        NSLog(@"init initWithCoder%@",self.description);
+        BSLog(@"init initWithCoder%@",self.description);
     }
     return self;
 }
@@ -56,14 +56,14 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated{
-    NSLog(@"viewDidAppear\t%@",self.description);
+    BSLog(@"viewDidAppear\t%@",self.description);
     
 }
 - (void)backClick{
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 - (void)doneClick{
-    NSLog(@"子类应当继承此方法实现完成功能");
+    BSLog(@"子类应当继承此方法实现完成功能");
 }
 
 /*

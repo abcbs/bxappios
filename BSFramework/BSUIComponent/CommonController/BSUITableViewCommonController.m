@@ -37,7 +37,7 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated{
-    NSLog(@"BSUICommonController viewDidAppear,%@",self.description);
+    BSLog(@"BSUICommonController viewDidAppear,%@",self.description);
 
 }
 
@@ -53,7 +53,7 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 - (void)doneClick{
-    NSLog(@"子类应当继承此方法实现完成功能");
+    BSLog(@"子类应当继承此方法实现完成功能");
 }
 
 -(void)navigating:(UIViewController *)callerController storybord:(NSString *)storybordName identity:(NSString *)identity canUseStoryboard:(BOOL)useStoryboard{

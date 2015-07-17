@@ -103,7 +103,13 @@
                             <outlet property="delegate" destination="9hT-Y6-rhC" id="44H-AS-kUv"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="YjJ-su-KT9"/>
+                    <navigationItem key="navigationItem" title="在线商品" id="YjJ-su-KT9">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="bOT-8E-JMc">
+                            <connections>
+                                <segue destination="yrG-Wu-VA4" kind="show" id="3ET-7H-4UV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wzc-nm-oYq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -141,7 +147,7 @@
         <!--新品上市-->
         <scene sceneID="3rO-mH-amU">
             <objects>
-                <tableViewController storyboardIdentifier="LBProductDetailTableViewController" title="新品上市" id="L2a-dN-Hft" userLabel="新品上市" customClass="LBProductDetailTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="LBBusinessProductAduitTableViewController" title="新品上市" id="L2a-dN-Hft" userLabel="新品上市" customClass="LBBusinessProductAduitTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="aDB-Bh-3r5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -165,6 +171,33 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f6g-ev-bKh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="382" y="345"/>
+        </scene>
+        <!--商品详细-->
+        <scene sceneID="szm-Ss-jQ7">
+            <objects>
+                <tableViewController storyboardIdentifier="LBProductDetailTableViewController" title="商品详细" id="Ftj-Qy-NeG" userLabel="商品详细" customClass="LBProductDetailTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="blT-22-0w8">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="SAj-kV-txG">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SAj-kV-txG" id="09i-xz-9uO">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Ftj-Qy-NeG" id="Mve-RV-YkZ"/>
+                            <outlet property="delegate" destination="Ftj-Qy-NeG" id="Twi-O6-C51"/>
+                        </connections>
+                    </tableView>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jvH-Wz-jNc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="842" y="334"/>
         </scene>
         <!--广告促销-->
         <scene sceneID="N3h-y1-BTl">

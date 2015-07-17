@@ -181,7 +181,7 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 - (void)doneClick{
-    NSLog(@"默认为同返回一致的动作");
+    BSLog(@"默认为同返回一致的动作");
 }
 
 /**

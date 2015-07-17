@@ -107,7 +107,7 @@
  */
 - (void)peripheralManager:(CBPeripheralManager *)peripheral central:(CBCentral *)central didUnsubscribeFromCharacteristic:(CBCharacteristic *)characteristic
 {
-    NSLog(@"Central unsubscribed from characteristic");
+    BSLog(@"Central unsubscribed from characteristic");
 }
 
 
@@ -129,7 +129,7 @@
             // It did, so mark it as sent
             sendingEOM = NO;
             
-            NSLog(@"Sent: EOM");
+            BSLog(@"Sent: EOM");
         }
         
         // It didn't send, so we'll exit and wait for peripheralManagerIsReadyToUpdateSubscribers to call sendData again
@@ -192,7 +192,7 @@
                 // It sent, we're all done
                 sendingEOM = NO;
                 
-                NSLog(@"Sent: EOM");
+                BSLog(@"Sent: EOM");
             }
             
             return;

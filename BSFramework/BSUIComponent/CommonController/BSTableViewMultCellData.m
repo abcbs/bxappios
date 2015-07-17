@@ -22,7 +22,7 @@
         bc.callerViewController=self.controller;
     }
     
-    NSLog(@"BSTableViewMultCellData,单列数据为\t%ld",bsArray.count);
+    BSLog(@"BSTableViewMultCellData,单列数据为\t%ld",bsArray.count);
    return bsArray;
 }
 

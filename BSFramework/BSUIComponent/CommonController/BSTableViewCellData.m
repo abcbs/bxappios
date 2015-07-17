@@ -115,7 +115,7 @@
         return nil;
     }
     @finally {
-        NSLog(@"获取TableViewCell");
+        BSLog(@"获取TableViewCell");
     }
     
 }

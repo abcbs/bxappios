@@ -105,7 +105,7 @@
                                            objectForKey:[keys objectAtIndex:indexPath.section]];
             }
             @catch (NSException *exception) {
-                NSLog(@"数据输出时，产生错误\t%@",exception.reason);
+                BSLog(@"数据输出时，产生错误\t%@",exception.reason);
                 cell.detailTextLabel.text=exception.reason;
             }
         }else{
@@ -121,16 +121,16 @@
 }
 //CBCentralManagerDelegate
 - (void)centralManagerDidUpdateState:(CBCentralManager *)central{
-     NSLog(@"centralManagerDidUpdateState 状态更新");
+     BSLog(@"centralManagerDidUpdateState 状态更新");
 }
 //CBPeripheralManagerDelegate
 - (void)peripheralManagerDidUpdateState:(CBPeripheralManager *)peripheral{
-     NSLog(@"peripheralManagerDidUpdateState 状态更新");
+     BSLog(@"peripheralManagerDidUpdateState 状态更新");
 }
 //可以实现下面的函数，如果连接失败，就会得到回调：
 - (void)centralManager:(CBCentralManager *)central didFailToConnectPeripheral:(CBPeripheral *)peripheral error:(NSError *)error
 {
-    NSLog(@"didFailToConnectPeripheral 连接失败 :\n %@", error.localizedDescription);
+    BSLog(@"didFailToConnectPeripheral 连接失败 :\n %@", error.localizedDescription);
 }
 
 
@@ -174,7 +174,7 @@
 {
     if (error)
     {
-        NSLog(@"didDiscoverCharacteristicsForService error : %@",
+        BSLog(@"didDiscoverCharacteristicsForService error : %@",
               [error localizedDescription]);
         return;
     }
@@ -184,7 +184,7 @@
     for (CBCharacteristic *c in service.characteristics)
     {
         self.characteristicNum++;
-         NSLog(@"获取特性: \n%@\t 服务名称%@", c,service.UUID.description);
+         BSLog(@"获取特性: \n%@\t 服务名称%@", c,service.UUID.description);
         [characteristicDic setObject:c.description forKey:service.UUID.description];
         [peripheral readValueForCharacteristic:c];
     }
@@ -205,7 +205,7 @@
     }
     if (error)
     {
-        NSLog(@"didUpdateValueForCharacteristic error : %@", error.localizedDescription);
+        BSLog(@"didUpdateValueForCharacteristic error : %@", error.localizedDescription);
         //在尾部记录信息
          [characteristicValueDic setValue:error.localizedDescription
                                    forKey:characteristic.UUID.description];
@@ -226,7 +226,7 @@
         NSString *service = [dic valueForKey:SECTION_NAME];
         if ([service isEqual:characteristic.service.UUID.description])
         {
-            NSLog(@"characteristic.description : %@", characteristic.UUID.description);
+            BSLog(@"characteristic.description : %@", characteristic.UUID.description);
             [dic setValue:characteristic.value.description forKey:characteristic.UUID.description];
             [characteristicValueDic setValue:characteristic.value forKey:characteristic.UUID.description];
         }

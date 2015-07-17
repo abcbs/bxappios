@@ -123,7 +123,7 @@
 
 
 - (void )imgButton:(UIButton *)bsButton{
-     NSLog(@"点击动作\t%ld",(long)bsButton.tag);
+     BSLog(@"点击动作\t%ld",(long)bsButton.tag);
      BSTableContentObject *bs= (BSTableContentObject *) [ bsContentArray objectAtIndex:bsButton.tag];
     if (bs.vcClass ||bs.colClass) {
          [BSContentObjectNavigation navigatingControllWithStorybord:bs.callerViewController       bsContentObject:bs];

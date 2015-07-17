@@ -168,35 +168,35 @@ titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
     {
         case CBCentralManagerStatePoweredOn:
             //scanForPeripheralsWithServices:options:方法是中央设备开始扫描，可以设置为特定UUID来指，来差找一个指定的服务了。
-            NSLog(@"=============查找周边设备:开始==============");
+            BSLog(@"=============查找周边设备:开始==============");
             [self.centralMgr scanForPeripheralsWithServices:nil options:nil];
             break;
             
         case CBCentralManagerStatePoweredOff:
         {
             
-            NSLog(@"=============查找周边设备:关闭==============");
+            BSLog(@"=============查找周边设备:关闭==============");
             break;
         }
         case CBCentralManagerStateUnauthorized:
         {
-            NSLog(@"=============查找周边设备:同步==============");
+            BSLog(@"=============查找周边设备:同步==============");
             break;
         }
             
         case CBCentralManagerStateUnknown:
         {
-            NSLog(@"=============查找周边设备:状态未知==============");
+            BSLog(@"=============查找周边设备:状态未知==============");
             break;
         }
 
         case CBCentralManagerStateResetting:
         {
-            NSLog(@"=============查找周边设备:状态重置==============");
+            BSLog(@"=============查找周边设备:状态重置==============");
             break;
         }
         default:
-            NSLog(@"Central Manager did change state");
+            BSLog(@"Central Manager did change state");
             break;
             
 
@@ -211,14 +211,14 @@ titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
     BLEInfo *discoveredBLEInfo = [[BLEInfo alloc] init];
     discoveredBLEInfo.discoveredPeripheral = peripheral;
     discoveredBLEInfo.rssi = RSSI;
-    NSLog(@"查到的周边设备，\n%@",discoveredBLEInfo.description);
+    BSLog(@"查到的周边设备，\n%@",discoveredBLEInfo.description);
     // update tableview
     [self saveBLE:discoveredBLEInfo];
 }
 
 - (BOOL)saveBLE:(BLEInfo *)discoveredBLEInfo
 {
-    NSLog(@"发现设备，更新数据");
+    BSLog(@"发现设备，更新数据");
     //modified LiuJQ for test
     
     for (BLEInfo *info in self.arrayBLE)
@@ -270,7 +270,7 @@ titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
     
 }
 - (void)editBLEInfo:(BLEInfo *)bleInfo{
-    NSLog(@"addBLEInfo,%@",self.description);
+    BSLog(@"addBLEInfo,%@",self.description);
     
 }
 

@@ -8,7 +8,7 @@
 #import <objc/runtime.h>
 
 #import "UIViewController+BSTableObject.h"
-
+#import "BSCMFrameworkHeader.h"
 @implementation UIViewController(BSTableObject)
 
 
@@ -22,7 +22,7 @@
 
 - (void)deallocSwizzle
 {
-    NSLog(@"%@实例销毁", self);
+    BSLog(@"%@实例销毁", self);
     
     [self deallocSwizzle];
 }

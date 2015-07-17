@@ -50,7 +50,7 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 - (void)doneClick{
-    NSLog(@"子类需要实例");
+    BSLog(@"子类需要实例");
 }
 
 #pragma mark -以下三个方法是控制高度，在实现中需要子类根据具体情况处理
@@ -246,7 +246,7 @@
 
 -(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"将要显示的行是\n cell=%@  \n indexpath=%@",cell,indexPath);
+    BSLog(@"将要显示的行是\n cell=%@  \n indexpath=%@",cell,indexPath);
 }
 
 /**
@@ -255,7 +255,7 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"编辑状态，点击删除时调用\n indexpath=%@",indexPath);
+    BSLog(@"编辑状态，点击删除时调用\n indexpath=%@",indexPath);
 }
 
 /**
@@ -264,7 +264,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
  *点击按扭时调用的方法
  */
 -(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath{
-    NSLog(@"当前点击的详情button \n indexpath=%@",indexPath);
+    BSLog(@"当前点击的详情button \n indexpath=%@",indexPath);
 }
 
 /**
@@ -302,8 +302,8 @@ titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
  */
 -(void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath*)destinationIndexPath
 {
-    NSLog(@"sourceIndexPath=%@",sourceIndexPath);
-    NSLog(@"sourceIndexPath=%@",destinationIndexPath);
+    BSLog(@"sourceIndexPath=%@",sourceIndexPath);
+    BSLog(@"sourceIndexPath=%@",destinationIndexPath);
 }
 
 /**
@@ -324,7 +324,7 @@ titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
  */
 -(void)tableView:(UITableView *)tableView willBeginEditingRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"滑动可以编辑时执行:willBeginEditingRowAtIndexPath");
+    BSLog(@"滑动可以编辑时执行:willBeginEditingRowAtIndexPath");
 }
 
 /**
@@ -332,7 +332,7 @@ titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
  */
 -(NSIndexPath *)tableView:(UITableView *)tableView willDeselectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"上次选中的行是  \n indexpath=%@",indexPath);
+    BSLog(@"上次选中的行是  \n indexpath=%@",indexPath);
     return indexPath;
 }
 @end

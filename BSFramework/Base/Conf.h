@@ -11,14 +11,15 @@
 @interface Conf : NSObject
 
 #ifdef DEBUG
-#define MJLog(...) NSLog(__VA_ARGS__)
+#define BSLog(...) NSLog(__VA_ARGS__)
 #else
-#define MJLog(...)
+#define BSLog(...)
 #endif
 
 // objc_msgSend
 #define msgSend(...) ((void (*)(void *, SEL, UIView *))objc_msgSend)(__VA_ARGS__)
 
+#define BSDeprecated(instead) NS_DEPRECATED(2_0, 2_0, 2_0, 2_0, instead)
 /**
  *基础URL
  */

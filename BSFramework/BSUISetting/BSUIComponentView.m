@@ -54,6 +54,7 @@ UITabBarController * rootTabBarController;
 
 /**
  *头部状态栏颜色设置
+ *配置浏览栏颜色
  */
 +(void)navigationHeader:(UINavigationController *)navigationController{
     [navigationController.navigationBar setBarStyle:UIBarStyleBlack];
@@ -62,9 +63,10 @@ UITabBarController * rootTabBarController;
 }
 
 /**
- *头部图像设置，需手工添加到具体页面
+ *头部图像设置，需手工添加到具体页面,无使用
  */
-+(UIImageView *)navigationHeaderWithImage:(NSString *)imageName{
++(UIImageView *)navigationHeaderWithImage:(NSString *)imageName
+BSDeprecated("建议使用统一处理方式，使用initNavigationHeaderWithDefault"){
     UIImageView *imageView = [[UIImageView alloc]initWithFrame:BSRectMake(NAVIGATIONBAR_X, NAVIGATIONBAR_Y,
                                                                           NAVIGATIONBAR_WIDTH, NAVIGATIONBAR_HEIGHT)];
     NSString *image =imageName;
@@ -74,8 +76,11 @@ UITabBarController * rootTabBarController;
 
 /**
  *头部图像设置，需提供调用也的View
+ *communicate
+ *SetViewController
  */
 +(void)navigationHeaderWithImage:(NSString *)imageName view:(UIView *)view
+       BSDeprecated("建议使用统一处理方式，使用initNavigationHeaderWithDefault")
 {
     NSString *defaultImage=NAVIGATION_IMAGE;
     if (imageName!=nil) {
@@ -106,6 +111,12 @@ UITabBarController * rootTabBarController;
     return  [UIColor colorWithRed:0.234 green:0.234 blue:0.234 alpha:0.1];
 }
 
+/**
+ *有系统导航栏
+ *BSUICommonController
+ *BSUITabBarCommonController
+ *BSUITableViewCommonController
+ */
 +(void )initNavigationHeaderWithDefault:(UIViewController *)viewController
                       navigationProcess:(id<NavigationProcess>) navigationProcess
                                   title:(NSString *)title{
@@ -120,6 +131,9 @@ UITabBarController * rootTabBarController;
     
 }
 
+/**
+ *私有方法，指定头的大小
+ */
 +(UIView *)headerViewNoNar{
     UIView *headerView=[[UIView alloc] initWithFrame:
             BSRectMake( NAVIGATIONBAR_X, NAVIGATIONBAR_Y,NAVIGATIONBAR_WIDTH, NAVIGATIONBAR_HEIGHT)];
@@ -131,6 +145,7 @@ UITabBarController * rootTabBarController;
 
 /**
  *带有表头，以普通View代替系统提供的导航栏
+ * BSUITableViewCommonController在使用
  */
 +(void)initTableNarHeaderWithDefault:(BSUICommonController *)currentController
                            tableView:(UITableView *)tableView
@@ -166,6 +181,7 @@ UITabBarController * rootTabBarController;
 
 /**
  *带有表头，以普通View代替系统提供的导航栏
+ *BSTableViewRefreshController,在使用
  */
 +(void)initNarHeaderWithDefault:(BSUICommonController *)currentController
                           title:(NSString *)title //定义块类型
@@ -202,6 +218,7 @@ UITabBarController * rootTabBarController;
 //NS_ENUM_DEPRECATED_IOS(2_0, 8_0, "Use UIBarButtonItemStylePlain when minimum deployment target is iOS7 or later
 /**
  *状态栏，默认使用,没有状态栏，使用Button制作。
+ *BSUITabBarCommonController
  */
 
 +(void)initNarHeaderWithIndexView:(UIViewController *)currentController
@@ -211,6 +228,54 @@ UITabBarController * rootTabBarController;
                                                         title:title image:nil];
     
     [currentController.view addSubview:okButton];
+}
+
+/**
+ *默认TabBar初始化方法
+ *AppDelegate
+ */
++(void)initTabBarWithDefault:(UITabBarController *)tabBarController{
+    //设置tabBar的选中颜色
+    tabBarController.tabBar.tintColor=[BSUIComponentView  navigationColor];
+    //修改more的风格
+    tabBarController.moreNavigationController.navigationBar.barStyle=UIBarStyleBlack;
+    tabBarController.moreNavigationController.navigationBar.backgroundColor=[BSUIComponentView  navigationColor];
+    rootTabBarController=tabBarController;
+}
+
++(void)changeTabBarWithNotification:(UIViewController *)uiViewController addedInfo:(NSString *)info{
+    UITabBar *bar=rootTabBarController.tabBar;
+    UIBarItem *item=bar.items[0];
+    if (info) {
+        NSString *name=[[NSString stringWithString:item.title]stringByAppendingString:info];
+        [BSUIComponentView changeTabMoreWithTitle:name withVC:uiViewController];
+    }
+    // [BSUIComponentView changeTabMoreWithTitle:@"测试" withVC:uiViewController];
+    
+}
+
+
++(void)changeTabMoreWithTitle:(NSString*) title withVC:(UIViewController*)vc{
+    
+    if(vc.tabBarController){
+        if(vc.tabBarController.moreNavigationController){
+            UITabBar *tb = vc.tabBarController.moreNavigationController.tabBarController.tabBar;
+            UIBarItem *selectItem=tb.selectedItem;
+            
+            //selectItem.title  = title;
+            selectItem.image = [UIImage imageNamed:@"second_normal"];
+            //1.创建图片
+            UIImage *selectmage = [UIImage imageNamed:@"second_selected"];
+            //2. 告诉系统原样显示
+            selectmage = [selectmage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+            
+        }else{
+            NSLog(@"传入的UIViewController 必须含有tabBarController与moreNavigationController");
+        }
+    }else{
+        NSLog(@"传入的UIViewController 必须含有tabBarController与moreNavigationController");
+    }
+    
 }
 
 #pragma mark -表头导航按钮的私有方法定义
@@ -309,53 +374,6 @@ UITabBarController * rootTabBarController;
     [headerView setBackgroundColor:[UIColor colorWithRed:0.79 green:0.12 blue:0 alpha:0.90]];
     
     return headerView;
-}
-
-/**
- *默认TabBar初始化方法
- */
-+(void)initTabBarWithDefault:(UITabBarController *)tabBarController{
-    //设置tabBar的选中颜色
-    tabBarController.tabBar.tintColor=[BSUIComponentView  navigationColor];
-    //修改more的风格
-    tabBarController.moreNavigationController.navigationBar.barStyle=UIBarStyleBlack;
-    tabBarController.moreNavigationController.navigationBar.backgroundColor=[BSUIComponentView  navigationColor];
-    rootTabBarController=tabBarController;
-}
-
-+(void)changeTabBarWithNotification:(UIViewController *)uiViewController addedInfo:(NSString *)info{
-    UITabBar *bar=rootTabBarController.tabBar;
-    UIBarItem *item=bar.items[0];
-    if (info) {
-        NSString *name=[[NSString stringWithString:item.title]stringByAppendingString:info];
-        [BSUIComponentView changeTabMoreWithTitle:name withVC:uiViewController];
-    }
-   // [BSUIComponentView changeTabMoreWithTitle:@"测试" withVC:uiViewController];
-
-}
-
-
-+(void)changeTabMoreWithTitle:(NSString*) title withVC:(UIViewController*)vc{
-    
-    if(vc.tabBarController){
-        if(vc.tabBarController.moreNavigationController){
-            UITabBar *tb = vc.tabBarController.moreNavigationController.tabBarController.tabBar;
-            UIBarItem *selectItem=tb.selectedItem;
-            
-            //selectItem.title  = title;
-            selectItem.image = [UIImage imageNamed:@"second_normal"];
-            //1.创建图片
-            UIImage *selectmage = [UIImage imageNamed:@"second_selected"];
-            //2. 告诉系统原样显示
-            selectmage = [selectmage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-            
-        }else{
-            NSLog(@"传入的UIViewController 必须含有tabBarController与moreNavigationController");
-        }
-    }else{
-        NSLog(@"传入的UIViewController 必须含有tabBarController与moreNavigationController");
-    }
-    
 }
 
 @end
