@@ -117,19 +117,7 @@ UITabBarController * rootTabBarController;
     UINavigationBar *bar = viewController.navigationController.navigationBar;
     
     [bar setTintColor:[UIColor whiteColor ]];
-    //BSUIBlockButton *backButton = [BSUIComponentView backNavButton:navigationProcess title:title image:nil];
-    /*
-    UIBarButtonItem *myButton = [[UIBarButtonItem alloc]
-                                  initWithTitle:@"<返回"
-                                  style:UIBarButtonItemStyleDone
-                                  target:viewController
-                                 action:@selector(backClick)];
-    //导航栏左侧按钮
-    myButton.image= [UIImage imageNamed:@"im_return"];
-    navigationItem.leftBarButtonItem = myButton;
-    */
     
-   
 }
 
 +(UIView *)headerViewNoNar{
@@ -224,36 +212,7 @@ UITabBarController * rootTabBarController;
     
     [currentController.view addSubview:okButton];
 }
-/*
-+(void)initNarHeaderWithIndexView:(UIViewController *)currentController
-                          title:(NSString *)title //定义块类型
-{
 
-    @try {
-        UIToolbar *mycustomToolBar;
-        NSMutableArray *mycustomButtons = [[NSMutableArray alloc] init];
-        UIBarButtonItem *myButton1 = [BSUIComponentView backBarButtonItem:currentController target:currentController title:title image:nil];
-        
-        myButton1.width = 40;
-        [mycustomButtons addObject: myButton1];
-        UIBarButtonItem *myButton2 = [BSUIComponentView okBarButtonItem:currentController target:currentController title:title image:nil];
-        
-        myButton2.width = 40;
-        [mycustomButtons addObject: myButton2];
-        
-        mycustomToolBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0.0f, 0.0f,320.0f, 44.0f)];
-       // mycustomToolBar.center = CGPointMake(160.0f,200.0f);
-        mycustomToolBar.barStyle = UIBarStyleDefault;
-        [mycustomToolBar setItems:mycustomButtons animated:YES];
-        [mycustomToolBar sizeToFit];
-        [currentController.view addSubview:mycustomToolBar];
-        currentController.navigationItem.titleView = mycustomToolBar;
-        }
-    @catch (NSException *exception) {
-        NSLog(@"状态栏错误");
-    }
- }
-*/
 #pragma mark -表头导航按钮的私有方法定义
 /**
  *私有方法
@@ -291,7 +250,7 @@ UITabBarController * rootTabBarController;
                                                                                  NAVIGATIONBAR_Y+STATUS_HEIGHT+10,NAVIGATIONBAR_HEIGHT/3, NAVIGATIONBAR_HEIGHT/3)
                                  target:target
                                  action:@selector(doneClick)];
-    [okButton setBackgroundImage:[UIImage imageNamed:@"im_search"]
+    [okButton setBackgroundImage:[UIImage imageNamed:@"im_search.png"]
                         forState:UIControlStateNormal];
     [okButton setBlock:^(BSUIBlockButton *button){
         [navigationProcess backClick];

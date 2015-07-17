@@ -18,6 +18,9 @@
     if (self.navigationController) {
         //iOS有默认导航栏，使用固有的导航栏
         [BSUIComponentView initNavigationHeaderWithDefault:self
+    navigationProcess:self
+                                                     title:self.title];
+        [BSUIComponentView initNavigationHeaderWithDefault:self
                                          navigationProcess:self
                                                      title:self.title];
         [BSUIComponentView navigationHeader:self.navigationController];
@@ -53,6 +56,10 @@
     NSLog(@"子类应当继承此方法实现完成功能");
 }
 
+-(void)navigating:(UIViewController *)callerController storybord:(NSString *)storybordName identity:(NSString *)identity canUseStoryboard:(BOOL)useStoryboard{
+    BSTableContentObject * bsContentObject=[BSTableContentObject initWithController:callerController storybord:storybordName identity:identity canUseStoryboard:useStoryboard];
+    [self navigating:bsContentObject];
+}
 /**
  *页面跳转公共方法
  */

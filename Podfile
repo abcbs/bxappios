@@ -59,6 +59,16 @@ target 'KT-LS-Controller' do
         pod 'Mantle'
 end
 
+target 'KT-LB-Controller' do
+        pod 'SDWebImage'
+        pod 'AFNetworking'
+        pod 'MJExtension'
+        pod 'MJRefresh'
+        pod 'CocoaLumberjack'
+        pod 'MBProgressHUD'
+        pod 'AFNetworkActivityLogger'
+        pod 'Mantle'
+end
 
 #	pod 'AFNetworking'
 #	pod 'MJExtension'

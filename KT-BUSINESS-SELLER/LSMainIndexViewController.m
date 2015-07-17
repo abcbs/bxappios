@@ -38,7 +38,7 @@
                              bsContent:nil];
     
     BSTableContentObject *bsnMagamer=[BSTableContentObject
-                                initWithContentObject:@"管理"
+                                initWithContentObject:@"商品"
                                 methodName:nil
                                 imageName:@"im_post.png"
                                 vcClass:@"BLEDevicesTableViewController"];
@@ -90,6 +90,12 @@
     
 
     [super setValue:bsTable forKey:@"bSTableObjects"];
+    
+    //UIView *foot=[[UIView alloc]init];
+    
+    UIImageView *footView=[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"img_05.jpg"]];
+    [footView sizeToFit];
+    self.tableView.tableFooterView=footView;
 }
 
 - (void)didReceiveMemoryWarning {

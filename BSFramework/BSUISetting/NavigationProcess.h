@@ -24,4 +24,6 @@
  */
 -(void)navigating:(BSTableContentObject*)bsContentObject;
 
+-(void)navigating:(UIViewController *)callerController storybord:(NSString *)storybordName identity:(NSString *)identity canUseStoryboard:(BOOL)useStoryboard;
+
 @end

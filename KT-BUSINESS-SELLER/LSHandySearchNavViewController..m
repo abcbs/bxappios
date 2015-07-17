@@ -81,7 +81,7 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    return self.title;
+    return nil;
 }
 
 /**

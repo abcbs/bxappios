@@ -62,7 +62,7 @@
         <!--商品管理TABBAR-->
         <scene sceneID="vCZ-ro-Dde">
             <objects>
-                <tabBarController title="商品管理页" id="931-wc-C3f" userLabel="商品管理TABBAR" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="KTLBMainTabBarController" title="商品管理页" id="931-wc-C3f" userLabel="商品管理TABBAR" customClass="KTLBMainTabBarController" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="9Ic-D2-cRS">
@@ -138,10 +138,10 @@
             </objects>
             <point key="canvasLocation" x="-13" y="979"/>
         </scene>
-        <!--商品浏览-->
+        <!--新品上市-->
         <scene sceneID="3rO-mH-amU">
             <objects>
-                <tableViewController storyboardIdentifier="LBProductDetailTableViewController" title="商品浏览" id="L2a-dN-Hft" userLabel="商品浏览" customClass="LBProductDetailTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="LBProductDetailTableViewController" title="新品上市" id="L2a-dN-Hft" userLabel="新品上市" customClass="LBProductDetailTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="aDB-Bh-3r5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -198,7 +198,7 @@
         <scene sceneID="9Zr-4u-k6q">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wmU-w2-ScX" userLabel="广告促销导航" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="广告促销" image="wdqzs" id="48H-mZ-syZ"/>
+                    <tabBarItem key="tabBarItem" title="广告促销" image="third_normal.png" id="48H-mZ-syZ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="1xO-fq-2f4">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -232,11 +232,11 @@
             </objects>
             <point key="canvasLocation" x="-465" y="973"/>
         </scene>
-        <!--商品浏览导航-->
+        <!--新品上市导航-->
         <scene sceneID="iWo-Tv-QRB">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LRz-c8-MW1" userLabel="商品浏览导航" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="商品浏览" image="second_selected.png" id="WLt-nQ-r3S"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LRz-c8-MW1" userLabel="新品上市导航" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="新品上市" image="second_selected.png" id="WLt-nQ-r3S"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="HGA-8b-L70">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -295,6 +295,5 @@
         <image name="second_normal.png" width="30" height="30"/>
         <image name="second_selected.png" width="30" height="30"/>
         <image name="third_normal.png" width="30" height="30"/>
-        <image name="wdqzs" width="29" height="29"/>
     </resources>
 </document>

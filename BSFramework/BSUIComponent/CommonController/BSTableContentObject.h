@@ -72,6 +72,7 @@
  *此变量没有提供和其他变量一起初始化的方法，在运行时会根据列的容量设置
  */
 @property (assign,nonatomic)UIViewController *callerViewController;
+
 @property (assign,nonatomic)BOOL canUseStoryboard;
 
 /**
@@ -84,6 +85,9 @@
  */
 +(instancetype)initWithContentObject:(NSString *)title methodName:(NSString *)name imageName:(NSString *)imageName colClass:(Class)clzz;
 
-//-(void)styleDiction
+/**
+ *在具体的Controller中使用
+ */
++(instancetype)initWithController:(UIViewController *)callerController storybord:(NSString *)storybordName identity:(NSString *)vcClass canUseStoryboard:(BOOL)useStoryboard;
 
 @end

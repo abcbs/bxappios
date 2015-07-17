@@ -48,6 +48,22 @@
                                       imageName:imageName vcClass:clzzName colClass:nil];
 }
 
++(instancetype)initWithController:(UIViewController *)callerController storybord:(NSString *)storybordName identity:(NSString *)vcClass canUseStoryboard:(BOOL)useStoryboard{
+    return [[super alloc] initWithController:callerController
+                                   storybord:storybordName identity:vcClass canUseStoryboard:useStoryboard];
+}
+
+-(instancetype)initWithController:(UIViewController *)callerController storybord:(NSString *)storybord identity:(NSString *)vc canUseStoryboard:(BOOL)useStoryboard{
+    self = [super init];
+    if (!self) {
+        return nil;
+    }
+    self.callerViewController=callerController;
+    self.vcClass=vc;
+    self.storybordName=storybord;
+    self.canUseStoryboard=useStoryboard;
+    return self;
+}
 -(NSString *)description
 
 {

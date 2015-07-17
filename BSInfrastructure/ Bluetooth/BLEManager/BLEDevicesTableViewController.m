@@ -113,9 +113,14 @@
     {//将来的搜索页做准备
         bleInfo = arrayBLE[indexPath.row];
         bleIndex = indexPath.row;
-        [self performSegueWithIdentifier:@"BLEConnectionSegue" sender:nil];
-        
-    }
+        @try {
+            [self performSegueWithIdentifier:@"BLEConnectionSegue" sender:nil];
+        }
+        @catch (NSException *exception) {
+            NSLog(@"跳转错误，%@",exception.reason);
+            [self navigating:self storybord:@"BLEIFTTUpHoldMain" identity:@"BLEDevicesTableViewController" canUseStoryboard:YES];
+        }
+     }
     else
     {
         [self performSegueWithIdentifier:@"BLEConnectionSegue" sender:nil];
@@ -235,7 +240,7 @@ titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     //到连接测试界面:BLEConnectionSegue
-    //
+    //BLEConnectionSegue
     if ([segue.identifier isEqualToString:@"BLEConnectionSegue"])
     {
         BLEDeviceDetailsTableViewController *evc = (BLEDeviceDetailsTableViewController *)segue.destinationViewController;
