@@ -1096,7 +1096,7 @@
 		84EA9A8E1B57E5EE00AC549F /* yyfw9_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 84EA99D91B57E5EE00AC549F /* yyfw9_01.png */; };
 		84EA9A901B57F17800AC549F /* BusinessIndexMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84EA9A8F1B57F17800AC549F /* BusinessIndexMain.storyboard */; };
 		84EA9A911B57F17800AC549F /* BusinessIndexMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84EA9A8F1B57F17800AC549F /* BusinessIndexMain.storyboard */; };
-		84EB39731B5899A000AD9F66 /* LSBusinessProductAduitTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EB39721B5899A000AD9F66 /* LSBusinessProductAduitTableViewController.m */; };
+		84EB39731B5899A000AD9F66 /* LSProductAduitTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EB39721B5899A000AD9F66 /* LSProductAduitTableViewController.m */; };
 		84EBA00B1B416E37003309F6 /* ClassForSelectors.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EBA00A1B416E37003309F6 /* ClassForSelectors.m */; };
 		84EBA0131B4189E0003309F6 /* LBLiferServiceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EBA0121B4189E0003309F6 /* LBLiferServiceController.m */; };
 		84EBA0161B41A307003309F6 /* KTLBMainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EBA0151B41A307003309F6 /* KTLBMainTabBarController.m */; };
@@ -2061,8 +2061,8 @@
 		84EA99D81B57E5EE00AC549F /* yuan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yuan.png; sourceTree = "<group>"; };
 		84EA99D91B57E5EE00AC549F /* yyfw9_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yyfw9_01.png; sourceTree = "<group>"; };
 		84EA9A8F1B57F17800AC549F /* BusinessIndexMain.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BusinessIndexMain.storyboard; sourceTree = "<group>"; };
-		84EB39711B5899A000AD9F66 /* LSBusinessProductAduitTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSBusinessProductAduitTableViewController.h; sourceTree = "<group>"; };
-		84EB39721B5899A000AD9F66 /* LSBusinessProductAduitTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSBusinessProductAduitTableViewController.m; sourceTree = "<group>"; };
+		84EB39711B5899A000AD9F66 /* LSProductAduitTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSProductAduitTableViewController.h; sourceTree = "<group>"; };
+		84EB39721B5899A000AD9F66 /* LSProductAduitTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSProductAduitTableViewController.m; sourceTree = "<group>"; };
 		84EBA0091B416E37003309F6 /* ClassForSelectors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassForSelectors.h; sourceTree = "<group>"; };
 		84EBA00A1B416E37003309F6 /* ClassForSelectors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassForSelectors.m; sourceTree = "<group>"; };
 		84EBA0111B4189E0003309F6 /* LBLiferServiceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBLiferServiceController.h; sourceTree = "<group>"; };
@@ -3159,8 +3159,8 @@
 		84BF8F871B4AB864001042F1 /* ProductManagerControl */ = {
 			isa = PBXGroup;
 			children = (
-				84EB39711B5899A000AD9F66 /* LSBusinessProductAduitTableViewController.h */,
-				84EB39721B5899A000AD9F66 /* LSBusinessProductAduitTableViewController.m */,
+				84EB39711B5899A000AD9F66 /* LSProductAduitTableViewController.h */,
+				84EB39721B5899A000AD9F66 /* LSProductAduitTableViewController.m */,
 				8461B7961B55044D002A7C43 /* LSProductListTableViewController.h */,
 				8461B7971B55044D002A7C43 /* LSProductListTableViewController.m */,
 				8461B7991B5504E4002A7C43 /* LSProductMaintainViewController.h */,
@@ -5168,7 +5168,7 @@
 				84BF8F6C1B4AB63C001042F1 /* LSMainIndexViewController.m in Sources */,
 				8405CB341B5544280014AF8D /* LSBusinessActivityTableViewController.m in Sources */,
 				8405CB7D1B5564A90014AF8D /* BusinessActivity.m in Sources */,
-				84EB39731B5899A000AD9F66 /* LSBusinessProductAduitTableViewController.m in Sources */,
+				84EB39731B5899A000AD9F66 /* LSProductAduitTableViewController.m in Sources */,
 				84BF8F661B4AB63C001042F1 /* AppDelegate.m in Sources */,
 				8461B79E1B550655002A7C43 /* LSProductADTableViewController.m in Sources */,
 				8461B7A11B550708002A7C43 /* LSProductUpperLowerViewController.m in Sources */,

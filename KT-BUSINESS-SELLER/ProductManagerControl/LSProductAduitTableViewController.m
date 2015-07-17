@@ -6,8 +6,8 @@
 //  Copyright (c) 2015年 itcast. All rights reserved.
 //
 
-#import "LSBusinessProductAduitTableViewController.h"
+#import "LSProductAduitTableViewController.h"
 
-@implementation LSBusinessProductAduitTableViewController
+@implementation LSProductAduitTableViewController
 
 @end

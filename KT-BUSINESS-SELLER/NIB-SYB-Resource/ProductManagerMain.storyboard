@@ -57,7 +57,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zIS-dh-omX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1062" y="-533"/>
+            <point key="canvasLocation" x="-1092" y="-527"/>
         </scene>
         <!--商品管理TABBAR-->
         <scene sceneID="vCZ-ro-Dde">
@@ -91,11 +91,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="bQG-LM-C5R">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LSProductListTableViewCell" id="bQG-LM-C5R">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bQG-LM-C5R" id="Ga3-EZ-5Yq">
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="Ftj-Qy-NeG" kind="show" identifier="BrowseCommodity" trigger="accessoryAction" id="uM2-dk-1A1"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -106,7 +109,7 @@
                     <navigationItem key="navigationItem" title="在线商品" id="YjJ-su-KT9">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="bOT-8E-JMc">
                             <connections>
-                                <segue destination="yrG-Wu-VA4" kind="show" id="3ET-7H-4UV"/>
+                                <segue destination="yrG-Wu-VA4" kind="show" identifier="MaintenanCommodity" id="3ET-7H-4UV"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -147,7 +150,7 @@
         <!--新品上市-->
         <scene sceneID="3rO-mH-amU">
             <objects>
-                <tableViewController storyboardIdentifier="LSBusinessProductAduitTableViewController" title="新品上市" id="L2a-dN-Hft" userLabel="新品上市" customClass="LSBusinessProductAduitTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="LSProductAduitTableViewController" title="新品上市" id="L2a-dN-Hft" userLabel="新品上市" customClass="LSProductAduitTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="aDB-Bh-3r5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -197,7 +200,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jvH-Wz-jNc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="842" y="334"/>
+            <point key="canvasLocation" x="382" y="-991"/>
         </scene>
         <!--广告促销-->
         <scene sceneID="N3h-y1-BTl">
@@ -320,7 +323,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="34C-9h-yJ5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-586" y="-533"/>
+            <point key="canvasLocation" x="-634" y="-527"/>
         </scene>
     </scenes>
     <resources>

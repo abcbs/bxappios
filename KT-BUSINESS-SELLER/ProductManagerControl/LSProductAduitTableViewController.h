@@ -8,6 +8,6 @@
 
 #import "BSUITableViewCommonController.h"
 
-@interface LSBusinessProductAduitTableViewController : BSUITableViewCommonController
+@interface LSProductAduitTableViewController : BSUITableViewCommonController
 
 @end

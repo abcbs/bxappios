@@ -8,7 +8,15 @@
 
 #import "LSProductListTableViewController.h"
 
-@interface LSProductListTableViewController ()
+@interface LSProductListTableViewController (){
+    
+    NSMutableArray *_personList;
+    NSMutableArray *_resultList;
+    
+    NSInteger _personIndex;
+    NSInteger _resultIndex;
+
+}
 
 @end
 
