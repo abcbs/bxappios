@@ -52,6 +52,25 @@
 float autoSizeScaleX=1.0;
 float autoSizeScaleY=1.0;
 
++(void)autoSizeScale{
+    /*
+    if(IS_IPHONE5){
+        autoSizeScaleX = 1.0;
+        autoSizeScaleY = 1.0;
+        
+    }else if (IS_IPHONE_6PLUS){
+        autoSizeScaleX = 1.29375;
+        autoSizeScaleY=1.2957;
+        
+    }else if(IS_IPHONE_6){
+        autoSizeScaleX=1.171875;
+        autoSizeScaleY=1.17429577;
+    }else {
+        autoSizeScaleX = 1.0;
+        autoSizeScaleY = 1.0;
+        
+    }*/
+}
 
 NSString *bsNetstatus=@"缺省状态";
 

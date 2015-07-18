@@ -11,12 +11,15 @@
 #import "LSProductManagerDelegate.h"
 
 @interface LSProductDetailTableViewController :
-BSUITableViewCommonController
+BSUITableViewCommonController<LSProductManagerDelegate>
 
 @property (weak, nonatomic) id<LSProductManagerDelegate> browseDelegate;
+
 @property (strong, nonatomic) BusinessProduct *product;
 
+
 @property (weak, nonatomic) IBOutlet UITextField *productName;
+
 
 //优惠价格
 @property (weak, nonatomic) IBOutlet UITextField *preferPrice;

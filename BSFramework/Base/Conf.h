@@ -98,7 +98,9 @@
 extern float autoSizeScaleX;
 extern float autoSizeScaleY;
 
++(void)autoSizeScale;
 
+#define autoStyleSize [Conf autoSizeScale]
 //UIAlertView
 #define KT_AlertView_(a) [[[UIAlertView alloc]initWithTitle:@"提示" message:a delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show]
 

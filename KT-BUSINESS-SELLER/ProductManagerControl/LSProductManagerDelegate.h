@@ -13,9 +13,15 @@
 @optional
 
 /**
- *产品维护
+ *产品增加
  */
 - (void)sendAddBusinessProduct:(BusinessProduct *) product;
+
+/**
+ *产品维护
+ */
+- (void)sendEditedBusinessProduct:(BusinessProduct *) product;
+
 
 /**
  *产品浏览
@@ -25,12 +31,12 @@
 /**
  *更新数据
  */
-- (void)refreshBusinessProductData:(BusinessProduct *)product;
+- (void)refreshBusinessProduct:(BusinessProduct *)product;
 
 /**
  *装载初始化数据
  */
--(void) loadProductData:(BusinessProduct *)product;
+-(void) loadBusinessProduct:(BusinessProduct *)product;
 @end
 
 

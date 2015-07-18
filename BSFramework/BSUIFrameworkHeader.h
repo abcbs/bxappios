@@ -84,6 +84,7 @@
 
 CG_INLINE CGRect BSRectMake(CGFloat x, CGFloat y, CGFloat width, CGFloat height)
 {
+    autoStyleSize;
     CGRect rect;
     rect.origin.x = x * autoSizeScaleX;
     rect.origin.y = y * autoSizeScaleY;
@@ -94,6 +95,8 @@ CG_INLINE CGRect BSRectMake(CGFloat x, CGFloat y, CGFloat width, CGFloat height)
 
 
 CG_INLINE CGSize BSSizeMake(CGFloat width, CGFloat height){
+    autoStyleSize;
+
     CGSize size;
     size.width = width * autoSizeScaleX;
     size.height = height * autoSizeScaleY;
@@ -102,13 +105,17 @@ CG_INLINE CGSize BSSizeMake(CGFloat width, CGFloat height){
 }
 
 CG_INLINE CGFloat BSMarginX(CGFloat x){
-    return  x / autoSizeScaleX;
+    autoStyleSize;
+
+    return  x * autoSizeScaleX;
     
 }
 
 
 CG_INLINE CGFloat BSMarginY(CGFloat y){
-    return  y / autoSizeScaleY;
+    autoStyleSize;
+
+    return  y * autoSizeScaleY;
     
 }
 

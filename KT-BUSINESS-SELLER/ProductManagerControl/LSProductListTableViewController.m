@@ -16,9 +16,12 @@
 //商家APP控制器
 #import "LSControllerHeader.h"
 
+#import "LSProductDetailTableViewController.h"
+
 #define rTableSectionCount 1
 
 @interface LSProductListTableViewController ()<UISearchDisplayDelegate,LSProductManagerDelegate>{
+
     
     //商家商品信息BusinessProduct
     NSMutableArray *_bsList;
@@ -38,7 +41,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     //装载数据
-    [self loadProductData:nil];
+    [self loadBusinessProduct:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -102,14 +105,13 @@
     if (tableView == self.tableView)
     {
         product = _bsList[indexPath.row];
-        //_infoVC.product = product;
         _bsIndex = indexPath.row;
-    }
-    else
+        [self performSegueWithIdentifier:@"BrowseCommodity" sender:nil];
+    }else
     {//表示查询
         [self performSegueWithIdentifier:@"BrowseCommodity" sender:nil];
         product = _resultList[indexPath.row];
-        //_infoVC.product = product;
+        
         _bsIndex = [_bsList indexOfObject:product];
         _resultIndex = indexPath.row;
     }
@@ -146,13 +148,16 @@
 {
     if ([segue.identifier isEqualToString:@"BrowseCommodity"])
     {//浏览商品信息
-        //EditViewController *evc = (EditViewController *)segue.destinationViewController;
-        //evc.editDelegate = self;
+         LSProductDetailTableViewController *evc = (LSProductDetailTableViewController *)segue.destinationViewController;
+        evc.browseDelegate = self;
+        BusinessProduct *p=(BusinessProduct *)[_bsList objectAtIndex:_bsIndex];
+        evc.product=p;
     }
-    if ([segue.identifier isEqualToString:@"MaintenanCommodity"])
+    if ([segue.identifier isEqualToString:@"AddCommodity"])
     {//商品维护
-        //_infoVC = (InfoViewController *)segue.destinationViewController;
-        //_infoVC.infoDelegate = self;
+        LSProductMaintainViewController *info = (LSProductMaintainViewController *)segue.destinationViewController;
+        info.editDelegate = self;
+        [info setProduct:(BusinessProduct *)[_bsList objectAtIndex:_bsIndex]];
     }
 }
 
@@ -204,7 +209,7 @@
 /**
  *更新数据
  */
-- (void)refreshBusinessProductData:(BusinessProduct *)product{
+- (void)refreshBusinessProduct:(BusinessProduct *)product{
     [_bsList removeObjectAtIndex:_bsIndex];
     [_bsList insertObject:product atIndex:_bsIndex];
     [_resultList removeObjectAtIndex:_resultIndex];
@@ -220,7 +225,7 @@
 /**
  *装载初始化数据
  */
--(void) loadProductData:(BusinessProduct *)product{
+-(void) loadBusinessProduct:(BusinessProduct *)product{
     NSString *path = [self loadForProductList];
     _bsList = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
 
