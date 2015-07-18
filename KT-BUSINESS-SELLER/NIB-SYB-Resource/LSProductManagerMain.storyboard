@@ -408,7 +408,7 @@
                     <navigationItem key="navigationItem" title="在线商品" id="YjJ-su-KT9">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="bOT-8E-JMc">
                             <connections>
-                                <segue destination="yrG-Wu-VA4" kind="show" identifier="BrowseCommodity" id="3ET-7H-4UV"/>
+                                <segue destination="yrG-Wu-VA4" kind="show" identifier="AddCommodity" id="3ET-7H-4UV"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -508,7 +508,7 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="KzC-ou-4nS">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="KzC-ou-4nS">
                                                     <rect key="frame" x="84" y="7" width="236" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>

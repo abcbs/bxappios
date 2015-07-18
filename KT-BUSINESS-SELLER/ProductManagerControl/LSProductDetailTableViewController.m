@@ -50,8 +50,11 @@
 
     [_browseDelegate refreshBusinessProduct:product];
     [self displayProduct];
-    //[self.tableView reloadData];
 
 }
 
+- (void)sendAddBusinessProduct:(BusinessProduct *) product{
+    [_browseDelegate sendAddBusinessProduct:product];
+    [self displayProduct];
+}
 @end

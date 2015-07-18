@@ -20,7 +20,7 @@
 
 #define rTableSectionCount 1
 
-@interface LSProductListTableViewController ()<UISearchDisplayDelegate,LSProductManagerDelegate>{
+@interface LSProductListTableViewController (){
 
     
     //商家商品信息BusinessProduct
@@ -202,8 +202,17 @@
 /**
  *产品浏览
  */
-- (void)sendBrowseBusinessProduct:(BusinessProduct *)product{
-
+- (void)sendEditedBusinessProduct:(BusinessProduct *)product{
+    if (!_bsList)
+    {
+        _bsList = [NSMutableArray array];
+    }
+    
+    [_bsList addObject:product];
+    [self.tableView reloadData];
+    
+    NSString *path = [self loadForProductList];
+    [NSKeyedArchiver archiveRootObject:_bsList toFile:path];
 }
 
 /**

@@ -10,7 +10,7 @@
 #import "LSProductManagerDelegate.h"
 #import "LBModelsHeader.h"
 
-@interface LSProductListTableViewController : BSUITableViewCanEditedController
+@interface LSProductListTableViewController : BSUITableViewCanEditedController<UISearchDisplayDelegate,LSProductManagerDelegate>
 
 
 @end
