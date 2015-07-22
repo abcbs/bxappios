@@ -157,7 +157,7 @@
     {//商品维护
         LSProductMaintainViewController *info = (LSProductMaintainViewController *)segue.destinationViewController;
         info.editDelegate = self;
-        [info setProduct:(BusinessProduct *)[_bsList objectAtIndex:_bsIndex]];
+        //[info setProduct:(BusinessProduct *)[_bsList objectAtIndex:_bsIndex]];
     }
 }
 

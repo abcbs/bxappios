@@ -1019,6 +1019,16 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		84E7D9A71B5C09490083C59F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		84EA96B11B57D2D400AC549F /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1470,6 +1480,10 @@
 		84E71F321B4E5473003089B2 /* BLEDevicesAddTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLEDevicesAddTableViewController.h; sourceTree = "<group>"; };
 		84E71F331B4E5473003089B2 /* BLEDevicesAddTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLEDevicesAddTableViewController.m; sourceTree = "<group>"; };
 		84E71F381B4E6023003089B2 /* BLCentralExtention.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLCentralExtention.h; sourceTree = "<group>"; };
+		84E7D9861B5C03210083C59F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84E7D9871B5C03210083C59F /* KT-Imges.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KT-Imges.h"; sourceTree = "<group>"; };
+		84E7D9951B5C03220083C59F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84E7D9961B5C03220083C59F /* KT_ImgesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KT_ImgesTests.m; sourceTree = "<group>"; };
 		84E97AB51B307535001D4100 /* BSUIComponentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUIComponentView.h; sourceTree = "<group>"; };
 		84E97AB61B307535001D4100 /* BSUIComponentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUIComponentView.m; sourceTree = "<group>"; };
 		84EA96B31B57D2D400AC549F /* libKT-LS-Controller.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libKT-LS-Controller.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -2837,6 +2851,40 @@
 			path = BSFramework;
 			sourceTree = "<group>";
 		};
+		84E7D9841B5C03210083C59F /* KT-Imges */ = {
+			isa = PBXGroup;
+			children = (
+				84E7D9871B5C03210083C59F /* KT-Imges.h */,
+				84E7D9851B5C03210083C59F /* Supporting Files */,
+			);
+			path = "KT-Imges";
+			sourceTree = "<group>";
+		};
+		84E7D9851B5C03210083C59F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				84E7D9861B5C03210083C59F /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		84E7D9931B5C03220083C59F /* KT-ImgesTests */ = {
+			isa = PBXGroup;
+			children = (
+				84E7D9961B5C03220083C59F /* KT_ImgesTests.m */,
+				84E7D9941B5C03220083C59F /* Supporting Files */,
+			);
+			path = "KT-ImgesTests";
+			sourceTree = "<group>";
+		};
+		84E7D9941B5C03220083C59F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				84E7D9951B5C03220083C59F /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		84EA96B41B57D2D400AC549F /* KT-LS-Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -3207,6 +3255,8 @@
 				84BF8F911B4ABA7E001042F1 /* KT-FRAME-PK */,
 				84BF902C1B4AC55D001042F1 /* KT-MODEL-MODULE */,
 				84EA96B41B57D2D400AC549F /* KT-LS-Controller */,
+				84E7D9841B5C03210083C59F /* KT-Imges */,
+				84E7D9931B5C03220083C59F /* KT-ImgesTests */,
 				A0028F341ADE4D5500747D8A /* Frameworks */,
 				A04366AA1AD7B550005842EE /* Products */,
 				67A658A2709CA6036D46B63C /* Pods */,
@@ -3426,6 +3476,7 @@
 				84BF8F5B1B4AB63C001042F1 /* Frameworks */,
 				84BF8F5C1B4AB63C001042F1 /* Resources */,
 				DF4842331B19BFED0AA8AEBC /* Copy Pods Resources */,
+				84E7D9A71B5C09490083C59F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

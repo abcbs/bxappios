@@ -31,7 +31,8 @@
 -(void)displayProduct{
 
     _productName.text=_product.name;
-
+    _salePrice.text=[NSString stringWithFormat:@"%.2f",_product.salePrice];
+    _preferPrice.text=[NSString stringWithFormat:@"%.2f",_product.preferPrice];
 
 }
 

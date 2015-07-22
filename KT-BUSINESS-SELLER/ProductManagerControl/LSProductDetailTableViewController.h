@@ -21,10 +21,10 @@ BSUITableViewCommonController<LSProductManagerDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *productName;
 
 
-//优惠价格
+//优惠价格,卡价格
 @property (weak, nonatomic) IBOutlet UITextField *preferPrice;
 
-//销售价格
+//促销价格
 @property (weak, nonatomic) IBOutlet UITextField *salePrice;
 
 //发布时间

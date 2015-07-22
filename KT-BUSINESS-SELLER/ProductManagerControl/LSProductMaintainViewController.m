@@ -53,7 +53,7 @@
 
 - (void)initSubViews
 {
-    
+    isEdit=NO;
 }
 
 - (void)setupEditProduct
@@ -61,6 +61,8 @@
     if (_editDelegate)
     {
          _productName.text = _product.name;
+        _salePrice.text=[NSString stringWithFormat:@"%.2f", _product.salePrice];
+        _preferPrice.text=[NSString stringWithFormat:@"%.2f",_product.preferPrice];
         isEdit = YES;
     }
 }
@@ -70,6 +72,8 @@
     _product=[[BusinessProduct alloc]init];
     _product.name=_productName.text;
     _product.introduce=_introduce.text;
+    _product.salePrice=[_salePrice.text floatValue];
+    _product.preferPrice=[_preferPrice.text floatValue];
     if (isEdit) {
         [_editDelegate sendEditedBusinessProduct:_product];
         _product = nil;
