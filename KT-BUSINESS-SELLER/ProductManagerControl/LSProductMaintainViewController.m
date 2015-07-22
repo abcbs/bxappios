@@ -46,8 +46,8 @@
 }
 
 -(void)modifiedStyle{
-    //CGSize size=_productName.size;
-   // _productName.size=BSSizeMake(size.width,size.height);
+    CGSize size=_productName.size;
+    _productName.size=BSSizeMake(size.width,size.height);
     
 }
 

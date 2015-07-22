@@ -108,7 +108,7 @@
         _bsIndex = indexPath.row;
         [self performSegueWithIdentifier:@"BrowseCommodity" sender:nil];
     }else
-    {//表示查询
+    {//表示查询，另编码
         [self performSegueWithIdentifier:@"BrowseCommodity" sender:nil];
         product = _resultList[indexPath.row];
         
@@ -140,6 +140,37 @@
     return self.title;
 }
 
+#pragma mark -删除操作，删除之后，商户不可见，但监管者可见
+/**
+ *自定义划动时delete按钮内容
+ */
+- (NSString *)tableView:(UITableView *)tableView
+titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return @"删除商品?";
+}
+
+/**
+ *删除
+ */
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    if (editingStyle == UITableViewCellEditingStyleDelete)
+    {
+        // Remove the row from data model
+        long row=indexPath.row;
+        //if (row==0) {
+        //    return;
+        //}
+        [_bsList removeObjectAtIndex:row];
+        [_resultList removeObjectAtIndex:row ];
+        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        
+        //Request table view to reload
+        [tableView reloadData];
+        
+    }
+}
 #pragma mark - Navigation
 #pragma mark -
 #pragma mark Stroyboard Segue
