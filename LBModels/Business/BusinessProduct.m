@@ -76,6 +76,11 @@
     //商品资源ID
     [aCoder encodeObject:_resourceIds forKey:@"resourceIds"];
     
+    //商品资源宣传的图片集
+    [aCoder encodeObject:_resourceImages forKey:@"resourceImages"];
+    
+    //商品资源宣传的图片资源
+    [aCoder encodeObject:_resourceInfoArray forKey:@"resourceInfoArray"];
     //是否降价
     [aCoder encodeObject:_onSale forKey:@"onSale"];
     
@@ -108,6 +113,7 @@
     _updateTime=[aDecoder decodeObjectForKey:@"updateTime"];
     
     _warmPrompt=[aDecoder decodeObjectForKey:@"warmPrompt"];
+    
     //赞
     _prasie =[aDecoder decodeObjectForKey:@"prasie"];
     
@@ -147,6 +153,9 @@
     //商品资源ID
     _resourceIds =[aDecoder decodeObjectForKey:@"resourceIds"];
     
+    _resourceImages =[aDecoder decodeObjectForKey:@"resourceImages"];
+    
+    _resourceInfoArray =[aDecoder decodeObjectForKey:@"resourceInfoArray"];
     //是否降价
     _onSale =[aDecoder decodeObjectForKey:@"onSale"];
     

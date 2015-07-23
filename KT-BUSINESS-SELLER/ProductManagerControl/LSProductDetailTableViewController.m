@@ -10,7 +10,7 @@
 #import "LSProductMaintainViewController.h"
 #import "LBModelsHeader.h"
 
-@interface LSProductDetailTableViewController ()
+@interface LSProductDetailTableViewController ()<BSImagePlayerDelegate>
 
 @end
 
@@ -35,15 +35,19 @@
     _salePrice.text=[NSString stringWithFormat:@"%.2f",_product.salePrice];
     _preferPrice.text=[NSString stringWithFormat:@"%.2f",_product.preferPrice];
     _publishTime.text=[Conf convertStringFromDate: _product.publishTime ];
-    //头部图像
-    UIImageView *view=[[UIImageView alloc]initWithFrame:BSRectMake(0, _headImage.frame.origin.y,  _headImage.frame.size.width,  _headImage.frame.size.height)  ];
-    
-    [view setImage:_product.headerImage];
-    [_headImage addSubview:view];
-
+    _headImage.image=_product.headerImage;
+    [self displayAD:_product.resourceImages];
 
 }
 
+-(void)displayAD:(NSMutableArray *)images{
+    BSFCRollingADImageUIView *adView= [BSFCRollingADImageUIView initADImageUIViewWith:images                                          playerDelegate:self
+                                                                               target:self
+                                                                                width:88 height:88];
+    //资源轮播
+    [adView removeFromSuperview];
+    [_resourceImags addSubview:adView];
+}
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -70,5 +74,15 @@
 }
 
 - (IBAction)previewResourceImages:(id)sender {
+}
+
+- (void)touchAction:(UIGestureRecognizer *)gester
+{
+    BSLog(@"轮播事件");
+    UIView *egoivPhotoView = [gester view];
+    
+    NSInteger tPhotoIndex = [egoivPhotoView tag];
+    NSLog(@"tPhotoIndex: %ld", tPhotoIndex);
+    
 }
 @end

@@ -11,12 +11,17 @@
 #import "QBImagePickerController.h"
 
 
-@interface LSProductMaintainViewController ()<QBImagePickerControllerDelegate>
+@interface LSProductMaintainViewController ()<QBImagePickerControllerDelegate,BSImagePlayerDelegate>
 
 {
     BOOL isEdit;
     BOOL isHeaderImage;
+    //商品头像图
     __block Resources *rs;
+    //
+    NSMutableArray *rsInfoArray;
+    //
+    NSMutableArray *rsImageArray;
 }
 @end
 
@@ -28,6 +33,14 @@
         rs=[[Resources alloc]init];
 
     }
+    if (rsImageArray==nil) {
+         rsImageArray=[NSMutableArray array];
+    }
+   
+    if (rsInfoArray==nil) {
+        rsInfoArray=[NSMutableArray array];
+    }
+ 
     [self modifiedStyle];
     
     [self initSubViews];
@@ -90,9 +103,15 @@
 
         //商品头像
         [_headerImageView setImage:_product.headerImage];
+        //商品轮播
+        [self displayAD:_product.resourceImages];
+        //
+        rsImageArray=_product.resourceImages;
+        rsInfoArray=_product.resourceInfoArray;
         isEdit = YES;
     }
 }
+
 
 - (IBAction)saveProductDate:(id)sender {
     //初始化化BusinessProduct
@@ -107,12 +126,12 @@
     _product.headerImage=_headerImageView.image;
     //头像资源数据
     _product.resourceInfo=rs;
-
+    //轮播图片资源，目前主要是类型和名称，其URL应当是服务端数据
+    _product.resourceInfoArray=rsInfoArray;
+    _product.resourceImages=rsImageArray;
     if (isEdit) {
         [_editDelegate sendEditedBusinessProduct:_product];
         _product = nil;
-    }else{
-       
     }
     if (!isEdit)
     {
@@ -141,9 +160,6 @@
     
     imagePickerController.delegate = self;
     imagePickerController.allowsMultipleSelection = NO;
-    //头像
-    //imagePickerController.maximumNumberOfSelection = 1;
-    //imagePickerController.minimumNumberOfSelection = 1;
     imagePickerController.showsNumberOfSelectedAssets = NO;
     isHeaderImage=YES;
     
@@ -178,14 +194,60 @@
 #pragma mark - QBImagePickerControllerDelegate
 //多选操作
 - (void)qb_imagePickerController:(QBImagePickerController *)imagePickerController didFinishPickingAssets:(NSArray *)assets{
-    BSLog(@"didFinishPickingAssets.");
-    if (isHeaderImage) {//点击为头图片选择
+
+    if (isHeaderImage&&assets.count==1) {//点击为头图片选择
         PHAsset *headerImage=(PHAsset *)assets[0];
         rs.metatype=headerImage.mediaType;
         [self pickImageInfo:headerImage];
 
+    }else{
+        //轮播图片
+        [self resourceImageView:assets];
     }
     [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
+- (void)resourceImageView:(NSArray *)assets{
+    //
+    __block NSMutableArray *tempArray = [NSMutableArray array];
+    __block int count=0;
+    [rsInfoArray removeAllObjects];
+    [rsImageArray removeAllObjects];
+    for (PHAsset *headerImage in assets) {
+        Resources *rss=[[Resources alloc]init];
+        rss.metatype=headerImage.mediaType;
+        [[PHImageManager defaultManager]
+            requestImageDataForAsset:headerImage
+            options:nil
+            resultHandler:^(NSData *imageData, NSString *dataUTI,
+                     UIImageOrientation orientation,
+                     NSDictionary *info){
+             UIImage *image=[[UIImage alloc]initWithData:imageData];
+             [tempArray addObject:image];
+             if ([info objectForKey:@"PHImageFileURLKey"]) {
+               // path looks like this -
+                 NSURL *path = [info objectForKey:@"PHImageFileURLKey"];
+                //数据类型
+                 rss.name=[path path];
+                 ++count;
+                 [rsInfoArray addObject:rss];
+                 [rsImageArray addObject:image];
+                 if (assets.count==count) {//轮播图
+                     [self displayAD:tempArray];
+                 }
+             }
+         }];
+    }
+   
+}
+
+-(void)displayAD:(NSMutableArray *)images{
+    BSFCRollingADImageUIView *adView= [BSFCRollingADImageUIView initADImageUIViewWith:images                                          playerDelegate:self
+        target:self
+        width:88 height:88];
+    //资源轮播
+    [adView removeFromSuperview];
+    [_resourceImags addSubview:adView];
 }
 
 -(void)pickImageInfo:(PHAsset *)headerImage{
@@ -195,8 +257,7 @@
      options:nil
      resultHandler:^(NSData *imageData, NSString *dataUTI,
                      UIImageOrientation orientation,
-                     NSDictionary *info)
-     {
+                     NSDictionary *info){
          UIImage *image=[[UIImage alloc]initWithData:imageData];
          [_headerImageView setImage:image];
         
@@ -209,22 +270,14 @@
         }
      }];
 }
-/*
 
- - (void)qb_imagePickerControllerDidCancel:(QBImagePickerController *)imagePickerController
- {
- BSLog(@"Canceled.");
- 
- [self dismissViewControllerAnimated:YES completion:NULL];
- }
- 
-- (BOOL)qb_imagePickerController:(QBImagePickerController *)imagePickerController shouldSelectAsset:(PHAsset *)asset{
-    BSLog(@"shouldSelectAsset.");
-    return NO;
+- (void)touchAction:(UIGestureRecognizer *)gester
+{
+    BSLog(@"轮播事件");
+    UIView *egoivPhotoView = [gester view];
+    
+    NSInteger tPhotoIndex = [egoivPhotoView tag];
+    NSLog(@"tPhotoIndex: %ld", tPhotoIndex);
+   
 }
-
-- (void)qb_imagePickerController:(QBImagePickerController *)imagePickerController didDeselectAsset:(PHAsset *)asset{
-    BSLog(@"didDeselectAsset.");
-}
-*/
 @end

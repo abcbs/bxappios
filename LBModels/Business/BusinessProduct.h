@@ -75,11 +75,15 @@
 @property (retain, nonatomic) UIImage *headerImage;
 
 @property (strong, nonatomic) Resources *resourceInfo;
+
 //商品资源IDs
 @property (strong,nonatomic) NSMutableArray * resourceIds;
 
 //商品资源宣传的图片集
-@property (strong,nonatomic) NSMutableArray * productImages;
+@property (strong,nonatomic) NSMutableArray * resourceImages;
+
+//商品资源宣传的图片资源
+@property (strong,nonatomic) NSMutableArray * resourceInfoArray;
 
 //是否降价
 @property (retain,nonatomic) NSString * onSale;

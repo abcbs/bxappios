@@ -9,21 +9,7 @@
 #import "BSFCRollingADImageUIView.h"
 #import "BSUIFrameworkHeader.h"
 
-@implementation ImageAndURLModel
 
--(NSString *)urlPictute
-{
-    _urlPictute = [_urlPictute stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    return _urlPictute;
-}
-
--(NSString *)urlVideo
-{
-    _urlVideo = [_urlVideo stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    return _urlVideo;
-}
-
-@end
 
 
 
@@ -31,6 +17,10 @@
 {
     NSInteger _count;
     NSInteger _valueToBottom;
+    
+    //CGFloat  width ;
+    //CGFloat height;
+
 }
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
@@ -45,14 +35,38 @@
 
 @implementation BSFCRollingADImageUIView
 
++(BSFCRollingADImageUIView *)initADImageUIViewWith:(NSMutableArray *)images
+                                    playerDelegate:(id<BSImagePlayerDelegate> )player
+ target:(UIViewController*)controller
+                                             width:(CGFloat) w height:(CGFloat) h{
+    BSFCRollingADImageUIView *imagePlayer = [BSFCRollingADImageUIView imagePlayer];
+    //长宽，默认
+    imagePlayer.width=BSMarginX( w);
+    imagePlayer.height=BSMarginY(h);
+    imagePlayer.targetController=controller;
+    [imagePlayer setPageControlPositionToBottom:40];
+    //图片的URL数组
+    [imagePlayer setImages:images];
+    
+    imagePlayer.playerDelegate = player;
+    
+    return imagePlayer;
+
+    
+}
 +(BSFCRollingADImageUIView *)initADImageUIViewWith:(NSMutableArray *)imagesNames
                                     playerDelegate:(id<BSImagePlayerDelegate> )player
                                               urls:(NSMutableArray *)urls
 {
     
+
     BSFCRollingADImageUIView *imagePlayer = [BSFCRollingADImageUIView imagePlayer];
+    //长宽，默认
+    imagePlayer.width=BSMarginX( SCREEN_WIDTH);
+    imagePlayer.height=BSMarginY(SCREEN_HEIGHT);
     
     [imagePlayer setPageControlPositionToBottom:40];
+    //图片的URL数组
     [imagePlayer setImageNames:imagesNames];
     
     imagePlayer.playerDelegate = player;
@@ -76,83 +90,16 @@
     return self;
 }
 
--(void)setImageAndURLModels:(NSArray *)imageAndURLModels
+
+
+- (void)touchAction:(UIGestureRecognizer *)gester
 {
-    _imageAndURLModels = imageAndURLModels;
-    NSInteger count = imageAndURLModels.count;
-    _count = count;
-    // 1.添加图片到scrollView中
-    [self.scrollView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
-    for (int i = 0; i < count; i++) {
-        UIImageView *imageView = [[UIImageView alloc] init];
-        NSURL *picURL = [NSURL URLWithString:[imageAndURLModels[i] urlPictute]];
-        [imageView setImageWithURL:picURL placeholderImage:[UIImage imageNamed:@"entertaiment_kong_back.png"]];
-        imageView.userInteractionEnabled = YES;
-        imageView.tag = i;
-        UITapGestureRecognizer *tapGester = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(linkToURL:)];
-        [imageView addGestureRecognizer:tapGester];
-        [self.scrollView addSubview:imageView];
-    }
-    // 3.隐藏水平滚动条
-    self.scrollView.showsHorizontalScrollIndicator = NO;
-    
-    // 4.分页
-    self.scrollView.pagingEnabled = YES;
-    self.scrollView.delegate = self;
-    
-    // 5.设置pageControl的总页数
-    self.pageControl.numberOfPages = count;
-    [self setNeedsLayout];
-    
-     self.pageControl.width=BSMarginY(SCREEN_WIDTH);
-    // 6.添加定时器(每隔2秒调用一次self 的nextImage方法)
-    [self addTimer];
-    [self setNeedsLayout];
+    BSLog(@"轮播事件");
 }
 
-- (void)linkToURL:(UITapGestureRecognizer *)gester
-{
-    NSString *urlStr = [self.imageAndURLModels[gester.view.tag] urlVideo];
-    if (urlStr != nil) {
-        if ([self.playerDelegate respondsToSelector:@selector(imagePlayer:willLoadURL:)]) {
-            [self.playerDelegate imagePlayer:self willLoadURL:[NSURL URLWithString:urlStr]];
-        }
-    }
-}
-
--(void)setImageURLs:(NSArray *)imageURLs
-{
-    if (imageURLs == nil || imageURLs.count == 0) {
-        [self removeTimer];
-        return;
-    }
-    _imageURLs = imageURLs;
-    [self.scrollView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
-    NSInteger count = imageURLs.count;
-    _count = count;
-    // 1.添加图片到scrollView中
-    for (int i = 0; i < count; i++) {
-        UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"entertaiment_kong_back.png"]];
-//        ADTLog(@"%@", imageURLs[i]);
-        [imageView setImageWithURL:[NSURL URLWithString:imageURLs[i]]];
-        [self.scrollView addSubview:imageView];
-    }
-    // 3.隐藏水平滚动条
-    self.scrollView.showsHorizontalScrollIndicator = NO;
-    
-    // 4.分页
-    self.scrollView.pagingEnabled = YES;
-    self.scrollView.delegate = self;
-    
-    // 5.设置pageControl的总页数
-    self.pageControl.numberOfPages = count;
-    self.pageControl.currentPage = 0;
-    
-    // 6.添加定时器(每隔2秒调用一次self 的nextImage方法)
-    [self addTimer];
-    [self setNeedsLayout];
-}
-
+/**
+ *默认轮播图，不带跳转信息，URL的Image名称
+ */
 -(void)setImageNames:(NSArray *)imageNames
 {
     
@@ -164,7 +111,7 @@
     _imageNames = imageNames;
     [self.scrollView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
     NSInteger count = imageNames.count;
-     _count = count;
+    _count = count;
     // 1.添加图片到scrollView中
     for (int i = 0; i < count; i++) {
         UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"entertaiment_kong_back.png"]];
@@ -183,11 +130,58 @@
     self.pageControl.numberOfPages = count;
     self.pageControl.currentPage = 0;
     //适配修改
-    self.scrollView.width=BSMarginX(SCREEN_WIDTH);
+    self.scrollView.width=_width;
+    
     // 6.添加定时器(每隔2秒调用一次self 的nextImage方法)
     [self addTimer];
-    //[self setNeedsLayout];
-//    [self layoutSubviews];
+    
+}
+
+
+/**
+ *默认轮播图，不带跳转信息，URL的Image名称
+ */
+-(void)setImages:(NSArray *)images
+{
+    
+    if (images == nil || images.count == 0) {
+        [self removeTimer];
+        return;
+    }
+    
+    _imageNames = images;
+    [self.scrollView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    NSInteger count = images.count;
+     _count = count;
+    // 1.添加图片到scrollView中
+    for (int i = 0; i < count; i++) {
+        UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"entertaiment_kong_back.png"]];
+        UIImage *image= self.imageNames[i];
+        imageView.image =image;
+        
+        UITapGestureRecognizer *tapGester = [[UITapGestureRecognizer alloc] initWithTarget:_targetController
+            action:@selector(touchAction:)];
+        [imageView addGestureRecognizer:tapGester];
+        
+        imageView.userInteractionEnabled = YES;
+        imageView.tag=i;
+        [self.scrollView addSubview:imageView];
+    }
+    // 3.隐藏水平滚动条
+    self.scrollView.showsHorizontalScrollIndicator = NO;
+    
+    // 4.分页
+    self.scrollView.pagingEnabled = YES;
+    self.scrollView.delegate = self;
+    
+    // 5.设置pageControl的总页数
+    self.pageControl.numberOfPages = count;
+    self.pageControl.currentPage = 0;
+    //适配修改
+    self.scrollView.width=_width;
+
+    // 6.添加定时器(每隔2秒调用一次self 的nextImage方法)
+    [self addTimer];
     
 }
 
@@ -223,7 +217,7 @@
     }
     
     // 2.计算scrollView滚动的位置
-    CGFloat offsetX = page * self.scrollView.width;
+    CGFloat offsetX = page * _width;//self.scrollView.width;
     CGPoint offset = CGPointMake(offsetX, 0);
     [self.scrollView setContentOffset:offset animated:YES];
 }
@@ -235,7 +229,7 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     // 根据scrollView的滚动位置决定pageControl显示第几页
-    CGFloat scrollW = scrollView.frame.size.width;
+    CGFloat scrollW = _width;
     int page = (scrollView.contentOffset.x + scrollW * 0.5) / scrollW;
     self.pageControl.currentPage = page;
 
@@ -269,8 +263,8 @@
 -(void)layoutSubviews
 {
     [super layoutSubviews];
-    CGFloat imageW = self.scrollView.width;
-    CGFloat imageH = self.scrollView.height;
+    CGFloat imageW = _width;
+    CGFloat imageH =_height;
     
     CGFloat imageY = 0;
     NSInteger count =  _count;
@@ -284,7 +278,7 @@
    
     }
     
-    self.pageControl.y = self.height - _valueToBottom;
+    self.pageControl.y = _height - _valueToBottom;
     
     // 2.设置内容尺寸
     CGFloat contentW = count * imageW;

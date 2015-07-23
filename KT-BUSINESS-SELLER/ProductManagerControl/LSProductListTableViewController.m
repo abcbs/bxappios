@@ -40,6 +40,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.tableView.separatorStyle=UITableViewCellSeparatorStyleSingleLine;
     //装载数据
     [self loadBusinessProduct:nil];
 }
@@ -145,6 +146,7 @@
 /**
  *显示章节标题
  */
+
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     return self.title;
@@ -169,14 +171,9 @@ titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
     {
         // Remove the row from data model
         long row=indexPath.row;
-        //if (row==0) {
-        //    return;
-        //}
         [_bsList removeObjectAtIndex:row];
         [_resultList removeObjectAtIndex:row ];
         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-        
-        //Request table view to reload
         [tableView reloadData];
         
     }

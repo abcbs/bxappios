@@ -8,22 +8,6 @@
 #import <UIKit/UIKit.h>
 
 
-/**
- *  用作带图片和对应链接的需求模型
- */
-@interface ImageAndURLModel : NSObject
-/**
- *  图片URL
- */
-@property (nonatomic, copy) NSString *urlPictute;
-/**
- *  图片单击跳转URL
- */
-@property (nonatomic, copy) NSString *urlVideo;
-
-@end
-
-
 @class BSFCRollingADImageUIView;
 
 @protocol BSImagePlayerDelegate <NSObject>
@@ -37,6 +21,12 @@
 @interface BSFCRollingADImageUIView : UIView
 
 @property (nonatomic, weak) id <BSImagePlayerDelegate> playerDelegate;
+
+@property (nonatomic, weak) UIViewController *targetController;
+
+@property (nonatomic, assign) CGFloat width;
+
+@property (nonatomic, assign) CGFloat height;
 
 /**
  *  根据图片名称进行创建
@@ -58,11 +48,18 @@
 
 
 
++(BSFCRollingADImageUIView *)initADImageUIViewWith:(NSMutableArray *)imagesNames
+   playerDelegate:(id<BSImagePlayerDelegate> )player
+   urls:(NSMutableArray *)urls;
+
++(BSFCRollingADImageUIView *)initADImageUIViewWith:(NSMutableArray *)images
+playerDelegate:(id<BSImagePlayerDelegate> )player
+target:(UIViewController*)controller
+width:(CGFloat) w height:(CGFloat) h;
+
 + (instancetype)imagePlayer;
 
-+(BSFCRollingADImageUIView *)initADImageUIViewWith:(NSMutableArray *)imagesNames
-                                    playerDelegate:(id<BSImagePlayerDelegate> )player
-                                              urls:(NSMutableArray *)urls;
+-(void)touchAction:(UIGestureRecognizer *)gestureRecognizer;
 
 /**
  *  设置pageControl距离底部的位置
