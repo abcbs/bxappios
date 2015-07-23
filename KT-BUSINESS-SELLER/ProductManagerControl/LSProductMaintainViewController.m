@@ -106,8 +106,8 @@
         //商品轮播
         [self displayAD:_product.resourceImages];
         //
-        rsImageArray=_product.resourceImages;
-        rsInfoArray=_product.resourceInfoArray;
+        [rsImageArray addObjectsFromArray: _product.resourceImages];
+        [rsInfoArray addObjectsFromArray:_product.resourceInfoArray];
         isEdit = YES;
     }
 }
