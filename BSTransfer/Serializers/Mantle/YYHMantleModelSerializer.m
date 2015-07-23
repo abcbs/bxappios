@@ -63,8 +63,8 @@ static NSNumberFormatter *_numberFormatter;
             }            // NSString -> NSNumber
             value = [_numberFormatter numberFromString:oldValue];
             
-            // 如果是BOOL
-            if ([modelClass isEqualToString:MJTypeBOOL]) {
+            // 如果值是BOOL
+            if ([value isBoolType] ) {
                 // 字符串转BOOL（字符串没有charValue方法）
                 // 系统会调用字符串的charValue转为BOOL类型
                 NSString *lower = [oldValue lowercaseString];

@@ -104,8 +104,8 @@
 }
 - (void) viewDidUnload{
     NSLog( @"TableView dealloc%@",self.description);
-    [self.tableView removeHeader ];
-    [self.tableView removeFooter];
+    [self.tableView.header removeFromSuperview ];
+    [self.tableView.footer removeFromSuperview];
     [HUD removeFromSuperview];
     [self.dataTable removeAllObjects];
     [super viewDidUnload];
@@ -117,17 +117,29 @@
 - (void)setupRefresh
 {
     // 1.下拉刷新(进入刷新状态就会调用self的headerRereshing)
-    [self.tableView addLegendHeaderWithRefreshingTarget:self
-                                       refreshingAction:@selector(headerRereshing)];
-    self.tableView.header.updatedTimeHidden = YES;
-    
-    
+    // 设置回调（一旦进入刷新状态，就调用target的action，也就是调用self的loadNewData方法）
+    MJRefreshGifHeader *header = [MJRefreshGifHeader headerWithRefreshingTarget:self refreshingAction:@selector(headerRereshing)];
+    // 设置普通状态的动画图片
+    // 隐藏时间
+    header.lastUpdatedTimeLabel.hidden = YES;
+    //设置字体
+    header.stateLabel.font = [UIFont systemFontOfSize:15];
+    header.lastUpdatedTimeLabel.font = [UIFont systemFontOfSize:14];
+
+    self.tableView.header = header;
+
     
     // 2.上拉加载更多(进入刷新状态就会调用self的footerRereshing)
-    [self.tableView addLegendFooterWithRefreshingTarget:self
-                                       refreshingAction:@selector(footerRereshing)];
-    [self.tableView.footer setTitle:@""
-                           forState:MJRefreshFooterStateNoMoreData];
+    // 设置回调（一旦进入刷新状态，就调用target的action，也就是调用self的loadMoreData方法）
+    MJRefreshAutoGifFooter *footer = [MJRefreshAutoGifFooter footerWithRefreshingTarget:self refreshingAction:@selector(footerRereshing)];
+    
+    // 隐藏刷新状态的文字
+    footer.refreshingTitleHidden = YES;
+    // 如果没有上面的方法，就用footer.stateLabel.hidden = YES;
+    // 设置尾部
+    self.tableView.footer = footer;
+   
+    
     [self.tableView.header beginRefreshing];
     
 }

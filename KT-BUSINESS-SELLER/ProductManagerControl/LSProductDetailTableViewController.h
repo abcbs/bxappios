@@ -13,11 +13,14 @@
 @interface LSProductDetailTableViewController :
 BSUITableViewCommonController<LSProductManagerDelegate>
 
+#pragma mark 控制器业务实现与模型
+//控制器业务实现代理
 @property (weak, nonatomic) id<LSProductManagerDelegate> browseDelegate;
 
+//产品模型
 @property (strong, nonatomic) BusinessProduct *product;
 
-
+//产品名称
 @property (weak, nonatomic) IBOutlet UITextField *productName;
 
 
@@ -63,8 +66,15 @@ BSUITableViewCommonController<LSProductManagerDelegate>
 //存量
 @property (weak, nonatomic) IBOutlet UITextField *numbers;
 
-//事件处理
-
+#pragma mark -事件处理机制
+//状态栏保存按钮
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *editedProduct;
+
+//商品图像浏览事件
+- (IBAction)previewHeadImage:(id)sender;
+//轮播图预览
+- (IBAction)previewResourceImages:(id)sender;
+
+
 
 @end

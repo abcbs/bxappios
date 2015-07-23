@@ -121,4 +121,21 @@ NSString *bsNetstatus=@"缺省状态";
 }
 
 
++(NSDate*) convertDateFromString:(NSString*)uiDate{
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init] ;
+    [formatter setDateFormat:DATEFORMAT_YYYY_MM_DD];
+    NSDate *date=[formatter dateFromString:uiDate];
+    return date;
+}
+
++ (NSString *)convertStringFromDate:(NSDate *)date{
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    
+    [dateFormatter setDateFormat:DATEFORMAT_YYYY_MM_DD];
+    
+    NSString *destDateString = [dateFormatter stringFromDate:date];
+    
+    return destDateString;
+}
 @end

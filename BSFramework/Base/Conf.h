@@ -207,7 +207,16 @@ extern float autoSizeScaleY;
  */
 #define BSTABLE_CONTENT_COLUMN_NUMBER 1
 
+/**
+ *日期格式
+ */
+#define DATEFORMAT_YYYY_MM_DD  @"yyyy-MM-dd"
 
+#define DEFAULT_DATE @"2015-01-01"
+
++(NSDate*) convertDateFromString:(NSString*)uiDate;
+
++ (NSString *)convertStringFromDate:(NSDate *)date;
 
 +(NSString *)urlWithShoppingCart;
 

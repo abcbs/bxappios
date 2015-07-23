@@ -29,10 +29,18 @@
 #pragma mark --样式调整
 
 -(void)displayProduct{
+    
 
     _productName.text=_product.name;
     _salePrice.text=[NSString stringWithFormat:@"%.2f",_product.salePrice];
     _preferPrice.text=[NSString stringWithFormat:@"%.2f",_product.preferPrice];
+    _publishTime.text=[Conf convertStringFromDate: _product.publishTime ];
+    //头部图像
+    UIImageView *view=[[UIImageView alloc]initWithFrame:BSRectMake(0, _headImage.frame.origin.y,  _headImage.frame.size.width,  _headImage.frame.size.height)  ];
+    
+    [view setImage:_product.headerImage];
+    [_headImage addSubview:view];
+
 
 }
 
@@ -57,5 +65,10 @@
 - (void)sendAddBusinessProduct:(BusinessProduct *) product{
     [_browseDelegate sendAddBusinessProduct:product];
     [self displayProduct];
+}
+- (IBAction)previewHeadImage:(id)sender {
+}
+
+- (IBAction)previewResourceImages:(id)sender {
 }
 @end

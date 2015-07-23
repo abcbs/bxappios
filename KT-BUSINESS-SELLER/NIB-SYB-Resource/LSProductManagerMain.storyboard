@@ -75,7 +75,7 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B4D-Iq-L2n">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B4D-Iq-L2n">
                                                     <rect key="frame" x="85" y="7" width="91" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -178,21 +178,27 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Sqx-3Z-Oll" id="v0K-Y1-aBf">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OFS-GF-Lks">
-                                                    <rect key="frame" x="78" y="0.0" width="88" height="88"/>
-                                                </view>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zHq-dt-JtB">
                                                     <rect key="frame" x="8" y="49" width="30" height="30"/>
                                                     <state key="normal" title="预览">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="previewProductHeadImage:" destination="yrG-Wu-VA4" eventType="touchUpInside" id="Vhg-5r-1dF"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RWx-eR-zMs">
                                                     <rect key="frame" x="8" y="11" width="60" height="30"/>
                                                     <state key="normal" title="自选头像">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="chooseProductHeadImage:" destination="yrG-Wu-VA4" eventType="touchUpInside" id="1xD-N4-Pe7"/>
+                                                    </connections>
                                                 </button>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7gO-4o-csA">
+                                                    <rect key="frame" x="78" y="0.0" width="88" height="88"/>
+                                                </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -206,6 +212,9 @@
                                                     <state key="normal" title="介绍组图">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="chooseResourceImages:" destination="yrG-Wu-VA4" eventType="touchUpInside" id="9Rp-2E-ygt"/>
+                                                    </connections>
                                                 </button>
                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JD7-7V-B3E">
                                                     <rect key="frame" x="78" y="0.0" width="242" height="88"/>
@@ -215,6 +224,9 @@
                                                     <state key="normal" title="预览">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="previewResourceImages:" destination="yrG-Wu-VA4" eventType="touchUpInside" id="Zby-dY-uoq"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -302,7 +314,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="comment" destination="nKe-Xr-I8V" id="sAP-VE-c40"/>
-                        <outlet property="headImage" destination="OFS-GF-Lks" id="DhV-9b-S4E"/>
+                        <outlet property="headerImageView" destination="7gO-4o-csA" id="fJr-iO-6DB"/>
                         <outlet property="introduce" destination="t78-Y3-d9y" id="JCN-wy-Hft"/>
                         <outlet property="isSale" destination="4Nt-Df-wDC" id="zmf-ns-K7o"/>
                         <outlet property="numbers" destination="c8H-xS-KY9" id="v2t-FW-Xr9"/>
@@ -390,10 +402,24 @@
                             </connections>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="LSProductListTableViewCell" id="bQG-LM-C5R">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="LSProductListTableViewCell" textLabel="ktc-BW-Qgi" detailTextLabel="iPQ-TQ-mft" style="IBUITableViewCellStyleSubtitle" id="bQG-LM-C5R">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bQG-LM-C5R" id="Ga3-EZ-5Yq">
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ktc-BW-Qgi">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iPQ-TQ-mft">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                                 <connections>
                                     <segue destination="Ftj-Qy-NeG" kind="show" identifier="BrowseCommodity" trigger="accessoryAction" id="uM2-dk-1A1"/>
@@ -664,18 +690,13 @@
                                                     <rect key="frame" x="78" y="0.0" width="88" height="88"/>
                                                 </view>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RPX-7x-B1P">
-                                                    <rect key="frame" x="8" y="49" width="30" height="30"/>
-                                                    <state key="normal" title="预览">
-                                                        <color key="titleColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <rect key="frame" x="8" y="29" width="60" height="30"/>
+                                                    <state key="normal" title="头像预览">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="87U-FA-KD7">
-                                                    <rect key="frame" x="8" y="11" width="60" height="30"/>
-                                                    <state key="normal" title="自选头像">
-                                                        <color key="titleColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
+                                                    <connections>
+                                                        <action selector="previewHeadImage:" destination="Ftj-Qy-NeG" eventType="touchUpInside" id="GA9-EM-MdV"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -685,21 +706,17 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sBD-09-oqp" id="D8L-Ef-w5H">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="75J-g6-pDW">
-                                                    <rect key="frame" x="10" y="11" width="60" height="30"/>
-                                                    <state key="normal" title="介绍组图">
-                                                        <color key="titleColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                </button>
                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HT7-uq-wqI">
                                                     <rect key="frame" x="78" y="0.0" width="242" height="88"/>
                                                 </view>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hzF-77-EyA">
-                                                    <rect key="frame" x="10" y="47" width="30" height="30"/>
-                                                    <state key="normal" title="预览">
+                                                    <rect key="frame" x="10" y="29" width="75" height="30"/>
+                                                    <state key="normal" title="轮播图预览">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="previewResourceImages:" destination="Ftj-Qy-NeG" eventType="touchUpInside" id="2yo-hr-5SZ"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -938,6 +955,6 @@
         <image name="third_normal.png" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="W81-jC-P1b"/>
+        <segue reference="3ET-7H-4UV"/>
     </inferredMetricsTieBreakers>
 </document>

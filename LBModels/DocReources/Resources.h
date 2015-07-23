@@ -16,4 +16,6 @@
 
 @property (retain,nonatomic) NSString * name;
 
+@property (assign,nonatomic) NSInteger metatype;
+
 @end

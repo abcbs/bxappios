@@ -315,7 +315,6 @@
 		8461B7921B54BB69002A7C43 /* MSWaterSendingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84820A4D1B285D960093B87B /* MSWaterSendingCell.xib */; };
 		8461B7951B54CF57002A7C43 /* LSProductManagerMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8461B7941B54CF57002A7C43 /* LSProductManagerMain.storyboard */; };
 		8461B7981B55044D002A7C43 /* LSProductListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8461B7971B55044D002A7C43 /* LSProductListTableViewController.m */; };
-		8461B79B1B5504E4002A7C43 /* LSProductMaintainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8461B79A1B5504E4002A7C43 /* LSProductMaintainViewController.m */; };
 		8461B79E1B550655002A7C43 /* LSProductADTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8461B79D1B550655002A7C43 /* LSProductADTableViewController.m */; };
 		8461B7A11B550708002A7C43 /* LSProductUpperLowerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8461B7A01B550708002A7C43 /* LSProductUpperLowerViewController.m */; };
 		8461B7A41B5507EA002A7C43 /* LSProductDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8461B7A31B5507EA002A7C43 /* LSProductDetailTableViewController.m */; };
@@ -511,11 +510,11 @@
 		84E71F341B4E5473003089B2 /* BLEDevicesAddTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E71F331B4E5473003089B2 /* BLEDevicesAddTableViewController.m */; };
 		84E71F351B4E5473003089B2 /* BLEDevicesAddTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E71F331B4E5473003089B2 /* BLEDevicesAddTableViewController.m */; };
 		84E71F391B4E60E6003089B2 /* BLCentralExtention.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 84E71F381B4E6023003089B2 /* BLCentralExtention.h */; };
+		84E767CE1B60DB9C0018A9E3 /* LSProductMaintainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E767CD1B60DB9C0018A9E3 /* LSProductMaintainViewController.m */; };
 		84E97AB71B307535001D4100 /* BSUIComponentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E97AB61B307535001D4100 /* BSUIComponentView.m */; };
 		84EA96CB1B57D31C00AC549F /* LSMainIndexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BF8F6B1B4AB63C001042F1 /* LSMainIndexViewController.m */; };
 		84EA96CD1B57D31C00AC549F /* LSHandySearchNavViewController..m in Sources */ = {isa = PBXBuildFile; fileRef = 84F66D671B53E7DE00498734 /* LSHandySearchNavViewController..m */; };
 		84EA96CF1B57D31C00AC549F /* LSProductListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8461B7971B55044D002A7C43 /* LSProductListTableViewController.m */; };
-		84EA96D11B57D31C00AC549F /* LSProductMaintainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8461B79A1B5504E4002A7C43 /* LSProductMaintainViewController.m */; };
 		84EA96D31B57D31C00AC549F /* LSProductADTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8461B79D1B550655002A7C43 /* LSProductADTableViewController.m */; };
 		84EA96D51B57D31C00AC549F /* LSProductUpperLowerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8461B7A01B550708002A7C43 /* LSProductUpperLowerViewController.m */; };
 		84EA96D71B57D31C00AC549F /* LSProductDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8461B7A31B5507EA002A7C43 /* LSProductDetailTableViewController.m */; };
@@ -1063,7 +1062,6 @@
 		15653A4180B1CA7C88B25769 /* Pods-KT-BUSINESS-SELLER.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KT-BUSINESS-SELLER.release.xcconfig"; path = "Pods/Target Support Files/Pods-KT-BUSINESS-SELLER/Pods-KT-BUSINESS-SELLER.release.xcconfig"; sourceTree = "<group>"; };
 		24D3B80807CDF37522D80865 /* Pods-KT-FRAME-PK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KT-FRAME-PK.release.xcconfig"; path = "Pods/Target Support Files/Pods-KT-FRAME-PK/Pods-KT-FRAME-PK.release.xcconfig"; sourceTree = "<group>"; };
 		34039EA61F8DC75DB7E9F783 /* Pods-KT-FRAME-PK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KT-FRAME-PK.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KT-FRAME-PK/Pods-KT-FRAME-PK.debug.xcconfig"; sourceTree = "<group>"; };
-		3953130E7E70B267ECA2B2C8 /* Pods-KT-RESOURCES.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KT-RESOURCES.release.xcconfig"; path = "Pods/Target Support Files/Pods-KT-RESOURCES/Pods-KT-RESOURCES.release.xcconfig"; sourceTree = "<group>"; };
 		3BF24D6D645F73AB82A65C7A /* Pods-KT-BUSINESS-SELLER.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KT-BUSINESS-SELLER.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KT-BUSINESS-SELLER/Pods-KT-BUSINESS-SELLER.debug.xcconfig"; sourceTree = "<group>"; };
 		3FA8299E8FF1437442BD045F /* libPods-BSModel.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BSModel.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		46D2B2A8E5AE53FED2D7DB0D /* libPods-KT-LB-Controller.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KT-LB-Controller.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1232,7 +1230,6 @@
 		8461B7961B55044D002A7C43 /* LSProductListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSProductListTableViewController.h; sourceTree = "<group>"; };
 		8461B7971B55044D002A7C43 /* LSProductListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSProductListTableViewController.m; sourceTree = "<group>"; };
 		8461B7991B5504E4002A7C43 /* LSProductMaintainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSProductMaintainViewController.h; sourceTree = "<group>"; };
-		8461B79A1B5504E4002A7C43 /* LSProductMaintainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSProductMaintainViewController.m; sourceTree = "<group>"; };
 		8461B79C1B550655002A7C43 /* LSProductADTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSProductADTableViewController.h; sourceTree = "<group>"; };
 		8461B79D1B550655002A7C43 /* LSProductADTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSProductADTableViewController.m; sourceTree = "<group>"; };
 		8461B79F1B550708002A7C43 /* LSProductUpperLowerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSProductUpperLowerViewController.h; sourceTree = "<group>"; };
@@ -1480,10 +1477,7 @@
 		84E71F321B4E5473003089B2 /* BLEDevicesAddTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLEDevicesAddTableViewController.h; sourceTree = "<group>"; };
 		84E71F331B4E5473003089B2 /* BLEDevicesAddTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLEDevicesAddTableViewController.m; sourceTree = "<group>"; };
 		84E71F381B4E6023003089B2 /* BLCentralExtention.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLCentralExtention.h; sourceTree = "<group>"; };
-		84E7D9861B5C03210083C59F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		84E7D9871B5C03210083C59F /* KT-Imges.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KT-Imges.h"; sourceTree = "<group>"; };
-		84E7D9951B5C03220083C59F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		84E7D9961B5C03220083C59F /* KT_ImgesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KT_ImgesTests.m; sourceTree = "<group>"; };
+		84E767CD1B60DB9C0018A9E3 /* LSProductMaintainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSProductMaintainViewController.m; sourceTree = "<group>"; };
 		84E97AB51B307535001D4100 /* BSUIComponentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUIComponentView.h; sourceTree = "<group>"; };
 		84E97AB61B307535001D4100 /* BSUIComponentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUIComponentView.m; sourceTree = "<group>"; };
 		84EA96B31B57D2D400AC549F /* libKT-LS-Controller.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libKT-LS-Controller.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1753,7 +1747,6 @@
 		E2C128B78CB408DF3C049CDE /* libPods-KT-MODEL-MODULE.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KT-MODEL-MODULE.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E737483196F50EF6168C876A /* Pods-KT-LS-Controller.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KT-LS-Controller.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KT-LS-Controller/Pods-KT-LS-Controller.debug.xcconfig"; sourceTree = "<group>"; };
 		E8E2EE8D108CE037F8FAF7AD /* libPods-BSTransfer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BSTransfer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		EC885B589C5660E95E977CD9 /* Pods-KT-RESOURCES.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KT-RESOURCES.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KT-RESOURCES/Pods-KT-RESOURCES.debug.xcconfig"; sourceTree = "<group>"; };
 		F292D073DBA6857868ACD8F5 /* Pods-KTAPP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KTAPP.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KTAPP/Pods-KTAPP.debug.xcconfig"; sourceTree = "<group>"; };
 		F966219CD8A0891D6079F0EE /* libPods-KT-FRAME-PK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KT-FRAME-PK.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC5704F4BEFF5B468EADE5E0 /* Pods-KT-MODEL-MODULE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KT-MODEL-MODULE.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KT-MODEL-MODULE/Pods-KT-MODEL-MODULE.debug.xcconfig"; sourceTree = "<group>"; };
@@ -1877,8 +1870,6 @@
 				24D3B80807CDF37522D80865 /* Pods-KT-FRAME-PK.release.xcconfig */,
 				FC5704F4BEFF5B468EADE5E0 /* Pods-KT-MODEL-MODULE.debug.xcconfig */,
 				8FCA45FC7E90066EB24B7BB5 /* Pods-KT-MODEL-MODULE.release.xcconfig */,
-				EC885B589C5660E95E977CD9 /* Pods-KT-RESOURCES.debug.xcconfig */,
-				3953130E7E70B267ECA2B2C8 /* Pods-KT-RESOURCES.release.xcconfig */,
 				E737483196F50EF6168C876A /* Pods-KT-LS-Controller.debug.xcconfig */,
 				63E57AC5C30D1EC84BC9D986 /* Pods-KT-LS-Controller.release.xcconfig */,
 			);
@@ -2782,7 +2773,7 @@
 				8461B7A21B5507EA002A7C43 /* LSProductDetailTableViewController.h */,
 				8461B7A31B5507EA002A7C43 /* LSProductDetailTableViewController.m */,
 				8461B7991B5504E4002A7C43 /* LSProductMaintainViewController.h */,
-				8461B79A1B5504E4002A7C43 /* LSProductMaintainViewController.m */,
+				84E767CD1B60DB9C0018A9E3 /* LSProductMaintainViewController.m */,
 				84EB39751B58EFDE00AD9F66 /* LSProductManagerDelegate.h */,
 				8461B79C1B550655002A7C43 /* LSProductADTableViewController.h */,
 				8461B79D1B550655002A7C43 /* LSProductADTableViewController.m */,
@@ -2849,40 +2840,6 @@
 				845A022E1B3DB13B007F5327 /* BSCMFrameworkHeader.h */,
 			);
 			path = BSFramework;
-			sourceTree = "<group>";
-		};
-		84E7D9841B5C03210083C59F /* KT-Imges */ = {
-			isa = PBXGroup;
-			children = (
-				84E7D9871B5C03210083C59F /* KT-Imges.h */,
-				84E7D9851B5C03210083C59F /* Supporting Files */,
-			);
-			path = "KT-Imges";
-			sourceTree = "<group>";
-		};
-		84E7D9851B5C03210083C59F /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				84E7D9861B5C03210083C59F /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		84E7D9931B5C03220083C59F /* KT-ImgesTests */ = {
-			isa = PBXGroup;
-			children = (
-				84E7D9961B5C03220083C59F /* KT_ImgesTests.m */,
-				84E7D9941B5C03220083C59F /* Supporting Files */,
-			);
-			path = "KT-ImgesTests";
-			sourceTree = "<group>";
-		};
-		84E7D9941B5C03220083C59F /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				84E7D9951B5C03220083C59F /* Info.plist */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		84EA96B41B57D2D400AC549F /* KT-LS-Controller */ = {
@@ -3255,8 +3212,6 @@
 				84BF8F911B4ABA7E001042F1 /* KT-FRAME-PK */,
 				84BF902C1B4AC55D001042F1 /* KT-MODEL-MODULE */,
 				84EA96B41B57D2D400AC549F /* KT-LS-Controller */,
-				84E7D9841B5C03210083C59F /* KT-Imges */,
-				84E7D9931B5C03220083C59F /* KT-ImgesTests */,
 				A0028F341ADE4D5500747D8A /* Frameworks */,
 				A04366AA1AD7B550005842EE /* Products */,
 				67A658A2709CA6036D46B63C /* Pods */,
@@ -4372,7 +4327,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8461B79B1B5504E4002A7C43 /* LSProductMaintainViewController.m in Sources */,
 				8461B5761B54AEB6002A7C43 /* BankManagerViewController.m in Sources */,
 				84BF8F6C1B4AB63C001042F1 /* LSMainIndexViewController.m in Sources */,
 				8405CB341B5544280014AF8D /* LSBusinessActivityTableViewController.m in Sources */,
@@ -4384,6 +4338,7 @@
 				8461B7981B55044D002A7C43 /* LSProductListTableViewController.m in Sources */,
 				84F66D681B53E7DE00498734 /* LSHandySearchNavViewController..m in Sources */,
 				8461B7A41B5507EA002A7C43 /* LSProductDetailTableViewController.m in Sources */,
+				84E767CE1B60DB9C0018A9E3 /* LSProductMaintainViewController.m in Sources */,
 				84BF8F631B4AB63C001042F1 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -4499,7 +4454,6 @@
 				84EA96CB1B57D31C00AC549F /* LSMainIndexViewController.m in Sources */,
 				84EA96CD1B57D31C00AC549F /* LSHandySearchNavViewController..m in Sources */,
 				84EA96CF1B57D31C00AC549F /* LSProductListTableViewController.m in Sources */,
-				84EA96D11B57D31C00AC549F /* LSProductMaintainViewController.m in Sources */,
 				84EA96D31B57D31C00AC549F /* LSProductADTableViewController.m in Sources */,
 				84EA96D51B57D31C00AC549F /* LSProductUpperLowerViewController.m in Sources */,
 				84EA96D71B57D31C00AC549F /* LSProductDetailTableViewController.m in Sources */,

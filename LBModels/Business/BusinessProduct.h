@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Resources.h"
 
 @interface BusinessProduct : NSObject
 
@@ -71,8 +72,9 @@
 @property (assign,nonatomic) NSInteger resourceId;
 
 //资源ID转换之后为UIImage
-@property (strong, nonatomic) UIImage *headerImage;
+@property (retain, nonatomic) UIImage *headerImage;
 
+@property (strong, nonatomic) Resources *resourceInfo;
 //商品资源IDs
 @property (strong,nonatomic) NSMutableArray * resourceIds;
 

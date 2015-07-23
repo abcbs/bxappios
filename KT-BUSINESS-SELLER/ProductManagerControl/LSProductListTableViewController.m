@@ -89,7 +89,17 @@
     }
     
     cell.textLabel.text = p.name;
-    cell.detailTextLabel.text = p.introduce;
+    NSString *detailInfo=@"";
+    if (p.salePrice !=0) {
+        detailInfo=[detailInfo stringByAppendingFormat:@"销售价:%.2f\t",p.salePrice];
+        
+        
+    }
+    if (p.preferPrice !=0) {
+       detailInfo =[detailInfo stringByAppendingFormat:@"卡价格:%.2f",p.preferPrice];
+        
+    }
+    cell.detailTextLabel.text = detailInfo;
     //p的图片，在服务端为资源标示
     cell.imageView.image = p.headerImage;
     

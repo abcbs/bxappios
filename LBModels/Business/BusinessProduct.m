@@ -67,6 +67,12 @@
     //头像资源ID
     [aCoder encodeInteger: _resourceId forKey:@"resourceId"];
     
+    //头像资源ID
+    [aCoder encodeObject: _headerImage forKey:@"headerImage"];
+    
+    //资源信息
+    [aCoder encodeObject: _resourceInfo forKey:@"resourceInfo"];
+
     //商品资源ID
     [aCoder encodeObject:_resourceIds forKey:@"resourceIds"];
     
@@ -132,6 +138,11 @@
     
     //头像资源ID
     _resourceId =[aDecoder decodeIntegerForKey:@"resourceId"];
+    
+    //
+    _resourceInfo =[aDecoder decodeObjectForKey:@"resourceInfo"];
+
+     _headerImage =[aDecoder decodeObjectForKey:@"headerImage"];
     
     //商品资源ID
     _resourceIds =[aDecoder decodeObjectForKey:@"resourceIds"];

@@ -10,6 +10,7 @@ target 'KTAPP' do
 	pod 'MBProgressHUD'
 	pod 'AFNetworkActivityLogger'
 	pod 'Mantle'
+        pod 'QBImagePickerController'
 end
 
 target 'KT-BUSINESS-SELLER' do
@@ -21,6 +22,7 @@ target 'KT-BUSINESS-SELLER' do
         pod 'MBProgressHUD'
         pod 'AFNetworkActivityLogger'
         pod 'Mantle'
+	pod 'QBImagePickerController'
 end
 
 
@@ -33,6 +35,7 @@ target 'KT-FRAME-PK' do
         pod 'MBProgressHUD'
         pod 'AFNetworkActivityLogger'
         pod 'Mantle'
+        pod 'QBImagePickerController'
 end
 
 
@@ -57,6 +60,7 @@ target 'KT-LS-Controller' do
         pod 'MBProgressHUD'
         pod 'AFNetworkActivityLogger'
         pod 'Mantle'
+        pod 'QBImagePickerController'
 end
 
 target 'KT-LB-Controller' do
@@ -68,6 +72,7 @@ target 'KT-LB-Controller' do
         pod 'MBProgressHUD'
         pod 'AFNetworkActivityLogger'
         pod 'Mantle'
+        pod 'QBImagePickerController'
 end
 
 #	pod 'AFNetworking'

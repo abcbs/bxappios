@@ -17,12 +17,14 @@
 @property (weak, nonatomic) id<LSProductManagerDelegate> editDelegate;
 @property (strong, nonatomic) BusinessProduct *product;
 
+//商家显示信息
+//商品名称
 @property (weak, nonatomic) IBOutlet UITextField *productName;
 
 //销售价格
 @property (weak, nonatomic) IBOutlet UITextField *preferPrice;
 
-//销售价格
+//促销价格
 @property (weak, nonatomic) IBOutlet UITextField *salePrice;
 
 //发布时间
@@ -32,7 +34,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *productCatalogue;
 
 //商品头像
-@property (weak, nonatomic) IBOutlet UIView *headImage;
+
+@property (weak, nonatomic) IBOutlet UIImageView *headerImageView;
 
 //商品介绍组图
 @property (weak, nonatomic) IBOutlet UIView *resourceImags;
@@ -64,6 +67,18 @@
 
 //商品编辑涉及的事件
 - (IBAction)saveProductDate:(id)sender;
+
+//头像，商品主图选择事件
+- (IBAction)chooseProductHeadImage:(id)sender;
+
+//浏览商品主图事件
+- (IBAction)previewProductHeadImage:(id)sender;
+
+//选择轮播图，介绍组图
+- (IBAction)chooseResourceImages:(id)sender;
+
+//浏览轮播图，介绍组图
+- (IBAction)previewResourceImages:(id)sender;
 
 
 @end
