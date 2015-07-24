@@ -1,9 +1,7 @@
 //
 //  UIView+Frame.h
-//  12期微博
-//
 //  Created by apple on 15-1-28.
-//  Copyright (c) 2015年 itcast. All rights reserved.
+//  Copyright (c) 2015年 KT. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

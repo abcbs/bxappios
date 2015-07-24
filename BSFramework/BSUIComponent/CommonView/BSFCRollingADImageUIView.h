@@ -1,8 +1,6 @@
 //
 //  ADTImagePlayer.h
-//
-//  Created by Gavin on 14-7-24.
-//  Copyright (c) 2014年 adt. All rights reserved.
+//  Copyright (c) 2015年 KT. All rights reserved.
 ///  图片轮播器的封装
 
 #import <UIKit/UIKit.h>

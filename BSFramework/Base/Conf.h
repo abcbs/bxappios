@@ -3,7 +3,7 @@
 //  民生小区
 //
 //  Created by LouJQ on 15-5-1.
-//  Copyright (c) 2015年 itcast. All rights reserved.
+//  Copyright (c) 2015年 KT. All rights reserved.
 //
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>

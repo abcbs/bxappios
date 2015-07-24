@@ -3,7 +3,7 @@
 //  KTAPP
 //  表格运行时，行的详细数据，目前包括头方法、实现的Controller，图标信息
 //  Created by admin on 15/6/24.
-//  Copyright (c) 2015年 itcast. All rights reserved.
+//  Copyright (c) 2015年 KT. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

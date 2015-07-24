@@ -512,6 +512,28 @@
 		84E71F391B4E60E6003089B2 /* BLCentralExtention.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 84E71F381B4E6023003089B2 /* BLCentralExtention.h */; };
 		84E767CE1B60DB9C0018A9E3 /* LSProductMaintainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E767CD1B60DB9C0018A9E3 /* LSProductMaintainViewController.m */; };
 		84E97AB71B307535001D4100 /* BSUIComponentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E97AB61B307535001D4100 /* BSUIComponentView.m */; };
+		84E9D79A1B61E10C00F2CD24 /* BSAlbumCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E9D7811B61E10C00F2CD24 /* BSAlbumCell.m */; };
+		84E9D79B1B61E10C00F2CD24 /* BSAlbumCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E9D7811B61E10C00F2CD24 /* BSAlbumCell.m */; };
+		84E9D79C1B61E10C00F2CD24 /* BSAlbumsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E9D7831B61E10C00F2CD24 /* BSAlbumsViewController.m */; };
+		84E9D79D1B61E10C00F2CD24 /* BSAlbumsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E9D7831B61E10C00F2CD24 /* BSAlbumsViewController.m */; };
+		84E9D79E1B61E10C00F2CD24 /* BSAssetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E9D7851B61E10C00F2CD24 /* BSAssetCell.m */; };
+		84E9D79F1B61E10C00F2CD24 /* BSAssetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E9D7851B61E10C00F2CD24 /* BSAssetCell.m */; };
+		84E9D7A01B61E10C00F2CD24 /* BSAssetsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E9D7871B61E10C00F2CD24 /* BSAssetsViewController.m */; };
+		84E9D7A11B61E10C00F2CD24 /* BSAssetsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E9D7871B61E10C00F2CD24 /* BSAssetsViewController.m */; };
+		84E9D7A21B61E10C00F2CD24 /* BSCheckmarkView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E9D7891B61E10C00F2CD24 /* BSCheckmarkView.m */; };
+		84E9D7A31B61E10C00F2CD24 /* BSCheckmarkView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E9D7891B61E10C00F2CD24 /* BSCheckmarkView.m */; };
+		84E9D7A41B61E10C00F2CD24 /* BSImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E9D78C1B61E10C00F2CD24 /* BSImagePickerController.m */; };
+		84E9D7A51B61E10C00F2CD24 /* BSImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E9D78C1B61E10C00F2CD24 /* BSImagePickerController.m */; };
+		84E9D7A61B61E10C00F2CD24 /* BSSlomoIconView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E9D78E1B61E10C00F2CD24 /* BSSlomoIconView.m */; };
+		84E9D7A71B61E10C00F2CD24 /* BSSlomoIconView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E9D78E1B61E10C00F2CD24 /* BSSlomoIconView.m */; };
+		84E9D7A81B61E10C00F2CD24 /* BSVideoIconView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E9D7901B61E10C00F2CD24 /* BSVideoIconView.m */; };
+		84E9D7A91B61E10C00F2CD24 /* BSVideoIconView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E9D7901B61E10C00F2CD24 /* BSVideoIconView.m */; };
+		84E9D7AA1B61E10C00F2CD24 /* BSVideoIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E9D7921B61E10C00F2CD24 /* BSVideoIndicatorView.m */; };
+		84E9D7AB1B61E10C00F2CD24 /* BSVideoIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E9D7921B61E10C00F2CD24 /* BSVideoIndicatorView.m */; };
+		84E9D7B11B61E22300F2CD24 /* BSImagePicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84E9D7AF1B61E22300F2CD24 /* BSImagePicker.storyboard */; };
+		84E9D7B21B61E22300F2CD24 /* BSImagePicker.strings in Resources */ = {isa = PBXBuildFile; fileRef = 84E9D7B01B61E22300F2CD24 /* BSImagePicker.strings */; };
+		84E9D7B31B61E2B800F2CD24 /* BSImagePicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84E9D7AF1B61E22300F2CD24 /* BSImagePicker.storyboard */; };
+		84E9D7B41B61E2B800F2CD24 /* BSImagePicker.strings in Resources */ = {isa = PBXBuildFile; fileRef = 84E9D7B01B61E22300F2CD24 /* BSImagePicker.strings */; };
 		84EA96CB1B57D31C00AC549F /* LSMainIndexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BF8F6B1B4AB63C001042F1 /* LSMainIndexViewController.m */; };
 		84EA96CD1B57D31C00AC549F /* LSHandySearchNavViewController..m in Sources */ = {isa = PBXBuildFile; fileRef = 84F66D671B53E7DE00498734 /* LSHandySearchNavViewController..m */; };
 		84EA96CF1B57D31C00AC549F /* LSProductListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8461B7971B55044D002A7C43 /* LSProductListTableViewController.m */; };
@@ -1480,6 +1502,27 @@
 		84E767CD1B60DB9C0018A9E3 /* LSProductMaintainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSProductMaintainViewController.m; sourceTree = "<group>"; };
 		84E97AB51B307535001D4100 /* BSUIComponentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUIComponentView.h; sourceTree = "<group>"; };
 		84E97AB61B307535001D4100 /* BSUIComponentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUIComponentView.m; sourceTree = "<group>"; };
+		84E9D7801B61E10C00F2CD24 /* BSAlbumCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSAlbumCell.h; sourceTree = "<group>"; };
+		84E9D7811B61E10C00F2CD24 /* BSAlbumCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSAlbumCell.m; sourceTree = "<group>"; };
+		84E9D7821B61E10C00F2CD24 /* BSAlbumsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSAlbumsViewController.h; sourceTree = "<group>"; };
+		84E9D7831B61E10C00F2CD24 /* BSAlbumsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSAlbumsViewController.m; sourceTree = "<group>"; };
+		84E9D7841B61E10C00F2CD24 /* BSAssetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSAssetCell.h; sourceTree = "<group>"; };
+		84E9D7851B61E10C00F2CD24 /* BSAssetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSAssetCell.m; sourceTree = "<group>"; };
+		84E9D7861B61E10C00F2CD24 /* BSAssetsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSAssetsViewController.h; sourceTree = "<group>"; };
+		84E9D7871B61E10C00F2CD24 /* BSAssetsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSAssetsViewController.m; sourceTree = "<group>"; };
+		84E9D7881B61E10C00F2CD24 /* BSCheckmarkView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSCheckmarkView.h; sourceTree = "<group>"; };
+		84E9D7891B61E10C00F2CD24 /* BSCheckmarkView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSCheckmarkView.m; sourceTree = "<group>"; };
+		84E9D78A1B61E10C00F2CD24 /* BSImagePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSImagePicker.h; sourceTree = "<group>"; };
+		84E9D78B1B61E10C00F2CD24 /* BSImagePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSImagePickerController.h; sourceTree = "<group>"; };
+		84E9D78C1B61E10C00F2CD24 /* BSImagePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSImagePickerController.m; sourceTree = "<group>"; };
+		84E9D78D1B61E10C00F2CD24 /* BSSlomoIconView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSSlomoIconView.h; sourceTree = "<group>"; };
+		84E9D78E1B61E10C00F2CD24 /* BSSlomoIconView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSSlomoIconView.m; sourceTree = "<group>"; };
+		84E9D78F1B61E10C00F2CD24 /* BSVideoIconView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSVideoIconView.h; sourceTree = "<group>"; };
+		84E9D7901B61E10C00F2CD24 /* BSVideoIconView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSVideoIconView.m; sourceTree = "<group>"; };
+		84E9D7911B61E10C00F2CD24 /* BSVideoIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSVideoIndicatorView.h; sourceTree = "<group>"; };
+		84E9D7921B61E10C00F2CD24 /* BSVideoIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSVideoIndicatorView.m; sourceTree = "<group>"; };
+		84E9D7AF1B61E22300F2CD24 /* BSImagePicker.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BSImagePicker.storyboard; sourceTree = "<group>"; };
+		84E9D7B01B61E22300F2CD24 /* BSImagePicker.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = BSImagePicker.strings; sourceTree = "<group>"; };
 		84EA96B31B57D2D400AC549F /* libKT-LS-Controller.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libKT-LS-Controller.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84EA96B51B57D2D400AC549F /* KT_LS_Controller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KT_LS_Controller.h; sourceTree = "<group>"; };
 		84EA96B71B57D2D400AC549F /* KT_LS_Controller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KT_LS_Controller.m; sourceTree = "<group>"; };
@@ -2581,6 +2624,8 @@
 		84BA968A1B2829F300388B58 /* BSInfrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				84E9D7AE1B61E22300F2CD24 /* Resource */,
+				84E9D77B1B61E10C00F2CD24 /* ImagePicker */,
 				84BA968B1B2829F300388B58 /*  Bluetooth */,
 				84BA968C1B2829F300388B58 /* Map */,
 				84BA968D1B2829F300388B58 /* Sensor */,
@@ -2840,6 +2885,41 @@
 				845A022E1B3DB13B007F5327 /* BSCMFrameworkHeader.h */,
 			);
 			path = BSFramework;
+			sourceTree = "<group>";
+		};
+		84E9D77B1B61E10C00F2CD24 /* ImagePicker */ = {
+			isa = PBXGroup;
+			children = (
+				84E9D7801B61E10C00F2CD24 /* BSAlbumCell.h */,
+				84E9D7811B61E10C00F2CD24 /* BSAlbumCell.m */,
+				84E9D7821B61E10C00F2CD24 /* BSAlbumsViewController.h */,
+				84E9D7831B61E10C00F2CD24 /* BSAlbumsViewController.m */,
+				84E9D7841B61E10C00F2CD24 /* BSAssetCell.h */,
+				84E9D7851B61E10C00F2CD24 /* BSAssetCell.m */,
+				84E9D7861B61E10C00F2CD24 /* BSAssetsViewController.h */,
+				84E9D7871B61E10C00F2CD24 /* BSAssetsViewController.m */,
+				84E9D7881B61E10C00F2CD24 /* BSCheckmarkView.h */,
+				84E9D7891B61E10C00F2CD24 /* BSCheckmarkView.m */,
+				84E9D78A1B61E10C00F2CD24 /* BSImagePicker.h */,
+				84E9D78B1B61E10C00F2CD24 /* BSImagePickerController.h */,
+				84E9D78C1B61E10C00F2CD24 /* BSImagePickerController.m */,
+				84E9D78D1B61E10C00F2CD24 /* BSSlomoIconView.h */,
+				84E9D78E1B61E10C00F2CD24 /* BSSlomoIconView.m */,
+				84E9D78F1B61E10C00F2CD24 /* BSVideoIconView.h */,
+				84E9D7901B61E10C00F2CD24 /* BSVideoIconView.m */,
+				84E9D7911B61E10C00F2CD24 /* BSVideoIndicatorView.h */,
+				84E9D7921B61E10C00F2CD24 /* BSVideoIndicatorView.m */,
+			);
+			path = ImagePicker;
+			sourceTree = "<group>";
+		};
+		84E9D7AE1B61E22300F2CD24 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				84E9D7AF1B61E22300F2CD24 /* BSImagePicker.storyboard */,
+				84E9D7B01B61E22300F2CD24 /* BSImagePicker.strings */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 		84EA96B41B57D2D400AC549F /* KT-LS-Controller */ = {
@@ -3558,6 +3638,7 @@
 				en,
 				Base,
 				"zh-Hans",
+				ja,
 			);
 			mainGroup = A04366A01AD7B550005842EE;
 			productRefGroup = A04366AA1AD7B550005842EE /* Products */;
@@ -3579,6 +3660,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84E9D7B31B61E2B800F2CD24 /* BSImagePicker.storyboard in Resources */,
+				84E9D7B41B61E2B800F2CD24 /* BSImagePicker.strings in Resources */,
 				84EA985C1B57E21F00AC549F /* ljt.png in Resources */,
 				8461B72D1B54BB69002A7C43 /* LFRecommend.storyboard in Resources */,
 				84EA97CA1B57E21F00AC549F /* cstb.png in Resources */,
@@ -3867,6 +3950,7 @@
 				84EA98371B57E21F00AC549F /* a12.png in Resources */,
 				84EA97F51B57E21F00AC549F /* bjfwh@2x.png in Resources */,
 				84EA982F1B57E21F00AC549F /* a-1.png in Resources */,
+				84E9D7B11B61E22300F2CD24 /* BSImagePicker.storyboard in Resources */,
 				84EA98A71B57E21F00AC549F /* forget password-2.png in Resources */,
 				84EA98A91B57E21F00AC549F /* forget password-3.png in Resources */,
 				847B30881B3290DD007003D7 /* Main.storyboard in Resources */,
@@ -4012,6 +4096,7 @@
 				84EA98571B57E21F00AC549F /* h-1.png in Resources */,
 				84EA98151B57E21F00AC549F /* second_selected@2x.png in Resources */,
 				84EA98F71B57E21F00AC549F /* im_reservation_baojie.png in Resources */,
+				84E9D7B21B61E22300F2CD24 /* BSImagePicker.strings in Resources */,
 				843DA8891B21D56300924AE6 /* WeiboSDK.bundle in Resources */,
 				84EA98011B57E21F00AC549F /* icon-1x-02.png in Resources */,
 				84EA97ED1B57E21F00AC549F /* tabbar_discover@3x.png in Resources */,
@@ -4352,6 +4437,7 @@
 				844570D21B4D672D000CA1C7 /* BLEInfo.m in Sources */,
 				84D19FEF1B4C440500BA25BF /* LeDiscovery.m in Sources */,
 				84E71F351B4E5473003089B2 /* BLEDevicesAddTableViewController.m in Sources */,
+				84E9D7A31B61E10C00F2CD24 /* BSCheckmarkView.m in Sources */,
 				84EAFF601B596C8900A90992 /* BSUITableViewCanEditedController.m in Sources */,
 				844570DA1B4D67D5000CA1C7 /* BTLECentralViewController.m in Sources */,
 				84D19FF11B4C440500BA25BF /* LeTemperatureAlarmService.m in Sources */,
@@ -4360,12 +4446,16 @@
 				84BF8FC41B4AC2FA001042F1 /* Conf.m in Sources */,
 				84BF8FC61B4AC2FA001042F1 /* ErrorMessage.m in Sources */,
 				84BF8FCA1B4AC2FA001042F1 /* BSHTTPNetworking.m in Sources */,
+				84E9D79F1B61E10C00F2CD24 /* BSAssetCell.m in Sources */,
 				84BF8FCD1B4AC2FA001042F1 /* BSTableViewRefreshController.m in Sources */,
+				84E9D7A91B61E10C00F2CD24 /* BSVideoIconView.m in Sources */,
 				84BF8FCF1B4AC2FA001042F1 /* BSTableSection.m in Sources */,
 				84BF8FD11B4AC2FA001042F1 /* BSTableContentObject.m in Sources */,
+				84E9D79D1B61E10C00F2CD24 /* BSAlbumsViewController.m in Sources */,
 				84BF8FD31B4AC2FA001042F1 /* UIViewController+BSTableObject.m in Sources */,
 				84BF8FD51B4AC2FA001042F1 /* BSUITableViewInitRuntimeController.m in Sources */,
 				84BF8FDA1B4AC2FA001042F1 /* BSTableViewCellData.m in Sources */,
+				84E9D7AB1B61E10C00F2CD24 /* BSVideoIndicatorView.m in Sources */,
 				84BF8FDC1B4AC2FA001042F1 /* BSTableViewMultCellData.m in Sources */,
 				84BF8FDE1B4AC2FA001042F1 /* BSUITabBarCommonController.m in Sources */,
 				84BF8FE01B4AC2FA001042F1 /* BSContentObjectNavigation.m in Sources */,
@@ -4375,12 +4465,16 @@
 				84BF8FE71B4AC2FA001042F1 /* BSUISingleImageTableViewCell.m in Sources */,
 				84EAFF681B596F2400A90992 /* BSUITableViewCommonController.m in Sources */,
 				84BF8FE91B4AC2FA001042F1 /* BSUIFiveColTableViewCell.m in Sources */,
+				84E9D7A71B61E10C00F2CD24 /* BSSlomoIconView.m in Sources */,
 				84BF8FF11B4AC2FA001042F1 /* BSUIComponentView.m in Sources */,
 				84BF8FF31B4AC2FA001042F1 /* BSUIBlockButton.m in Sources */,
+				84E9D7A11B61E10C00F2CD24 /* BSAssetsViewController.m in Sources */,
 				84BF8FF61B4AC2FA001042F1 /* BSUIBarButtonItem.m in Sources */,
 				84ECE42E1B4F9BB4003D1AEE /* BSUIDefaultTableViewCell.m in Sources */,
 				844570CA1B4D6323000CA1C7 /* BLEDeviceDetailsTableViewController.m in Sources */,
+				84E9D7A51B61E10C00F2CD24 /* BSImagePickerController.m in Sources */,
 				84BF8FFA1B4AC2FA001042F1 /* YYHMantleModelSerializer.m in Sources */,
+				84E9D79B1B61E10C00F2CD24 /* BSAlbumCell.m in Sources */,
 				84BF8FFC1B4AC2FA001042F1 /* YYHModelRoute.m in Sources */,
 				84BF8FFE1B4AC2FA001042F1 /* YYHModelRouter.m in Sources */,
 				84BF8FAD1B4ABC88001042F1 /* BSUICommonController.m in Sources */,
@@ -4512,17 +4606,20 @@
 				84820A601B285ECA0093B87B /* KTWaterDetailsViewController.m in Sources */,
 				844570D91B4D67D5000CA1C7 /* BTLECentralViewController.m in Sources */,
 				842043781B2991770002C868 /* DLUtility.m in Sources */,
+				84E9D7A21B61E10C00F2CD24 /* BSCheckmarkView.m in Sources */,
 				845A02351B3DBA7E007F5327 /* UIView+Frame.m in Sources */,
 				84832D591B565DAC00FB6D28 /* OrderCartsDomain.m in Sources */,
 				842042C51B2988410002C868 /* YYHModelRoute.m in Sources */,
 				84BA96861B2829D500388B58 /* WaterSendingDetails.m in Sources */,
 				8470765B1B3A8F1400F28180 /* adsCell.m in Sources */,
 				842043741B2991770002C868 /* DLSlideView.m in Sources */,
+				84E9D79E1B61E10C00F2CD24 /* BSAssetCell.m in Sources */,
 				8469CD691B4121F000EF6757 /* LFRecommendViewController.m in Sources */,
 				84820A4E1B285D960093B87B /* MSWaterSendingCell.m in Sources */,
 				8474331C1B2A92B400B030C4 /* ForgetViewController.m in Sources */,
 				84832D341B56532100FB6D28 /* ShoppingCartDomain.m in Sources */,
 				8487F1851B3005C100F0F7B2 /* KTInformationConfViewController.m in Sources */,
+				84E9D7A01B61E10C00F2CD24 /* BSAssetsViewController.m in Sources */,
 				8405CBBD1B5573ED0014AF8D /* BusinessProductDomail.m in Sources */,
 				8487F1871B3005C100F0F7B2 /* KTOnlinePayViewController.m in Sources */,
 				84832D551B565C6400FB6D28 /* OrderBaseAndDetailListDomain.m in Sources */,
@@ -4557,6 +4654,7 @@
 				84BA967F1B2829D500388B58 /* orderDetailModel.m in Sources */,
 				A0F0C3F41B10209500CE406D /* MiddleNetWorkTool.m in Sources */,
 				845A02231B3DA1F3007F5327 /* BSUIImageTitleTableViewCell.m in Sources */,
+				84E9D7A61B61E10C00F2CD24 /* BSSlomoIconView.m in Sources */,
 				8405CBC91B5577660014AF8D /* UserPay.m in Sources */,
 				84832D611B565EAC00FB6D28 /* UserBaseAndSessionDomain.m in Sources */,
 				84BA96811B2829D500388B58 /* RegistModel.m in Sources */,
@@ -4587,6 +4685,7 @@
 				8405CBAD1B5570700014AF8D /* BusinessProduct.m in Sources */,
 				8474DEAB1B3F474700D9DE36 /* BSUIBlockButton.m in Sources */,
 				8480580B1B39A0E9005817D7 /* BSBLEDetailTableViewController.m in Sources */,
+				84E9D7A81B61E10C00F2CD24 /* BSVideoIconView.m in Sources */,
 				8461B72B1B54BAB5002A7C43 /* KTHandyViewController.m in Sources */,
 				A0F0C3EE1B10209500CE406D /* BasicParams.m in Sources */,
 				842043761B2991770002C868 /* DLScrollTabbarView.m in Sources */,
@@ -4605,11 +4704,13 @@
 				847432DD1B2A8CE500B030C4 /* orderDetailCell.m in Sources */,
 				8405CBC11B5574670014AF8D /* BusinessProductOffsale.m in Sources */,
 				84BA967C1B2829D500388B58 /* AFNHelp.m in Sources */,
+				84E9D79C1B61E10C00F2CD24 /* BSAlbumsViewController.m in Sources */,
 				8405CBB91B5573770014AF8D /* BusinessProductComment.m in Sources */,
 				847433131B2A915C00B030C4 /* myWallet.m in Sources */,
 				847432D01B2A8AF700B030C4 /* VPImageCropperViewController.m in Sources */,
 				A0F0C3EA1B10209500CE406D /* DeleteShoppingCartResult.m in Sources */,
 				A0F0C3F81B10209500CE406D /* UpdateShoppingCartRequest.m in Sources */,
+				84E9D7AA1B61E10C00F2CD24 /* BSVideoIndicatorView.m in Sources */,
 				84832D441B5659D300FB6D28 /* CustomerCancleOrder.m in Sources */,
 				8405CB911B55682B0014AF8D /* UserSession.m in Sources */,
 				846541ED1B42C47300DE2BC1 /* BSUIFiveColTableViewCell.m in Sources */,
@@ -4619,6 +4720,7 @@
 				84832D511B565BDF00FB6D28 /* OrderBaseAndDetailDomain.m in Sources */,
 				84832D301B564EA200FB6D28 /* BusinessCartDomain.m in Sources */,
 				A0F0C3EB1B10209500CE406D /* JoinShoppingCartResult.m in Sources */,
+				84E9D79A1B61E10C00F2CD24 /* BSAlbumCell.m in Sources */,
 				844E50BB1B2F2EE500A69F91 /* BSHTTPNetworking.m in Sources */,
 				842043731B2991770002C868 /* DLCustomSlideView.m in Sources */,
 				A0F0C3F11B10209500CE406D /* JoinShoppingCartParams.m in Sources */,
@@ -4639,6 +4741,7 @@
 				84BA96821B2829D500388B58 /* PayManager.m in Sources */,
 				84EAFF671B596F2400A90992 /* BSUITableViewCommonController.m in Sources */,
 				84E71F341B4E5473003089B2 /* BLEDevicesAddTableViewController.m in Sources */,
+				84E9D7A41B61E10C00F2CD24 /* BSImagePickerController.m in Sources */,
 				84EAFF5E1B5969EF00A90992 /* BSUITableViewCanEditedController.m in Sources */,
 				84BA96871B2829D500388B58 /* CartList.m in Sources */,
 				842042C61B2988410002C868 /* YYHModelRouter.m in Sources */,

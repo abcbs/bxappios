@@ -8,10 +8,10 @@
 
 #import "LSProductMaintainViewController.h"
 #import "BusinessProduct.h"
-#import "QBImagePickerController.h"
+#import "BSImagePickerController.h"
 
 
-@interface LSProductMaintainViewController ()<QBImagePickerControllerDelegate,BSImagePlayerDelegate>
+@interface LSProductMaintainViewController ()<BSImagePickerControllerDelegate,BSImagePlayerDelegate>
 
 {
     BOOL isEdit;
@@ -154,9 +154,9 @@
 
 
 - (IBAction)chooseProductHeadImage:(id)sender {
-    QBImagePickerController *imagePickerController = [QBImagePickerController new];
+    BSImagePickerController *imagePickerController = [BSImagePickerController new];
     
-    imagePickerController.mediaType = QBImagePickerMediaTypeImage;
+    imagePickerController.mediaType = BSImagePickerMediaTypeImage;
     
     imagePickerController.delegate = self;
     imagePickerController.allowsMultipleSelection = NO;
@@ -173,8 +173,8 @@
 - (IBAction)chooseResourceImages:(id)sender {
     
     BSLog(@"商品维护，轮播图选择");
-    QBImagePickerController *imagePickerController = [QBImagePickerController new];
-    imagePickerController.mediaType = QBImagePickerMediaTypeImage;
+    BSImagePickerController *imagePickerController = [BSImagePickerController new];
+    imagePickerController.mediaType = BSImagePickerMediaTypeImage;
 
     
     imagePickerController.delegate = self;
@@ -191,9 +191,9 @@
 - (IBAction)previewResourceImages:(id)sender {
 }
 
-#pragma mark - QBImagePickerControllerDelegate
+#pragma mark - BSImagePickerControllerDelegate
 //多选操作
-- (void)qb_imagePickerController:(QBImagePickerController *)imagePickerController didFinishPickingAssets:(NSArray *)assets{
+- (void)imagePickerController:(BSImagePickerController *)imagePickerController didFinishPickingAssets:(NSArray *)assets{
 
     if (isHeaderImage&&assets.count==1) {//点击为头图片选择
         PHAsset *headerImage=(PHAsset *)assets[0];

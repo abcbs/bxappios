@@ -2,8 +2,7 @@
 //  YYHModelRoute.h
 //  YYHModelRouter
 //
-//  Created by Angelo Di Paolo on 11/25/14.
-//  Copyright (c) 2014 Yayuhh. All rights reserved.
+//  Copyright (c) 2015年 KT. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
