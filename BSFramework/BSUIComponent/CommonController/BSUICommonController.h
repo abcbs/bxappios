@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "NavigationProcess.h"
-
-@interface BSUICommonController : UIViewController<NavigationProcess>
+#import "BSFCRollingADImageUIView.H"
+@interface BSUICommonController : UIViewController<NavigationProcess,BSImagePlayerDelegate>
 
 /**
  *公共回退方法

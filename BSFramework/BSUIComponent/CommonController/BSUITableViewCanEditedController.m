@@ -30,7 +30,7 @@
     }else{
         
         //没有导航栏，使用Button完成
-        [BSUIComponentView initTableNarHeaderWithDefault:self tableView:self.tableView  title: self.title];
+        [BSUIComponentView initNarHeaderWithDefault:self  title: self.title];
         
     }
     

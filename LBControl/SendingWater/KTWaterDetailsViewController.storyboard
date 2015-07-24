@@ -206,23 +206,6 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </scrollView>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gwj-3v-tQd">
-                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
-                                <color key="barTintColor" red="0.3803921569" green="0.070588235289999995" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <textAttributes key="titleTextAttributes">
-                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </textAttributes>
-                                <items>
-                                    <navigationItem title="送水详细信息" id="L4I-kH-Yeq">
-                                        <barButtonItem key="leftBarButtonItem" image="im_return" id="Lty-im-Dv5">
-                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <connections>
-                                                <action selector="backButton:" destination="Mzx-y9-RYq" id="wpl-o5-VhP"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VPR-u7-VpE" customClass="BSFCRollingADImageUIView">
                                 <rect key="frame" x="0.0" y="64" width="320" height="199"/>
                                 <subviews>
@@ -238,6 +221,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" id="iZM-rx-9wE"/>
                     <keyCommands/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
@@ -253,12 +237,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jyH-fk-dgP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1347" y="202"/>
+            <point key="canvasLocation" x="1368" y="202"/>
         </scene>
     </scenes>
     <resources>
         <image name="a0" width="215" height="66"/>
-        <image name="im_return" width="40" height="40"/>
         <image name="im_shuxian" width="1" height="57"/>
         <image name="jia" width="34" height="34"/>
         <image name="jian" width="34" height="34"/>

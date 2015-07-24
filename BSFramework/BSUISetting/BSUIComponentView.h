@@ -73,8 +73,8 @@
 
 +(BSUIBarButtonItem *)okBarButtonItem:(id<NavigationProcess>) navigationProcess  target:(UIViewController *)target title:(NSString *)title image:(NSString *)image;
 
-+(void)initTableNarHeaderWithDefault:(BSUICommonController *)currentController
-                           tableView:(UITableView *)tableView
++(void)initContentNarHeaderWithDefault:(UIViewController *)currentController
+target:(id<NavigationProcess>)target
                                title:(NSString *)title;
 
 /**

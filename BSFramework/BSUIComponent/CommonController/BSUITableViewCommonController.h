@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "BSUIFrameworkHeader.h"
-@interface BSUITableViewCommonController : UITableViewController<NavigationProcess>
+@interface BSUITableViewCommonController : UITableViewController<NavigationProcess,BSImagePlayerDelegate>
 
 /**
  *返回方法

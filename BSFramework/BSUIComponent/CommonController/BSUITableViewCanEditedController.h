@@ -8,7 +8,7 @@
 #import <UIKit/UIKit.h>
 #import "BSUIFrameworkHeader.h"
 
-@interface BSUITableViewCanEditedController :UITableViewController<NavigationProcess>
+@interface BSUITableViewCanEditedController :UITableViewController<NavigationProcess,BSImagePlayerDelegate>
 
 /**
  *返回方法

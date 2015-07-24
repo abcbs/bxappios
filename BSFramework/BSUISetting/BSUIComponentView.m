@@ -114,7 +114,7 @@ BSDeprecated("建议使用统一处理方式，使用initNavigationHeaderWithDef
 }
 
 /**
- *
+ *背景颜色
  */
 +(UIColor *)backgroundColor{
     return  [UIColor colorWithRed:0.234 green:0.234 blue:0.234 alpha:0.1];
@@ -137,7 +137,7 @@ BSDeprecated("建议使用统一处理方式，使用initNavigationHeaderWithDef
     UINavigationBar *bar = viewController.navigationController.navigationBar;
     
     [bar setTintColor:[UIColor whiteColor ]];
-    
+    [BSUIComponentView navigationColor];
 }
 
 /**
@@ -156,8 +156,9 @@ BSDeprecated("建议使用统一处理方式，使用initNavigationHeaderWithDef
  *带有表头，以普通View代替系统提供的导航栏
  * BSUITableViewCommonController在使用
  */
-+(void)initTableNarHeaderWithDefault:(BSUICommonController *)currentController
-                           tableView:(UITableView *)tableView
++(void)initContentNarHeaderWithDefault:(UIViewController *)currentController
+                                target:(id<NavigationProcess>)target
+
                           title:(NSString *)title //定义块类型
 {
     
@@ -165,20 +166,20 @@ BSDeprecated("建议使用统一处理方式，使用initNavigationHeaderWithDef
     if (currentController.navigationItem==nil) {
         //currentController.navigationItem=[[UINavigationItem alloc]init];
     }
-    /*
-     BSUIBlockButton *backButton = [BSUIComponentView backNavButton:currentController target:currentController
+    
+    BSUIBlockButton *backButton = [BSUIComponentView backNavButton:target target:currentController
      title:title image:nil];
      
      
      [headerView addSubview:backButton];
-     */
+     
     UILabel *headNameLabel=[BSUIComponentView labelNav:title];
     
     
     [headerView addSubview:headNameLabel];
     
     
-    BSUIBlockButton *okButton =[BSUIComponentView okNavButton:currentController target:currentController
+    BSUIBlockButton *okButton =[BSUIComponentView okNavButton:target target:currentController
                                                         title:title image:nil];
     
     [headerView addSubview:okButton];
@@ -188,6 +189,18 @@ BSDeprecated("建议使用统一处理方式，使用initNavigationHeaderWithDef
     [currentController.view addSubview:headerView];
 }
 
++(void)initContentNarHeader:(UIViewController *)currentController
+                            title:(NSString *)title //定义块类型
+{
+    BSUIBlockButton *okButton =[BSUIComponentView okNavButton:currentController target:currentController
+                                                        title:title image:nil];
+    
+    [BSUIComponentView backBarButtonItem:currentController
+                       target:currentController
+                        title:title image:nil];
+    
+    [currentController.view addSubview:okButton];
+}
 /**
  *带有表头，以普通View代替系统提供的导航栏
  *BSTableViewRefreshController,在使用
@@ -197,16 +210,7 @@ BSDeprecated("建议使用统一处理方式，使用initNavigationHeaderWithDef
     {
     
     UIView *headerView=[BSUIComponentView headerViewNoNar];
-        if (currentController.navigationItem==nil) {
-            //currentController.navigationItem=[[UINavigationItem alloc]init];
-        }
-    /*
-    BSUIBlockButton *backButton = [BSUIComponentView backNavButton:currentController target:currentController
-        title:title image:nil];
 
-        
-    [headerView addSubview:backButton];
-    */
     UILabel *headNameLabel=[BSUIComponentView labelNav:title];
     
    
@@ -296,7 +300,7 @@ BSDeprecated("建议使用统一处理方式，使用initNavigationHeaderWithDef
                             target:(UIViewController *)target
                             title:(NSString *)title image:(NSString *)image{
     BSUIBlockButton *backButton = [[BSUIBlockButton alloc]initWithFrame:BSRectMake(NAVIGATIONBAR_X+NAVIGATIONBAR_WIDTH*0.05,
-                                                                                   NAVIGATIONBAR_Y+STATUS_HEIGHT+10,NAVIGATIONBAR_HEIGHT/3, NAVIGATIONBAR_HEIGHT/3)
+                                                                                   NAVIGATIONBAR_Y+STATUS_HEIGHT+10,NAVIGATIONBAR_HEIGHT/2, NAVIGATIONBAR_HEIGHT/3)
                                    target:target
                                                                  action:@selector(backClick)];
     [backButton setBackgroundImage:[UIImage imageNamed:@"login-2.png"]
@@ -305,9 +309,11 @@ BSDeprecated("建议使用统一处理方式，使用initNavigationHeaderWithDef
         [navigationProcess backClick];
     }];
     
-    //[backButton setBackgroundColor:[UIColor whiteColor]];
+    //NSString *name = [NSString stringWithFormat:@"<-"];
+    
+    
     [backButton setTintColor:[UIColor whiteColor]];
-    //[backButton setTitle:title forState:UIControlStateNormal];
+    //[backButton setTitle:name forState:UIControlStateNormal];
     return backButton;
     
 }

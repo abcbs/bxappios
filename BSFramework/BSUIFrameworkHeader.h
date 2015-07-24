@@ -21,12 +21,24 @@
 #import "BSTableSection.h"
 #import "BSTableContentObject.h"
 
+#pragma mark --公共控制器
 /**
- *公共的Controller
+ *带有返回按钮的控制器
+ */
+#import "BSUIContentViewController.h"
+/**
+ *不带返回按钮适合于首页导航，无需返回功能的控制器
  */
 #import "BSUICommonController.h"
 #import "BSUITabBarCommonController.h"
+/**
+ *TableViewController，不可编辑单元格
+ */
 #import "BSUITableViewCommonController.h"
+
+/**
+ *TableViewController，默认可编辑单元格
+ */
 #import "BSUITableViewCanEditedController.h"
 /**
  *第三方UI相关组件
