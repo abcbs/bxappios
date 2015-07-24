@@ -534,6 +534,7 @@
 		84E9D7B21B61E22300F2CD24 /* BSImagePicker.strings in Resources */ = {isa = PBXBuildFile; fileRef = 84E9D7B01B61E22300F2CD24 /* BSImagePicker.strings */; };
 		84E9D7B31B61E2B800F2CD24 /* BSImagePicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84E9D7AF1B61E22300F2CD24 /* BSImagePicker.storyboard */; };
 		84E9D7B41B61E2B800F2CD24 /* BSImagePicker.strings in Resources */ = {isa = PBXBuildFile; fileRef = 84E9D7B01B61E22300F2CD24 /* BSImagePicker.strings */; };
+		84E9D7B51B622C3D00F2CD24 /* LSProductAduitTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EB39721B5899A000AD9F66 /* LSProductAduitTableViewController.m */; };
 		84EA96CB1B57D31C00AC549F /* LSMainIndexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BF8F6B1B4AB63C001042F1 /* LSMainIndexViewController.m */; };
 		84EA96CD1B57D31C00AC549F /* LSHandySearchNavViewController..m in Sources */ = {isa = PBXBuildFile; fileRef = 84F66D671B53E7DE00498734 /* LSHandySearchNavViewController..m */; };
 		84EA96CF1B57D31C00AC549F /* LSProductListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8461B7971B55044D002A7C43 /* LSProductListTableViewController.m */; };
@@ -4545,6 +4546,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84E9D7B51B622C3D00F2CD24 /* LSProductAduitTableViewController.m in Sources */,
 				84EA96CB1B57D31C00AC549F /* LSMainIndexViewController.m in Sources */,
 				84EA96CD1B57D31C00AC549F /* LSHandySearchNavViewController..m in Sources */,
 				84EA96CF1B57D31C00AC549F /* LSProductListTableViewController.m in Sources */,
