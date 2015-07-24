@@ -18,6 +18,7 @@
 /**
  *商品活动
  */
+#import "LSProductManagerDelegate.h"
 #import "LSProductAduitTableViewController.h"
 #import "LSProductListTableViewController.h"
 #import "LSProductMaintainViewController.h"
@@ -26,7 +27,7 @@
 #import "LSProductDetailTableViewController.h"
 #import "LSBusinessActivityTableViewController.h"
 
-#import "LSProductManagerDelegate.h"
+
 
 
 #endif
