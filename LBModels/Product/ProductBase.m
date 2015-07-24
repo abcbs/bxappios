@@ -32,15 +32,15 @@
     //单价，标准价格
     [aCoder encodeObject:_unit forKey:@"unit"];
     //商品规格
-    [aCoder encodeInteger:_specification forKey:@"specification"];
+    [aCoder encodeObject:_specification forKey:@"specification"];
     
     //商品备注
-    [aCoder encodeInteger:_comment forKey:@"comment"];
+    [aCoder encodeObject:_comment forKey:@"comment"];
     
     //商品分类，应当引用ProductCatalogue
     [aCoder encodeInteger:_productCatalogueId forKey:@"productCatalogueId"];
     
-    [aCoder encodeInteger:_catalogue forKey:@"catalogue"];
+    [aCoder encodeObject:_catalogue forKey:@"catalogue"];
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder

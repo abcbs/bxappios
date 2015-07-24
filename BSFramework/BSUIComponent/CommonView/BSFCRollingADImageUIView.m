@@ -113,8 +113,8 @@ BSDeprecated("废除，下版本合并将删除此方法")
     self.pageControl.numberOfPages = count;
     self.pageControl.currentPage = 0;
     //适配修改
-    self.scrollView.width=_width;
-    
+    //self.scrollView.width=_width;
+    [self setNeedsLayout];
     // 6.添加定时器(每隔2秒调用一次self 的nextImage方法)
     [self addTimer];
     
@@ -243,18 +243,29 @@ BSDeprecated("废除，下版本合并将删除此方法")
     [self setNeedsDisplay];
 }
 
+/**
+ *轮播图显示样式
+ */
+
 -(void)layoutSubviews
 {
     [super layoutSubviews];
-    CGFloat imageW = _width;
-    CGFloat imageH =_height;
-    
+    CGFloat imageW = self.scrollView.width;
+    CGFloat imageH = self.scrollView.height;
+    if (_width!=SCREEN_WIDTH) {
+        imageW = _width;
+        imageH =_height;
+    }
     CGFloat imageY = 0;
     NSInteger count =  _count;
     // 1.添加图片到scrollView中
     for (int i = 0; i < count; i++) {
         UIImageView *imageView = self.scrollView.subviews[i];
-        imageView.contentMode = UIViewContentModeScaleToFill;
+        if (_width==SCREEN_WIDTH) {
+            imageView.contentMode=UIViewContentModeScaleAspectFill;
+        }else{
+            imageView.contentMode = UIViewContentModeScaleToFill;
+        }
         // 设置frame
         CGFloat imageX = i * imageW;
         imageView.frame = BSRectMake(imageX, imageY, imageW, imageH);
