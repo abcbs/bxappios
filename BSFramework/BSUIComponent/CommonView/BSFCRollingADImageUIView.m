@@ -1,7 +1,5 @@
 //
 //  ADTImagePlayer.m
-
-
 //  Copyright (c) 2015年 KT. All rights reserved.
 //
 
@@ -9,16 +7,10 @@
 #import "BSUIFrameworkHeader.h"
 
 
-
-
-
 @interface BSFCRollingADImageUIView() <UIScrollViewDelegate>
 {
     NSInteger _count;
     NSInteger _valueToBottom;
-    
-    //CGFloat  width ;
-    //CGFloat height;
 
 }
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
@@ -29,12 +21,11 @@
 @property (nonatomic, strong) NSTimer *timer;
 
 
-
 @end
 
 @implementation BSFCRollingADImageUIView
 
-+(BSFCRollingADImageUIView *)initADImageUIViewWith:(NSMutableArray *)images
++(BSFCRollingADImageUIView *)initADWithImages:(NSMutableArray *)images
                                     playerDelegate:(id<BSImagePlayerDelegate> )player
  target:(UIViewController*)controller
                                              width:(CGFloat) w height:(CGFloat) h{
@@ -53,12 +44,21 @@
 
     
 }
-+(BSFCRollingADImageUIView *)initADImageUIViewWith:(NSMutableArray *)imagesNames
-                                    playerDelegate:(id<BSImagePlayerDelegate> )player
-                                              urls:(NSMutableArray *)urls
-{
-    
 
++(BSFCRollingADImageUIView *)initADWithImagesDefaultWH:(NSMutableArray *)images
+                                        playerDelegate:(id<BSImagePlayerDelegate> )player
+                                                target:(UIViewController*)controller{
+    return [BSFCRollingADImageUIView initADWithImages:images
+       playerDelegate:player
+       target:controller
+       width:SCREEN_WIDTH height:SCREEN_HEIGHT ];
+}
+
++(BSFCRollingADImageUIView *)initADImageUIViewWith:(NSMutableArray *)imagesNames
+playerDelegate:(id<BSImagePlayerDelegate> )player
+urls:(NSMutableArray *)urls
+BSDeprecated("废除，下版本合并将删除此方法")
+{
     BSFCRollingADImageUIView *imagePlayer = [BSFCRollingADImageUIView imagePlayer];
     //长宽，默认
     imagePlayer.width=BSMarginX( SCREEN_WIDTH);
@@ -76,25 +76,9 @@
 
 + (instancetype)imagePlayer
 {
-
     return [[[NSBundle mainBundle] loadNibNamed:@"ADTImagePlayer" owner:nil options:nil] lastObject];
 }
 
-- (id)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        
-    }
-    return self;
-}
-
-
-
-- (void)touchAction:(UIGestureRecognizer *)gester
-{
-    BSLog(@"轮播事件");
-}
 
 /**
  *默认轮播图，不带跳转信息，URL的Image名称
@@ -136,9 +120,8 @@
     
 }
 
-
 /**
- *默认轮播图，不带跳转信息，URL的Image名称
+ *默认轮播图，不带跳转信息，需要具体事件响应跳转信息
  */
 -(void)setImages:(NSArray *)images
 {
@@ -149,6 +132,7 @@
     }
     
     _imageNames = images;
+   
     [self.scrollView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
     NSInteger count = images.count;
      _count = count;
@@ -178,13 +162,13 @@
     self.pageControl.currentPage = 0;
     //适配修改
     self.scrollView.width=_width;
+    self.scrollView.height=_height;
+    self.scrollView.size=BSSizeMake(_width, _height);
 
     // 6.添加定时器(每隔2秒调用一次self 的nextImage方法)
     [self addTimer];
     
 }
-
-
 
 /**
  *  添加定时器
@@ -270,11 +254,10 @@
     // 1.添加图片到scrollView中
     for (int i = 0; i < count; i++) {
         UIImageView *imageView = self.scrollView.subviews[i];
-        imageView.contentMode = UIViewContentModeScaleAspectFill;
+        imageView.contentMode = UIViewContentModeScaleToFill;
         // 设置frame
         CGFloat imageX = i * imageW;
-        imageView.frame = CGRectMake(imageX, imageY, imageW, imageH);
-   
+        imageView.frame = BSRectMake(imageX, imageY, imageW, imageH);
     }
     
     self.pageControl.y = _height - _valueToBottom;
@@ -285,4 +268,8 @@
 }
 
 
+- (void)touchAction:(UIGestureRecognizer *)gester
+{
+    BSLog(@"轮播事件");
+}
 @end

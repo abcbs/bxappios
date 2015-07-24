@@ -242,9 +242,7 @@
 }
 
 -(void)displayAD:(NSMutableArray *)images{
-    BSFCRollingADImageUIView *adView= [BSFCRollingADImageUIView initADImageUIViewWith:images                                          playerDelegate:self
-        target:self
-        width:88 height:88];
+    BSFCRollingADImageUIView *adView= [BSFCRollingADImageUIView initADWithImages:images  playerDelegate:self target:self width:88 height:88];
     //资源轮播
     [adView removeFromSuperview];
     [_resourceImags addSubview:adView];
@@ -261,7 +259,7 @@
          UIImage *image=[[UIImage alloc]initWithData:imageData];
          [_headerImageView setImage:image];
         
-         NSLog(@"info = %@", info);
+         BSLog(@"info = %@", info);
          if ([info objectForKey:@"PHImageFileURLKey"]) {
              // path looks like this -
              NSURL *path = [info objectForKey:@"PHImageFileURLKey"];

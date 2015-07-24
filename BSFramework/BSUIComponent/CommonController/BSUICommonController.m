@@ -64,14 +64,27 @@
     
 }
 
+/**
+ *公共返回按钮
+ */
 - (void)backClick{
   [self dismissViewControllerAnimated:YES completion:nil];
   
 }
+
+/**
+ *公共确定按钮
+ */
 - (void)doneClick{
     BSLog(@"子类应当继承此方法实现完成功能");
 }
 
+/**
+ *轮播事件响应 有轮播图，需要点击轮播图处理信息
+ */
+- (void)touchAction:(UIGestureRecognizer *)gester{
+    BSLog(@"子类应当继承此方法实现完成轮播功能功能");
+}
 /**
  *页面跳转公共方法
  */
@@ -84,4 +97,5 @@
     [self navigating:bsContentObject];
     
 }
+
 @end

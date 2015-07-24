@@ -59,11 +59,20 @@
     BSLog(@"viewDidAppear\t%@",self.description);
     
 }
+
+#pragma mark --公共返回事件响应
 - (void)backClick{
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+#pragma mark --公共确定功能，目前绑定为查询功能图标
 - (void)doneClick{
     BSLog(@"子类应当继承此方法实现完成功能");
+}
+
+#pragma mark --轮播事件响应 有轮播图，需要点击轮播图处理信息
+- (void)touchAction:(UIGestureRecognizer *)gester{
+    BSLog(@"子类应当继承此方法实现完成轮播功能功能");
 }
 
 /*

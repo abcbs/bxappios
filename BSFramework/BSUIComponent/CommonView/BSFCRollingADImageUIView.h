@@ -13,6 +13,8 @@
 @optional
 - (void)imagePlayer:(BSFCRollingADImageUIView *)imagePlayer willLoadURL:(NSURL *)URL;
 
+@required
+- (void)touchAction:(UIGestureRecognizer *)gester;
 @end
 
 
@@ -48,12 +50,16 @@
 
 +(BSFCRollingADImageUIView *)initADImageUIViewWith:(NSMutableArray *)imagesNames
    playerDelegate:(id<BSImagePlayerDelegate> )player
-   urls:(NSMutableArray *)urls;
+   urls:(NSMutableArray *)urls ;
 
-+(BSFCRollingADImageUIView *)initADImageUIViewWith:(NSMutableArray *)images
++(BSFCRollingADImageUIView *)initADWithImages:(NSMutableArray *)images
 playerDelegate:(id<BSImagePlayerDelegate> )player
 target:(UIViewController*)controller
 width:(CGFloat) w height:(CGFloat) h;
+
++(BSFCRollingADImageUIView *)initADWithImagesDefaultWH:(NSMutableArray *)images
+                               playerDelegate:(id<BSImagePlayerDelegate> )player
+                                       target:(UIViewController*)controller;
 
 + (instancetype)imagePlayer;
 

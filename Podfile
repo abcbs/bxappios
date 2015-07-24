@@ -9,8 +9,6 @@ target 'KTAPP' do
 	pod 'CocoaLumberjack'
 	pod 'MBProgressHUD'
 	pod 'AFNetworkActivityLogger'
-	pod 'Mantle'
-        pod 'QBImagePickerController'
 end
 
 target 'KT-BUSINESS-SELLER' do
@@ -21,8 +19,6 @@ target 'KT-BUSINESS-SELLER' do
         pod 'CocoaLumberjack'
         pod 'MBProgressHUD'
         pod 'AFNetworkActivityLogger'
-        pod 'Mantle'
-	pod 'QBImagePickerController'
 end
 
 
@@ -34,8 +30,6 @@ target 'KT-FRAME-PK' do
         pod 'CocoaLumberjack'
         pod 'MBProgressHUD'
         pod 'AFNetworkActivityLogger'
-        pod 'Mantle'
-        pod 'QBImagePickerController'
 end
 
 
@@ -47,7 +41,6 @@ target 'KT-MODEL-MODULE' do
         pod 'CocoaLumberjack'
         pod 'MBProgressHUD'
         pod 'AFNetworkActivityLogger'
-        pod 'Mantle'
 end
 
 
@@ -59,8 +52,6 @@ target 'KT-LS-Controller' do
         pod 'CocoaLumberjack'
         pod 'MBProgressHUD'
         pod 'AFNetworkActivityLogger'
-        pod 'Mantle'
-        pod 'QBImagePickerController'
 end
 
 target 'KT-LB-Controller' do
@@ -71,28 +62,5 @@ target 'KT-LB-Controller' do
         pod 'CocoaLumberjack'
         pod 'MBProgressHUD'
         pod 'AFNetworkActivityLogger'
-        pod 'Mantle'
-        pod 'QBImagePickerController'
 end
 
-#	pod 'AFNetworking'
-#	pod 'MJExtension'
-#	pod 'CocoaLumberjack'
-
-#end
-
-#target 'LBControl' do
-# 	pod 'SDWebImage'
-#        pod 'MJExtension'
-#        pod 'MJRefresh'
-#        pod 'CocoaLumberjack'
-#        pod 'MBProgressHUD'
-
-#end
-
-#target 'BSTransfer' do
-#        pod 'AFNetworking'
-#	pod 'MJExtension'
-#        pod 'CocoaLumberjack'
-#	pod 'Mantle'
-#end

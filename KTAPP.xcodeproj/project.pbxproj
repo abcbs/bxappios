@@ -2394,6 +2394,10 @@
 				847076631B3A9DFB00F28180 /* BSTableSection.m */,
 				847076651B3AA01B00F28180 /* BSTableContentObject.h */,
 				847076661B3AA01B00F28180 /* BSTableContentObject.m */,
+				8460AE781B42569300022280 /* BSTableViewCellData.h */,
+				8460AE791B42569300022280 /* BSTableViewCellData.m */,
+				8460AE7B1B42578B00022280 /* BSTableViewMultCellData.h */,
+				8460AE7C1B42578B00022280 /* BSTableViewMultCellData.m */,
 				8470766F1B3AB21300F28180 /* UIViewController+BSTableObject.h */,
 				847076701B3AB21300F28180 /* UIViewController+BSTableObject.m */,
 				8476A0401B4BAC8C00DB2CF0 /* BSUICommonController.h */,
@@ -2402,10 +2406,6 @@
 				84EAFF661B596F2400A90992 /* BSUITableViewCommonController.m */,
 				84EAFF5C1B5969EF00A90992 /* BSUITableViewCanEditedController.h */,
 				84EAFF5D1B5969EF00A90992 /* BSUITableViewCanEditedController.m */,
-				8460AE781B42569300022280 /* BSTableViewCellData.h */,
-				8460AE791B42569300022280 /* BSTableViewCellData.m */,
-				8460AE7B1B42578B00022280 /* BSTableViewMultCellData.h */,
-				8460AE7C1B42578B00022280 /* BSTableViewMultCellData.m */,
 				8460AE7E1B4259BE00022280 /* BSUITabBarCommonController.h */,
 				8460AE7F1B4259BE00022280 /* BSUITabBarCommonController.m */,
 				8460AE811B426E4C00022280 /* BSContentObjectNavigation.h */,
@@ -2890,6 +2890,7 @@
 		84E9D77B1B61E10C00F2CD24 /* ImagePicker */ = {
 			isa = PBXGroup;
 			children = (
+				84E9D78A1B61E10C00F2CD24 /* BSImagePicker.h */,
 				84E9D7801B61E10C00F2CD24 /* BSAlbumCell.h */,
 				84E9D7811B61E10C00F2CD24 /* BSAlbumCell.m */,
 				84E9D7821B61E10C00F2CD24 /* BSAlbumsViewController.h */,
@@ -2900,7 +2901,6 @@
 				84E9D7871B61E10C00F2CD24 /* BSAssetsViewController.m */,
 				84E9D7881B61E10C00F2CD24 /* BSCheckmarkView.h */,
 				84E9D7891B61E10C00F2CD24 /* BSCheckmarkView.m */,
-				84E9D78A1B61E10C00F2CD24 /* BSImagePicker.h */,
 				84E9D78B1B61E10C00F2CD24 /* BSImagePickerController.h */,
 				84E9D78C1B61E10C00F2CD24 /* BSImagePickerController.m */,
 				84E9D78D1B61E10C00F2CD24 /* BSSlomoIconView.h */,

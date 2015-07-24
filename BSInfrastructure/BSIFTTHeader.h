@@ -9,7 +9,17 @@
 #ifndef KTAPP_BSIFTTHeader_h
 #define KTAPP_BSIFTTHeader_h
 
+#pragma mark -相册选择图片组件
+/**
+ 选择图片处理组件
+ */
+#import "BSImagePickerController.h"
+#import "BSImagePicker.h"
+
+#pragma mark -BLE处理组件
+
 #import "LeTemperatureAlarmService.h"
+
 
 #import "BSBLEViewController.h"
 
