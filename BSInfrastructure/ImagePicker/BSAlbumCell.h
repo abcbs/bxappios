@@ -1,6 +1,6 @@
 //
 //  BSAlbumCell.h
-//  BSImagePicker
+//  相册类型列表的Cell
 //
 //  Copyright (c) 2015年 KT. All rights reserved.
 

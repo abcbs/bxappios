@@ -6,6 +6,7 @@
 
 #import <UIKit/UIKit.h>
 #import <Photos/Photos.h>
+#import "BSUICommonController.h"
 
 @class BSImagePickerController;
 
@@ -27,7 +28,7 @@ typedef NS_ENUM(NSUInteger, BSImagePickerMediaType) {
     BSImagePickerMediaTypeVideo
 };
 
-@interface BSImagePickerController : UIViewController
+@interface BSImagePickerController : BSUICommonController
 
 @property (nonatomic, weak) id<BSImagePickerControllerDelegate> delegate;
 

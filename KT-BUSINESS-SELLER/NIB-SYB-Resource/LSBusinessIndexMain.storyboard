@@ -41,7 +41,7 @@
                                 <rect key="frame" x="-20" y="-101" width="360" height="608"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="l6H-lb-iW4">
-                                        <rect key="frame" x="20" y="20" width="320" height="568"/>
+                                        <rect key="frame" x="20" y="15" width="320" height="568"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
                                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BSUIImageTitleTableViewCell" rowHeight="44" id="iex-1g-BUC">

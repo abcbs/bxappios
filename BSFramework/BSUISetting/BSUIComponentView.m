@@ -248,13 +248,16 @@ BSDeprecated("建议使用统一处理方式，使用initNavigationHeaderWithDef
  *AppDelegate
  */
 +(void)initTabBarWithDefault:(UITabBarController *)tabBarController{
-    //设置tabBar的选中颜色
-    tabBarController.tabBar.tintColor=[BSUIComponentView  navigationColor];
-    //修改more的风格
-    tabBarController.moreNavigationController.navigationBar.barStyle=UIBarStyleBlack;
-    tabBarController.moreNavigationController.navigationBar.backgroundColor=[BSUIComponentView  navigationColor];
-    rootTabBarController=tabBarController;
-}
+    if( [tabBarController isKindOfClass:[UITabBarController class]]){
+        //设置tabBar的选中颜色
+        tabBarController.tabBar.tintColor=[BSUIComponentView  navigationColor];
+        //修改more的风格
+        tabBarController.moreNavigationController.navigationBar.barStyle=UIBarStyleBlack;
+        tabBarController.moreNavigationController.navigationBar.backgroundColor=[BSUIComponentView  navigationColor];
+        rootTabBarController=tabBarController;
+    }
+       
+   }
 
 +(void)changeTabBarWithNotification:(UIViewController *)uiViewController addedInfo:(NSString *)info{
     UITabBar *bar=rootTabBarController.tabBar;

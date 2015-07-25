@@ -9,7 +9,7 @@
 #import "LSProductMaintainViewController.h"
 #import "BusinessProduct.h"
 #import "BSImagePickerController.h"
-
+#import "BSIFTTHeader.h"
 
 @interface LSProductMaintainViewController ()<BSImagePickerControllerDelegate,BSImagePlayerDelegate>
 

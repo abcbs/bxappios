@@ -15,8 +15,10 @@
 #import "BSAssetsViewController.h"
 
 static CGSize CGSizeScale(CGSize size, CGFloat scale) {
+    
     return CGSizeMake(size.width * scale, size.height * scale);
 }
+
 
 @interface BSImagePickerController (Private)
 
@@ -29,6 +31,9 @@ static CGSize CGSizeScale(CGSize size, CGFloat scale) {
 
 @property (nonatomic, strong) IBOutlet UIBarButtonItem *doneButton;
 
+- (IBAction)backButton:(id)sender;
+
+
 @property (nonatomic, copy) NSArray *fetchResults;
 @property (nonatomic, copy) NSArray *assetCollections;
 
@@ -39,14 +44,21 @@ static CGSize CGSizeScale(CGSize size, CGFloat scale) {
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    //
+    self.navigationController.navigationBar.backgroundColor=[[UIColor alloc] initWithRed:0.45 green:0 blue:0 alpha:1];
+    self.navigationController.navigationBar.backgroundColor=[UIColor redColor];
+    self.navigationController.navigationBar.barStyle=UIBarStyleBlack;
+    self.navigationController.navigationBar.tintColor=[UIColor whiteColor];
     
     [self setUpToolbarItems];
     
     // Fetch user albums and smart albums
     PHFetchResult *smartAlbums = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeSmartAlbum subtype:PHAssetCollectionSubtypeAny options:nil];
     PHFetchResult *userAlbums = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeAlbum subtype:PHAssetCollectionSubtypeAny options:nil];
+    
     self.fetchResults = @[smartAlbums, userAlbums];
     
+    //相册资源
     [self updateAssetCollections];
     
     // Register observer
@@ -98,6 +110,10 @@ static CGSize CGSizeScale(CGSize size, CGFloat scale) {
     }
 }
 
+- (IBAction)backButton:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+}
 - (IBAction)done:(id)sender
 {
     if ([self.imagePickerController.delegate respondsToSelector:@selector(imagePickerController:didFinishPickingAssets:)]) {
@@ -180,7 +196,7 @@ static CGSize CGSizeScale(CGSize size, CGFloat scale) {
     [userAlbums enumerateObjectsUsingBlock:^(PHAssetCollection *assetCollection, NSUInteger index, BOOL *stop) {
         [assetCollections addObject:assetCollection];
     }];
-    
+    //
     self.assetCollections = assetCollections;
 }
 
@@ -384,5 +400,6 @@ static CGSize CGSizeScale(CGSize size, CGFloat scale) {
         }
     });
 }
+
 
 @end

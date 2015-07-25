@@ -1,6 +1,6 @@
 //
 //  BSAssetsViewController.h
-//  BSImagePicker
+//  KTAPP
 //
 //  Copyright (c) 2015年 KT. All rights reserved.
 

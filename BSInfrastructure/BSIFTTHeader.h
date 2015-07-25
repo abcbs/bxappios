@@ -16,6 +16,14 @@
 #import "BSImagePickerController.h"
 #import "BSImagePicker.h"
 
+/*
+ *拍照片
+ */
+#import "BSPhotoTakeController.h"
+
+
+
+
 #pragma mark -BLE处理组件
 
 #import "LeTemperatureAlarmService.h"
