@@ -7,7 +7,7 @@
 
 #import "BSPhotoViewController.h"
 #import "BSCMFrameworkHeader.h"
-#import "BSPhotoImagePickerController.h"
+//#import "BSPhotoImagePickerController.h"
 #import "BSPhotoTakeViewController.h"
 
 @interface BSPhotoViewController () <BSPhotoTakeDelegate,BSImagePlayerDelegate>

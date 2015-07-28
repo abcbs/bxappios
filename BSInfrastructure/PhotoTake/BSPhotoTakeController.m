@@ -12,7 +12,7 @@
 
 
 #import "BSPhotoTakeViewController.h"
-#import "BSPhotoTakeCollectionController.h"
+//#import "BSPhotoTakeCollectionController.h"
 //拍照
 #define kPhotosActionSheetTag 1
 //视频
@@ -59,7 +59,7 @@ typedef NS_ENUM(NSInteger, BSImagePickerControllerMode) {
 
 @property (strong, nonatomic)  UIViewController *aViewController;
 //相机拍摄照片放入集合展示
-@property (strong,nonatomic )  BSPhotoTakeCollectionController *bsPhotoTakeCollectionController;
+
 //从相册中选择一张
 @property (strong,nonatomic )  BSImagePickerController *multimagePickerController;
 //从相册中选择多张
@@ -87,7 +87,7 @@ typedef NS_ENUM(NSInteger, BSImagePickerControllerMode) {
 @synthesize popOverPresentRect = _popOverPresentRect;
 
 @synthesize aViewController=_aViewController;
-@synthesize bsPhotoTakeCollectionController =_bsPhotoTakeCollectionController;
+
 @synthesize multimagePickerController=_multimagePickerController;
 @synthesize singleimagePickerController=_singleimagePickerController;
 @synthesize bsPhotoImagePickController=_bsPhotoImagePickController;
@@ -136,12 +136,7 @@ typedef NS_ENUM(NSInteger, BSImagePickerControllerMode) {
     return _imagePicker;
 }
 
--(BSPhotoTakeCollectionController *)bsPhotoTakeCollectionController{
-    if (!_bsPhotoTakeCollectionController) {
-        _bsPhotoTakeCollectionController=[BSPhotoTakeCollectionController new];
-    }
-    return _bsPhotoTakeCollectionController;
-}
+
 
 -( BSPhotoImagePickerController *)bsPhotoImagePickController{
     if (!_bsPhotoImagePickController) {

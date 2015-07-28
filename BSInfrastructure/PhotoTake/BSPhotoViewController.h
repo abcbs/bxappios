@@ -7,7 +7,7 @@
 
 #import <UIKit/UIKit.h>
 #import "BSPhotoTakeController.h"
-#import "BSPhotoImagePickerController.h"
+//#import "BSPhotoImagePickerController.h"
 
 @interface BSPhotoViewController : UIViewController
 
@@ -18,7 +18,7 @@
 - (IBAction)takeVideoOrChooseFromLibrary;
 - (IBAction)takePhotoOrVideoOrChooseFromLibrary;
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
-@property (strong,nonatomic) BSPhotoImagePickerController *imagePickerController;
+//@property (strong,nonatomic) BSPhotoImagePickerController *imagePickerController;
 
 
 @end

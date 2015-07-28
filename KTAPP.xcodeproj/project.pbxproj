@@ -86,6 +86,8 @@
 		842043781B2991770002C868 /* DLUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 842043711B2991770002C868 /* DLUtility.m */; };
 		8425E18B1B67644200A93C43 /* BSPhotoTakeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8425E18A1B67644200A93C43 /* BSPhotoTakeController.m */; };
 		8425E18C1B67644200A93C43 /* BSPhotoTakeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8425E18A1B67644200A93C43 /* BSPhotoTakeController.m */; };
+		8425E18F1B6765DA00A93C43 /* BSPhotoImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8425E18E1B6765DA00A93C43 /* BSPhotoImagePickerController.m */; };
+		8425E1901B6765DA00A93C43 /* BSPhotoImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8425E18E1B6765DA00A93C43 /* BSPhotoImagePickerController.m */; };
 		843DA8781B21D56200924AE6 /* CopyConnection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 843DA8521B21D56200924AE6 /* CopyConnection.framework */; };
 		843DA8791B21D56300924AE6 /* FacebookConnection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 843DA8531B21D56200924AE6 /* FacebookConnection.framework */; };
 		843DA87A1B21D56300924AE6 /* MailConnection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 843DA8541B21D56200924AE6 /* MailConnection.framework */; };
@@ -131,8 +133,6 @@
 		845A02351B3DBA7E007F5327 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 845A02341B3DBA7E007F5327 /* UIView+Frame.m */; };
 		845A02381B3DBADD007F5327 /* RegistUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 845A02371B3DBADD007F5327 /* RegistUtil.m */; };
 		845A02411B3DE9FE007F5327 /* BSUISingleImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 845A02401B3DE9FE007F5327 /* BSUISingleImageTableViewCell.m */; };
-		845AC34C1B671D260077E0ED /* BSPhotoImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 845AC34B1B671D260077E0ED /* BSPhotoImagePickerController.m */; };
-		845AC34D1B671D260077E0ED /* BSPhotoImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 845AC34B1B671D260077E0ED /* BSPhotoImagePickerController.m */; };
 		845AC3501B674C870077E0ED /* BSUICollectionCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 845AC34F1B674C870077E0ED /* BSUICollectionCollectionViewController.m */; };
 		845AC3511B674C870077E0ED /* BSUICollectionCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 845AC34F1B674C870077E0ED /* BSUICollectionCollectionViewController.m */; };
 		8460AE7A1B42569300022280 /* BSTableViewCellData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8460AE791B42569300022280 /* BSTableViewCellData.m */; };
@@ -325,8 +325,6 @@
 		8461B7A41B5507EA002A7C43 /* LSProductDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8461B7A31B5507EA002A7C43 /* LSProductDetailTableViewController.m */; };
 		846541ED1B42C47300DE2BC1 /* BSUIFiveColTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 846541EB1B42C47300DE2BC1 /* BSUIFiveColTableViewCell.m */; };
 		846541EE1B42C47300DE2BC1 /* BSUIFiveColTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 846541EC1B42C47300DE2BC1 /* BSUIFiveColTableViewCell.xib */; };
-		8467C2B81B66200A00371948 /* BSPhotoTakeCollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8467C2B71B66200A00371948 /* BSPhotoTakeCollectionController.m */; };
-		8467C2B91B662D4B00371948 /* BSPhotoTakeCollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8467C2B71B66200A00371948 /* BSPhotoTakeCollectionController.m */; };
 		8469CD691B4121F000EF6757 /* LFRecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8469CD681B4121F000EF6757 /* LFRecommendViewController.m */; };
 		8469CD6D1B4122D400EF6757 /* LFRecommend.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8469CD6C1B4122D400EF6757 /* LFRecommend.storyboard */; };
 		8470761A1B3A5F7800F28180 /* SetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 847076181B3A5F7800F28180 /* SetCell.m */; };
@@ -1155,8 +1153,6 @@
 		84F290241B638BC0001078D8 /* ADTImagePlayer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848058141B39A377005817D7 /* ADTImagePlayer.xib */; };
 		84F290251B638BC0001078D8 /* BSUISingleImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8476A0451B4BB93100DB2CF0 /* BSUISingleImageTableViewCell.xib */; };
 		84F290261B638BC0001078D8 /* BSUIFiveColTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 846541EC1B42C47300DE2BC1 /* BSUIFiveColTableViewCell.xib */; };
-		84F473B41B656C7B00520BD7 /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F473B11B656C7B00520BD7 /* CollectionViewCell.m */; };
-		84F473B51B656C7B00520BD7 /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F473B11B656C7B00520BD7 /* CollectionViewCell.m */; };
 		84F66D621B53E6A700498734 /* LSBLEIFTTUpHoldMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84F66D611B53E6A700498734 /* LSBLEIFTTUpHoldMain.storyboard */; };
 		84F66D681B53E7DE00498734 /* LSHandySearchNavViewController..m in Sources */ = {isa = PBXBuildFile; fileRef = 84F66D671B53E7DE00498734 /* LSHandySearchNavViewController..m */; };
 		A04366AF1AD7B550005842EE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A04366AE1AD7B550005842EE /* main.m */; };
@@ -1415,6 +1411,8 @@
 		8425E1881B67639700A93C43 /* BSPhotoTakeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BSPhotoTakeController.h; path = BSInfrastructure/PhotoTake/BSPhotoTakeController.h; sourceTree = SOURCE_ROOT; };
 		8425E1891B67644200A93C43 /* BSPhotoTakeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSPhotoTakeController.h; sourceTree = "<group>"; };
 		8425E18A1B67644200A93C43 /* BSPhotoTakeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSPhotoTakeController.m; sourceTree = "<group>"; };
+		8425E18D1B6765DA00A93C43 /* BSPhotoImagePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSPhotoImagePickerController.h; sourceTree = "<group>"; };
+		8425E18E1B6765DA00A93C43 /* BSPhotoImagePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSPhotoImagePickerController.m; sourceTree = "<group>"; };
 		843DA8521B21D56200924AE6 /* CopyConnection.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CopyConnection.framework; sourceTree = "<group>"; };
 		843DA8531B21D56200924AE6 /* FacebookConnection.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookConnection.framework; sourceTree = "<group>"; };
 		843DA8541B21D56200924AE6 /* MailConnection.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MailConnection.framework; sourceTree = "<group>"; };
@@ -1484,8 +1482,6 @@
 		845A02371B3DBADD007F5327 /* RegistUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistUtil.m; sourceTree = "<group>"; };
 		845A023F1B3DE9FE007F5327 /* BSUISingleImageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUISingleImageTableViewCell.h; sourceTree = "<group>"; };
 		845A02401B3DE9FE007F5327 /* BSUISingleImageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUISingleImageTableViewCell.m; sourceTree = "<group>"; };
-		845AC34A1B671D260077E0ED /* BSPhotoImagePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSPhotoImagePickerController.h; sourceTree = "<group>"; };
-		845AC34B1B671D260077E0ED /* BSPhotoImagePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSPhotoImagePickerController.m; sourceTree = "<group>"; };
 		845AC34E1B674C870077E0ED /* BSUICollectionCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUICollectionCollectionViewController.h; sourceTree = "<group>"; };
 		845AC34F1B674C870077E0ED /* BSUICollectionCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUICollectionCollectionViewController.m; sourceTree = "<group>"; };
 		8460AE781B42569300022280 /* BSTableViewCellData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSTableViewCellData.h; sourceTree = "<group>"; };
@@ -1514,8 +1510,6 @@
 		846541EC1B42C47300DE2BC1 /* BSUIFiveColTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSUIFiveColTableViewCell.xib; sourceTree = "<group>"; };
 		846541EF1B42C8A400DE2BC1 /* BSUITableCellOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUITableCellOperation.h; sourceTree = "<group>"; };
 		846541F01B42C97400DE2BC1 /* BSUITableMultCellOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUITableMultCellOperation.h; sourceTree = "<group>"; };
-		8467C2B61B66200A00371948 /* BSPhotoTakeCollectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSPhotoTakeCollectionController.h; sourceTree = "<group>"; };
-		8467C2B71B66200A00371948 /* BSPhotoTakeCollectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSPhotoTakeCollectionController.m; sourceTree = "<group>"; };
 		8469CD671B4121F000EF6757 /* LFRecommendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFRecommendViewController.h; sourceTree = "<group>"; };
 		8469CD681B4121F000EF6757 /* LFRecommendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFRecommendViewController.m; sourceTree = "<group>"; };
 		8469CD6C1B4122D400EF6757 /* LFRecommend.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LFRecommend.storyboard; sourceTree = "<group>"; };
@@ -2186,8 +2180,6 @@
 		84F28FFB1B6387C4001078D8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		84F28FFE1B6387C4001078D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		84F290131B638909001078D8 /* LOOperatorMain.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LOOperatorMain.storyboard; sourceTree = "<group>"; };
-		84F473B01B656C7B00520BD7 /* CollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
-		84F473B11B656C7B00520BD7 /* CollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
 		84F66D611B53E6A700498734 /* LSBLEIFTTUpHoldMain.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LSBLEIFTTUpHoldMain.storyboard; sourceTree = "<group>"; };
 		84F66D661B53E7DE00498734 /* LSHandySearchNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSHandySearchNavViewController.h; sourceTree = "<group>"; };
 		84F66D671B53E7DE00498734 /* LSHandySearchNavViewController..m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSHandySearchNavViewController..m; sourceTree = "<group>"; };
@@ -4000,16 +3992,12 @@
 		84F28F9F1B62A535001078D8 /* PhotoTake */ = {
 			isa = PBXGroup;
 			children = (
+				8425E18D1B6765DA00A93C43 /* BSPhotoImagePickerController.h */,
+				8425E18E1B6765DA00A93C43 /* BSPhotoImagePickerController.m */,
 				8425E1891B67644200A93C43 /* BSPhotoTakeController.h */,
 				8425E18A1B67644200A93C43 /* BSPhotoTakeController.m */,
-				845AC34A1B671D260077E0ED /* BSPhotoImagePickerController.h */,
-				845AC34B1B671D260077E0ED /* BSPhotoImagePickerController.m */,
 				84118EFC1B667AD50052E275 /* BSPhotoTakeViewController.h */,
 				84118EFD1B667AD50052E275 /* BSPhotoTakeViewController.m */,
-				84F473B01B656C7B00520BD7 /* CollectionViewCell.h */,
-				84F473B11B656C7B00520BD7 /* CollectionViewCell.m */,
-				8467C2B61B66200A00371948 /* BSPhotoTakeCollectionController.h */,
-				8467C2B71B66200A00371948 /* BSPhotoTakeCollectionController.m */,
 				84F28FCF1B62BB31001078D8 /* BSPhotoViewController.h */,
 				84F28FD01B62BB31001078D8 /* BSPhotoViewController.m */,
 			);
@@ -5641,12 +5629,11 @@
 				845AC3511B674C870077E0ED /* BSUICollectionCollectionViewController.m in Sources */,
 				84E9D7A31B61E10C00F2CD24 /* BSCheckmarkView.m in Sources */,
 				84EAFF601B596C8900A90992 /* BSUITableViewCanEditedController.m in Sources */,
+				8425E1901B6765DA00A93C43 /* BSPhotoImagePickerController.m in Sources */,
 				84F28FD41B62BB31001078D8 /* BSPhotoViewController.m in Sources */,
 				844570DA1B4D67D5000CA1C7 /* BTLECentralViewController.m in Sources */,
-				84F473B51B656C7B00520BD7 /* CollectionViewCell.m in Sources */,
 				84D19FF11B4C440500BA25BF /* LeTemperatureAlarmService.m in Sources */,
 				84D19FF31B4C440500BA25BF /* BSBLEDetailTableViewController.m in Sources */,
-				8467C2B91B662D4B00371948 /* BSPhotoTakeCollectionController.m in Sources */,
 				844570DC1B4D67D5000CA1C7 /* BTLEPeripheralViewController.m in Sources */,
 				84BF8FC41B4AC2FA001042F1 /* Conf.m in Sources */,
 				84BF8FC61B4AC2FA001042F1 /* ErrorMessage.m in Sources */,
@@ -5654,7 +5641,6 @@
 				84E9D79F1B61E10C00F2CD24 /* BSAssetCell.m in Sources */,
 				84BF8FCD1B4AC2FA001042F1 /* BSTableViewRefreshController.m in Sources */,
 				84E9D7A91B61E10C00F2CD24 /* BSVideoIconView.m in Sources */,
-				845AC34D1B671D260077E0ED /* BSPhotoImagePickerController.m in Sources */,
 				84BF8FCF1B4AC2FA001042F1 /* BSTableSection.m in Sources */,
 				84BF8FD11B4AC2FA001042F1 /* BSTableContentObject.m in Sources */,
 				84E9D79D1B61E10C00F2CD24 /* BSAlbumsViewController.m in Sources */,
@@ -5793,6 +5779,7 @@
 				8470763F1B3A8B9000F28180 /* cleaning.m in Sources */,
 				847433081B2A908000B030C4 /* SystemSet.m in Sources */,
 				A0F0C3E61B10209500CE406D /* BasicBody.m in Sources */,
+				8425E18F1B6765DA00A93C43 /* BSPhotoImagePickerController.m in Sources */,
 				847433021B2A8F4A00B030C4 /* WaitPayment.m in Sources */,
 				8460AE7D1B42578B00022280 /* BSTableViewMultCellData.m in Sources */,
 				84832D691B565F5E00FB6D28 /* UserSessionAndUserAddressDomain.m in Sources */,
@@ -5890,7 +5877,6 @@
 				8405CB841B5566940014AF8D /* UserInfoDomain.m in Sources */,
 				84832D2C1B564E5700FB6D28 /* CustomerAppointmentSessionDomain.m in Sources */,
 				8405CBB51B5572D40014AF8D /* BusinessProductAdvert.m in Sources */,
-				845AC34C1B671D260077E0ED /* BSPhotoImagePickerController.m in Sources */,
 				84BA96851B2829D500388B58 /* WaterSending.m in Sources */,
 				844570DB1B4D67D5000CA1C7 /* BTLEPeripheralViewController.m in Sources */,
 				847432F91B2A8E5500B030C4 /* AlreadyPayment.m in Sources */,
@@ -5946,7 +5932,6 @@
 				84BA967E1B2829D500388B58 /* MyOrderModel.m in Sources */,
 				84EBA00B1B416E37003309F6 /* ClassForSelectors.m in Sources */,
 				84832D511B565BDF00FB6D28 /* OrderBaseAndDetailDomain.m in Sources */,
-				84F473B41B656C7B00520BD7 /* CollectionViewCell.m in Sources */,
 				845AC3501B674C870077E0ED /* BSUICollectionCollectionViewController.m in Sources */,
 				84832D301B564EA200FB6D28 /* BusinessCartDomain.m in Sources */,
 				A0F0C3EB1B10209500CE406D /* JoinShoppingCartResult.m in Sources */,
@@ -5960,7 +5945,6 @@
 				845A022C1B3DABF0007F5327 /* Conf.m in Sources */,
 				84BA96791B2829D500388B58 /* BusinessManager.m in Sources */,
 				84D19FE71B4C36EC00BA25BF /* LeTemperatureAlarmService.m in Sources */,
-				8467C2B81B66200A00371948 /* BSPhotoTakeCollectionController.m in Sources */,
 				847433121B2A915C00B030C4 /* cardBinding.m in Sources */,
 				8405CB991B556C8F0014AF8D /* BusinessBase.m in Sources */,
 				847432EA1B2A8DCC00B030C4 /* WaitPaymentDetail.m in Sources */,
