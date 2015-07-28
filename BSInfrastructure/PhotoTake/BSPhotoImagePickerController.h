@@ -11,16 +11,17 @@
 
 @protocol BSPhoneImagePickerControllerDelegate <NSObject>
 
+@required
+- (void)imagePhotoPickerController:(BSPhotoImagePickerController *)imagePickerController didFinishPickingAssets:(NSMutableArray *)assets;
+
 @optional
-- (void)imagePickerController:(BSPhotoImagePickerController *)imagePickerController didFinishPickingAssets:(NSArray *)assets;
+- (void)imagePhotoPickerControllerDidCancel:(BSPhotoImagePickerController *)imagePickerController;
 
-- (void)imagePickerControllerDidCancel:(BSPhotoImagePickerController *)imagePickerController;
+- (BOOL)imagePhotoPickerController:(BSPhotoImagePickerController *)imagePickerController shouldSelectAsset:(UIImage *)asset;
 
-- (BOOL)imagePickerController:(BSPhotoImagePickerController *)imagePickerController shouldSelectAsset:(UIImage *)asset;
+- (void)imagePhotoPickerController:(BSPhotoImagePickerController *)imagePickerController didSelectAsset:(UIImage *)asset;
 
-- (void)imagePickerController:(BSPhotoImagePickerController *)imagePickerController didSelectAsset:(UIImage *)asset;
-
-- (void)imagePickerController:(BSPhotoImagePickerController *)
+- (void)imagePhotoPickerController:(BSPhotoImagePickerController *)
 imagePickerController didDeselectAsset:(UIImage *)asset;
 
 

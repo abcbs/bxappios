@@ -12,7 +12,6 @@
 
 
 #import "BSPhotoTakeViewController.h"
-//#import "BSPhotoTakeCollectionController.h"
 //拍照
 #define kPhotosActionSheetTag 1
 //视频
@@ -415,6 +414,14 @@ typedef NS_ENUM(NSInteger, BSImagePickerControllerMode) {
      }];
 }
 
+//
+- (void)imagePhotoPickerController:(BSPhotoImagePickerController *)imagePickerController didFinishPickingAssets:(NSMutableArray *)assets{
+    BSLog(@"选择图片");
+    if ([self.delegate respondsToSelector:@selector(takeController:gotPhoto:withInfo:)]){
+       // NSMutableArray *arrays=[NSMutableArray arrayWithArray:assets];
+        [self.delegate takeController:self gotPhotoArray:assets withInfo:nil];
+    }
+}
 /**
  *拍照成功之后的动作，事件源UIImagePickerControllerDelegate
  */
@@ -608,11 +615,6 @@ typedef NS_ENUM(NSInteger, BSImagePickerControllerMode) {
 	return nil;
 }
 
-#pragma mark - UINavigationControllerDelegate
-
--(void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated{
-
-}
 
 - (void)takePhotoOrChooseFromLibrary
 {
@@ -675,6 +677,5 @@ typedef NS_ENUM(NSInteger, BSImagePickerControllerMode) {
     [self _setUpActionSheet];
     [self.actionSheet setTag:kVideosOrPhotosActionSheetTag];
 }
-
 
 @end

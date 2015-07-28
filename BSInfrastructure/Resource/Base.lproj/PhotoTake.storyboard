@@ -15,13 +15,13 @@
                         <viewControllerLayoutGuide type="bottom" id="8Zn-iR-kOM"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="law-PU-ETo">
-                                <rect key="frame" x="1" y="88" width="375" height="36"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="law-PU-ETo">
+                                <rect key="frame" x="1" y="88" width="320" height="36"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="36" id="ktZ-my-T5j"/>
+                                    <constraint firstAttribute="height" constant="36" id="zvp-g0-x5z"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="拍一张或者选择一张">
@@ -31,10 +31,10 @@
                                     <action selector="takePhotoOrChooseFromLibrary" destination="2" eventType="touchUpInside" id="SsK-EQ-9Sr"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pl0-9F-7i0">
-                                <rect key="frame" x="1" y="176" width="375" height="36"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pl0-9F-7i0">
+                                <rect key="frame" x="1" y="176" width="320" height="36"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="36" id="0T7-j1-YsG"/>
+                                    <constraint firstAttribute="height" constant="36" id="0pe-yu-PcC"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="takePhotoOrVideoOrChooseFromLibrary:">
@@ -45,16 +45,12 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qSm-I4-YCk">
-                                <rect key="frame" x="87" y="243" width="200" height="200"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="214" id="6ZZ-my-FL2"/>
-                                    <constraint firstAttribute="height" constant="169" id="UyI-ha-EKn"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="243" width="320" height="149"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Sf-EJ-WKO">
-                                <rect key="frame" x="0.0" y="127" width="375" height="36"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Sf-EJ-WKO">
+                                <rect key="frame" x="0.0" y="127" width="320" height="36"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="36" id="84g-Vm-Ahc"/>
+                                    <constraint firstAttribute="height" constant="36" id="0YV-Aa-hMc"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="拍多张或者选择多张">
@@ -67,28 +63,30 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="law-PU-ETo" firstAttribute="trailing" secondItem="3Sf-EJ-WKO" secondAttribute="trailing" id="5zC-g5-qHC"/>
-                            <constraint firstItem="law-PU-ETo" firstAttribute="top" secondItem="3" secondAttribute="top" constant="49" id="DBX-D9-q8a"/>
-                            <constraint firstItem="pl0-9F-7i0" firstAttribute="leading" secondItem="3Sf-EJ-WKO" secondAttribute="leading" id="Dhi-oF-Cxc"/>
-                            <constraint firstItem="3Sf-EJ-WKO" firstAttribute="top" secondItem="3" secondAttribute="top" constant="94" id="DjP-6R-M5o"/>
-                            <constraint firstItem="pl0-9F-7i0" firstAttribute="top" secondItem="3" secondAttribute="top" constant="139" id="EMZ-5E-a3W"/>
-                            <constraint firstItem="3Sf-EJ-WKO" firstAttribute="trailing" secondItem="pl0-9F-7i0" secondAttribute="trailing" id="GDD-9i-p9F"/>
-                            <constraint firstItem="pl0-9F-7i0" firstAttribute="leading" secondItem="3" secondAttribute="leading" id="Ptq-EB-xje"/>
-                            <constraint firstItem="qSm-I4-YCk" firstAttribute="top" secondItem="3" secondAttribute="top" constant="218" id="cRh-lU-8oe"/>
-                            <constraint firstItem="qSm-I4-YCk" firstAttribute="centerX" secondItem="pl0-9F-7i0" secondAttribute="centerX" id="esG-h4-0zQ"/>
-                            <constraint firstItem="3Sf-EJ-WKO" firstAttribute="leading" secondItem="law-PU-ETo" secondAttribute="leading" id="hR3-DS-Lwu"/>
-                            <constraint firstAttribute="trailing" secondItem="3Sf-EJ-WKO" secondAttribute="trailing" id="zCQ-rK-zy7"/>
+                            <constraint firstItem="pl0-9F-7i0" firstAttribute="trailing" secondItem="law-PU-ETo" secondAttribute="trailing" id="3di-fQ-PjZ"/>
+                            <constraint firstItem="qSm-I4-YCk" firstAttribute="leading" secondItem="3" secondAttribute="leadingMargin" constant="-18" id="3v4-uX-dlh"/>
+                            <constraint firstItem="law-PU-ETo" firstAttribute="top" secondItem="1ud-RC-9rm" secondAttribute="bottom" constant="68" id="K9Z-hJ-AjS"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="law-PU-ETo" secondAttribute="trailing" constant="-17" id="Owq-KT-Heu"/>
+                            <constraint firstItem="law-PU-ETo" firstAttribute="leading" secondItem="3" secondAttribute="leadingMargin" constant="-15" id="QD1-f2-fTd"/>
+                            <constraint firstItem="3Sf-EJ-WKO" firstAttribute="top" secondItem="law-PU-ETo" secondAttribute="bottom" constant="3" id="T0K-sA-0K1"/>
+                            <constraint firstItem="3Sf-EJ-WKO" firstAttribute="leading" secondItem="3" secondAttribute="leading" id="cjh-IJ-CjM"/>
+                            <constraint firstAttribute="trailing" secondItem="3Sf-EJ-WKO" secondAttribute="trailing" id="dGL-XO-oIA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qSm-I4-YCk" secondAttribute="trailing" constant="-22" id="e6C-UE-hcv"/>
+                            <constraint firstItem="pl0-9F-7i0" firstAttribute="leading" secondItem="law-PU-ETo" secondAttribute="leading" id="kxN-Cb-84O"/>
+                            <constraint firstItem="qSm-I4-YCk" firstAttribute="top" secondItem="pl0-9F-7i0" secondAttribute="bottom" constant="31" id="tsl-Wr-mfa"/>
+                            <constraint firstItem="pl0-9F-7i0" firstAttribute="top" secondItem="3Sf-EJ-WKO" secondAttribute="bottom" constant="13" id="y1n-4o-DWh"/>
+                            <constraint firstItem="8Zn-iR-kOM" firstAttribute="top" secondItem="qSm-I4-YCk" secondAttribute="bottom" constant="176" id="yir-E6-xFW"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="3tQ-8c-lf8"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="imageView" destination="qSm-I4-YCk" id="Sgp-sf-CeS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1015.5" y="241.5"/>
+            <point key="canvasLocation" x="1015" y="241"/>
         </scene>
         <!--拍照选择-->
         <scene sceneID="XOX-Yp-90k">
@@ -226,10 +224,13 @@
                             </constraints>
                         </collectionReusableView>
                     </collectionView>
-                    <toolbarItems>
-                        <barButtonItem title="Item" id="Ah2-Uk-BCB"/>
-                    </toolbarItems>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="相册" id="xhi-zW-IPd">
+                        <barButtonItem key="leftBarButtonItem" title="返回" id="yFn-ac-7y5">
+                            <connections>
+                                <action selector="backClick:" destination="jXX-tZ-iz8" id="8Nb-7U-gr1"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="确定" id="Gr5-Kc-aS9">
                             <connections>
                                 <action selector="done:" destination="jXX-tZ-iz8" id="gZn-Pa-zve"/>
@@ -249,6 +250,7 @@
         <!--Navigation Controller-->
         <scene sceneID="by0-3A-fKa">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fZG-KZ-azK" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="BSPhotoTakenNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="kH1-8Y-5Sa" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
@@ -261,7 +263,6 @@
                         <segue destination="jXX-tZ-iz8" kind="relationship" relationship="rootViewController" id="RIF-hR-eBr"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fZG-KZ-azK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1782" y="192"/>
         </scene>

@@ -10,17 +10,10 @@
 #import "BSUICollectionCollectionViewController.h"
 
 @class BSImagePickerController;
-@class PHAssetCollection;
+
 
 @interface BSPhotoTakeViewController : BSUICollectionCollectionViewController
 
-
-@property (nonatomic, strong) NSMutableArray *assetCollection;
-
-
-
 @property (nonatomic, strong) BSPhotoImagePickerController * imagePickerController;
-
-
 
 @end

@@ -67,12 +67,12 @@
 
 - (void)takeController:(BSPhotoTakeController *)controller gotPhotoArray:(NSMutableArray *)photoImages withInfo:(NSMutableArray *)info{
     BSLog(@"取消拍照动作操作");
-    [self.imageView setImage:photoImages[0]];
+    //[self.imageView setImage:photoImages[0]];
     [self displayAD:photoImages];
 
 }
 -(void)displayAD:(NSMutableArray *)images{
-    BSFCRollingADImageUIView *adView= [BSFCRollingADImageUIView initADWithImages:images  playerDelegate:self target:self width:200 height:200];
+    BSFCRollingADImageUIView *adView= [BSFCRollingADImageUIView initADWithImages:images  playerDelegate:self target:self width:SCREEN_WIDTH height:200];
     //资源轮播
     [adView removeFromSuperview];
     [self.imageView addSubview:adView];
@@ -83,10 +83,5 @@
     [super viewDidUnload];
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    //BSPhotoTakeViewController *assetsViewController = segue.destinationViewController;
-    //assetsViewController.bsPhotoTakeViewController = self.imagePickerController;
-   }
 
 @end

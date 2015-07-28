@@ -14,9 +14,9 @@
 #import "BSImagePickerController.h"
 #import "BSAssetsViewController.h"
 
-static CGSize CGSizeScale(CGSize size, CGFloat scale) {
+static CGSize CGSizeScale(CGSize size, CGFloat sc) {
     
-    return CGSizeMake(size.width * scale, size.height * scale);
+    return CGSizeMake(size.width * sc, size.height * sc);
 }
 
 

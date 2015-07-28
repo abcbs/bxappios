@@ -74,6 +74,8 @@ UICollectionViewDelegate, UICollectionViewDataSource
 
 @property (nonatomic, copy) NSString *prompt;
 
+- (IBAction)backClick:(id)sender;
+
 @end
 
 @implementation BSPhotoTakeViewController
@@ -93,12 +95,18 @@ UICollectionViewDelegate, UICollectionViewDataSource
     
     [self setUpToolbarItems];
     [self resetCachedAssets];
-    [self.fetchResult addObject:@"img_01.jpg"];
-    [self.fetchResult addObject:@"img_02.jpg"];
-    [self.fetchResult addObject:@"img_03.jpg"];
-    [self.fetchResult addObject:@"img_04.jpg"];
-    [self.fetchResult addObject:@"img_05.jpg"];
-    [self.fetchResult addObject:@"img_06.jpg"];
+     UIImage *image=[UIImage imageNamed:@"img_01.jpg"];
+    [self.fetchResult addObject:image];
+    image=[UIImage imageNamed:@"img_02.jpg"];
+    [self.fetchResult addObject:image];
+    image=[UIImage imageNamed:@"img_03.jpg"];
+    [self.fetchResult addObject:image];
+    image=[UIImage imageNamed:@"img_04.jpg"];
+    [self.fetchResult addObject:image];
+    image=[UIImage imageNamed:@"img_05.jpg"];
+    [self.fetchResult addObject:image];
+    image=[UIImage imageNamed:@"img_06.jpg"];
+    [self.fetchResult addObject:image];
    }
 
 
@@ -168,7 +176,7 @@ UICollectionViewDelegate, UICollectionViewDataSource
 - (void)dealloc
 {
     // Deregister observer
-    
+    [self.fetchResult removeAllObjects];
 }
 
 
@@ -187,8 +195,13 @@ UICollectionViewDelegate, UICollectionViewDataSource
 
 - (IBAction)done:(id)sender
 {
-    
-    BSLog(@"done");
+
+    if ([self.imagePickerController.delegate respondsToSelector:@selector(imagePhotoPickerController:didFinishPickingAssets:)]) {
+        [self.imagePickerController.delegate imagePhotoPickerController:self.imagePickerController
+                                                 didFinishPickingAssets:[NSMutableArray arrayWithArray:self.imagePickerController.selectedAssets.array]];
+        //[self.imagePickerController.selectedAssets removeAllObjects];
+        [self backClick];
+    }
 }
 
 
@@ -377,8 +390,7 @@ UICollectionViewDelegate, UICollectionViewDataSource
     cell.showsOverlayViewWhenSelected = self.imagePickerController.allowsMultipleSelection;
     ;
     // Image
-    NSString *name= self.fetchResult[indexPath.item];
-    UIImage *image= [UIImage imageNamed:name];
+    UIImage *image= self.fetchResult[indexPath.item];
     cell.imageView.image=image;
 
     cell.videoIndicatorView.hidden = YES;
@@ -424,7 +436,7 @@ UICollectionViewDelegate, UICollectionViewDataSource
     
     if ([self.imagePickerController.delegate respondsToSelector:@selector(imagePickerController:shouldSelectAsset:)]) {
         UIImage *asset = self.fetchResult[indexPath.item];
-        return [self.imagePickerController.delegate imagePickerController:self.imagePickerController shouldSelectAsset:asset];
+        return [self.imagePickerController.delegate imagePhotoPickerController:self.imagePickerController shouldSelectAsset:asset];
     }
     
     if ([self isAutoDeselectEnabled]) {
@@ -446,7 +458,7 @@ UICollectionViewDelegate, UICollectionViewDataSource
     
     UIImage *asset = self.fetchResult[indexPath.item];
     
-    if (self.imagePickerController.allowsMultipleSelection) {
+    if (self.imagePickerController.allowsMultipleSelection) {//多选
         if ([self isAutoDeselectEnabled] && selectedAssets.count > 0) {
             // Remove previous selected asset from set
             [selectedAssets removeObjectAtIndex:0];
@@ -472,16 +484,17 @@ UICollectionViewDelegate, UICollectionViewDataSource
                 [self.navigationController setToolbarHidden:NO animated:YES];
             }
         }
-    } else {
-        
-        if ([imagePickerController.delegate respondsToSelector:@selector(imagePickerController:didFinishPickingAssets:)]) {
-            [imagePickerController.delegate imagePickerController:imagePickerController didFinishPickingAssets:@[asset]];
+    } else {//单选
+        //
+        NSMutableArray *array=[NSMutableArray arrayWithArray:@[asset]];
+        if ([imagePickerController.delegate respondsToSelector:@selector(imagePhotoPickerController:didFinishPickingAssets:)]) {
+            [imagePickerController.delegate imagePhotoPickerController:imagePickerController didFinishPickingAssets:array];
         }
         
     }
     
-    if ([imagePickerController.delegate respondsToSelector:@selector(imagePickerController:didSelectAsset:)]) {
-        [imagePickerController.delegate imagePickerController:imagePickerController didSelectAsset:asset];
+    if ([imagePickerController.delegate respondsToSelector:@selector(imagePhotoPickerController:didSelectAsset:)]) {
+        [imagePickerController.delegate imagePhotoPickerController:imagePickerController didSelectAsset:asset];
     }
     
 }
@@ -512,8 +525,8 @@ UICollectionViewDelegate, UICollectionViewDataSource
         }
     }
     
-    if ([imagePickerController.delegate respondsToSelector:@selector(imagePickerController:didDeselectAsset:)]) {
-        [imagePickerController.delegate imagePickerController:imagePickerController didDeselectAsset:asset];
+    if ([imagePickerController.delegate respondsToSelector:@selector(imagePhotoPickerController:didDeselectAsset:)]) {
+        [imagePickerController.delegate imagePhotoPickerController:imagePickerController didDeselectAsset:asset];
     }
 }
 
@@ -535,4 +548,7 @@ UICollectionViewDelegate, UICollectionViewDataSource
 }
 
 
+- (IBAction)backClick:(id)sender {
+    [self backClick];
+}
 @end

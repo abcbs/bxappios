@@ -16,9 +16,9 @@
 - (void)imagePickerController:(BSImagePickerController *)imagePickerController didFinishPickingAssets:(NSArray *)assets;
 - (void)imagePickerControllerDidCancel:(BSImagePickerController *)imagePickerController;
 
-- (BOOL)imagePickerController:(BSImagePickerController *)imagePickerController shouldSelectAsset:(UIImage *)asset;
-- (void)imagePickerController:(BSImagePickerController *)imagePickerController didSelectAsset:(UIImage *)asset;
-- (void)imagePickerController:(BSImagePickerController *)imagePickerController didDeselectAsset:(UIImage *)asset;
+- (BOOL)imagePickerController:(BSImagePickerController *)imagePickerController shouldSelectAsset:(PHAsset *)asset;
+- (void)imagePickerController:(BSImagePickerController *)imagePickerController didSelectAsset:(PHAsset *)asset;
+- (void)imagePickerController:(BSImagePickerController *)imagePickerController didDeselectAsset:(PHAsset *)asset;
 
 @end
 

@@ -1408,7 +1408,6 @@
 		8420436F1B2991770002C868 /* DLTabedSlideView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLTabedSlideView.m; sourceTree = "<group>"; };
 		842043701B2991770002C868 /* DLUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLUtility.h; sourceTree = "<group>"; };
 		842043711B2991770002C868 /* DLUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLUtility.m; sourceTree = "<group>"; };
-		8425E1881B67639700A93C43 /* BSPhotoTakeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BSPhotoTakeController.h; path = BSInfrastructure/PhotoTake/BSPhotoTakeController.h; sourceTree = SOURCE_ROOT; };
 		8425E1891B67644200A93C43 /* BSPhotoTakeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSPhotoTakeController.h; sourceTree = "<group>"; };
 		8425E18A1B67644200A93C43 /* BSPhotoTakeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSPhotoTakeController.m; sourceTree = "<group>"; };
 		8425E18D1B6765DA00A93C43 /* BSPhotoImagePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSPhotoImagePickerController.h; sourceTree = "<group>"; };
@@ -3709,7 +3708,6 @@
 				84F28FBC1B62B56A001078D8 /* FDTake.strings */,
 				84F28FE01B62C66E001078D8 /* BSImagePicker.storyboard */,
 				84E9D7B01B61E22300F2CD24 /* BSImagePicker.strings */,
-				8425E1881B67639700A93C43 /* BSPhotoTakeController.h */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -3992,10 +3990,10 @@
 		84F28F9F1B62A535001078D8 /* PhotoTake */ = {
 			isa = PBXGroup;
 			children = (
-				8425E18D1B6765DA00A93C43 /* BSPhotoImagePickerController.h */,
-				8425E18E1B6765DA00A93C43 /* BSPhotoImagePickerController.m */,
 				8425E1891B67644200A93C43 /* BSPhotoTakeController.h */,
 				8425E18A1B67644200A93C43 /* BSPhotoTakeController.m */,
+				8425E18D1B6765DA00A93C43 /* BSPhotoImagePickerController.h */,
+				8425E18E1B6765DA00A93C43 /* BSPhotoImagePickerController.m */,
 				84118EFC1B667AD50052E275 /* BSPhotoTakeViewController.h */,
 				84118EFD1B667AD50052E275 /* BSPhotoTakeViewController.m */,
 				84F28FCF1B62BB31001078D8 /* BSPhotoViewController.h */,
