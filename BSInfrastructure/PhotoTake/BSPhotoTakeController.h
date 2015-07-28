@@ -40,6 +40,10 @@
  */
 - (void)takeController:(BSPhotoTakeController *)controller gotVideo:(NSURL *)video withInfo:(NSDictionary *)info;
 
+- (UIViewController *)takeController:(BSPhotoTakeController *)controller;
+
+- (BOOL)isOverTakeController:(BSPhotoTakeController *)controller;
+
 @end
 
 @interface BSPhotoTakeController : BSUICommonController <UIImagePickerControllerDelegate>
@@ -70,7 +74,6 @@
  *拍或者选择多张图片操作
  */
 - (void)takeMultPhotoOrChooseFromLibrary;
-
 
 @property (nonatomic, unsafe_unretained) id <BSPhotoTakeDelegate> delegate;
 

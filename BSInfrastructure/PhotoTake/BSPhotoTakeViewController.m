@@ -190,7 +190,7 @@ UICollectionViewDelegate, UICollectionViewDataSource
         [self.imagePickerController.delegate imagePhotoPickerController:self.imagePickerController
                                                  didFinishPickingAssets:[NSMutableArray arrayWithArray:self.imagePickerController.selectedAssets.array]];
         //[self.imagePickerController.selectedAssets removeAllObjects];
-        [self backClick];
+        //[self backClick];
     }
 }
 
@@ -539,6 +539,6 @@ UICollectionViewDelegate, UICollectionViewDataSource
 
 
 - (IBAction)backClick:(id)sender {
-    [self backClick];
+    //[self backClick];
 }
 @end

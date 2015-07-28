@@ -49,4 +49,8 @@ imagePickerController didDeselectAsset:(UIImage *)asset;
 
 -(void)selectPhotoImage:(UIImage *)selectImage;
 
+-(void)reloadCollectionData;
+
+-(void)removeCollectionObjects;
+
 @end

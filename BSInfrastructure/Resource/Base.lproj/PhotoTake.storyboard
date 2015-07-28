@@ -9,7 +9,7 @@
         <!--相册选择-->
         <scene sceneID="5">
             <objects>
-                <viewController title="相册选择" id="2" customClass="BSPhotoViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BSPhotoViewController" title="相册选择" id="2" customClass="BSPhotoViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1ud-RC-9rm"/>
                         <viewControllerLayoutGuide type="bottom" id="8Zn-iR-kOM"/>
@@ -226,11 +226,6 @@
                     </collectionView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="相册" id="xhi-zW-IPd">
-                        <barButtonItem key="leftBarButtonItem" title="返回" id="yFn-ac-7y5">
-                            <connections>
-                                <action selector="backClick:" destination="jXX-tZ-iz8" id="8Nb-7U-gr1"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="确定" id="Gr5-Kc-aS9">
                             <connections>
                                 <action selector="done:" destination="jXX-tZ-iz8" id="gZn-Pa-zve"/>
@@ -250,7 +245,6 @@
         <!--Navigation Controller-->
         <scene sceneID="by0-3A-fKa">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fZG-KZ-azK" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="BSPhotoTakenNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="kH1-8Y-5Sa" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
@@ -263,6 +257,7 @@
                         <segue destination="jXX-tZ-iz8" kind="relationship" relationship="rootViewController" id="RIF-hR-eBr"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fZG-KZ-azK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1782" y="192"/>
         </scene>

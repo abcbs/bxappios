@@ -51,6 +51,12 @@
     return self;
 }
 
+- (void)dealloc
+{
+    // Deregister observer
+    [self.selectedAssets removeAllObjects];
+    [self.albumsViewController removeFromParentViewController];
+}
 - (void)setUpAlbumsViewController
 {
     // Add BSAlbumsViewController as a child
@@ -72,6 +78,14 @@
     if (![albumsViewController.fetchResult containsObject:selectImage]) {
         [albumsViewController.fetchResult addObject:selectImage];
     }
+}
+
+-(void)removeCollectionObjects{
+    
+    [albumsViewController.fetchResult removeAllObjects];
+}
+-(void)reloadCollectionData{
+    [albumsViewController.collectionView reloadData];
     
 }
 @end

@@ -213,6 +213,8 @@ extern float autoSizeScaleY;
 #define PICK_IMAGE_MIN 1
 
 #define PICK_IMAGE_MAX 9
+
+#define TAKE_PHOTP_MAX 0
 /**
  *日期格式
  */

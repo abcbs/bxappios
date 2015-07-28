@@ -36,7 +36,7 @@
     /*
     UINavigationController* nav = [[UINavigationController alloc]  initWithRootViewController:goControl];
     
-    [viewController presentViewController:nav animated:YES completion:nil];
+    BSPhotoViewController
      */
     //送水界面此时没有状态栏
     //[viewController.navigationController presentModalViewController:goControl animated:YES];

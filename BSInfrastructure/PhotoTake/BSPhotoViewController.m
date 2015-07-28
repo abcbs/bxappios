@@ -59,6 +59,14 @@
     BSLog(@"取消拍照动作操作");
 }
 
+- (UIViewController *)takeController:(BSPhotoTakeController *)controller{
+    return self;
+}
+
+- (BOOL)isOverTakeController:(BSPhotoTakeController *)controller{
+    return NO;
+    
+}
 - (void)takeController:(BSPhotoTakeController *)controller gotPhoto:(UIImage *)photo withInfo:(Resources *)info
 {
     

@@ -9,7 +9,7 @@
 #import <MobileCoreServices/MobileCoreServices.h>
 #import "BSIFTTHeader.h"
 #import "Resources.h"
-
+#import "BSPhotoViewController.h"
 
 #import "BSPhotoTakeViewController.h"
 //拍照
@@ -47,6 +47,10 @@ typedef NS_ENUM(NSInteger, BSImagePickerControllerMode) {
     NSMutableArray *rsImageArray;
     
     UIImage *singleImage;
+    
+    __block NSInteger maxPickImagesMax;
+    BOOL pickImageOver;
+    __block BOOL isCheckDataOver;
 
 }
 
@@ -93,7 +97,17 @@ typedef NS_ENUM(NSInteger, BSImagePickerControllerMode) {
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    maxPickImagesMax=0;
+    pickImageOver=NO;
+    isCheckDataOver=NO;
  }
+
+- (void)dealloc{
+    self.bsPhotoImagePickController=nil;
+    self.imagePicker=nil;
+    
+    
+}
 
 -(UIViewController *)aViewController{
     if (!_aViewController){
@@ -149,8 +163,15 @@ typedef NS_ENUM(NSInteger, BSImagePickerControllerMode) {
     }
     return _bsPhotoImagePickController;
 }
--(void) pickImagesFromPhotoTake:(UIImage *)pickImage{
-    [self.bsPhotoImagePickController selectPhotoImage:pickImage];
+-(void) pickImagesFromPhotoTake:(UIImage *)image{
+    if (maxPickImagesMax<TAKE_PHOTP_MAX) {
+        maxPickImagesMax++;
+        [self.bsPhotoImagePickController selectPhotoImage:image];
+        return;
+    }
+    [self.bsPhotoImagePickController selectPhotoImage:image];
+    pickImageOver=YES;
+    [self.bsPhotoImagePickController reloadCollectionData];
     [[self presentingViewController] presentViewController:self.bsPhotoImagePickController animated:YES completion:nil];
 
     
@@ -271,10 +292,7 @@ typedef NS_ENUM(NSInteger, BSImagePickerControllerMode) {
             [self.delegate takeController:self didCancelAfterAttempting:NO];
     } else {//没有取消正常操作
         if([[self.sources objectAtIndex:buttonIndex] integerValue]==kSinglePhotosActionSheetTag){
-            //[self singleImagePicker];
-            UIImage *image=[UIImage imageNamed:@"img_01.jpg"];
-          
-            [self pickImagesFromPhotoTake:image];
+            [self singleImagePicker];
             return;
         }
         if ([[self.sources  objectAtIndex:buttonIndex] integerValue]==kMultPhotosActionSheetTag) {
@@ -331,6 +349,7 @@ typedef NS_ENUM(NSInteger, BSImagePickerControllerMode) {
 #pragma mark - BSImagePickerControllerDelegate
 //多选操作
 - (void)imagePickerController:(BSImagePickerController *)imagePickerController didFinishPickingAssets:(NSArray *)assets{
+    //选择图片
     
     if (isHeaderImage&&assets.count==1) {//点击为头图片选择
         PHAsset *headerImage=(PHAsset *)assets[0];
@@ -411,12 +430,18 @@ typedef NS_ENUM(NSInteger, BSImagePickerControllerMode) {
      }];
 }
 
-//
+//选择照片之后需要跳转到起始页
 - (void)imagePhotoPickerController:(BSPhotoImagePickerController *)imagePickerController didFinishPickingAssets:(NSMutableArray *)assets{
-    BSLog(@"选择图片");
+    __block UIViewController *bs=nil;
+    if ([self.delegate respondsToSelector:@selector(takeController:)]) {
+        bs=[self.delegate takeController:self];
+    }
     if ([self.delegate respondsToSelector:@selector(takeController:gotPhoto:withInfo:)]){
-       // NSMutableArray *arrays=[NSMutableArray arrayWithArray:assets];
+        
         [self.delegate takeController:self gotPhotoArray:assets withInfo:nil];
+        [bs dismissViewControllerAnimated:YES completion:nil];
+        [[self presentingViewController]
+                presentViewController:bs animated:YES completion:nil];
     }
 }
 /**
@@ -426,7 +451,23 @@ typedef NS_ENUM(NSInteger, BSImagePickerControllerMode) {
     if ([self.delegate respondsToSelector:@selector(takeController:gotPhoto:withInfo:)]){
         Resources *rss=[[Resources alloc]init];
         rss.metatype=1;
-        [self.delegate takeController:self gotPhoto:photo withInfo:rss];
+        if (!pickImageOver){//是否拍够了预定照片数，没有的时候一张一张的显示
+            [self.delegate takeController:self gotPhoto:photo withInfo:rss];
+        }
+        //图片选择结束
+        
+        if ([self.delegate respondsToSelector:@selector(isOverTakeController:)]){
+            isCheckDataOver=[self.delegate isOverTakeController:self];
+            if (isCheckDataOver) {
+                [self.bsPhotoImagePickController removeCollectionObjects];
+                
+            }
+        }
+        if (!isCheckDataOver) {
+            [self pickImagesFromPhotoTake:photo];
+
+        }
+        
     }
     
 }
@@ -482,9 +523,12 @@ typedef NS_ENUM(NSInteger, BSImagePickerControllerMode) {
         if ([self.delegate respondsToSelector:@selector(takeController:gotVideo:withInfo:)])
             [self.delegate takeController:self gotVideo:[info objectForKey:UIImagePickerControllerMediaURL] withInfo:info];
     }
-
-    [picker dismissViewControllerAnimated:YES completion:nil];
-    self.imagePicker = nil;
+    if (!pickImageOver) {
+        [picker dismissViewControllerAnimated:YES completion:nil];
+        picker=nil;
+    }
+   
+   
 }
 
 /**
