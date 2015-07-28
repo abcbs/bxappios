@@ -47,4 +47,6 @@ imagePickerController didDeselectAsset:(UIImage *)asset;
 @property (nonatomic, assign) NSUInteger numberOfColumnsInPortrait;
 @property (nonatomic, assign) NSUInteger numberOfColumnsInLandscape;
 
+-(void)selectPhotoImage:(UIImage *)selectImage;
+
 @end

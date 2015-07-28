@@ -17,10 +17,11 @@
 
 @property (nonatomic, strong) NSMutableOrderedSet *selectedAssets;
 @property (nonatomic, strong) NSBundle *assetBundle;
-
+@property (nonatomic, strong) BSPhotoTakeViewController *albumsViewController;
 @end
 
 @implementation BSPhotoImagePickerController
+@synthesize albumsViewController;
 
 - (instancetype)init
 {
@@ -43,7 +44,7 @@
         [self setUpAlbumsViewController];
         
         // Set instance
-        BSPhotoTakeViewController *albumsViewController = (BSPhotoTakeViewController *)self.albumsNavigationController.topViewController;
+        albumsViewController = (BSPhotoTakeViewController *)self.albumsNavigationController.topViewController;
         albumsViewController.imagePickerController = self;
     }
     
@@ -66,4 +67,11 @@
     self.albumsNavigationController = navigationController;
 }
 
+
+-(void)selectPhotoImage:(UIImage *)selectImage{
+    if (![albumsViewController.fetchResult containsObject:selectImage]) {
+        [albumsViewController.fetchResult addObject:selectImage];
+    }
+    
+}
 @end

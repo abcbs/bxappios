@@ -210,7 +210,7 @@ extern float autoSizeScaleY;
 /**
  *图片选择的最小数据
  */
-#define PICK_IMAGE_MIN 3
+#define PICK_IMAGE_MIN 1
 
 #define PICK_IMAGE_MAX 9
 /**

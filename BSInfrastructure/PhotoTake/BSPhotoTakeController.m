@@ -149,12 +149,9 @@ typedef NS_ENUM(NSInteger, BSImagePickerControllerMode) {
     }
     return _bsPhotoImagePickController;
 }
--(void) pickImagesFromTake:(UIImage *)pickImage{
-    
-    //BSPhotoTakeViewController *takenView=[BSPhotoTakeViewController new];
-   // [[self presentingViewController] presentViewController:takenView animated:YES completion:nil];
-    
-   [[self presentingViewController] presentViewController:self.bsPhotoImagePickController animated:YES completion:nil];
+-(void) pickImagesFromPhotoTake:(UIImage *)pickImage{
+    [self.bsPhotoImagePickController selectPhotoImage:pickImage];
+    [[self presentingViewController] presentViewController:self.bsPhotoImagePickController animated:YES completion:nil];
 
     
 }
@@ -187,7 +184,7 @@ typedef NS_ENUM(NSInteger, BSImagePickerControllerMode) {
 }
 - (void)multImagePicker {
    
-      isHeaderImage=NO;
+     isHeaderImage=NO;
      [[self presentingViewController] presentViewController:self.multimagePickerController animated:YES completion:nil];
     
 }
@@ -218,7 +215,6 @@ typedef NS_ENUM(NSInteger, BSImagePickerControllerMode) {
  */
 - (void)takeSinglePhotoOrChooseFromLibrary
 {
-
     self.sources = nil;
     //按钮选择
     self.buttonTitles = nil;
@@ -244,7 +240,6 @@ typedef NS_ENUM(NSInteger, BSImagePickerControllerMode) {
  */
 - (void)takeMultPhotoOrChooseFromLibrary
 {
-
     self.sources = nil;
     //按钮选择
     self.buttonTitles = nil;
@@ -277,8 +272,9 @@ typedef NS_ENUM(NSInteger, BSImagePickerControllerMode) {
     } else {//没有取消正常操作
         if([[self.sources objectAtIndex:buttonIndex] integerValue]==kSinglePhotosActionSheetTag){
             //[self singleImagePicker];
-            [self pickImagesFromTake:nil];
-
+            UIImage *image=[UIImage imageNamed:@"img_01.jpg"];
+          
+            [self pickImagesFromPhotoTake:image];
             return;
         }
         if ([[self.sources  objectAtIndex:buttonIndex] integerValue]==kMultPhotosActionSheetTag) {
@@ -409,6 +405,7 @@ typedef NS_ENUM(NSInteger, BSImagePickerControllerMode) {
          }
          if ([self.delegate respondsToSelector:@selector(takeController:gotPhoto:withInfo:)]){
              [self.delegate takeController:self gotPhoto:image withInfo:rs];
+         
         }
 
      }];

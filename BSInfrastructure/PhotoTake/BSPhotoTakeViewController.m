@@ -59,9 +59,10 @@ UICollectionViewDelegate, UICollectionViewDataSource
 
 @property (nonatomic, strong) IBOutlet UIBarButtonItem *doneButton;
 
-@property (nonatomic, strong) NSMutableArray *fetchResult;
+
 
 @property (nonatomic, strong) PHCachingImageManager *imageManager;
+
 @property (nonatomic, assign) CGRect previousPreheatRect;
 
 @property (nonatomic, assign) BOOL disableScrollToBottom;
@@ -83,6 +84,7 @@ UICollectionViewDelegate, UICollectionViewDataSource
 @synthesize fetchResult=_fetchResult;
 
 @synthesize imagePickerController;
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -95,19 +97,7 @@ UICollectionViewDelegate, UICollectionViewDataSource
     
     [self setUpToolbarItems];
     [self resetCachedAssets];
-     UIImage *image=[UIImage imageNamed:@"img_01.jpg"];
-    [self.fetchResult addObject:image];
-    image=[UIImage imageNamed:@"img_02.jpg"];
-    [self.fetchResult addObject:image];
-    image=[UIImage imageNamed:@"img_03.jpg"];
-    [self.fetchResult addObject:image];
-    image=[UIImage imageNamed:@"img_04.jpg"];
-    [self.fetchResult addObject:image];
-    image=[UIImage imageNamed:@"img_05.jpg"];
-    [self.fetchResult addObject:image];
-    image=[UIImage imageNamed:@"img_06.jpg"];
-    [self.fetchResult addObject:image];
-   }
+}
 
 
 

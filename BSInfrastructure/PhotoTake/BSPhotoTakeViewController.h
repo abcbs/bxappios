@@ -16,4 +16,6 @@
 
 @property (nonatomic, strong) BSPhotoImagePickerController * imagePickerController;
 
+@property (nonatomic, strong) NSMutableArray *fetchResult;
+
 @end
