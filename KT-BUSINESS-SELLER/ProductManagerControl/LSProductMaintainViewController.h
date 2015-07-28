@@ -34,11 +34,12 @@
 @property (weak, nonatomic) IBOutlet UITextField *productCatalogue;
 
 //商品头像
-
 @property (weak, nonatomic) IBOutlet UIImageView *headerImageView;
+
 
 //商品介绍组图
 @property (weak, nonatomic) IBOutlet UIView *resourceImags;
+
 
 //商品宣传，介绍
 @property (weak, nonatomic) IBOutlet UITextView *introduce;

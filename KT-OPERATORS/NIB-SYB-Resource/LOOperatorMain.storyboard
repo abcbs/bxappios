@@ -25,9 +25,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="91g-B2-Got"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                    <connections>
-                        <outlet property="tableView" destination="RLz-3D-Olt" id="gxA-7S-grk"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="USY-Q2-eYq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

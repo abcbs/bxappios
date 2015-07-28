@@ -21,5 +21,16 @@
     // Show/hide overlay view
     self.overlayView.hidden = !(selected && self.showsOverlayViewWhenSelected);
 }
+/*
+- (id)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        // Initialization code
+        self.backgroundColor = [UIColor grayColor];
+              
+    }
+    return self;
+}*/
 
 @end

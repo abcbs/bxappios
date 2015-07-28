@@ -6,6 +6,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BSCMFrameworkHeader.h"
+#import "BSUIFrameworkHeader.h"
+#import "Resources.h"
 
 @class BSPhotoTakeController;
 
@@ -13,53 +16,66 @@
 
 @optional
 /**
- * Delegate method after the user has started a take operation but cancelled it
  * 开始之后的取消操作
  */
 - (void)takeController:(BSPhotoTakeController *)controller didCancelAfterAttempting:(BOOL)madeAttempt;
 
 /**
- * Delegate method after the user has started a take operation but it failed
  * 失败操作
  */
 - (void)takeController:(BSPhotoTakeController *)controller didFailAfterAttempting:(BOOL)madeAttempt;
 
 /**
- * Delegate method after the user has successfully taken or selected a photo
- * 选取照片成功
+ * 选取或拍一张照片成功
  */
-- (void)takeController:(BSPhotoTakeController *)controller gotPhoto:(UIImage *)photo withInfo:(NSDictionary *)info;
+- (void)takeController:(BSPhotoTakeController *)controller gotPhoto:(UIImage *)photo withInfo:(Resources *)info;
 
 /**
- * Delegate method after the user has successfully taken or selected a video
- * 选取视频成功之后
+ * 选取照片成功多张(3~9)
+ */
+- (void)takeController:(BSPhotoTakeController *)controller gotPhotoArray:(NSMutableArray *)photoImages withInfo:(NSMutableArray *)info;
+
+/**
+* 选取视频成功之后
  */
 - (void)takeController:(BSPhotoTakeController *)controller gotVideo:(NSURL *)video withInfo:(NSDictionary *)info;
+
 @end
 
-@interface BSPhotoTakeController : NSObject <UIImagePickerControllerDelegate>
+@interface BSPhotoTakeController : BSUICommonController <UIImagePickerControllerDelegate>
+
+@property (strong,nonatomic) UICollectionView *collectionView;
 
 /**
- * Presents the user with an option to take a photo or choose a photo from the library
+ * 拍照或者从照片中选择图片
  */
 - (void)takePhotoOrChooseFromLibrary;
 
 /**
- * Presents the user with an option to take a video or choose a video from the library
+ *拍视频或者选择视频
  */
 - (void)takeVideoOrChooseFromLibrary;
 
 /**
- * Presents the user with an option to take a photo/video or choose a photo/video from the library
+ *拍照或者视频
  */
 - (void)takePhotoOrVideoOrChooseFromLibrary;
 
 /**
- * The delegate to receive updates from FDTake
+ *拍或者选择一张图片操作
  */
+- (void)takeSinglePhotoOrChooseFromLibrary;
+
+/**
+ *拍或者选择多张图片操作
+ */
+- (void)takeMultPhotoOrChooseFromLibrary;
+
+
 @property (nonatomic, unsafe_unretained) id <BSPhotoTakeDelegate> delegate;
 
 @property (nonatomic, unsafe_unretained) UIViewController *viewControllerForPresentingImagePickerController;
+
 
 // used in presentPopoverFromRect on iPads
 @property (nonatomic, readwrite) CGRect popOverPresentRect;

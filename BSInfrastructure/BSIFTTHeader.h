@@ -21,6 +21,9 @@
  */
 #import "BSPhotoTakeController.h"
 
+#import "CollectionViewCell.h"
+
+#import "BSPhotoTakeCollectionController.h"
 
 
 

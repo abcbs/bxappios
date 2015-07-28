@@ -13,7 +13,7 @@
 @interface LSMainIndexViewController: BSUITableViewInitRuntimeController
 
 
-@property (strong, nonatomic) IBOutlet UITableView *tableView;
+//@property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 
 @end

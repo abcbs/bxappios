@@ -5,19 +5,15 @@
 //  Copyright (c) 2015年 KT. All rights reserved.
 //
 
-#import "BSAssetsViewController.h"
+#import "BSPhotoTakeViewController.h"
 #import <Photos/Photos.h>
-
+#import "BSIFTTHeader.h"
 // Views
 #import "BSImagePickerController.h"
 #import "BSAssetCell.h"
 #import "BSVideoIndicatorView.h"
 
-static CGSize CGSizeScale(CGSize size, CGFloat scale) {
-    return CGSizeMake(size.width * scale, size.height * scale);
-}
-
-@interface BSImagePickerController (Private)
+@interface BSPhotoImagePickerController (Private)
 
 @property (nonatomic, strong) NSMutableOrderedSet *selectedAssets;
 @property (nonatomic, strong) NSBundle *assetBundle;
@@ -54,40 +50,70 @@ static CGSize CGSizeScale(CGSize size, CGFloat scale) {
 
 @end
 
-@interface BSAssetsViewController () <PHPhotoLibraryChangeObserver, UICollectionViewDelegateFlowLayout>
+@interface BSPhotoTakeViewController () <UICollectionViewDelegateFlowLayout,
+UICollectionViewDelegate, UICollectionViewDataSource
+>
+{
+  
+}
 
 @property (nonatomic, strong) IBOutlet UIBarButtonItem *doneButton;
 
-@property (nonatomic, strong) PHFetchResult *fetchResult;
+@property (nonatomic, strong) NSMutableArray *fetchResult;
 
 @property (nonatomic, strong) PHCachingImageManager *imageManager;
 @property (nonatomic, assign) CGRect previousPreheatRect;
 
 @property (nonatomic, assign) BOOL disableScrollToBottom;
+
 @property (nonatomic, strong) NSIndexPath *lastSelectedItemIndexPath;
+
+@property (nonatomic, strong) UICollectionViewFlowLayout *collectionViewLayout;
+
+
+
+@property (nonatomic, copy) NSString *prompt;
 
 @end
 
-@implementation BSAssetsViewController
+@implementation BSPhotoTakeViewController
+@synthesize collectionViewLayout=_collectionViewLayout;
+@synthesize fetchResult=_fetchResult;
 
+@synthesize imagePickerController;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    //self.collectionView = [[UICollectionView alloc]initWithFrame:
+     //                      CGRectMake(0, 66, SCREEN_WIDTH, SCREEN_HEIGHT) collectionViewLayout:self.collectionViewLayout];
+    
+    //设置代理
+    self.collectionView.delegate = self;
+    self.collectionView.dataSource = self;
     
     [self setUpToolbarItems];
     [self resetCachedAssets];
-    
-    // Register observer
-    [[PHPhotoLibrary sharedPhotoLibrary] registerChangeObserver:self];
+    [self.fetchResult addObject:@"img_01.jpg"];
+    [self.fetchResult addObject:@"img_02.jpg"];
+    [self.fetchResult addObject:@"img_03.jpg"];
+    [self.fetchResult addObject:@"img_04.jpg"];
+    [self.fetchResult addObject:@"img_05.jpg"];
+    [self.fetchResult addObject:@"img_06.jpg"];
+   }
+
+
+
+-(NSMutableArray *)fetchResult{
+    if (!_fetchResult) {
+        _fetchResult=[NSMutableArray array];
+        //
+    }
+    return _fetchResult;
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
-    // Configure navigation item
-    self.navigationItem.title = self.assetCollection.localizedTitle;
-    self.navigationItem.prompt = self.imagePickerController.prompt;
     
     // Configure collection view
     self.collectionView.allowsMultipleSelection = self.imagePickerController.allowsMultipleSelection;
@@ -103,7 +129,7 @@ static CGSize CGSizeScale(CGSize size, CGFloat scale) {
     [self updateSelectionInfo];
     
     // Scroll to bottom
-    if (self.fetchResult.count > 0 && self.isMovingToParentViewController && !self.disableScrollToBottom) {
+    if (self.fetchResult.count > 0  && !self.disableScrollToBottom) {
         NSIndexPath *indexPath = [NSIndexPath indexPathForItem:(self.fetchResult.count - 1) inSection:0];
         [self.collectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionTop animated:NO];
     }
@@ -142,28 +168,13 @@ static CGSize CGSizeScale(CGSize size, CGFloat scale) {
 - (void)dealloc
 {
     // Deregister observer
-    [[PHPhotoLibrary sharedPhotoLibrary] unregisterChangeObserver:self];
+    
 }
 
 
 #pragma mark - Accessors
 
-- (void)setAssetCollection:(PHAssetCollection *)assetCollection
-{
-    _assetCollection = assetCollection;
-    
-    [self updateFetchRequest];
-    [self.collectionView reloadData];
-}
 
-- (PHCachingImageManager *)imageManager
-{
-    if (_imageManager == nil) {
-        _imageManager = [PHCachingImageManager new];
-    }
-    
-    return _imageManager;
-}
 
 - (BOOL)isAutoDeselectEnabled
 {
@@ -176,10 +187,8 @@ static CGSize CGSizeScale(CGSize size, CGFloat scale) {
 
 - (IBAction)done:(id)sender
 {
-    if ([self.imagePickerController.delegate respondsToSelector:@selector(imagePickerController:didFinishPickingAssets:)]) {
-        [self.imagePickerController.delegate imagePickerController:self.imagePickerController
-                                               didFinishPickingAssets:self.imagePickerController.selectedAssets.array];
-    }
+    
+    BSLog(@"done");
 }
 
 
@@ -203,6 +212,7 @@ static CGSize CGSizeScale(CGSize size, CGFloat scale) {
 
 - (void)updateSelectionInfo
 {
+    
     NSMutableOrderedSet *selectedAssets = self.imagePickerController.selectedAssets;
     
     if (selectedAssets.count > 0) {
@@ -226,34 +236,8 @@ static CGSize CGSizeScale(CGSize size, CGFloat scale) {
 
 - (void)updateFetchRequest
 {
-    if (self.assetCollection) {
-        PHFetchOptions *options = [PHFetchOptions new];
-        options.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"creationDate" ascending:YES]];
-        
-        switch (self.imagePickerController.mediaType) {
-            case BSImagePickerMediaTypeImage:
-                options.predicate = [NSPredicate predicateWithFormat:@"mediaType == %ld", PHAssetMediaTypeImage];
-                break;
-                
-            case BSImagePickerMediaTypeVideo:
-                options.predicate = [NSPredicate predicateWithFormat:@"mediaType == %ld", PHAssetMediaTypeVideo];
-                break;
-                
-            default:
-                break;
-        }
-        
-        self.fetchResult = [PHAsset fetchAssetsInAssetCollection:self.assetCollection options:options];
-        
-        if ([self isAutoDeselectEnabled] && self.imagePickerController.selectedAssets.count > 0) {
-            // Get index of previous selected asset
-            PHAsset *asset = [self.imagePickerController.selectedAssets firstObject];
-            NSInteger assetIndex = [self.fetchResult indexOfObject:asset];
-            self.lastSelectedItemIndexPath = [NSIndexPath indexPathForItem:assetIndex inSection:0];
-        }
-    } else {
-        self.fetchResult = nil;
-    }
+    
+    BSLog(@"updateFetchRequest");
 }
 
 
@@ -261,17 +245,17 @@ static CGSize CGSizeScale(CGSize size, CGFloat scale) {
 
 - (BOOL)isMinimumSelectionLimitFulfilled
 {
-   return (self.imagePickerController.minimumNumberOfSelection <= self.imagePickerController.selectedAssets.count);
+    return (self.imagePickerController.minimumNumberOfSelection <= self.imagePickerController.selectedAssets.count);
+
 }
 
 - (BOOL)isMaximumSelectionLimitReached
 {
     NSUInteger minimumNumberOfSelection = MAX(1, self.imagePickerController.minimumNumberOfSelection);
-   
+    
     if (minimumNumberOfSelection <= self.imagePickerController.maximumNumberOfSelection) {
         return (self.imagePickerController.maximumNumberOfSelection <= self.imagePickerController.selectedAssets.count);
     }
-   
     return NO;
 }
 
@@ -313,22 +297,7 @@ static CGSize CGSizeScale(CGSize size, CGFloat scale) {
             NSArray *indexPaths = [self.collectionView indexPathsForElementsInRect:removedRect];
             [removedIndexPaths addObjectsFromArray:indexPaths];
         }];
-        
-        NSArray *assetsToStartCaching = [self assetsAtIndexPaths:addedIndexPaths];
-        NSArray *assetsToStopCaching = [self assetsAtIndexPaths:removedIndexPaths];
-        
-        CGSize itemSize = [(UICollectionViewFlowLayout *)self.collectionViewLayout itemSize];
-        CGSize targetSize = CGSizeScale(itemSize, self.traitCollection.displayScale);
-        
-        [self.imageManager startCachingImagesForAssets:assetsToStartCaching
-                                            targetSize:targetSize
-                                           contentMode:PHImageContentModeAspectFill
-                                               options:nil];
-        [self.imageManager stopCachingImagesForAssets:assetsToStopCaching
-                                           targetSize:targetSize
-                                          contentMode:PHImageContentModeAspectFill
-                                              options:nil];
-        
+
         self.previousPreheatRect = preheatRect;
     }
 }
@@ -370,51 +339,11 @@ static CGSize CGSizeScale(CGSize size, CGFloat scale) {
     NSMutableArray *assets = [NSMutableArray arrayWithCapacity:indexPaths.count];
     for (NSIndexPath *indexPath in indexPaths) {
         if (indexPath.item < self.fetchResult.count) {
-            PHAsset *asset = self.fetchResult[indexPath.item];
+            UIImage *asset = self.fetchResult[indexPath.item];
             [assets addObject:asset];
         }
     }
     return assets;
-}
-
-
-#pragma mark - PHPhotoLibraryChangeObserver
-
-- (void)photoLibraryDidChange:(PHChange *)changeInstance
-{
-    dispatch_async(dispatch_get_main_queue(), ^{
-        PHFetchResultChangeDetails *collectionChanges = [changeInstance changeDetailsForFetchResult:self.fetchResult];
-        
-        if (collectionChanges) {
-            // Get the new fetch result
-            self.fetchResult = [collectionChanges fetchResultAfterChanges];
-            
-            if (![collectionChanges hasIncrementalChanges] || [collectionChanges hasMoves]) {
-                // We need to reload all if the incremental diffs are not available
-                [self.collectionView reloadData];
-            } else {
-                // If we have incremental diffs, tell the collection view to animate insertions and deletions
-                [self.collectionView performBatchUpdates:^{
-                    NSIndexSet *removedIndexes = [collectionChanges removedIndexes];
-                    if ([removedIndexes count]) {
-                        [self.collectionView deleteItemsAtIndexPaths:[removedIndexes indexPathsFromIndexesWithSection:0]];
-                    }
-                    
-                    NSIndexSet *insertedIndexes = [collectionChanges insertedIndexes];
-                    if ([insertedIndexes count]) {
-                        [self.collectionView insertItemsAtIndexPaths:[insertedIndexes indexPathsFromIndexesWithSection:0]];
-                    }
-                    
-                    NSIndexSet *changedIndexes = [collectionChanges changedIndexes];
-                    if ([changedIndexes count]) {
-                        [self.collectionView reloadItemsAtIndexPaths:[changedIndexes indexPathsFromIndexesWithSection:0]];
-                    }
-                } completion:NULL];
-            }
-            
-            [self resetCachedAssets];
-        }
-    });
 }
 
 
@@ -446,44 +375,17 @@ static CGSize CGSizeScale(CGSize size, CGFloat scale) {
     BSAssetCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"AssetCell" forIndexPath:indexPath];
     cell.tag = indexPath.item;
     cell.showsOverlayViewWhenSelected = self.imagePickerController.allowsMultipleSelection;
-    
+    ;
     // Image
-    PHAsset *asset = self.fetchResult[indexPath.item];
-    CGSize itemSize = [(UICollectionViewFlowLayout *)collectionView.collectionViewLayout itemSize];
-    CGSize targetSize = CGSizeScale(itemSize, self.traitCollection.displayScale);
-    
-    [self.imageManager requestImageForAsset:asset
-                                 targetSize:targetSize
-                                contentMode:PHImageContentModeAspectFill
-                                    options:nil
-                              resultHandler:^(UIImage *result, NSDictionary *info) {
-                                  if (cell.tag == indexPath.item) {
-                                      cell.imageView.image = result;
-                                  }
-                              }];
-    
-    // Video indicator
-    if (asset.mediaType == PHAssetMediaTypeVideo) {
-        cell.videoIndicatorView.hidden = NO;
-        
-        NSInteger minutes = (NSInteger)(asset.duration / 60.0);
-        NSInteger seconds = (NSInteger)ceil(asset.duration - 60.0 * (double)minutes);
-        cell.videoIndicatorView.timeLabel.text = [NSString stringWithFormat:@"%02ld:%02ld", (long)minutes, (long)seconds];
-        
-        if (asset.mediaSubtypes & PHAssetMediaSubtypeVideoHighFrameRate) {
-            cell.videoIndicatorView.videoIcon.hidden = YES;
-            cell.videoIndicatorView.slomoIcon.hidden = NO;
-        }
-        else {
-            cell.videoIndicatorView.videoIcon.hidden = NO;
-            cell.videoIndicatorView.slomoIcon.hidden = YES;
-        }
-    } else {
-        cell.videoIndicatorView.hidden = YES;
-    }
+    NSString *name= self.fetchResult[indexPath.item];
+    UIImage *image= [UIImage imageNamed:name];
+    cell.imageView.image=image;
+
+    cell.videoIndicatorView.hidden = YES;
+
     
     // Selection state
-    if ([self.imagePickerController.selectedAssets containsObject:asset]) {
+    if ([self.imagePickerController.selectedAssets containsObject:image]) {
         [cell setSelected:YES];
         [collectionView selectItemAtIndexPath:indexPath animated:NO scrollPosition:UICollectionViewScrollPositionNone];
     }
@@ -493,60 +395,24 @@ static CGSize CGSizeScale(CGSize size, CGFloat scale) {
 
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
 {
+    BSLog(@"viewForSupplementaryElementOfKind");
     if (kind == UICollectionElementKindSectionFooter) {
         UICollectionReusableView *footerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter
                                                                                   withReuseIdentifier:@"FooterView"
                                                                                          forIndexPath:indexPath];
         
+        NSBundle *bundle = self.imagePickerController.assetBundle;
         // Number of assets
         UILabel *label = (UILabel *)[footerView viewWithTag:1];
+        NSUInteger numberOfPhotos = self.fetchResult.count;
         
-        NSBundle *bundle = self.imagePickerController.assetBundle;
-        NSUInteger numberOfPhotos = [self.fetchResult countOfAssetsWithMediaType:PHAssetMediaTypeImage];
-        NSUInteger numberOfVideos = [self.fetchResult countOfAssetsWithMediaType:PHAssetMediaTypeVideo];
+        NSString *key = (numberOfPhotos == 1) ? @"assets.footer.photo" : @"assets.footer.photos";
+        NSString *format = NSLocalizedStringFromTableInBundle(key, @"BSImagePicker", bundle, nil);
         
-        switch (self.imagePickerController.mediaType) {
-            case BSImagePickerMediaTypeAny:
-            {
-                NSString *format;
-                if (numberOfPhotos == 1) {
-                    if (numberOfVideos == 1) {
-                        format = NSLocalizedStringFromTableInBundle(@"assets.footer.photo-and-video", @"BSImagePicker", bundle, nil);
-                    } else {
-                        format = NSLocalizedStringFromTableInBundle(@"assets.footer.photo-and-videos", @"BSImagePicker", bundle, nil);
-                    }
-                } else if (numberOfVideos == 1) {
-                    format = NSLocalizedStringFromTableInBundle(@"assets.footer.photos-and-video", @"BSImagePicker", bundle, nil);
-                } else {
-                    format = NSLocalizedStringFromTableInBundle(@"assets.footer.photos-and-videos", @"BSImagePicker", bundle, nil);
-                }
-                
-                label.text = [NSString stringWithFormat:format, numberOfPhotos, numberOfVideos];
-            }
-                break;
-                
-            case BSImagePickerMediaTypeImage:
-            {
-                NSString *key = (numberOfPhotos == 1) ? @"assets.footer.photo" : @"assets.footer.photos";
-                NSString *format = NSLocalizedStringFromTableInBundle(key, @"BSImagePicker", bundle, nil);
-                
-                label.text = [NSString stringWithFormat:format, numberOfPhotos];
-            }
-                break;
-                
-            case BSImagePickerMediaTypeVideo:
-            {
-                NSString *key = (numberOfVideos == 1) ? @"assets.footer.video" : @"assets.footer.videos";
-                NSString *format = NSLocalizedStringFromTableInBundle(key, @"BSImagePicker", bundle, nil);
-                
-                label.text = [NSString stringWithFormat:format, numberOfVideos];
-            }
-                break;
-        }
-        
+        label.text = [NSString stringWithFormat:format, numberOfPhotos];
         return footerView;
     }
-    
+
     return nil;
 }
 
@@ -555,8 +421,9 @@ static CGSize CGSizeScale(CGSize size, CGFloat scale) {
 
 - (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
+    
     if ([self.imagePickerController.delegate respondsToSelector:@selector(imagePickerController:shouldSelectAsset:)]) {
-        PHAsset *asset = self.fetchResult[indexPath.item];
+        UIImage *asset = self.fetchResult[indexPath.item];
         return [self.imagePickerController.delegate imagePickerController:self.imagePickerController shouldSelectAsset:asset];
     }
     
@@ -564,6 +431,7 @@ static CGSize CGSizeScale(CGSize size, CGFloat scale) {
         return YES;
     }
     
+    BSLog(@"shouldSelectItemAtIndexPath");
     return ![self isMaximumSelectionLimitReached];
 }
 
@@ -572,12 +440,13 @@ static CGSize CGSizeScale(CGSize size, CGFloat scale) {
  */
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    BSImagePickerController *imagePickerController = self.imagePickerController;
+    
+    
     NSMutableOrderedSet *selectedAssets = imagePickerController.selectedAssets;
     
-    PHAsset *asset = self.fetchResult[indexPath.item];
+    UIImage *asset = self.fetchResult[indexPath.item];
     
-    if (imagePickerController.allowsMultipleSelection) {
+    if (self.imagePickerController.allowsMultipleSelection) {
         if ([self isAutoDeselectEnabled] && selectedAssets.count > 0) {
             // Remove previous selected asset from set
             [selectedAssets removeObjectAtIndex:0];
@@ -595,7 +464,7 @@ static CGSize CGSizeScale(CGSize size, CGFloat scale) {
         
         [self updateDoneButtonState];
         
-        if (imagePickerController.showsNumberOfSelectedAssets) {
+        if (self.imagePickerController.showsNumberOfSelectedAssets) {
             [self updateSelectionInfo];
             
             if (selectedAssets.count == 1) {
@@ -604,14 +473,17 @@ static CGSize CGSizeScale(CGSize size, CGFloat scale) {
             }
         }
     } else {
+        
         if ([imagePickerController.delegate respondsToSelector:@selector(imagePickerController:didFinishPickingAssets:)]) {
             [imagePickerController.delegate imagePickerController:imagePickerController didFinishPickingAssets:@[asset]];
         }
+        
     }
     
     if ([imagePickerController.delegate respondsToSelector:@selector(imagePickerController:didSelectAsset:)]) {
         [imagePickerController.delegate imagePickerController:imagePickerController didSelectAsset:asset];
     }
+    
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath
@@ -620,10 +492,9 @@ static CGSize CGSizeScale(CGSize size, CGFloat scale) {
         return;
     }
     
-    BSImagePickerController *imagePickerController = self.imagePickerController;
     NSMutableOrderedSet *selectedAssets = imagePickerController.selectedAssets;
     
-    PHAsset *asset = self.fetchResult[indexPath.item];
+    UIImage *asset = self.fetchResult[indexPath.item];
     
     // Remove asset from set
     [selectedAssets removeObject:asset];
@@ -632,7 +503,7 @@ static CGSize CGSizeScale(CGSize size, CGFloat scale) {
     
     [self updateDoneButtonState];
     
-    if (imagePickerController.showsNumberOfSelectedAssets) {
+    if (self.imagePickerController.showsNumberOfSelectedAssets) {
         [self updateSelectionInfo];
         
         if (selectedAssets.count == 0) {
@@ -648,7 +519,7 @@ static CGSize CGSizeScale(CGSize size, CGFloat scale) {
 
 
 #pragma mark - UICollectionViewDelegateFlowLayout
-
+//调整Cell的大小
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     NSUInteger numberOfColumns;
@@ -662,5 +533,6 @@ static CGSize CGSizeScale(CGSize size, CGFloat scale) {
     
     return CGSizeMake(width, width);
 }
+
 
 @end

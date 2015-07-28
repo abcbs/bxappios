@@ -113,7 +113,7 @@ BSDeprecated("废除，下版本合并将删除此方法")
     self.pageControl.numberOfPages = count;
     self.pageControl.currentPage = 0;
     //适配修改
-    //self.scrollView.width=_width;
+    self.scrollView.width=_width;
     [self setNeedsLayout];
     // 6.添加定时器(每隔2秒调用一次self 的nextImage方法)
     [self addTimer];
@@ -252,7 +252,7 @@ BSDeprecated("废除，下版本合并将删除此方法")
     [super layoutSubviews];
     CGFloat imageW = self.scrollView.width;
     CGFloat imageH = self.scrollView.height;
-    if (_width!=SCREEN_WIDTH) {
+    if (_width!=SCREEN_WIDTH||IS_IPHONE_6||IS_IPHONE_6PLUS) {
         imageW = _width;
         imageH =_height;
     }
@@ -261,7 +261,7 @@ BSDeprecated("废除，下版本合并将删除此方法")
     // 1.添加图片到scrollView中
     for (int i = 0; i < count; i++) {
         UIImageView *imageView = self.scrollView.subviews[i];
-        if (_width==SCREEN_WIDTH) {
+        if (_width==SCREEN_WIDTH||IS_IPHONE_6||IS_IPHONE_6PLUS) {
             imageView.contentMode=UIViewContentModeScaleAspectFill;
         }else{
             imageView.contentMode = UIViewContentModeScaleToFill;

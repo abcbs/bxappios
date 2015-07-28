@@ -75,7 +75,7 @@
 /**
  * 适配度
  */
-#define scale (CGFloat)[[UIScreen mainScreen] scale]
+#define scale (CGFloat) [[UIScreen mainScreen] scale]
 
 
 #define IS_IPHONE (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
@@ -198,7 +198,7 @@ extern float autoSizeScaleY;
 
 #pragma mark--运行时表格运行组件BSUITableViewInitRuntimeController配置
 /**
- *标题栏，缺省的图片
+ *标题栏，缺省的图片，目前仅仅使用颜色，没有使用图片
  */
 #define NAVIGATION_IMAGE @"ckxq-122"
 
@@ -207,6 +207,12 @@ extern float autoSizeScaleY;
  */
 #define BSTABLE_CONTENT_COLUMN_NUMBER 1
 
+/**
+ *图片选择的最小数据
+ */
+#define PICK_IMAGE_MIN 3
+
+#define PICK_IMAGE_MAX 9
 /**
  *日期格式
  */

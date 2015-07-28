@@ -67,8 +67,8 @@
 }
 
 -(void)modifiedStyle{
-    CGSize size=_productName.size;
-    _productName.size=BSSizeMake(size.width,size.height);
+    //[self.publishTime setEnabled:YES];
+    //[self.publishTime setHidden:YES];
     
 }
 
@@ -92,6 +92,9 @@
     _publishTime.text = dateString;
 }
 
+/**
+ *数据装载
+ */
 - (void)setupEditProduct
 {
     if (_editDelegate)
@@ -112,7 +115,9 @@
     }
 }
 
-
+/**
+ *数据保存
+ */
 - (IBAction)saveProductDate:(id)sender {
     //初始化化BusinessProduct
     _product=[[BusinessProduct alloc]init];
@@ -242,7 +247,7 @@
 }
 
 -(void)displayAD:(NSMutableArray *)images{
-    BSFCRollingADImageUIView *adView= [BSFCRollingADImageUIView initADWithImages:images  playerDelegate:self target:self width:88 height:88];
+    BSFCRollingADImageUIView *adView= [BSFCRollingADImageUIView initADWithImages:images  playerDelegate:self target:self width:SCREEN_WIDTH height:(200)];
     //资源轮播
     [adView removeFromSuperview];
     [_resourceImags addSubview:adView];

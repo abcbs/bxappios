@@ -75,7 +75,7 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"客户订单基础\t%lid, :订单数量 %ld, 总数量: %@ \t订单编号: %@", (long)_id, (long)_orderNumber, _totalNumbers, _orderNumber];
+    return [NSString stringWithFormat:@"客户订单基础\t%lid, :订单数量 %ld, 总数量: %d \t订单编号: %@", (long)_id, (long)_orderNumber, _totalNumbers, _orderNumber];
 }
 
 @end

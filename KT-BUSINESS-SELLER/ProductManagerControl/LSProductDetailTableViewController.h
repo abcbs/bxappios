@@ -37,7 +37,6 @@ BSUITableViewCommonController<LSProductManagerDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *productCatalogue;
 
 //商品头像
-
 @property (weak, nonatomic) IBOutlet UIImageView *headImage;
 
 //商品介绍组图

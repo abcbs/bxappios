@@ -138,4 +138,8 @@ NSString *bsNetstatus=@"缺省状态";
     
     return destDateString;
 }
+
++(NSString *)urlWithAddShoppingCart{
+    return @"";
+}
 @end

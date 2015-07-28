@@ -303,20 +303,20 @@ BSDeprecated("建议使用统一处理方式，使用initNavigationHeaderWithDef
                             target:(UIViewController *)target
                             title:(NSString *)title image:(NSString *)image{
     BSUIBlockButton *backButton = [[BSUIBlockButton alloc]initWithFrame:BSRectMake(NAVIGATIONBAR_X+NAVIGATIONBAR_WIDTH*0.05,
-                                                                                   NAVIGATIONBAR_Y+STATUS_HEIGHT+10,NAVIGATIONBAR_HEIGHT/2, NAVIGATIONBAR_HEIGHT/3)
+                                                                                   NAVIGATIONBAR_Y+10,NAVIGATIONBAR_HEIGHT, NAVIGATIONBAR_HEIGHT)
                                    target:target
                                                                  action:@selector(backClick)];
-    [backButton setBackgroundImage:[UIImage imageNamed:@"login-2.png"]
-                          forState:UIControlStateNormal];
+    //[backButton setBackgroundImage:[UIImage imageNamed:@"login-2.png"]
+    //                      forState:UIControlStateNormal];
     [backButton setBlock:^(BSUIBlockButton *button){
         [navigationProcess backClick];
     }];
     
-    //NSString *name = [NSString stringWithFormat:@"<-"];
+    NSString *name = [NSString stringWithFormat:@"返回"];
     
     
     [backButton setTintColor:[UIColor whiteColor]];
-    //[backButton setTitle:name forState:UIControlStateNormal];
+    [backButton setTitle:name forState:UIControlStateNormal];
     return backButton;
     
 }

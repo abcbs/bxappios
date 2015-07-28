@@ -12,6 +12,7 @@
 @interface BSAssetsViewController : UICollectionViewController
 
 @property (nonatomic, weak) BSImagePickerController *imagePickerController;
+
 @property (nonatomic, strong) PHAssetCollection *assetCollection;
 
 @end

@@ -103,7 +103,6 @@
     cell.detailTextLabel.text = detailInfo;
     //p的图片，在服务端为资源标示
     cell.imageView.image = p.headerImage;
-    
     return cell;
 }
 

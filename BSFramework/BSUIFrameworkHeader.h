@@ -37,6 +37,10 @@
 #import "BSUITableViewCommonController.h"
 
 /**
+ *
+ */
+#import "BSUICollectionCollectionViewController.h"
+/**
  *TableViewController，默认可编辑单元格
  */
 #import "BSUITableViewCanEditedController.h"
@@ -96,7 +100,7 @@
 
 CG_INLINE CGRect BSRectMake(CGFloat x, CGFloat y, CGFloat width, CGFloat height)
 {
-    autoStyleSize;
+    //autoStyleSize;
     CGRect rect;
     rect.origin.x = x * autoSizeScaleX;
     rect.origin.y = y * autoSizeScaleY;

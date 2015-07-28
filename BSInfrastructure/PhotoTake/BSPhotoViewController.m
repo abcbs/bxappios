@@ -6,8 +6,11 @@
 //
 
 #import "BSPhotoViewController.h"
+#import "BSCMFrameworkHeader.h"
+#import "BSPhotoImagePickerController.h"
+#import "BSPhotoTakeViewController.h"
 
-@interface BSPhotoViewController () <BSPhotoTakeDelegate>
+@interface BSPhotoViewController () <BSPhotoTakeDelegate,BSImagePlayerDelegate>
 
 @end
 
@@ -16,12 +19,15 @@
 
 - (IBAction)takePhotoOrChooseFromLibrary
 {
-    [self.takeController takePhotoOrChooseFromLibrary];
+    
+    [self.takeController takeSinglePhotoOrChooseFromLibrary];
 }
 
 - (IBAction)takeVideoOrChooseFromLibrary
 {
-    [self.takeController takeVideoOrChooseFromLibrary];
+    //[self.takeController takeVideoOrChooseFromLibrary];
+    
+    [self.takeController takeMultPhotoOrChooseFromLibrary];
 }
 
 - (IBAction)takePhotoOrVideoOrChooseFromLibrary
@@ -34,7 +40,7 @@
     [super viewDidLoad];
     self.takeController = [[BSPhotoTakeController alloc] init];
     self.takeController.delegate = self;
-    
+    //[self.view addSubview:self.takeController.collectionView];
     NSBundle* myBundle = [NSBundle bundleWithIdentifier:@"BSTakeTranslations"];
     NSLog(@"%@", myBundle);
     NSString *str = NSLocalizedStringFromTableInBundle(@"noSources",
@@ -50,21 +56,37 @@
 
 - (void)takeController:(BSPhotoTakeController *)controller didCancelAfterAttempting:(BOOL)madeAttempt
 {
-    UIAlertView *alertView;
-    if (madeAttempt)
-        alertView = [[UIAlertView alloc] initWithTitle:@"Example app" message:@"The take was cancelled after selecting media" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    else
-        alertView = [[UIAlertView alloc] initWithTitle:@"Example app" message:@"The take was cancelled without selecting media" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    [alertView show];
+    BSLog(@"取消拍照动作操作");
 }
 
-- (void)takeController:(BSPhotoTakeController *)controller gotPhoto:(UIImage *)photo withInfo:(NSDictionary *)info
+- (void)takeController:(BSPhotoTakeController *)controller gotPhoto:(UIImage *)photo withInfo:(Resources *)info
 {
+    
     [self.imageView setImage:photo];
+}
+
+- (void)takeController:(BSPhotoTakeController *)controller gotPhotoArray:(NSMutableArray *)photoImages withInfo:(NSMutableArray *)info{
+    BSLog(@"取消拍照动作操作");
+    [self.imageView setImage:photoImages[0]];
+    [self displayAD:photoImages];
+
+}
+-(void)displayAD:(NSMutableArray *)images{
+    BSFCRollingADImageUIView *adView= [BSFCRollingADImageUIView initADWithImages:images  playerDelegate:self target:self width:200 height:200];
+    //资源轮播
+    [adView removeFromSuperview];
+    [self.imageView addSubview:adView];
 }
 
 - (void)viewDidUnload {
     [self setImageView:nil];
     [super viewDidUnload];
 }
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    //BSPhotoTakeViewController *assetsViewController = segue.destinationViewController;
+    //assetsViewController.bsPhotoTakeViewController = self.imagePickerController;
+   }
+
 @end
