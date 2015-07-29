@@ -649,18 +649,30 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TMW-OB-SKm" id="5Sq-A6-WEH">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="商品名称" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MIf-cD-GkY">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="商品名称" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MIf-cD-GkY">
                                                     <rect key="frame" x="8" y="11" width="68" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="68" id="DMD-YW-4Gi"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="KzC-ou-4nS" userLabel="无卡促销价格">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" enabled="NO" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="KzC-ou-4nS" userLabel="无卡促销价格">
                                                     <rect key="frame" x="84" y="7" width="236" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="KzC-ou-4nS" secondAttribute="trailing" id="5Hn-0q-xfG"/>
+                                                <constraint firstItem="KzC-ou-4nS" firstAttribute="leading" secondItem="MIf-cD-GkY" secondAttribute="trailing" constant="8" symbolic="YES" id="EAh-wo-I9K"/>
+                                                <constraint firstItem="MIf-cD-GkY" firstAttribute="centerY" secondItem="5Sq-A6-WEH" secondAttribute="centerY" id="JEn-qG-ddq"/>
+                                                <constraint firstItem="MIf-cD-GkY" firstAttribute="leading" secondItem="5Sq-A6-WEH" secondAttribute="leadingMargin" constant="-7" id="R5U-L2-qt2"/>
+                                                <constraint firstItem="MIf-cD-GkY" firstAttribute="top" secondItem="5Sq-A6-WEH" secondAttribute="topMargin" constant="3" id="XMZ-gb-C0I"/>
+                                                <constraint firstItem="KzC-ou-4nS" firstAttribute="top" secondItem="5Sq-A6-WEH" secondAttribute="topMargin" constant="-1" id="i1h-ya-Jm2"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="KzC-ou-4nS" secondAttribute="bottom" constant="-2" id="iCm-1Y-DfG"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="iMj-7n-a7A">
@@ -848,7 +860,11 @@
                                                     <rect key="frame" x="20" y="4" width="56" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="5bt-RY-cW6"/>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="T6p-zX-xjO"/>
+                                                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="56" id="XdN-LU-637"/>
                                                         <constraint firstAttribute="width" constant="56" id="d1w-HG-4rt"/>
+                                                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="21" id="gPK-jh-aKC"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="56" id="xhL-56-Jgl"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -861,6 +877,8 @@
                                                     <rect key="frame" x="0.0" y="27" width="320" height="200"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="320" id="5nD-Uq-SD1"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="320" id="Jb3-F4-ggk"/>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="uH7-Fy-F7v"/>
                                                         <constraint firstAttribute="height" constant="200" id="vzm-jG-afY"/>
                                                     </constraints>
                                                     <variation key="heightClass=compact" fixedFrame="YES">
