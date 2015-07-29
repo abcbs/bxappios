@@ -44,12 +44,6 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    
-    //self.disableScrollToBottom = YES;
-    //_resourceImags=nil;
-    if (_adView) {
-        [_adView removeFromSuperview];
-    }
    
 }
 
@@ -59,9 +53,11 @@
  
 }
 -(void)displayAD:(NSMutableArray *)images{
-    _adView= [BSFCRollingADImageUIView initADWithImages:images  playerDelegate:self target:self width:SCREEN_WIDTH height:(200)];
+    _adView= [BSFCRollingADImageUIView initADWithImages:images  playerDelegate:self target:self width:SCREEN_WIDTH height:_resourceImags.height];
     //资源轮播
-    
+    if (_adView) {
+        [_adView removeFromSuperview];
+    }
     [_resourceImags addSubview:_adView];
 }
 #pragma mark - Navigation
