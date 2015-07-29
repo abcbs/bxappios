@@ -9,8 +9,11 @@
 #import "BSUIFrameworkHeader.h"
 #import "LBModelsHeader.h"
 #import "LSProductManagerDelegate.h"
-
+#import "BSIFTTHeader.h"
 @interface LSProductMaintainViewController : BSUITableViewCommonController
+
+@property (strong,nonatomic) BSPhotoTakeController *takeController;
+//@property (strong,nonatomic) BSPhotoImagePickerController *imagePickerController;
 
 
 //业务模型和操作代理

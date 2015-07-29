@@ -12,10 +12,11 @@
 
 @interface LSProductDetailTableViewController ()<BSImagePlayerDelegate>
 
+@property(nonatomic,strong)     BSFCRollingADImageUIView *adView;
 @end
 
 @implementation LSProductDetailTableViewController
-
+@synthesize adView=_adView;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -40,11 +41,28 @@
 
 }
 
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    //self.disableScrollToBottom = YES;
+    //_resourceImags=nil;
+    if (_adView) {
+        [_adView removeFromSuperview];
+    }
+   
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+ 
+}
 -(void)displayAD:(NSMutableArray *)images{
-    BSFCRollingADImageUIView *adView= [BSFCRollingADImageUIView initADWithImages:images  playerDelegate:self target:self width:SCREEN_WIDTH height:(100)];
+    _adView= [BSFCRollingADImageUIView initADWithImages:images  playerDelegate:self target:self width:SCREEN_WIDTH height:(200)];
     //资源轮播
-    [adView removeFromSuperview];
-    [_resourceImags addSubview:adView];
+    
+    [_resourceImags addSubview:_adView];
 }
 #pragma mark - Navigation
 

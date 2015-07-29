@@ -22,7 +22,7 @@
 #import "BSPhotoTakeController.h"
 
 
-//#import "BSPhotoTakeCollectionController.h"
+#import "BSPhotoImagePickerController.h"
 
 
 

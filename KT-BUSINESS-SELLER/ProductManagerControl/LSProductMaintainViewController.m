@@ -11,7 +11,7 @@
 #import "BSImagePickerController.h"
 #import "BSIFTTHeader.h"
 
-@interface LSProductMaintainViewController ()<BSImagePickerControllerDelegate,BSImagePlayerDelegate>
+@interface LSProductMaintainViewController ()<BSPhotoTakeDelegate,BSImagePlayerDelegate>
 
 {
     BOOL isEdit;
@@ -40,7 +40,10 @@
     if (rsInfoArray==nil) {
         rsInfoArray=[NSMutableArray array];
     }
- 
+    //图片选择与拍照
+    self.takeController = [[BSPhotoTakeController alloc] init];
+    self.takeController.delegate = self;
+    
     [self modifiedStyle];
     
     [self initSubViews];
@@ -159,6 +162,7 @@
 
 
 - (IBAction)chooseProductHeadImage:(id)sender {
+    /*
     BSImagePickerController *imagePickerController = [BSImagePickerController new];
     
     imagePickerController.mediaType = BSImagePickerMediaTypeImage;
@@ -169,6 +173,9 @@
     isHeaderImage=YES;
     
     [self presentViewController:imagePickerController animated:YES completion:NULL];
+    */
+    [self.takeController takeSinglePhotoOrChooseFromLibrary];
+     
 
 
 }
@@ -176,75 +183,14 @@
 }
 
 - (IBAction)chooseResourceImages:(id)sender {
-    
-    BSLog(@"商品维护，轮播图选择");
-    BSImagePickerController *imagePickerController = [BSImagePickerController new];
-    imagePickerController.mediaType = BSImagePickerMediaTypeImage;
-
-    
-    imagePickerController.delegate = self;
-    imagePickerController.allowsMultipleSelection = YES;
-    //最多9张，最少3张轮播介绍图片
-    imagePickerController.maximumNumberOfSelection = 9;
-    imagePickerController.minimumNumberOfSelection = 3;
-    imagePickerController.showsNumberOfSelectedAssets = YES;
-    
-    [self presentViewController:imagePickerController animated:YES completion:NULL];
-
+     [self.takeController takeMultPhotoOrChooseFromLibrary];
 }
 
 - (IBAction)previewResourceImages:(id)sender {
 }
 
 #pragma mark - BSImagePickerControllerDelegate
-//多选操作
-- (void)imagePickerController:(BSImagePickerController *)imagePickerController didFinishPickingAssets:(NSArray *)assets{
 
-    if (isHeaderImage&&assets.count==1) {//点击为头图片选择
-        PHAsset *headerImage=(PHAsset *)assets[0];
-        rs.metatype=headerImage.mediaType;
-        [self pickImageInfo:headerImage];
-
-    }else{
-        //轮播图片
-        [self resourceImageView:assets];
-    }
-    [self dismissViewControllerAnimated:YES completion:NULL];
-}
-
-- (void)resourceImageView:(NSArray *)assets{
-    //
-    __block NSMutableArray *tempArray = [NSMutableArray array];
-    __block int count=0;
-    [rsInfoArray removeAllObjects];
-    [rsImageArray removeAllObjects];
-    for (PHAsset *headerImage in assets) {
-        Resources *rss=[[Resources alloc]init];
-        rss.metatype=headerImage.mediaType;
-        [[PHImageManager defaultManager]
-            requestImageDataForAsset:headerImage
-            options:nil
-            resultHandler:^(NSData *imageData, NSString *dataUTI,
-                     UIImageOrientation orientation,
-                     NSDictionary *info){
-             UIImage *image=[[UIImage alloc]initWithData:imageData];
-             [tempArray addObject:image];
-             if ([info objectForKey:@"PHImageFileURLKey"]) {
-               // path looks like this -
-                 NSURL *path = [info objectForKey:@"PHImageFileURLKey"];
-                //数据类型
-                 rss.name=[path path];
-                 ++count;
-                 [rsInfoArray addObject:rss];
-                 [rsImageArray addObject:image];
-                 if (assets.count==count) {//轮播图
-                     [self displayAD:tempArray];
-                 }
-             }
-         }];
-    }
-   
-}
 
 -(void)displayAD:(NSMutableArray *)images{
     BSFCRollingADImageUIView *adView= [BSFCRollingADImageUIView initADWithImages:images  playerDelegate:self target:self width:SCREEN_WIDTH height:(200)];
@@ -253,27 +199,28 @@
     [_resourceImags addSubview:adView];
 }
 
--(void)pickImageInfo:(PHAsset *)headerImage{
-
-    [[PHImageManager defaultManager]
-     requestImageDataForAsset:headerImage
-     options:nil
-     resultHandler:^(NSData *imageData, NSString *dataUTI,
-                     UIImageOrientation orientation,
-                     NSDictionary *info){
-         UIImage *image=[[UIImage alloc]initWithData:imageData];
-         [_headerImageView setImage:image];
-        
-         BSLog(@"info = %@", info);
-         if ([info objectForKey:@"PHImageFileURLKey"]) {
-             // path looks like this -
-             NSURL *path = [info objectForKey:@"PHImageFileURLKey"];
-             //数据类型
-             rs.name=[path path];
-        }
-     }];
+- (void)takeController:(BSPhotoTakeController *)controller didCancelAfterAttempting:(BOOL)madeAttempt
+{
+    BSLog(@"取消拍照动作操作");
 }
 
+- (UIViewController *)takeController:(BSPhotoTakeController *)controller{
+    return self;
+}
+
+- (void)takeController:(BSPhotoTakeController *)controller gotPhoto:(UIImage *)photo withInfo:(Resources *)info
+{
+    rs=info;
+     [_headerImageView setImage:photo];
+}
+- (void)takeController:(BSPhotoTakeController *)controller gotPhotoArray:(NSMutableArray *)photoImages withInfo:(NSMutableArray *)info{
+    [rsInfoArray removeAllObjects];
+    [rsImageArray removeAllObjects];
+    [rsInfoArray addObjectsFromArray:info];
+    [rsImageArray addObjectsFromArray:photoImages];
+    [self displayAD:photoImages];
+    
+}
 - (void)touchAction:(UIGestureRecognizer *)gester
 {
     BSLog(@"轮播事件");

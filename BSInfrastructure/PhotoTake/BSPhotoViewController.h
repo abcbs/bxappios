@@ -18,7 +18,7 @@
 - (IBAction)takePhotoOrVideoOrChooseFromLibrary;
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
 
-@property (strong,nonatomic) BSPhotoImagePickerController *imagePickerController;
+//@property (strong,nonatomic) BSPhotoImagePickerController *imagePickerController;
 
 
 @end

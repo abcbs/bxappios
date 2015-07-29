@@ -100,6 +100,7 @@ typedef NS_ENUM(NSInteger, BSImagePickerControllerMode) {
     maxPickImagesMax=0;
     pickImageOver=NO;
     isCheckDataOver=NO;
+    isHeaderImage=NO;
  }
 
 - (void)dealloc{
@@ -236,6 +237,8 @@ typedef NS_ENUM(NSInteger, BSImagePickerControllerMode) {
  */
 - (void)takeSinglePhotoOrChooseFromLibrary
 {
+    //单张图片
+    isHeaderImage=YES;
     self.sources = nil;
     //按钮选择
     self.buttonTitles = nil;
@@ -261,6 +264,8 @@ typedef NS_ENUM(NSInteger, BSImagePickerControllerMode) {
  */
 - (void)takeMultPhotoOrChooseFromLibrary
 {
+    //不是单张图片
+    isHeaderImage=NO;
     self.sources = nil;
     //按钮选择
     self.buttonTitles = nil;
@@ -436,13 +441,20 @@ typedef NS_ENUM(NSInteger, BSImagePickerControllerMode) {
     if ([self.delegate respondsToSelector:@selector(takeController:)]) {
         bs=[self.delegate takeController:self];
     }
-    if ([self.delegate respondsToSelector:@selector(takeController:gotPhoto:withInfo:)]){
-        
+    if (!isHeaderImage) {
+      if ([self.delegate respondsToSelector:@selector(takeController:gotPhotoArray:withInfo:)]){
         [self.delegate takeController:self gotPhotoArray:assets withInfo:nil];
-        [bs dismissViewControllerAnimated:YES completion:nil];
-        [[self presentingViewController]
-                presentViewController:bs animated:YES completion:nil];
+        }
+    }else{
+        if ([self.delegate respondsToSelector:@selector(takeController:gotPhoto:withInfo:)]){
+            [self.delegate takeController:self gotPhoto:assets[0] withInfo:assets[0]];
+        }
+
     }
+    [bs dismissViewControllerAnimated:YES completion:nil];
+    //[[self presentingViewController]
+    //        presentViewController:bs animated:YES completion:nil];
+    
 }
 /**
  *拍照成功之后的动作，事件源UIImagePickerControllerDelegate
@@ -451,9 +463,10 @@ typedef NS_ENUM(NSInteger, BSImagePickerControllerMode) {
     if ([self.delegate respondsToSelector:@selector(takeController:gotPhoto:withInfo:)]){
         Resources *rss=[[Resources alloc]init];
         rss.metatype=1;
-        if (!pickImageOver){//是否拍够了预定照片数，没有的时候一张一张的显示
+        if (!pickImageOver&&isHeaderImage){//是否拍够了预定照片数，没有的时候一张一张的显示
             [self.delegate takeController:self gotPhoto:photo withInfo:rss];
         }
+        
         //图片选择结束
         
         if ([self.delegate respondsToSelector:@selector(isOverTakeController:)]){
