@@ -164,7 +164,9 @@
 #pragma mark--以下是添加表格列数据的实现，手工编码和故事板实现两种方式，区分为提供名称和类名使用了不同的重载
 -(void)addBSTableContent:(BSTableContentObject *)bsContent sectionHeader:(NSString *)sectionHeader;
 
-#pragma mark--以下是获取配置信息的一般方法
+#pragma mark --清除数据
+-(void)removeAllObjects;
+#pragma mark --以下是获取配置信息的一般方法
 
 /**
  *获取指定章节索引具体章节中得某行数据

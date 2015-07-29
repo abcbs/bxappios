@@ -1,5 +1,6 @@
 #import <UIKit/UIKit.h>
+#import "BSUIFrameworkHeader.h"
 
-@interface BSBLEViewController : UIViewController
+@interface BSBLEViewController : BSUICommonController
 
 @end

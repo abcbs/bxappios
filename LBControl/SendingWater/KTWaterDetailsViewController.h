@@ -13,8 +13,9 @@
 #import "CommodityEvaluationRequest.h"
 #import "ShoppingCart.h"
 #import "BSFCRollingADImageUIView.h"
-
-@interface KTWaterDetailsViewController : UIViewController
+#import "BSUIFrameworkHeader.h"
+#import "BSUIContentViewController.h"
+@interface KTWaterDetailsViewController : BSUIContentViewController
 
 @property (strong, nonatomic) WaterSendingDetails *waterSendingDetails;
 

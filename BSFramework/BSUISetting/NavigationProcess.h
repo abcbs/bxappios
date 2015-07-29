@@ -3,7 +3,7 @@
 //  KTAPP
 //
 //  Created by admin on 15/6/28.
-//  Copyright (c) 2015年 itcast. All rights reserved.
+//  Copyright (c) 2015年 KT. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -23,5 +23,7 @@
  *公共导航到下一页Controller
  */
 -(void)navigating:(BSTableContentObject*)bsContentObject;
+
+-(void)navigating:(UIViewController *)callerController storybord:(NSString *)storybordName identity:(NSString *)identity canUseStoryboard:(BOOL)useStoryboard;
 
 @end

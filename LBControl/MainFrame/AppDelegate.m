@@ -17,6 +17,8 @@
 
 #import "BSUIFrameworkHeader.h"
 #import "BSCMFrameworkHeader.h"
+#import "KTLBMainTabBarController.h"
+
 @interface AppDelegate ()
     
 @end
@@ -62,8 +64,14 @@
     //默认颜色
     self.window.backgroundColor = [UIColor whiteColor];
     self.window.tintColor = [UIColor redColor];
-    
-    [BSUIComponentView initNarHeaderWithIndexView:self.window.rootViewController                                            title:self.window.rootViewController.title];
+    //一级页面统一的处理方式
+    //获取tabBar
+   	UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
+    [BSUIComponentView initTabBarWithDefault:tabBarController];
+    //id<UITabBarDelegate> tabBardDelegate=tabBarController;
+    //KTLBMainTabBarController *kt=[[KTLBMainTabBarController alloc]init];
+    //kt.delegate=tabBardDelegate;
+    //设置导航栏颜色
     //[BSUIComponentView navigationHeader:self.window.rootViewController.navigationController];
     return YES;
 }

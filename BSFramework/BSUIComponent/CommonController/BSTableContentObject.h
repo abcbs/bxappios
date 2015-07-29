@@ -3,7 +3,7 @@
 //  KTAPP
 //  表格运行时，行的详细数据，目前包括头方法、实现的Controller，图标信息
 //  Created by admin on 15/6/24.
-//  Copyright (c) 2015年 itcast. All rights reserved.
+//  Copyright (c) 2015年 KT. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -72,6 +72,7 @@
  *此变量没有提供和其他变量一起初始化的方法，在运行时会根据列的容量设置
  */
 @property (assign,nonatomic)UIViewController *callerViewController;
+
 @property (assign,nonatomic)BOOL canUseStoryboard;
 
 /**
@@ -80,10 +81,17 @@
 +(instancetype)initWithContentObject:(NSString *)title methodName:(NSString *)name imageName:(NSString *)imageName vcClass:(NSString *)clzzName;
 
 /**
+ *使用故事板跳转，默认方式
+ */
++(instancetype)initWithContentObject:(NSString *)title methodName:(NSString *)name imageName:(NSString *)imageName vcClass:(NSString *)clzzName storybord:(NSString *)storybordName;
+/**
  *不使用故事板，编码方式或者nib方式跳转
  */
 +(instancetype)initWithContentObject:(NSString *)title methodName:(NSString *)name imageName:(NSString *)imageName colClass:(Class)clzz;
 
-//-(void)styleDiction
+/**
+ *此方法，在具体的Controller中使用，因此无需图片和标题
+ */
++(instancetype)initWithController:(UIViewController *)callerController storybord:(NSString *)storybordName identity:(NSString *)vcClass canUseStoryboard:(BOOL)useStoryboard;
 
 @end

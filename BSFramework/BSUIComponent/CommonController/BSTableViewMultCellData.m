@@ -3,7 +3,7 @@
 //  KTAPP
 //
 //  Created by admin on 15/6/30.
-//  Copyright (c) 2015年 itcast. All rights reserved.
+//  Copyright (c) 2015年 KT. All rights reserved.
 //
 
 #import "BSTableViewMultCellData.h"
@@ -22,7 +22,7 @@
         bc.callerViewController=self.controller;
     }
     
-    NSLog(@"BSTableViewMultCellData,单列数据为\t%ld",bsArray.count);
+    BSLog(@"BSTableViewMultCellData,单列数据为\t%ld",bsArray.count);
    return bsArray;
 }
 

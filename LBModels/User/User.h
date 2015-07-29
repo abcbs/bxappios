@@ -1,7 +1,7 @@
 //
 //  User.h
 //  APP-BS-MODEL
-//
+//  用户注册后，LoginUser ,User,即用户注册信息
 //  Created by admin on 15/6/4.
 //  Copyright (c) 2015年 admin. All rights reserved.
 //
@@ -10,20 +10,24 @@
 
 @interface User : NSObject
 //用户名
-@property (nonatomic, copy)NSString *userName;
+@property (nonatomic, retain)NSString *userName;
 //真实姓名
-@property (nonatomic, copy)NSString *realName;
+@property (nonatomic, retain)NSString *realName;
 //性别
-@property (nonatomic, assign)NSString * sex;
+@property (nonatomic, retain)NSString * sex;
 //手机号
-@property (nonatomic, assign)NSString * phoneNum;
+@property (nonatomic, retain)NSString * phoneNum;
 //验证码
-@property (nonatomic, copy)NSString *yanZhengCode;
+@property (nonatomic, retain)NSString *yanZhengCode;
 //密码
-@property (nonatomic ,copy)NSString *passWord;
+@property (nonatomic ,retain)NSString *passWord;
 //确认密码
-@property (nonatomic ,copy)NSString* commitCode;
+@property (nonatomic ,retain)NSString* commitCode;
 //详细地址
-@property (nonatomic, copy)NSString *address;
+@property (nonatomic, retain)NSString *address;
+
+@property (nonatomic, assign)NSInteger userId;
+
+@property (nonatomic, assign) NSInteger businessId;
 
 @end

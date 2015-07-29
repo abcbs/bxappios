@@ -3,7 +3,7 @@
 //  KTAPP
 //
 //  Created by admin on 15/6/16.
-//  Copyright (c) 2015年 itcast. All rights reserved.
+//  Copyright (c) 2015年 KT. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -73,4 +73,17 @@
 
 +(BSUIBarButtonItem *)okBarButtonItem:(id<NavigationProcess>) navigationProcess  target:(UIViewController *)target title:(NSString *)title image:(NSString *)image;
 
++(void)initContentNarHeaderWithDefault:(UIViewController *)currentController
+target:(id<NavigationProcess>)target
+                               title:(NSString *)title;
+
+/**
+ *默认TabBar初始化方法
+ */
++(void)initTabBarWithDefault:(UITabBarController *)tabBarController;
+
++(void)changeTabBarWithNotification:(UIViewController *)uiViewController addedInfo:(NSString *)info;
+
+
++ (void)autoSytleLay:(UIView *)allView;
 @end

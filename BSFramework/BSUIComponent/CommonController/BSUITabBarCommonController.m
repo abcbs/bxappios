@@ -3,7 +3,7 @@
 //  KTAPP
 //
 //  Created by admin on 15/6/30.
-//  Copyright (c) 2015年 itcast. All rights reserved.
+//  Copyright (c) 2015年 KT. All rights reserved.
 //
 
 #import "BSUITabBarCommonController.h"
@@ -18,13 +18,37 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //
+    //id<UITabBarControllerDelegate> tabBardDelegate=self;
+    //self.delegate = tabBardDelegate ;
     
-    [BSUIComponentView initNavigationHeaderWithDefault:self
-                                     navigationProcess:self title:nil
-     ];
-    
+    if (self.navigationController) {
+        //iOS有默认导航栏，使用固有的导航栏
+        /*
+        [BSUIComponentView initNavigationHeaderWithDefault:self
+                                        navigationProcess:self
+                                                     title:self.title];
+        */
+    }else{
+        //没有导航栏，使用Button完成
+        [BSUIComponentView initNarHeaderWithIndexView:self
+                                                title:self.title];
+        
+    }
+    //设置导航栏颜色
+    [BSUIComponentView navigationHeader:self.navigationController];
+
+
 }
 
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    if ((self = [super initWithCoder:aDecoder]))
+    {
+        BSLog(@"init initWithCoder%@",self.description);
+    }
+    return self;
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -32,14 +56,23 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated{
-    NSLog(@"BSUITabBarCommonController viewDidAppear 对象的视图已经加入到窗口时调用");
+    BSLog(@"viewDidAppear\t%@",self.description);
     
 }
+
+#pragma mark --公共返回事件响应
 - (void)backClick{
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+#pragma mark --公共确定功能，目前绑定为查询功能图标
 - (void)doneClick{
-    NSLog(@"子类应当继承此方法实现完成功能");
+    BSLog(@"子类应当继承此方法实现完成功能");
+}
+
+#pragma mark --轮播事件响应 有轮播图，需要点击轮播图处理信息
+- (void)touchAction:(UIGestureRecognizer *)gester{
+    BSLog(@"子类应当继承此方法实现完成轮播功能功能");
 }
 
 /*
@@ -59,4 +92,9 @@
     [BSContentObjectNavigation navigatingControllWithStorybord:self       bsContentObject:bsContentObject];
 }
 
+-(void)navigating:(UIViewController *)callerController storybord:(NSString *)storybordName identity:(NSString *)identity canUseStoryboard:(BOOL)useStoryboard{
+    BSTableContentObject * bsContentObject=[BSTableContentObject initWithController:callerController storybord:storybordName identity:identity canUseStoryboard:useStoryboard];
+    [self navigating:bsContentObject];
+    
+}
 @end

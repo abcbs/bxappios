@@ -1,27 +1,9 @@
 //
 //  ADTImagePlayer.h
-//
-//  Created by Gavin on 14-7-24.
-//  Copyright (c) 2014年 adt. All rights reserved.
+//  Copyright (c) 2015年 KT. All rights reserved.
 ///  图片轮播器的封装
 
 #import <UIKit/UIKit.h>
-
-
-/**
- *  用作带图片和对应链接的需求模型
- */
-@interface ImageAndURLModel : NSObject
-/**
- *  图片URL
- */
-@property (nonatomic, copy) NSString *urlPictute;
-/**
- *  图片单击跳转URL
- */
-@property (nonatomic, copy) NSString *urlVideo;
-
-@end
 
 
 @class BSFCRollingADImageUIView;
@@ -31,12 +13,20 @@
 @optional
 - (void)imagePlayer:(BSFCRollingADImageUIView *)imagePlayer willLoadURL:(NSURL *)URL;
 
+@required
+- (void)touchAction:(UIGestureRecognizer *)gester;
 @end
 
 
 @interface BSFCRollingADImageUIView : UIView
 
 @property (nonatomic, weak) id <BSImagePlayerDelegate> playerDelegate;
+
+@property (nonatomic, weak) UIViewController *targetController;
+
+@property (nonatomic, assign) CGFloat width;
+
+@property (nonatomic, assign) CGFloat height;
 
 /**
  *  根据图片名称进行创建
@@ -58,11 +48,22 @@
 
 
 
++(BSFCRollingADImageUIView *)initADImageUIViewWith:(NSMutableArray *)imagesNames
+   playerDelegate:(id<BSImagePlayerDelegate> )player
+   urls:(NSMutableArray *)urls ;
+
++(BSFCRollingADImageUIView *)initADWithImages:(NSMutableArray *)images
+playerDelegate:(id<BSImagePlayerDelegate> )player
+target:(UIViewController*)controller
+width:(CGFloat) w height:(CGFloat) h;
+
++(BSFCRollingADImageUIView *)initADWithImagesDefaultWH:(NSMutableArray *)images
+                               playerDelegate:(id<BSImagePlayerDelegate> )player
+                                       target:(UIViewController*)controller;
+
 + (instancetype)imagePlayer;
 
-+(BSFCRollingADImageUIView *)initADImageUIViewWith:(NSMutableArray *)imagesNames
-                                    playerDelegate:(id<BSImagePlayerDelegate> )player
-                                              urls:(NSMutableArray *)urls;
+-(void)touchAction:(UIGestureRecognizer *)gestureRecognizer;
 
 /**
  *  设置pageControl距离底部的位置

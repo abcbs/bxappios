@@ -3,7 +3,7 @@
 //  民生小区
 //
 //  Created by LouJQ on 15-5-1.
-//  Copyright (c) 2015年 itcast. All rights reserved.
+//  Copyright (c) 2015年 KT. All rights reserved.
 //
 
 #import "Conf.h"
@@ -52,6 +52,25 @@
 float autoSizeScaleX=1.0;
 float autoSizeScaleY=1.0;
 
++(void)autoSizeScale{
+    /*
+    if(IS_IPHONE5){
+        autoSizeScaleX = 1.0;
+        autoSizeScaleY = 1.0;
+        
+    }else if (IS_IPHONE_6PLUS){
+        autoSizeScaleX = 1.29375;
+        autoSizeScaleY=1.2957;
+        
+    }else if(IS_IPHONE_6){
+        autoSizeScaleX=1.171875;
+        autoSizeScaleY=1.17429577;
+    }else {
+        autoSizeScaleX = 1.0;
+        autoSizeScaleY = 1.0;
+        
+    }*/
+}
 
 NSString *bsNetstatus=@"缺省状态";
 
@@ -86,6 +105,7 @@ NSString *bsNetstatus=@"缺省状态";
 +(NSDictionary *) mainBundle{
     return [[NSBundle mainBundle] infoDictionary] ;
 }
+
 +(NSString *)appInfo{
     NSString *infoPlistPath=[[NSBundle mainBundle]
                         pathForResource:@"InfoPlist" ofType:@"strings" ];
@@ -98,5 +118,28 @@ NSString *bsNetstatus=@"缺省状态";
     //获取项目名称
    // NSString *executableFile = [dic objectForKey:(NSString *)kCFBundleExecutableKey];
     return appProjectName;
+}
+
+
++(NSDate*) convertDateFromString:(NSString*)uiDate{
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init] ;
+    [formatter setDateFormat:DATEFORMAT_YYYY_MM_DD];
+    NSDate *date=[formatter dateFromString:uiDate];
+    return date;
+}
+
++ (NSString *)convertStringFromDate:(NSDate *)date{
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    
+    [dateFormatter setDateFormat:DATEFORMAT_YYYY_MM_DD];
+    
+    NSString *destDateString = [dateFormatter stringFromDate:date];
+    
+    return destDateString;
+}
+
++(NSString *)urlWithAddShoppingCart{
+    return @"";
 }
 @end

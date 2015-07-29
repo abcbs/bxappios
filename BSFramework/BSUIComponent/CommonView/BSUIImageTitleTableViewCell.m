@@ -3,7 +3,7 @@
 //  KTAPP
 //
 //  Created by admin on 15/6/26.
-//  Copyright (c) 2015年 itcast. All rights reserved.
+//  Copyright (c) 2015年 KT. All rights reserved.
 //
 
 #import "BSUIImageTitleTableViewCell.h"
@@ -25,7 +25,7 @@
     UIImageView *cell=
     [[UIImageView alloc] initWithImage:[UIImage imageNamed:[bsContentObject colImageName]]];
     [cell setFrame:BSRectMake(SCREEN_WIDTH/3, 10, 100, 100)];
-    UILabel *lable=[[UILabel alloc]initWithFrame:(BSRectMake(SCREEN_WIDTH/3+20, 110, 110, 30))];
+    UILabel *lable=[[UILabel alloc]initWithFrame:(BSRectMake(SCREEN_WIDTH/3+16, 100, 90, 60))];
     
     lable.text=[bsContentObject colTitle];
     [self.contentView addSubview:lable];

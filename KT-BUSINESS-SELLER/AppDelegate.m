@@ -30,7 +30,10 @@
     self.window.backgroundColor = [UIColor whiteColor];
     self.window.tintColor = [UIColor redColor];
     
-    //[BSUIComponentView initNarHeaderWithIndexView:self.window.rootViewController                                            title:self.window.rootViewController.title];
+    //一级页面统一的处理方式
+    //获取tabBar
+   	UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
+    [BSUIComponentView initTabBarWithDefault:tabBarController];
     
     return YES;
 }
@@ -55,6 +58,14 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+/*
+ 禁止横屏
+ */
+- (NSUInteger)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window
+{
+    return UIInterfaceOrientationMaskPortrait;
 }
 
 @end

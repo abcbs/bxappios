@@ -3,7 +3,7 @@
 //  KTAPP
 //  图标显示方式
 //  Created by admin on 15/6/27.
-//  Copyright (c) 2015年 itcast. All rights reserved.
+//  Copyright (c) 2015年 KT. All rights reserved.
 //
 
 #import "BSUISingleImageTableViewCell.h"
@@ -26,13 +26,21 @@
     CGFloat height=BSMarginY(120);
     CGFloat width=BSMarginX(SCREEN_WIDTH);
     //设置默认的宽度、高度
-    self.bigImage.height=height;
-    self.bigImage.width=width;
+    self.bigImage.size= BSSizeMake(width,height);
     return self;
 }
 
 -(UITableViewCell *)viewCellWithHandBSContentObject:(BSTableContentObject *)bsContentObject{
+    //UIImageView *bigImage= [UIImage imageNamed:bsContentObject.colImageName];
+    UIImageView *cell=
+    [[UIImageView alloc] initWithImage:[UIImage imageNamed:[bsContentObject colImageName]]];
     
+    CGFloat height=BSMarginY(120);
+    CGFloat width=BSMarginX(SCREEN_WIDTH);
+    //设置默认的宽度、高度
+    self.bigImage.size= BSSizeMake(width,height);
+
+    [self.contentView addSubview:cell];
     return self;
 }
 -(void)dealloc{

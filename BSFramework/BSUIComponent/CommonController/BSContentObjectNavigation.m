@@ -3,7 +3,7 @@
 //  KTAPP
 //  根据BSTableContentOb实现具体的页面跳转
 //  Created by admin on 15/6/30.
-//  Copyright (c) 2015年 itcast. All rights reserved.
+//  Copyright (c) 2015年 KT. All rights reserved.
 //
 
 #import "BSContentObjectNavigation.h"
@@ -33,10 +33,14 @@
     if (bsContentObject.method) {
         [goControl setValue:bsContentObject.method forKeyPath:@"method"];
     }
-    
+    /*
     UINavigationController* nav = [[UINavigationController alloc]  initWithRootViewController:goControl];
     
-    [viewController presentViewController:nav animated:YES completion:nil];
+    BSPhotoViewController
+     */
+    //送水界面此时没有状态栏
+    //[viewController.navigationController presentModalViewController:goControl animated:YES];
+    [viewController.navigationController pushViewController:goControl animated:YES];
 }
 
 /**
@@ -44,9 +48,12 @@
  */
 +(void)prepareControllWithNib:(UIViewController *)viewController bsContentObject:(BSTableContentObject*)bsContentObject{
     Class clzz =bsContentObject.colClass;
-    UIViewController *vc =[[clzz alloc] init];
+    UIViewController *goControl =[[clzz alloc] init];
     
-    [viewController presentViewController:vc animated:NO completion:nil];
+    //[viewController presentViewController:goControl animated:NO completion:nil];
+    
+    [viewController.navigationController pushViewController:goControl animated:YES];
+
 }
 
 

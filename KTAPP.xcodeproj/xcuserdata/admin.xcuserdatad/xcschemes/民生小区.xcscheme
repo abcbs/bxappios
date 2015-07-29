@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0630"
+   LastUpgradeVersion = "0640"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -104,6 +104,20 @@
                ReferencedContainer = "container:KTAPP.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "84E7D98C1B5C03220083C59F"
+               BuildableName = "KT-ImgesTests.xctest"
+               BlueprintName = "KT-ImgesTests"
+               ReferencedContainer = "container:KTAPP.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -169,6 +183,16 @@
                BlueprintIdentifier = "848190F81B280E3800FB346D"
                BuildableName = "KTAPP Tests.xctest"
                BlueprintName = "KTAPP Tests"
+               ReferencedContainer = "container:KTAPP.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "84E7D98C1B5C03220083C59F"
+               BuildableName = "KT-ImgesTests.xctest"
+               BlueprintName = "KT-ImgesTests"
                ReferencedContainer = "container:KTAPP.xcodeproj">
             </BuildableReference>
          </TestableReference>

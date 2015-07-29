@@ -12,6 +12,7 @@
 @implementation LeDiscovery
 
 @synthesize foundPeripherals;
+//连接设备
 @synthesize connectedServices;
 @synthesize discoveryDelegate;
 @synthesize peripheralDelegate;
@@ -37,7 +38,7 @@
 - (id) init
 {
     self = [super init];
-    if (self) {
+    if (self) {//初始化中心、连接设备、发现的设备（附件）
 		pendingInit = YES;
 		centralManager = [[CBCentralManager alloc] initWithDelegate:self queue:dispatch_get_main_queue()];
 
@@ -80,8 +81,8 @@
         CFUUIDRef uuid = CFUUIDCreateFromString(NULL, (CFStringRef)deviceUUIDString);
         if (!uuid)
             continue;
-        
-        //[centralManager retrievePeripherals:[NSArray arrayWithObject:(id)uuid]];
+        //modified by liujq
+        [centralManager retrievePeripherals:[NSArray arrayWithObject:(__bridge id)uuid]];
         CFRelease(uuid);
     }
 
@@ -170,7 +171,9 @@
 	NSArray			*uuidArray	= [NSArray arrayWithObjects:[CBUUID UUIDWithString:uuidString], nil];
 	NSDictionary	*options	= [NSDictionary dictionaryWithObject:[NSNumber numberWithBool:NO] forKey:CBCentralManagerScanOptionAllowDuplicatesKey];
 
-	[centralManager scanForPeripheralsWithServices:uuidArray options:options];
+	//为查找设备，注销调UUID具体设备查找
+    [centralManager scanForPeripheralsWithServices:nil options:nil];
+    //[centralManager scanForPeripheralsWithServices:uuidArray options:options];
 }
 
 

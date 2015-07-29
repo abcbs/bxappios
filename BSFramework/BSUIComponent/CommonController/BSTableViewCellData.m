@@ -3,7 +3,7 @@
 //  KTAPP
 //
 //  Created by admin on 15/6/30.
-//  Copyright (c) 2015年 itcast. All rights reserved.
+//  Copyright (c) 2015年 KT. All rights reserved.
 //
 
 #import "BSTableViewCellData.h"
@@ -115,7 +115,7 @@
         return nil;
     }
     @finally {
-        NSLog(@"获取TableViewCell");
+        BSLog(@"获取TableViewCell");
     }
     
 }

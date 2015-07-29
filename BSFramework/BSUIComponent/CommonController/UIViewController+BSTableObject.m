@@ -3,12 +3,12 @@
 //  KTAPP
 //
 //  Created by admin on 15/6/24.
-//  Copyright (c) 2015年 itcast. All rights reserved.
+//  Copyright (c) 2015年 KT. All rights reserved.
 //
 #import <objc/runtime.h>
 
 #import "UIViewController+BSTableObject.h"
-
+#import "BSCMFrameworkHeader.h"
 @implementation UIViewController(BSTableObject)
 
 
@@ -22,7 +22,7 @@
 
 - (void)deallocSwizzle
 {
-    NSLog(@"%@实例销毁", self);
+    BSLog(@"%@实例销毁", self);
     
     [self deallocSwizzle];
 }

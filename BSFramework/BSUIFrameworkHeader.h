@@ -3,7 +3,7 @@
 //  KTAPP
 //
 //  Created by admin on 15/6/26.
-//  Copyright (c) 2015年 itcast. All rights reserved.
+//  Copyright (c) 2015年 KT. All rights reserved.
 //
 
 #ifndef KTAPP_BSUIFramework_h
@@ -16,13 +16,34 @@
 #import "NavigationProcess.h"
 
 /**
- *公共的Controller
+ *跳转功能模型
+ */
+#import "BSTableSection.h"
+#import "BSTableContentObject.h"
+
+#pragma mark --公共控制器
+/**
+ *带有返回按钮的控制器
+ */
+#import "BSUIContentViewController.h"
+/**
+ *不带返回按钮适合于首页导航，无需返回功能的控制器
  */
 #import "BSUICommonController.h"
-#import "BSUITableViewCommonController.h"
 #import "BSUITabBarCommonController.h"
+/**
+ *TableViewController，不可编辑单元格
+ */
 #import "BSUITableViewCommonController.h"
 
+/**
+ *
+ */
+#import "BSUICollectionCollectionViewController.h"
+/**
+ *TableViewController，默认可编辑单元格
+ */
+#import "BSUITableViewCanEditedController.h"
 /**
  *第三方UI相关组件
  */
@@ -37,16 +58,11 @@
 #import "BSFCRollingADImageUIView.h"
 
 
-
-/**
- *跳转功能模型
- */
-#import "BSTableSection.h"
-#import "BSTableContentObject.h"
-
 #import "BSTableViewCellData.h"
 #import "BSTableViewMultCellData.h"
 #import "BSContentObjectNavigation.h"
+#import "BSUIDefaultTableViewCell.h"
+
 /**
  *根据BSContentObject实现页面跳转
  */
@@ -84,6 +100,7 @@
 
 CG_INLINE CGRect BSRectMake(CGFloat x, CGFloat y, CGFloat width, CGFloat height)
 {
+    //autoStyleSize;
     CGRect rect;
     rect.origin.x = x * autoSizeScaleX;
     rect.origin.y = y * autoSizeScaleY;
@@ -94,21 +111,27 @@ CG_INLINE CGRect BSRectMake(CGFloat x, CGFloat y, CGFloat width, CGFloat height)
 
 
 CG_INLINE CGSize BSSizeMake(CGFloat width, CGFloat height){
+    autoStyleSize;
+
     CGSize size;
-    size.height=size.width = width * autoSizeScaleX;
+    size.width = width * autoSizeScaleX;
     size.height = height * autoSizeScaleY;
     return size;
     
 }
 
 CG_INLINE CGFloat BSMarginX(CGFloat x){
-    return  x / autoSizeScaleX;
+    autoStyleSize;
+
+    return  x * autoSizeScaleX;
     
 }
 
 
 CG_INLINE CGFloat BSMarginY(CGFloat y){
-    return  y / autoSizeScaleY;
+    autoStyleSize;
+
+    return  y * autoSizeScaleY;
     
 }
 

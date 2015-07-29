@@ -3,7 +3,7 @@
 //  民生小区
 //
 //  Created by LouJQ on 15-5-1.
-//  Copyright (c) 2015年 itcast. All rights reserved.
+//  Copyright (c) 2015年 KT. All rights reserved.
 //
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
@@ -11,14 +11,15 @@
 @interface Conf : NSObject
 
 #ifdef DEBUG
-#define MJLog(...) NSLog(__VA_ARGS__)
+#define BSLog(...) NSLog(__VA_ARGS__)
 #else
-#define MJLog(...)
+#define BSLog(...)
 #endif
 
 // objc_msgSend
 #define msgSend(...) ((void (*)(void *, SEL, UIView *))objc_msgSend)(__VA_ARGS__)
 
+#define BSDeprecated(instead) NS_DEPRECATED(2_0, 2_0, 2_0, 2_0, instead)
 /**
  *基础URL
  */
@@ -74,7 +75,7 @@
 /**
  * 适配度
  */
-#define scale (CGFloat)[[UIScreen mainScreen] scale]
+#define scale (CGFloat) [[UIScreen mainScreen] scale]
 
 
 #define IS_IPHONE (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
@@ -97,7 +98,9 @@
 extern float autoSizeScaleX;
 extern float autoSizeScaleY;
 
++(void)autoSizeScale;
 
+#define autoStyleSize [Conf autoSizeScale]
 //UIAlertView
 #define KT_AlertView_(a) [[[UIAlertView alloc]initWithTitle:@"提示" message:a delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show]
 
@@ -195,7 +198,7 @@ extern float autoSizeScaleY;
 
 #pragma mark--运行时表格运行组件BSUITableViewInitRuntimeController配置
 /**
- *标题栏，缺省的图片
+ *标题栏，缺省的图片，目前仅仅使用颜色，没有使用图片
  */
 #define NAVIGATION_IMAGE @"ckxq-122"
 
@@ -204,7 +207,24 @@ extern float autoSizeScaleY;
  */
 #define BSTABLE_CONTENT_COLUMN_NUMBER 1
 
+/**
+ *图片选择的最小数据
+ */
+#define PICK_IMAGE_MIN 1
 
+#define PICK_IMAGE_MAX 9
+
+#define TAKE_PHOTP_MAX 0
+/**
+ *日期格式
+ */
+#define DATEFORMAT_YYYY_MM_DD  @"yyyy-MM-dd"
+
+#define DEFAULT_DATE @"2015-01-01"
+
++(NSDate*) convertDateFromString:(NSString*)uiDate;
+
++ (NSString *)convertStringFromDate:(NSDate *)date;
 
 +(NSString *)urlWithShoppingCart;
 

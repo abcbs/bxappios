@@ -46,7 +46,7 @@
     
     [bsTable addBSTableContent:appointment sectionHeader:@"金融推荐"];
     
-       
+    
     [super setValue:bsTable forKey:@"bSTableObjects"];
     
     
@@ -62,6 +62,7 @@
 /**
  *覆盖父类实现，不显示章节标题
  */
+
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     return nil;
@@ -73,4 +74,6 @@
  */
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     return BSMarginY(4);
-}@end
+}
+
+@end

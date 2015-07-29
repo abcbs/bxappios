@@ -17,7 +17,9 @@
 
 
 @interface LBSendingWaterTableViewController ()
-
+{
+    NSInteger indexPath_row;
+}
 
 @end
 
@@ -109,6 +111,7 @@
 
 
 // 点击某一行，进入产品详细页
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"KTWaterDetailsViewController" bundle:nil];
@@ -119,9 +122,29 @@
     
     //[self.navigationController pushViewController:shoppControl animated:YES];
    
- 
 }
+/*
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    indexPath_row=indexPath.row;
+    [self performSegueWithIdentifier:@"DetailProductDetail" sender:nil];
+    //
+}
+*/
+#pragma mark - Navigation
+#pragma mark -
+#pragma mark Stroyboard Segue
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"DetailProductDetail"])
+    {//浏览商品信息
+        KTWaterDetailsViewController *shoppControl = (KTWaterDetailsViewController *)segue.destinationViewController;
+      
+        shoppControl.waterSending = self.dataTable[indexPath_row];
+        [self checkLogin:shoppControl waterSending:self.dataTable[indexPath_row]];
+    }
+    
+}
 /**
  *根据是否登录来判断是否到购物车功能页
  */

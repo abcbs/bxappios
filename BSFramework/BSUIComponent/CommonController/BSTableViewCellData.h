@@ -3,7 +3,7 @@
 //  KTAPP
 //  根据表格定义,处理单表格
 //  Created by admin on 15/6/30.
-//  Copyright (c) 2015年 itcast. All rights reserved.
+//  Copyright (c) 2015年 KT. All rights reserved.
 //
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>

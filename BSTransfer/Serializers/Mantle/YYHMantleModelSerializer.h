@@ -2,8 +2,7 @@
 //  YYHMantleModelSerializer.h
 //  YYHModelRouterExample
 //
-//  Created by Angelo Di Paolo on 11/28/14.
-//  Copyright (c) Yayuhh. All rights reserved.
+//  Copyright (c) 2015年 KT. All rights reserved.
 //
 
 #import "YYHModelSerialization.h"

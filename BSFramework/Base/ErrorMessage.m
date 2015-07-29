@@ -3,7 +3,7 @@
 //  民生小区
 //
 //  Created by 罗芳芳 on 15/5/6.
-//  Copyright (c) 2015年 itcast. All rights reserved.
+//  Copyright (c) 2015年 KT. All rights reserved.
 //
 
 #import "ErrorMessage.h"
