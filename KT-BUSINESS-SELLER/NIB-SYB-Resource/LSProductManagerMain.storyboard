@@ -823,18 +823,9 @@
                                                     <rect key="frame" x="78" y="1" width="100" height="100"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="100" id="riV-M4-ppm"/>
-                                                        <constraint firstAttribute="width" constant="100" id="uyO-X8-FXN"/>
                                                     </constraints>
-                                                    <variation key="default">
-                                                        <mask key="constraints">
-                                                            <exclude reference="uyO-X8-FXN"/>
-                                                        </mask>
-                                                    </variation>
                                                     <variation key="heightClass=compact" ambiguous="YES" misplaced="YES">
                                                         <rect key="frame" x="102" y="0.0" width="100" height="100"/>
-                                                        <mask key="constraints">
-                                                            <include reference="uyO-X8-FXN"/>
-                                                        </mask>
                                                     </variation>
                                                 </imageView>
                                             </subviews>
@@ -853,11 +844,11 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sBD-09-oqp" id="D8L-Ef-w5H">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="轮播图" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oEW-P5-xaP">
-                                                    <rect key="frame" x="20" y="8" width="56" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="轮播图" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oEW-P5-xaP">
+                                                    <rect key="frame" x="20" y="4" width="56" height="21"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="56" id="Fht-sC-btY"/>
-                                                        <constraint firstAttribute="height" constant="21" id="sJg-uj-7Lu"/>
+                                                        <constraint firstAttribute="height" constant="21" id="5bt-RY-cW6"/>
+                                                        <constraint firstAttribute="width" constant="56" id="d1w-HG-4rt"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -866,25 +857,17 @@
                                                         <rect key="frame" x="16" y="5" width="56" height="21"/>
                                                     </variation>
                                                 </label>
-                                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HT7-uq-wqI">
-                                                    <rect key="frame" x="0.0" y="137" width="320" height="100"/>
+                                                <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HT7-uq-wqI" userLabel="轮播图片">
+                                                    <rect key="frame" x="0.0" y="27" width="320" height="200"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="100" id="6YL-P8-fls"/>
-                                                        <constraint firstAttribute="width" constant="320" id="jDX-qw-qFy"/>
+                                                        <constraint firstAttribute="width" constant="320" id="5nD-Uq-SD1"/>
+                                                        <constraint firstAttribute="height" constant="200" id="vzm-jG-afY"/>
                                                     </constraints>
                                                     <variation key="heightClass=compact" fixedFrame="YES">
                                                         <rect key="frame" x="0.0" y="29" width="320" height="200"/>
                                                     </variation>
                                                 </view>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstItem="HT7-uq-wqI" firstAttribute="top" secondItem="oEW-P5-xaP" secondAttribute="bottom" constant="8" symbolic="YES" id="8fo-JZ-R4k"/>
-                                                <constraint firstAttribute="trailing" secondItem="HT7-uq-wqI" secondAttribute="trailing" id="C7s-1i-NU5"/>
-                                                <constraint firstItem="HT7-uq-wqI" firstAttribute="leading" secondItem="D8L-Ef-w5H" secondAttribute="leading" id="hmG-jH-bR3"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="HT7-uq-wqI" secondAttribute="bottom" constant="-16" id="xLK-Rb-fdP"/>
-                                                <constraint firstItem="oEW-P5-xaP" firstAttribute="leading" secondItem="D8L-Ef-w5H" secondAttribute="leadingMargin" constant="5" id="y12-pb-Qa4"/>
-                                                <constraint firstItem="oEW-P5-xaP" firstAttribute="top" secondItem="D8L-Ef-w5H" secondAttribute="topMargin" id="zSf-bH-gRk"/>
-                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="160" id="Ewl-a3-PLf">
@@ -893,13 +876,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="宣传信息" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c40-Ic-a8w">
-                                                    <rect key="frame" x="8" y="-9" width="68" height="46"/>
+                                                    <rect key="frame" x="8" y="-3" width="68" height="39"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mFd-HG-wu2">
-                                                    <rect key="frame" x="0.0" y="26" width="320" height="125"/>
+                                                    <rect key="frame" x="0.0" y="35" width="320" height="116"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
