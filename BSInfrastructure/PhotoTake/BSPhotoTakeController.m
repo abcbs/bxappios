@@ -22,13 +22,13 @@
 #define kSinglePhotosActionSheetTag 11
 #define kMultPhotosActionSheetTag 12
 
-static NSString * const kTakePhotoKey = @"takePhoto";
-static NSString * const kTakeVideoKey = @"takeVideo";
-static NSString * const kChooseFromLibraryKey = @"chooseFromLibrary";
-static NSString * const kChooseFromPhotoRollKey = @"chooseFromPhotoRoll";
-static NSString * const kCancelKey = @"cancel";
-static NSString * const kNoSourcesKey = @"noSources";
-static NSString * const kStringsTableName = @"BSPhotoTake";
+static NSString * const kTakePhotoKey = @"拍照";
+static NSString * const kTakeVideoKey = @"拍视频";
+static NSString * const kChooseFromLibraryKey = @"从相册中选择";
+static NSString * const kChooseFromPhotoRollKey = @"从连续相册中选择";
+static NSString * const kCancelKey = @"取消";
+static NSString * const kNoSourcesKey = @"没有选择文件";
+static NSString * const kStringsTableName = @"拍照";
 
 
 typedef NS_ENUM(NSInteger, BSImagePickerControllerMode) {
