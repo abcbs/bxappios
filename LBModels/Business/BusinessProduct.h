@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Resources.h"
+#import "ProductBase.h"
 
 @interface BusinessProduct : NSObject
 
@@ -37,6 +38,7 @@
 //系统更新时间
 @property (retain,nonatomic) NSDate * updateTime;
 
+//
 @property (retain,nonatomic) NSString * warmPrompt;
 
 //赞
@@ -90,5 +92,6 @@
 
 @property (assign,nonatomic) NSInteger order;
 
+@property  (strong,nonatomic) ProductBase *produceBase;
 
 @end

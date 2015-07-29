@@ -36,6 +36,15 @@
     _salePrice.text=[NSString stringWithFormat:@"%.2f",_product.salePrice];
     _preferPrice.text=[NSString stringWithFormat:@"%.2f",_product.preferPrice];
     _publishTime.text=[Conf convertStringFromDate: _product.publishTime ];
+    _publishTime.text=[Conf convertStringFromDate: _product.publishTime ];
+    _introduce.text=_product.introduce;
+    ProductBase *prdBase=_product.produceBase;
+    _specification.text=prdBase.specification;
+    //商品
+    _comment.text=prdBase.comment;
+    _saleStartTime.text=[Conf convertStringFromDate: _product.saleStartTime ];
+    _saleOverTime.text=[Conf convertStringFromDate: _product.saleOverTime ];
+    _introduce.text=_product.introduce;
     _headImage.image=_product.headerImage;
     [self displayAD:_product.resourceImages];
 

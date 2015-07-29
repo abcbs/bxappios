@@ -7,6 +7,7 @@
 //
 
 #import "BusinessProduct.h"
+#import "ProductBase.h"
 
 @implementation BusinessProduct
 
@@ -57,6 +58,7 @@
     
     //商家标示
     [aCoder encodeInteger: _businessId forKey:@"businessId"];
+    
     //商品审核标示
     [aCoder encodeInteger: _businessProductAduit
                     forKey:@"businessProductAduit"];
@@ -86,6 +88,10 @@
     
     //排序
     [aCoder encodeInteger: _order forKey:@"order"];
+    
+    //商品信息
+    [aCoder encodeObject:_produceBase forKey:@"produceBase"];
+
 
 }
 
@@ -161,7 +167,9 @@
     
     //排序
      _order =[aDecoder decodeIntegerForKey:@"order"];
-
+    
+    //商品基本信息
+    _produceBase =[aDecoder decodeObjectForKey:@"produceBase"];
     
     return self;
 }

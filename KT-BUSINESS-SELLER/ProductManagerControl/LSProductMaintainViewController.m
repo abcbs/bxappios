@@ -106,7 +106,13 @@
         _salePrice.text=[NSString stringWithFormat:@"%.2f", _product.salePrice];
         _preferPrice.text=[NSString stringWithFormat:@"%.2f",_product.preferPrice];
         _publishTime.text=[Conf convertStringFromDate: _product.publishTime ];
-
+        _introduce.text=_product.introduce;
+        ProductBase *prdBase=_product.produceBase;
+        _specification.text=prdBase.specification;
+        //商品
+        _comment.text=prdBase.comment;
+        _saleStartTime.text=[Conf convertStringFromDate: _product.saleStartTime ];
+        _saleOverTime.text=[Conf convertStringFromDate: _product.saleOverTime ];
         //商品头像
         [_headerImageView setImage:_product.headerImage];
         //商品轮播
@@ -137,6 +143,26 @@
     //轮播图片资源，目前主要是类型和名称，其URL应当是服务端数据
     _product.resourceInfoArray=rsInfoArray;
     _product.resourceImages=rsImageArray;
+    //是否在售
+    _product.isSale=_isSale.text;
+    //是否促销
+    _product.onSale=_onSale.text;
+    
+    //促销开始与结束时间
+    //_product.saleStartTime=_saleStartTime.text;
+    
+    //_product.saleOverTime=_saleOverTime.text;
+    //促销信息
+    _product.introduce=_introduce.text;
+    //商品介绍
+    ProductBase *prdBase=[ProductBase new];
+    //商品规格
+    prdBase.specification=_specification.text;
+    //商品介绍
+    prdBase.comment=_comment.text;
+    _product.produceBase=prdBase;
+    
+    //_product.
     if (isEdit) {
         [_editDelegate sendEditedBusinessProduct:_product];
         _product = nil;
@@ -162,22 +188,8 @@
 
 
 - (IBAction)chooseProductHeadImage:(id)sender {
-    /*
-    BSImagePickerController *imagePickerController = [BSImagePickerController new];
-    
-    imagePickerController.mediaType = BSImagePickerMediaTypeImage;
-    
-    imagePickerController.delegate = self;
-    imagePickerController.allowsMultipleSelection = NO;
-    imagePickerController.showsNumberOfSelectedAssets = NO;
-    isHeaderImage=YES;
-    
-    [self presentViewController:imagePickerController animated:YES completion:NULL];
-    */
     [self.takeController takeSinglePhotoOrChooseFromLibrary];
-     
-
-
+ 
 }
 - (IBAction)previewProductHeadImage:(id)sender {
 }
