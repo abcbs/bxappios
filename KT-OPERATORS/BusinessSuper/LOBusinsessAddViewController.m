@@ -10,6 +10,8 @@
 
 @interface LOBusinsessAddViewController ()
 
+
+
 @end
 
 @implementation LOBusinsessAddViewController
@@ -33,5 +35,23 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (IBAction)entityImageClick:(id)sender {
+}
+
+- (IBAction)headerImageClick:(id)sender {
+}
+
+- (IBAction)resourceImages:(id)sender {
+}
+
+- (IBAction)catatoryClick:(id)sender {
+}
+
+- (IBAction)contractClick:(id)sender {
+}
+
+- (IBAction)bandPayAccount:(id)sender {
+}
 
 @end
