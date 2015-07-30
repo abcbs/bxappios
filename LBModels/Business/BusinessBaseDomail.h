@@ -29,4 +29,7 @@
 //联系人，合伙人
 @property (strong,nonatomic) NSMutableArray *contractUsers;
 
+//商家的经营返回应当是数组
+@property (strong,nonatomic) NSMutableArray *productCatalogues;//产品分类
+
 @end

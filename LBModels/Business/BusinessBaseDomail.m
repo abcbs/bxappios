@@ -20,6 +20,9 @@
     [aCoder encodeObject:_artificial forKey:@"artificial"];
     
     [aCoder encodeObject:_contractUsers forKey:@"contractUsers"];
+    
+    [aCoder encodeObject:_contractUsers forKey:@"productCatalogues"];
+    
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder
@@ -32,6 +35,7 @@
    
     _contractUsers = [aDecoder decodeObjectForKey:@"contractUsers"];
     
+    _productCatalogues=[aDecoder decodeObjectForKey:@"productCatalogues"];
     return self;
 }
 

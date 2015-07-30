@@ -12,6 +12,9 @@
 
 @property (assign,nonatomic) NSInteger id;
 
+//商家唯一标示，需服务端提供
+@property (assign,nonatomic) NSString * identifer;
+
 @property (retain,nonatomic) NSString * name;//商家名称
 //商家地址，经营地址
 @property (retain,nonatomic) NSString * address;//商家地址
@@ -22,13 +25,11 @@
 
 @property (retain,nonatomic) NSDate * updateTime;//更新时间
 
-@property (retain,nonatomic) NSString * artificialName;//联系人，法人信息，可以支付
-//商家的经营返回应当是数组
-@property (strong,nonatomic) NSMutableArray *productCatalogues;//产品分类
+@property (retain,nonatomic) NSString * introduce;//商家介绍
 
 @property (retain,nonatomic) NSString * payTool;//支付工具
 
-@property (assign,nonatomic) NSInteger  userId;//用户id
+//@property (assign,nonatomic) NSInteger  userId;//用户id
 
 
 @end

@@ -28,7 +28,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="USY-Q2-eYq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1618" y="-676"/>
+            <point key="canvasLocation" x="1619" y="-686"/>
         </scene>
         <!--监管运营-->
         <scene sceneID="6Sq-eE-gM6">
@@ -43,7 +43,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="h1b-sh-hwa"/>
+                    <navigationItem key="navigationItem" title="监管运营" id="h1b-sh-hwa"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Arj-fY-AjY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -125,10 +125,10 @@
             </objects>
             <point key="canvasLocation" x="1590" y="697"/>
         </scene>
-        <!--银行业务-->
+        <!--银行业务导航-->
         <scene sceneID="8qc-VH-W52">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="AqZ-z4-RAp" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="AqZ-z4-RAp" userLabel="银行业务导航" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="银行业务" image="third_normal.png" id="Eky-dr-SRm" userLabel="银行业务"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="U1Z-bC-iuu">
@@ -144,10 +144,10 @@
             </objects>
             <point key="canvasLocation" x="1180" y="697"/>
         </scene>
-        <!--商品管理-->
+        <!--商品管理导航-->
         <scene sceneID="XsC-e7-NQO">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0Yo-TW-FlV" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0Yo-TW-FlV" userLabel="商品管理导航" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="商品管理" image="xysjs.png" id="3Pg-yc-PPe"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ooi-sE-7az">
@@ -182,17 +182,17 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="HYf-zw-Lua"/>
+                    <navigationItem key="navigationItem" title="商家信息" id="HYf-zw-Lua"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mTl-Wy-YK5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1024" y="-16"/>
         </scene>
-        <!--商家监管-->
+        <!--商家监管导航-->
         <scene sceneID="bg0-qj-Ncw">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mpt-Gj-l44" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mpt-Gj-l44" userLabel="商家监管导航" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="商家监管" image="first" id="J2L-Pi-l8F"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="CBC-cY-CXX">
@@ -227,10 +227,10 @@
             </objects>
             <point key="canvasLocation" x="-157" y="731"/>
         </scene>
-        <!--监管运营-->
+        <!--监管运营导航-->
         <scene sceneID="KKT-fq-Avr">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lfn-DK-kuL" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lfn-DK-kuL" userLabel="监管运营导航" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="监管运营" image="wdqzs.png" id="fdO-Fl-FLe"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="K23-75-Oct">

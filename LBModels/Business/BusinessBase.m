@@ -25,14 +25,18 @@
     
     [aCoder encodeObject:_updateTime forKey:@"updateTime"];//更新时间
     
-    [aCoder encodeObject:_artificialName forKey:@"artificialName"];//联系人
+    [aCoder encodeObject:_introduce forKey:@"introduce"];//介绍信息
+
     
-    [aCoder encodeObject:_productCatalogues
-                   forKey:@"productCatalogues"] ;//产品分类
+    //[aCoder encodeObject:_productCatalogues
+     //              forKey:@"productCatalogues"] ;//产品分类
     
     [aCoder encodeObject:_payTool forKey:@"payTool"];//支付工具
     
-    [aCoder encodeInteger:_userId forKey:@"userid"];//用户id
+    //[aCoder encodeInteger:_userId forKey:@"userid"];//用户id
+    
+    [aCoder encodeObject:_identifer forKey:@"identifer"];//商户唯一标示
+
 
     
 }
@@ -51,23 +55,24 @@
     
     _updateTime= [aDecoder decodeObjectForKey:@"updateTime"];//更新时间
     
-    _artificialName= [aDecoder decodeObjectForKey:@"artificialName"];//联系人
+    _introduce= [aDecoder decodeObjectForKey:@"introduce"];//介绍信息
     
-    _productCatalogues=
-                   [aDecoder decodeObjectForKey:@"productCatalogues"] ;//产品分类
+    //_productCatalogues=
+    //               [aDecoder decodeObjectForKey:@"productCatalogues"] ;//产品分类
     
     _payTool= [aDecoder decodeObjectForKey:@"payTool"];//支付工具
     
-    _userId =[aDecoder decodeIntegerForKey:@"userid"];//用户id
+    //_userId =[aDecoder decodeIntegerForKey:@"userid"];//用户id
 
+    _identifer =[aDecoder decodeObjectForKey:@"identifer"];//商户唯一标示
     return self;
     
 }
 
 
 -(NSString *)description{
-    return [NSString stringWithFormat:@"商家基本信息:%ld，商家名称:%@ 联系人:%@",
-            (long)self.id,self.name,self.self.artificialName];
+    return [NSString stringWithFormat:@"商家基本信息:%ld，商家名称:%@",
+            (long)self.id,self.name];
 }
 
 
