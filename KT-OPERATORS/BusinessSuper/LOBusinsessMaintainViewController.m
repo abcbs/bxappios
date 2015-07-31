@@ -51,17 +51,10 @@
 }
 
 - (void)dealloc{
-    [self.besinessIntroduce removeFromSuperview];
-    [self.businessResouceImages removeFromSuperview];
-    [self.businessHeaderImage removeFromSuperview];
-    
-    [rsImageArray removeAllObjects];
-    rsImageArray=nil;
-    [rsInfoArray removeAllObjects];
-    rsInfoArray=nil;
-    
-    self.business=nil;
-    
+    //[self.besinessIntroduce removeFromSuperview];
+    //[self.businessResouceImages removeFromSuperview];
+    //[self.businessHeaderImage removeFromSuperview];
+     [self clearViewData];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
@@ -124,12 +117,50 @@
         _entityIDType.text=ub.userType;
         _entityIDNumber.text=ub.entityIDNumber;
         //头像
-        
-        
     }
 }
 
+-(void)clearViewData{
+    //商户名称
+     _businessName.text=nil;
+    //营业执照
+     _commerceLicense.text=nil;
+    //办公地址
+     _officerAddress.text=nil;
+    //地理位置信息
+    _geoInfo.text=nil;
+    //法人信息-法人姓名
+    _entityName.text=nil;
+    //法人信息-证件类型
+     _entityTel.text=nil;
+    //法人信息-证件号
+    _entityIDNumber.text=nil;
+    //法人信息-签约手机
+     _entityPhone.text=nil;
+    //法人信息-联系电话
+    //法人信息-Email
+    _entityEmail.text=nil;
+    //法人信息-联系地址
+    _entityAddress.text=nil;
+    //法人信息-账号类型
+    _accoutType.text=nil;
+    _entityIDType.text=nil;
+    //商家头像
+    _businessHeaderImage.image=nil;
+    //商家宣传图片
+    [_businessResouceImages removeConstraints:rsImageArray];
+    
+    //商家介绍信息
+    _besinessIntroduce.text=nil;
+    //银行支付账号
+    _bankAccount.text=nil;
+    [rsInfoArray removeAllObjects];
+    [rsImageArray removeAllObjects];
+    rs=nil;
+    rsImageArray=nil;
+    rsInfoArray=nil;
 
+}
 -(void)saveData{
     _business=[[BusinessBaseDomail alloc]init];
     //商家基本信息
@@ -158,17 +189,47 @@
     _business.artificial=ub;
     
     if (isEdit) {
-        [_editDelegate sendEditedBusiness:_business];
-        _business = nil;
+        [_editDelegate editedBusiness:_business];
+        [self.navigationController popViewControllerAnimated:YES];
     }
     if (!isEdit)
     {
-        
-        [_editDelegate sendAddBusiness:_business];
-    }
-    
-    [self.navigationController popViewControllerAnimated:YES];
+        if ([self.editDelegate respondsToSelector:@selector(addBusiness:)]){
+            [_editDelegate addBusiness:_business];
+             [self.navigationController popViewControllerAnimated:YES];
+        }else{
+            BusinessManager *bm=[BusinessManager businessManager];
+            [bm insertBusiness:_business];
+            UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"下一个" style:UIBarButtonItemStylePlain target:self action:@selector(nextData)];
+            self.navigationItem.rightBarButtonItem = rightButton;
+            
+            UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithTitle:@"<商家列表" style:UIBarButtonItemStylePlain target:self action:@selector(toPageController)];
+            self.navigationItem.leftBarButtonItem = leftButton;
 
+
+        }
+        
+    }
+ 
+}
+
+/** Finishes the editing */
+
+-(void)toPageController{
+    [self navigating:self storybord:@"LOBuyerSuper" identity:@"LOBusinessListViewController" canUseStoryboard:YES];
+    
+}
+- (void)nextData
+{
+    [self.besinessIntroduce resignFirstResponder];
+    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc]
+                                    initWithTitle:@"保存" style:UIBarButtonItemStylePlain target:self action:@selector(saveData)];
+    self.navigationItem.rightBarButtonItem = rightButton;
+    _business=nil;
+    _business=[BusinessBaseDomail new];
+    [self modifiedStyle];
+    [self initSubViews];
+    [self clearViewData];
 }
 
 - (IBAction)saveBusinessData:(id)sender {
@@ -192,9 +253,9 @@
 /** Finishes the editing */
 - (void)dismissKeyboard
 {
-    [self.besinessIntroduce resignFirstResponder];
-    self.navigationItem.rightBarButtonItem = nil;
     [self saveData];
+    [self.besinessIntroduce resignFirstResponder];
+    
 }
 
 

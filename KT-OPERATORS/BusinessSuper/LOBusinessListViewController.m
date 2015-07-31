@@ -92,7 +92,6 @@
     {
         bs = _bsList[indexPath.row];
         _bsIndex = indexPath.row;
-        //[self performSegueWithIdentifier:@"BrowseBusiness" sender:nil];
     }
 }
 
@@ -133,6 +132,7 @@ titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
     {
         // Remove the row from data model
         long row=indexPath.row;
+        [self removeBusiness:[_bsList objectAtIndex:row]];
         [_bsList removeObjectAtIndex:row];
         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
         [tableView reloadData];
@@ -149,6 +149,7 @@ titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
     {//浏览商品信息
         LOBusinessDetailViewController *evc = (LOBusinessDetailViewController *)segue.destinationViewController;
         evc.browseDelegate = self;
+        //self.tableView
         BusinessBaseDomail *bs=(BusinessBaseDomail *)[_bsList objectAtIndex:_bsIndex];
         evc.business=bs;
     }
@@ -165,84 +166,51 @@ titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
 
 #pragma mark --装载数据
 
+-(void) removeBusiness:(BusinessBaseDomail *)business{
+    BusinessManager *bm=[BusinessManager businessManager];
+    
+    [bm removeBusiness:business];
+}
 /**
- *产品浏览
+ *维护商家信息
  */
-- (void)sendEditedBusiness:(BusinessBaseDomail *)business{
+- (void)editedBusiness:(BusinessBaseDomail *)business{
     if (!_bsList)
     {
         _bsList = [NSMutableArray array];
     }
-    
-    [_bsList addObject:business];
-    [self.tableView reloadData];
-    
-    NSString *path = [self loadForBusinessList];
-    [NSKeyedArchiver archiveRootObject:_bsList toFile:path];
-}
-/**
- *商家维护
- */
-- (void)sendAddBusiness:(BusinessBaseDomail *) business{
-    if (!_bsList)
-    {
-        _bsList = [NSMutableArray array];
-    }
-    
-    [_bsList addObject:business];
-    [self.tableView reloadData];
-    
-    NSString *path = [self loadForBusinessList];
-    [NSKeyedArchiver archiveRootObject:_bsList toFile:path];
-    
-}
-
-/**
- *商家浏览
- */
-- (void)sendBrowseBusiness:(BusinessBaseDomail *)business{
-    if (!_bsList)
-    {
-        _bsList = [NSMutableArray array];
-    }
-    
-    [_bsList addObject:business];
-    [self.tableView reloadData];
-    
-    NSString *path = [self loadForBusinessList];
-    [NSKeyedArchiver archiveRootObject:_bsList toFile:path];
-}
-
-/**
- *更新数据
- */
-- (void)refreshBusiness:(BusinessBaseDomail *)business{
     [_bsList removeObjectAtIndex:_bsIndex];
     [_bsList insertObject:business atIndex:_bsIndex];
- 
+
     [self.tableView reloadData];
+    BusinessManager *bm=[BusinessManager businessManager];
     
-    NSString *path = [self loadForBusinessList];
-    [NSKeyedArchiver archiveRootObject:_bsList toFile:path];
+    [bm updateBusiness:business atIndex:_bsIndex];
+
+}
+/**
+ *商家新增
+ */
+- (void)addBusiness:(BusinessBaseDomail *) business{
+    if (!_bsList)
+    {
+        _bsList = [NSMutableArray array];
+    }
+    [_bsList addObject:business];
+    [self.tableView reloadData];
+    BusinessManager *bm=[BusinessManager businessManager];
+    
+    [bm insertBusiness:business];
+
 }
 
 /**
  *装载初始化数据
  */
 -(void) loadBusiness:(BusinessBaseDomail *)business{
-    NSString *path = [self loadForBusinessList];
-    _bsList = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
+    BusinessManager *bm=[BusinessManager businessManager];
+    _bsList = [bm loadBusiness:business];
     
 }
-
-#pragma mark --从本地装载数据
-- (NSString *)loadForBusinessList
-{
-    NSArray *documents = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *path = [documents[0] stringByAppendingPathComponent:@"business.plist"];
-    
-    return path;
-}
-
 
 @end

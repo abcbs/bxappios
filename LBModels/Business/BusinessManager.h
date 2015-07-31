@@ -7,7 +7,40 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "BusinessBaseDomail.h"
+#import "BusinessProduct.h"
 
 @interface BusinessManager : NSObject
+
+//商户管理
++(BusinessManager *)businessManager;
+
+#pragma mark -商家维护
+/**
+ *根据BusinessBaseDomail装载获得的数据
+ */
+-(NSMutableArray *) loadBusiness:(BusinessBaseDomail *)business;
+
+/**
+ *更新商户信息
+ */
+-(void)updateBusiness:(BusinessBaseDomail *)business
+              atIndex:(NSInteger)index;
+
+-(void)insertBusiness:(BusinessBaseDomail *)business;
+
+-(void)removeBusiness:(BusinessBaseDomail *)business;
+
+
+#pragma mark -商家商品数据
+-(NSMutableArray *) loadBusinessProduct:(BusinessProduct *)product;
+
+- (void)insertBusinessProduct:(BusinessProduct *) product;
+
+-(void)updateBusinessProduct:(BusinessProduct *) product
+              atIndex:(NSInteger)index;
+
+-(void)removeBusinessProduct:(BusinessProduct *) product;
+
 
 @end

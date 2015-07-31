@@ -16,18 +16,13 @@
 /**
  *产品增加
  */
-- (void)sendAddBusiness:(BusinessBaseDomail *) business;
+- (void)addBusiness:(BusinessBaseDomail *) business;
 
 /**
  *产品维护
  */
-- (void)sendEditedBusiness:(BusinessBaseDomail *) business;
+- (void)editedBusiness:(BusinessBaseDomail *) business;
 
-
-/**
- *产品浏览
- */
-- (void)sendBrowseBusiness:(BusinessBaseDomail *)business;
 
 /**
  *更新数据
@@ -39,4 +34,8 @@
  */
 -(void) loadBusiness:(BusinessBaseDomail *)business;
 
+/**
+ *装载初始化数据
+ */
+-(void) removeBusiness:(BusinessBaseDomail *)business;
 @end

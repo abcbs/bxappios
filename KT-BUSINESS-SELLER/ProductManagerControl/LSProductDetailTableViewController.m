@@ -89,7 +89,7 @@
     edit.product = _product;
 }
 
--(void)sendEditedBusinessProduct:(BusinessProduct *)product{
+-(void)editedBusinessProduct:(BusinessProduct *)product{
     _product =product ;
 
     [_browseDelegate refreshBusinessProduct:product];
@@ -97,10 +97,11 @@
 
 }
 
-- (void)sendAddBusinessProduct:(BusinessProduct *) product{
-    [_browseDelegate sendAddBusinessProduct:product];
+- (void)addBusinessProduct:(BusinessProduct *) product{
+    [_browseDelegate addBusinessProduct:product];
     [self displayProduct];
 }
+
 - (IBAction)previewHeadImage:(id)sender {
 }
 

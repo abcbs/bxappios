@@ -60,18 +60,12 @@
 - (void) viewDidUnload{
     //删除数据
     [super viewDidUnload];
-    
 
 }
 
 - (void)dealloc{
-    [self.introduce removeFromSuperview];
-    [self.comment removeFromSuperview];
-    [self.comment removeFromSuperview];
-
-    self.product=nil;
-    self.introduce=nil;
-    self.specification=nil;
+    
+    [self clearViewData];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
@@ -79,7 +73,26 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
+#pragma mark -UITextView焦点操作
+/** Adds the 'Done' button to the title bar
+ */
+- (void)textViewDidBeginEditing:(UITextView *)textView
+{
+    // We need to add this manually so we have a way to dismiss the keyboard
+    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"确定" style:UIBarButtonItemStylePlain target:self action:@selector(dismissKeyboard)];
+    //[self.tintColor]
+    self.navigationItem.rightBarButtonItem = rightButton;
+}
 
+/** Finishes the editing */
+- (void)dismissKeyboard
+{
+    [self saveData];
+    [self.introduce resignFirstResponder];
+    [self.comment resignFirstResponder];
+    [self.specification resignFirstResponder];
+    
+}
 #pragma mark --键盘关闭处理
 #pragma mark -UITextField的代理事件，换行执行的操作，去掉键盘
 
@@ -148,6 +161,10 @@
  *数据保存
  */
 - (IBAction)saveProductDate:(id)sender {
+    [self saveData];
+}
+
+-(void)saveData{
     //初始化化BusinessProduct
     _product=[[BusinessProduct alloc]init];
     _product.name=_productName.text;
@@ -184,20 +201,120 @@
     
     //_product.
     if (isEdit) {
-        [_editDelegate sendEditedBusinessProduct:_product];
+        [_editDelegate editedBusinessProduct:_product];
         _product = nil;
+        [self.navigationController popViewControllerAnimated:YES];
     }
     if (!isEdit)
     {
-        BusinessProduct *product = [self productOnSubViews];
-        //把信息反馈给代理
-        [_editDelegate sendAddBusinessProduct:product];
+        if ([self.editDelegate
+             respondsToSelector:@selector(addBusinessProduct:)]){
+            BusinessProduct *product = [self productOnSubViews];
+            //把信息反馈给代理
+            [_editDelegate addBusinessProduct:product];
+            [self.navigationController popViewControllerAnimated:YES];
+        }else{
+            BusinessManager *bm=[BusinessManager businessManager];
+            [bm insertBusinessProduct:_product];
+            UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"下一个" style:UIBarButtonItemStylePlain target:self action:@selector(nextData)];
+            self.navigationItem.rightBarButtonItem = rightButton;
+            
+            UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithTitle:@"<商品列表" style:UIBarButtonItemStylePlain target:self action:@selector(toPageController)];
+            self.navigationItem.leftBarButtonItem = leftButton;
+
+        }
     }
     
-    [self.navigationController popViewControllerAnimated:YES];
+    
+    
 }
 
+-(void)toPageController{
+    [self navigating:self storybord:@"LSProductManagerMain" identity:@"LSProductListTableViewController" canUseStoryboard:YES];
+    
+}
+- (void)nextData
+{
+    [self.specification resignFirstResponder];
+    [self.introduce resignFirstResponder];
+    [self.comment resignFirstResponder];
+    
+    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc]
+                                    initWithTitle:@"保存" style:UIBarButtonItemStylePlain target:self action:@selector(saveData)];
+    self.navigationItem.rightBarButtonItem = rightButton;
+    _product=nil;
+    _product=[BusinessProduct new];
+    [self modifiedStyle];
+    [self initSubViews];
+    [self clearViewData];
+}
 
+-(void)clearViewData{
+    //商家显示信息
+    //商品名称
+    _productName.text=nil;
+    
+    //销售价格
+    _preferPrice.text=nil;
+    
+    //促销价格
+    _salePrice.text=nil;
+    
+    //发布时间
+    _publishTime.text=nil;
+    
+    //商品种类
+    _productCatalogue.text=nil;
+    
+    //商品头像
+    _headerImageView.image=nil;
+    
+    
+    //商品介绍组图
+    [_resourceImags removeConstraints:rsImageArray];
+    
+    
+    //商品宣传，介绍
+    _introduce.text=nil;
+    
+    //商品规格
+    _specification.text=nil;
+    
+    //商品介绍，备注
+    _comment.text=nil;
+    
+    //促销开始时间
+    _saleStartTime.text=nil;
+    
+    //促销结束时间
+    _saleOverTime.text=nil;
+    
+    //是否在售，上下架
+    _isSale.text=nil;
+    
+    //是否促销
+    _onSale.text=nil;
+    
+    //存量
+    _numbers.text=nil;
+    
+    isEdit=NO;
+    isHeaderImage=NO;
+    rs=nil;
+    //
+    [rsInfoArray removeAllObjects];
+    rsInfoArray=nil;
+    //
+    [rsImageArray removeAllObjects];
+    rsImageArray=nil;
+    
+    _product.headerImage=nil;
+    [_product.resourceIds removeAllObjects];
+    [_product.resourceImages removeAllObjects];
+    _product=nil;
+
+    
+}
 - (BusinessProduct *)productOnSubViews
 {
     BusinessProduct *product = [[BusinessProduct alloc] init];

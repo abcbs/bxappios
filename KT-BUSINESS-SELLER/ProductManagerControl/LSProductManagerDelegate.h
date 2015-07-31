@@ -15,18 +15,18 @@
 /**
  *产品增加
  */
-- (void)sendAddBusinessProduct:(BusinessProduct *) product;
+- (void)addBusinessProduct:(BusinessProduct *) product;
 
 /**
  *产品维护
  */
-- (void)sendEditedBusinessProduct:(BusinessProduct *) product;
+- (void)editedBusinessProduct:(BusinessProduct *) product;
 
 
 /**
  *产品浏览
  */
-- (void)sendBrowseBusinessProduct:(BusinessProduct *)product;
+- (void)browseBusinessProduct:(BusinessProduct *)product;
 
 /**
  *更新数据

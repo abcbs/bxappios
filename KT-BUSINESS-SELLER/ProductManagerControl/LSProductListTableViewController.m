@@ -215,14 +215,12 @@ titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
     return YES;
 }
 
-
-
 #pragma mark --装载数据
 
 /**
  *产品维护
  */
-- (void)sendAddBusinessProduct:(BusinessProduct *) product{
+- (void)addBusinessProduct:(BusinessProduct *) product{
     if (!_bsList)
     {
         _bsList = [NSMutableArray array];
@@ -231,15 +229,16 @@ titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
     [_bsList addObject:product];
     [self.tableView reloadData];
     
-    NSString *path = [self loadForProductList];
-    [NSKeyedArchiver archiveRootObject:_bsList toFile:path];
+    BusinessManager *bm=[BusinessManager businessManager];
+    
+    [bm insertBusinessProduct:product];
 
 }
 
 /**
  *产品浏览
  */
-- (void)sendEditedBusinessProduct:(BusinessProduct *)product{
+- (void)editedBusinessProduct:(BusinessProduct *)product{
     if (!_bsList)
     {
         _bsList = [NSMutableArray array];
@@ -248,8 +247,9 @@ titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
     [_bsList addObject:product];
     [self.tableView reloadData];
     
-    NSString *path = [self loadForProductList];
-    [NSKeyedArchiver archiveRootObject:_bsList toFile:path];
+    BusinessManager *bm=[BusinessManager businessManager];
+    
+    [bm updateBusinessProduct:product atIndex:_bsIndex];
 }
 
 /**
@@ -264,27 +264,15 @@ titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
     [self.searchDisplayController.searchResultsTableView reloadData];
     [self.tableView reloadData];
     
-    NSString *path = [self loadForProductList];
-    [NSKeyedArchiver archiveRootObject:_bsList toFile:path];
-}
-
-/**
- *装载初始化数据
- */
--(void) loadBusinessProduct:(BusinessProduct *)product{
-    NSString *path = [self loadForProductList];
-    _bsList = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
-
-}
-
-#pragma mark --从本地装载数据
-- (NSString *)loadForProductList
-{
-    NSArray *documents = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *path = [documents[0] stringByAppendingPathComponent:@"product.plist"];
+    BusinessManager *bm=[BusinessManager businessManager];
     
-    return path;
+    [bm updateBusinessProduct:product atIndex:_bsIndex];
+
 }
 
-
+-(void) loadBusinessProduct:(BusinessProduct *)product{
+    BusinessManager *bm=[BusinessManager businessManager];
+    _bsList = [bm loadBusinessProduct:product];
+    
+}
 @end

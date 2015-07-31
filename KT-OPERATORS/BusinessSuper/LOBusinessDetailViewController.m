@@ -91,23 +91,19 @@
     edit.business = _business;;
 }
 
--(void)sendEditedBusiness:(BusinessBaseDomail *)business{
+-(void)editedBusiness:(BusinessBaseDomail *)business{
     _business =business ;
     
-    [_browseDelegate refreshBusiness:business];
+    [_browseDelegate editedBusiness:business];
     [self display];
     
 }
 
-- (void)sendAddBusiness:(BusinessBaseDomail *) business{
-    [_browseDelegate sendAddBusiness:business];
+- (void)addBusiness:(BusinessBaseDomail *) business{
+    [_browseDelegate addBusiness:business];
     [self display];
 }
-- (IBAction)previewHeadImage:(id)sender {
-}
 
-- (IBAction)previewResourceImages:(id)sender {
-}
 
 - (void)touchAction:(UIGestureRecognizer *)gester
 {

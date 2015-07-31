@@ -27,6 +27,8 @@
 /**
  *商家商品
  */
+#import "BusinessManager.h"
+
 #import "BusinessActivity.h"
 #import "BusinessBase.h"
 #import "BusinessBaseDomail.h"

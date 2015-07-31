@@ -32,4 +32,6 @@
 //商家的经营返回应当是数组
 @property (strong,nonatomic) NSMutableArray *productCatalogues;//产品分类
 
+//本地装载数据路径
++ (NSString *)loadForBusinessList;
 @end

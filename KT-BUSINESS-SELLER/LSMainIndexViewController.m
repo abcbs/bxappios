@@ -43,12 +43,20 @@
                                 imageName:@"im_post.png"
                                 vcClass:@"LSProductListTableViewController"
                                 storybord:@"LSProductManagerMain"];
-    
 
     
     [bsTable addBSTableContent:bsnMagamer sectionHeader:@"首页"];
     
+    //
+    bsnMagamer=[BSTableContentObject
+                                      initWithContentObject:@"新品"
+                                      methodName:nil
+                                      imageName:@"jztb.png"
+                                      vcClass:@"LSProductMaintainViewController"
+                                      storybord:@"LSProductManagerMain"];
     
+    
+    [bsTable addBSTableContent:bsnMagamer sectionHeader:@"首页"];
     
     bsnMagamer=[BSTableContentObject
                                       initWithContentObject:@"促销"

@@ -9,7 +9,7 @@
         <!--商品维护-->
         <scene sceneID="V3b-go-jQs">
             <objects>
-                <tableViewController storyboardIdentifier="LSProductMaintainViewController" title="商品维护" id="yrG-Wu-VA4" customClass="LSProductMaintainViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="LSProductMaintainViewController" title="商品维护" id="yrG-Wu-VA4" userLabel="商品维护" customClass="LSProductMaintainViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="h4f-AS-EYS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -33,6 +33,7 @@
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XkZ-Y6-ahA">
                                                     <rect key="frame" x="75" y="7" width="241" height="30"/>
+                                                    <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                                                     <variation key="heightClass=compact-widthClass=regular" misplaced="YES">
@@ -79,6 +80,7 @@
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2HX-WY-FuG" userLabel="促销价格,有卡价格">
                                                     <rect key="frame" x="235" y="8" width="77" height="30"/>
+                                                    <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                                     <connections>
@@ -87,6 +89,7 @@
                                                 </textField>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GKx-S1-EiG" userLabel="优惠价格，无卡价格，salePrice">
                                                     <rect key="frame" x="86" y="7" width="88" height="30"/>
+                                                    <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="88" id="1hC-97-t2L"/>
                                                     </constraints>
@@ -130,6 +133,7 @@
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B4D-Iq-L2n">
                                                     <rect key="frame" x="85" y="7" width="91" height="30"/>
+                                                    <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="91" id="dsF-k4-2Yi"/>
                                                     </constraints>
@@ -147,6 +151,7 @@
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" enabled="NO" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qx3-3D-ZDv">
                                                     <rect key="frame" x="255" y="7" width="57" height="30"/>
+                                                    <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
@@ -188,6 +193,7 @@
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hWB-J9-CNf">
                                                     <rect key="frame" x="100" y="2" width="97" height="30"/>
+                                                    <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="97" id="QHa-ll-8Jg"/>
                                                     </constraints>
@@ -205,6 +211,7 @@
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eYo-V4-t4y">
                                                     <rect key="frame" x="220" y="2" width="97" height="30"/>
+                                                    <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
@@ -241,6 +248,7 @@
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Nt-Df-wDC">
                                                     <rect key="frame" x="76" y="6" width="30" height="30"/>
+                                                    <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="30" id="plh-TT-GL7"/>
                                                     </constraints>
@@ -261,6 +269,7 @@
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jCF-QA-Vc5">
                                                     <rect key="frame" x="183" y="8" width="36" height="30"/>
+                                                    <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="36" id="3Ji-LV-n9z"/>
                                                     </constraints>
@@ -278,6 +287,7 @@
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c8H-xS-KY9">
                                                     <rect key="frame" x="256" y="6" width="56" height="30"/>
+                                                    <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
@@ -321,6 +331,7 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8xX-3W-efy">
                                                     <rect key="frame" x="8" y="-4" width="60" height="30"/>
+                                                    <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <state key="normal" title="自选头像">
                                                         <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -349,6 +360,7 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jvl-CL-Qye">
                                                     <rect key="frame" x="8" y="0.0" width="60" height="30"/>
+                                                    <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <state key="normal" title="介绍组图">
                                                         <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -386,6 +398,7 @@
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t78-Y3-d9y">
                                                     <rect key="frame" x="0.0" y="28" width="320" height="144"/>
                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     <connections>
@@ -437,6 +450,7 @@
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9c1-gr-Q9j">
                                                     <rect key="frame" x="0.0" y="31" width="320" height="88"/>
                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     <connections>
@@ -473,6 +487,7 @@
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nKe-Xr-I8V">
                                                     <rect key="frame" x="0.0" y="31" width="320" height="88"/>
                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     <connections>
@@ -528,7 +543,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1tH-xU-67S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="841" y="-300"/>
+            <point key="canvasLocation" x="837" y="-299"/>
         </scene>
         <!--商家活动公告-->
         <scene sceneID="EAB-jG-ZOn">
@@ -571,7 +586,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="iid-gH-CKX" kind="relationship" relationship="viewControllers" id="ViF-ef-0r8"/>
-                        <segue destination="LRz-c8-MW1" kind="relationship" relationship="viewControllers" id="iiO-84-N6F"/>
+                        <segue destination="8vk-fq-xWT" kind="relationship" relationship="viewControllers" id="7gj-f4-u6D"/>
                         <segue destination="78U-od-WFz" kind="relationship" relationship="viewControllers" id="3Tf-By-xQy"/>
                         <segue destination="wmU-w2-ScX" kind="relationship" relationship="viewControllers" id="kVa-uV-SVX"/>
                         <segue destination="io3-8V-yA2" kind="relationship" relationship="viewControllers" id="t3h-Ge-QPL"/>
@@ -631,7 +646,7 @@
                     <navigationItem key="navigationItem" title="在线商品" id="YjJ-su-KT9">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="bOT-8E-JMc">
                             <connections>
-                                <segue destination="yrG-Wu-VA4" kind="show" identifier="AddCommodity" id="3ET-7H-4UV"/>
+                                <segue destination="yrG-Wu-VA4" kind="show" identifier="AddCommodity" id="y84-Ak-JeR"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -680,34 +695,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8dN-ow-WxQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-13" y="979"/>
-        </scene>
-        <!--新品上市-->
-        <scene sceneID="3rO-mH-amU">
-            <objects>
-                <tableViewController storyboardIdentifier="LSProductAduitTableViewController" title="新品上市" id="L2a-dN-Hft" userLabel="新品上市" customClass="LSProductAduitTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="aDB-Bh-3r5">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LSProductAduitCell" id="e6Q-Qg-TOs">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="e6Q-Qg-TOs" id="oTj-g9-a79">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="L2a-dN-Hft" id="S8S-71-Dff"/>
-                            <outlet property="delegate" destination="L2a-dN-Hft" id="aoj-7x-JOk"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="n4w-cZ-I3D"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="f6g-ev-bKh" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="382" y="345"/>
         </scene>
         <!--商品详细-->
         <scene sceneID="szm-Ss-jQ7">
@@ -1077,7 +1064,7 @@
                     <navigationItem key="navigationItem" title="商品信息" id="VBm-Z8-042">
                         <barButtonItem key="rightBarButtonItem" title="编辑" id="wea-bK-OXZ">
                             <connections>
-                                <segue destination="yrG-Wu-VA4" kind="show" identifier="MaintainCommodity" id="W81-jC-P1b"/>
+                                <segue destination="8vk-fq-xWT" kind="show" identifier="MaintainCommodity" id="W81-jC-P1b"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1171,25 +1158,6 @@
             </objects>
             <point key="canvasLocation" x="-465" y="973"/>
         </scene>
-        <!--新品上市导航-->
-        <scene sceneID="iWo-Tv-QRB">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LRz-c8-MW1" userLabel="新品上市导航" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="新品上市" image="second_selected.png" id="WLt-nQ-r3S"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="HGA-8b-L70">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="L2a-dN-Hft" kind="relationship" relationship="rootViewController" id="okb-9k-Z0J"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NDY-iq-VeU" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-108" y="351"/>
-        </scene>
         <!--商品管理导航-->
         <scene sceneID="Roh-CG-qVz">
             <objects>
@@ -1228,6 +1196,25 @@
             </objects>
             <point key="canvasLocation" x="-634" y="-527"/>
         </scene>
+        <!--新品上架-->
+        <scene sceneID="58P-2Q-16n">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8vk-fq-xWT" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="新品上架" image="second_selected.png" id="FWa-a0-1vX"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="WkN-Pb-xao">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="yrG-Wu-VA4" kind="relationship" relationship="rootViewController" id="g7w-WV-Nww"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EZS-H3-rpp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="620" y="379"/>
+        </scene>
     </scenes>
     <resources>
         <image name="first" width="30" height="30"/>
@@ -1236,6 +1223,7 @@
         <image name="third_normal.png" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="3ET-7H-4UV"/>
+        <segue reference="y84-Ak-JeR"/>
+        <segue reference="W81-jC-P1b"/>
     </inferredMetricsTieBreakers>
 </document>
