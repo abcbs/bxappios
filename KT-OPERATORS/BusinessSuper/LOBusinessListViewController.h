@@ -8,7 +8,9 @@
 
 #import "BSUITableViewCanEditedController.h"
 #import "LOBusinessManagerDelegate.h"
+#import "LBModelsHeader.h"
 
 @interface LOBusinessListViewController : BSUITableViewCanEditedController<LOBusinessManagerDelegate>
 
+//@property (nonatomic,strong)BusinessBaseDomail *business;
 @end

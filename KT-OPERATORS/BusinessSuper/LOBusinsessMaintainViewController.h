@@ -7,8 +7,18 @@
 //
 
 #import "BSUITableViewCanEditedController.h"
+#import "BSUIFrameworkHeader.h"
+#import "BSIFTTHeader.h"
+#import "LBModelsHeader.h"
+#import "LOBusinessManagerDelegate.h"
+@interface LOBusinsessMaintainViewController : BSUITableViewCommonController<BSPhotoTakeDelegate,BSImagePlayerDelegate>
 
-@interface LOBusinsessAddViewController : BSUITableViewCommonController
+@property (strong,nonatomic) BSPhotoTakeController *takeController;
+
+//业务模型和操作代理
+@property (weak, nonatomic) id<LOBusinessManagerDelegate> editDelegate;
+
+@property (nonatomic,strong)BusinessBaseDomail *business;
 
 //商户名称
 @property (weak, nonatomic) IBOutlet UITextField *businessName;
@@ -80,5 +90,10 @@
 - (IBAction)bandPayAccount:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UITableViewRowAction *businessCatatorySelection;
+
+
+
+- (IBAction)saveBusinessData:(id)sender;
+
 
 @end

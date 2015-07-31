@@ -8,9 +8,13 @@
 
 #import "BSUITableViewCommonController.h"
 #import "LOBusinessManagerDelegate.h"
+#import "LBModelsHeader.h"
 
 @interface LOBusinessDetailViewController : BSUITableViewCommonController<LOBusinessManagerDelegate>
 
+@property (weak, nonatomic) id<LOBusinessManagerDelegate> browseDelegate;
+
+@property (nonatomic,strong)BusinessBaseDomail *business;
 //商户名称
 @property (weak, nonatomic) IBOutlet UITextField *businessName;
 

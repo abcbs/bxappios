@@ -20,11 +20,15 @@
 
 @property (retain,nonatomic) NSString * telephone;
 
+@property (retain,nonatomic) NSString * email;
+
 @property (retain,nonatomic) NSString *  status;
 
 @property (assign,nonatomic) NSDate * updateTime;
 
 @property (retain,nonatomic) NSString * userType;
+
+@property (retain,nonatomic) NSString * entityIDNumber;
 
 @property (assign,nonatomic) NSInteger resourceId;
 

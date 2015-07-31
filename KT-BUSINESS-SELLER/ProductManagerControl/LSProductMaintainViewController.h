@@ -13,11 +13,10 @@
 @interface LSProductMaintainViewController : BSUITableViewCommonController
 
 @property (strong,nonatomic) BSPhotoTakeController *takeController;
-//@property (strong,nonatomic) BSPhotoImagePickerController *imagePickerController;
-
 
 //业务模型和操作代理
 @property (weak, nonatomic) id<LSProductManagerDelegate> editDelegate;
+
 @property (strong, nonatomic) BusinessProduct *product;
 
 //商家显示信息

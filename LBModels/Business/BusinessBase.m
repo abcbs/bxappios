@@ -37,7 +37,23 @@
     
     [aCoder encodeObject:_identifer forKey:@"identifer"];//商户唯一标示
 
-
+     [aCoder encodeObject:_commerceLicense
+                   forKey:@"commerceLicense"];//商户唯一标示
+    
+    [aCoder encodeObject:_resourceInfo
+                  forKey:@"resourceInfo"];//商户唯一标示
+    
+    [aCoder encodeObject:_resourceIds
+                  forKey:@"resourceIds"];
+    
+    [aCoder encodeObject:_resourceImages
+                  forKey:@"resourceImages"];
+    
+    [aCoder encodeObject:_resourceImages
+                  forKey:@"resourceImages"];
+    
+    [aCoder encodeObject:_resourceInfoArray
+                  forKey:@"resourceInfoArray"];
     
 }
 
@@ -57,14 +73,26 @@
     
     _introduce= [aDecoder decodeObjectForKey:@"introduce"];//介绍信息
     
-    //_productCatalogues=
-    //               [aDecoder decodeObjectForKey:@"productCatalogues"] ;//产品分类
+    _commerceLicense=
+                   [aDecoder decodeObjectForKey:@"commerceLicense"] ;//产品分类
     
     _payTool= [aDecoder decodeObjectForKey:@"payTool"];//支付工具
     
     //_userId =[aDecoder decodeIntegerForKey:@"userid"];//用户id
 
     _identifer =[aDecoder decodeObjectForKey:@"identifer"];//商户唯一标示
+    
+    _headerImage =[aDecoder decodeObjectForKey:@"headerImage"];//商户唯一标示
+    
+    
+    _resourceInfo=[aDecoder decodeObjectForKey:@"resourceInfo"];
+    
+    _resourceIds=[aDecoder decodeObjectForKey:@"resourceIds"];
+    
+    _resourceImages=[aDecoder decodeObjectForKey:@"resourceImages"];
+    
+    _resourceInfoArray=[aDecoder decodeObjectForKey:@"headerImage"];
+    
     return self;
     
 }

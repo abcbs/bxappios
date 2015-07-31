@@ -27,6 +27,16 @@
     [super didReceiveMemoryWarning];
 }
 
+- (void)dealloc{
+    [self.introduce removeFromSuperview];
+    [self.comment removeFromSuperview];
+    [self.comment removeFromSuperview];
+    
+    self.product=nil;
+    self.introduce=nil;
+    self.specification=nil;
+  
+}
 #pragma mark --样式调整
 
 -(void)displayProduct{

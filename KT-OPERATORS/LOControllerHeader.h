@@ -23,7 +23,7 @@
 /**
  *添加新商家
  */
-#import "LOBusinsessAddViewController.h"
+#import "LOBusinsessMaintainViewController.h"
 
 /**
  *商家列表

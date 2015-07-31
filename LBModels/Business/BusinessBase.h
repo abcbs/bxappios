@@ -6,7 +6,8 @@
 //  Copyright (c) 2015年 itcast. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import "Resources.h"
 
 @interface BusinessBase : NSObject
 
@@ -29,7 +30,21 @@
 
 @property (retain,nonatomic) NSString * payTool;//支付工具
 
-//@property (assign,nonatomic) NSInteger  userId;//用户id
+//营业执照
+@property (retain,nonatomic) NSString *commerceLicense;
 
+@property (retain,nonatomic) UIImage  *headerImage;//用户id
+
+//资源ID转换之后为UIImage
+@property (strong, nonatomic) Resources *resourceInfo;
+
+//商家资源IDs
+@property (strong,nonatomic) NSMutableArray * resourceIds;
+
+//商家资源图片集
+@property (strong,nonatomic) NSMutableArray * resourceImages;
+
+//商家组播图片资源
+@property (strong,nonatomic) NSMutableArray * resourceInfoArray;
 
 @end

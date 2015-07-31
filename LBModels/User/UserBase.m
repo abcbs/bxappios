@@ -31,6 +31,12 @@
     [aCoder encodeObject:_userType forKey:@"userType"];
     
     [aCoder encodeInteger:_resourceId forKey:@"resourceId"];
+    
+    [aCoder encodeObject:_email forKey:@"email"];
+    
+    [aCoder encodeObject:_entityIDNumber forKey:@"entityIDNumber"];
+    
+    
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder
@@ -54,6 +60,10 @@
    _userType= [aDecoder decodeObjectForKey:@"userType"];
     
     _resourceId= [aDecoder decodeIntegerForKey:@"resourceId"];
+    
+    _email=[aDecoder decodeObjectForKey:@"email"];
+    
+    _entityIDNumber=[aDecoder decodeObjectForKey:@"entityIDNumber"];
     
     return self;
 }

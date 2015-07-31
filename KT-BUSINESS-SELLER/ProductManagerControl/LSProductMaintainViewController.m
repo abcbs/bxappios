@@ -65,10 +65,30 @@
 }
 
 - (void)dealloc{
-    
-    
+    [self.introduce removeFromSuperview];
+    [self.comment removeFromSuperview];
+    [self.comment removeFromSuperview];
+
+    self.product=nil;
+    self.introduce=nil;
+    self.specification=nil;
 }
 
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+
+#pragma mark --键盘关闭处理
+#pragma mark -UITextField的代理事件，换行执行的操作，去掉键盘
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    
+    [textField resignFirstResponder];
+    return YES;
+}
+#pragma mark -UITextView的代理事件，去除软键盘
 -(void)modifiedStyle{
     //[self.publishTime setEnabled:YES];
     //[self.publishTime setHidden:YES];

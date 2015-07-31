@@ -16,7 +16,7 @@
 /**
  *产品增加
  */
-- (void)sendAddBusines:(BusinessBaseDomail *) business;
+- (void)sendAddBusiness:(BusinessBaseDomail *) business;
 
 /**
  *产品维护
