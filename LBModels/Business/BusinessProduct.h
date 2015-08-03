@@ -9,16 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "Resources.h"
 #import "ProductBase.h"
+#import "BusinessBase.h"
 
 @interface BusinessProduct : NSObject
 
 @property (assign,nonatomic) NSInteger  id;
-
-//商品分类标示
-@property (assign,nonatomic) NSInteger  productCatalogueId;
-
-//商品基本信息标示
-@property (assign,nonatomic) NSInteger  productBaseId;
 
 //商家名称
 @property (retain,nonatomic) NSString * businessName;
@@ -29,7 +24,7 @@
 //商品名称
 @property (retain,nonatomic) NSString * name;
 
-//商品介绍
+//商品介绍，应当属于基本信息，第一次申请时写入基本信息
 @property (retain,nonatomic) NSString *introduce;
 
 //商品发布时间
@@ -61,12 +56,6 @@
 //结束时间
 @property (retain,nonatomic) NSDate * saleOverTime;
 
-//商家标示
-@property (assign,nonatomic) NSInteger  businessId;
-
-//商品审核标示
-@property (assign,nonatomic) NSInteger  businessProductAduit;
-
 //是否在售
 @property (retain,nonatomic) NSString * isSale;
 
@@ -90,8 +79,19 @@
 //是否降价
 @property (retain,nonatomic) NSString * onSale;
 
+//系统排序序列
 @property (assign,nonatomic) NSInteger order;
 
+//商品基本信息标示
+@property (assign,nonatomic) NSInteger  productBaseId;
+@property (assign,nonatomic) NSInteger  productCatalogueId;
+@property (assign,nonatomic) NSInteger  businessId;
+@property (assign,nonatomic) NSInteger  businessProductAduitId;
+
+//商品基本信息
 @property  (strong,nonatomic) ProductBase *produceBase;
+@property (retain,nonatomic) ProductCatalogue  *productCatalogue;
+@property  (retain,nonatomic) BusinessBase *businessBase;
+//@property (assign,nonatomic) BusinessProductAduit  *businessProductAduit;
 
 @end

@@ -15,6 +15,7 @@
 {
 
     [aCoder encodeInteger: _id forKey:@"id"];
+
     
     [aCoder encodeInteger:_productCatalogueId forKey:@"productCatalogueId"];
     
@@ -60,8 +61,8 @@
     [aCoder encodeInteger: _businessId forKey:@"businessId"];
     
     //商品审核标示
-    [aCoder encodeInteger: _businessProductAduit
-                    forKey:@"businessProductAduit"];
+    [aCoder encodeInteger: _businessProductAduitId
+                    forKey:@"businessProductAduitId"];
     
     //是否在售
     [aCoder encodeObject:_isSale forKey:@"isSale"];
@@ -91,7 +92,14 @@
     
     //商品信息
     [aCoder encodeObject:_produceBase forKey:@"produceBase"];
-
+    
+    //商品分类
+    [aCoder encodeObject:_productCatalogue forKey:@"productCatalogue"];
+    
+    [aCoder encodeObject:_businessBase forKey:@"businessBase"];
+    
+    //[aCoder encodeObject:_businessProductAduit forKey:@"businessProductAduit"];
+    
 
 }
 
@@ -143,7 +151,8 @@
     //商家标示
     _businessId =[aDecoder decodeIntegerForKey:@"businessId"];
     //商品审核标示
-    _businessProductAduit=[aDecoder decodeIntegerForKey:@"businessProductAduit"];
+    _businessProductAduitId
+    =[aDecoder decodeIntegerForKey:@"businessProductAduitId"];
     
     //是否在售
     _isSale =[aDecoder decodeObjectForKey:@"isSale"];
@@ -170,6 +179,13 @@
     
     //商品基本信息
     _produceBase =[aDecoder decodeObjectForKey:@"produceBase"];
+    
+    _productCatalogue=[aDecoder decodeObjectForKey:@"productCatalogue"];
+    
+    _businessBase=[aDecoder decodeObjectForKey:@"businessBase"];
+    
+   // _businessProductAduit=[aDecoder decodeObjectForKey:@"businessProductAduit"];
+    
     
     return self;
 }

@@ -148,7 +148,7 @@
     //商家头像
     _businessHeaderImage.image=nil;
     //商家宣传图片
-    [_businessResouceImages removeConstraints:rsImageArray];
+    //[_businessResouceImages removeConstraints:rsImageArray];
     
     //商家介绍信息
     _besinessIntroduce.text=nil;
@@ -198,6 +198,7 @@
             [_editDelegate addBusiness:_business];
              [self.navigationController popViewControllerAnimated:YES];
         }else{
+            //新建商家
             BusinessManager *bm=[BusinessManager businessManager];
             [bm insertBusiness:_business];
             UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"下一个" style:UIBarButtonItemStylePlain target:self action:@selector(nextData)];

@@ -543,7 +543,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1tH-xU-67S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="837" y="-299"/>
+            <point key="canvasLocation" x="967" y="-765"/>
         </scene>
         <!--商家活动公告-->
         <scene sceneID="EAB-jG-ZOn">
@@ -1064,7 +1064,7 @@
                     <navigationItem key="navigationItem" title="商品信息" id="VBm-Z8-042">
                         <barButtonItem key="rightBarButtonItem" title="编辑" id="wea-bK-OXZ">
                             <connections>
-                                <segue destination="8vk-fq-xWT" kind="show" identifier="MaintainCommodity" id="W81-jC-P1b"/>
+                                <segue destination="yrG-Wu-VA4" kind="show" identifier="MaintainCommodity" id="NlW-eO-Gpr"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1213,7 +1213,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EZS-H3-rpp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="620" y="379"/>
+            <point key="canvasLocation" x="382" y="353"/>
         </scene>
     </scenes>
     <resources>
@@ -1223,7 +1223,6 @@
         <image name="third_normal.png" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="y84-Ak-JeR"/>
-        <segue reference="W81-jC-P1b"/>
+        <segue reference="NlW-eO-Gpr"/>
     </inferredMetricsTieBreakers>
 </document>

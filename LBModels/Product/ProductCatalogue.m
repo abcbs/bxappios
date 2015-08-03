@@ -23,6 +23,9 @@
     [aCoder encodeObject:_updateTime forKey:@"updateTime"];
     
     [aCoder encodeInteger:_serialize  forKey:@"serialize"];
+    
+    [aCoder encodeObject:_subCatalogues  forKey:@"subCatalogues"];
+    
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder
@@ -38,6 +41,8 @@
     _updateTime= [aDecoder decodeObjectForKey:@"updateTime"];
     
     _serialize= [aDecoder decodeIntegerForKey:@"serialize"];
+    
+    _subCatalogues=[aDecoder decodeObjectForKey:@"subCatalogues"];
     
     return self;
 }

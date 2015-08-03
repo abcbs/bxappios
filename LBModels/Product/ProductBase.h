@@ -17,23 +17,24 @@
 //商品名称
 @property (retain,nonatomic) NSString *name;
 
-//商品介绍
-@property (retain,nonatomic) NSString *introduce;
-
-//更新时间
-@property (retain,nonatomic) NSDate *updateTime;
-
-//状态
-@property (retain,nonatomic) NSString *status;
-
 //单价，标准价格
 @property (retain,nonatomic) NSNumber *unit;
+
+//商品介绍
+@property (retain,nonatomic) NSString *introduce;
 
 //商品规格
 @property (retain,nonatomic) NSString *specification;
 
 //商品备注
 @property (retain,nonatomic) NSString *comment;
+
+
+//更新时间
+@property (retain,nonatomic) NSDate *updateTime;
+
+//状态
+@property (retain,nonatomic) NSString *status;
 
 //商品分类，应当引用ProductCatalogue
 @property (assign,nonatomic) NSInteger productCatalogueId;

@@ -214,6 +214,7 @@
             [_editDelegate addBusinessProduct:product];
             [self.navigationController popViewControllerAnimated:YES];
         }else{
+            //新增商家商品
             BusinessManager *bm=[BusinessManager businessManager];
             [bm insertBusinessProduct:_product];
             UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"下一个" style:UIBarButtonItemStylePlain target:self action:@selector(nextData)];
@@ -271,7 +272,7 @@
     
     
     //商品介绍组图
-    [_resourceImags removeConstraints:rsImageArray];
+    //[_resourceImags removeFromSuperview];
     
     
     //商品宣传，介绍

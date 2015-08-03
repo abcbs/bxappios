@@ -71,7 +71,7 @@
     _comment=[aDecoder decodeObjectForKey:@"comment"];
     
     //商品分类，应当引用ProductCatalogue
-    _productCatalogueId=[aDecoder decodeIntegerForKey:@"productCatalogueId"];
+     _productCatalogueId=[aDecoder decodeIntegerForKey:@"productCatalogueId"];
     
     _catalogue=[aDecoder decodeObjectForKey:@"catalogue"];
     
@@ -80,6 +80,6 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"商品基本信息\t%lid, 名称: %@ \t分类: %ld", (long)_id, _name, (long)_productCatalogueId];
+    return [NSString stringWithFormat:@"商品基本信息\t%lid, 名称: %@ ", (long)_id, _name];
 }
 @end

@@ -22,4 +22,5 @@
 
 @property (assign,nonatomic) NSInteger serialize;
 
+@property (retain,nonatomic) NSMutableArray *subCatalogues;
 @end
