@@ -185,20 +185,42 @@
     _besinessIntroduce.text=nil;
     //银行支付账号
     _bankAccount.text=nil;
+    
     [rsInfoArray removeAllObjects];
     [rsImageArray removeAllObjects];
+    
     [ubArray removeAllObjects];
     [catagoryArray removeAllObjects];
     [usePays removeAllObjects];
+    
+    [self.business.productCatalogues removeAllObjects];
+    [self.business.userPays removeAllObjects];;
+    [self.business.contractUsers removeAllObjects];
+    
+    self.business.productCatalogues=nil;
+    self.business.userPays=nil;
+    self.business.contractUsers=nil;
+    
+    self.business=nil;
+
     rs=nil;
     rsImageArray=nil;
     rsInfoArray=nil;
     ubArray=nil;
     catagoryArray=nil;
     usePays=nil;
+    [self.tableView reloadData];
 }
+
+-(BusinessBaseDomail *)business{
+    if (!_business) {
+        _business=[[BusinessBaseDomail alloc]init];
+    }
+    return _business;
+}
+
 -(void)saveData{
-    _business=[[BusinessBaseDomail alloc]init];
+    
     //商家基本信息
     BusinessBase *bs=[BusinessBase new];
     bs.name=_businessName.text;
@@ -336,7 +358,8 @@
     pc.code=@"1002";
     pc.comment=@"超市";
     [catagoryArray addObject:pc];
-
+    
+    
     if (self.business.productCatalogues==nil) {
         self.business.productCatalogues=[NSMutableArray arrayWithArray:catagoryArray];
     }else{
