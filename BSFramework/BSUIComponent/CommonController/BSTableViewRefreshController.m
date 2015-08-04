@@ -39,7 +39,7 @@
     }
     [BSUIComponentView navigationHeader:self.navigationController];
     
-
+    [self modifiedStyle];
     
     if(!HUD){
         HUD = [[MBProgressHUD alloc] initWithView:self.view];
@@ -194,6 +194,10 @@
 }
 - (void)doneClick{
     BSLog(@"默认为同返回一致的动作");
+}
+
+-(void)modifiedStyle{
+    BSLog(@"根据权限修改元素显示，子类需实现");
 }
 
 /**

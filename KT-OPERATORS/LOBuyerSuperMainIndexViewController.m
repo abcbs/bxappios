@@ -28,10 +28,21 @@
                              bsContent:nil];
     
     BSTableContentObject *bsnMagamer=[BSTableContentObject
+                                      initWithContentObject:@"检索"
+                                      methodName:nil
+                                      imageName:@"im_search.png"
+                                      vcClass:@"LOBusinessListViewController"
+                                      storybord:@"LOBuyerSuper"];
+    
+    
+    
+    [bsTable addBSTableContent:bsnMagamer sectionHeader:@"商家监管"];
+    
+    bsnMagamer=[BSTableContentObject
                                       initWithContentObject:@"入驻"
                                       methodName:nil
                                       imageName:@"im_post.png"
-                                      vcClass:@"LOBusinsessAddViewController"
+                                      vcClass:@"LOBusinsessMaintainViewController"
                                       storybord:@"LOBuyerSuper"];
     
     

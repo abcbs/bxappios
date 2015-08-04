@@ -31,6 +31,7 @@
     [BSUIComponentView navigationHeader:self.navigationController];
     //设置Tab栏
     [BSUIComponentView changeTabBarWithNotification:self addedInfo:nil];
+    [self modifiedStyle];
 }
 
 
@@ -62,6 +63,11 @@
 
 - (void)dealloc{
     
+}
+
+-(void)modifiedStyle{
+    BSLog(@"根据权限修改元素显示，子类需实现");
+    [BSUIComponentView initNavigationWithPermission:self];
 }
 
 /**

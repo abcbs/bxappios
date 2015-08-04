@@ -14,10 +14,16 @@
  *公共返回方法，默认返回到前一页
  */
 - (void)backClick;
+
 /**
  *公共确定，默认为搜索功能
  */
 - (void)doneClick;
+
+/**
+ *权限修改规定方法
+ */
+-(void)modifiedStyle;
 
 /**
  *公共导航到下一页Controller

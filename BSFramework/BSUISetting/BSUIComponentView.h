@@ -86,4 +86,6 @@ target:(id<NavigationProcess>)target
 
 
 + (void)autoSytleLay:(UIView *)allView;
+
++(void )initNavigationWithPermission:(UIViewController *)viewController;
 @end

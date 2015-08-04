@@ -35,7 +35,7 @@
     }
     
     [BSUIComponentView changeTabBarWithNotification:self addedInfo:nil];
-    
+    [self modifiedStyle];
     if (self.tableView==nil) {
         NSLog(@" BSUITableViewCommonController tableView is null");
     }else{
@@ -86,6 +86,11 @@
     return cell;
 }
 #pragma mark --默认处理方法
+-(void)modifiedStyle{
+    BSLog(@"根据权限修改元素显示，公共权限控制导航栏，右侧按钮，子类需实现");
+    [BSUIComponentView initNavigationWithPermission:self];
+    
+}
 #pragma mark --默认返回方法，仅仅在人工提供的状态栏中使用
 - (void)backClick{
     [self dismissViewControllerAnimated:YES completion:nil];

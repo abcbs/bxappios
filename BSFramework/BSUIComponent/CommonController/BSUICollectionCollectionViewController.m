@@ -37,6 +37,8 @@
     
     [BSUIComponentView changeTabBarWithNotification:self addedInfo:nil];
     
+    [self modifiedStyle];
+    
    }
 
 - (void)didReceiveMemoryWarning {
@@ -49,6 +51,9 @@
     
 }
 #pragma mark --默认处理方法
+-(void)modifiedStyle{
+    BSLog(@"根据权限修改元素显示，子类需实现");
+}
 #pragma mark --默认返回方法，仅仅在人工提供的状态栏中使用
 - (void)backClick{
     [self dismissViewControllerAnimated:YES completion:nil];

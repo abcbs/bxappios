@@ -38,7 +38,7 @@
     //设置导航栏颜色
     [BSUIComponentView navigationHeader:self.navigationController];
 
-
+    [self modifiedStyle];
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder
@@ -75,6 +75,10 @@
     BSLog(@"子类应当继承此方法实现完成轮播功能功能");
 }
 
+-(void)modifiedStyle{
+    BSLog(@"根据权限修改元素显示，子类需实现");
+    [BSUIComponentView initNavigationWithPermission:self];
+}
 /*
 #pragma mark - Navigation
 

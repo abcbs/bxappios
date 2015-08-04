@@ -215,12 +215,15 @@ extern float autoSizeScaleY;
 #define PICK_IMAGE_MAX 9
 
 #define TAKE_PHOTP_MAX 0
+
 /**
  *日期格式
  */
 #define DATEFORMAT_YYYY_MM_DD  @"yyyy-MM-dd"
 
 #define DEFAULT_DATE @"2015-01-01"
+
+#define DEFAULT_ROLE NO
 
 +(NSDate*) convertDateFromString:(NSString*)uiDate;
 

@@ -160,9 +160,7 @@ titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
     }
 }
 
-#pragma mark 
-
-
+#pragma mark -根据权限控制按钮
 
 #pragma mark --装载数据
 

@@ -61,6 +61,8 @@ UITabBarController * rootTabBarController;
         }
     }
 }
+
+
 /**
  *头部状态栏颜色设置
  *配置浏览栏颜色
@@ -394,4 +396,9 @@ BSDeprecated("建议使用统一处理方式，使用initNavigationHeaderWithDef
     return headerView;
 }
 
++(void )initNavigationWithPermission:(UIViewController *)viewController{
+    if (DEFAULT_ROLE) {
+        viewController.navigationItem.rightBarButtonItem=nil;
+    }
+}
 @end

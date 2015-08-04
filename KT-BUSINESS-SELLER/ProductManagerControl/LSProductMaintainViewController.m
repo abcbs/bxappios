@@ -103,8 +103,7 @@
 }
 #pragma mark -UITextView的代理事件，去除软键盘
 -(void)modifiedStyle{
-    //[self.publishTime setEnabled:YES];
-    //[self.publishTime setHidden:YES];
+    [super modifiedStyle];
     
 }
 

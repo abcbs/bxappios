@@ -1,5 +1,5 @@
 //
-//  LOBusinsessAddViewController.m
+//  LOBusinsessMaintainViewController.m
 //  KTAPP
 //
 //  Created by admin on 15/7/30.
@@ -95,6 +95,8 @@
 }
 #pragma mark -UITextView的代理事件，去除软键盘
 -(void)modifiedStyle{
+    [super modifiedStyle];
+    //self.navigationItem.rightBarButtonItem = nil;
     //[self.publishTime setEnabled:YES];
     //[self.publishTime setHidden:YES];
     
