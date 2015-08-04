@@ -6,6 +6,7 @@
 //  Copyright (c) 2015年 itcast. All rights reserved.
 //
 
+
 #import "LOBusinsessMaintainViewController.h"
 
 @interface LOBusinsessMaintainViewController ()<UITextFieldDelegate,UITextViewDelegate>
@@ -19,7 +20,13 @@
     NSMutableArray *rsInfoArray;
     //商家宣传图
     NSMutableArray *rsImageArray;
-
+    //联系人信息
+    NSMutableArray *ubArray;
+    //业务类型信息
+    NSMutableArray *catagoryArray;
+    //支付工具
+    NSMutableArray *usePays;
+    NSIndexPath *  selectedIndexPath;
 }
 @end
 
@@ -38,6 +45,15 @@
     if (rsInfoArray==nil) {
         rsInfoArray=[NSMutableArray array];
     }
+    if (ubArray==nil){
+        ubArray=[NSMutableArray array];
+    }
+    if (catagoryArray==nil) {
+        catagoryArray=[NSMutableArray array];
+    }
+    if(usePays==nil){
+        usePays=[NSMutableArray array];
+    }
     //图片选择与拍照
     self.takeController = [[BSPhotoTakeController alloc] init];
     self.takeController.delegate = self;
@@ -50,6 +66,12 @@
 
 }
 
+- (void)viewDidAppear:(BOOL)animated{
+    
+    //if (ubArray==nil){
+    //    ubArray=[NSMutableArray array];
+    //}
+}
 - (void)dealloc{
     //[self.besinessIntroduce removeFromSuperview];
     //[self.businessResouceImages removeFromSuperview];
@@ -117,6 +139,15 @@
         _entityIDType.text=ub.userType;
         _entityIDNumber.text=ub.entityIDNumber;
         //头像
+        
+        //联系人
+        ubArray=self.business.contractUsers;
+        //经营范围
+        catagoryArray= self.business.productCatalogues;
+        //支付工具
+        usePays=self.business.userPays;
+        
+
     }
 }
 
@@ -156,10 +187,15 @@
     _bankAccount.text=nil;
     [rsInfoArray removeAllObjects];
     [rsImageArray removeAllObjects];
+    [ubArray removeAllObjects];
+    [catagoryArray removeAllObjects];
+    [usePays removeAllObjects];
     rs=nil;
     rsImageArray=nil;
     rsInfoArray=nil;
-
+    ubArray=nil;
+    catagoryArray=nil;
+    usePays=nil;
 }
 -(void)saveData{
     _business=[[BusinessBaseDomail alloc]init];
@@ -186,8 +222,27 @@
     ub.userType=_entityIDType.text;
     ub.entityIDNumber=_entityIDNumber.text;
     
-    _business.artificial=ub;
-    
+    //法人信息
+    self.business.artificial=ub;
+    //联系人信息
+    if (ubArray.count>0) {
+        self.business.contractUsers =[NSMutableArray arrayWithArray:ubArray];
+
+    }else{
+        [self.business.contractUsers addObjectsFromArray:ubArray];
+    }
+    //经营范围
+    if (catagoryArray.count>0) {
+        self.business.productCatalogues=[NSMutableArray arrayWithArray:catagoryArray];
+    }else{
+        [self.business.productCatalogues addObjectsFromArray:catagoryArray];
+    }
+    //支付工具
+    if (usePays.count>0) {
+        self.business.userPays=[NSMutableArray arrayWithArray:usePays];
+    }else{
+        [self.business.userPays addObjectsFromArray:usePays];
+    }
     if (isEdit) {
         [_editDelegate editedBusiness:_business];
         [self.navigationController popViewControllerAnimated:YES];
@@ -259,6 +314,110 @@
     
 }
 
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    //跳转到类型维护
+}
+#pragma mark -业务数据处理的事件
+//业务类型 tag=10
+- (IBAction)catatoryClick:(id)sender {
+    BSLog(@"业务类型处理");
+    //if (catagoryArray==nil) {
+        catagoryArray=[NSMutableArray array];
+    //}
+    
+    ProductCatalogue *pc=[ProductCatalogue new];
+    pc.code=@"1001";
+    pc.comment=@"送水";
+    [catagoryArray addObject:pc];
+    
+    pc=[ProductCatalogue new];
+    pc.code=@"1002";
+    pc.comment=@"超市";
+    [catagoryArray addObject:pc];
+
+    if (self.business.productCatalogues==nil) {
+        self.business.productCatalogues=[NSMutableArray arrayWithArray:catagoryArray];
+    }else{
+        [self.business.productCatalogues addObjectsFromArray:catagoryArray];
+    }
+    //一个section刷新
+    NSIndexSet *indexSet=[[NSIndexSet alloc]initWithIndex:IDX_CATAGORY];
+    
+    [self.tableView reloadSections:indexSet withRowAnimation:UITableViewRowAnimationAutomatic];
+    //[self.tableView reloadData];
+
+}
+
+//联系人信息 tag=20
+- (IBAction)contractClick:(id)sender {
+    BSLog(@"联系人处理开始");
+    //if (ubArray==nil) {
+        ubArray=[NSMutableArray array];
+    //}
+   
+    UserBase *ub=[UserBase new];
+    ub.name=@"张三";
+    ub.phone=@"136888888877";
+    ub.entityIDNumber=@"11010133334455";
+    [ubArray addObject:ub];
+    
+    //[self.business.contractUsers addObject:ub];
+    ub=[UserBase new];
+    
+    ub.name=@"李四";
+    ub.phone=@"136777777777";
+    ub.entityIDNumber=@"66660133334455";
+    [ubArray addObject:ub];
+    
+    if (self.business.contractUsers==nil) {
+        self.business.contractUsers=[NSMutableArray arrayWithArray:ubArray];
+    }else{
+        [self.business.contractUsers addObjectsFromArray:ubArray];
+    }
+
+    //一个section刷新
+    NSIndexSet *indexSet=[[NSIndexSet alloc]initWithIndex:IDX_CONTRACT];
+    
+    [self.tableView reloadSections:indexSet withRowAnimation:UITableViewRowAnimationAutomatic];
+    
+
+    BSLog(@"联系人处理结束");
+}
+
+//支付方式 tag=30
+- (IBAction)bandPayAccount:(id)sender {
+    BSLog(@"绑定支付账号开始");
+    usePays=[NSMutableArray array];
+    
+    UserPay *up=[UserPay new];
+    up.name=@"张三";
+    up.payTool=@"工行存蓄卡";
+    up.certificateType=@"身份证";
+    up.certificateNumber=@"11010111111164444";
+    [usePays addObject:up];
+    
+    up=[UserPay new];
+    up.name=@"赵六";
+    up.payTool=@"德阳存蓄卡";
+    up.certificateType=@"身份证";
+    up.certificateNumber=@"3301077777777768888";
+    [usePays addObject:up];
+
+    if (self.business.userPays==nil) {
+        self.business.userPays=[NSMutableArray arrayWithArray:usePays];
+    }else{
+        [self.business.userPays addObjectsFromArray:usePays];
+    }
+    
+    //一个section刷新
+    NSIndexSet *indexSet=[[NSIndexSet alloc]initWithIndex:IDX_USERPAY];
+    
+    [self.tableView reloadSections:indexSet withRowAnimation:UITableViewRowAnimationAutomatic];
+
+    
+}
 
 - (IBAction)entityImageClick:(id)sender {
     BSLog(@"法人头像处理");
@@ -271,20 +430,6 @@
 - (IBAction)resourceImages:(id)sender {
      BSLog(@"商家轮播图处理");
 }
-
-- (IBAction)catatoryClick:(id)sender {
-     BSLog(@"业务类型处理");
-}
-
-- (IBAction)contractClick:(id)sender {
-     BSLog(@"联系人处理");
-}
-
-- (IBAction)bandPayAccount:(id)sender {
-     BSLog(@"绑定支付账号");
-}
-
-
 
 -(void)displayAD:(NSMutableArray *)images{
     BSFCRollingADImageUIView *adView= [BSFCRollingADImageUIView initADWithImages:images  playerDelegate:self target:self width:SCREEN_WIDTH height:(200)];
@@ -327,5 +472,278 @@
     NSLog(@"tPhotoIndex: %ld", tPhotoIndex);
     
 }
+
+#pragma mark -TableView动态创建部分
+
+/**
+ *选中某条数据
+ */
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    selectedIndexPath=indexPath;
+}
+/*
+ *商家基本信息
+ *法人信息
+ *介绍信息
+ *业务类型 LOCatagoryTableViewCell
+ *联系人   LOContactTableViewCell
+ *支付方式 LOUserPayTableViewCell
+ */
+- (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell* cell=nil;
+    NSInteger sc=indexPath.section;
+    NSString *headerTitle=[super tableView:tableView titleForHeaderInSection:sc];
+    //联系人信息
+    if([self isContractSelection:headerTitle section:sc]){
+        
+        if (self.business.contractUsers.count>0) {
+            NSInteger idx= indexPath.row;
+            UserBase *ub=[self.business.contractUsers objectAtIndex:idx];
+            static NSString *ContactCellIdentifier = @"LOContactTableViewCell";
+            cell  = [self obtainCellWith:ContactCellIdentifier];
+            
+            cell.textLabel.text = ub.name;
+            cell.detailTextLabel.text = ub.phone;
+            return cell;
+        }
+    }else if([self isCatagorySelection:headerTitle section:sc]){
+        if (self.business.productCatalogues.count>0) {
+            NSInteger idx= indexPath.row;
+            ProductCatalogue *pc=[self.business.productCatalogues objectAtIndex:idx];
+            static NSString *CatagoryCellIdentifier = @"LOCatagoryTableViewCell";
+            cell  = [self obtainCellWith:CatagoryCellIdentifier];
+            
+            cell.textLabel.text = pc.code;
+            cell.detailTextLabel.text = pc.comment;
+            
+            return cell;
+        }
+        
+    }else if([self isUserPaySelection:headerTitle section:sc]){
+        if (self.business.userPays.count>0) {
+            NSInteger idx= indexPath.row;
+            UserPay *pc=[self.business.userPays objectAtIndex:idx];
+            static NSString *CatagoryCellIdentifier = @"LOUserPayTableViewCell";
+            cell  = [self obtainCellWith:CatagoryCellIdentifier];
+            
+            cell.textLabel.text = pc.name;
+            cell.detailTextLabel.text = pc.payTool;
+            
+            return cell;
+        }
+    }
+    
+    return [super tableView:tableView cellForRowAtIndexPath:indexPath];
+}
+
+//numberOfRowsInSection,每章节的行数
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+
+    NSInteger numberOfRows=[super tableView:tableView
+                  numberOfRowsInSection:section];
+    NSString *headerTitle=[super tableView:tableView titleForHeaderInSection:section];
+    if ([self isContractSelection:headerTitle section:section]) {
+        if (self.business.contractUsers) {
+            return self.business.contractUsers.count;
+        }else{
+            return 1;
+        }
+        
+    }else if ([self isCatagorySelection:headerTitle section:section]) {
+        if (self.business.productCatalogues) {
+            return self.business.productCatalogues.count;
+        }else{
+            return 1;
+        }
+        
+    }else if ([self isUserPaySelection:headerTitle section:section]) {
+        if (self.business.userPays) {
+            return self.business.userPays.count;
+        }else{
+            return 1;
+        }
+        
+    }
+    
+    return numberOfRows;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    
+    NSInteger numRowOfSections= [super numberOfSectionsInTableView:tableView];
+
+    if ([self isContractSelection:SECTION_CONTRACT section:0]) {
+        //SECTION_CONTRACT
+    }
+    return numRowOfSections;
+
+}
+
+
+- (NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    NSString *titleHeader=[super tableView:tableView
+                   titleForHeaderInSection:section];
+    BSLog(@"章节头部标题:\t%@",titleHeader);
+    if ([self isBusinessBaseSelection:titleHeader section:section]) {
+        titleHeader=[titleHeader
+                     stringByAppendingFormat:@"\t\t商家标示: %@",
+                        @"20150801000001"];
+    }else if([self isCatagorySelection:titleHeader section:section]){
+        NSInteger cCount=self.business.productCatalogues.count;
+        titleHeader=[titleHeader
+                     stringByAppendingFormat:@"\t\t\t\t营业范围共计: %ld 类",
+                     cCount];
+    }else if ([self isContractSelection:titleHeader section:section]){
+        NSInteger cCount=self.business.contractUsers.count;
+        titleHeader=[titleHeader
+                     stringByAppendingFormat:@"\t\t\t\t联系人共计: %ld 员",
+                     cCount];
+
+    }else if([self isUserPaySelection:titleHeader section:section]){
+        NSInteger cCount=self.business.userPays.count;
+        titleHeader=[titleHeader
+                     stringByAppendingFormat:@"\t\t\t\t支付方式共计: %ld 种",
+                     cCount];
+    }
+    return titleHeader;
+}
+
+//业务类型判断
+-(BOOL) isBusinessBaseSelection:(NSString *)titleHeader
+                        section:(NSInteger)section{
+    return [titleHeader isEqualToString:SECTION_BUSINESS]&&section==IDX_BUSINESS;
+}
+
+
+//业务类型判断
+-(BOOL) isCatagorySelection:(NSString *)titleHeader section:(NSInteger)section{
+    return [titleHeader isEqualToString:SECTION_CATAGORY]&&section==IDX_CATAGORY;
+}
+
+//联系方式判断
+-(BOOL) isContractSelection:(NSString *)titleHeader section:(NSInteger)section{
+    return [titleHeader isEqualToString:SECTION_CONTRACT]&&section==IDX_CONTRACT;
+}
+
+//联系方式判断
+-(BOOL) isUserPaySelection:(NSString *)titleHeader section:(NSInteger)section{
+    return [titleHeader isEqualToString:SECTION_USERPAY]&&section==IDX_USERPAY;
+}
+
+//先执行titleForHeaderInSection
+-(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIView* viewHeader=[super tableView:tableView
+                 viewForHeaderInSection:section];
+    NSString *titleHeader=[super tableView:tableView
+                   titleForHeaderInSection:section];
+    //业务类型
+    //联系人
+    if ([self isCatagorySelection:titleHeader section:section]) {
+        UIView *catagoryView=[UIView new];
+       
+        //添加到视图
+        [catagoryView addSubview:[self headerLable:@"业务类型"]];
+
+         UIButton * maintain=[self headerButton:@"业务类型管理"
+                                               action:@selector(catatoryClick:)];
+         [catagoryView addSubview:maintain];
+        
+        viewHeader=catagoryView;
+    }else if([self isContractSelection:titleHeader section:section]){
+        UIView *catagoryView=[UIView new];
+        //添加到视图
+        [catagoryView addSubview:[self headerLable:@"联系人信息"]];
+        
+        UIButton * maintain=[self headerButton:@"联系人管理"
+                                        action:@selector(contractClick:)];
+        
+        [catagoryView addSubview:maintain];
+        
+        viewHeader=catagoryView;
+    }else if([self isUserPaySelection:titleHeader section:section]){
+        UIView *catagoryView=[UIView new];
+        //添加到视图
+        [catagoryView addSubview:[self headerLable:@"支付信息"]];
+        
+        UIButton * maintain=[self headerButton:@"支付管理"
+                                        action:@selector(bandPayAccount:)];
+        
+        [catagoryView addSubview:maintain];
+        
+        viewHeader=catagoryView;
+    }
+    return viewHeader;
+}
+
+-(UIButton *)headerButton:(NSString *)title action:(SEL)action{
+    UIButton *maintainButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    maintainButton.frame = BSRectMake(SCREEN_WIDTH-100, -6, 90, 36);
+    [maintainButton.layer setMasksToBounds:YES];
+    [maintainButton.layer setCornerRadius:10.0]; //设置矩形四个圆角半径
+    [maintainButton.layer setBorderWidth:1.0]; //边框宽度
+    
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+    CGColorRef colorref = CGColorCreate(colorSpace,(CGFloat[]){ 1, 0, 0, 1 });
+    [maintainButton.layer setBorderColor:colorref];//边框颜色
+    
+    [maintainButton setTitle:title forState:UIControlStateNormal];
+    [maintainButton setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];//title color
+    [maintainButton.titleLabel setFont:[UIFont systemFontOfSize:13]];
+    [maintainButton addTarget:self action:action forControlEvents:UIControlEventTouchUpInside];
+    
+    return maintainButton;
+}
+
+-(UILabel *)headerLable:(NSString *)title{
+    UILabel *headLable=[[UILabel alloc]init];
+    headLable.text=title;
+    headLable.font=[UIFont systemFontOfSize:13];
+    headLable.textColor=[UIColor grayColor];
+    [headLable sizeToFit];
+    headLable.frame = BSRectMake(8, -6, 80, 36);
+    return headLable;
+}
+- (NSString*)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
+{
+    NSString *titleFooter=[super tableView:tableView
+                   titleForFooterInSection:section];
+
+    return titleFooter;
+}
+
+
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return NO;
+}
+
+- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return NO;
+}
+
+
+- (UIView*)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    UIView* viewFooter=[super tableView:tableView
+                 viewForFooterInSection:section];
+    return viewFooter;
+}
+
+
+//设置Cell行缩进量
+-(NSInteger)tableView:(UITableView *)tableView indentationLevelForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSInteger sIndexPath=[super tableView:tableView indentationLevelForRowAtIndexPath:indexPath];
+    return sIndexPath;
+}
+
 
 @end

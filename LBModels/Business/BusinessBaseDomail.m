@@ -15,13 +15,13 @@
     
     [aCoder encodeObject:_businessBase forKey:@"businessBase"];
     
-    [aCoder encodeObject:_userPay forKey:@"userPay"];
+    [aCoder encodeObject:_userPays forKey:@"userPays"];
     
     [aCoder encodeObject:_artificial forKey:@"artificial"];
     
     [aCoder encodeObject:_contractUsers forKey:@"contractUsers"];
     
-    [aCoder encodeObject:_contractUsers forKey:@"productCatalogues"];
+    [aCoder encodeObject:_productCatalogues forKey:@"productCatalogues"];
     
 }
 
@@ -29,7 +29,7 @@
 {
     _businessBase = [aDecoder decodeObjectForKey:@"businessBase"];
     
-    _userPay = [aDecoder decodeObjectForKey:@"userPay"];
+    _userPays = [aDecoder decodeObjectForKey:@"userPays"];
    
     _artificial = [aDecoder decodeObjectForKey:@"artificial"];
    

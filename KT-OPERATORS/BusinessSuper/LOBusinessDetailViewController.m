@@ -9,6 +9,8 @@
 #import "LOBusinessDetailViewController.h"
 #import "LBModelsHeader.h"
 #import "LOBusinsessMaintainViewController.h"
+
+
 @interface LOBusinessDetailViewController ()<BSImagePlayerDelegate>
 
 @property(nonatomic,strong)     BSFCRollingADImageUIView *adView;
@@ -17,6 +19,51 @@
 
 @implementation LOBusinessDetailViewController
 @synthesize adView=_adView;
+
+@dynamic business;
+@dynamic businessName;
+@dynamic commerceLicense;
+//办公地址
+@dynamic officerAddress;
+//地理位置信息
+@dynamic geoInfo;
+//法人信息-法人姓名
+@dynamic entityName;
+//法人信息-证件类型
+@dynamic entityIDType;
+//法人信息-证件号
+@dynamic entityIDNumber;
+
+//法人信息-签约手机
+@dynamic entityPhone;
+
+//法人信息-联系电话
+@dynamic entityTel;
+
+//法人信息-Email
+@dynamic entityEmail;
+
+//法人信息-联系地址
+@dynamic entityAddress;
+
+
+//法人信息-账号类型
+@dynamic accoutType;
+
+//商家头像
+@dynamic businessHeaderImage;
+
+
+//商家宣传图片
+@dynamic businessResouceImages;
+
+//商家介绍信息
+@dynamic besinessIntroduce;
+
+//银行支付账号
+@dynamic bankAccount;
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -42,24 +89,26 @@
     BusinessBase *bs=self.business.businessBase;
     //商家信息
     //商家名称
-    _businessName.text=bs.name;
+    self.businessName.text=bs.name;
     //营业执照
-    _commerceLicense.text=bs.commerceLicense;
+    self.commerceLicense.text=bs.commerceLicense;
     //办公地点
-    _officerAddress.text=bs.address;
+    self.officerAddress.text=bs.address;
     //商家介绍信息
-    _besinessIntroduce.text=bs.introduce;
+    self.besinessIntroduce.text=bs.introduce;
     
     //法人信息
     UserBase *ub=self.business.artificial;
     //法人姓名
-    _entityName.text=ub.name;
-    _entityPhone.text=ub.phone;
-    _entityTel.text=ub.telephone;
-    _entityEmail.text=ub.email;
-    _entityAddress.text=ub.address;
-    _entityIDType.text=ub.userType;
-    _entityIDNumber.text=ub.entityIDNumber;
+    self.entityName.text=ub.name;
+    self.entityPhone.text=ub.phone;
+    self.entityTel.text=ub.telephone;
+    self.entityEmail.text=ub.email;
+    self.entityAddress.text=ub.address;
+    self.entityIDType.text=ub.userType;
+    self.entityIDNumber.text=ub.entityIDNumber;
+    [self.tableView reloadData];
+    
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -74,12 +123,12 @@
     
 }
 -(void)displayAD:(NSMutableArray *)images{
-    _adView= [BSFCRollingADImageUIView initADWithImages:images  playerDelegate:self target:self width:SCREEN_WIDTH height:_businessResouceImages.height];
+    _adView= [BSFCRollingADImageUIView initADWithImages:images  playerDelegate:self target:self width:SCREEN_WIDTH height:self.businessResouceImages.height];
     //资源轮播
-    if (_adView) {
-        [_adView removeFromSuperview];
+    if (self.adView) {
+        [self.adView removeFromSuperview];
     }
-    [_businessResouceImages addSubview:_adView];
+    [self.businessResouceImages addSubview:_adView];
 }
 #pragma mark - Navigation
 
@@ -88,19 +137,20 @@
     
     LOBusinsessMaintainViewController *edit = (LOBusinsessMaintainViewController *)segue.destinationViewController;
     edit.editDelegate = self;
-    edit.business = _business;;
+    edit.business = self.business;;
 }
 
--(void)editedBusiness:(BusinessBaseDomail *)business{
-    _business =business ;
+-(void)editedBusiness:(BusinessBaseDomail *)businessBaseDomail{
+    self.business =businessBaseDomail ;
     
-    [_browseDelegate editedBusiness:business];
+    [_browseDelegate editedBusiness:self.business];
     [self display];
     
 }
 
-- (void)addBusiness:(BusinessBaseDomail *) business{
-    [_browseDelegate addBusiness:business];
+- (void)addBusiness:(BusinessBaseDomail *) businessBaseDomail{
+    self.business=businessBaseDomail;
+    [_browseDelegate addBusiness:self.business];
     [self display];
 }
 
@@ -112,6 +162,39 @@
     
     NSInteger tPhotoIndex = [egoivPhotoView tag];
     NSLog(@"tPhotoIndex: %ld", tPhotoIndex);
+    
+}
+
+
+#pragma mark --TableView个性化处理
+
+//先执行titleForHeaderInSection
+-(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    return nil;
+}
+
+//章节头信息
+- (NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    NSString *titleHeader=[super tableView:tableView
+                   titleForHeaderInSection:section];
+    BSLog(@"章节头部标题:\t%@",titleHeader);
+    if ([self isBusinessBaseSelection:titleHeader section:0]) {
+        titleHeader=[titleHeader
+                     stringByAppendingFormat:@"\t\t商家标示:%@",
+                     @"20150801000001"];
+    }
+    return titleHeader;
+}
+
+//章节数量
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    NSInteger numRowOfSections= [super numberOfSectionsInTableView:tableView];
+    if ([self isContractSelection:SECTION_CONTRACT section:0]) {
+        //SECTION_CONTRACT
+    }
+    return numRowOfSections;
     
 }
 @end

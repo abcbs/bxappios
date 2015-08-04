@@ -21,7 +21,7 @@
 @property (retain,nonatomic) BusinessBase *businessBase;
 
 //用户支付工具
-@property (retain,nonatomic) UserPay *userPay;
+@property (retain,nonatomic) NSMutableArray * userPays;
 
 //法人，有支付权限
 @property (retain,nonatomic) UserBase *artificial;
@@ -32,6 +32,13 @@
 //商家的经营返回应当是数组
 @property (strong,nonatomic) NSMutableArray *productCatalogues;//产品分类
 
-//本地装载数据路径
-+ (NSString *)loadForBusinessList;
+@property (assign,nonatomic) BOOL isBusiness;
+
+@property (assign,nonatomic) BOOL isUserPay;
+
+@property (assign,nonatomic) BOOL isArtificial;
+
+@property (assign,nonatomic) BOOL isContractUsers;
+
+@property (assign,nonatomic) BOOL  isProductCatalogues;
 @end

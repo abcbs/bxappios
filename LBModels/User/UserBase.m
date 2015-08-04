@@ -43,7 +43,7 @@
 {
     
     
-    _id= [aDecoder decodeObjectForKey:@"sessionId"];
+    _id= [aDecoder decodeIntegerForKey:@"id"];
     
     _name= [aDecoder decodeObjectForKey:@"name"];
     

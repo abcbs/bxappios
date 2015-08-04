@@ -9,8 +9,9 @@
 #import "BSUITableViewCommonController.h"
 #import "LOBusinessManagerDelegate.h"
 #import "LBModelsHeader.h"
+#import "LOBusinsessMaintainViewController.h"
 
-@interface LOBusinessDetailViewController : BSUITableViewCommonController<LOBusinessManagerDelegate>
+@interface LOBusinessDetailViewController : LOBusinsessMaintainViewController<LOBusinessManagerDelegate>
 
 @property (weak, nonatomic) id<LOBusinessManagerDelegate> browseDelegate;
 
