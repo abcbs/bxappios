@@ -76,7 +76,7 @@
     //[self.besinessIntroduce removeFromSuperview];
     //[self.businessResouceImages removeFromSuperview];
     //[self.businessHeaderImage removeFromSuperview];
-     [self clearViewData];
+    //[self clearViewData];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
@@ -146,8 +146,6 @@
         catagoryArray= self.business.productCatalogues;
         //支付工具
         usePays=self.business.userPays;
-        
-
     }
 }
 
@@ -419,6 +417,8 @@
     up.payTool=@"工行存蓄卡";
     up.certificateType=@"身份证";
     up.certificateNumber=@"11010111111164444";
+    up.cvv=@"6333000099998888777";
+    up.phone=@"1356666666";
     [usePays addObject:up];
     
     up=[UserPay new];
@@ -426,6 +426,8 @@
     up.payTool=@"德阳存蓄卡";
     up.certificateType=@"身份证";
     up.certificateNumber=@"3301077777777768888";
+    up.cvv=@"6333000099998888777";
+    up.phone=@"1356666666";
     [usePays addObject:up];
 
     if (self.business.userPays==nil) {
@@ -526,20 +528,24 @@
             UserBase *ub=[self.business.contractUsers objectAtIndex:idx];
             static NSString *ContactCellIdentifier = @"LOContactTableViewCell";
             cell  = [self obtainCellWith:ContactCellIdentifier];
-            
+            cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:ContactCellIdentifier];
             cell.textLabel.text = ub.name;
             cell.detailTextLabel.text = ub.phone;
             return cell;
         }
     }else if([self isCatagorySelection:headerTitle section:sc]){
         if (self.business.productCatalogues.count>0) {
+            
             NSInteger idx= indexPath.row;
             ProductCatalogue *pc=[self.business.productCatalogues objectAtIndex:idx];
             static NSString *CatagoryCellIdentifier = @"LOCatagoryTableViewCell";
             cell  = [self obtainCellWith:CatagoryCellIdentifier];
-            
+            cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CatagoryCellIdentifier];
+            cell.accessoryType=UITableViewCellAccessoryDetailButton;
             cell.textLabel.text = pc.code;
             cell.detailTextLabel.text = pc.comment;
+            
+            //cell.
             
             return cell;
         }
@@ -551,8 +557,10 @@
             static NSString *CatagoryCellIdentifier = @"LOUserPayTableViewCell";
             cell  = [self obtainCellWith:CatagoryCellIdentifier];
             
-            cell.textLabel.text = pc.name;
-            cell.detailTextLabel.text = pc.payTool;
+            cell.textLabel.text = [pc.name
+                                   stringByAppendingFormat:@" 手机号: %@",pc.phone];
+            cell.detailTextLabel.text = [pc.payTool
+                                  stringByAppendingFormat:@" 卡号:%@",pc.cvv];
             
             return cell;
         }
