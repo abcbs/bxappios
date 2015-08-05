@@ -34,6 +34,11 @@
 - (void)refreshBusinessProduct:(BusinessProduct *)product;
 
 /**
+ *删除数据
+ */
+- (void)removeBusinessProduct:(BusinessProduct *)product;
+
+/**
  *装载初始化数据
  */
 -(void) loadBusinessProduct:(BusinessProduct *)product;

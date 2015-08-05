@@ -16,6 +16,7 @@
 @property (weak, nonatomic) id<LOBusinessManagerDelegate> browseDelegate;
 
 @property (nonatomic,strong)BusinessBaseDomail *business;
+
 //商户名称
 @property (weak, nonatomic) IBOutlet UITextField *businessName;
 

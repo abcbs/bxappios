@@ -170,6 +170,7 @@ titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
     {
         // Remove the row from data model
         long row=indexPath.row;
+        _bsIndex=row;
         [_bsList removeObjectAtIndex:row];
         [_resultList removeObjectAtIndex:row ];
         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
@@ -270,6 +271,11 @@ titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
 
 }
 
+- (void)removeBusinessProduct:(BusinessProduct *)product{
+    BusinessManager *bm=[BusinessManager businessManager];
+    [bm removeBusinessProductWithIndex:_bsIndex];
+
+}
 -(void) loadBusinessProduct:(BusinessProduct *)product{
     BusinessManager *bm=[BusinessManager businessManager];
     _bsList = [bm loadBusinessProduct:product];

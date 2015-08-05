@@ -18,6 +18,8 @@
     NSMutableArray *_bsList;
     //点击选中索引
     NSInteger _bsIndex;
+    
+    LOBusinessDetailViewController *evc ;
 }
 @end
 
@@ -92,6 +94,9 @@
     {
         bs = _bsList[indexPath.row];
         _bsIndex = indexPath.row;
+        //self.tableView
+        BusinessBaseDomail *bs=(BusinessBaseDomail *)[_bsList objectAtIndex:_bsIndex];
+        evc.business=bs;
     }
 }
 
@@ -132,6 +137,7 @@ titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
     {
         // Remove the row from data model
         long row=indexPath.row;
+        _bsIndex=row;
         [self removeBusiness:[_bsList objectAtIndex:row]];
         [_bsList removeObjectAtIndex:row];
         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
@@ -147,11 +153,9 @@ titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
 {
     if ([segue.identifier isEqualToString:@"BrowseBusiness"])
     {//浏览商品信息
-        LOBusinessDetailViewController *evc = (LOBusinessDetailViewController *)segue.destinationViewController;
+        evc = (LOBusinessDetailViewController *)segue.destinationViewController;
         evc.browseDelegate = self;
-        //self.tableView
-        BusinessBaseDomail *bs=(BusinessBaseDomail *)[_bsList objectAtIndex:_bsIndex];
-        evc.business=bs;
+     
     }
     if ([segue.identifier isEqualToString:@"AddBusiness"])
     {//商品维护
@@ -168,6 +172,7 @@ titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
     BusinessManager *bm=[BusinessManager businessManager];
     
     [bm removeBusiness:business];
+    [bm removeBusinessWithIndex:_bsIndex];
 }
 /**
  *维护商家信息

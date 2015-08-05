@@ -32,10 +32,10 @@
             </objects>
             <point key="canvasLocation" x="638" y="-338"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Main Tab Bar Controller-->
         <scene sceneID="EBz-XJ-caa">
             <objects>
-                <tabBarController id="PyH-7p-Qgj" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="KTLBMainTabBarController" id="PyH-7p-Qgj" customClass="KTLBMainTabBarController" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="Oee-1O-gMm">

@@ -21,12 +21,12 @@ static BusinessManager *instance=nil;
 
 #pragma mark -商家数据维护
 -(NSMutableArray *) loadBusiness:(BusinessBaseDomail *)business{
-    NSString *path = [self loadForBusinessList];
+    NSString *path = [self pathForBusinessList];
     return [NSKeyedUnarchiver unarchiveObjectWithFile:path];
 }
 
 
-- (NSString *)loadForBusinessList
+- (NSString *)pathForBusinessList
 {
     NSArray *documents = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *path = [documents[0] stringByAppendingPathComponent:@"business.plist"];
@@ -39,20 +39,20 @@ static BusinessManager *instance=nil;
     NSMutableArray * bsList=[self localBusiness ];
     [bsList removeObjectAtIndex:index];
     [bsList insertObject:business atIndex:index];
-     NSString *path = [self loadForBusinessList];
+     NSString *path = [self pathForBusinessList];
     [NSKeyedArchiver archiveRootObject:bsList toFile:path];
 }
 
 //装载数据
 -(NSMutableArray *) localBusiness{
-    NSString *path = [self loadForBusinessList];
+    NSString *path = [self pathForBusinessList];
     return [NSKeyedUnarchiver unarchiveObjectWithFile:path];
 }
 
 //插入数据
 -(void)insertBusiness:(BusinessBaseDomail *)business{
     NSMutableArray * bsList=[self localBusiness ];
-    NSString *path = [self loadForBusinessList];
+    NSString *path = [self pathForBusinessList];
     if (![bsList containsObject:business]) {
         [bsList addObject:business];
     }
@@ -62,8 +62,15 @@ static BusinessManager *instance=nil;
 
 -(void)removeBusiness:(BusinessBaseDomail *)business{
     NSMutableArray * bsList=[self localBusiness ];
-    NSString *path = [self loadForBusinessList];
+    NSString *path = [self pathForBusinessList];
     [bsList removeObject:business];
+    [NSKeyedArchiver archiveRootObject:bsList toFile:path];
+}
+
+-(void)removeBusinessWithIndex:(NSInteger)index{
+    NSMutableArray * bsList=[self localBusiness ];
+    NSString *path = [self pathForBusinessList];
+    [bsList removeObjectAtIndex:index];
     [NSKeyedArchiver archiveRootObject:bsList toFile:path];
 }
 
@@ -72,7 +79,7 @@ static BusinessManager *instance=nil;
  *装载初始化数据
  */
 -(NSMutableArray *) loadBusinessProduct:(BusinessProduct *)product{
-    NSString *path = [self loadForProductList];
+    NSString *path = [self pathForProductList];
     NSMutableArray * bpList=[NSKeyedUnarchiver unarchiveObjectWithFile:path];
     if (!bpList) {
         return [NSMutableArray new];
@@ -82,7 +89,7 @@ static BusinessManager *instance=nil;
 }
 
 #pragma mark --从本地装载数据
-- (NSString *)loadForProductList
+- (NSString *)pathForProductList
 {
     NSArray *documents = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *path = [documents[0] stringByAppendingPathComponent:@"product.plist"];
@@ -91,7 +98,7 @@ static BusinessManager *instance=nil;
 }
 
 -(NSMutableArray *) localBusinessProduct{
-    NSString *path = [self loadForProductList];
+    NSString *path = [self pathForProductList];
     NSMutableArray *bsList=[NSKeyedUnarchiver unarchiveObjectWithFile:path];
     if (!bsList) {
         return [NSMutableArray new];
@@ -102,7 +109,7 @@ static BusinessManager *instance=nil;
 - (void)insertBusinessProduct:(BusinessProduct *) product{
     NSMutableArray * bsList=[self localBusinessProduct ];
     [bsList addObject:product];
-    NSString *path = [self loadForProductList];
+    NSString *path = [self pathForProductList];
     [NSKeyedArchiver archiveRootObject:bsList toFile:path];
 }
 
@@ -114,7 +121,7 @@ static BusinessManager *instance=nil;
     }
     
     [bsList insertObject:product atIndex:index];
-    NSString *path = [self loadForProductList];
+    NSString *path = [self pathForProductList];
     [NSKeyedArchiver archiveRootObject:bsList toFile:path];
     
 }
@@ -122,7 +129,15 @@ static BusinessManager *instance=nil;
 -(void)removeBusinessProduct:(BusinessProduct *) product{
     NSMutableArray * bsList=[self localBusinessProduct ];
     [bsList removeObject:product];
-    NSString *path = [self loadForProductList];
+    NSString *path = [self pathForProductList];
     [NSKeyedArchiver archiveRootObject:bsList toFile:path];
 }
+
+-(void)removeBusinessProductWithIndex:(NSInteger) index{
+    NSMutableArray * bsList=[self localBusinessProduct ];
+    [bsList removeObjectAtIndex:index];
+    NSString *path = [self pathForProductList];
+    [NSKeyedArchiver archiveRootObject:bsList toFile:path];
+}
+
 @end

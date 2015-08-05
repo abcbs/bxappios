@@ -31,6 +31,7 @@
 
 -(void)removeBusiness:(BusinessBaseDomail *)business;
 
+-(void)removeBusinessWithIndex:(NSInteger)index;
 
 #pragma mark -商家商品数据
 -(NSMutableArray *) loadBusinessProduct:(BusinessProduct *)product;
@@ -42,5 +43,6 @@
 
 -(void)removeBusinessProduct:(BusinessProduct *) product;
 
+-(void)removeBusinessProductWithIndex:(NSInteger) index;
 
 @end

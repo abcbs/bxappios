@@ -230,7 +230,7 @@
 }
 
 -(void)toPageController{
-    [self navigating:self storybord:@"LSProductManagerMain" identity:@"LSProductListTableViewController" canUseStoryboard:YES];
+    [self navigating:self storybord:@"LSProductManagerMain" identity:@"LOProductCatalogueListViewController" canUseStoryboard:YES];
     
 }
 - (void)nextData

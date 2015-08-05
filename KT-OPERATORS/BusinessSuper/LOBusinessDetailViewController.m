@@ -21,16 +21,24 @@
 @synthesize adView=_adView;
 
 @dynamic business;
+
 @dynamic businessName;
+
+//营业执照
 @dynamic commerceLicense;
+
 //办公地址
 @dynamic officerAddress;
+
 //地理位置信息
 @dynamic geoInfo;
+
 //法人信息-法人姓名
 @dynamic entityName;
+
 //法人信息-证件类型
 @dynamic entityIDType;
+
 //法人信息-证件号
 @dynamic entityIDNumber;
 
@@ -130,6 +138,7 @@
     }
     [self.businessResouceImages addSubview:_adView];
 }
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation

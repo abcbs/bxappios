@@ -116,8 +116,6 @@
 		843DA88D1B21D56300924AE6 /* ShareSDKFlatShareViewUI.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 843DA8751B21D56200924AE6 /* ShareSDKFlatShareViewUI.bundle */; };
 		843DA88E1B21D56300924AE6 /* ShareSDKFlatShareViewUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 843DA8761B21D56200924AE6 /* ShareSDKFlatShareViewUI.framework */; };
 		843DA88F1B21D56300924AE6 /* ShareSDKShareActionSheet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 843DA8771B21D56200924AE6 /* ShareSDKShareActionSheet.framework */; };
-		8441687F1B69CD800060F9A7 /* LOProductCatagoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8441687E1B69CD800060F9A7 /* LOProductCatagoryViewController.m */; };
-		844168801B69CD800060F9A7 /* LOProductCatagoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8441687E1B69CD800060F9A7 /* LOProductCatagoryViewController.m */; };
 		844168831B69CE160060F9A7 /* LOProductBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844168821B69CE160060F9A7 /* LOProductBaseViewController.m */; };
 		844168841B69CE160060F9A7 /* LOProductBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844168821B69CE160060F9A7 /* LOProductBaseViewController.m */; };
 		8441688A1B69EC7F0060F9A7 /* LOADManager.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844168891B69EC7F0060F9A7 /* LOADManager.storyboard */; };
@@ -125,9 +123,9 @@
 		8441688C1B69EC7F0060F9A7 /* LOADManager.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844168891B69EC7F0060F9A7 /* LOADManager.storyboard */; };
 		844168931B69EE970060F9A7 /* LOBusinessAduitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844168921B69EE970060F9A7 /* LOBusinessAduitViewController.m */; };
 		844168941B69EE970060F9A7 /* LOBusinessAduitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844168921B69EE970060F9A7 /* LOBusinessAduitViewController.m */; };
-		844168961B69EEEE0060F9A7 /* LOBuyerSuper.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844168951B69EEEE0060F9A7 /* LOBuyerSuper.storyboard */; };
-		844168971B69EEEE0060F9A7 /* LOBuyerSuper.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844168951B69EEEE0060F9A7 /* LOBuyerSuper.storyboard */; };
-		844168981B69EEEE0060F9A7 /* LOBuyerSuper.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844168951B69EEEE0060F9A7 /* LOBuyerSuper.storyboard */; };
+		844168961B69EEEE0060F9A7 /* LOBusinessrSuper.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844168951B69EEEE0060F9A7 /* LOBusinessrSuper.storyboard */; };
+		844168971B69EEEE0060F9A7 /* LOBusinessrSuper.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844168951B69EEEE0060F9A7 /* LOBusinessrSuper.storyboard */; };
+		844168981B69EEEE0060F9A7 /* LOBusinessrSuper.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844168951B69EEEE0060F9A7 /* LOBusinessrSuper.storyboard */; };
 		844168A11B69EFF50060F9A7 /* LOBusinssSuperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844168A01B69EFF50060F9A7 /* LOBusinssSuperViewController.m */; };
 		844168A21B69EFF50060F9A7 /* LOBusinssSuperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844168A01B69EFF50060F9A7 /* LOBusinssSuperViewController.m */; };
 		844168A51B69F05F0060F9A7 /* LOADAduitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844168A41B69F05F0060F9A7 /* LOADAduitViewController.m */; };
@@ -314,7 +312,6 @@
 		8461B7151B54B826002A7C43 /* SendMessage.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 84BA965D1B2829D500388B58 /* SendMessage.h */; };
 		8461B7161B54B826002A7C43 /* ValidateMessage.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 84BA965E1B2829D500388B58 /* ValidateMessage.h */; };
 		8461B7171B54B826002A7C43 /* communicateMessage.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0E09D56C1B2E6E9A0025A6F2 /* communicateMessage.h */; };
-		8461B7181B54B826002A7C43 /* OrderHeaderManager.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 84BA96611B2829D500388B58 /* OrderHeaderManager.h */; };
 		8461B71D1B54B826002A7C43 /* Comment.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 84BA96691B2829D500388B58 /* Comment.h */; };
 		8461B71F1B54B826002A7C43 /* WaterSending.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 84BA966B1B2829D500388B58 /* WaterSending.h */; };
 		8461B7211B54B826002A7C43 /* WaterSendingDetails.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 84BA966D1B2829D500388B58 /* WaterSendingDetails.h */; };
@@ -349,6 +346,14 @@
 		8461B79E1B550655002A7C43 /* LSProductADTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8461B79D1B550655002A7C43 /* LSProductADTableViewController.m */; };
 		8461B7A11B550708002A7C43 /* LSProductUpperLowerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8461B7A01B550708002A7C43 /* LSProductUpperLowerViewController.m */; };
 		8461B7A41B5507EA002A7C43 /* LSProductDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8461B7A31B5507EA002A7C43 /* LSProductDetailTableViewController.m */; };
+		846333D81B70ED10006ED649 /* LOProductCatalogueListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846333D71B70ED10006ED649 /* LOProductCatalogueListViewController.m */; };
+		846333D91B70ED10006ED649 /* LOProductCatalogueListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846333D71B70ED10006ED649 /* LOProductCatalogueListViewController.m */; };
+		846333DC1B70ED45006ED649 /* LOProductCatalogueMaintainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846333DB1B70ED45006ED649 /* LOProductCatalogueMaintainViewController.m */; };
+		846333DD1B70ED45006ED649 /* LOProductCatalogueMaintainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846333DB1B70ED45006ED649 /* LOProductCatalogueMaintainViewController.m */; };
+		846333E01B70ED8F006ED649 /* LOProductCatalogueDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846333DF1B70ED8F006ED649 /* LOProductCatalogueDetailViewController.m */; };
+		846333E11B70ED8F006ED649 /* LOProductCatalogueDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846333DF1B70ED8F006ED649 /* LOProductCatalogueDetailViewController.m */; };
+		846333E41B71017C006ED649 /* OrderItemManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 846333E31B71017C006ED649 /* OrderItemManager.m */; };
+		846333E51B71017C006ED649 /* OrderItemManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 846333E31B71017C006ED649 /* OrderItemManager.m */; };
 		846541ED1B42C47300DE2BC1 /* BSUIFiveColTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 846541EB1B42C47300DE2BC1 /* BSUIFiveColTableViewCell.m */; };
 		846541EE1B42C47300DE2BC1 /* BSUIFiveColTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 846541EC1B42C47300DE2BC1 /* BSUIFiveColTableViewCell.xib */; };
 		8469CD691B4121F000EF6757 /* LFRecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8469CD681B4121F000EF6757 /* LFRecommendViewController.m */; };
@@ -1287,7 +1292,6 @@
 				8461B7151B54B826002A7C43 /* SendMessage.h in CopyFiles */,
 				8461B7161B54B826002A7C43 /* ValidateMessage.h in CopyFiles */,
 				8461B7171B54B826002A7C43 /* communicateMessage.h in CopyFiles */,
-				8461B7181B54B826002A7C43 /* OrderHeaderManager.h in CopyFiles */,
 				8461B71D1B54B826002A7C43 /* Comment.h in CopyFiles */,
 				8461B71F1B54B826002A7C43 /* WaterSending.h in CopyFiles */,
 				8461B7211B54B826002A7C43 /* WaterSendingDetails.h in CopyFiles */,
@@ -1476,14 +1480,12 @@
 		843DA8751B21D56200924AE6 /* ShareSDKFlatShareViewUI.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ShareSDKFlatShareViewUI.bundle; sourceTree = "<group>"; };
 		843DA8761B21D56200924AE6 /* ShareSDKFlatShareViewUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDKFlatShareViewUI.framework; sourceTree = "<group>"; };
 		843DA8771B21D56200924AE6 /* ShareSDKShareActionSheet.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDKShareActionSheet.framework; sourceTree = "<group>"; };
-		8441687D1B69CD800060F9A7 /* LOProductCatagoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LOProductCatagoryViewController.h; sourceTree = "<group>"; };
-		8441687E1B69CD800060F9A7 /* LOProductCatagoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LOProductCatagoryViewController.m; sourceTree = "<group>"; };
 		844168811B69CE160060F9A7 /* LOProductBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LOProductBaseViewController.h; sourceTree = "<group>"; };
 		844168821B69CE160060F9A7 /* LOProductBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LOProductBaseViewController.m; sourceTree = "<group>"; };
 		844168891B69EC7F0060F9A7 /* LOADManager.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LOADManager.storyboard; sourceTree = "<group>"; };
 		844168911B69EE970060F9A7 /* LOBusinessAduitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LOBusinessAduitViewController.h; sourceTree = "<group>"; };
 		844168921B69EE970060F9A7 /* LOBusinessAduitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LOBusinessAduitViewController.m; sourceTree = "<group>"; };
-		844168951B69EEEE0060F9A7 /* LOBuyerSuper.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LOBuyerSuper.storyboard; sourceTree = "<group>"; };
+		844168951B69EEEE0060F9A7 /* LOBusinessrSuper.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LOBusinessrSuper.storyboard; sourceTree = "<group>"; };
 		8441689F1B69EFF50060F9A7 /* LOBusinssSuperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LOBusinssSuperViewController.h; sourceTree = "<group>"; };
 		844168A01B69EFF50060F9A7 /* LOBusinssSuperViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LOBusinssSuperViewController.m; sourceTree = "<group>"; };
 		844168A31B69F05F0060F9A7 /* LOADAduitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LOADAduitViewController.h; sourceTree = "<group>"; };
@@ -1556,6 +1558,15 @@
 		8461B7A01B550708002A7C43 /* LSProductUpperLowerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSProductUpperLowerViewController.m; sourceTree = "<group>"; };
 		8461B7A21B5507EA002A7C43 /* LSProductDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSProductDetailTableViewController.h; sourceTree = "<group>"; };
 		8461B7A31B5507EA002A7C43 /* LSProductDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSProductDetailTableViewController.m; sourceTree = "<group>"; };
+		846333D51B70EB43006ED649 /* LOCatagoryManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LOCatagoryManagerDelegate.h; sourceTree = "<group>"; };
+		846333D61B70ED10006ED649 /* LOProductCatalogueListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LOProductCatalogueListViewController.h; sourceTree = "<group>"; };
+		846333D71B70ED10006ED649 /* LOProductCatalogueListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LOProductCatalogueListViewController.m; sourceTree = "<group>"; };
+		846333DA1B70ED45006ED649 /* LOProductCatalogueMaintainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LOProductCatalogueMaintainViewController.h; sourceTree = "<group>"; };
+		846333DB1B70ED45006ED649 /* LOProductCatalogueMaintainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LOProductCatalogueMaintainViewController.m; sourceTree = "<group>"; };
+		846333DE1B70ED8F006ED649 /* LOProductCatalogueDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LOProductCatalogueDetailViewController.h; sourceTree = "<group>"; };
+		846333DF1B70ED8F006ED649 /* LOProductCatalogueDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LOProductCatalogueDetailViewController.m; sourceTree = "<group>"; };
+		846333E21B71017C006ED649 /* OrderItemManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderItemManager.h; sourceTree = "<group>"; };
+		846333E31B71017C006ED649 /* OrderItemManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderItemManager.m; sourceTree = "<group>"; };
 		846541EA1B42C47300DE2BC1 /* BSUIFiveColTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUIFiveColTableViewCell.h; sourceTree = "<group>"; };
 		846541EB1B42C47300DE2BC1 /* BSUIFiveColTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUIFiveColTableViewCell.m; sourceTree = "<group>"; };
 		846541EC1B42C47300DE2BC1 /* BSUIFiveColTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSUIFiveColTableViewCell.xib; sourceTree = "<group>"; };
@@ -1940,7 +1951,6 @@
 		84BA965C1B2829D500388B58 /* RegistModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistModel.m; sourceTree = "<group>"; };
 		84BA965D1B2829D500388B58 /* SendMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SendMessage.h; sourceTree = "<group>"; };
 		84BA965E1B2829D500388B58 /* ValidateMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValidateMessage.h; sourceTree = "<group>"; };
-		84BA96611B2829D500388B58 /* OrderHeaderManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderHeaderManager.h; sourceTree = "<group>"; };
 		84BA96631B2829D500388B58 /* PayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayManager.h; sourceTree = "<group>"; };
 		84BA96641B2829D500388B58 /* PayManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayManager.m; sourceTree = "<group>"; };
 		84BA96661B2829D500388B58 /* ProductManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductManager.h; sourceTree = "<group>"; };
@@ -2783,8 +2793,13 @@
 		847414401B638F7D005BF59D /* SystemManager */ = {
 			isa = PBXGroup;
 			children = (
-				8441687D1B69CD800060F9A7 /* LOProductCatagoryViewController.h */,
-				8441687E1B69CD800060F9A7 /* LOProductCatagoryViewController.m */,
+				846333D51B70EB43006ED649 /* LOCatagoryManagerDelegate.h */,
+				846333D61B70ED10006ED649 /* LOProductCatalogueListViewController.h */,
+				846333D71B70ED10006ED649 /* LOProductCatalogueListViewController.m */,
+				846333DA1B70ED45006ED649 /* LOProductCatalogueMaintainViewController.h */,
+				846333DB1B70ED45006ED649 /* LOProductCatalogueMaintainViewController.m */,
+				846333DE1B70ED8F006ED649 /* LOProductCatalogueDetailViewController.h */,
+				846333DF1B70ED8F006ED649 /* LOProductCatalogueDetailViewController.m */,
 			);
 			path = SystemManager;
 			sourceTree = "<group>";
@@ -3378,7 +3393,8 @@
 		84BA96601B2829D500388B58 /* OrderItem */ = {
 			isa = PBXGroup;
 			children = (
-				84BA96611B2829D500388B58 /* OrderHeaderManager.h */,
+				846333E21B71017C006ED649 /* OrderItemManager.h */,
+				846333E31B71017C006ED649 /* OrderItemManager.m */,
 				84832D3A1B5658CC00FB6D28 /* BusinessOrder.h */,
 				84832D3B1B5658CC00FB6D28 /* BusinessOrder.m */,
 				84832D3E1B56595B00FB6D28 /* BusinessOrderDetailDomain.h */,
@@ -4109,7 +4125,7 @@
 			children = (
 				844168891B69EC7F0060F9A7 /* LOADManager.storyboard */,
 				84F290131B638909001078D8 /* LOOperatorMain.storyboard */,
-				844168951B69EEEE0060F9A7 /* LOBuyerSuper.storyboard */,
+				844168951B69EEEE0060F9A7 /* LOBusinessrSuper.storyboard */,
 				84EA1A811B6FCB040058161E /* LOCatagoryManager.storyboard */,
 			);
 			path = "NIB-SYB-Resource";
@@ -4667,7 +4683,7 @@
 				84EA97B21B57E21F00AC549F /* img_01.jpg in Resources */,
 				8461B75C1B54BB69002A7C43 /* SystemSetCell.xib in Resources */,
 				8461B7601B54BB69002A7C43 /* WaitPaymentDetail.xib in Resources */,
-				844168971B69EEEE0060F9A7 /* LOBuyerSuper.storyboard in Resources */,
+				844168971B69EEEE0060F9A7 /* LOBusinessrSuper.storyboard in Resources */,
 				8461B7621B54BB69002A7C43 /* AlreadyCommit.xib in Resources */,
 				8461B7651B54BB69002A7C43 /* AlreadyPayment.xib in Resources */,
 				8461B7681B54BB69002A7C43 /* Demo1ViewController.xib in Resources */,
@@ -5072,7 +5088,7 @@
 				8474153F1B639312005BF59D /* xysjh@2x.png in Resources */,
 				847415A61B639312005BF59D /* im_reservation_baojie.png in Resources */,
 				847415B21B639312005BF59D /* tukuailvse.png in Resources */,
-				844168981B69EEEE0060F9A7 /* LOBuyerSuper.storyboard in Resources */,
+				844168981B69EEEE0060F9A7 /* LOBusinessrSuper.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5133,7 +5149,7 @@
 				84EA98EB1B57E21F00AC549F /* im_activity.png in Resources */,
 				84EA983F1B57E21F00AC549F /* a7.png in Resources */,
 				847432FA1B2A8E5500B030C4 /* AlreadyPayment.xib in Resources */,
-				844168961B69EEEE0060F9A7 /* LOBuyerSuper.storyboard in Resources */,
+				844168961B69EEEE0060F9A7 /* LOBusinessrSuper.storyboard in Resources */,
 				84EA986D1B57E21F00AC549F /* woyaokaidian.png in Resources */,
 				84EA98091B57E21F00AC549F /* icon-1x-2.png in Resources */,
 				84EA98491B57E21F00AC549F /* b-1.png in Resources */,
@@ -5678,14 +5694,16 @@
 			files = (
 				847415DA1B63B1C7005BF59D /* LOBuyerSuperMainIndexViewController.h in Sources */,
 				844168A21B69EFF50060F9A7 /* LOBusinssSuperViewController.m in Sources */,
+				846333DD1B70ED45006ED649 /* LOProductCatalogueMaintainViewController.m in Sources */,
 				844168AE1B6A0BD50060F9A7 /* LOBusinsessMaintainViewController.m in Sources */,
 				84002BE31B6A448400CDB9EA /* LOBusinessDetailViewController.m in Sources */,
 				844168AA1B69F0790060F9A7 /* LOADSuperViewController.m in Sources */,
 				844168841B69CE160060F9A7 /* LOProductBaseViewController.m in Sources */,
 				84002BDE1B6A41CE00CDB9EA /* LOBusinessListViewController.m in Sources */,
+				846333D91B70ED10006ED649 /* LOProductCatalogueListViewController.m in Sources */,
+				846333E11B70ED8F006ED649 /* LOProductCatalogueDetailViewController.m in Sources */,
 				847415DB1B63B1C7005BF59D /* LOBuyerSuperMainIndexViewController.m in Sources */,
 				844168941B69EE970060F9A7 /* LOBusinessAduitViewController.m in Sources */,
-				844168801B69CD800060F9A7 /* LOProductCatagoryViewController.m in Sources */,
 				844168A61B69F05F0060F9A7 /* LOADAduitViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -5779,6 +5797,7 @@
 				8461B6F31B54B7F2002A7C43 /* AFNHelp.m in Sources */,
 				84832D521B565BDF00FB6D28 /* OrderBaseAndDetailDomain.m in Sources */,
 				84832D621B565EAC00FB6D28 /* UserBaseAndSessionDomain.m in Sources */,
+				846333E51B71017C006ED649 /* OrderItemManager.m in Sources */,
 				84832D4D1B565B0500FB6D28 /* CustomerOrderDetailed.m in Sources */,
 				8405CB961B5569A30014AF8D /* UserDetailed.m in Sources */,
 				84832D3D1B5658CC00FB6D28 /* BusinessOrder.m in Sources */,
@@ -5852,18 +5871,20 @@
 			files = (
 				844168A91B69F0790060F9A7 /* LOADSuperViewController.m in Sources */,
 				847415E01B63B2D7005BF59D /* LOADSuperMainIndexViewController.m in Sources */,
-				8441687F1B69CD800060F9A7 /* LOProductCatagoryViewController.m in Sources */,
 				844168A51B69F05F0060F9A7 /* LOADAduitViewController.m in Sources */,
 				84F28FF11B6387C4001078D8 /* AppDelegate.m in Sources */,
 				847415BD1B63AED1005BF59D /* LOBuyerSuperMainIndexViewController.m in Sources */,
 				844168A11B69EFF50060F9A7 /* LOBusinssSuperViewController.m in Sources */,
+				846333E01B70ED8F006ED649 /* LOProductCatalogueDetailViewController.m in Sources */,
 				84002BDD1B6A41CE00CDB9EA /* LOBusinessListViewController.m in Sources */,
 				84002BE21B6A448400CDB9EA /* LOBusinessDetailViewController.m in Sources */,
 				847415E31B63B416005BF59D /* LOOperatorMainIndexViewController.m in Sources */,
 				844168831B69CE160060F9A7 /* LOProductBaseViewController.m in Sources */,
 				84F28FEE1B6387C4001078D8 /* main.m in Sources */,
+				846333DC1B70ED45006ED649 /* LOProductCatalogueMaintainViewController.m in Sources */,
 				844168931B69EE970060F9A7 /* LOBusinessAduitViewController.m in Sources */,
 				844168AD1B6A0BD50060F9A7 /* LOBusinsessMaintainViewController.m in Sources */,
+				846333D81B70ED10006ED649 /* LOProductCatalogueListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5894,6 +5915,7 @@
 				8405CB9D1B556D760014AF8D /* BusinessBaseDomail.m in Sources */,
 				847076561B3A8E1200F28180 /* communicateCell.m in Sources */,
 				847076501B3A8C4500F28180 /* DropDownListView.m in Sources */,
+				846333E41B71017C006ED649 /* OrderItemManager.m in Sources */,
 				A05E9BDF1AE79DD5008C97C9 /* KTTabBarButton.m in Sources */,
 				A0F0C3EC1B10209500CE406D /* UpdateShoppingCartResult.m in Sources */,
 				8405CBCD1B5577E80014AF8D /* UserPaySessionDomain.m in Sources */,

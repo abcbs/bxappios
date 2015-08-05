@@ -43,6 +43,7 @@
 /**
  *订单
  */
+#import "OrderItemManager.h"
 #import "BusinessOrder.h"
 #import "BusinessOrderDetailDomain.h"
 #import "CustomerCancleOrder.h"
@@ -65,6 +66,7 @@
 /**
  *商品
  */
+#import "ProductManager.h"
 #import "ProductCatalogue.h"
 #import "ProductBase.h"
 
