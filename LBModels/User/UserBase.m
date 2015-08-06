@@ -34,9 +34,11 @@
     
     [aCoder encodeObject:_email forKey:@"email"];
     
+    [aCoder encodeObject:_entityType forKey:@"entityType"];
+    
     [aCoder encodeObject:_entityIDNumber forKey:@"entityIDNumber"];
     
-    
+
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder
@@ -64,6 +66,8 @@
     _email=[aDecoder decodeObjectForKey:@"email"];
     
     _entityIDNumber=[aDecoder decodeObjectForKey:@"entityIDNumber"];
+    
+    _entityType=[aDecoder decodeObjectForKey:@"entityType"];
     
     return self;
 }

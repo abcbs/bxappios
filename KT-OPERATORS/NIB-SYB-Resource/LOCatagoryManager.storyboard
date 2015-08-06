@@ -290,10 +290,10 @@
         <scene sceneID="kae-8O-0fC">
             <objects>
                 <tableViewController storyboardIdentifier="LOProductCatalogueListViewController" title="检索" id="jPe-P6-NEb" userLabel="经营类型检索" customClass="LOProductCatalogueListViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="66" sectionHeaderHeight="10" sectionFooterHeight="10" id="rM6-v6-tH6">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="rM6-v6-tH6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LOProductCatalogueListTableViewCell" textLabel="jPR-Em-XIQ" detailTextLabel="2GH-Ls-4hF" rowHeight="60" style="IBUITableViewCellStyleSubtitle" id="Gb5-Dz-2SV">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -379,7 +379,7 @@
         <scene sceneID="4fs-UC-HGa">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QFP-J2-BNM" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="选择营业范围" image="first_normal.png" id="Ez8-sF-Sqm"/>
+                    <tabBarItem key="tabBarItem" title="选择营业范围" image="first_normal.png" id="Ez8-sF-Sqm" userLabel="选择营业范围导航"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="zmh-9q-FFs">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -401,7 +401,7 @@
         <image name="first_normal.png" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="vtx-Ai-0ba"/>
+        <segue reference="e3H-yz-H7b"/>
         <segue reference="tpX-DC-P4o"/>
     </inferredMetricsTieBreakers>
 </document>

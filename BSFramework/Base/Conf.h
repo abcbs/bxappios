@@ -223,7 +223,19 @@ extern float autoSizeScaleY;
 
 #define DEFAULT_DATE @"2015-01-01"
 
+
+/**
+ *人员角色
+ */
 #define DEFAULT_ROLE NO
+
+//一般用户、商户联系人、商户法人、运营人员
+#define USER_TYPE_COMMON   @"0"
+#define USER_TYPE_CONTACT  @"1"
+#define USER_TYPE_ENTITY   @"2"
+#define USER_TYPE_OPERATOR @"3"
+//anonymity
+#define USER_TYPE_ANONY    @"4"
 
 +(NSDate*) convertDateFromString:(NSString*)uiDate;
 

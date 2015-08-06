@@ -358,6 +358,27 @@
 		846541EE1B42C47300DE2BC1 /* BSUIFiveColTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 846541EC1B42C47300DE2BC1 /* BSUIFiveColTableViewCell.xib */; };
 		8469CD691B4121F000EF6757 /* LFRecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8469CD681B4121F000EF6757 /* LFRecommendViewController.m */; };
 		8469CD6D1B4122D400EF6757 /* LFRecommend.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8469CD6C1B4122D400EF6757 /* LFRecommend.storyboard */; };
+		846AA2691B732FED00420BC2 /* LOUserManager.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 846AA2681B732FED00420BC2 /* LOUserManager.storyboard */; };
+		846AA26A1B732FED00420BC2 /* LOUserManager.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 846AA2681B732FED00420BC2 /* LOUserManager.storyboard */; };
+		846AA26B1B732FED00420BC2 /* LOUserManager.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 846AA2681B732FED00420BC2 /* LOUserManager.storyboard */; };
+		846AA26F1B7331CF00420BC2 /* LOUserInfoDomainListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846AA26E1B7331CF00420BC2 /* LOUserInfoDomainListViewController.m */; };
+		846AA2701B7331CF00420BC2 /* LOUserInfoDomainListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846AA26E1B7331CF00420BC2 /* LOUserInfoDomainListViewController.m */; };
+		846AA2731B73323400420BC2 /* LOUserInfoDomainMaintainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846AA2721B73323400420BC2 /* LOUserInfoDomainMaintainViewController.m */; };
+		846AA2741B73323400420BC2 /* LOUserInfoDomainMaintainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846AA2721B73323400420BC2 /* LOUserInfoDomainMaintainViewController.m */; };
+		846AA2771B73325A00420BC2 /* LOUserInfoDomainDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846AA2761B73325A00420BC2 /* LOUserInfoDomainDetailViewController.m */; };
+		846AA2781B73325A00420BC2 /* LOUserInfoDomainDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846AA2761B73325A00420BC2 /* LOUserInfoDomainDetailViewController.m */; };
+		846AA27B1B7332BD00420BC2 /* LOUserContactAddressListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846AA27A1B7332BD00420BC2 /* LOUserContactAddressListViewController.m */; };
+		846AA27C1B7332BD00420BC2 /* LOUserContactAddressListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846AA27A1B7332BD00420BC2 /* LOUserContactAddressListViewController.m */; };
+		846AA27F1B733B8100420BC2 /* LOUserContactAddressMaintainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846AA27E1B733B8100420BC2 /* LOUserContactAddressMaintainViewController.m */; };
+		846AA2801B733B8100420BC2 /* LOUserContactAddressMaintainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846AA27E1B733B8100420BC2 /* LOUserContactAddressMaintainViewController.m */; };
+		846AA2831B733BAC00420BC2 /* LOUserContactAddressDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846AA2821B733BAC00420BC2 /* LOUserContactAddressDetailViewController.m */; };
+		846AA2841B733BAC00420BC2 /* LOUserContactAddressDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846AA2821B733BAC00420BC2 /* LOUserContactAddressDetailViewController.m */; };
+		846AA2871B733CF900420BC2 /* LOUserPayListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846AA2861B733CF900420BC2 /* LOUserPayListViewController.m */; };
+		846AA2881B733CF900420BC2 /* LOUserPayListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846AA2861B733CF900420BC2 /* LOUserPayListViewController.m */; };
+		846AA28B1B733D3700420BC2 /* LOUserPayMaintainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846AA28A1B733D3700420BC2 /* LOUserPayMaintainViewController.m */; };
+		846AA28C1B733D3700420BC2 /* LOUserPayMaintainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846AA28A1B733D3700420BC2 /* LOUserPayMaintainViewController.m */; };
+		846AA28F1B733D5600420BC2 /* LOUserPayDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846AA28E1B733D5600420BC2 /* LOUserPayDetailViewController.m */; };
+		846AA2901B733D5600420BC2 /* LOUserPayDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846AA28E1B733D5600420BC2 /* LOUserPayDetailViewController.m */; };
 		8470761A1B3A5F7800F28180 /* SetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 847076181B3A5F7800F28180 /* SetCell.m */; };
 		8470761B1B3A5F7800F28180 /* SetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847076191B3A5F7800F28180 /* SetCell.xib */; };
 		847076231B3A89F000F28180 /* recommendCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 8470761E1B3A89F000F28180 /* recommendCard.m */; };
@@ -1575,6 +1596,25 @@
 		8469CD671B4121F000EF6757 /* LFRecommendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFRecommendViewController.h; sourceTree = "<group>"; };
 		8469CD681B4121F000EF6757 /* LFRecommendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFRecommendViewController.m; sourceTree = "<group>"; };
 		8469CD6C1B4122D400EF6757 /* LFRecommend.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LFRecommend.storyboard; sourceTree = "<group>"; };
+		846AA2681B732FED00420BC2 /* LOUserManager.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LOUserManager.storyboard; sourceTree = "<group>"; };
+		846AA26D1B7331CF00420BC2 /* LOUserInfoDomainListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LOUserInfoDomainListViewController.h; sourceTree = "<group>"; };
+		846AA26E1B7331CF00420BC2 /* LOUserInfoDomainListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LOUserInfoDomainListViewController.m; sourceTree = "<group>"; };
+		846AA2711B73323400420BC2 /* LOUserInfoDomainMaintainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LOUserInfoDomainMaintainViewController.h; sourceTree = "<group>"; };
+		846AA2721B73323400420BC2 /* LOUserInfoDomainMaintainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LOUserInfoDomainMaintainViewController.m; sourceTree = "<group>"; };
+		846AA2751B73325A00420BC2 /* LOUserInfoDomainDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LOUserInfoDomainDetailViewController.h; sourceTree = "<group>"; };
+		846AA2761B73325A00420BC2 /* LOUserInfoDomainDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LOUserInfoDomainDetailViewController.m; sourceTree = "<group>"; };
+		846AA2791B7332BD00420BC2 /* LOUserContactAddressListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LOUserContactAddressListViewController.h; sourceTree = "<group>"; };
+		846AA27A1B7332BD00420BC2 /* LOUserContactAddressListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LOUserContactAddressListViewController.m; sourceTree = "<group>"; };
+		846AA27D1B733B8100420BC2 /* LOUserContactAddressMaintainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LOUserContactAddressMaintainViewController.h; sourceTree = "<group>"; };
+		846AA27E1B733B8100420BC2 /* LOUserContactAddressMaintainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LOUserContactAddressMaintainViewController.m; sourceTree = "<group>"; };
+		846AA2811B733BAC00420BC2 /* LOUserContactAddressDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LOUserContactAddressDetailViewController.h; sourceTree = "<group>"; };
+		846AA2821B733BAC00420BC2 /* LOUserContactAddressDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LOUserContactAddressDetailViewController.m; sourceTree = "<group>"; };
+		846AA2851B733CF900420BC2 /* LOUserPayListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LOUserPayListViewController.h; sourceTree = "<group>"; };
+		846AA2861B733CF900420BC2 /* LOUserPayListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LOUserPayListViewController.m; sourceTree = "<group>"; };
+		846AA2891B733D3700420BC2 /* LOUserPayMaintainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LOUserPayMaintainViewController.h; sourceTree = "<group>"; };
+		846AA28A1B733D3700420BC2 /* LOUserPayMaintainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LOUserPayMaintainViewController.m; sourceTree = "<group>"; };
+		846AA28D1B733D5600420BC2 /* LOUserPayDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LOUserPayDetailViewController.h; sourceTree = "<group>"; };
+		846AA28E1B733D5600420BC2 /* LOUserPayDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LOUserPayDetailViewController.m; sourceTree = "<group>"; };
 		847076171B3A5F7800F28180 /* SetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetCell.h; sourceTree = "<group>"; };
 		847076181B3A5F7800F28180 /* SetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetCell.m; sourceTree = "<group>"; };
 		847076191B3A5F7800F28180 /* SetCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SetCell.xib; sourceTree = "<group>"; };
@@ -2711,6 +2751,31 @@
 				84F66D671B53E7DE00498734 /* LSHandySearchNavViewController..m */,
 			);
 			name = "MainFrame-Group";
+			sourceTree = "<group>";
+		};
+		846AA26C1B73311E00420BC2 /* UserManager */ = {
+			isa = PBXGroup;
+			children = (
+				846AA26D1B7331CF00420BC2 /* LOUserInfoDomainListViewController.h */,
+				846AA26E1B7331CF00420BC2 /* LOUserInfoDomainListViewController.m */,
+				846AA2711B73323400420BC2 /* LOUserInfoDomainMaintainViewController.h */,
+				846AA2721B73323400420BC2 /* LOUserInfoDomainMaintainViewController.m */,
+				846AA2751B73325A00420BC2 /* LOUserInfoDomainDetailViewController.h */,
+				846AA2761B73325A00420BC2 /* LOUserInfoDomainDetailViewController.m */,
+				846AA2791B7332BD00420BC2 /* LOUserContactAddressListViewController.h */,
+				846AA27A1B7332BD00420BC2 /* LOUserContactAddressListViewController.m */,
+				846AA27D1B733B8100420BC2 /* LOUserContactAddressMaintainViewController.h */,
+				846AA27E1B733B8100420BC2 /* LOUserContactAddressMaintainViewController.m */,
+				846AA2811B733BAC00420BC2 /* LOUserContactAddressDetailViewController.h */,
+				846AA2821B733BAC00420BC2 /* LOUserContactAddressDetailViewController.m */,
+				846AA2851B733CF900420BC2 /* LOUserPayListViewController.h */,
+				846AA2861B733CF900420BC2 /* LOUserPayListViewController.m */,
+				846AA2891B733D3700420BC2 /* LOUserPayMaintainViewController.h */,
+				846AA28A1B733D3700420BC2 /* LOUserPayMaintainViewController.m */,
+				846AA28D1B733D5600420BC2 /* LOUserPayDetailViewController.h */,
+				846AA28E1B733D5600420BC2 /* LOUserPayDetailViewController.m */,
+			);
+			path = UserManager;
 			sourceTree = "<group>";
 		};
 		8470761C1B3A89F000F28180 /* Recommend */ = {
@@ -4102,6 +4167,7 @@
 				847414431B638FAB005BF59D /* BankingManager */,
 				847414421B638F9C005BF59D /* ADSuper */,
 				847414411B638F8A005BF59D /* ProductSuper */,
+				846AA26C1B73311E00420BC2 /* UserManager */,
 				847414401B638F7D005BF59D /* SystemManager */,
 				84F28FEB1B6387C4001078D8 /* Supporting Files */,
 				847415BE1B63AF2A005BF59D /* LOControllerHeader.h */,
@@ -4127,6 +4193,7 @@
 				84F290131B638909001078D8 /* LOOperatorMain.storyboard */,
 				844168951B69EEEE0060F9A7 /* LOBusinessrSuper.storyboard */,
 				84EA1A811B6FCB040058161E /* LOCatagoryManager.storyboard */,
+				846AA2681B732FED00420BC2 /* LOUserManager.storyboard */,
 			);
 			path = "NIB-SYB-Resource";
 			sourceTree = "<group>";
@@ -4673,6 +4740,7 @@
 				84EA990E1B57E21F00AC549F /* tukuail.png in Resources */,
 				8461B7301B54BB69002A7C43 /* adsCell.xib in Resources */,
 				8461B73B1B54BB69002A7C43 /* communicateCell.xib in Resources */,
+				846AA26A1B732FED00420BC2 /* LOUserManager.storyboard in Resources */,
 				8461B73E1B54BB69002A7C43 /* communicate.xib in Resources */,
 				8461B7411B54BB69002A7C43 /* communicateController.xib in Resources */,
 				8461B7521B54BB69002A7C43 /* SetCell.xib in Resources */,
@@ -4977,6 +5045,7 @@
 				847415951B639312005BF59D /* 2.jpg in Resources */,
 				847415811B639312005BF59D /* forget password-head.png in Resources */,
 				847415481B639312005BF59D /* a5.png in Resources */,
+				846AA26B1B732FED00420BC2 /* LOUserManager.storyboard in Resources */,
 				84F290211B638BA7001078D8 /* LSBusinessIndexMain.storyboard in Resources */,
 				847415A71B639312005BF59D /* im_reservation_jia.png in Resources */,
 				847415B01B639312005BF59D /* tukuaihuang.png in Resources */,
@@ -5238,6 +5307,7 @@
 				84EA98531B57E21F00AC549F /* g-1.png in Resources */,
 				84EA98291B57E21F00AC549F /* xysjh@2x.png in Resources */,
 				84EA98191B57E21F00AC549F /* shfws@2x.png in Resources */,
+				846AA2691B732FED00420BC2 /* LOUserManager.storyboard in Resources */,
 				84EA98431B57E21F00AC549F /* a9.png in Resources */,
 				84EA980D1B57E21F00AC549F /* icon-1x-4.png in Resources */,
 				84EA97F11B57E21F00AC549F /* xiaoxiong.png in Resources */,
@@ -5692,19 +5762,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				846AA2901B733D5600420BC2 /* LOUserPayDetailViewController.m in Sources */,
 				847415DA1B63B1C7005BF59D /* LOBuyerSuperMainIndexViewController.h in Sources */,
+				846AA2781B73325A00420BC2 /* LOUserInfoDomainDetailViewController.m in Sources */,
 				844168A21B69EFF50060F9A7 /* LOBusinssSuperViewController.m in Sources */,
 				846333DD1B70ED45006ED649 /* LOProductCatalogueMaintainViewController.m in Sources */,
+				846AA28C1B733D3700420BC2 /* LOUserPayMaintainViewController.m in Sources */,
+				846AA2841B733BAC00420BC2 /* LOUserContactAddressDetailViewController.m in Sources */,
 				844168AE1B6A0BD50060F9A7 /* LOBusinsessMaintainViewController.m in Sources */,
 				84002BE31B6A448400CDB9EA /* LOBusinessDetailViewController.m in Sources */,
+				846AA27C1B7332BD00420BC2 /* LOUserContactAddressListViewController.m in Sources */,
 				844168AA1B69F0790060F9A7 /* LOADSuperViewController.m in Sources */,
+				846AA2881B733CF900420BC2 /* LOUserPayListViewController.m in Sources */,
 				844168841B69CE160060F9A7 /* LOProductBaseViewController.m in Sources */,
 				84002BDE1B6A41CE00CDB9EA /* LOBusinessListViewController.m in Sources */,
 				846333D91B70ED10006ED649 /* LOProductCatalogueListViewController.m in Sources */,
 				846333E11B70ED8F006ED649 /* LOProductCatalogueDetailViewController.m in Sources */,
 				847415DB1B63B1C7005BF59D /* LOBuyerSuperMainIndexViewController.m in Sources */,
 				844168941B69EE970060F9A7 /* LOBusinessAduitViewController.m in Sources */,
+				846AA2701B7331CF00420BC2 /* LOUserInfoDomainListViewController.m in Sources */,
+				846AA2741B73323400420BC2 /* LOUserInfoDomainMaintainViewController.m in Sources */,
 				844168A61B69F05F0060F9A7 /* LOADAduitViewController.m in Sources */,
+				846AA2801B733B8100420BC2 /* LOUserContactAddressMaintainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5870,18 +5949,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				844168A91B69F0790060F9A7 /* LOADSuperViewController.m in Sources */,
+				846AA2831B733BAC00420BC2 /* LOUserContactAddressDetailViewController.m in Sources */,
 				847415E01B63B2D7005BF59D /* LOADSuperMainIndexViewController.m in Sources */,
+				846AA27F1B733B8100420BC2 /* LOUserContactAddressMaintainViewController.m in Sources */,
 				844168A51B69F05F0060F9A7 /* LOADAduitViewController.m in Sources */,
+				846AA2771B73325A00420BC2 /* LOUserInfoDomainDetailViewController.m in Sources */,
 				84F28FF11B6387C4001078D8 /* AppDelegate.m in Sources */,
 				847415BD1B63AED1005BF59D /* LOBuyerSuperMainIndexViewController.m in Sources */,
 				844168A11B69EFF50060F9A7 /* LOBusinssSuperViewController.m in Sources */,
 				846333E01B70ED8F006ED649 /* LOProductCatalogueDetailViewController.m in Sources */,
+				846AA28B1B733D3700420BC2 /* LOUserPayMaintainViewController.m in Sources */,
+				846AA2731B73323400420BC2 /* LOUserInfoDomainMaintainViewController.m in Sources */,
 				84002BDD1B6A41CE00CDB9EA /* LOBusinessListViewController.m in Sources */,
 				84002BE21B6A448400CDB9EA /* LOBusinessDetailViewController.m in Sources */,
 				847415E31B63B416005BF59D /* LOOperatorMainIndexViewController.m in Sources */,
 				844168831B69CE160060F9A7 /* LOProductBaseViewController.m in Sources */,
+				846AA26F1B7331CF00420BC2 /* LOUserInfoDomainListViewController.m in Sources */,
+				846AA28F1B733D5600420BC2 /* LOUserPayDetailViewController.m in Sources */,
+				846AA2871B733CF900420BC2 /* LOUserPayListViewController.m in Sources */,
 				84F28FEE1B6387C4001078D8 /* main.m in Sources */,
 				846333DC1B70ED45006ED649 /* LOProductCatalogueMaintainViewController.m in Sources */,
+				846AA27B1B7332BD00420BC2 /* LOUserContactAddressListViewController.m in Sources */,
 				844168931B69EE970060F9A7 /* LOBusinessAduitViewController.m in Sources */,
 				844168AD1B6A0BD50060F9A7 /* LOBusinsessMaintainViewController.m in Sources */,
 				846333D81B70ED10006ED649 /* LOProductCatalogueListViewController.m in Sources */,

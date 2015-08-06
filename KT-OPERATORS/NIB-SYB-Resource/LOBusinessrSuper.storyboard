@@ -3920,10 +3920,10 @@
         <scene sceneID="gxM-dE-Yyi">
             <objects>
                 <tableViewController storyboardIdentifier="LOBusinessListViewController" title="商家列表" id="kQ7-uU-mmw" userLabel="商家列表" customClass="LOBusinessListViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" id="VuE-xv-upM">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="VuE-xv-upM">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LOBusinessListTableViewCell" textLabel="Rkt-Dc-S9e" detailTextLabel="ouS-ZQ-Xs8" rowHeight="60" style="IBUITableViewCellStyleSubtitle" id="zKu-GH-9o0">
                                 <autoresizingMask key="autoresizingMask"/>

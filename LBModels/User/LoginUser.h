@@ -25,9 +25,9 @@
 @property (nonatomic ,retain)NSString* commitCode;
 //详细地址
 @property (nonatomic, retain)NSString *address;
-
+//登陆者UseBaseId
 @property (nonatomic, assign)NSInteger userId;
-
+//所属商户
 @property (nonatomic, assign) NSInteger businessId;
 
 @end

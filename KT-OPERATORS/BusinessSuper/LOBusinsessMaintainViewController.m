@@ -138,8 +138,10 @@
         _entityTel.text=ub.telephone;
         _entityEmail.text=ub.email;
         _entityAddress.text=ub.address;
-        _entityIDType.text=ub.userType;
+        //法人证件类型
+        _entityIDType.text=ub.entityType;
         _entityIDNumber.text=ub.entityIDNumber;
+        
         //头像
         
         //联系人
@@ -242,8 +244,10 @@
     ub.email=_entityEmail.text;
     ub.address=_entityAddress.text;
     ub.userType=_entityIDType.text;
+    ub.entityType=_entityIDType.text;
     ub.entityIDNumber=_entityIDNumber.text;
-    
+    //
+    ub.userType=USER_TYPE_CONTACT;
     //法人信息
     self.business.artificial=ub;
     //联系人信息
@@ -384,6 +388,8 @@
     ub.name=@"张三";
     ub.phone=@"136888888877";
     ub.entityIDNumber=@"11010133334455";
+    ub.entityType=@"身份证";
+    ub.userType=USER_TYPE_CONTACT;
     [ubArray addObject:ub];
     
     //[self.business.contractUsers addObject:ub];
@@ -392,6 +398,8 @@
     ub.name=@"李四";
     ub.phone=@"136777777777";
     ub.entityIDNumber=@"66660133334455";
+    ub.entityType=@"身份证";
+    ub.userType=USER_TYPE_CONTACT;
     [ubArray addObject:ub];
     
     if (self.business.contractUsers==nil) {
