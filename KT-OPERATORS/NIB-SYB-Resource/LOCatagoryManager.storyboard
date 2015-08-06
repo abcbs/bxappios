@@ -19,7 +19,7 @@
                     <connections>
                         <segue destination="5jP-Sw-ZRh" kind="relationship" relationship="viewControllers" id="PAz-E1-cis"/>
                         <segue destination="dQn-MZ-jpw" kind="relationship" relationship="viewControllers" id="ph8-pL-tTD"/>
-                        <segue destination="QFP-J2-BNM" kind="show" id="03k-ku-8XM"/>
+                        <segue destination="QFP-J2-BNM" kind="relationship" relationship="viewControllers" id="WQS-kQ-mhF"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k5c-e6-Ahz" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -163,10 +163,10 @@
         <scene sceneID="wyY-KA-k2U">
             <objects>
                 <tableViewController storyboardIdentifier="LOProductCatalogueDetailViewController" title="业务类型详细" id="Mjb-My-bXC" userLabel="业务类型查看" customClass="LOProductCatalogueDetailViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="k4l-9V-ULq">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="k4l-9V-ULq">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
                             <tableViewSection headerTitle="业务范围" id="IuK-Ii-Afz">
                                 <cells>
@@ -284,7 +284,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rCD-0e-Ut3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-672" y="1329"/>
+            <point key="canvasLocation" x="-645" y="1319"/>
         </scene>
         <!--经营类型检索-->
         <scene sceneID="kae-8O-0fC">
@@ -375,10 +375,11 @@
             </objects>
             <point key="canvasLocation" x="-185" y="568"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--选择营业范围-->
         <scene sceneID="4fs-UC-HGa">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QFP-J2-BNM" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="选择营业范围" image="first_normal.png" id="Ez8-sF-Sqm"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="zmh-9q-FFs">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -391,15 +392,16 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jgr-Uz-ldt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-672" y="568"/>
+            <point key="canvasLocation" x="-645" y="577"/>
         </scene>
     </scenes>
     <resources>
         <image name="bjfw.png" width="29" height="29"/>
         <image name="first" width="30" height="30"/>
+        <image name="first_normal.png" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="e3H-yz-H7b"/>
-        <segue reference="FMG-WE-cvi"/>
+        <segue reference="vtx-Ai-0ba"/>
+        <segue reference="tpX-DC-P4o"/>
     </inferredMetricsTieBreakers>
 </document>

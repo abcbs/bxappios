@@ -82,7 +82,7 @@
 /**
  *用户信息
  */
-#import "User.h"
+#import "LoginUser.h"
 #import "HeadPortraitDomail.h"
 #import "UserInfoDomain.h"
 #import "UserSession.h"

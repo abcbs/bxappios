@@ -1,14 +1,14 @@
 //
 //  User.m
 //  APP-BS-MODEL
-//
+//  LoginUser
 //  Created by admin on 15/6/4.
 //  Copyright (c) 2015年 admin. All rights reserved.
 //
 
-#import "User.h"
+#import "LoginUser.h"
 
-@implementation User
+@implementation LoginUser
 
 - (void)encodeWithCoder:(NSCoder *)aCoder
 {

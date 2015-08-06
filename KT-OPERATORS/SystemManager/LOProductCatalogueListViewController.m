@@ -85,6 +85,7 @@
         bs = _bsList[indexPath.row];
         _bsIndex = indexPath.row;
          evc.productCatalogue=bs;
+        
     }
 }
 
@@ -142,7 +143,7 @@ titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
         evc.browseDelegate = self;
         ProductCatalogue *pc=(ProductCatalogue *)[_bsList objectAtIndex:_bsIndex];
         evc.productCatalogue=pc;
-        
+    
     }
     if ([segue.identifier isEqualToString:@"AddCatalogue"])
     {//维护信息

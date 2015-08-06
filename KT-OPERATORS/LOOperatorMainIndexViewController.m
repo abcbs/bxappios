@@ -18,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     BSTableSection *bsTable=[BSTableSection
-                             initWithHeaderVcClassContent:@"系统运维"//章节显示标题
+                             initWithHeaderVcClassContent:@"业务范围类型管理"//章节显示标题
                              imageName:@"xy"//章节显示图标
                              headerViewClass:nil//章节显示视图
                              cellIdentifier:@"BSUIFiveColTableViewCell"//采用的TableViewCell
@@ -37,7 +37,7 @@
     
     
     
-    [bsTable addBSTableContent:bsnMagamer sectionHeader:@"系统运维"];
+    [bsTable addBSTableContent:bsnMagamer sectionHeader:@"业务范围类型管理"];
     
     
     
@@ -48,7 +48,77 @@
                 vcClass:@"LOProductCatalogueMaintainViewController"];
     
     
-    [bsTable addBSTableContent:bsnMagamer sectionHeader:@"系统运维"];
+    [bsTable addBSTableContent:bsnMagamer sectionHeader:@"业务范围类型管理"];
+    
+    bsnMagamer=[BSTableContentObject
+                initWithContentObject:@"选中"
+                methodName:nil
+                imageName:@"98bj@2x.png"
+                vcClass:@"LOProductCatalogueDetailViewController"];
+    
+    
+    [bsTable addBSTableContent:bsnMagamer sectionHeader:@"业务范围类型管理"];
+    
+    //登陆用户（联系人）管理管理
+    bsnMagamer=[BSTableContentObject
+                initWithContentObject:@"检索"
+                methodName:nil
+                imageName:@"im_post.png"
+                vcClass:@"LOProductCatalogueDetailViewController"];
+    
+    
+    [bsTable addBSTableContent:bsnMagamer
+                 sectionHeader:@"用户（联系人）管理管理"];
+    
+    bsnMagamer=[BSTableContentObject
+                initWithContentObject:@"新增"
+                methodName:nil
+                imageName:@"im_activity.png"
+                vcClass:@"LOProductCatalogueDetailViewController"];
+    
+    
+    [bsTable addBSTableContent:bsnMagamer
+                 sectionHeader:@"用户（联系人）管理管理"];
+    
+    
+    bsnMagamer=[BSTableContentObject
+                initWithContentObject:@"删除"
+                methodName:nil
+                imageName:@"98bj@2x.png"
+                vcClass:@"LOProductCatalogueDetailViewController"];
+    
+    
+    [bsTable addBSTableContent:bsnMagamer
+                 sectionHeader:@"用户（联系人）管理管理"];
+    
+    //商户账户管理
+    bsnMagamer=[BSTableContentObject
+                initWithContentObject:@"检索"
+                methodName:nil
+                imageName:@"im_post.png"
+                vcClass:@"LOProductCatalogueDetailViewController"];
+    
+    
+    [bsTable addBSTableContent:bsnMagamer sectionHeader:@"商户账户管理"];
+    
+    bsnMagamer=[BSTableContentObject
+                initWithContentObject:@"对账"
+                methodName:nil
+                imageName:@"im_activity.png"
+                vcClass:@"LOProductCatalogueDetailViewController"];
+    
+    
+    [bsTable addBSTableContent:bsnMagamer sectionHeader:@"商户账户管理"];
+    
+
+    bsnMagamer=[BSTableContentObject
+                initWithContentObject:@"开户"
+                methodName:nil
+                imageName:@"98bj@2x.png"
+                vcClass:@"LOProductCatalogueDetailViewController"];
+    
+    
+    [bsTable addBSTableContent:bsnMagamer sectionHeader:@"商户账户管理"];
     
     [super setValue:bsTable forKey:@"bSTableObjects"];
     

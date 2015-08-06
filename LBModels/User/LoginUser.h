@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface User : NSObject
+@interface LoginUser : NSObject
 //用户名
 @property (nonatomic, retain)NSString *userName;
 //真实姓名

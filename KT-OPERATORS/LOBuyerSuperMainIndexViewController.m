@@ -1,7 +1,7 @@
 //
 //  LOBuyerSuperMainIndexViewController.m
 //  KTAPP
-//
+//  商家管理
 //  Created by admin on 15/7/25.
 //  Copyright (c) 2015年 itcast. All rights reserved.
 //
@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     BSTableSection *bsTable=[BSTableSection
-                             initWithHeaderVcClassContent:@"商家监管"//章节显示标题
+                             initWithHeaderVcClassContent:@"商家入驻审核"//章节显示标题
                              imageName:@"xy"//章节显示图标
                              headerViewClass:nil//章节显示视图
                              cellIdentifier:@"BSUIFiveColTableViewCell"//采用的TableViewCell
@@ -36,7 +36,7 @@
     
     
     
-    [bsTable addBSTableContent:bsnMagamer sectionHeader:@"商家监管"];
+    [bsTable addBSTableContent:bsnMagamer sectionHeader:@"商家入驻审核"];
     
     bsnMagamer=[BSTableContentObject
                                       initWithContentObject:@"入驻"
@@ -47,7 +47,7 @@
     
     
     
-    [bsTable addBSTableContent:bsnMagamer sectionHeader:@"商家监管"];
+    [bsTable addBSTableContent:bsnMagamer sectionHeader:@"商家入驻审核"];
     
     bsnMagamer=[BSTableContentObject
                 initWithContentObject:@"审核"
@@ -55,7 +55,7 @@
                 imageName:@"ww.png"
                 vcClass:@"LOBusinessAduitViewController"];
     
-    [bsTable addBSTableContent:bsnMagamer sectionHeader:@"商家监管"];
+    [bsTable addBSTableContent:bsnMagamer sectionHeader:@"商家入驻审核"];
     
     bsnMagamer=[BSTableContentObject
                 initWithContentObject:@"监管"
@@ -64,7 +64,67 @@
                 vcClass:@"LOBusinssSuperViewController"];
     
     
-    [bsTable addBSTableContent:bsnMagamer sectionHeader:@"商家监管"];
+    [bsTable addBSTableContent:bsnMagamer sectionHeader:@"商家入驻审核"];
+    
+    //
+    //企业人员管理
+    bsnMagamer=[BSTableContentObject
+                initWithContentObject:@"检索"
+                methodName:nil
+                imageName:@"im_post.png"
+                vcClass:@"LOProductCatalogueDetailViewController"];
+    
+    
+    [bsTable addBSTableContent:bsnMagamer sectionHeader:@"企业人员管理"];
+    
+    bsnMagamer=[BSTableContentObject
+                initWithContentObject:@"加入"
+                methodName:nil
+                imageName:@"im_activity.png"
+                vcClass:@"LOProductCatalogueDetailViewController"];
+    
+    
+    [bsTable addBSTableContent:bsnMagamer sectionHeader:@"企业人员管理"];
+    
+    
+    bsnMagamer=[BSTableContentObject
+                initWithContentObject:@"减人"
+                methodName:nil
+                imageName:@"98bj@2x.png"
+                vcClass:@"LOProductCatalogueDetailViewController"];
+    
+    
+    [bsTable addBSTableContent:bsnMagamer sectionHeader:@"企业人员管理"];
+
+    //行业监管
+    bsnMagamer=[BSTableContentObject
+                initWithContentObject:@"投诉"
+                methodName:nil
+                imageName:@"im_activity.png"
+                vcClass:@"LOBusinssSuperViewController"];
+    
+    
+    [bsTable addBSTableContent:bsnMagamer sectionHeader:@"商家行业监管"];
+
+    
+    bsnMagamer=[BSTableContentObject
+                initWithContentObject:@"注销"
+                methodName:nil
+                imageName:@"im_activity.png"
+                vcClass:@"LOBusinssSuperViewController"];
+    
+    
+    [bsTable addBSTableContent:bsnMagamer sectionHeader:@"商家行业监管"];
+    
+    bsnMagamer=[BSTableContentObject
+                initWithContentObject:@"重开"
+                methodName:nil
+                imageName:@"im_activity.png"
+                vcClass:@"LOBusinssSuperViewController"];
+    
+    
+    [bsTable addBSTableContent:bsnMagamer sectionHeader:@"商家行业监管"];
+
     
     [super setValue:bsTable forKey:@"bSTableObjects"];
     

@@ -19,6 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self display];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -43,6 +44,18 @@
     edit.productCatalogue = self.productCatalogue;;
 }
 
+-(void)modifiedStyle{
+   
+    if (self.productCatalogue) {
+        
+        [self.code setEnabled: NO];
+        [self.statusValue setEnabled:NO];
+        [self.comment setEnabled:NO];
+    }else{
+        self.navigationItem.rightBarButtonItems=nil;
+        
+    }
+}
 -(void)display{
     
     if (self.productCatalogue) {
