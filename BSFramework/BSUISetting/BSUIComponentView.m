@@ -140,8 +140,29 @@ BSDeprecated("建议使用统一处理方式，使用initNavigationHeaderWithDef
     
     [bar setTintColor:[UIColor whiteColor ]];
     [BSUIComponentView navigationColor];
+    ////
+    BSUIBlockButton *okButton =[BSUIComponentView searchNavButton:navigationProcess target:viewController
+        title:title image:nil];
+    [viewController.view addSubview:okButton];
+    
 }
-
++(BSUIBlockButton *)searchNavButton:(id<NavigationProcess>) navigationProcess
+                         target:(UIViewController *)target
+                          title:(NSString *)title image:(NSString *)image {
+    BSUIBlockButton *okButton = [[BSUIBlockButton alloc]initWithFrame:BSRectMake(NAVIGATIONBAR_X+NAVIGATIONBAR_WIDTH*0.72,
+                                                                                 NAVIGATIONBAR_Y-STATUS_HEIGHT,NAVIGATIONBAR_HEIGHT/3, NAVIGATIONBAR_HEIGHT/3)
+                                                               target:target
+                                                               action:@selector(doneClick)];
+    [okButton setBackgroundImage:[UIImage imageNamed:@"im_search.png"]
+                        forState:UIControlStateNormal];
+    [okButton setBlock:^(BSUIBlockButton *button){
+        [navigationProcess backClick];
+    }];
+    [okButton setBackgroundColor:[UIColor grayColor]];
+    [okButton setTintColor:[UIColor whiteColor]];
+    return okButton;
+    
+}
 /**
  *私有方法，指定头的大小
  */
@@ -211,22 +232,20 @@ BSDeprecated("建议使用统一处理方式，使用initNavigationHeaderWithDef
                           title:(NSString *)title //定义块类型
     {
     
-    UIView *headerView=[BSUIComponentView headerViewNoNar];
-
-    UILabel *headNameLabel=[BSUIComponentView labelNav:title];
-    
-   
-    [headerView addSubview:headNameLabel];
-
+        UINavigationItem *nav=currentController.navigationItem;
+        UIBarButtonItem *rightButtton=nav.rightBarButtonItem;
         
-   BSUIBlockButton *okButton =[BSUIComponentView okNavButton:currentController target:currentController
-         title:title image:nil];
-    
-    [headerView addSubview:okButton];
-       
-    [headerView setBackgroundColor:[BSUIComponentView navigationColor] ];
+        UIBarButtonItem *searchButtonItem=[BSUIComponentView okBarButtonItem:currentController  target:currentController title:title image:@"icon_search.png"];
         
-    [currentController.view addSubview:headerView];
+        if (rightButtton) {
+             NSMutableArray *arrays=[NSMutableArray array];
+            [arrays addObject:rightButtton];
+            [arrays addObject:searchButtonItem];
+             currentController.navigationItem.rightBarButtonItems=arrays;
+        }else{
+            currentController.navigationItem.rightBarButtonItem=searchButtonItem;
+        }
+        
 }
 
 
@@ -268,7 +287,6 @@ BSDeprecated("建议使用统一处理方式，使用initNavigationHeaderWithDef
         NSString *name=[[NSString stringWithString:item.title]stringByAppendingString:info];
         [BSUIComponentView changeTabMoreWithTitle:name withVC:uiViewController];
     }
-    // [BSUIComponentView changeTabMoreWithTitle:@"测试" withVC:uiViewController];
     
 }
 
@@ -351,7 +369,9 @@ BSDeprecated("建议使用统一处理方式，使用initNavigationHeaderWithDef
                                   initWithTitle:title
                                   target:target
                                        action:@selector(doneClick)];
- 
+    okButtonItem.image=[UIImage imageNamed:image];
+    okButtonItem.tintColor=[UIColor whiteColor];
+   
     return okButtonItem;
 }
 

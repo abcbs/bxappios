@@ -54,6 +54,6 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"商家产品评论\t%lid, :商品标示 %ld, 上架数量: %@ \t产品名称: %@", (long)_id, (long)_businessProductId, _name, _numbers];
+    return [NSString stringWithFormat:@"商家产品评论\t%lid, :商品标示 %ld, 上架数量: %@ \t产品名称: %ld", (long)_id, (long)_businessProductId, _name, (long)_numbers];
 }
 @end

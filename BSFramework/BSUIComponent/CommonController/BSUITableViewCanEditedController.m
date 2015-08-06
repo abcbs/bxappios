@@ -22,9 +22,10 @@
         [BSUIComponentView initNavigationHeaderWithDefault:self
                                          navigationProcess:self
                                                      title:self.title];
-        [BSUIComponentView initNavigationHeaderWithDefault:self
-                                         navigationProcess:self
-                                                     title:self.title];
+
+        [BSUIComponentView initNarHeaderWithDefault:self
+         
+                                              title:self.title];
         [BSUIComponentView navigationHeader:self.navigationController];
         
     }else{

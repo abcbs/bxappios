@@ -31,8 +31,8 @@
         */
     }else{
         //没有导航栏，使用Button完成
-        [BSUIComponentView initNarHeaderWithIndexView:self
-                                                title:self.title];
+        //[BSUIComponentView initNarHeaderWithIndexView:self
+        //                                        title:self.title];
         
     }
     //设置导航栏颜色

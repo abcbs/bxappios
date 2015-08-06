@@ -9,7 +9,7 @@
 #import "RegistUtil.h"
 
 @implementation RegistUtil
-#pragma 正则匹配手机号
+#pragma mark -正则匹配手机号
 + (BOOL)checkTelNumber:(NSString *) telNumber
 {
     NSString *pattern = @"^1+[3578]+d{9}";
@@ -19,7 +19,7 @@
 }
 
 
-#pragma 正则匹配用户密码6-12位数字和字母组合
+#pragma mark -正则匹配用户密码6-12位数字和字母组合
 + (BOOL)checkPassword:(NSString *) password
 {
     NSString *pattern = @"^(?![0-9]+$)(?![a-zA-Z]+$)[a-zA-Z0-9]{6,12}";
@@ -29,7 +29,7 @@
     
 }
 
-#pragma 正则匹配用户姓名,20位的中文或英文
+#pragma mark -正则匹配用户姓名,20位的中文或英文
 + (BOOL)checkUserName : (NSString *) userName
 {
     NSString *pattern = @"^[a-zA-Z一-龥]{1,20}";
@@ -40,7 +40,7 @@
 }
 
 
-#pragma 正则匹配用户身份证号15或18位
+#pragma mark -正则匹配用户身份证号15或18位
 + (BOOL)checkUserIdCard: (NSString *) idCard
 {
     NSString *pattern = @"(^[0-9]{15}$)|([0-9]{17}([0-9]|X)$)";
@@ -49,7 +49,7 @@
     return isMatch;
 }
 
-#pragma 正则匹员工号,12位的数字
+#pragma mark -正则匹员工号,12位的数字
 + (BOOL)checkEmployeeNumber : (NSString *) number
 {
     NSString *pattern = @"^[0-9]{12}";
@@ -60,7 +60,7 @@
     
 }
 
-#pragma 正则匹配URL
+#pragma mark -正则匹配URL
 + (BOOL)checkURL : (NSString *) url
 {
     NSString *pattern = @"^[0-9A-Za-z]{1,50}";
@@ -70,6 +70,11 @@
     
 }
 
-
+#pragma mark -正则匹配URL
++(BOOL)isValidateEmail:(NSString *)email {
+    NSString *emailRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
+    NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
+    return [emailTest evaluateWithObject:email];
+}
 
 @end

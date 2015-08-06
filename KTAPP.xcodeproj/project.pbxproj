@@ -31,6 +31,18 @@
 		84002BDE1B6A41CE00CDB9EA /* LOBusinessListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84002BDC1B6A41CE00CDB9EA /* LOBusinessListViewController.m */; };
 		84002BE21B6A448400CDB9EA /* LOBusinessDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84002BE11B6A448400CDB9EA /* LOBusinessDetailViewController.m */; };
 		84002BE31B6A448400CDB9EA /* LOBusinessDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84002BE11B6A448400CDB9EA /* LOBusinessDetailViewController.m */; };
+		84052EA01B73856500FAB304 /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84052E9F1B73856500FAB304 /* UserManager.m */; };
+		84052EA11B73856500FAB304 /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84052E9F1B73856500FAB304 /* UserManager.m */; };
+		84052EA41B73881400FAB304 /* UserOrderAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = 84052EA31B73881400FAB304 /* UserOrderAddress.m */; };
+		84052EA51B73881400FAB304 /* UserOrderAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = 84052EA31B73881400FAB304 /* UserOrderAddress.m */; };
+		84052EA81B738CCD00FAB304 /* LOLoginUserListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84052EA71B738CCD00FAB304 /* LOLoginUserListViewController.m */; };
+		84052EA91B738CCD00FAB304 /* LOLoginUserListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84052EA71B738CCD00FAB304 /* LOLoginUserListViewController.m */; };
+		84052EAC1B738D4600FAB304 /* LOLoginUserMaintainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84052EAB1B738D4600FAB304 /* LOLoginUserMaintainViewController.m */; };
+		84052EAD1B738D4600FAB304 /* LOLoginUserMaintainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84052EAB1B738D4600FAB304 /* LOLoginUserMaintainViewController.m */; };
+		84052EB01B738D7A00FAB304 /* LOLoginUserDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84052EAF1B738D7A00FAB304 /* LOLoginUserDetailViewController.m */; };
+		84052EB11B738D7A00FAB304 /* LOLoginUserDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84052EAF1B738D7A00FAB304 /* LOLoginUserDetailViewController.m */; };
+		84052EB51B73B4D100FAB304 /* BSValidatePredicate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84052EB41B73B4D100FAB304 /* BSValidatePredicate.m */; };
+		84052EB61B73B4D100FAB304 /* BSValidatePredicate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84052EB41B73B4D100FAB304 /* BSValidatePredicate.m */; };
 		8405CB341B5544280014AF8D /* LSBusinessActivityTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8405CB331B5544280014AF8D /* LSBusinessActivityTableViewController.m */; };
 		8405CB741B55612C0014AF8D /* ProductCatalogue.m in Sources */ = {isa = PBXBuildFile; fileRef = 8405CB731B55612C0014AF8D /* ProductCatalogue.m */; };
 		8405CB781B55617D0014AF8D /* ProductBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 8405CB771B55617D0014AF8D /* ProductBase.m */; };
@@ -666,8 +678,6 @@
 		84832D5E1B565E5300FB6D28 /* OrderDetailBusinessDomain.m in Sources */ = {isa = PBXBuildFile; fileRef = 84832D5C1B565E5300FB6D28 /* OrderDetailBusinessDomain.m */; };
 		84832D611B565EAC00FB6D28 /* UserBaseAndSessionDomain.m in Sources */ = {isa = PBXBuildFile; fileRef = 84832D601B565EAC00FB6D28 /* UserBaseAndSessionDomain.m */; };
 		84832D621B565EAC00FB6D28 /* UserBaseAndSessionDomain.m in Sources */ = {isa = PBXBuildFile; fileRef = 84832D601B565EAC00FB6D28 /* UserBaseAndSessionDomain.m */; };
-		84832D651B565EF200FB6D28 /* UserOrderAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = 84832D641B565EF200FB6D28 /* UserOrderAddress.m */; };
-		84832D661B565EF200FB6D28 /* UserOrderAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = 84832D641B565EF200FB6D28 /* UserOrderAddress.m */; };
 		84832D691B565F5E00FB6D28 /* UserSessionAndUserAddressDomain.m in Sources */ = {isa = PBXBuildFile; fileRef = 84832D681B565F5E00FB6D28 /* UserSessionAndUserAddressDomain.m */; };
 		84832D6A1B565F5E00FB6D28 /* UserSessionAndUserAddressDomain.m in Sources */ = {isa = PBXBuildFile; fileRef = 84832D681B565F5E00FB6D28 /* UserSessionAndUserAddressDomain.m */; };
 		8487F1851B3005C100F0F7B2 /* KTInformationConfViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8487F1801B3005C100F0F7B2 /* KTInformationConfViewController.m */; };
@@ -1392,6 +1402,19 @@
 		84002BDF1B6A425700CDB9EA /* LOBusinessManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LOBusinessManagerDelegate.h; sourceTree = "<group>"; };
 		84002BE01B6A448400CDB9EA /* LOBusinessDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LOBusinessDetailViewController.h; sourceTree = "<group>"; };
 		84002BE11B6A448400CDB9EA /* LOBusinessDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LOBusinessDetailViewController.m; sourceTree = "<group>"; };
+		84052E9E1B73856500FAB304 /* UserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserManager.h; sourceTree = "<group>"; };
+		84052E9F1B73856500FAB304 /* UserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserManager.m; sourceTree = "<group>"; };
+		84052EA21B73881400FAB304 /* UserOrderAddress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserOrderAddress.h; sourceTree = "<group>"; };
+		84052EA31B73881400FAB304 /* UserOrderAddress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserOrderAddress.m; sourceTree = "<group>"; };
+		84052EA61B738CCD00FAB304 /* LOLoginUserListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LOLoginUserListViewController.h; sourceTree = "<group>"; };
+		84052EA71B738CCD00FAB304 /* LOLoginUserListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LOLoginUserListViewController.m; sourceTree = "<group>"; };
+		84052EAA1B738D4600FAB304 /* LOLoginUserMaintainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LOLoginUserMaintainViewController.h; sourceTree = "<group>"; };
+		84052EAB1B738D4600FAB304 /* LOLoginUserMaintainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LOLoginUserMaintainViewController.m; sourceTree = "<group>"; };
+		84052EAE1B738D7A00FAB304 /* LOLoginUserDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LOLoginUserDetailViewController.h; sourceTree = "<group>"; };
+		84052EAF1B738D7A00FAB304 /* LOLoginUserDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LOLoginUserDetailViewController.m; sourceTree = "<group>"; };
+		84052EB21B73ACF200FAB304 /* LOLoginUserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LOLoginUserDelegate.h; sourceTree = "<group>"; };
+		84052EB31B73B4D100FAB304 /* BSValidatePredicate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSValidatePredicate.h; sourceTree = "<group>"; };
+		84052EB41B73B4D100FAB304 /* BSValidatePredicate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSValidatePredicate.m; sourceTree = "<group>"; };
 		8405CB321B5544280014AF8D /* LSBusinessActivityTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSBusinessActivityTableViewController.h; sourceTree = "<group>"; };
 		8405CB331B5544280014AF8D /* LSBusinessActivityTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSBusinessActivityTableViewController.m; sourceTree = "<group>"; };
 		8405CB721B55612C0014AF8D /* ProductCatalogue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductCatalogue.h; sourceTree = "<group>"; };
@@ -1953,8 +1976,6 @@
 		84832D5C1B565E5300FB6D28 /* OrderDetailBusinessDomain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderDetailBusinessDomain.m; sourceTree = "<group>"; };
 		84832D5F1B565EAC00FB6D28 /* UserBaseAndSessionDomain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserBaseAndSessionDomain.h; sourceTree = "<group>"; };
 		84832D601B565EAC00FB6D28 /* UserBaseAndSessionDomain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserBaseAndSessionDomain.m; sourceTree = "<group>"; };
-		84832D631B565EF200FB6D28 /* UserOrderAddress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserOrderAddress.h; sourceTree = "<group>"; };
-		84832D641B565EF200FB6D28 /* UserOrderAddress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserOrderAddress.m; sourceTree = "<group>"; };
 		84832D671B565F5E00FB6D28 /* UserSessionAndUserAddressDomain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserSessionAndUserAddressDomain.h; sourceTree = "<group>"; };
 		84832D681B565F5E00FB6D28 /* UserSessionAndUserAddressDomain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserSessionAndUserAddressDomain.m; sourceTree = "<group>"; };
 		8487F17F1B3005C100F0F7B2 /* KTInformationConfViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTInformationConfViewController.h; sourceTree = "<group>"; };
@@ -2713,9 +2734,8 @@
 		844E50B91B2F2EE500A69F91 /* BSUISetting */ = {
 			isa = PBXGroup;
 			children = (
-				845A02321B3DBA7E007F5327 /* KTff.pch */,
-				845A02331B3DBA7E007F5327 /* UIView+Frame.h */,
-				845A02341B3DBA7E007F5327 /* UIView+Frame.m */,
+				84052EB31B73B4D100FAB304 /* BSValidatePredicate.h */,
+				84052EB41B73B4D100FAB304 /* BSValidatePredicate.m */,
 				84E97AB51B307535001D4100 /* BSUIComponentView.h */,
 				84E97AB61B307535001D4100 /* BSUIComponentView.m */,
 				8474DEA91B3F474700D9DE36 /* BSUIBlockButton.h */,
@@ -2723,6 +2743,9 @@
 				8474DEAC1B3F606C00D9DE36 /* NavigationProcess.h */,
 				844A32041B4064310045CA6C /* BSUIBarButtonItem.h */,
 				844A32051B4064310045CA6C /* BSUIBarButtonItem.m */,
+				845A02321B3DBA7E007F5327 /* KTff.pch */,
+				845A02331B3DBA7E007F5327 /* UIView+Frame.h */,
+				845A02341B3DBA7E007F5327 /* UIView+Frame.m */,
 			);
 			path = BSUISetting;
 			sourceTree = "<group>";
@@ -2774,6 +2797,13 @@
 				846AA28A1B733D3700420BC2 /* LOUserPayMaintainViewController.m */,
 				846AA28D1B733D5600420BC2 /* LOUserPayDetailViewController.h */,
 				846AA28E1B733D5600420BC2 /* LOUserPayDetailViewController.m */,
+				84052EA61B738CCD00FAB304 /* LOLoginUserListViewController.h */,
+				84052EA71B738CCD00FAB304 /* LOLoginUserListViewController.m */,
+				84052EAE1B738D7A00FAB304 /* LOLoginUserDetailViewController.h */,
+				84052EAF1B738D7A00FAB304 /* LOLoginUserDetailViewController.m */,
+				84052EAA1B738D4600FAB304 /* LOLoginUserMaintainViewController.h */,
+				84052EAB1B738D4600FAB304 /* LOLoginUserMaintainViewController.m */,
+				84052EB21B73ACF200FAB304 /* LOLoginUserDelegate.h */,
 			);
 			path = UserManager;
 			sourceTree = "<group>";
@@ -3480,8 +3510,6 @@
 				84832D5C1B565E5300FB6D28 /* OrderDetailBusinessDomain.m */,
 				84832D5F1B565EAC00FB6D28 /* UserBaseAndSessionDomain.h */,
 				84832D601B565EAC00FB6D28 /* UserBaseAndSessionDomain.m */,
-				84832D631B565EF200FB6D28 /* UserOrderAddress.h */,
-				84832D641B565EF200FB6D28 /* UserOrderAddress.m */,
 				84832D671B565F5E00FB6D28 /* UserSessionAndUserAddressDomain.h */,
 				84832D681B565F5E00FB6D28 /* UserSessionAndUserAddressDomain.m */,
 			);
@@ -3547,6 +3575,8 @@
 		84BA96741B2829D500388B58 /* User */ = {
 			isa = PBXGroup;
 			children = (
+				84052E9E1B73856500FAB304 /* UserManager.h */,
+				84052E9F1B73856500FAB304 /* UserManager.m */,
 				8405CB7E1B5565990014AF8D /* HeadPortraitDomail.h */,
 				8405CB7F1B5565990014AF8D /* HeadPortraitDomail.m */,
 				84BA96751B2829D500388B58 /* LoginUser.h */,
@@ -3555,6 +3585,8 @@
 				84ECA44F1B569F9700452BC4 /* UserBase.m */,
 				8405CB931B5569A30014AF8D /* UserDetailed.h */,
 				8405CB941B5569A30014AF8D /* UserDetailed.m */,
+				84052EA21B73881400FAB304 /* UserOrderAddress.h */,
+				84052EA31B73881400FAB304 /* UserOrderAddress.m */,
 				8405CB821B5566940014AF8D /* UserInfoDomain.h */,
 				8405CB831B5566940014AF8D /* UserInfoDomain.m */,
 				8405CB8F1B55682B0014AF8D /* UserSession.h */,
@@ -5770,14 +5802,17 @@
 				846AA28C1B733D3700420BC2 /* LOUserPayMaintainViewController.m in Sources */,
 				846AA2841B733BAC00420BC2 /* LOUserContactAddressDetailViewController.m in Sources */,
 				844168AE1B6A0BD50060F9A7 /* LOBusinsessMaintainViewController.m in Sources */,
+				84052EB11B738D7A00FAB304 /* LOLoginUserDetailViewController.m in Sources */,
 				84002BE31B6A448400CDB9EA /* LOBusinessDetailViewController.m in Sources */,
 				846AA27C1B7332BD00420BC2 /* LOUserContactAddressListViewController.m in Sources */,
 				844168AA1B69F0790060F9A7 /* LOADSuperViewController.m in Sources */,
 				846AA2881B733CF900420BC2 /* LOUserPayListViewController.m in Sources */,
+				84052EA91B738CCD00FAB304 /* LOLoginUserListViewController.m in Sources */,
 				844168841B69CE160060F9A7 /* LOProductBaseViewController.m in Sources */,
 				84002BDE1B6A41CE00CDB9EA /* LOBusinessListViewController.m in Sources */,
 				846333D91B70ED10006ED649 /* LOProductCatalogueListViewController.m in Sources */,
 				846333E11B70ED8F006ED649 /* LOProductCatalogueDetailViewController.m in Sources */,
+				84052EAD1B738D4600FAB304 /* LOLoginUserMaintainViewController.m in Sources */,
 				847415DB1B63B1C7005BF59D /* LOBuyerSuperMainIndexViewController.m in Sources */,
 				844168941B69EE970060F9A7 /* LOBusinessAduitViewController.m in Sources */,
 				846AA2701B7331CF00420BC2 /* LOUserInfoDomainListViewController.m in Sources */,
@@ -5853,6 +5888,7 @@
 				84BF8FF31B4AC2FA001042F1 /* BSUIBlockButton.m in Sources */,
 				84E9D7A11B61E10C00F2CD24 /* BSAssetsViewController.m in Sources */,
 				84BF8FF61B4AC2FA001042F1 /* BSUIBarButtonItem.m in Sources */,
+				84052EB61B73B4D100FAB304 /* BSValidatePredicate.m in Sources */,
 				84F28F9D1B626F9C001078D8 /* BSUIContentViewController.m in Sources */,
 				84ECE42E1B4F9BB4003D1AEE /* BSUIDefaultTableViewCell.m in Sources */,
 				844570CA1B4D6323000CA1C7 /* BLEDeviceDetailsTableViewController.m in Sources */,
@@ -5883,6 +5919,7 @@
 				8461B6F51B54B7F2002A7C43 /* Delcartlist.m in Sources */,
 				8405CB9E1B556D760014AF8D /* BusinessBaseDomail.m in Sources */,
 				8405CBA01B556F400014AF8D /* HeadPortraitDomail.m in Sources */,
+				84052EA51B73881400FAB304 /* UserOrderAddress.m in Sources */,
 				84832D5A1B565DAC00FB6D28 /* OrderCartsDomain.m in Sources */,
 				8461B6F81B54B7F2002A7C43 /* MyOrderModel.m in Sources */,
 				84832D561B565C6400FB6D28 /* OrderBaseAndDetailListDomain.m in Sources */,
@@ -5918,7 +5955,7 @@
 				8405CB9F1B556F3A0014AF8D /* UserInfoDomain.m in Sources */,
 				8405CBAE1B5570700014AF8D /* BusinessProduct.m in Sources */,
 				84832D2B1B564E5700FB6D28 /* CustomerAppointment.m in Sources */,
-				84832D661B565EF200FB6D28 /* UserOrderAddress.m in Sources */,
+				84052EA11B73856500FAB304 /* UserManager.m in Sources */,
 				84BF90541B4AC634001042F1 /* LoginUser.m in Sources */,
 				8405CBA21B556F5D0014AF8D /* ProductCatalogue.m in Sources */,
 				84BF90421B4AC5DB001042F1 /* BusinessManager.m in Sources */,
@@ -5965,7 +6002,10 @@
 				847415E31B63B416005BF59D /* LOOperatorMainIndexViewController.m in Sources */,
 				844168831B69CE160060F9A7 /* LOProductBaseViewController.m in Sources */,
 				846AA26F1B7331CF00420BC2 /* LOUserInfoDomainListViewController.m in Sources */,
+				84052EAC1B738D4600FAB304 /* LOLoginUserMaintainViewController.m in Sources */,
 				846AA28F1B733D5600420BC2 /* LOUserPayDetailViewController.m in Sources */,
+				84052EB01B738D7A00FAB304 /* LOLoginUserDetailViewController.m in Sources */,
+				84052EA81B738CCD00FAB304 /* LOLoginUserListViewController.m in Sources */,
 				846AA2871B733CF900420BC2 /* LOUserPayListViewController.m in Sources */,
 				84F28FEE1B6387C4001078D8 /* main.m in Sources */,
 				846333DC1B70ED45006ED649 /* LOProductCatalogueMaintainViewController.m in Sources */,
@@ -6032,6 +6072,7 @@
 				842043781B2991770002C868 /* DLUtility.m in Sources */,
 				84E9D7A21B61E10C00F2CD24 /* BSCheckmarkView.m in Sources */,
 				845A02351B3DBA7E007F5327 /* UIView+Frame.m in Sources */,
+				84052EA01B73856500FAB304 /* UserManager.m in Sources */,
 				84832D591B565DAC00FB6D28 /* OrderCartsDomain.m in Sources */,
 				842042C51B2988410002C868 /* YYHModelRoute.m in Sources */,
 				84BA96861B2829D500388B58 /* WaterSendingDetails.m in Sources */,
@@ -6067,6 +6108,7 @@
 				845A022D1B3DABF0007F5327 /* ErrorMessage.m in Sources */,
 				84832D3C1B5658CC00FB6D28 /* BusinessOrder.m in Sources */,
 				84832D401B56595B00FB6D28 /* BusinessOrderDetailDomain.m in Sources */,
+				84052EA41B73881400FAB304 /* UserOrderAddress.m in Sources */,
 				8460AE831B426E4C00022280 /* BSContentObjectNavigation.m in Sources */,
 				842043721B2991770002C868 /* DLLRUCache.m in Sources */,
 				84BA96831B2829D500388B58 /* ProductManager.m in Sources */,
@@ -6085,6 +6127,7 @@
 				84832D611B565EAC00FB6D28 /* UserBaseAndSessionDomain.m in Sources */,
 				84BA96811B2829D500388B58 /* RegistModel.m in Sources */,
 				847076231B3A89F000F28180 /* recommendCard.m in Sources */,
+				84052EB51B73B4D100FAB304 /* BSValidatePredicate.m in Sources */,
 				847433211B2A934000B030C4 /* applyShop.m in Sources */,
 				847076251B3A89F000F28180 /* recommendguest.m in Sources */,
 				8405CB841B5566940014AF8D /* UserInfoDomain.m in Sources */,
@@ -6163,7 +6206,6 @@
 				847432EA1B2A8DCC00B030C4 /* WaitPaymentDetail.m in Sources */,
 				84832D381B56549700FB6D28 /* ShoppingCartListDomain.m in Sources */,
 				84832D4C1B565B0500FB6D28 /* CustomerOrderDetailed.m in Sources */,
-				84832D651B565EF200FB6D28 /* UserOrderAddress.m in Sources */,
 				8470764F1B3A8C4500F28180 /* bankController.m in Sources */,
 				A0F0C3E71B10209500CE406D /* BasicHeader.m in Sources */,
 				84BA96821B2829D500388B58 /* PayManager.m in Sources */,

@@ -15,6 +15,7 @@
 #import "ErrorMessage.h"
 #import "NavigationProcess.h"
 
+#import "BSValidatePredicate.h"
 /**
  *跳转功能模型
  */
