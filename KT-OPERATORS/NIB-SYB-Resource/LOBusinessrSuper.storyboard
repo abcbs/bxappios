@@ -440,7 +440,7 @@
                                                 </textField>
                                                 <button contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a94-Vn-gEO">
                                                     <rect key="frame" x="4" y="8" width="85" height="46"/>
-                                                    <color key="backgroundColor" red="0.94117653369903564" green="0.96078437566757202" blue="0.78431379795074463" alpha="1" colorSpace="deviceRGB"/>
+                                                    <color key="backgroundColor" red="0.53725492949999998" green="0.0" blue="0.066666670139999995" alpha="1" colorSpace="deviceRGB"/>
                                                     <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
                                                     <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="14"/>
                                                     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -501,6 +501,7 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CZG-4m-D5k">
                                                     <rect key="frame" x="15" y="8" width="60" height="30"/>
+                                                    <color key="backgroundColor" red="0.53725492949999998" green="0.0" blue="0.066666670139999995" alpha="1" colorSpace="deviceRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="60" id="Mfp-iR-dy7"/>
                                                         <constraint firstAttribute="width" constant="60" id="rL5-5l-v0i"/>
@@ -508,6 +509,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <state key="normal" title="商家头像">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <variation key="default">
@@ -549,6 +551,7 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pa0-bV-svb">
                                                     <rect key="frame" x="15" y="7" width="60" height="30"/>
+                                                    <color key="backgroundColor" red="0.53725492949999998" green="0.0" blue="0.066666670139999995" alpha="1" colorSpace="deviceRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="5Ft-Wi-26Q"/>
                                                         <constraint firstAttribute="width" constant="60" id="5Vu-05-Ts8"/>
@@ -556,6 +559,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <state key="normal" title="宣传图片">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>

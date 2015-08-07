@@ -233,8 +233,6 @@ BSDeprecated("建议使用统一处理方式，使用initNavigationHeaderWithDef
         }else{
             currentController.navigationItem.rightBarButtonItem=searchButtonItem;
         }
-        
-        
 }
 
 

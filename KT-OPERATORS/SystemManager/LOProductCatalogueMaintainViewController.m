@@ -53,7 +53,7 @@
     }
 }
 
--(void)clearViewData{
+-(void)clearDisplayView{
     //经营范围说明
     self.comment.text=nil;
     self.code.text=nil;
@@ -95,7 +95,7 @@
         //新建商家
         //ProductManager *bm=[ProductManager productManager];
         //[bm insertProductCatalogue:bs];
-        [self clearViewData];
+        [self clearDisplayView];
         UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"下一个" style:UIBarButtonItemStylePlain target:
                                         
         self action:@selector(saveData)];
@@ -123,21 +123,13 @@
     self.productCatalogue=[ProductCatalogue new];
     [self modifiedStyle];
     [self initSubViews];
-    [self clearViewData];
+    [self clearDisplayView];
 }
 
 - (IBAction)saveBusinessData:(id)sender {
     [self saveData];
 }
 
-#pragma mark -UITextView焦点操作
-- (void)textViewDidBeginEditing:(UITextView *)textView
-{
-    // We need to add this manually so we have a way to dismiss the keyboard
-    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"确定" style:UIBarButtonItemStylePlain target:self action:@selector(dismissKeyboard)];
-    //[self.tintColor]
-    self.navigationItem.rightBarButtonItem = rightButton;
-}
 
 #pragma mark --键盘关闭处理
 #pragma mark -UITextField的代理事件，换行执行的操作，去掉键盘

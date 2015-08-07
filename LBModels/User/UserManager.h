@@ -7,7 +7,23 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "LoginUser.h"
 
 @interface UserManager : NSObject
+
++(UserManager *)userManager;
+
+
+#pragma mark -商家经营类型
+-(NSMutableArray *) loadLoginUser:(LoginUser *)user;
+
+- (void)insertLoginUser:(LoginUser *) user;
+
+-(void)updateLoginUser:(LoginUser *) user
+                      atIndex:(NSInteger)index;
+
+-(void)removeLoginUser:(LoginUser *) user;
+
+-(void)removeLoginUserWithIndex:(NSInteger) index;
 
 @end

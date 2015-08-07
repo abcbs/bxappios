@@ -331,9 +331,10 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8xX-3W-efy">
                                                     <rect key="frame" x="8" y="-4" width="60" height="30"/>
+                                                    <color key="backgroundColor" red="0.53725492949999998" green="0.0" blue="0.066666670139999995" alpha="1" colorSpace="deviceRGB"/>
                                                     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <state key="normal" title="自选头像">
-                                                        <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <variation key="heightClass=compact" fixedFrame="YES">
@@ -360,9 +361,10 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jvl-CL-Qye">
                                                     <rect key="frame" x="8" y="0.0" width="60" height="30"/>
+                                                    <color key="backgroundColor" red="0.53725492949999998" green="0.0" blue="0.066666670139999995" alpha="1" colorSpace="deviceRGB"/>
                                                     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <state key="normal" title="介绍组图">
-                                                        <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <variation key="heightClass=compact" misplaced="YES">
@@ -1223,6 +1225,6 @@
         <image name="third_normal.png" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="y84-Ak-JeR"/>
+        <segue reference="g7w-WV-Nww"/>
     </inferredMetricsTieBreakers>
 </document>

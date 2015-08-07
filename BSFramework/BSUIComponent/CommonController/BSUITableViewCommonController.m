@@ -29,9 +29,9 @@
         [BSUIComponentView navigationHeader:self.navigationController];
         
     }else{
-
-        //没有导航栏，使用Button完成
+         //没有导航栏，使用Button完成
         [BSUIComponentView initNarHeaderWithDefault:self title: self.title];
+        //[BSUIComponentView navigationHeader:self.navigationController];
         
     }
   

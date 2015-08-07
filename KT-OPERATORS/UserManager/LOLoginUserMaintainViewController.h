@@ -16,6 +16,8 @@
 
 @property (nonatomic,strong) LoginUser *loginUser;
 
+-(void)clearDisplayView;
+
 //头像图片
 @property (strong, nonatomic) IBOutlet UIImageView *headerImage;
 

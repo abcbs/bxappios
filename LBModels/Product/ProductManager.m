@@ -31,7 +31,7 @@ static ProductManager *instance;
 }
 
 - (void)insertProductCatalogue:(ProductCatalogue *) catalogue{
-    NSMutableArray * bsList=[self localProductCatalogue ];
+    NSMutableArray * bsList=[self localForProductCatalogue ];
     [bsList addObject:catalogue];
     NSString *path = [self pathForProductCatalogue];
     [NSKeyedArchiver archiveRootObject:bsList toFile:path];
@@ -40,7 +40,7 @@ static ProductManager *instance;
 -(void)updateProductCatalogue:(ProductCatalogue *) catalogue
                       atIndex:(NSInteger)index{
 
-    NSMutableArray * bsList=[self localProductCatalogue ];
+    NSMutableArray * bsList=[self localForProductCatalogue ];
     if (index>0) {
         [bsList removeObjectAtIndex:index];
     }
@@ -51,14 +51,14 @@ static ProductManager *instance;
 }
 
 -(void)removeProductCatalogue:(ProductCatalogue *) catalogue{
-    NSMutableArray * bsList=[self localProductCatalogue ];
+    NSMutableArray * bsList=[self localForProductCatalogue ];
     NSString *path = [self pathForProductCatalogue];
     [bsList removeObject:catalogue];
     [NSKeyedArchiver archiveRootObject:bsList toFile:path];
 }
 
 -(void)removeProductCatalogueWithIndex:(NSInteger) index{
-    NSMutableArray * bsList=[self localProductCatalogue ];
+    NSMutableArray * bsList=[self localForProductCatalogue ];
     NSString *path = [self pathForProductCatalogue];
     [bsList removeObjectAtIndex:index];
     [NSKeyedArchiver archiveRootObject:bsList toFile:path];
@@ -66,7 +66,7 @@ static ProductManager *instance;
 
 
 #pragma mark -从本地装载所有的数据
--(NSMutableArray *) localProductCatalogue{
+-(NSMutableArray *) localForProductCatalogue{
     NSString *path = [self pathForProductCatalogue];
     NSMutableArray *bsList=[NSKeyedUnarchiver unarchiveObjectWithFile:path];
     if (!bsList) {

@@ -9,8 +9,9 @@
 #import "LOLoginUserMaintainViewController.h"
 #import "BSUIFrameworkHeader.h"
 
-@interface LOLoginUserMaintainViewController (){
+@interface LOLoginUserMaintainViewController ()<UITextFieldDelegate>{
     NSInteger sex;//1,男 2,女
+    BOOL isEdit;
 }
 
 @end
@@ -21,24 +22,99 @@
     self.bDisplaySearchButtonNav=YES;
     self.bDisplayReturnButtonNav=YES;
     [super viewDidLoad];
-
+    [self delelageForTextField];
+    
+    [self initSubViews];
+    
+    [self setupData];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+}
+
+/**
+ *数据装载
+ */
+- (void)setupData
+{
+    if (self.loginUser)
+    {
+        isEdit = YES;
+        self.anonName.text=self.loginUser.userName;
+        self.realName.text=self.loginUser.realName;
+        self.phone.text=self.loginUser.phoneNum;
+        self.password.text=self.loginUser.passWord;
+        self.address.text=self.loginUser.address;
+        
+        if ([self.loginUser.sex  isEqualToString:@"1"]) {
+            self.manSex.selected=YES;
+            self.womenSex.selected=NO;
+            sex=1;
+        }else if([self.loginUser.sex  isEqualToString:@"2"]){
+            self.manSex.selected=NO;
+            self.womenSex.selected=YES;
+            sex=2;
+        }
+    }
+}
+-(void)clearDisplayView{
+    
+    //匿名，用户名
+    self.anonName.text=nil;
+    
+    //真实姓名
+    self.realName.text=nil;
+
+    //密码
+    self.password.text=nil;
+
+    //确认明明
+    self.againPassword.text=nil;
+
+    //地址
+    self.address.text=nil;
+
+    
+    //手机号
+    self.phone.text=nil;
+
+    //验证码
+    self.checkNumber.text=nil;
+
+    
+
 }
 
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark --键盘关闭处理
+#pragma mark -UITextField的代理事件，换行执行的操作，去掉键盘
+-(void)delelageForTextField{
+    self.realName.delegate=self;
+    //匿名，用户名
+    self.anonName.delegate=self;
+    //真实姓名
+    self.realName.delegate=self;
+    //密码
+    self.password.delegate=self;
+    //确认明明
+    self.againPassword.delegate=self;
+    //地址
+    self.address.delegate=self;
+    
+    //手机号
+    self.phone.delegate=self;
+    //验证码
+    self.checkNumber.delegate=self;
+    
 }
-*/
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    
+    [textField resignFirstResponder];
+    return YES;
+}
+
 
 -(BOOL) checkRightfulData{
    
@@ -110,15 +186,75 @@
     }
     return NO;
 }
+
 - (IBAction)saveLoginUserData:(id)sender {
-    BSLog(@"数据保存开始");
-   
+    [self saveData];
+}
+
+-(void)saveData{
     if (![self checkRightfulData]) {
-        //数据验证没有通过通过
-        return ;
+        return;
+    }
+    self.loginUser.userName=self.anonName.text;
+    self.loginUser.realName=self.realName.text;
+    self.loginUser.sex=[NSString stringWithFormat:@"%ld", sex];
+   
+    self.loginUser.passWord= self.password.text;
+    self.loginUser.address=self.address.text;
+    self.loginUser.phoneNum=self.phone.text;
+    
+   
+
+    //营业执照
+    if (isEdit) {
+        [self.editDelegate editedLoginUser:self.loginUser];
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+    if (!isEdit)
+    {
+        self.loginUser=[LoginUser new];
+        self.loginUser.userName=self.anonName.text;
+        self.loginUser.realName=self.realName.text;
+        self.loginUser.sex=[NSString stringWithFormat:@"%ld", sex];
+        
+        self.loginUser.passWord= self.password.text;
+        self.loginUser.address=self.address.text;
+        self.loginUser.phoneNum=self.phone.text;
+        
+        if (self.editDelegate) {
+            [self.editDelegate addLoginUser:self.loginUser];
+        }else{
+            UserManager *um=[UserManager userManager];
+            
+            [um insertLoginUser:self.loginUser];
+        }
+        [self toPageController];
+        
     }
     
-    BSLog(@"数据保存之后");
+}
+
+-(void)toPageController{
+    [self navigating:self storybord:@"LOUserManager" identity:@"LOLoginAppViewController"
+    canUseStoryboard:YES];
+    
+}
+- (void)nextData
+{
+    
+    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc]
+                                    initWithTitle:@"保存" style:UIBarButtonItemStylePlain target:self action:@selector(saveData)];
+    self.navigationItem.rightBarButtonItem = rightButton;
+    self.loginUser=nil;
+    self.loginUser=[LoginUser new];
+    [self modifiedStyle];
+    [self initSubViews];
+    [self clearDisplayView];
+}
+
+- (void)initSubViews
+{
+    isEdit=NO;
 }
 
 - (IBAction)headerImageClick:(id)sender {

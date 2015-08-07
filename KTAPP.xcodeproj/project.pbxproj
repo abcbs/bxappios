@@ -104,6 +104,10 @@
 		8425E18C1B67644200A93C43 /* BSPhotoTakeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8425E18A1B67644200A93C43 /* BSPhotoTakeController.m */; };
 		8425E18F1B6765DA00A93C43 /* BSPhotoImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8425E18E1B6765DA00A93C43 /* BSPhotoImagePickerController.m */; };
 		8425E1901B6765DA00A93C43 /* BSPhotoImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8425E18E1B6765DA00A93C43 /* BSPhotoImagePickerController.m */; };
+		843B2E6F1B74E89C009FC187 /* LOLoginAppViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 843B2E6E1B74E89C009FC187 /* LOLoginAppViewController.m */; };
+		843B2E701B74E89C009FC187 /* LOLoginAppViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 843B2E6E1B74E89C009FC187 /* LOLoginAppViewController.m */; };
+		843B2E731B74E8DC009FC187 /* LOResetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 843B2E721B74E8DC009FC187 /* LOResetPasswordViewController.m */; };
+		843B2E741B74E8DC009FC187 /* LOResetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 843B2E721B74E8DC009FC187 /* LOResetPasswordViewController.m */; };
 		843DA8781B21D56200924AE6 /* CopyConnection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 843DA8521B21D56200924AE6 /* CopyConnection.framework */; };
 		843DA8791B21D56300924AE6 /* FacebookConnection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 843DA8531B21D56200924AE6 /* FacebookConnection.framework */; };
 		843DA87A1B21D56300924AE6 /* MailConnection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 843DA8541B21D56200924AE6 /* MailConnection.framework */; };
@@ -1494,6 +1498,10 @@
 		8425E18A1B67644200A93C43 /* BSPhotoTakeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSPhotoTakeController.m; sourceTree = "<group>"; };
 		8425E18D1B6765DA00A93C43 /* BSPhotoImagePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSPhotoImagePickerController.h; sourceTree = "<group>"; };
 		8425E18E1B6765DA00A93C43 /* BSPhotoImagePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSPhotoImagePickerController.m; sourceTree = "<group>"; };
+		843B2E6D1B74E89C009FC187 /* LOLoginAppViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LOLoginAppViewController.h; sourceTree = "<group>"; };
+		843B2E6E1B74E89C009FC187 /* LOLoginAppViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LOLoginAppViewController.m; sourceTree = "<group>"; };
+		843B2E711B74E8DC009FC187 /* LOResetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LOResetPasswordViewController.h; sourceTree = "<group>"; };
+		843B2E721B74E8DC009FC187 /* LOResetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LOResetPasswordViewController.m; sourceTree = "<group>"; };
 		843DA8521B21D56200924AE6 /* CopyConnection.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CopyConnection.framework; sourceTree = "<group>"; };
 		843DA8531B21D56200924AE6 /* FacebookConnection.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookConnection.framework; sourceTree = "<group>"; };
 		843DA8541B21D56200924AE6 /* MailConnection.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MailConnection.framework; sourceTree = "<group>"; };
@@ -2804,6 +2812,10 @@
 				84052EAA1B738D4600FAB304 /* LOLoginUserMaintainViewController.h */,
 				84052EAB1B738D4600FAB304 /* LOLoginUserMaintainViewController.m */,
 				84052EB21B73ACF200FAB304 /* LOLoginUserDelegate.h */,
+				843B2E6D1B74E89C009FC187 /* LOLoginAppViewController.h */,
+				843B2E6E1B74E89C009FC187 /* LOLoginAppViewController.m */,
+				843B2E711B74E8DC009FC187 /* LOResetPasswordViewController.h */,
+				843B2E721B74E8DC009FC187 /* LOResetPasswordViewController.m */,
 			);
 			path = UserManager;
 			sourceTree = "<group>";
@@ -5801,6 +5813,7 @@
 				846333DD1B70ED45006ED649 /* LOProductCatalogueMaintainViewController.m in Sources */,
 				846AA28C1B733D3700420BC2 /* LOUserPayMaintainViewController.m in Sources */,
 				846AA2841B733BAC00420BC2 /* LOUserContactAddressDetailViewController.m in Sources */,
+				843B2E701B74E89C009FC187 /* LOLoginAppViewController.m in Sources */,
 				844168AE1B6A0BD50060F9A7 /* LOBusinsessMaintainViewController.m in Sources */,
 				84052EB11B738D7A00FAB304 /* LOLoginUserDetailViewController.m in Sources */,
 				84002BE31B6A448400CDB9EA /* LOBusinessDetailViewController.m in Sources */,
@@ -5814,6 +5827,7 @@
 				846333E11B70ED8F006ED649 /* LOProductCatalogueDetailViewController.m in Sources */,
 				84052EAD1B738D4600FAB304 /* LOLoginUserMaintainViewController.m in Sources */,
 				847415DB1B63B1C7005BF59D /* LOBuyerSuperMainIndexViewController.m in Sources */,
+				843B2E741B74E8DC009FC187 /* LOResetPasswordViewController.m in Sources */,
 				844168941B69EE970060F9A7 /* LOBusinessAduitViewController.m in Sources */,
 				846AA2701B7331CF00420BC2 /* LOUserInfoDomainListViewController.m in Sources */,
 				846AA2741B73323400420BC2 /* LOUserInfoDomainMaintainViewController.m in Sources */,
@@ -5990,6 +6004,7 @@
 				847415E01B63B2D7005BF59D /* LOADSuperMainIndexViewController.m in Sources */,
 				846AA27F1B733B8100420BC2 /* LOUserContactAddressMaintainViewController.m in Sources */,
 				844168A51B69F05F0060F9A7 /* LOADAduitViewController.m in Sources */,
+				843B2E6F1B74E89C009FC187 /* LOLoginAppViewController.m in Sources */,
 				846AA2771B73325A00420BC2 /* LOUserInfoDomainDetailViewController.m in Sources */,
 				84F28FF11B6387C4001078D8 /* AppDelegate.m in Sources */,
 				847415BD1B63AED1005BF59D /* LOBuyerSuperMainIndexViewController.m in Sources */,
@@ -6008,6 +6023,7 @@
 				84052EA81B738CCD00FAB304 /* LOLoginUserListViewController.m in Sources */,
 				846AA2871B733CF900420BC2 /* LOUserPayListViewController.m in Sources */,
 				84F28FEE1B6387C4001078D8 /* main.m in Sources */,
+				843B2E731B74E8DC009FC187 /* LOResetPasswordViewController.m in Sources */,
 				846333DC1B70ED45006ED649 /* LOProductCatalogueMaintainViewController.m in Sources */,
 				846AA27B1B7332BD00420BC2 /* LOUserContactAddressListViewController.m in Sources */,
 				844168931B69EE970060F9A7 /* LOBusinessAduitViewController.m in Sources */,
