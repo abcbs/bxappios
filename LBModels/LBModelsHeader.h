@@ -83,6 +83,7 @@
  *用户信息
  */
 #import "UserManager.h"
+#import "RemoteUserManager.h"
 #import "LoginUser.h"
 #import "HeadPortraitDomail.h"
 #import "UserInfoDomain.h"

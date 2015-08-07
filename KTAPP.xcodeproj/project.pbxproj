@@ -108,6 +108,8 @@
 		843B2E701B74E89C009FC187 /* LOLoginAppViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 843B2E6E1B74E89C009FC187 /* LOLoginAppViewController.m */; };
 		843B2E731B74E8DC009FC187 /* LOResetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 843B2E721B74E8DC009FC187 /* LOResetPasswordViewController.m */; };
 		843B2E741B74E8DC009FC187 /* LOResetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 843B2E721B74E8DC009FC187 /* LOResetPasswordViewController.m */; };
+		843B2E771B74FAE5009FC187 /* RemoteUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 843B2E761B74FAE5009FC187 /* RemoteUserManager.m */; };
+		843B2E791B74FAF7009FC187 /* RemoteUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 843B2E761B74FAE5009FC187 /* RemoteUserManager.m */; };
 		843DA8781B21D56200924AE6 /* CopyConnection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 843DA8521B21D56200924AE6 /* CopyConnection.framework */; };
 		843DA8791B21D56300924AE6 /* FacebookConnection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 843DA8531B21D56200924AE6 /* FacebookConnection.framework */; };
 		843DA87A1B21D56300924AE6 /* MailConnection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 843DA8541B21D56200924AE6 /* MailConnection.framework */; };
@@ -1502,6 +1504,8 @@
 		843B2E6E1B74E89C009FC187 /* LOLoginAppViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LOLoginAppViewController.m; sourceTree = "<group>"; };
 		843B2E711B74E8DC009FC187 /* LOResetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LOResetPasswordViewController.h; sourceTree = "<group>"; };
 		843B2E721B74E8DC009FC187 /* LOResetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LOResetPasswordViewController.m; sourceTree = "<group>"; };
+		843B2E751B74FAE5009FC187 /* RemoteUserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemoteUserManager.h; sourceTree = "<group>"; };
+		843B2E761B74FAE5009FC187 /* RemoteUserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemoteUserManager.m; sourceTree = "<group>"; };
 		843DA8521B21D56200924AE6 /* CopyConnection.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CopyConnection.framework; sourceTree = "<group>"; };
 		843DA8531B21D56200924AE6 /* FacebookConnection.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookConnection.framework; sourceTree = "<group>"; };
 		843DA8541B21D56200924AE6 /* MailConnection.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MailConnection.framework; sourceTree = "<group>"; };
@@ -3589,6 +3593,8 @@
 			children = (
 				84052E9E1B73856500FAB304 /* UserManager.h */,
 				84052E9F1B73856500FAB304 /* UserManager.m */,
+				843B2E751B74FAE5009FC187 /* RemoteUserManager.h */,
+				843B2E761B74FAE5009FC187 /* RemoteUserManager.m */,
 				8405CB7E1B5565990014AF8D /* HeadPortraitDomail.h */,
 				8405CB7F1B5565990014AF8D /* HeadPortraitDomail.m */,
 				84BA96751B2829D500388B58 /* LoginUser.h */,
@@ -5935,6 +5941,7 @@
 				8405CBA01B556F400014AF8D /* HeadPortraitDomail.m in Sources */,
 				84052EA51B73881400FAB304 /* UserOrderAddress.m in Sources */,
 				84832D5A1B565DAC00FB6D28 /* OrderCartsDomain.m in Sources */,
+				843B2E791B74FAF7009FC187 /* RemoteUserManager.m in Sources */,
 				8461B6F81B54B7F2002A7C43 /* MyOrderModel.m in Sources */,
 				84832D561B565C6400FB6D28 /* OrderBaseAndDetailListDomain.m in Sources */,
 				84832D391B56549700FB6D28 /* ShoppingCartListDomain.m in Sources */,
@@ -6063,6 +6070,7 @@
 				A05E9BDF1AE79DD5008C97C9 /* KTTabBarButton.m in Sources */,
 				A0F0C3EC1B10209500CE406D /* UpdateShoppingCartResult.m in Sources */,
 				8405CBCD1B5577E80014AF8D /* UserPaySessionDomain.m in Sources */,
+				843B2E771B74FAE5009FC187 /* RemoteUserManager.m in Sources */,
 				8460AE7A1B42569300022280 /* BSTableViewCellData.m in Sources */,
 				84EBA0131B4189E0003309F6 /* LBLiferServiceController.m in Sources */,
 				84BA96841B2829D500388B58 /* Comment.m in Sources */,

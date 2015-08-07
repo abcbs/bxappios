@@ -13,6 +13,7 @@
 
 +(UserManager *)userManager;
 
++(UserManager *) localUserManager;
 
 #pragma mark -商家经营类型
 -(NSMutableArray *) loadLoginUser:(LoginUser *)user;

@@ -237,6 +237,9 @@ extern float autoSizeScaleY;
 //anonymity
 #define USER_TYPE_ANONY    @"4"
 
+#define DATA_IS_LOCAL YES
+
+
 +(NSDate*) convertDateFromString:(NSString*)uiDate;
 
 + (NSString *)convertStringFromDate:(NSDate *)date;

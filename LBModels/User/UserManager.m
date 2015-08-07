@@ -7,18 +7,28 @@
 //
 
 #import "UserManager.h"
+#import "BSUIFrameworkHeader.h"
+#import "RemoteUserManager.h"
 
 @implementation UserManager
 
 static UserManager *instance;
 
 +(UserManager *)userManager{
+    if (DATA_IS_LOCAL) {
+        return [self localUserManager];
+    }else{
+       return  [RemoteUserManager remoteInstance];
+    }
+    
+}
+
++(UserManager *) localUserManager{
     if (!instance) {
         instance=[[super allocWithZone:nil]init];
     }
     return instance;
 }
-
 #pragma mark -商家经营类型
 
 -(NSMutableArray *) loadLoginUser:(LoginUser *)user{
