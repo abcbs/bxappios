@@ -10,6 +10,9 @@
 
 @interface BSUITableViewCanEditedController :UITableViewController<NavigationProcess,BSImagePlayerDelegate>
 
+@property (nonatomic,assign)BOOL bDisplaySearchButtonNav;
+
+@property (nonatomic,assign)BOOL bDisplayReturnButtonNav;
 /**
  *返回方法
  */

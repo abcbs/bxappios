@@ -24,8 +24,11 @@
                                                      title:self.title];
 
         [BSUIComponentView initNarHeaderWithDefault:self
+                                              title:self.title
+                            bDisplaySearchButtonNav:self.bDisplaySearchButtonNav
+                            bDisplayReturnButtonNav:self.bDisplayReturnButtonNav
          
-                                              title:self.title];
+         ];
         [BSUIComponentView navigationHeader:self.navigationController];
         
     }else{

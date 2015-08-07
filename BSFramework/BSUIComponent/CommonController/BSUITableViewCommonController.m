@@ -14,15 +14,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     if (self.navigationController) {
         //iOS有默认导航栏，使用固有的导航栏
         [BSUIComponentView initNavigationHeaderWithDefault:self
                         navigationProcess:self
                         title:self.title];
         [BSUIComponentView initNarHeaderWithDefault:self
+              title:self.title
+                            bDisplaySearchButtonNav:self.bDisplaySearchButtonNav
+                            bDisplayReturnButtonNav:self.bDisplayReturnButtonNav
          
-                                              title:self.title];
+         ];
         [BSUIComponentView navigationHeader:self.navigationController];
         
     }else{

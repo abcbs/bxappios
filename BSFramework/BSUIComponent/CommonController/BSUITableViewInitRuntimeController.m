@@ -21,6 +21,7 @@
 @synthesize bSTableObjects;
 
 - (void)viewDidLoad {
+
     [super viewDidLoad];
     if (tableView==nil) {
         self.tableView = [[UITableView alloc]initWithFrame:BSRectMake(NAVIGATIONBAR_X, NAVIGATIONBAR_HEIGHT, SCREEN_WIDTH, SCREEN_HEIGHT-NAVIGATION_ADD_STATUS_HEIGHT) style:UITableViewStyleGrouped];

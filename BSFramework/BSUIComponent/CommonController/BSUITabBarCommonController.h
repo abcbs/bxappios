@@ -11,6 +11,10 @@
 
 @interface BSUITabBarCommonController : UITabBarController<NavigationProcess>
 
+@property (nonatomic,assign)BOOL bDisplaySearchButtonNav;
+
+@property (nonatomic,assign)BOOL bDisplayReturnButtonNav;
+
 - (void)backClick;
 - (void)doneClick;
 -(void)navigating:(BSTableContentObject*)bsContentObject;

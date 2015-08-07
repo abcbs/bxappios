@@ -60,7 +60,20 @@
     self.statusValue.text=nil;
 }
 
+-(BOOL) checkRightfulData{
+    BOOL checkAnonName=[BSValidatePredicate
+                        checkNilField:_code alert:@"业务类型代码名称不能为空"];
+    if (!checkAnonName) {
+        return NO;
+    }
+    
+    return YES;
+}
+
 -(void)saveData{
+    if (![self checkRightfulData]) {
+        return;
+    }
     self.productCatalogue.code=self.code.text;
     self.productCatalogue.comment=self.comment.text;
     self.productCatalogue.status=self.statusValue.text;

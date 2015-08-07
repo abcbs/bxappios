@@ -29,7 +29,11 @@
     if (self.navigationController) {
         //iOS有默认导航栏，使用固有的导航栏
         [BSUIComponentView initNarHeaderWithDefault:self
-                                              title:self.title];
+                                              title:self.title
+                            bDisplaySearchButtonNav:self.bDisplaySearchButtonNav
+                            bDisplayReturnButtonNav:self.bDisplayReturnButtonNav
+         
+         ];
         
     }else{
         //没有导航栏，使用Button完成

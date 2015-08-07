@@ -140,29 +140,10 @@ BSDeprecated("建议使用统一处理方式，使用initNavigationHeaderWithDef
     
     [bar setTintColor:[UIColor whiteColor ]];
     [BSUIComponentView navigationColor];
-    ////
-    BSUIBlockButton *okButton =[BSUIComponentView searchNavButton:navigationProcess target:viewController
-        title:title image:nil];
-    [viewController.view addSubview:okButton];
-    
+
 }
-+(BSUIBlockButton *)searchNavButton:(id<NavigationProcess>) navigationProcess
-                         target:(UIViewController *)target
-                          title:(NSString *)title image:(NSString *)image {
-    BSUIBlockButton *okButton = [[BSUIBlockButton alloc]initWithFrame:BSRectMake(NAVIGATIONBAR_X+NAVIGATIONBAR_WIDTH*0.72,
-                                                                                 NAVIGATIONBAR_Y-STATUS_HEIGHT,NAVIGATIONBAR_HEIGHT/3, NAVIGATIONBAR_HEIGHT/3)
-                                                               target:target
-                                                               action:@selector(doneClick)];
-    [okButton setBackgroundImage:[UIImage imageNamed:@"im_search.png"]
-                        forState:UIControlStateNormal];
-    [okButton setBlock:^(BSUIBlockButton *button){
-        [navigationProcess backClick];
-    }];
-    [okButton setBackgroundColor:[UIColor grayColor]];
-    [okButton setTintColor:[UIColor whiteColor]];
-    return okButton;
-    
-}
+
+
 /**
  *私有方法，指定头的大小
  */
@@ -186,9 +167,7 @@ BSDeprecated("建议使用统一处理方式，使用initNavigationHeaderWithDef
 {
     
     UIView *headerView=[BSUIComponentView headerViewNoNar];
-    if (currentController.navigationItem==nil) {
-        //currentController.navigationItem=[[UINavigationItem alloc]init];
-    }
+
     
     BSUIBlockButton *backButton = [BSUIComponentView backNavButton:target target:currentController
      title:title image:nil];
@@ -212,18 +191,27 @@ BSDeprecated("建议使用统一处理方式，使用initNavigationHeaderWithDef
     [currentController.view addSubview:headerView];
 }
 
-+(void)initContentNarHeader:(UIViewController *)currentController
-                            title:(NSString *)title //定义块类型
-{
-    BSUIBlockButton *okButton =[BSUIComponentView okNavButton:currentController target:currentController
-                                                        title:title image:nil];
-    
-    [BSUIComponentView backBarButtonItem:currentController
-                       target:currentController
-                        title:title image:nil];
-    
-    [currentController.view addSubview:okButton];
++(void)initNarHeaderWithDefault:(UIViewController *)currentController
+                          title:(NSString *)title
+        bDisplaySearchButtonNav:(BOOL)searchItem
+        bDisplayReturnButtonNav:(BOOL)returnItem{
+    if (!searchItem&&!returnItem) {//有两类按钮
+        [BSUIComponentView initNarHeaderWithDefault:currentController
+                                              title:title];
+    }else if (!searchItem&&returnItem){//有查询没有返回，左侧按钮删除
+        currentController.navigationItem.leftBarButtonItem=nil;
+        currentController.navigationItem.leftBarButtonItems=nil;
+        [BSUIComponentView initNarHeaderWithDefault:currentController
+                                              title:title];
+    }else if(searchItem&&!returnItem){//无查询有返回，默认行为
+        //
+    }else if (searchItem&&returnItem){//无查询无返回
+        //
+        currentController.navigationItem.leftBarButtonItem=nil;
+        currentController.navigationItem.leftBarButtonItems=nil;
+    }
 }
+
 /**
  *带有表头，以普通View代替系统提供的导航栏
  *BSTableViewRefreshController,在使用
@@ -246,6 +234,7 @@ BSDeprecated("建议使用统一处理方式，使用initNavigationHeaderWithDef
             currentController.navigationItem.rightBarButtonItem=searchButtonItem;
         }
         
+        
 }
 
 
@@ -258,10 +247,12 @@ BSDeprecated("建议使用统一处理方式，使用initNavigationHeaderWithDef
 +(void)initNarHeaderWithIndexView:(UIViewController *)currentController
                             title:(NSString *)title //定义块类型
 {
+    /*
     BSUIBlockButton *okButton =[BSUIComponentView okNavButton:currentController target:currentController
                                                         title:title image:nil];
     
     [currentController.view addSubview:okButton];
+     */
 }
 
 /**

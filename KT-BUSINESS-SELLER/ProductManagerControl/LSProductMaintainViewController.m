@@ -163,7 +163,20 @@
     [self saveData];
 }
 
+-(BOOL) checkRightfulData{
+    BOOL checkAnonName=[BSValidatePredicate
+                        checkNilField:_productName alert:@"商品名称不能为空"];
+    if (!checkAnonName) {
+        return NO;
+    }
+    
+    return YES;
+}
+
 -(void)saveData{
+    if(![self checkRightfulData]){
+        return;
+    }
     //初始化化BusinessProduct
     _product=[[BusinessProduct alloc]init];
     _product.name=_productName.text;

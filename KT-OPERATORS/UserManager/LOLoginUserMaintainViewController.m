@@ -18,10 +18,10 @@
 @implementation LOLoginUserMaintainViewController
 
 - (void)viewDidLoad {
+    self.bDisplaySearchButtonNav=YES;
+    self.bDisplayReturnButtonNav=YES;
     [super viewDidLoad];
-    //self.tableView.separatorStyle=UITableViewCellSeparatorStyleSingleLine;
-    //self.tableView.separatorInset = UIEdgeInsetsMake(0,0, 10, 80);
-    //[self.tableView setSeparatorColor:[UIColor blackColor]];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -44,28 +44,18 @@
    
     UIColor *defualtColor=[UIColor lightTextColor];
     BOOL checkAnonName=[BSValidatePredicate
-                        checkUserName:self.anonName.text];
-
+                        checkUserNameField:self.anonName alert:@"用户名不能为空"];
     if (!checkAnonName) {
-        self.anonName.backgroundColor=[UIColor redColor];
-        [self.anonName becomeFirstResponder];
-        [BSUIComponentView confirmUIAlertView:@"用户名不能为空"];
         return NO;
-    }else {
-        self.anonName.backgroundColor=defualtColor;
     }
-   
+
     BOOL checkRealName=[BSValidatePredicate
-                        checkUserName:self.realName.text];
+                        checkUserNameField:self.realName alert:@"真实用户名不能为空"];
     
     if (!checkRealName) {
-        self.realName.backgroundColor=[UIColor redColor];
-        [self.realName becomeFirstResponder];
-        [BSUIComponentView confirmUIAlertView:@"真实用户名不能为空"];
         return NO;
-    }else{
-        self.realName.backgroundColor=defualtColor;
     }
+    
     
     BOOL checkSex=sex!=0;
     if (!checkSex){
@@ -76,16 +66,12 @@
     }
     
     BOOL checkPassword=[BSValidatePredicate
-                        checkPassword:self.password.text];
+                        checkPasswordField:self.password];
     
     if (!checkPassword) {
-        self.password.backgroundColor=[UIColor redColor];
-        [self.password becomeFirstResponder];
-        [BSUIComponentView confirmUIAlertView:@"密码6-12位数字和字母组合"];
         return NO;
-    }else{
-        self.password.backgroundColor=defualtColor;
     }
+    
 
     BOOL checkAgainPassword=[self.password.text
                              isEqual:self.againPassword.text];
@@ -99,42 +85,27 @@
     }
     
     
-    BOOL checkAddress=[[self.address.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] isEqual:@""];
+    //BOOL checkAddress=[[self.address.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] isEqual:@""];
     
-    if (checkAddress) {
-        self.address.backgroundColor=[UIColor redColor];
-        [self.address becomeFirstResponder];
-        [BSUIComponentView confirmUIAlertView:@"详细地址不能为空"];
+    BOOL checkAddress=[BSValidatePredicate checkNilField:self.address
+                                                   alert:@"详细地址不能为空"];
+    if (!checkAddress) {
         return NO;
-    }else{
-        self.address.backgroundColor=defualtColor;
     }
-    
     
     BOOL checkPhone=[BSValidatePredicate
-                     checkTelNumber:self.phone.text];
+                     checkTelNumberField:self.phone];
     if (!checkPhone) {
-        self.phone.backgroundColor=[UIColor redColor];
-        [self.phone becomeFirstResponder];
-        [BSUIComponentView confirmUIAlertView:@"手机号11位数字"];
         return NO;
-    }else{
-        self.phone.backgroundColor=defualtColor;
     }
-
-    BOOL checkNumber=[[self.checkNumber.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] isEqual:@""];
+    BOOL checkNumber=[BSValidatePredicate checkNilField:self.checkNumber
+                                                  alert:@"校验码不能为空"];
     
-    if (checkNumber) {
-        self.checkNumber.backgroundColor=[UIColor redColor];
-        [self.checkNumber becomeFirstResponder];
-        [BSUIComponentView confirmUIAlertView:@"校验码不能为空"];
+    if (!checkNumber) {
         return NO;
-    }else{
-        self.checkNumber.backgroundColor=defualtColor;
     }
     
-    
-    if (checkAnonName&&checkRealName&&checkSex&&checkPassword&&checkPhone&&!checkNumber) {
+    if (checkAnonName&&checkRealName&&checkSex&&checkPassword&&checkPhone&&checkNumber) {
         return YES;
     }
     return NO;
@@ -142,11 +113,11 @@
 - (IBAction)saveLoginUserData:(id)sender {
     BSLog(@"数据保存开始");
    
-    if ([self checkRightfulData]) {
-        //statements
-    }else{
-        //[BSUIComponentView confirmUIAlertView:@"信息验证失败，请核实红色字体输入框规定"];
+    if (![self checkRightfulData]) {
+        //数据验证没有通过通过
+        return ;
     }
+    
     BSLog(@"数据保存之后");
 }
 

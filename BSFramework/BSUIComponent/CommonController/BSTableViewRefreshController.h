@@ -14,6 +14,10 @@
 
 @interface BSTableViewRefreshController : UITableViewController<BSTableListProtocol,MBProgressHUDDelegate,NavigationProcess>
 
+@property (nonatomic,assign)BOOL bDisplaySearchButtonNav;
+
+@property (nonatomic,assign)BOOL bDisplayReturnButtonNav;
+
 @property (nonatomic, retain) MBProgressHUD *HUD;
 
 @property (nonatomic,retain)  NSMutableArray *dataTable;

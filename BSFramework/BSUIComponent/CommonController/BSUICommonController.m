@@ -17,8 +17,12 @@
     [super viewDidLoad];
      NSLog(@"BSUICommonController viewDidLoad %@",self.description);
      if (self.navigationController) {
-        [BSUIComponentView initNarHeaderWithDefault:self
-            title:self.title];
+         [BSUIComponentView initNarHeaderWithDefault:self
+                                               title:self.title
+                             bDisplaySearchButtonNav:self.bDisplaySearchButtonNav
+                             bDisplayReturnButtonNav:self.bDisplayReturnButtonNav
+          
+          ];
          
     }else{
         //没有导航栏，使用Button完成

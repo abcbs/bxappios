@@ -11,4 +11,8 @@
 #import "BSFCRollingADImageUIView.h"
 @interface BSUIContentViewController : UIViewController<NavigationProcess,BSImagePlayerDelegate>
 
+@property (nonatomic,assign)BOOL bDisplaySearchButtonNav;
+
+@property (nonatomic,assign)BOOL bDisplayReturnButtonNav;
+
 @end

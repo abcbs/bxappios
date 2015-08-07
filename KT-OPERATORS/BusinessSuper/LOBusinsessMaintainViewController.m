@@ -221,8 +221,19 @@
     return _business;
 }
 
--(void)saveData{
+-(BOOL) checkRightfulData{
+    BOOL checkAnonName=[BSValidatePredicate
+                        checkNilField:_businessName alert:@"商户名称不能为空"];
+    if (!checkAnonName) {
+        return NO;
+    }
     
+    return YES;
+}
+-(void)saveData{
+    if (![self checkRightfulData]){//数据校验没有通过
+        return;
+    }
     //商家基本信息
     BusinessBase *bs=[BusinessBase new];
     bs.name=_businessName.text;
@@ -298,7 +309,7 @@
 /** Finishes the editing */
 
 -(void)toPageController{
-    [self navigating:self storybord:@"LOBuyerSuper" identity:@"LOBusinessListViewController" canUseStoryboard:YES];
+    [self navigating:self storybord:@"LOBusinessrSuper" identity:@"LOBusinessListViewController" canUseStoryboard:YES];
     
 }
 - (void)nextData

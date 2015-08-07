@@ -10,6 +10,10 @@
 #import "BSUIFrameworkHeader.h"
 @interface BSUITableViewCommonController : UITableViewController<NavigationProcess,BSImagePlayerDelegate>
 
+@property (nonatomic,assign)BOOL bDisplaySearchButtonNav;
+
+@property (nonatomic,assign)BOOL bDisplayReturnButtonNav;
+
 /**
  *返回方法
  */

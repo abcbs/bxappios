@@ -23,7 +23,7 @@
                              cellIdentifier:@"BSUIFiveColTableViewCell"//采用的TableViewCell
                              cellClass:[BSUIFiveColTableViewCell class]//TableViewCell实现
                              
-                             storyboard:@"LOBuyerSuper"
+                             storyboard:@"LOBusinessrSuper"
                              colCapatibilty:5//每个章节的row数量
                              bsContent:nil];
     
@@ -32,7 +32,7 @@
                                       methodName:nil
                                       imageName:@"im_search.png"
                                       vcClass:@"LOBusinessListViewController"
-                                      storybord:@"LOBuyerSuper"];
+                                      storybord:@"LOBusinessrSuper"];
     
     
     
@@ -43,7 +43,7 @@
                                       methodName:nil
                                       imageName:@"im_post.png"
                                       vcClass:@"LOBusinsessMaintainViewController"
-                                      storybord:@"LOBuyerSuper"];
+                                      storybord:@"LOBusinessrSuper"];
     
     
     

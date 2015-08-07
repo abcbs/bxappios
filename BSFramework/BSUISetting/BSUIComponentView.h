@@ -56,22 +56,29 @@
  *此表头有两个按钮，返回和确定
  */
 +(void)initNarHeaderWithDefault:(UIViewController *)currentController
-                          title:(NSString *)title;
+                          title:(NSString *)title ;
 
++(void)initNarHeaderWithDefault:(UIViewController *)currentController
+                          title:(NSString *)title
+        bDisplaySearchButtonNav:(BOOL)searchItem
+        bDisplayReturnButtonNav:(BOOL)returnItem
+;
 
+/**
+ *暂时没有应用，应当删除
+ */
 +(void)initNarHeaderWithIndexView:(UIViewController *)currentController
                             title:(NSString *)title;
 
 
+/**
+ *仅仅添加标题
+ */
 +(void )initNavigationHeaderWithDefault:(UIViewController *)viewController
                       navigationProcess:(id<NavigationProcess>) navigationProcess
                                   title:(NSString *)title;
 
 
-+(BSUIBarButtonItem *)backBarButtonItem:(id<NavigationProcess>) navigationProcess target:(UIViewController *)target title:(NSString *)title image:(NSString *)image;
-
-
-+(BSUIBarButtonItem *)okBarButtonItem:(id<NavigationProcess>) navigationProcess  target:(UIViewController *)target title:(NSString *)title image:(NSString *)image;
 
 +(void)initContentNarHeaderWithDefault:(UIViewController *)currentController
 target:(id<NavigationProcess>)target

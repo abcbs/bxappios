@@ -19,14 +19,16 @@
     if (self.navigationController) {
         //iOS有默认导航栏，使用固有的导航栏
         [BSUIComponentView initNarHeaderWithDefault:self
-                                              title:self.title];
+                                              title:self.title
+                            bDisplaySearchButtonNav:self.bDisplaySearchButtonNav
+                            bDisplayReturnButtonNav:self.bDisplayReturnButtonNav
+         
+         ];
     }else{
         //没有导航栏，使用Button完成
         [BSUIComponentView initContentNarHeaderWithDefault:self target:self title: self.title];
         
     }
-    //设置导航栏颜色
-    [BSUIComponentView navigationHeader:self.navigationController];
     //设置Tab栏
     [BSUIComponentView changeTabBarWithNotification:self addedInfo:nil];
     [self modifiedStyle];
