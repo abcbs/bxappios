@@ -11,7 +11,8 @@
 @interface LOLoginAppViewController : BSUITableViewCommonController
 
 //账号、手机号
-@property (strong, nonatomic) IBOutlet UITableViewCell *account;
+@property (strong, nonatomic) IBOutlet UITextField *account;
+
 
 //密码
 @property (strong, nonatomic) IBOutlet UITextField *password;

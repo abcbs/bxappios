@@ -63,7 +63,7 @@
 
 #pragma mark --表格样式
 /**
- *每个section底部标题高度
+ *每个section头部标题高度
  */
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     return BSMarginY(30);

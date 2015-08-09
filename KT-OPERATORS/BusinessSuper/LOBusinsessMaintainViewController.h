@@ -87,6 +87,7 @@
 //商户头像事件
 - (IBAction)headerImageClick:(id)sender;
 
+
 //商家宣传图片事件
 - (IBAction)resourceImages:(id)sender;
 
@@ -118,4 +119,13 @@
 //联系方式判断
 -(BOOL) isUserPaySelection:(NSString *)titleHeader
                    section:(NSInteger)section;
+
+//法人头像
+@property (strong, nonatomic) IBOutlet UIButton *entityHeaderImageButton;
+
+//商家头像
+@property (strong, nonatomic) IBOutlet UIButton *busessHeaderImageButton;
+//商家宣传图片
+@property (strong, nonatomic) IBOutlet UIButton *businessResourceImagesButton;
+
 @end

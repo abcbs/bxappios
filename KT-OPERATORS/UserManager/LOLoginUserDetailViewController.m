@@ -87,7 +87,11 @@
             self.manSex.selected=NO;
             self.womenSex.selected=YES;
         }
-            
+        if (self.loginUser.headerImage) {
+            self.headerImage.image=self.loginUser.headerImage;
+        }else{
+            self.headerImage.image=[UIImage imageNamed:@"a9-xiao-120.png"];
+        }
     }
     
 }

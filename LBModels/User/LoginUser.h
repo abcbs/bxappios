@@ -6,7 +6,8 @@
 //  Copyright (c) 2015年 admin. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import "Resources.h"
 
 @interface LoginUser : NSObject
 //用户名
@@ -29,5 +30,12 @@
 @property (nonatomic, assign)NSInteger userId;
 //所属商户
 @property (nonatomic, assign) NSInteger businessId;
+
+@property (nonatomic,retain) UIImage *headerImage;
+
+//头像资源
+//@property (assign,nonatomic) NSInteger resourceId;
+//资源ID转换之后为UIImage
+@property (strong, nonatomic) Resources *resourceInfo;
 
 @end

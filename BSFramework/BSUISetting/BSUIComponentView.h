@@ -28,6 +28,22 @@
 +(void)confirmUIAlertView:message;
 
 /**
+ *设置Button的样式
+ */
++(void)configButtonStyle:(UIView *)button;
+
+/**
+ *
+ *UIImage样式
+ */
++(void)configImageStyle:(UIView *)image;
+
+/*
+ *TextField样式
+ */
++(void)configTextField:(UIView *)field;
+
+/**
  * 导航页颜色
  */
 +(UIColor *)navigationColor;

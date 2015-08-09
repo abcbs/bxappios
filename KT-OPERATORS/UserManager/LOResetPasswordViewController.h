@@ -30,4 +30,6 @@
 //获取验证码
 - (IBAction)checkNumberClick:(id)sender;
 
+
+
 @end

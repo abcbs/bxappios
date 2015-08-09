@@ -3881,13 +3881,16 @@
                         <outlet property="CommerceLicense" destination="LKh-UE-0QF" id="mKr-d7-55J"/>
                         <outlet property="accoutType" destination="6Rv-nK-7V7" id="1RQ-HD-FYo"/>
                         <outlet property="besinessIntroduce" destination="JeI-1f-1jO" id="E6v-P8-P6b"/>
+                        <outlet property="busessHeaderImageButton" destination="CZG-4m-D5k" id="idN-SK-LDz"/>
                         <outlet property="businessCatatorySelection" destination="shZ-Q0-geH" id="K2g-uO-7bY"/>
                         <outlet property="businessHeaderImage" destination="0QT-qx-6Cw" id="98p-f4-PAJ"/>
                         <outlet property="businessName" destination="PAf-HD-AQq" id="Vgt-ME-Qqr"/>
                         <outlet property="businessResouceImages" destination="jx8-mQ-VpA" id="aCh-g1-yyd"/>
+                        <outlet property="businessResourceImagesButton" destination="pa0-bV-svb" id="2Wv-5B-M1O"/>
                         <outlet property="commerceLicense" destination="LKh-UE-0QF" id="zXa-zd-8ku"/>
                         <outlet property="entityAddress" destination="ZVV-oH-u3b" id="QHj-9y-OFl"/>
                         <outlet property="entityEmail" destination="CtM-5V-pIf" id="JxD-Uu-ZME"/>
+                        <outlet property="entityHeaderImageButton" destination="a94-Vn-gEO" id="k5x-W9-pxt"/>
                         <outlet property="entityIDNumber" destination="2Gc-DW-0CA" id="I1B-Sa-AAP"/>
                         <outlet property="entityIDType" destination="eJh-Ug-pGB" id="VYf-g3-Zls"/>
                         <outlet property="entityName" destination="VD8-Vm-cdD" id="jBV-XY-PWN"/>
@@ -3927,7 +3930,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="VuE-xv-upM">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LOBusinessListTableViewCell" textLabel="Rkt-Dc-S9e" detailTextLabel="ouS-ZQ-Xs8" rowHeight="60" style="IBUITableViewCellStyleSubtitle" id="zKu-GH-9o0">
                                 <autoresizingMask key="autoresizingMask"/>

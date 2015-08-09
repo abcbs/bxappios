@@ -9,8 +9,11 @@
 #import "BSUITableViewCommonController.h"
 #import "LOLoginUserDelegate.h"
 #import "LoginUser.h"
+#import "BSIFTTHeader.h"
 
 @interface LOLoginUserMaintainViewController : BSUITableViewCommonController
+
+@property (strong,nonatomic) BSPhotoTakeController *takeController;
 
 @property (weak, nonatomic) id<LOLoginUserDelegate> editDelegate;
 
@@ -67,5 +70,10 @@
 
 //女性别选择
 - (IBAction)womanSexClick:(id)sender;
+
+@property (strong, nonatomic) IBOutlet UIButton *headerImageButton;
+
+@property (strong, nonatomic) IBOutlet UIButton *checkNumberButton;
+
 
 @end

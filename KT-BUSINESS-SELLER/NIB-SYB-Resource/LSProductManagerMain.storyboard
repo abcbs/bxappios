@@ -329,9 +329,12 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3dl-Mq-abc" id="Zxl-Xb-OIJ">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8xX-3W-efy">
-                                                    <rect key="frame" x="8" y="-4" width="60" height="30"/>
+                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8xX-3W-efy">
+                                                    <rect key="frame" x="8" y="-4" width="74" height="30"/>
                                                     <color key="backgroundColor" red="0.53725492949999998" green="0.0" blue="0.066666670139999995" alpha="1" colorSpace="deviceRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="74" id="hL1-lT-gI2"/>
+                                                    </constraints>
                                                     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <state key="normal" title="自选头像">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -345,13 +348,23 @@
                                                         <action selector="previewProductHeadImage:" destination="yrG-Wu-VA4" eventType="touchUpInside" id="XWS-qE-yTx"/>
                                                     </connections>
                                                 </button>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rT9-L8-VE2">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rT9-L8-VE2">
                                                     <rect key="frame" x="90" y="1" width="100" height="100"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="100" id="kmv-7d-gRd"/>
+                                                    </constraints>
                                                     <variation key="heightClass=compact" fixedFrame="YES">
                                                         <rect key="frame" x="113" y="0.0" width="100" height="100"/>
                                                     </variation>
                                                 </imageView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="rT9-L8-VE2" firstAttribute="leading" secondItem="8xX-3W-efy" secondAttribute="trailing" constant="8" symbolic="YES" id="DVh-0a-Ja9"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="rT9-L8-VE2" secondAttribute="bottom" constant="-10" id="PZr-pg-vwg"/>
+                                                <constraint firstItem="8xX-3W-efy" firstAttribute="top" secondItem="Zxl-Xb-OIJ" secondAttribute="topMargin" constant="-12" id="Xfd-eC-cba"/>
+                                                <constraint firstItem="8xX-3W-efy" firstAttribute="leading" secondItem="Zxl-Xb-OIJ" secondAttribute="leadingMargin" constant="-7" id="cag-3f-Swi"/>
+                                                <constraint firstItem="rT9-L8-VE2" firstAttribute="top" secondItem="Zxl-Xb-OIJ" secondAttribute="topMargin" constant="-7" id="ncu-vc-K3r"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="240" id="3mM-hv-3GR">
@@ -360,8 +373,11 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jvl-CL-Qye">
-                                                    <rect key="frame" x="8" y="0.0" width="60" height="30"/>
+                                                    <rect key="frame" x="8" y="0.0" width="80" height="30"/>
                                                     <color key="backgroundColor" red="0.53725492949999998" green="0.0" blue="0.066666670139999995" alpha="1" colorSpace="deviceRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="80" id="0Id-zb-Nnc"/>
+                                                    </constraints>
                                                     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <state key="normal" title="介绍组图">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -383,12 +399,12 @@
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="JD7-7V-B3E" firstAttribute="leading" secondItem="pLa-z5-Mbc" secondAttribute="leading" id="BJz-TX-vPV"/>
-                                                <constraint firstItem="JD7-7V-B3E" firstAttribute="top" secondItem="jvl-CL-Qye" secondAttribute="bottom" constant="8" symbolic="YES" id="agx-9c-MJr"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="JD7-7V-B3E" secondAttribute="bottom" constant="-7" id="dhC-KE-IqV"/>
-                                                <constraint firstItem="jvl-CL-Qye" firstAttribute="top" secondItem="pLa-z5-Mbc" secondAttribute="top" id="grU-mD-Oo1"/>
-                                                <constraint firstItem="jvl-CL-Qye" firstAttribute="leading" secondItem="pLa-z5-Mbc" secondAttribute="leadingMargin" constant="-7" id="lwG-R1-TC2"/>
-                                                <constraint firstAttribute="trailing" secondItem="JD7-7V-B3E" secondAttribute="trailing" id="nbK-8a-bVm"/>
+                                                <constraint firstItem="JD7-7V-B3E" firstAttribute="top" secondItem="jvl-CL-Qye" secondAttribute="bottom" constant="8" symbolic="YES" id="Jq5-wV-udI"/>
+                                                <constraint firstAttribute="trailing" secondItem="JD7-7V-B3E" secondAttribute="trailing" id="QiT-lx-3X8"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="JD7-7V-B3E" secondAttribute="bottom" constant="-7" id="S1q-PV-WTB"/>
+                                                <constraint firstItem="jvl-CL-Qye" firstAttribute="leading" secondItem="pLa-z5-Mbc" secondAttribute="leadingMargin" constant="-7" id="fch-O4-G82"/>
+                                                <constraint firstItem="JD7-7V-B3E" firstAttribute="leading" secondItem="pLa-z5-Mbc" secondAttribute="leading" id="ffu-ab-OTm"/>
+                                                <constraint firstItem="jvl-CL-Qye" firstAttribute="top" secondItem="pLa-z5-Mbc" secondAttribute="top" id="gra-kr-fCV"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -534,8 +550,10 @@
                         <outlet property="onSale" destination="jCF-QA-Vc5" id="IkT-rx-Lug"/>
                         <outlet property="preferPrice" destination="2HX-WY-FuG" id="v07-HM-ixh"/>
                         <outlet property="productCatalogue" destination="Qx3-3D-ZDv" id="Ukx-hT-MPp"/>
+                        <outlet property="productHeaderImageButton" destination="8xX-3W-efy" id="lJS-1Z-Lc5"/>
                         <outlet property="productName" destination="XkZ-Y6-ahA" id="yTr-E1-4LM"/>
                         <outlet property="publishTime" destination="B4D-Iq-L2n" id="PXd-rN-arm"/>
+                        <outlet property="resourceImageButton" destination="jvl-CL-Qye" id="H5K-8R-yNI"/>
                         <outlet property="resourceImags" destination="JD7-7V-B3E" id="fjV-eb-8L5"/>
                         <outlet property="saleOverTime" destination="eYo-V4-t4y" id="ioI-I7-j7d"/>
                         <outlet property="salePrice" destination="GKx-S1-EiG" id="WhQ-EH-EhR"/>
@@ -884,7 +902,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pq4-eC-2eL" id="U4A-TD-mIA">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="头像" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pwJ-G7-hwe">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="头像" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pwJ-G7-hwe">
                                                     <rect key="frame" x="19" y="0.0" width="34" height="21"/>
                                                     <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
@@ -922,7 +940,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sBD-09-oqp" id="D8L-Ef-w5H">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="轮播图" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oEW-P5-xaP">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="轮播图" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oEW-P5-xaP">
                                                     <rect key="frame" x="20" y="4" width="56" height="21"/>
                                                     <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
@@ -1075,6 +1093,7 @@
                         <outlet property="comment" destination="Q2a-FE-fKq" id="XlR-vB-We9"/>
                         <outlet property="editedProduct" destination="wea-bK-OXZ" id="hIv-u4-31U"/>
                         <outlet property="headImage" destination="5R7-A5-PIM" id="f0x-de-TIb"/>
+                        <outlet property="headerImageLable" destination="pwJ-G7-hwe" id="87J-Lc-OBt"/>
                         <outlet property="introduce" destination="mFd-HG-wu2" id="pXk-aQ-CZa"/>
                         <outlet property="isSale" destination="GXF-yV-Ije" id="gGs-Cz-bBT"/>
                         <outlet property="numbers" destination="jI2-L1-X4g" id="zUh-9j-DIA"/>
@@ -1083,6 +1102,7 @@
                         <outlet property="productCatalogue" destination="qCW-BR-Nsf" id="1aR-Jt-45w"/>
                         <outlet property="productName" destination="KzC-ou-4nS" id="25u-nh-972"/>
                         <outlet property="publishTime" destination="6WA-Bu-eA9" id="Aie-7i-Plb"/>
+                        <outlet property="resourceImagesLable" destination="oEW-P5-xaP" id="ogM-8z-F5s"/>
                         <outlet property="resourceImags" destination="HT7-uq-wqI" id="aAw-oj-OgY"/>
                         <outlet property="saleOverTime" destination="BT7-Fu-OK3" id="qEY-QA-OaK"/>
                         <outlet property="salePrice" destination="HQ0-hC-jDE" id="xC7-ey-p2Y"/>

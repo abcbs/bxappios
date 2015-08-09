@@ -105,6 +105,37 @@ BSDeprecated("建议使用统一处理方式，使用initNavigationHeaderWithDef
 }
 
 /**
+ *设置Button的样式
+ */
++(void)configButtonStyle:(UIButton *)button{
+    [button.layer setMasksToBounds:YES];
+    [button.layer setCornerRadius:10.0]; //设置矩形四个圆角半径
+    [button.layer setBorderWidth:1.0]; //边框宽度
+    [button setBackgroundColor:[BSUIComponentView navigationColor]];
+      
+    [button setTitleColor:[UIColor whiteColor]forState:UIControlStateNormal];
+}
+
+/**
+ *
+ *UIImage样式
+ */
++(void)configImageStyle:(UIView *)image{
+    [image.layer setMasksToBounds:YES];
+    [image.layer setCornerRadius:10.0]; //设置矩形四个圆角半径
+    //[image.layer setBorderWidth:1.0]; //边框宽度
+
+}
+
+/*
+ *TextField样式
+ */
++(void)configTextField:(UIView *)field{
+    [field.layer setMasksToBounds:YES];
+    [field.layer setCornerRadius:10.0]; //设置矩形四个圆角半径
+    //[self.anonName.layer setBorderWidth:1.0]; //边框宽度
+}
+/**
  *主题颜色
  */
 +(UIColor *)navigationColor{

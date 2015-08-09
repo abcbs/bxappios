@@ -75,6 +75,10 @@ BSUITableViewCommonController<LSProductManagerDelegate>
 //轮播图预览
 - (IBAction)previewResourceImages:(id)sender;
 
+@property (strong, nonatomic) IBOutlet UILabel *headerImageLable;
+
+
+@property (strong, nonatomic) IBOutlet UILabel *resourceImagesLable;
 
 
 @end

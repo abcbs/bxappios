@@ -83,5 +83,11 @@
 //浏览轮播图，介绍组图
 - (IBAction)previewResourceImages:(id)sender;
 
+//自选头像Button
+@property (strong, nonatomic) IBOutlet UIButton *productHeaderImageButton;
+
+//介绍组图Button
+@property (strong, nonatomic) IBOutlet UIButton *resourceImageButton;
+
 
 @end

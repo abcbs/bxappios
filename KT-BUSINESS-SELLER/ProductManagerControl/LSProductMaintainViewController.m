@@ -110,6 +110,33 @@
 - (void)initSubViews
 {
     isEdit=NO;
+    //
+
+    [BSUIComponentView configButtonStyle:self.productHeaderImageButton];
+    [BSUIComponentView configButtonStyle:self.resourceImageButton];
+
+    //图片样式修改
+    [BSUIComponentView configImageStyle:self.headerImageView];
+    [BSUIComponentView configImageStyle:self.resourceImags];
+    
+    //输入框样式调整
+    [BSUIComponentView configTextField:self.productName];
+    [BSUIComponentView configTextField:self.preferPrice];
+    [BSUIComponentView configTextField:self.salePrice];
+    [BSUIComponentView configTextField:self.publishTime];
+    [BSUIComponentView configTextField:self.productCatalogue];
+    [BSUIComponentView configTextField:self.introduce];
+    [BSUIComponentView configTextField:self.specification];
+    
+    [BSUIComponentView configTextField:self.comment];
+    [BSUIComponentView configTextField:self.saleStartTime];
+    [BSUIComponentView configTextField:self.saleOverTime];
+    [BSUIComponentView configTextField:self.isSale];
+    [BSUIComponentView configTextField:self.onSale];
+    [BSUIComponentView configTextField:self.numbers];
+
+    
+    
     UIDatePicker *publishedTimePicker = [[UIDatePicker alloc] init];
     publishedTimePicker.datePickerMode = UIDatePickerModeDate;
     publishedTimePicker.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"zh_Hans_CN"];
@@ -315,11 +342,11 @@
     isHeaderImage=NO;
     rs=nil;
     //
-    [rsInfoArray removeAllObjects];
-    rsInfoArray=nil;
+    //[rsInfoArray removeAllObjects];
+    //rsInfoArray=nil;
     //
-    [rsImageArray removeAllObjects];
-    rsImageArray=nil;
+    //[rsImageArray removeAllObjects];
+    //rsImageArray=nil;
     
     _product.headerImage=nil;
     [_product.resourceIds removeAllObjects];

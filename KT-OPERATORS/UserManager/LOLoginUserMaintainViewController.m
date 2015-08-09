@@ -7,11 +7,15 @@
 //
 
 #import "LOLoginUserMaintainViewController.h"
-#import "BSUIFrameworkHeader.h"
+#import "BSIFTTHeader.h"
 
-@interface LOLoginUserMaintainViewController ()<UITextFieldDelegate>{
+@interface LOLoginUserMaintainViewController ()<UITextFieldDelegate,BSPhotoTakeDelegate>{
     NSInteger sex;//1,男 2,女
     BOOL isEdit;
+    BOOL isHeaderImage;
+    //商品头像图
+    __block Resources *rs;
+
 }
 
 @end
@@ -22,6 +26,11 @@
     self.bDisplaySearchButtonNav=YES;
     self.bDisplayReturnButtonNav=YES;
     [super viewDidLoad];
+    
+    //图片选择与拍照
+    self.takeController = [[BSPhotoTakeController alloc] init];
+    self.takeController.delegate = self;
+    
     [self delelageForTextField];
     
     [self initSubViews];
@@ -56,12 +65,21 @@
             self.womenSex.selected=YES;
             sex=2;
         }
+        //商品头像
+        if (self.loginUser.headerImage) {
+            self.headerImage.image=self.loginUser.headerImage;
+        }else{
+            self.headerImage.image=[UIImage imageNamed:@"a9-xiao-120.png"];
+        }
+
     }
 }
 -(void)clearDisplayView{
     
     //匿名，用户名
     self.anonName.text=nil;
+    
+    self.headerImage.image=nil;
     
     //真实姓名
     self.realName.text=nil;
@@ -202,9 +220,10 @@
     self.loginUser.passWord= self.password.text;
     self.loginUser.address=self.address.text;
     self.loginUser.phoneNum=self.phone.text;
+    if (self.headerImage.image) {
+            self.loginUser.headerImage=self.headerImage.image;
+    }
     
-   
-
     //营业执照
     if (isEdit) {
         [self.editDelegate editedLoginUser:self.loginUser];
@@ -220,7 +239,10 @@
         self.loginUser.passWord= self.password.text;
         self.loginUser.address=self.address.text;
         self.loginUser.phoneNum=self.phone.text;
-        
+        if (self.headerImage.image) {
+            self.loginUser.headerImage=self.headerImage.image;
+        }
+
         if (self.editDelegate) {
             [self.editDelegate addLoginUser:self.loginUser];
         }else{
@@ -255,9 +277,40 @@
 - (void)initSubViews
 {
     isEdit=NO;
+    //Button样式修改
+    [BSUIComponentView configButtonStyle:self.headerImageButton];
+    [BSUIComponentView configButtonStyle:self.checkNumberButton];
+    //图片样式修改
+    [BSUIComponentView configImageStyle:self.headerImage];
+    //输入框样式调整
+    [BSUIComponentView configTextField:self.anonName];
+    [BSUIComponentView configTextField:self.realName];
+    [BSUIComponentView configTextField:self.password];
+    [BSUIComponentView configTextField:self.address];
+    [BSUIComponentView configTextField:self.phone];
+    [BSUIComponentView configTextField:self.againPassword];
+    [BSUIComponentView configTextField:self.checkNumber];
+    
 }
 
 - (IBAction)headerImageClick:(id)sender {
+    [self.takeController takeSinglePhotoOrChooseFromLibrary];
+
+}
+
+- (void)takeController:(BSPhotoTakeController *)controller didCancelAfterAttempting:(BOOL)madeAttempt
+{
+    BSLog(@"取消拍照动作操作");
+}
+
+- (UIViewController *)takeController:(BSPhotoTakeController *)controller{
+    return self;
+}
+
+- (void)takeController:(BSPhotoTakeController *)controller gotPhoto:(UIImage *)photo withInfo:(Resources *)info
+{
+    rs=info;
+    [self.headerImage setImage:photo];
 }
 
 - (IBAction)phoneCheckNumberClick:(id)sender {

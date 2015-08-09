@@ -18,9 +18,18 @@
     self.bDisplaySearchButtonNav=YES;
     self.bDisplayReturnButtonNav=YES;
     [super viewDidLoad];
-   
+    [self initSubViews];
 }
 
+- (void)initSubViews
+{
+
+    [BSUIComponentView configButtonStyle:self.loginButton];
+    [BSUIComponentView configButtonStyle:self.resetPasswordButton];
+    [BSUIComponentView configTextField:self.password];
+    [BSUIComponentView configTextField:self.account];
+
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

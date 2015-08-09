@@ -20,6 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self initSubViews];
     [self displayProduct];
 }
 
@@ -38,6 +39,31 @@
   
 }
 #pragma mark --样式调整
+- (void)initSubViews
+{
+    //[BSUIComponentView configImageStyle:self.headerImageLable];
+    //[BSUIComponentView configImageStyle:self.resourceImagesLable];
+    
+    //图片样式修改
+    [BSUIComponentView configImageStyle:self.headImage];
+    [BSUIComponentView configImageStyle:self.resourceImags];
+    
+    //输入框样式调整
+    [BSUIComponentView configTextField:self.productName];
+    [BSUIComponentView configTextField:self.preferPrice];
+    [BSUIComponentView configTextField:self.salePrice];
+    [BSUIComponentView configTextField:self.publishTime];
+    [BSUIComponentView configTextField:self.productCatalogue];
+    [BSUIComponentView configTextField:self.introduce];
+    [BSUIComponentView configTextField:self.specification];
+    
+    [BSUIComponentView configTextField:self.comment];
+    [BSUIComponentView configTextField:self.saleStartTime];
+    [BSUIComponentView configTextField:self.saleOverTime];
+    [BSUIComponentView configTextField:self.isSale];
+    [BSUIComponentView configTextField:self.onSale];
+    [BSUIComponentView configTextField:self.numbers];
+}
 
 -(void)displayProduct{
     

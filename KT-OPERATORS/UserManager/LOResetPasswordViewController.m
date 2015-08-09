@@ -18,6 +18,7 @@
     self.bDisplaySearchButtonNav=YES;
     self.bDisplayReturnButtonNav=YES;
     [super viewDidLoad];
+    [self initSubViews];
  
 }
 
@@ -26,6 +27,16 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)initSubViews
+{
+    
+    [BSUIComponentView configButtonStyle:self.checkNumberButton];
+
+    [BSUIComponentView configTextField:self.password];
+    [BSUIComponentView configTextField:self.againPassword];
+    [BSUIComponentView configTextField:self.phone];
+    [BSUIComponentView configTextField:self.checkNumber];
+}
 /*
 #pragma mark - Navigation
 

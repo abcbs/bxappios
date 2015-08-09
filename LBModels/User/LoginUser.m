@@ -5,7 +5,7 @@
 //  Created by admin on 15/6/4.
 //  Copyright (c) 2015年 admin. All rights reserved.
 //
-
+#import <UIKit/UIKit.h>
 #import "LoginUser.h"
 
 @implementation LoginUser
@@ -35,8 +35,14 @@
     
     //详细地址
     [aCoder encodeObject:_address forKey:@"address"];
-    
 
+    
+    [aCoder encodeObject:_headerImage forKey:@"headerImage"];
+ 
+    //[aCoder encodeInteger:_resourceId forKey:@"resourceId"];
+    
+    [aCoder encodeObject:_resourceInfo forKey:@"resourceInfo"];
+    
     [aCoder encodeInteger:_userId forKey:@"userId"];
     
     [aCoder encodeInteger:_businessId forKey:@"businessId"];
@@ -66,6 +72,10 @@
     
     //详细地址
     _address=[aDecoder decodeObjectForKey:@"address"];
+    
+    _headerImage=[aDecoder decodeObjectForKey:@"headerImage"];
+    
+    _resourceInfo=[aDecoder decodeObjectForKey:@"resourceInfo"];
     
     _userId=[aDecoder decodeIntegerForKey:@"userId"];
     

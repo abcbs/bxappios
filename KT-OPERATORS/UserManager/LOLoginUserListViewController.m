@@ -25,6 +25,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.tableView.separatorStyle=UITableViewCellSeparatorStyleSingleLine;
+    self.tableView.separatorColor=[UIColor blackColor];
     [self loadLoginUser:nil];
 }
 
@@ -63,6 +65,12 @@
     cell.textLabel.text = lu.realName;
     
     cell.detailTextLabel.text = lu.userName;
+    //p的图片，在服务端为资源标示
+    if (lu.headerImage) {
+        cell.imageView.image = lu.headerImage;
+    }
+    
+
     return cell;
 }
 

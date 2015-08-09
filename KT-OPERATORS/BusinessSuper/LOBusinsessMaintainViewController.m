@@ -110,6 +110,26 @@
 - (void)initSubViews
 {
     isEdit=NO;
+    [BSUIComponentView configButtonStyle:self.entityHeaderImageButton];
+    [BSUIComponentView configButtonStyle:self.busessHeaderImageButton];
+    [BSUIComponentView configButtonStyle:self.businessResourceImagesButton];
+    //图片样式修改
+    [BSUIComponentView configImageStyle:self.businessHeaderImage];
+    //输入框样式调整
+    [BSUIComponentView configTextField:self.businessName];
+    [BSUIComponentView configTextField:self.commerceLicense];
+    [BSUIComponentView configTextField:self.officerAddress];
+    [BSUIComponentView configTextField:self.besinessIntroduce];
+    [BSUIComponentView configTextField:self.entityName];
+    [BSUIComponentView configTextField:self.entityPhone];
+    [BSUIComponentView configTextField:self.entityTel];
+    
+    [BSUIComponentView configTextField:self.entityEmail];
+    [BSUIComponentView configTextField:self.entityPhone];
+    [BSUIComponentView configTextField:self.entityAddress];
+    [BSUIComponentView configTextField:self.entityIDType];
+    [BSUIComponentView configTextField:self.entityIDNumber];
+
 }
 
 /**
