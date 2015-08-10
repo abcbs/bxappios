@@ -11,6 +11,7 @@
 
 #import "Conf.h"
 #import "ErrorMessage.h"
+
 #pragma mark--第三方网络组件
 
 #import "AFNetworking.h"
@@ -21,7 +22,10 @@
 
 #import "AFNetworkActivityIndicatorManager.h"
 
-
+/**
+ *HTTP处理接口方法
+ */
+#import "BSHTTPNetworking.h"
 
 
 #endif

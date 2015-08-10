@@ -18,6 +18,8 @@
 
 #import "LSProductDetailTableViewController.h"
 
+#import "LOControllerHeader.h"
+
 #define rTableSectionCount 1
 
 @interface LSProductListTableViewController (){
@@ -111,6 +113,10 @@
  */
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if ([UserManager checkSession]==NO) {
+        [self navigating:self storybord:@"LOLoginManager" identity:@"LOLoginAppViewController" canUseStoryboard:YES];
+        return;
+    }
     BusinessProduct *product;
     if (tableView == self.tableView)
     {
@@ -184,6 +190,10 @@ titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    if ([UserManager checkSession]==NO) {
+        [self navigating:self storybord:@"LOLoginManager" identity:@"LOLoginAppViewController" canUseStoryboard:YES];
+        return;
+    }
     if ([segue.identifier isEqualToString:@"BrowseCommodity"])
     {//浏览商品信息
          LSProductDetailTableViewController *evc = (LSProductDetailTableViewController *)segue.destinationViewController;

@@ -315,6 +315,10 @@ NSString * const YYHModelRouterErrorDomain = @"com.yayuhh.YYHModelRouterError";
 
 - (id)serializedModelForJSONDictionary:(NSDictionary *)jsonDictionary modelClass:(Class)modelClass error:(NSError **)error {
     if (self.modelSerializer) {
+        //如果参数是字典，则不需要翻译直接返回
+        if ([modelClass isSubclassOfClass:[NSDictionary class]]) {
+            return jsonDictionary;
+        }
         return [self.modelSerializer modelForJSONDictionary:jsonDictionary modelClass:modelClass error:error];
     } else {
         return jsonDictionary;

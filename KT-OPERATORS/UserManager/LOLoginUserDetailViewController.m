@@ -9,6 +9,7 @@
 #import "LOLoginUserDetailViewController.h"
 #import "LOLoginUserMaintainViewController.h"
 #import "LBModelsHeader.h"
+#import "LOLoginAppViewController.h"
 
 @interface LOLoginUserDetailViewController ()
 
@@ -52,11 +53,23 @@
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    //MaintainCatalogue
-    LOLoginUserMaintainViewController *edit = (LOLoginUserMaintainViewController *)segue.destinationViewController;
-    edit.editDelegate = self;
-    edit.loginUser = self.loginUser;;
+    if ([segue.identifier isEqualToString:@"EditedLoginUser"]){
+        LOLoginUserMaintainViewController *edit =
+            (LOLoginUserMaintainViewController *)
+            segue.destinationViewController;
+        edit.editDelegate = self;
+        edit.loginUser = self.loginUser;
+    }else if ([segue.identifier isEqualToString:@"EditedLoginUser"]){
+        BSLog(@"EditedLoginUser");
+    }
+    if ([segue.destinationViewController isKindOfClass:
+         [LOLoginAppViewController class]]) {
+        //statements
+        BSLog(@"LOLoginAppViewController ...");
+    }
+    
 }
 
 -(void)modifiedStyle{
@@ -103,10 +116,23 @@
     [self display];
 }
 
+- (void)editedLoginUser:(LoginUser *) user  blockArray:(void (^)(NSObject *response, NSError *error,ErrorMessage *errorMessage))block{
+    self.loginUser =user ;
+    
+    [_browseDelegate editedLoginUser:self.loginUser blockArray:block];
+    [self display];
+    
+}
 - (void)addLoginUser:(LoginUser *)user{
     self.loginUser=user;
-    [_browseDelegate addLoginUser:self.loginUser];
+    [_browseDelegate addLoginUser:self.loginUser ];
     [self display];
 }
 
+- (void)addLoginUser:(LoginUser *) user
+          blockArray:(void (^)(NSObject *response, NSError *error,ErrorMessage *errorMessage))block{
+    self.loginUser=user;
+    [_browseDelegate addLoginUser:self.loginUser blockArray:block];
+    [self display];
+}
 @end

@@ -30,7 +30,12 @@
 /**
  *设置Button的样式
  */
-+(void)configButtonStyle:(UIView *)button;
++(void)configLableStyle:(UILabel *)lable;
+
+/**
+ *设置Button的样式
+ */
++(void)configButtonStyle:(UIButton *)button;
 
 /**
  *

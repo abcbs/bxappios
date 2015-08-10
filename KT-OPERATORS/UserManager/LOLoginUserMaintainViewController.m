@@ -9,12 +9,14 @@
 #import "LOLoginUserMaintainViewController.h"
 #import "BSIFTTHeader.h"
 
-@interface LOLoginUserMaintainViewController ()<UITextFieldDelegate,BSPhotoTakeDelegate>{
+@interface LOLoginUserMaintainViewController ()<UITextFieldDelegate,BSPhotoTakeDelegate,UIAlertViewDelegate>{
     NSInteger sex;//1,男 2,女
     BOOL isEdit;
     BOOL isHeaderImage;
     //商品头像图
     __block Resources *rs;
+    
+    UIAlertView *alert;
 
 }
 
@@ -54,6 +56,7 @@
         self.realName.text=self.loginUser.realName;
         self.phone.text=self.loginUser.phoneNum;
         self.password.text=self.loginUser.passWord;
+        self.againPassword.text=self.loginUser.passWord;
         self.address.text=self.loginUser.address;
         
         if ([self.loginUser.sex  isEqualToString:@"1"]) {
@@ -177,10 +180,7 @@
     }else{
         self.againPassword.backgroundColor=defualtColor;
     }
-    
-    
-    //BOOL checkAddress=[[self.address.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] isEqual:@""];
-    
+      
     BOOL checkAddress=[BSValidatePredicate checkNilField:self.address
                                                    alert:@"详细地址不能为空"];
     if (!checkAddress) {
@@ -218,6 +218,7 @@
     self.loginUser.sex=[NSString stringWithFormat:@"%ld", sex];
    
     self.loginUser.passWord= self.password.text;
+    self.loginUser.commitCode=self.againPassword.text;
     self.loginUser.address=self.address.text;
     self.loginUser.phoneNum=self.phone.text;
     if (self.headerImage.image) {
@@ -226,8 +227,17 @@
     
     //营业执照
     if (isEdit) {
-        [self.editDelegate editedLoginUser:self.loginUser];
-        [self.navigationController popViewControllerAnimated:YES];
+        if (DATA_IS_LOCAL) {
+            [self.editDelegate editedLoginUser:self.loginUser];
+            [self.navigationController popViewControllerAnimated:YES];
+
+        }else{//非本地处理方式
+            [self.editDelegate editedLoginUser:self.loginUser  blockArray:^(NSObject *response,NSError *error,ErrorMessage *errorMessage){
+                 alert = [self displayAlert];
+                 [alert show];
+              }];
+        }
+       
     }
     if (!isEdit)
     {
@@ -237,6 +247,7 @@
         self.loginUser.sex=[NSString stringWithFormat:@"%ld", sex];
         
         self.loginUser.passWord= self.password.text;
+        self.loginUser.commitCode=self.againPassword.text;
         self.loginUser.address=self.address.text;
         self.loginUser.phoneNum=self.phone.text;
         if (self.headerImage.image) {
@@ -244,15 +255,36 @@
         }
 
         if (self.editDelegate) {
-            [self.editDelegate addLoginUser:self.loginUser];
+            if (DATA_IS_LOCAL) {
+                [self.editDelegate addLoginUser:self.loginUser];
+                [self toPageController];
+            }else{
+            [self.editDelegate addLoginUser:self.loginUser
+                                 blockArray:^(NSObject *response,NSError *error,ErrorMessage *errorMessage){
+
+                 alert =[self displayAlert];
+                 //通过给定标题添加按钮
+                 [alert show];
+                
+            }];
+            }
         }else{
             UserManager *um=[UserManager userManager];
-            
-            [um insertLoginUser:self.loginUser];
+            if (DATA_IS_LOCAL) {
+                [um insertLoginUser:self.loginUser];
+            }else{
+               [um insertLoginUser:self.loginUser
+                       blockArray:^(NSObject *response,NSError *error,ErrorMessage *errorMessage){
+                           BSLog(@"UserManager");
+                           alert =[self displayAlert];
+                           [alert show];
+                       }
+              ];
+            }
         }
-        [self toPageController];
         
     }
+    [self.navigationController popViewControllerAnimated:YES];
     
 }
 
@@ -330,4 +362,26 @@
     self.womenSex.selected=YES;
     sex=2;//
 }
+
+#pragma marks -- UIAlertViewDelegate --
+-(UIAlertView *)displayAlert{
+    return[[UIAlertView alloc] initWithTitle:@"注册成功"
+                               message:@""
+                              delegate:self
+                     cancelButtonTitle:@"返回"
+                     otherButtonTitles:@"登陆",nil];
+  
+}
+//根据被点击按钮的索引处理点击事件
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+
+    if (buttonIndex==0) {
+        [self.navigationController popViewControllerAnimated:YES];
+
+    }else if(buttonIndex==1){
+        [self toPageController];
+    }
+}
+
 @end

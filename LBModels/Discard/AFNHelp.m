@@ -28,7 +28,7 @@
     //设置返回格式
     manager.responseSerializer=[AFHTTPResponseSerializer serializer];
     
-    NSString *url = Login_url;
+    NSString *url = @"";//Login_url;
     
     //NSURL *urls = [NSURL URLWithString:url];
     
@@ -64,7 +64,7 @@
     //设置返回格式
     manager.responseSerializer=[AFHTTPResponseSerializer serializer];
 
-    NSString *url = Regist_url;
+    NSString *url = @"";//Regist_url;
     
     //NSURL *urls = [NSURL URLWithString:url];
     

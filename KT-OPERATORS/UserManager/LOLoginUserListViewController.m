@@ -10,6 +10,7 @@
 #import "LOLoginUserDetailViewController.h"
 #import "LOLoginUserMaintainViewController.h"
 #import "LBModelsHeader.h"
+#import "LOLoginAppViewController.h"
 
 @interface LOLoginUserListViewController ()
 {
@@ -27,6 +28,7 @@
     [super viewDidLoad];
     self.tableView.separatorStyle=UITableViewCellSeparatorStyleSingleLine;
     self.tableView.separatorColor=[UIColor blackColor];
+    
     [self loadLoginUser:nil];
 }
 
@@ -59,6 +61,7 @@
  */
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+   
     UITableViewCell *cell = [self obtainCellWith:@"LOLoginUserListViewCell"];
     
     LoginUser *lu=_bsList[indexPath.row];
@@ -79,14 +82,17 @@
  */
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if ([UserManager checkSession]==NO) {
+        [self navigating:self storybord:@"LOLoginManager" identity:@"LOLoginAppViewController" canUseStoryboard:YES];
+        return;
+    }
     LoginUser *lu;
     if (tableView == self.tableView)
     {
         lu = _bsList[indexPath.row];
         _bsIndex = indexPath.row;
         evc.loginUser=lu;
-        [self performSegueWithIdentifier:@"BrowseLoginUser" sender:nil];
-        
+      
     }
 }
 
@@ -137,6 +143,11 @@ titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    if ([UserManager checkSession]==NO) {
+        [self navigating:self storybord:@"LOLoginManager" identity:@"LOLoginAppViewController" canUseStoryboard:YES];
+        
+         return;
+    }
     if ([segue.identifier isEqualToString:@"BrowseLoginUser"])
     {//浏览信息
        evc =
@@ -173,6 +184,20 @@ titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
     [um updateLoginUser:user atIndex:_bsIndex];
 }
 
+- (void)editedLoginUser:(LoginUser *) user  blockArray:(void (^)(NSObject *response, NSError *error,ErrorMessage *errorMessage))block{
+    if (!_bsList)
+    {
+        _bsList = [NSMutableArray array];
+    }
+    if (_bsList.count>0) {
+        [_bsList removeObjectAtIndex:_bsIndex];
+        [_bsList insertObject:user atIndex:_bsIndex];
+    }
+    [self.tableView reloadData];
+    UserManager *um=[UserManager userManager];
+    
+    [um updateLoginUser:user blockArray:block];
+}
 
 /**
  *装载初始化数据
@@ -207,8 +232,37 @@ titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     UserManager *um=[UserManager userManager];
     
-    [um insertLoginUser:user];
+    //[um insertLoginUser:user];
+    [um insertLoginUser:user
+             blockArray:^(NSObject *response,NSError *error,ErrorMessage *errorMessage){
+                 
+                 BSLog(@"UserManager insertLoginUser");
+             }
+     
+     ];
 
+
+}
+
+/**
+ *新增
+ */
+- (void)addLoginUser:(LoginUser *) user
+          blockArray:(void (^)(NSObject *response, NSError *error,ErrorMessage *errorMessage))block{
+    if (!_bsList)
+    {
+        _bsList = [NSMutableArray array];
+    }
+    [_bsList addObject:user];
+    [self.tableView reloadData];
+    
+    UserManager *um=[UserManager userManager];
+    //[um insertLoginUser:user];
+    [um insertLoginUser:user
+             blockArray:block
+     ];
+    
+    
 }
 
 @end

@@ -107,11 +107,6 @@ extern float autoSizeScaleY;
 
 
 #pragma mark--对URL统一管理
-//登录
-#define Login_url [[[NSString alloc] initWithString:KBS_URL]stringByAppendingString:@"user/login"];
-//app_url +@"/user/login";
-//注册
-#define Regist_url [[[NSString alloc] initWithString:KBS_URL]stringByAppendingString:@"user/register"];
 //上传头像
 #define UpHeadImage_url [[[NSString alloc] initWithString:KBS_URL]stringByAppendingString:@"user/uploadportrait"];
 //我的订单
@@ -120,6 +115,16 @@ extern float autoSizeScaleY;
 #define OrderDetail_url [[[NSString alloc] initWithString:KBS_URL]stringByAppendingString:@"order/orderdetaileds/1"];
 //验证码接口
 #define Validate_url [[[NSString alloc] initWithString:KBS_URL]stringByAppendingString:@"user/generatecode"];
+
+/**
+ *注册
+ */
+#define USER_REGISTER_SCHEMA @"user/register"
+
+/**
+ *登陆
+ */
+#define USER_LOGIN_SCHEMA @"user/login"
 
 #pragma mark--功能的请求参数及请求参数模
 
@@ -237,7 +242,8 @@ extern float autoSizeScaleY;
 //anonymity
 #define USER_TYPE_ANONY    @"4"
 
-#define DATA_IS_LOCAL YES
+#define USER_LONGIN_NUMBER 5
+#define DATA_IS_LOCAL NO
 
 
 +(NSDate*) convertDateFromString:(NSString*)uiDate;

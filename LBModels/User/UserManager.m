@@ -9,10 +9,12 @@
 #import "UserManager.h"
 #import "BSUIFrameworkHeader.h"
 #import "RemoteUserManager.h"
-
+#import "UserSession.h"
 @implementation UserManager
 
 static UserManager *instance;
+
+static UserSession *session;
 
 +(UserManager *)userManager{
     if (DATA_IS_LOCAL) {
@@ -29,7 +31,40 @@ static UserManager *instance;
     }
     return instance;
 }
+
+
+
++(void) registSession:(UserSession *)userSession{
+    if (!session) {
+        session=[UserSession new];
+        
+    }
+    session.userName=userSession.userName;
+    session.sessionId=userSession.sessionId;
+    session.status=userSession.status;
+}
+
++(NSString *)currentSessionId{
+    return session.sessionId;
+}
+
++(BOOL)checkSession{
+    if (!session) {
+        return NO;
+    }
+    if (!session.sessionId) {
+        return NO;
+    }
+    if (![session.status isEqualToString:@"1"]) {
+        return NO;
+    }
+    return YES;
+}
 #pragma mark -商家经营类型
+
+-(NSMutableArray *) loadLoginUser:(LoginUser *)user  blockArray:(void (^)(NSObject *response, NSError *error,ErrorMessage *errorMessage))block{
+    return [self loadLoginUser:user];
+}
 
 -(NSMutableArray *) loadLoginUser:(LoginUser *)user{
     NSString *path = [self pathForLoginUser];
@@ -40,13 +75,21 @@ static UserManager *instance;
     return bpList;
 
 }
-
-
+//本地适配远程方法
+-(void)insertLoginUser:(LoginUser *) user
+            blockArray:(void (^)(NSObject *response, NSError *error,ErrorMessage *errorMessage))block{
+    [self insertLoginUser:user];
+}
 - (void)insertLoginUser:(LoginUser *) user{
     NSMutableArray * bsList=[self localForLoginUser ];
     [bsList addObject:user];
     NSString *path = [self pathForLoginUser];
     [NSKeyedArchiver archiveRootObject:bsList toFile:path];
+}
+
+-(void)updateLoginUser:(LoginUser *) user
+            blockArray:(void (^)(NSObject *response, NSError *error,ErrorMessage *errorMessage))block{
+    [self updateLoginUser:user atIndex:0];
 }
 
 -(void)updateLoginUser:(LoginUser *) user
@@ -61,6 +104,11 @@ static UserManager *instance;
     [NSKeyedArchiver archiveRootObject:bsList toFile:path];
 }
 
+
+-(void)removeLoginUser:(LoginUser *) user
+            blockArray:(void (^)(NSObject *response, NSError *error,ErrorMessage *errorMessage))block{
+    [self removeLoginUser:user];
+}
 -(void)removeLoginUser:(LoginUser *) user{
     NSMutableArray * bsList=[self localForLoginUser ];
     NSString *path = [self pathForLoginUser];
@@ -95,4 +143,10 @@ static UserManager *instance;
     return path;
 }
 
+
+#pragma mark -登陆方法
+-(void)loginWithUser:(LoginUser *) user
+          blockArray:(void (^)(NSObject *response, NSError *error,ErrorMessage *errorMessage))block{
+    BSLog(@"loginWithUser");
+}
 @end

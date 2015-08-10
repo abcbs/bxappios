@@ -7,8 +7,8 @@
 //
 
 #import "RemoteUserManager.h"
-#import "BSUIFrameworkHeader.h"
-
+#import "BSHTTPNetworking.h"
+#import "BSCMFrameworkHeader.h"
 @implementation RemoteUserManager
 
 static RemoteUserManager *instance;
@@ -20,8 +20,52 @@ static RemoteUserManager *instance;
     return instance;
 }
 
--(NSMutableArray *) loadLoginUser:(LoginUser *)user{
-    BSLog(@"服务器方法，获取用户注册信息");
+-(void)insertLoginUser:(LoginUser *) user
+            blockArray:(void (^)(NSObject *response, NSError *error,ErrorMessage *errorMessage))block{
+    NSDictionary *dic1 = [NSDictionary dictionaryWithObjectsAndKeys:user.realName,@"name",user.address,@"address",user.phoneNum,@"phone",nil];
+    NSDictionary *dic2 = [NSDictionary dictionaryWithObjectsAndKeys:user.sex,@"sex",nil];
+    NSDictionary *dic3 = [NSDictionary dictionaryWithObjectsAndKeys:user.userName,@"username",user.passWord,@"password",user.commitCode,@"confirmPassword",nil];
+    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:dic1,@"userBase",dic2,@"userDetailed",dic3,@"loginUser", nil];
+    
+    [BSHTTPNetworking httpPOST:USER_REGISTER_SCHEMA
+                   pathPattern:USER_REGISTER_SCHEMA
+                    parameters:dic
+                    modelClass:[NSString class]
+                       keyPath:@""
+                         block:(BSHTTPResponse)block
+     ];
+    
+}
+
+-(NSMutableArray *) loadLoginUser:(LoginUser *)user  blockArray:(void (^)(NSObject *response, NSError *error,ErrorMessage *errorMessage))block{
     return nil;
 }
+
+-(void)updateLoginUser:(LoginUser *) user
+            blockArray:(void (^)(NSObject *response, NSError *error,ErrorMessage *errorMessage))block{
+     BSLog(@"更新登陆数据");
+}
+
+
+-(void)removeLoginUser:(LoginUser *) user
+            blockArray:(void (^)(NSObject *response, NSError *error,ErrorMessage *errorMessage))block{
+    BSLog(@"删除登陆数据");
+}
+
+#pragma mark -登陆方法
+-(void)loginWithUser:(LoginUser *) user
+          blockArray:(void (^)(NSObject *response, NSError *error,ErrorMessage *errorMessage))block{
+    
+      NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:user.userName,@"username",user.passWord,@"password", nil];
+    
+    [BSHTTPNetworking httpPOST:USER_LOGIN_SCHEMA
+                   pathPattern:USER_LOGIN_SCHEMA
+                    parameters:dic
+                    modelClass:[NSDictionary class]
+                       keyPath:@""
+                         block:(BSHTTPResponse)block
+     ];
+
+}
+
 @end
