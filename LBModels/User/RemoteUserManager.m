@@ -61,7 +61,7 @@ static RemoteUserManager *instance;
     [BSHTTPNetworking httpPOST:USER_LOGIN_SCHEMA
                    pathPattern:USER_LOGIN_SCHEMA
                     parameters:dic
-                    modelClass:[NSDictionary class]
+                    modelClass:[UserSession class]
                        keyPath:@""
                          block:(BSHTTPResponse)block
      ];

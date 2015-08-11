@@ -39,7 +39,7 @@ static UserSession *session;
         session=[UserSession new];
         
     }
-    session.userName=userSession.userName;
+    session.username=userSession.username;
     session.sessionId=userSession.sessionId;
     session.status=userSession.status;
 }

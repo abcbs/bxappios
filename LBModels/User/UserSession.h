@@ -12,7 +12,7 @@
 
 @property (retain,nonatomic) NSString * sessionId;
 
-@property (retain,nonatomic) NSString * userName;
+@property (retain,nonatomic) NSString * username;
 
 @property (retain,nonatomic) NSString * status;
 

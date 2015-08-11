@@ -99,14 +99,8 @@
     loginUser.passWord=self.password.text;
     UserManager *um=[UserManager userManager];
     [um loginWithUser:loginUser blockArray:^(NSObject *response, NSError *error, ErrorMessage *errorMessage) {
-        NSDictionary *dic=(NSDictionary *)response;
-        NSString *sessionId=[dic objectForKey:@"sessionId"];
-        NSString *status=[dic objectForKey:@"status"];
-        NSString *userName=[dic objectForKey:@"username"];
-        UserSession *userSession=[UserSession new];
-        userSession.userName=userName;
-        userSession.sessionId=sessionId;
-        userSession.status=status;
+      
+        UserSession *userSession=(UserSession*)response;
         [UserManager registSession:userSession];
         //便捷的数据保存方式
         //NSUserDefaults *userDefaults=[NSUserDefaults standardUserDefaults];

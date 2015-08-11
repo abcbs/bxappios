@@ -15,7 +15,7 @@
     
     [aCoder encodeObject:_sessionId forKey:@"sessionId"];
     
-    [aCoder encodeObject:_userName forKey:@"userName"];
+    [aCoder encodeObject:_username forKey:@"username"];
     
     [aCoder encodeObject:_status forKey:@"status"];
 
@@ -26,7 +26,7 @@
     
     _sessionId = [aDecoder decodeObjectForKey:@"sessionId"];
     
-    _userName = [aDecoder decodeObjectForKey:@"userName"];
+    _username = [aDecoder decodeObjectForKey:@"username"];
     
     _status = [aDecoder decodeObjectForKey:@"status"];
 
@@ -35,6 +35,6 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"会话信息\t%@\t用户名:%@", _sessionId,_userName];
+    return [NSString stringWithFormat:@"会话信息\t%@\t用户名:%@", _sessionId,_username];
 }
 @end
