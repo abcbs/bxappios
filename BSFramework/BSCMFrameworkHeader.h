@@ -27,5 +27,8 @@
  */
 #import "BSHTTPNetworking.h"
 
+#import "Base64.h"
+
+#import "BSSecurity.h"
 
 #endif

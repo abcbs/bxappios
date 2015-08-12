@@ -88,6 +88,29 @@
 		8405CBD31B5578E50014AF8D /* Resources.m in Sources */ = {isa = PBXBuildFile; fileRef = 8405CBD11B5578E50014AF8D /* Resources.m */; };
 		84118EFE1B667AD50052E275 /* BSPhotoTakeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84118EFD1B667AD50052E275 /* BSPhotoTakeViewController.m */; };
 		84118EFF1B667AD50052E275 /* BSPhotoTakeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84118EFD1B667AD50052E275 /* BSPhotoTakeViewController.m */; };
+		8412CA6F1B79DDCB004EDFAB /* BSRSAEncryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 8412CA6E1B79DDCB004EDFAB /* BSRSAEncryptor.m */; };
+		8412CA701B79DDCB004EDFAB /* BSRSAEncryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 8412CA6E1B79DDCB004EDFAB /* BSRSAEncryptor.m */; };
+		8412CA7B1B79EB12004EDFAB /* pkcs8_private_key.pem in Resources */ = {isa = PBXBuildFile; fileRef = 8412CA741B79EB12004EDFAB /* pkcs8_private_key.pem */; };
+		8412CA7C1B79EB12004EDFAB /* pkcs8_private_key.pem in Resources */ = {isa = PBXBuildFile; fileRef = 8412CA741B79EB12004EDFAB /* pkcs8_private_key.pem */; };
+		8412CA7D1B79EB12004EDFAB /* pkcs8_private_key.pem in Resources */ = {isa = PBXBuildFile; fileRef = 8412CA741B79EB12004EDFAB /* pkcs8_private_key.pem */; };
+		8412CA7E1B79EB12004EDFAB /* private_key.p12 in Resources */ = {isa = PBXBuildFile; fileRef = 8412CA751B79EB12004EDFAB /* private_key.p12 */; };
+		8412CA7F1B79EB12004EDFAB /* private_key.p12 in Resources */ = {isa = PBXBuildFile; fileRef = 8412CA751B79EB12004EDFAB /* private_key.p12 */; };
+		8412CA801B79EB12004EDFAB /* private_key.p12 in Resources */ = {isa = PBXBuildFile; fileRef = 8412CA751B79EB12004EDFAB /* private_key.p12 */; };
+		8412CA811B79EB12004EDFAB /* private_key.pem in Resources */ = {isa = PBXBuildFile; fileRef = 8412CA761B79EB12004EDFAB /* private_key.pem */; };
+		8412CA821B79EB12004EDFAB /* private_key.pem in Resources */ = {isa = PBXBuildFile; fileRef = 8412CA761B79EB12004EDFAB /* private_key.pem */; };
+		8412CA831B79EB12004EDFAB /* private_key.pem in Resources */ = {isa = PBXBuildFile; fileRef = 8412CA761B79EB12004EDFAB /* private_key.pem */; };
+		8412CA841B79EB12004EDFAB /* public_key.der in Resources */ = {isa = PBXBuildFile; fileRef = 8412CA771B79EB12004EDFAB /* public_key.der */; };
+		8412CA851B79EB12004EDFAB /* public_key.der in Resources */ = {isa = PBXBuildFile; fileRef = 8412CA771B79EB12004EDFAB /* public_key.der */; };
+		8412CA861B79EB12004EDFAB /* public_key.der in Resources */ = {isa = PBXBuildFile; fileRef = 8412CA771B79EB12004EDFAB /* public_key.der */; };
+		8412CA871B79EB12004EDFAB /* rsa_public_key.pem in Resources */ = {isa = PBXBuildFile; fileRef = 8412CA781B79EB12004EDFAB /* rsa_public_key.pem */; };
+		8412CA881B79EB12004EDFAB /* rsa_public_key.pem in Resources */ = {isa = PBXBuildFile; fileRef = 8412CA781B79EB12004EDFAB /* rsa_public_key.pem */; };
+		8412CA891B79EB12004EDFAB /* rsa_public_key.pem in Resources */ = {isa = PBXBuildFile; fileRef = 8412CA781B79EB12004EDFAB /* rsa_public_key.pem */; };
+		8412CA8A1B79EB12004EDFAB /* rsaCert.crt in Resources */ = {isa = PBXBuildFile; fileRef = 8412CA791B79EB12004EDFAB /* rsaCert.crt */; };
+		8412CA8B1B79EB12004EDFAB /* rsaCert.crt in Resources */ = {isa = PBXBuildFile; fileRef = 8412CA791B79EB12004EDFAB /* rsaCert.crt */; };
+		8412CA8C1B79EB12004EDFAB /* rsaCert.crt in Resources */ = {isa = PBXBuildFile; fileRef = 8412CA791B79EB12004EDFAB /* rsaCert.crt */; };
+		8412CA8D1B79EB12004EDFAB /* rsaCertReq.csr in Resources */ = {isa = PBXBuildFile; fileRef = 8412CA7A1B79EB12004EDFAB /* rsaCertReq.csr */; };
+		8412CA8E1B79EB12004EDFAB /* rsaCertReq.csr in Resources */ = {isa = PBXBuildFile; fileRef = 8412CA7A1B79EB12004EDFAB /* rsaCertReq.csr */; };
+		8412CA8F1B79EB12004EDFAB /* rsaCertReq.csr in Resources */ = {isa = PBXBuildFile; fileRef = 8412CA7A1B79EB12004EDFAB /* rsaCertReq.csr */; };
 		842042A21B2983B40002C868 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8420429F1B2983B40002C868 /* AppDelegate.m */; };
 		842042AE1B2984D80002C868 /* KTCarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 842042A71B2984D80002C868 /* KTCarCell.m */; };
 		842042AF1B2984D80002C868 /* KTCarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842042A81B2984D80002C868 /* KTCarCell.xib */; };
@@ -694,6 +717,10 @@
 		8487F1861B3005C100F0F7B2 /* KTInformationConfViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8487F1811B3005C100F0F7B2 /* KTInformationConfViewController.storyboard */; };
 		8487F1871B3005C100F0F7B2 /* KTOnlinePayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8487F1831B3005C100F0F7B2 /* KTOnlinePayViewController.m */; };
 		8487F1881B3005C100F0F7B2 /* KTOnlinePayViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8487F1841B3005C100F0F7B2 /* KTOnlinePayViewController.storyboard */; };
+		848C7C321B79A301000774A1 /* BSSecurity.m in Sources */ = {isa = PBXBuildFile; fileRef = 848C7C311B79A301000774A1 /* BSSecurity.m */; };
+		848C7C331B79A301000774A1 /* BSSecurity.m in Sources */ = {isa = PBXBuildFile; fileRef = 848C7C311B79A301000774A1 /* BSSecurity.m */; };
+		848C7C371B79A38A000774A1 /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 848C7C361B79A38A000774A1 /* Base64.m */; };
+		848C7C381B79A38A000774A1 /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 848C7C361B79A38A000774A1 /* Base64.m */; };
 		84A076541B21AA39001CE3A2 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A076531B21AA39001CE3A2 /* Social.framework */; };
 		84A076561B21AA47001CE3A2 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A076551B21AA46001CE3A2 /* Accounts.framework */; };
 		84A076581B21AA7D001CE3A2 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A076571B21AA7D001CE3A2 /* CoreMotion.framework */; };
@@ -774,6 +801,8 @@
 		84D19FF11B4C440500BA25BF /* LeTemperatureAlarmService.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D19FE31B4C36EC00BA25BF /* LeTemperatureAlarmService.m */; };
 		84D19FF31B4C440500BA25BF /* BSBLEDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8480580A1B39A0E9005817D7 /* BSBLEDetailTableViewController.m */; };
 		84D19FF81B4C451F00BA25BF /* BSUISingleImageTableViewCell.xib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8476A0451B4BB93100DB2CF0 /* BSUISingleImageTableViewCell.xib */; };
+		84DAA4A41B7AE6120070BF83 /* BSRSACrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DAA4A31B7AE6120070BF83 /* BSRSACrypto.m */; };
+		84DAA4A51B7AE6120070BF83 /* BSRSACrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DAA4A31B7AE6120070BF83 /* BSRSACrypto.m */; };
 		84E71F341B4E5473003089B2 /* BLEDevicesAddTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E71F331B4E5473003089B2 /* BLEDevicesAddTableViewController.m */; };
 		84E71F351B4E5473003089B2 /* BLEDevicesAddTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E71F331B4E5473003089B2 /* BLEDevicesAddTableViewController.m */; };
 		84E71F391B4E60E6003089B2 /* BLCentralExtention.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 84E71F381B4E6023003089B2 /* BLCentralExtention.h */; };
@@ -1468,6 +1497,15 @@
 		8405CBD11B5578E50014AF8D /* Resources.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Resources.m; sourceTree = "<group>"; };
 		84118EFC1B667AD50052E275 /* BSPhotoTakeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSPhotoTakeViewController.h; sourceTree = "<group>"; };
 		84118EFD1B667AD50052E275 /* BSPhotoTakeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSPhotoTakeViewController.m; sourceTree = "<group>"; };
+		8412CA6D1B79DDCB004EDFAB /* BSRSAEncryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSRSAEncryptor.h; sourceTree = "<group>"; };
+		8412CA6E1B79DDCB004EDFAB /* BSRSAEncryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSRSAEncryptor.m; sourceTree = "<group>"; };
+		8412CA741B79EB12004EDFAB /* pkcs8_private_key.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pkcs8_private_key.pem; sourceTree = "<group>"; };
+		8412CA751B79EB12004EDFAB /* private_key.p12 */ = {isa = PBXFileReference; lastKnownFileType = file; path = private_key.p12; sourceTree = "<group>"; };
+		8412CA761B79EB12004EDFAB /* private_key.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = private_key.pem; sourceTree = "<group>"; };
+		8412CA771B79EB12004EDFAB /* public_key.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = public_key.der; sourceTree = "<group>"; };
+		8412CA781B79EB12004EDFAB /* rsa_public_key.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = rsa_public_key.pem; sourceTree = "<group>"; };
+		8412CA791B79EB12004EDFAB /* rsaCert.crt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = rsaCert.crt; sourceTree = "<group>"; };
+		8412CA7A1B79EB12004EDFAB /* rsaCertReq.csr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = rsaCertReq.csr; sourceTree = "<group>"; };
 		8420429E1B2983B40002C868 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8420429F1B2983B40002C868 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		842042A61B2984D80002C868 /* KTCarCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTCarCell.h; sourceTree = "<group>"; };
@@ -2001,6 +2039,10 @@
 		8487F1821B3005C100F0F7B2 /* KTOnlinePayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTOnlinePayViewController.h; sourceTree = "<group>"; };
 		8487F1831B3005C100F0F7B2 /* KTOnlinePayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTOnlinePayViewController.m; sourceTree = "<group>"; };
 		8487F1841B3005C100F0F7B2 /* KTOnlinePayViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = KTOnlinePayViewController.storyboard; sourceTree = "<group>"; };
+		848C7C301B79A301000774A1 /* BSSecurity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSSecurity.h; sourceTree = "<group>"; };
+		848C7C311B79A301000774A1 /* BSSecurity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSSecurity.m; sourceTree = "<group>"; };
+		848C7C351B79A38A000774A1 /* Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64.h; sourceTree = "<group>"; };
+		848C7C361B79A38A000774A1 /* Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Base64.m; sourceTree = "<group>"; };
 		84A076531B21AA39001CE3A2 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		84A076551B21AA46001CE3A2 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		84A076571B21AA7D001CE3A2 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
@@ -2071,6 +2113,8 @@
 		84D19FE31B4C36EC00BA25BF /* LeTemperatureAlarmService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeTemperatureAlarmService.m; sourceTree = "<group>"; };
 		84D19FE81B4C3CE900BA25BF /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
 		84D19FEA1B4C430000BA25BF /* BSIFTTHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSIFTTHeader.h; sourceTree = "<group>"; };
+		84DAA4A21B7AE6120070BF83 /* BSRSACrypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSRSACrypto.h; sourceTree = "<group>"; };
+		84DAA4A31B7AE6120070BF83 /* BSRSACrypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSRSACrypto.m; sourceTree = "<group>"; };
 		84E71F321B4E5473003089B2 /* BLEDevicesAddTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLEDevicesAddTableViewController.h; sourceTree = "<group>"; };
 		84E71F331B4E5473003089B2 /* BLEDevicesAddTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLEDevicesAddTableViewController.m; sourceTree = "<group>"; };
 		84E71F381B4E6023003089B2 /* BLCentralExtention.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLCentralExtention.h; sourceTree = "<group>"; };
@@ -2544,6 +2588,20 @@
 				8405CBD11B5578E50014AF8D /* Resources.m */,
 			);
 			path = DocReources;
+			sourceTree = "<group>";
+		};
+		8412CA731B79EB12004EDFAB /* CertFile */ = {
+			isa = PBXGroup;
+			children = (
+				8412CA741B79EB12004EDFAB /* pkcs8_private_key.pem */,
+				8412CA751B79EB12004EDFAB /* private_key.p12 */,
+				8412CA761B79EB12004EDFAB /* private_key.pem */,
+				8412CA771B79EB12004EDFAB /* public_key.der */,
+				8412CA781B79EB12004EDFAB /* rsa_public_key.pem */,
+				8412CA791B79EB12004EDFAB /* rsaCert.crt */,
+				8412CA7A1B79EB12004EDFAB /* rsaCertReq.csr */,
+			);
+			path = CertFile;
 			sourceTree = "<group>";
 		};
 		842042A51B2984D80002C868 /* ShoppingCart */ = {
@@ -3423,6 +3481,26 @@
 			path = CustomerAppoint;
 			sourceTree = "<group>";
 		};
+		848C7C2F1B79A293000774A1 /* Security */ = {
+			isa = PBXGroup;
+			children = (
+				8412CA6D1B79DDCB004EDFAB /* BSRSAEncryptor.h */,
+				8412CA6E1B79DDCB004EDFAB /* BSRSAEncryptor.m */,
+				848C7C301B79A301000774A1 /* BSSecurity.h */,
+				848C7C311B79A301000774A1 /* BSSecurity.m */,
+			);
+			path = Security;
+			sourceTree = "<group>";
+		};
+		848C7C341B79A38A000774A1 /* Base64 */ = {
+			isa = PBXGroup;
+			children = (
+				848C7C351B79A38A000774A1 /* Base64.h */,
+				848C7C361B79A38A000774A1 /* Base64.m */,
+			);
+			path = Base64;
+			sourceTree = "<group>";
+		};
 		84BA96411B2829D500388B58 /* LBModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -3664,6 +3742,10 @@
 		84BA968E1B2829FC00388B58 /* BSTransfer */ = {
 			isa = PBXGroup;
 			children = (
+				84DAA4A11B7AE6120070BF83 /* Crypto */,
+				8412CA731B79EB12004EDFAB /* CertFile */,
+				848C7C341B79A38A000774A1 /* Base64 */,
+				848C7C2F1B79A293000774A1 /* Security */,
 				84BA968F1B2829FC00388B58 /* Serializers */,
 				84BA96911B2829FC00388B58 /* YYHModelRouter */,
 			);
@@ -3884,6 +3966,15 @@
 				845A022E1B3DB13B007F5327 /* BSCMFrameworkHeader.h */,
 			);
 			path = BSFramework;
+			sourceTree = "<group>";
+		};
+		84DAA4A11B7AE6120070BF83 /* Crypto */ = {
+			isa = PBXGroup;
+			children = (
+				84DAA4A21B7AE6120070BF83 /* BSRSACrypto.h */,
+				84DAA4A31B7AE6120070BF83 /* BSRSACrypto.m */,
+			);
+			path = Crypto;
 			sourceTree = "<group>";
 		};
 		84E9D77B1B61E10C00F2CD24 /* ImagePicker */ = {
@@ -4822,6 +4913,7 @@
 				84EA98A01B57E21F00AC549F /* 4个人设置-3注册.jpg in Resources */,
 				8461B7711B54BB69002A7C43 /* orderDetailCell.xib in Resources */,
 				8461B7741B54BB69002A7C43 /* OrderDetailOneCell.xib in Resources */,
+				8412CA8B1B79EB12004EDFAB /* rsaCert.crt in Resources */,
 				84EA98AC1B57E21F00AC549F /* forget password-4.png in Resources */,
 				84EA984E1B57E21F00AC549F /* d-1.png in Resources */,
 				84EA98481B57E21F00AC549F /* APP-分-640-1136-4寸.jpg in Resources */,
@@ -4831,6 +4923,7 @@
 				8461B77F1B54BB69002A7C43 /* KTInformationConfViewController.storyboard in Resources */,
 				84EA986C1B57E21F00AC549F /* wodexiaoxi.png in Resources */,
 				8461B7821B54BB69002A7C43 /* KTOnlinePayViewController.storyboard in Resources */,
+				8412CA7C1B79EB12004EDFAB /* pkcs8_private_key.pem in Resources */,
 				8461B78F1B54BB69002A7C43 /* KTWaterDetailsViewController.storyboard in Resources */,
 				84EA98A41B57E21F00AC549F /* der.png in Resources */,
 				84EA98201B57E21F00AC549F /* third_selected.png in Resources */,
@@ -4855,6 +4948,7 @@
 				84EA98CA1B57E21F00AC549F /* register-2.png in Resources */,
 				84EA98A21B57E21F00AC549F /* 4个人设置-3登录.jpg in Resources */,
 				84EA9A911B57F17800AC549F /* LSBusinessIndexMain.storyboard in Resources */,
+				8412CA8E1B79EB12004EDFAB /* rsaCertReq.csr in Resources */,
 				84EA98821B57E21F00AC549F /* jiantou.png in Resources */,
 				84EA1A831B6FCB040058161E /* LOCatagoryManager.storyboard in Resources */,
 				84EA98761B57E21F00AC549F /* 1.png in Resources */,
@@ -4919,6 +5013,7 @@
 				84EA98641B57E21F00AC549F /* regist.png in Resources */,
 				84EA98F01B57E21F00AC549F /* im_information_you.png in Resources */,
 				84EA97BA1B57E21F00AC549F /* img_05.jpg in Resources */,
+				8412CA7F1B79EB12004EDFAB /* private_key.p12 in Resources */,
 				84EA97FE1B57E21F00AC549F /* first_selected@2x.png in Resources */,
 				84EA98E01B57E21F00AC549F /* dianhua.png in Resources */,
 				84EA983C1B57E21F00AC549F /* a5.png in Resources */,
@@ -4932,6 +5027,7 @@
 				84EA98BE1B57E21F00AC549F /* radio_checked@2x.png in Resources */,
 				84EA98E81B57E21F00AC549F /* hs.png in Resources */,
 				84F28FBF1B62B56A001078D8 /* FDTake.strings in Resources */,
+				8412CA851B79EB12004EDFAB /* public_key.der in Resources */,
 				84EA97D21B57E21F00AC549F /* icon_map_highlighted@2x.png in Resources */,
 				84EA981A1B57E21F00AC549F /* shfws@2x.png in Resources */,
 				84EA98FE1B57E21F00AC549F /* jl_01.png in Resources */,
@@ -4960,6 +5056,7 @@
 				84EA982E1B57E21F00AC549F /* 640-90.png in Resources */,
 				84F66D621B53E6A700498734 /* LSBLEIFTTUpHoldMain.storyboard in Resources */,
 				84EA98861B57E21F00AC549F /* ljzf.png in Resources */,
+				8412CA881B79EB12004EDFAB /* rsa_public_key.pem in Resources */,
 				84EA98721B57E21F00AC549F /* yijianfenxiang.png in Resources */,
 				84EA97F01B57E21F00AC549F /* xctb.png in Resources */,
 				84EA98701B57E21F00AC549F /* xitongshezhi.png in Resources */,
@@ -4977,6 +5074,7 @@
 				84EA97D81B57E21F00AC549F /* im_baojie.png in Resources */,
 				84EA984C1B57E21F00AC549F /* c-1.png in Resources */,
 				84F28FD61B62C642001078D8 /* PhotoTake.storyboard in Resources */,
+				8412CA821B79EB12004EDFAB /* private_key.pem in Resources */,
 				84EA98A61B57E21F00AC549F /* forget password-1.png in Resources */,
 				84EA989C1B57E21F00AC549F /* 银行卡绑定-6.png in Resources */,
 				84EA98A81B57E21F00AC549F /* forget password-2.png in Resources */,
@@ -5028,6 +5126,7 @@
 				847415A11B639312005BF59D /* im_information_add.png in Resources */,
 				847415521B639312005BF59D /* e-1.png in Resources */,
 				847415371B639312005BF59D /* shfwh@2x.png in Resources */,
+				8412CA891B79EB12004EDFAB /* rsa_public_key.pem in Resources */,
 				847415071B639312005BF59D /* img_04.jpg in Resources */,
 				847415571B639312005BF59D /* h_01.png in Resources */,
 				8474157F1B639312005BF59D /* forget password-3.png in Resources */,
@@ -5086,6 +5185,7 @@
 				84F2901F1B638BA7001078D8 /* KTOnlinePayViewController.storyboard in Resources */,
 				847415451B639312005BF59D /* a11.png in Resources */,
 				8474152E1B639312005BF59D /* icon-1x-04.png in Resources */,
+				8412CA8C1B79EB12004EDFAB /* rsaCert.crt in Resources */,
 				84EA1A841B6FCB040058161E /* LOCatagoryManager.storyboard in Resources */,
 				8474153E1B639312005BF59D /* wdqzs@2x.png in Resources */,
 				847415751B639312005BF59D /* zffs_01.png in Resources */,
@@ -5101,6 +5201,7 @@
 				8474152B1B639312005BF59D /* icon-1x-01.png in Resources */,
 				847415171B639312005BF59D /* im_baojie.png in Resources */,
 				8404A1751B78F45B00660BAD /* LOLoginManager.storyboard in Resources */,
+				8412CA8F1B79EB12004EDFAB /* rsaCertReq.csr in Resources */,
 				847415951B639312005BF59D /* 2.jpg in Resources */,
 				847415811B639312005BF59D /* forget password-head.png in Resources */,
 				847415481B639312005BF59D /* a5.png in Resources */,
@@ -5132,6 +5233,7 @@
 				847415641B639312005BF59D /* 生活圈.jpg in Resources */,
 				8474152F1B639312005BF59D /* icon-1x-1.png in Resources */,
 				847415261B639312005BF59D /* bjfwh@2x.png in Resources */,
+				8412CA831B79EB12004EDFAB /* private_key.pem in Resources */,
 				847415111B639312005BF59D /* icon_district.png in Resources */,
 				84F2901A1B638B8C001078D8 /* PhotoTake.storyboard in Resources */,
 				847415841B639312005BF59D /* login-2.png in Resources */,
@@ -5154,11 +5256,13 @@
 				8474151F1B639312005BF59D /* sstb.png in Resources */,
 				8474158C1B639312005BF59D /* RadioButton-Selected.png in Resources */,
 				8474151D1B639312005BF59D /* im_shui.png in Resources */,
+				8412CA7D1B79EB12004EDFAB /* pkcs8_private_key.pem in Resources */,
 				8474152D1B639312005BF59D /* icon-1x-03.png in Resources */,
 				847415341B639312005BF59D /* second_normal@2x.png in Resources */,
 				847415781B639312005BF59D /* 银行卡绑定-6.png in Resources */,
 				8474157E1B639312005BF59D /* forget password-2.png in Resources */,
 				847415681B639312005BF59D /* ddlb_01.png in Resources */,
+				8412CA801B79EB12004EDFAB /* private_key.p12 in Resources */,
 				847415E41B63B6E2005BF59D /* FDTake.strings in Resources */,
 				847415881B639312005BF59D /* radio_checked.png in Resources */,
 				847415041B639312005BF59D /* img_01.jpg in Resources */,
@@ -5168,6 +5272,7 @@
 				847415A01B639312005BF59D /* im_activity.png in Resources */,
 				84F28FFC1B6387C4001078D8 /* Images.xcassets in Resources */,
 				8474157A1B639312005BF59D /* 4个人设置-3注册.jpg in Resources */,
+				8412CA861B79EB12004EDFAB /* public_key.der in Resources */,
 				847415961B639312005BF59D /* 3.jpg in Resources */,
 				847415241B639312005BF59D /* xiaoxiong.png in Resources */,
 				847415061B639312005BF59D /* img_03.jpg in Resources */,
@@ -5293,6 +5398,7 @@
 				84EA98351B57E21F00AC549F /* a11.png in Resources */,
 				84EA97EF1B57E21F00AC549F /* xctb.png in Resources */,
 				84EA98371B57E21F00AC549F /* a12.png in Resources */,
+				8412CA8D1B79EB12004EDFAB /* rsaCertReq.csr in Resources */,
 				84EA97F51B57E21F00AC549F /* bjfwh@2x.png in Resources */,
 				84EA982F1B57E21F00AC549F /* a-1.png in Resources */,
 				84F28FDD1B62C66E001078D8 /* BSImagePicker.storyboard in Resources */,
@@ -5302,11 +5408,13 @@
 				84EA99071B57E21F00AC549F /* tuhongse.png in Resources */,
 				84EA98031B57E21F00AC549F /* icon-1x-03.png in Resources */,
 				84EA98331B57E21F00AC549F /* a10.png in Resources */,
+				8412CA841B79EB12004EDFAB /* public_key.der in Resources */,
 				84EA98C51B57E21F00AC549F /* RadioButton-Unselected.png in Resources */,
 				84EA98F51B57E21F00AC549F /* im_post.png in Resources */,
 				84EA984D1B57E21F00AC549F /* d-1.png in Resources */,
 				84EA988B1B57E21F00AC549F /* yhkbd_01.png in Resources */,
 				84EA98FB1B57E21F00AC549F /* im_vote.png in Resources */,
+				8412CA7B1B79EB12004EDFAB /* pkcs8_private_key.pem in Resources */,
 				84F28FBE1B62B56A001078D8 /* FDTake.strings in Resources */,
 				848058161B39A377005817D7 /* ADTImagePlayer.xib in Resources */,
 				84EA98751B57E21F00AC549F /* 1.png in Resources */,
@@ -5328,6 +5436,7 @@
 				847432DC1B2A8CE500B030C4 /* MyOrderCell.xib in Resources */,
 				84EA98BB1B57E21F00AC549F /* radio_checked.png in Resources */,
 				8469CD6D1B4122D400EF6757 /* LFRecommend.storyboard in Resources */,
+				8412CA871B79EB12004EDFAB /* rsa_public_key.pem in Resources */,
 				84EA99111B57E21F00AC549F /* tulvse.png in Resources */,
 				84EA98911B57E21F00AC549F /* yzf000.png in Resources */,
 				84EA98DB1B57E21F00AC549F /* a3.png in Resources */,
@@ -5375,9 +5484,11 @@
 				84EA97E51B57E21F00AC549F /* jztb.png in Resources */,
 				84EA97CD1B57E21F00AC549F /* icon_district@2x.png in Resources */,
 				84EA988F1B57E21F00AC549F /* ywchh.png in Resources */,
+				8412CA811B79EB12004EDFAB /* private_key.pem in Resources */,
 				8474330A1B2A908000B030C4 /* userProtocol.xib in Resources */,
 				84EA98E71B57E21F00AC549F /* hs.png in Resources */,
 				84EA985F1B57E21F00AC549F /* LoginPicture.png in Resources */,
+				8412CA8A1B79EB12004EDFAB /* rsaCert.crt in Resources */,
 				84EA97E71B57E21F00AC549F /* sstb.png in Resources */,
 				84EA97D31B57E21F00AC549F /* icon_search.png in Resources */,
 				847076321B3A8AF800F28180 /* communicateController.xib in Resources */,
@@ -5426,6 +5537,7 @@
 				84EA98D91B57E21F00AC549F /* 322.png in Resources */,
 				84EA986B1B57E21F00AC549F /* wodexiaoxi.png in Resources */,
 				84EA981D1B57E21F00AC549F /* third_normal@2x.png in Resources */,
+				8412CA7E1B79EB12004EDFAB /* private_key.p12 in Resources */,
 				84EA98F91B57E21F00AC549F /* im_reservation_jia.png in Resources */,
 				84EA98F11B57E21F00AC549F /* im_kaika.png in Resources */,
 				84EA98211B57E21F00AC549F /* third_selected@2x.png in Resources */,
@@ -5887,6 +5999,7 @@
 				8425E1901B6765DA00A93C43 /* BSPhotoImagePickerController.m in Sources */,
 				84F28FD41B62BB31001078D8 /* BSPhotoViewController.m in Sources */,
 				844570DA1B4D67D5000CA1C7 /* BTLECentralViewController.m in Sources */,
+				8412CA701B79DDCB004EDFAB /* BSRSAEncryptor.m in Sources */,
 				84D19FF11B4C440500BA25BF /* LeTemperatureAlarmService.m in Sources */,
 				84D19FF31B4C440500BA25BF /* BSBLEDetailTableViewController.m in Sources */,
 				844570DC1B4D67D5000CA1C7 /* BTLEPeripheralViewController.m in Sources */,
@@ -5896,6 +6009,7 @@
 				84E9D79F1B61E10C00F2CD24 /* BSAssetCell.m in Sources */,
 				84BF8FCD1B4AC2FA001042F1 /* BSTableViewRefreshController.m in Sources */,
 				84E9D7A91B61E10C00F2CD24 /* BSVideoIconView.m in Sources */,
+				848C7C381B79A38A000774A1 /* Base64.m in Sources */,
 				84BF8FCF1B4AC2FA001042F1 /* BSTableSection.m in Sources */,
 				84BF8FD11B4AC2FA001042F1 /* BSTableContentObject.m in Sources */,
 				84E9D79D1B61E10C00F2CD24 /* BSAlbumsViewController.m in Sources */,
@@ -5904,6 +6018,7 @@
 				84BF8FDA1B4AC2FA001042F1 /* BSTableViewCellData.m in Sources */,
 				84E9D7AB1B61E10C00F2CD24 /* BSVideoIndicatorView.m in Sources */,
 				84BF8FDC1B4AC2FA001042F1 /* BSTableViewMultCellData.m in Sources */,
+				84DAA4A51B7AE6120070BF83 /* BSRSACrypto.m in Sources */,
 				84BF8FDE1B4AC2FA001042F1 /* BSUITabBarCommonController.m in Sources */,
 				84BF8FE01B4AC2FA001042F1 /* BSContentObjectNavigation.m in Sources */,
 				84BF8FE21B4AC2FA001042F1 /* BSFCRollingADImageUIView.m in Sources */,
@@ -5923,6 +6038,7 @@
 				84ECE42E1B4F9BB4003D1AEE /* BSUIDefaultTableViewCell.m in Sources */,
 				844570CA1B4D6323000CA1C7 /* BLEDeviceDetailsTableViewController.m in Sources */,
 				84E9D7A51B61E10C00F2CD24 /* BSImagePickerController.m in Sources */,
+				848C7C331B79A301000774A1 /* BSSecurity.m in Sources */,
 				84BF8FFA1B4AC2FA001042F1 /* YYHMantleModelSerializer.m in Sources */,
 				84E9D79B1B61E10C00F2CD24 /* BSAlbumCell.m in Sources */,
 				84BF8FFC1B4AC2FA001042F1 /* YYHModelRoute.m in Sources */,
@@ -6060,6 +6176,7 @@
 				8460AE801B4259BE00022280 /* BSUITabBarCommonController.m in Sources */,
 				844570C91B4D6323000CA1C7 /* BLEDeviceDetailsTableViewController.m in Sources */,
 				8474DEB51B3F7D0600D9DE36 /* BSUICommonController.m in Sources */,
+				848C7C371B79A38A000774A1 /* Base64.m in Sources */,
 				8470761A1B3A5F7800F28180 /* SetCell.m in Sources */,
 				8470763F1B3A8B9000F28180 /* cleaning.m in Sources */,
 				847433081B2A908000B030C4 /* SystemSet.m in Sources */,
@@ -6083,6 +6200,7 @@
 				843B2E771B74FAE5009FC187 /* RemoteUserManager.m in Sources */,
 				8460AE7A1B42569300022280 /* BSTableViewCellData.m in Sources */,
 				84EBA0131B4189E0003309F6 /* LBLiferServiceController.m in Sources */,
+				848C7C321B79A301000774A1 /* BSSecurity.m in Sources */,
 				84BA96841B2829D500388B58 /* Comment.m in Sources */,
 				8425E18B1B67644200A93C43 /* BSPhotoTakeController.m in Sources */,
 				842042B01B2984D80002C868 /* KTCartFooterView.m in Sources */,
@@ -6236,6 +6354,7 @@
 				84BA96791B2829D500388B58 /* BusinessManager.m in Sources */,
 				84D19FE71B4C36EC00BA25BF /* LeTemperatureAlarmService.m in Sources */,
 				847433121B2A915C00B030C4 /* cardBinding.m in Sources */,
+				84DAA4A41B7AE6120070BF83 /* BSRSACrypto.m in Sources */,
 				8405CB991B556C8F0014AF8D /* BusinessBase.m in Sources */,
 				847432EA1B2A8DCC00B030C4 /* WaitPaymentDetail.m in Sources */,
 				84832D381B56549700FB6D28 /* ShoppingCartListDomain.m in Sources */,
@@ -6247,6 +6366,7 @@
 				84E71F341B4E5473003089B2 /* BLEDevicesAddTableViewController.m in Sources */,
 				84E9D7A41B61E10C00F2CD24 /* BSImagePickerController.m in Sources */,
 				84EAFF5E1B5969EF00A90992 /* BSUITableViewCanEditedController.m in Sources */,
+				8412CA6F1B79DDCB004EDFAB /* BSRSAEncryptor.m in Sources */,
 				84BA96871B2829D500388B58 /* CartList.m in Sources */,
 				844168B11B6A1E7C0060F9A7 /* BusinessCatalogue.m in Sources */,
 				842042C61B2988410002C868 /* YYHModelRouter.m in Sources */,

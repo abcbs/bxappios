@@ -39,13 +39,13 @@ PODS:
   - SDWebImage/Core (3.7.3)
 
 DEPENDENCIES:
-  - AFNetworkActivityLogger
-  - AFNetworking
-  - CocoaLumberjack
-  - MBProgressHUD
-  - MJExtension
-  - MJRefresh
-  - SDWebImage
+  - AFNetworkActivityLogger (~> 2.0.4)
+  - AFNetworking (~> 2.5.4)
+  - CocoaLumberjack (~> 2.0.1)
+  - MBProgressHUD (~> 0.9.1)
+  - MJExtension (~> 2.5.2)
+  - MJRefresh (~> 2.3.2)
+  - SDWebImage (~> 3.7.3)
 
 SPEC CHECKSUMS:
   AFNetworkActivityLogger: 121486778117d53b3ab1c61d264b88081d0c3eee

@@ -9,7 +9,7 @@
 #import "LOLoginAppViewController.h"
 #import "BSCMFrameworkHeader.h"
 #import "LBModelsHeader.h"
-
+#import "BSIFTTHeader.h"
 @interface LOLoginAppViewController ()<UITextFieldDelegate>
 {
     LoginUser *loginUser;
@@ -94,6 +94,12 @@
         [BSUIComponentView confirmUIAlertView:@"登陆密码点击超过%ld次,已经锁住，请联系运维人员解锁"];
         return;
     }
+    BSSecurity *security=[BSSecurity sharedBSSecurity];
+    NSString *encrAcc=[security encryptString:self.account.text];
+    BSLog(@"加密账户信息为:\t%@",encrAcc);
+    
+    NSString *decrAcc=[security decryptString:encrAcc];
+     BSLog(@"解密账户信息为:\t%@",decrAcc);
     loginUser=[LoginUser new];
     loginUser.userName=self.account.text;
     loginUser.passWord=self.password.text;
