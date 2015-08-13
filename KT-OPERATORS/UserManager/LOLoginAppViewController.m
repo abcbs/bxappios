@@ -94,19 +94,24 @@
         [BSUIComponentView confirmUIAlertView:@"登陆密码点击超过%ld次,已经锁住，请联系运维人员解锁"];
         return;
     }
+    
     BSSecurity *security=[BSSecurity sharedBSSecurity];
     NSString *encrAcc=[security encryptString:self.account.text];
     BSLog(@"加密账户信息为:\t%@",encrAcc);
     
-    NSString *decrAcc=[security decryptString:encrAcc];
-     BSLog(@"解密账户信息为:\t%@",decrAcc);
+   
+     
     loginUser=[LoginUser new];
-    loginUser.userName=self.account.text;
+    loginUser.userName=encrAcc;
+    //loginUser.userName=self.account.text;
     loginUser.passWord=self.password.text;
     UserManager *um=[UserManager userManager];
     [um loginWithUser:loginUser blockArray:^(NSObject *response, NSError *error, ErrorMessage *errorMessage) {
       
         UserSession *userSession=(UserSession*)response;
+        NSString *decrAcc=[security decryptString:userSession.username];
+        userSession.username=decrAcc;
+        BSLog(@"解密账户信息为:\t%@",decrAcc);
         [UserManager registSession:userSession];
         //便捷的数据保存方式
         //NSUserDefaults *userDefaults=[NSUserDefaults standardUserDefaults];

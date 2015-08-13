@@ -4,7 +4,7 @@
 //
 
 #import "BSRSACrypto.h"
-
+#import "BSIFTTHeader.h"
 @implementation BSRSACrypto
 
 @synthesize privateKey = _privateKey;
@@ -62,7 +62,7 @@ static BSRSACrypto *sharedSecurity = nil;
 							status = SecIdentityCopyPrivateKey(identity, &_privateKey);
 							if (status == errSecSuccess && _privateKey) {
 								// 成功提取私钥
-								NSLog(@"Get private key successfully~ %@", _privateKey);
+								BSLog(@"获取私钥成功%@", _privateKey);
 							}
 							/*
 							 // 这里，不提取公钥，提取公钥的任务放在extractPublicKeyFromCertificateFile方法中
@@ -102,7 +102,7 @@ static BSRSACrypto *sharedSecurity = nil;
 					if (status == errSecSuccess && (trustResult == kSecTrustResultUnspecified || trustResult == kSecTrustResultProceed)) {
 						_publicKey = SecTrustCopyPublicKey(trust);
 						if (_publicKey) {
-							NSLog(@"Get public key successfully~ %@", _publicKey);
+							BSLog(@"获取公钥成功%@", _publicKey);
 						}
 						if (cert) {
 							CFRelease(cert);
@@ -123,6 +123,7 @@ static BSRSACrypto *sharedSecurity = nil;
 
 - (NSData *)encryptWithPublicKey:(NSData *)plainData {
 	// 分配内存块，用于存放加密后的数据段
+    //使用公钥加密
 	size_t cipherBufferSize = SecKeyGetBlockSize(_publicKey);
 	uint8_t *cipherBuffer = malloc(cipherBufferSize * sizeof(uint8_t));
 	/*
@@ -140,7 +141,7 @@ static BSRSACrypto *sharedSecurity = nil;
 	for (int i = 0; i < blockCount; i++) {
 		NSUInteger loc = i * blockSize;
 		// 数据段的实际大小。最后一段可能比blockSize小。
-		int dataSegmentRealSize = MIN(blockSize, [plainData length] - loc);
+		long dataSegmentRealSize = MIN(blockSize, [plainData length] - loc);
 		// 截取需要加密的数据段
 		NSData *dataSegment = [plainData subdataWithRange:NSMakeRange(loc, dataSegmentRealSize)];
 		OSStatus status = SecKeyEncrypt(_publicKey, kSecPaddingPKCS1, (const uint8_t *)[dataSegment bytes], dataSegmentRealSize, cipherBuffer, &cipherBufferSize);
@@ -164,6 +165,7 @@ static BSRSACrypto *sharedSecurity = nil;
 
 - (NSData *)decryptWithPrivateKey:(NSData *)cipherData {
 	// 分配内存块，用于存放解密后的数据段
+    //使用私钥解密
 	size_t plainBufferSize = SecKeyGetBlockSize(_privateKey);
 	NSLog(@"plainBufferSize = %zd", plainBufferSize);
 	uint8_t *plainBuffer = malloc(plainBufferSize * sizeof(uint8_t));

@@ -88,8 +88,6 @@
 		8405CBD31B5578E50014AF8D /* Resources.m in Sources */ = {isa = PBXBuildFile; fileRef = 8405CBD11B5578E50014AF8D /* Resources.m */; };
 		84118EFE1B667AD50052E275 /* BSPhotoTakeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84118EFD1B667AD50052E275 /* BSPhotoTakeViewController.m */; };
 		84118EFF1B667AD50052E275 /* BSPhotoTakeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84118EFD1B667AD50052E275 /* BSPhotoTakeViewController.m */; };
-		8412CA6F1B79DDCB004EDFAB /* BSRSAEncryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 8412CA6E1B79DDCB004EDFAB /* BSRSAEncryptor.m */; };
-		8412CA701B79DDCB004EDFAB /* BSRSAEncryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 8412CA6E1B79DDCB004EDFAB /* BSRSAEncryptor.m */; };
 		8412CA7B1B79EB12004EDFAB /* pkcs8_private_key.pem in Resources */ = {isa = PBXBuildFile; fileRef = 8412CA741B79EB12004EDFAB /* pkcs8_private_key.pem */; };
 		8412CA7C1B79EB12004EDFAB /* pkcs8_private_key.pem in Resources */ = {isa = PBXBuildFile; fileRef = 8412CA741B79EB12004EDFAB /* pkcs8_private_key.pem */; };
 		8412CA7D1B79EB12004EDFAB /* pkcs8_private_key.pem in Resources */ = {isa = PBXBuildFile; fileRef = 8412CA741B79EB12004EDFAB /* pkcs8_private_key.pem */; };
@@ -1497,8 +1495,6 @@
 		8405CBD11B5578E50014AF8D /* Resources.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Resources.m; sourceTree = "<group>"; };
 		84118EFC1B667AD50052E275 /* BSPhotoTakeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSPhotoTakeViewController.h; sourceTree = "<group>"; };
 		84118EFD1B667AD50052E275 /* BSPhotoTakeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSPhotoTakeViewController.m; sourceTree = "<group>"; };
-		8412CA6D1B79DDCB004EDFAB /* BSRSAEncryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSRSAEncryptor.h; sourceTree = "<group>"; };
-		8412CA6E1B79DDCB004EDFAB /* BSRSAEncryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSRSAEncryptor.m; sourceTree = "<group>"; };
 		8412CA741B79EB12004EDFAB /* pkcs8_private_key.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pkcs8_private_key.pem; sourceTree = "<group>"; };
 		8412CA751B79EB12004EDFAB /* private_key.p12 */ = {isa = PBXFileReference; lastKnownFileType = file; path = private_key.p12; sourceTree = "<group>"; };
 		8412CA761B79EB12004EDFAB /* private_key.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = private_key.pem; sourceTree = "<group>"; };
@@ -3484,8 +3480,6 @@
 		848C7C2F1B79A293000774A1 /* Security */ = {
 			isa = PBXGroup;
 			children = (
-				8412CA6D1B79DDCB004EDFAB /* BSRSAEncryptor.h */,
-				8412CA6E1B79DDCB004EDFAB /* BSRSAEncryptor.m */,
 				848C7C301B79A301000774A1 /* BSSecurity.h */,
 				848C7C311B79A301000774A1 /* BSSecurity.m */,
 			);
@@ -5999,7 +5993,6 @@
 				8425E1901B6765DA00A93C43 /* BSPhotoImagePickerController.m in Sources */,
 				84F28FD41B62BB31001078D8 /* BSPhotoViewController.m in Sources */,
 				844570DA1B4D67D5000CA1C7 /* BTLECentralViewController.m in Sources */,
-				8412CA701B79DDCB004EDFAB /* BSRSAEncryptor.m in Sources */,
 				84D19FF11B4C440500BA25BF /* LeTemperatureAlarmService.m in Sources */,
 				84D19FF31B4C440500BA25BF /* BSBLEDetailTableViewController.m in Sources */,
 				844570DC1B4D67D5000CA1C7 /* BTLEPeripheralViewController.m in Sources */,
@@ -6366,7 +6359,6 @@
 				84E71F341B4E5473003089B2 /* BLEDevicesAddTableViewController.m in Sources */,
 				84E9D7A41B61E10C00F2CD24 /* BSImagePickerController.m in Sources */,
 				84EAFF5E1B5969EF00A90992 /* BSUITableViewCanEditedController.m in Sources */,
-				8412CA6F1B79DDCB004EDFAB /* BSRSAEncryptor.m in Sources */,
 				84BA96871B2829D500388B58 /* CartList.m in Sources */,
 				844168B11B6A1E7C0060F9A7 /* BusinessCatalogue.m in Sources */,
 				842042C61B2988410002C868 /* YYHModelRouter.m in Sources */,
