@@ -26,14 +26,12 @@ static BSSecurity *instance;
 #pragma mark -单例与实例化
 +(BSSecurity *)sharedBSSecurity{
     if (!instance) {
-        instance=[[super allocWithZone:NULL] init];
+        instance=[[super alloc] init];
     }
     return instance;
 }
 
-+ (id)allocWithZone:(NSZone *)zone {
-    return [self sharedBSSecurity];
-}
+
 
 + (id)copyWithZone:(NSZone *)zone {
     return self;

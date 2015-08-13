@@ -16,6 +16,9 @@
     NSInteger loginNumber;
     UIAlertView *alert;
 }
+
+
+@property (nonatomic,strong)IBOutlet UIActivityIndicatorView *activeIndicator;
 @end
 
 @implementation LOLoginAppViewController
@@ -23,6 +26,7 @@
 - (void)viewDidLoad {
     self.bDisplaySearchButtonNav=YES;
     self.bDisplayReturnButtonNav=YES;
+    
     [super viewDidLoad];
    
     [self delelageForTextField];
@@ -36,7 +40,8 @@
     [BSUIComponentView configButtonStyle:self.resetPasswordButton];
     [BSUIComponentView configTextField:self.password];
     [BSUIComponentView configTextField:self.account];
-
+    [self.activeIndicator stopAnimating];
+    
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -76,7 +81,7 @@
         return NO;
     }
     BOOL checkPassword=[BSValidatePredicate
-             checkPasswordField:self.password alert:@"密码不能为空"];
+             checkPasswordField:self.password alert:@"密码不是字母与数字组合"];
     if (!checkPassword) {
         return NO;
     }
@@ -94,16 +99,23 @@
         [BSUIComponentView confirmUIAlertView:@"登陆密码点击超过%ld次,已经锁住，请联系运维人员解锁"];
         return;
     }
-    
-    BSSecurity *security=[BSSecurity sharedBSSecurity];
+    [self.activeIndicator startAnimating];
+    [self.loginButton setEnabled:NO];
+    [self.resetPasswordButton setEnabled:NO];
+    BSSecurity *security=[BSSecurityFactory
+                          initBSecurity:BSEncryptionAlgorithmRSA];
     NSString *encrAcc=[security encryptString:self.account.text];
     BSLog(@"加密账户信息为:\t%@",encrAcc);
-    
-   
-     
+    /*
+    //DES加密
+    security=[BSSecurityFactory initBSecurity:BSEncryptionAlgorithmDES];
+    encrAcc=[security encryptString:self.account.text];
+    BSLog(@"加密账户信息为:\t%@",encrAcc);
+    NSString *decrAcc=[security decryptString:encrAcc];
+    BSLog(@"加密账户信息为:\t%@",decrAcc);
+    */
     loginUser=[LoginUser new];
     loginUser.userName=encrAcc;
-    //loginUser.userName=self.account.text;
     loginUser.passWord=self.password.text;
     UserManager *um=[UserManager userManager];
     [um loginWithUser:loginUser blockArray:^(NSObject *response, NSError *error, ErrorMessage *errorMessage) {
@@ -117,9 +129,12 @@
         //NSUserDefaults *userDefaults=[NSUserDefaults standardUserDefaults];
         //[userDefaults setObject:sessionId forKey:@"sessionId"];
         //
+        [self.activeIndicator stopAnimating];
+        [self.loginButton setEnabled:YES];
+        
+        [self.resetPasswordButton setEnabled:YES];
         [self.navigationController popViewControllerAnimated:YES];
-
-     }
+       }
     ];
     
 }

@@ -224,7 +224,8 @@
     if (self.headerImage.image) {
             self.loginUser.headerImage=self.headerImage.image;
     }
-    
+    //防止重复提交，保存按钮去掉
+    self.navigationItem.rightBarButtonItem = nil;
     //营业执照
     if (isEdit) {
         if (DATA_IS_LOCAL) {

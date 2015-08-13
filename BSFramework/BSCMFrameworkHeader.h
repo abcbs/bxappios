@@ -31,4 +31,5 @@
 
 #import "BSSecurity.h"
 
+#import "BSSecurityFactory.h"
 #endif

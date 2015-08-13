@@ -1,7 +1,7 @@
 //
 //  BSSecurity.h
 //  KTAPP
-//
+//  缺省使用RSA方式
 //  Created by admin on 15/8/11.
 //  Copyright (c) 2015年 KingTeller. All rights reserved.
 //
@@ -14,10 +14,8 @@
 
 - (NSString *)encryptString:(NSString *)plainText;
 
-- (NSData *)encryptData:(NSData *)data;
+- (NSString *)decryptString:(NSString *)encryptText;
 
-- (NSString *)decryptString:(NSString *)plainText;
-
-- (NSData *)decryptData:(NSData *)plainData;
-
+//- (NSData *)decryptData:(NSData *)plainData;
+//- (NSData *)encryptData:(NSData *)data;
 @end

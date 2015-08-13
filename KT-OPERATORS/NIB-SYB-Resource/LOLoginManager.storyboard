@@ -124,6 +124,11 @@
                                                         <action selector="loginClick:" destination="Tin-Nr-rMg" eventType="touchUpInside" id="YCR-la-c5G"/>
                                                     </connections>
                                                 </button>
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="kDN-T5-eoR">
+                                                    <rect key="frame" x="163" y="12" width="20" height="20"/>
+                                                    <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="color" red="0.94117653369999998" green="0.96078437569999997" blue="0.78431379800000001" alpha="1" colorSpace="deviceRGB"/>
+                                                </activityIndicatorView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="tMN-qt-mGb" firstAttribute="top" secondItem="z5P-Xc-JkV" secondAttribute="topMargin" constant="-6" id="I8J-Nq-krW"/>
@@ -145,6 +150,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="account" destination="b2f-k4-MZs" id="wVd-8D-EH2"/>
+                        <outlet property="activeIndicator" destination="kDN-T5-eoR" id="kRo-gw-1It"/>
                         <outlet property="loginButton" destination="tMN-qt-mGb" id="Tzs-tj-8NS"/>
                         <outlet property="password" destination="U7t-sp-i6R" id="oQ6-bb-GDM"/>
                         <outlet property="resetPasswordButton" destination="rcV-fv-dvH" id="R0Q-Ri-QOk"/>

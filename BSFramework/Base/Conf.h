@@ -23,7 +23,7 @@
 /**
  *基础URL
  */
-#define KBS_URL @"http://192.168.1.104:8090/"
+#define KBS_URL @"http://192.168.0.110:8090/"
 
 #pragma mark--iOS显示适配
 
@@ -243,7 +243,7 @@ extern float autoSizeScaleY;
 #define USER_TYPE_ANONY    @"4"
 
 #define USER_LONGIN_NUMBER 5
-#define DATA_IS_LOCAL NO
+#define DATA_IS_LOCAL YES
 
 
 +(NSDate*) convertDateFromString:(NSString*)uiDate;
