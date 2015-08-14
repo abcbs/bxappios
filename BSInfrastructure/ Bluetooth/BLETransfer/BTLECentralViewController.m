@@ -251,7 +251,8 @@
 - (void)peripheral:(CBPeripheral *)peripheral didUpdateValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error
 {
     if (error) {
-        BSLog(@"Error discovering characteristics: %@", [error localizedDescription]);
+        BSLog(@"Error discovering characteristics: %@",
+              [error localizedDescription]);
         return;
     }
     
@@ -300,7 +301,8 @@
 - (void)cleanup
 {
     // Don't do anything if we're not connected
-    if (!self.discoveredPeripheral.isConnected) {
+    //  不是连接状态，直接返回
+    if (!(self.discoveredPeripheral.state==CBPeripheralStateConnected)) {
         return;
     }
     
