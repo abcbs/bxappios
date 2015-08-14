@@ -28,16 +28,11 @@
 
 #pragma mark -BLE处理组件
 
-#import "LeTemperatureAlarmService.h"
 
 
 #import "BSBLEViewController.h"
 
-/**
- *Le的查找管理
- */
-#import "LeDiscovery.h"
-
+#import <CoreBluetooth/CoreBluetooth.h>
 /**
  *LE描述信息
  */
@@ -69,7 +64,6 @@
  */
 #import "BTLEPeripheralViewController.h"
 
-#import "BSBLEDetailTableViewController.h"
 
 
 #endif

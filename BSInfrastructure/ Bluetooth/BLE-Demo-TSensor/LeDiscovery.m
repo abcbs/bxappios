@@ -1,7 +1,7 @@
 
 #import "LeDiscovery.h"
 
-
+//实现类要遵守协议<CBCentralManagerDelegate,CBPeripheralDelegate>
 @interface LeDiscovery () <CBCentralManagerDelegate, CBPeripheralDelegate> {
 	CBCentralManager    *centralManager;
 	BOOL				pendingInit;
@@ -82,7 +82,7 @@
         if (!uuid)
             continue;
         //modified by liujq
-        [centralManager retrievePeripherals:[NSArray arrayWithObject:(__bridge id)uuid]];
+        [centralManager retrievePeripheralsWithIdentifiers:[NSArray arrayWithObject:(__bridge id)uuid]];
         CFRelease(uuid);
     }
 
@@ -172,7 +172,7 @@
 	NSDictionary	*options	= [NSDictionary dictionaryWithObject:[NSNumber numberWithBool:NO] forKey:CBCentralManagerScanOptionAllowDuplicatesKey];
 
 	//为查找设备，注销调UUID具体设备查找
-    [centralManager scanForPeripheralsWithServices:nil options:nil];
+    [centralManager scanForPeripheralsWithServices:uuidArray options:options];
     //[centralManager scanForPeripheralsWithServices:uuidArray options:options];
 }
 
@@ -200,7 +200,7 @@
 /****************************************************************************/
 - (void) connectPeripheral:(CBPeripheral*)peripheral
 {
-	if (![peripheral isConnected]) {
+	if (peripheral.state != CBPeripheralStateConnected) {
 		[centralManager connectPeripheral:peripheral options:nil];
 	}
 }
@@ -276,13 +276,14 @@
             [discoveryDelegate discoveryDidRefresh];
             
 			/* Tell user to power ON BT for functionality, but not on first run - the Framework will alert in that instance. */
-            if (previousState != -1) {
+            //LiuJQ Modified 20150814
+            if (previousState != CBCentralManagerStatePoweredOff) {
                 [discoveryDelegate discoveryStatePoweredOff];
             }
 			break;
 		}
             
-		case CBCentralManagerStateUnauthorized:
+		case CBCentralManagerStateUnsupported:
 		{
 			/* Tell user the app is not allowed. */
 			break;
@@ -293,12 +294,16 @@
 			/* Bad news, let's wait for another event. */
 			break;
 		}
-            
-		case CBCentralManagerStatePoweredOn:
+        case CBCentralManagerStateUnauthorized:
+        {
+            /* Bad news, let's wait for another event. */
+            break;
+        }
+        case CBCentralManagerStatePoweredOn:
 		{
 			pendingInit = NO;
 			[self loadSavedDevices];
-			[centralManager retrieveConnectedPeripherals];
+            [centralManager retrieveConnectedPeripheralsWithServices:nil];
 			[discoveryDelegate discoveryDidRefresh];
 			break;
 		}

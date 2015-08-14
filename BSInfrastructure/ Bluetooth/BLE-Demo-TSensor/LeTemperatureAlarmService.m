@@ -11,6 +11,8 @@ NSString *kAlarmCharacteristicUUIDString = @"AAAAAAAA-DEAD-F154-1319-74038100000
 NSString *kAlarmServiceEnteredBackgroundNotification = @"kAlarmServiceEnteredBackgroundNotification";
 NSString *kAlarmServiceEnteredForegroundNotification = @"kAlarmServiceEnteredForegroundNotification";
 
+//中心
+//实现类要遵守协议<CBCentralManagerDelegate,CBPeripheralDelegate>
 @interface LeTemperatureAlarmService() <CBPeripheralDelegate> {
 @private
     CBPeripheral		*servicePeripheral;
@@ -66,17 +68,13 @@ NSString *kAlarmServiceEnteredForegroundNotification = @"kAlarmServiceEnteredFor
 		[servicePeripheral setDelegate:[LeDiscovery sharedInstance]];
 		//servicePeripheral ;
 		servicePeripheral = nil;
-        
-        
     }
-    //[super dealloc];
 }
 
 
 - (void) reset
 {
 	if (servicePeripheral) {
-		//[servicePeripheral release];
 		servicePeripheral = nil;
 	}
 }

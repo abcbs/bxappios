@@ -670,7 +670,6 @@
 		8474DEB51B3F7D0600D9DE36 /* BSUICommonController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8474DEB41B3F7D0600D9DE36 /* BSUICommonController.m */; };
 		8476A0461B4BB93100DB2CF0 /* BSUISingleImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8476A0451B4BB93100DB2CF0 /* BSUISingleImageTableViewCell.xib */; };
 		847B30881B3290DD007003D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 847B308A1B3290DD007003D7 /* Main.storyboard */; };
-		8480580B1B39A0E9005817D7 /* BSBLEDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8480580A1B39A0E9005817D7 /* BSBLEDetailTableViewController.m */; };
 		848058151B39A377005817D7 /* BSFCRollingADImageUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 848058131B39A377005817D7 /* BSFCRollingADImageUIView.m */; };
 		848058161B39A377005817D7 /* ADTImagePlayer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848058141B39A377005817D7 /* ADTImagePlayer.xib */; };
 		8480581B1B39AEEF005817D7 /* BSTableViewRefreshController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8480581A1B39AEEF005817D7 /* BSTableViewRefreshController.m */; };
@@ -797,10 +796,22 @@
 		84D19FED1B4C440500BA25BF /* BSBLEViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D19FDD1B4C36EC00BA25BF /* BSBLEViewController.m */; };
 		84D19FEF1B4C440500BA25BF /* LeDiscovery.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D19FE11B4C36EC00BA25BF /* LeDiscovery.m */; };
 		84D19FF11B4C440500BA25BF /* LeTemperatureAlarmService.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D19FE31B4C36EC00BA25BF /* LeTemperatureAlarmService.m */; };
-		84D19FF31B4C440500BA25BF /* BSBLEDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8480580A1B39A0E9005817D7 /* BSBLEDetailTableViewController.m */; };
 		84D19FF81B4C451F00BA25BF /* BSUISingleImageTableViewCell.xib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8476A0451B4BB93100DB2CF0 /* BSUISingleImageTableViewCell.xib */; };
 		84DAA4A41B7AE6120070BF83 /* BSRSACrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DAA4A31B7AE6120070BF83 /* BSRSACrypto.m */; };
 		84DAA4A51B7AE6120070BF83 /* BSRSACrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DAA4A31B7AE6120070BF83 /* BSRSACrypto.m */; };
+		84DB2F031B7CCB700041588B /* ESSBeaconScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DB2EFE1B7CCB700041588B /* ESSBeaconScanner.m */; };
+		84DB2F041B7CCB700041588B /* ESSBeaconScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DB2EFE1B7CCB700041588B /* ESSBeaconScanner.m */; };
+		84DB2F051B7CCB700041588B /* ESSEddystone.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DB2F001B7CCB700041588B /* ESSEddystone.m */; };
+		84DB2F061B7CCB700041588B /* ESSEddystone.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DB2F001B7CCB700041588B /* ESSEddystone.m */; };
+		84DB2F071B7CCB700041588B /* ESSTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DB2F021B7CCB700041588B /* ESSTimer.m */; };
+		84DB2F081B7CCB700041588B /* ESSTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DB2F021B7CCB700041588B /* ESSTimer.m */; };
+		84E6C08F1B7DCBA100289D94 /* ESSScannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E6C08E1B7DCBA100289D94 /* ESSScannerViewController.m */; };
+		84E6C0901B7DCBA100289D94 /* ESSScannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E6C08E1B7DCBA100289D94 /* ESSScannerViewController.m */; };
+		84E6C0931B7DCCEF00289D94 /* LSBLEIFTTUpHoldMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84E6C0921B7DCCEF00289D94 /* LSBLEIFTTUpHoldMain.storyboard */; };
+		84E6C0941B7DCCEF00289D94 /* LSBLEIFTTUpHoldMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84E6C0921B7DCCEF00289D94 /* LSBLEIFTTUpHoldMain.storyboard */; };
+		84E6C0951B7DCCEF00289D94 /* LSBLEIFTTUpHoldMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84E6C0921B7DCCEF00289D94 /* LSBLEIFTTUpHoldMain.storyboard */; };
+		84E6C0981B7DD06C00289D94 /* ESSIssueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E6C0971B7DD06C00289D94 /* ESSIssueViewController.m */; };
+		84E6C0991B7DD06C00289D94 /* ESSIssueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E6C0971B7DD06C00289D94 /* ESSIssueViewController.m */; };
 		84E71F341B4E5473003089B2 /* BLEDevicesAddTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E71F331B4E5473003089B2 /* BLEDevicesAddTableViewController.m */; };
 		84E71F351B4E5473003089B2 /* BLEDevicesAddTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E71F331B4E5473003089B2 /* BLEDevicesAddTableViewController.m */; };
 		84E71F391B4E60E6003089B2 /* BLCentralExtention.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 84E71F381B4E6023003089B2 /* BLCentralExtention.h */; };
@@ -1215,7 +1226,6 @@
 		84EBA0161B41A307003309F6 /* KTLBMainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EBA0151B41A307003309F6 /* KTLBMainTabBarController.m */; };
 		84ECA4501B569F9700452BC4 /* UserBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 84ECA44F1B569F9700452BC4 /* UserBase.m */; };
 		84ECA4511B56A49600452BC4 /* UserBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 84ECA44F1B569F9700452BC4 /* UserBase.m */; };
-		84ECA4651B56B73D00452BC4 /* LSBLEIFTTUpHoldMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84F66D611B53E6A700498734 /* LSBLEIFTTUpHoldMain.storyboard */; };
 		84ECE42D1B4F9BB4003D1AEE /* BSUIDefaultTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84ECE42C1B4F9BB4003D1AEE /* BSUIDefaultTableViewCell.m */; };
 		84ECE42E1B4F9BB4003D1AEE /* BSUIDefaultTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84ECE42C1B4F9BB4003D1AEE /* BSUIDefaultTableViewCell.m */; };
 		84ECE4321B4FC29D003D1AEE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84ECE4301B4FC29D003D1AEE /* LaunchScreen.xib */; };
@@ -1250,12 +1260,10 @@
 		84F2901F1B638BA7001078D8 /* KTOnlinePayViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8487F1841B3005C100F0F7B2 /* KTOnlinePayViewController.storyboard */; };
 		84F290201B638BA7001078D8 /* KTWaterDetailsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84820A5A1B285ECA0093B87B /* KTWaterDetailsViewController.storyboard */; };
 		84F290211B638BA7001078D8 /* LSBusinessIndexMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84EA9A8F1B57F17800AC549F /* LSBusinessIndexMain.storyboard */; };
-		84F290221B638BA7001078D8 /* LSBLEIFTTUpHoldMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84F66D611B53E6A700498734 /* LSBLEIFTTUpHoldMain.storyboard */; };
 		84F290231B638BA7001078D8 /* LSProductManagerMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8461B7941B54CF57002A7C43 /* LSProductManagerMain.storyboard */; };
 		84F290241B638BC0001078D8 /* ADTImagePlayer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848058141B39A377005817D7 /* ADTImagePlayer.xib */; };
 		84F290251B638BC0001078D8 /* BSUISingleImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8476A0451B4BB93100DB2CF0 /* BSUISingleImageTableViewCell.xib */; };
 		84F290261B638BC0001078D8 /* BSUIFiveColTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 846541EC1B42C47300DE2BC1 /* BSUIFiveColTableViewCell.xib */; };
-		84F66D621B53E6A700498734 /* LSBLEIFTTUpHoldMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84F66D611B53E6A700498734 /* LSBLEIFTTUpHoldMain.storyboard */; };
 		84F66D681B53E7DE00498734 /* LSHandySearchNavViewController..m in Sources */ = {isa = PBXBuildFile; fileRef = 84F66D671B53E7DE00498734 /* LSHandySearchNavViewController..m */; };
 		84F84AD61B7C4BA3008DF38F /* BSDesCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F84AD51B7C4BA3008DF38F /* BSDesCrypto.m */; };
 		84F84AD71B7C4BA3008DF38F /* BSDesCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F84AD51B7C4BA3008DF38F /* BSDesCrypto.m */; };
@@ -1987,8 +1995,6 @@
 		8476A0401B4BAC8C00DB2CF0 /* BSUICommonController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUICommonController.h; sourceTree = "<group>"; };
 		8476A0451B4BB93100DB2CF0 /* BSUISingleImageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSUISingleImageTableViewCell.xib; sourceTree = "<group>"; };
 		847B30891B3290DD007003D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		848058091B39A0E9005817D7 /* BSBLEDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSBLEDetailTableViewController.h; sourceTree = "<group>"; };
-		8480580A1B39A0E9005817D7 /* BSBLEDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSBLEDetailTableViewController.m; sourceTree = "<group>"; };
 		848058121B39A377005817D7 /* BSFCRollingADImageUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSFCRollingADImageUIView.h; sourceTree = "<group>"; };
 		848058131B39A377005817D7 /* BSFCRollingADImageUIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSFCRollingADImageUIView.m; sourceTree = "<group>"; };
 		848058141B39A377005817D7 /* ADTImagePlayer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ADTImagePlayer.xib; sourceTree = "<group>"; };
@@ -2117,6 +2123,17 @@
 		84D19FEA1B4C430000BA25BF /* BSIFTTHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSIFTTHeader.h; sourceTree = "<group>"; };
 		84DAA4A21B7AE6120070BF83 /* BSRSACrypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSRSACrypto.h; sourceTree = "<group>"; };
 		84DAA4A31B7AE6120070BF83 /* BSRSACrypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSRSACrypto.m; sourceTree = "<group>"; };
+		84DB2EFD1B7CCB700041588B /* ESSBeaconScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESSBeaconScanner.h; sourceTree = "<group>"; };
+		84DB2EFE1B7CCB700041588B /* ESSBeaconScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESSBeaconScanner.m; sourceTree = "<group>"; };
+		84DB2EFF1B7CCB700041588B /* ESSEddystone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESSEddystone.h; sourceTree = "<group>"; };
+		84DB2F001B7CCB700041588B /* ESSEddystone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESSEddystone.m; sourceTree = "<group>"; };
+		84DB2F011B7CCB700041588B /* ESSTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESSTimer.h; sourceTree = "<group>"; };
+		84DB2F021B7CCB700041588B /* ESSTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESSTimer.m; sourceTree = "<group>"; };
+		84E6C08D1B7DCBA100289D94 /* ESSScannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ESSScannerViewController.h; path = "../../../../../iOS-Component/eddystone-1.0.0/tools/ios-eddystone-scanner-sample/EddystoneScannerSample/ESSScannerViewController.h"; sourceTree = "<group>"; };
+		84E6C08E1B7DCBA100289D94 /* ESSScannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ESSScannerViewController.m; path = "../../../../../iOS-Component/eddystone-1.0.0/tools/ios-eddystone-scanner-sample/EddystoneScannerSample/ESSScannerViewController.m"; sourceTree = "<group>"; };
+		84E6C0921B7DCCEF00289D94 /* LSBLEIFTTUpHoldMain.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LSBLEIFTTUpHoldMain.storyboard; sourceTree = "<group>"; };
+		84E6C0961B7DD06C00289D94 /* ESSIssueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESSIssueViewController.h; sourceTree = "<group>"; };
+		84E6C0971B7DD06C00289D94 /* ESSIssueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESSIssueViewController.m; sourceTree = "<group>"; };
 		84E71F321B4E5473003089B2 /* BLEDevicesAddTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLEDevicesAddTableViewController.h; sourceTree = "<group>"; };
 		84E71F331B4E5473003089B2 /* BLEDevicesAddTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLEDevicesAddTableViewController.m; sourceTree = "<group>"; };
 		84E71F381B4E6023003089B2 /* BLCentralExtention.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLCentralExtention.h; sourceTree = "<group>"; };
@@ -2366,7 +2383,6 @@
 		84F28FFB1B6387C4001078D8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		84F28FFE1B6387C4001078D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		84F290131B638909001078D8 /* LOOperatorMain.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LOOperatorMain.storyboard; sourceTree = "<group>"; };
-		84F66D611B53E6A700498734 /* LSBLEIFTTUpHoldMain.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LSBLEIFTTUpHoldMain.storyboard; sourceTree = "<group>"; };
 		84F66D661B53E7DE00498734 /* LSHandySearchNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSHandySearchNavViewController.h; sourceTree = "<group>"; };
 		84F66D671B53E7DE00498734 /* LSHandySearchNavViewController..m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSHandySearchNavViewController..m; sourceTree = "<group>"; };
 		84F84AD41B7C4BA3008DF38F /* BSDesCrypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSDesCrypto.h; sourceTree = "<group>"; };
@@ -3383,36 +3399,6 @@
 			path = LoginRegister;
 			sourceTree = "<group>";
 		};
-		848058051B39A097005817D7 /* BLEController */ = {
-			isa = PBXGroup;
-			children = (
-				848058091B39A0E9005817D7 /* BSBLEDetailTableViewController.h */,
-				8480580A1B39A0E9005817D7 /* BSBLEDetailTableViewController.m */,
-			);
-			path = BLEController;
-			sourceTree = "<group>";
-		};
-		848058061B39A097005817D7 /* BLEModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = BLEModel;
-			sourceTree = "<group>";
-		};
-		848058071B39A097005817D7 /* BLEService */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = BLEService;
-			sourceTree = "<group>";
-		};
-		848058081B39A097005817D7 /* BLEView */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = BLEView;
-			sourceTree = "<group>";
-		};
 		848058111B39A377005817D7 /* CommonView */ = {
 			isa = PBXGroup;
 			children = (
@@ -3710,6 +3696,7 @@
 		84BA968A1B2829F300388B58 /* BSInfrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				84E6C0911B7DCCEF00289D94 /* NIB-SYB-Resource */,
 				84E9D7AE1B61E22300F2CD24 /* Resource */,
 				84F28F9F1B62A535001078D8 /* PhotoTake */,
 				84E9D77B1B61E10C00F2CD24 /* ImagePicker */,
@@ -3724,13 +3711,10 @@
 		84BA968B1B2829F300388B58 /*  Bluetooth */ = {
 			isa = PBXGroup;
 			children = (
-				844570D31B4D67D5000CA1C7 /* BLETransfer */,
-				844570C61B4D6323000CA1C7 /* BLEManager */,
 				84D19FDB1B4C36EC00BA25BF /* BLE-Demo-TSensor */,
-				848058051B39A097005817D7 /* BLEController */,
-				848058061B39A097005817D7 /* BLEModel */,
-				848058071B39A097005817D7 /* BLEService */,
-				848058081B39A097005817D7 /* BLEView */,
+				844570C61B4D6323000CA1C7 /* BLEManager */,
+				84DB2EFC1B7CCB700041588B /* BLEServer */,
+				844570D31B4D67D5000CA1C7 /* BLETransfer */,
 			);
 			path = " Bluetooth";
 			sourceTree = "<group>";
@@ -3987,6 +3971,31 @@
 				84DAA4A31B7AE6120070BF83 /* BSRSACrypto.m */,
 			);
 			path = Crypto;
+			sourceTree = "<group>";
+		};
+		84DB2EFC1B7CCB700041588B /* BLEServer */ = {
+			isa = PBXGroup;
+			children = (
+				84E6C08D1B7DCBA100289D94 /* ESSScannerViewController.h */,
+				84E6C08E1B7DCBA100289D94 /* ESSScannerViewController.m */,
+				84DB2EFD1B7CCB700041588B /* ESSBeaconScanner.h */,
+				84DB2EFE1B7CCB700041588B /* ESSBeaconScanner.m */,
+				84DB2EFF1B7CCB700041588B /* ESSEddystone.h */,
+				84DB2F001B7CCB700041588B /* ESSEddystone.m */,
+				84DB2F011B7CCB700041588B /* ESSTimer.h */,
+				84DB2F021B7CCB700041588B /* ESSTimer.m */,
+				84E6C0961B7DD06C00289D94 /* ESSIssueViewController.h */,
+				84E6C0971B7DD06C00289D94 /* ESSIssueViewController.m */,
+			);
+			path = BLEServer;
+			sourceTree = "<group>";
+		};
+		84E6C0911B7DCCEF00289D94 /* NIB-SYB-Resource */ = {
+			isa = PBXGroup;
+			children = (
+				84E6C0921B7DCCEF00289D94 /* LSBLEIFTTUpHoldMain.storyboard */,
+			);
+			path = "NIB-SYB-Resource";
 			sourceTree = "<group>";
 		};
 		84E9D77B1B61E10C00F2CD24 /* ImagePicker */ = {
@@ -4379,7 +4388,6 @@
 			isa = PBXGroup;
 			children = (
 				84EA9A8F1B57F17800AC549F /* LSBusinessIndexMain.storyboard */,
-				84F66D611B53E6A700498734 /* LSBLEIFTTUpHoldMain.storyboard */,
 				8461B7941B54CF57002A7C43 /* LSProductManagerMain.storyboard */,
 			);
 			path = "NIB-SYB-Resource";
@@ -4919,6 +4927,7 @@
 				8461B76B1B54BB69002A7C43 /* WaitPaymentDetail.xib in Resources */,
 				84EA97BE1B57E21F00AC549F /* 98bj@2x.png in Resources */,
 				84EA98141B57E21F00AC549F /* second_selected.png in Resources */,
+				84E6C0941B7DCCEF00289D94 /* LSBLEIFTTUpHoldMain.storyboard in Resources */,
 				84EA98E41B57E21F00AC549F /* fabu.png in Resources */,
 				8461B76E1B54BB69002A7C43 /* MyOrderCell.xib in Resources */,
 				84EA98B01B57E21F00AC549F /* login-0.png in Resources */,
@@ -5066,7 +5075,6 @@
 				84EA98CC1B57E21F00AC549F /* register-3.png in Resources */,
 				84EA97F21B57E21F00AC549F /* xiaoxiong.png in Resources */,
 				84EA982E1B57E21F00AC549F /* 640-90.png in Resources */,
-				84F66D621B53E6A700498734 /* LSBLEIFTTUpHoldMain.storyboard in Resources */,
 				84EA98861B57E21F00AC549F /* ljzf.png in Resources */,
 				8412CA881B79EB12004EDFAB /* rsa_public_key.pem in Resources */,
 				84EA98721B57E21F00AC549F /* yijianfenxiang.png in Resources */,
@@ -5204,6 +5212,7 @@
 				847415421B639312005BF59D /* a-1.png in Resources */,
 				8474157D1B639312005BF59D /* forget password-1.png in Resources */,
 				847415821B639312005BF59D /* login-0.png in Resources */,
+				84E6C0951B7DCCEF00289D94 /* LSBLEIFTTUpHoldMain.storyboard in Resources */,
 				8474156C1B639312005BF59D /* ljzf(1).png in Resources */,
 				847415551B639312005BF59D /* gouwu.png in Resources */,
 				847415971B639312005BF59D /* 322.png in Resources */,
@@ -5228,7 +5237,6 @@
 				847415741B639312005BF59D /* yzfbb.png in Resources */,
 				847415901B639312005BF59D /* register-3.png in Resources */,
 				8474156D1B639312005BF59D /* ljzf.png in Resources */,
-				84F290221B638BA7001078D8 /* LSBLEIFTTUpHoldMain.storyboard in Resources */,
 				847415891B639312005BF59D /* radio_checked@2x.png in Resources */,
 				8474159F1B639312005BF59D /* huihua.png in Resources */,
 				847415091B639312005BF59D /* img_06.jpg in Resources */,
@@ -5343,7 +5351,6 @@
 			files = (
 				84EAFF5B1B59563300A90992 /* LSProductManagerMain.storyboard in Resources */,
 				84EA98411B57E21F00AC549F /* a8.png in Resources */,
-				84ECA4651B56B73D00452BC4 /* LSBLEIFTTUpHoldMain.storyboard in Resources */,
 				84BF8FAA1B4ABB83001042F1 /* BSCMFrameworkHeader.h in Resources */,
 				84EA980B1B57E21F00AC549F /* icon-1x-3.png in Resources */,
 				84EA97F31B57E21F00AC549F /* bjfw@2x.png in Resources */,
@@ -5362,6 +5369,7 @@
 				84EA97DD1B57E21F00AC549F /* im_jia.png in Resources */,
 				DFD86AB01AFC5886000AB8E6 /* InfoPlist.strings in Resources */,
 				84EA98FD1B57E21F00AC549F /* jl_01.png in Resources */,
+				84E6C0931B7DCCEF00289D94 /* LSBLEIFTTUpHoldMain.storyboard in Resources */,
 				84EA97FF1B57E21F00AC549F /* icon-1x-01.png in Resources */,
 				847432FC1B2A8E5500B030C4 /* Demo1ViewController.xib in Resources */,
 				84EA982B1B57E21F00AC549F /* xysjs@2x.png in Resources */,
@@ -6010,17 +6018,20 @@
 				84E9D7A31B61E10C00F2CD24 /* BSCheckmarkView.m in Sources */,
 				84EAFF601B596C8900A90992 /* BSUITableViewCanEditedController.m in Sources */,
 				8425E1901B6765DA00A93C43 /* BSPhotoImagePickerController.m in Sources */,
+				84DB2F061B7CCB700041588B /* ESSEddystone.m in Sources */,
+				84DB2F081B7CCB700041588B /* ESSTimer.m in Sources */,
 				84F28FD41B62BB31001078D8 /* BSPhotoViewController.m in Sources */,
 				844570DA1B4D67D5000CA1C7 /* BTLECentralViewController.m in Sources */,
 				84F84ADB1B7C4E2B008DF38F /* BSDesSecurity.m in Sources */,
 				84D19FF11B4C440500BA25BF /* LeTemperatureAlarmService.m in Sources */,
-				84D19FF31B4C440500BA25BF /* BSBLEDetailTableViewController.m in Sources */,
 				844570DC1B4D67D5000CA1C7 /* BTLEPeripheralViewController.m in Sources */,
+				84DB2F041B7CCB700041588B /* ESSBeaconScanner.m in Sources */,
 				84BF8FC41B4AC2FA001042F1 /* Conf.m in Sources */,
 				84BF8FC61B4AC2FA001042F1 /* ErrorMessage.m in Sources */,
 				84BF8FCA1B4AC2FA001042F1 /* BSHTTPNetworking.m in Sources */,
 				84E9D79F1B61E10C00F2CD24 /* BSAssetCell.m in Sources */,
 				84BF8FCD1B4AC2FA001042F1 /* BSTableViewRefreshController.m in Sources */,
+				84E6C0901B7DCBA100289D94 /* ESSScannerViewController.m in Sources */,
 				84E9D7A91B61E10C00F2CD24 /* BSVideoIconView.m in Sources */,
 				848C7C381B79A38A000774A1 /* Base64.m in Sources */,
 				84BF8FCF1B4AC2FA001042F1 /* BSTableSection.m in Sources */,
@@ -6054,6 +6065,7 @@
 				84E9D7A51B61E10C00F2CD24 /* BSImagePickerController.m in Sources */,
 				848C7C331B79A301000774A1 /* BSSecurity.m in Sources */,
 				84BF8FFA1B4AC2FA001042F1 /* YYHMantleModelSerializer.m in Sources */,
+				84E6C0991B7DD06C00289D94 /* ESSIssueViewController.m in Sources */,
 				84E9D79B1B61E10C00F2CD24 /* BSAlbumCell.m in Sources */,
 				84BF8FFC1B4AC2FA001042F1 /* YYHModelRoute.m in Sources */,
 				84BF8FFE1B4AC2FA001042F1 /* YYHModelRouter.m in Sources */,
@@ -6223,6 +6235,7 @@
 				84F84ADE1B7C5A8C008DF38F /* BSSecurityFactory.m in Sources */,
 				A0F0C3F51B10209500CE406D /* CommodityEvaluationRequest.m in Sources */,
 				A0F0C3F01B10209500CE406D /* DeleteShoppingCartParams.m in Sources */,
+				84DB2F031B7CCB700041588B /* ESSBeaconScanner.m in Sources */,
 				84F84ADA1B7C4E2B008DF38F /* BSDesSecurity.m in Sources */,
 				84820A641B285F320093B87B /* LBSendingWaterTableViewController..m in Sources */,
 				A0F0C3F91B10209500CE406D /* ViewShoppingCartRequest.m in Sources */,
@@ -6267,6 +6280,7 @@
 				844570CD1B4D63F8000CA1C7 /* BLEDevicesTableViewController.m in Sources */,
 				8405CB7C1B5564A90014AF8D /* BusinessActivity.m in Sources */,
 				8474DEA31B3F004B00D9DE36 /* KTLBNavigationController.m in Sources */,
+				84E6C0981B7DD06C00289D94 /* ESSIssueViewController.m in Sources */,
 				84BA96881B2829D500388B58 /* ShoppingCart.m in Sources */,
 				844A32061B4064310045CA6C /* BSUIBarButtonItem.m in Sources */,
 				847076711B3AB21300F28180 /* UIViewController+BSTableObject.m in Sources */,
@@ -6284,6 +6298,7 @@
 				842042BF1B29881B0002C868 /* YYHMantleModelSerializer.m in Sources */,
 				84118EFE1B667AD50052E275 /* BSPhotoTakeViewController.m in Sources */,
 				84832D5D1B565E5300FB6D28 /* OrderDetailBusinessDomain.m in Sources */,
+				84DB2F071B7CCB700041588B /* ESSTimer.m in Sources */,
 				84BA967B1B2829D500388B58 /* AFAppDotNetAPIClient.m in Sources */,
 				A04366AF1AD7B550005842EE /* main.m in Sources */,
 				84E97AB71B307535001D4100 /* BSUIComponentView.m in Sources */,
@@ -6321,7 +6336,6 @@
 				84D19FE41B4C36EC00BA25BF /* BSBLEViewController.m in Sources */,
 				8405CBAD1B5570700014AF8D /* BusinessProduct.m in Sources */,
 				8474DEAB1B3F474700D9DE36 /* BSUIBlockButton.m in Sources */,
-				8480580B1B39A0E9005817D7 /* BSBLEDetailTableViewController.m in Sources */,
 				84E9D7A81B61E10C00F2CD24 /* BSVideoIconView.m in Sources */,
 				8461B72B1B54BAB5002A7C43 /* KTHandyViewController.m in Sources */,
 				A0F0C3EE1B10209500CE406D /* BasicParams.m in Sources */,
@@ -6338,6 +6352,7 @@
 				847076511B3A8C4500F28180 /* enquireController.m in Sources */,
 				A0F0C3ED1B10209500CE406D /* ViewShoppingCartResult.m in Sources */,
 				847432DF1B2A8CE500B030C4 /* OrderDetailOneCell.m in Sources */,
+				84DB2F051B7CCB700041588B /* ESSEddystone.m in Sources */,
 				847432DD1B2A8CE500B030C4 /* orderDetailCell.m in Sources */,
 				8405CBC11B5574670014AF8D /* BusinessProductOffsale.m in Sources */,
 				84BA967C1B2829D500388B58 /* AFNHelp.m in Sources */,
@@ -6383,6 +6398,7 @@
 				84E71F341B4E5473003089B2 /* BLEDevicesAddTableViewController.m in Sources */,
 				84E9D7A41B61E10C00F2CD24 /* BSImagePickerController.m in Sources */,
 				84EAFF5E1B5969EF00A90992 /* BSUITableViewCanEditedController.m in Sources */,
+				84E6C08F1B7DCBA100289D94 /* ESSScannerViewController.m in Sources */,
 				84BA96871B2829D500388B58 /* CartList.m in Sources */,
 				844168B11B6A1E7C0060F9A7 /* BusinessCatalogue.m in Sources */,
 				842042C61B2988410002C868 /* YYHModelRouter.m in Sources */,
