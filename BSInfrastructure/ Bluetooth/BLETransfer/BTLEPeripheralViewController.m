@@ -31,6 +31,7 @@
     self.bDisplayReturnButtonNav=YES;
     [super viewDidLoad];
     self.textView.delegate=self;
+     _peripheralManager = [[CBPeripheralManager alloc] initWithDelegate:self queue:nil];
 }
 
 
