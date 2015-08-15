@@ -21,17 +21,19 @@
 
 @implementation BSSecurity
 @synthesize securityBSRSACrypto;
-static BSSecurity *instance;
+
 
 #pragma mark -单例与实例化
-+(BSSecurity *)sharedBSSecurity{
-    if (!instance) {
-        instance=[[super alloc] init];
-    }
-    return instance;
++ (BSSecurity *)sharedBSSecurity {
+    static BSSecurity *_singleton;
+    static dispatch_once_t oncePredicate;
+    
+    dispatch_once(&oncePredicate, ^{
+        _singleton = [[super alloc] init];
+    });
+    
+    return _singleton;
 }
-
-
 
 + (id)copyWithZone:(NSZone *)zone {
     return self;

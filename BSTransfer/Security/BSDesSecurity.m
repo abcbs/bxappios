@@ -12,10 +12,6 @@
 
 @implementation BSDesSecurity
 
-//static BSDesCrypto
-
-static BSDesSecurity *instance;
-
 -(id) init {
     self = [super init];
     if (self) {
@@ -27,14 +23,16 @@ static BSDesSecurity *instance;
 }
 
 #pragma mark -单例与实例化
-+(BSDesSecurity *)sharedBSSecurity{
-    if (!instance) {
-        instance=[[super alloc] init];
-    }
-    return instance;
++ (BSDesSecurity *)sharedBSSecurity {
+    static BSDesSecurity *_singleton;
+    static dispatch_once_t oncePredicate;
+    
+    dispatch_once(&oncePredicate, ^{
+        _singleton = [[super alloc] init];
+    });
+    
+    return _singleton;
 }
-
-
 
 - (NSString *)encryptString:(NSString *)plainText{
     return [self.des encrypt:plainText key:keyDes];

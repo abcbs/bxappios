@@ -150,7 +150,6 @@
     
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
     [alertView show];
-    //[alertView release];
 }
 
 
@@ -168,7 +167,7 @@
         return;
     
     NSInteger currentTemperature = (int)[service temperature];
-    [currentTemperatureLabel setText:[NSString stringWithFormat:@"%dº", currentTemperature]];
+    [currentTemperatureLabel setText:[NSString stringWithFormat:@"%ldº", (long)currentTemperature]];
 }
 
 
@@ -189,7 +188,7 @@
 /** Peripheral connected or disconnected */
 - (void) alarmServiceDidChangeStatus:(LeTemperatureAlarmService*)service
 {
-    if ( [[service peripheral] isConnected] ) {
+    if ( [[service peripheral] state ]==CBPeripheralStateConnected ) {
         NSLog(@"Service (%@) connected", service.peripheral.name);
         if (![connectedServices containsObject:service]) {
             [connectedServices addObject:service];
@@ -243,8 +242,13 @@
         [[cell textLabel] setText:[peripheral name]];
     else
         [[cell textLabel] setText:@"Peripheral"];
-		
-    [[cell detailTextLabel] setText: [peripheral isConnected] ? @"Connected" : @"Not connected"];
+	
+    //
+    BOOL b=NO;
+    if(peripheral.state==CBPeripheralStateConnected){
+        b=YES;
+    }
+    [[cell detailTextLabel] setText: b? @"Connected" : @"Not connected"];
     
 	return cell;
 }
@@ -283,7 +287,7 @@
     	peripheral = (CBPeripheral*)[devices objectAtIndex:row];
 	}
     
-	if (![peripheral isConnected]) {
+	if (peripheral.state==CBPeripheralStateDisconnected) {
 		[[LeDiscovery sharedInstance] connectPeripheral:peripheral];
         [currentlyConnectedSensor setText:[peripheral name]];
         
@@ -296,13 +300,10 @@
 	else {
         
         if ( currentlyDisplayingService != nil ) {
-           // [currentlyDisplayingService release];
             currentlyDisplayingService = nil;
         }
-        
         currentlyDisplayingService = [self serviceForPeripheral:peripheral];
-        //[currentlyDisplayingService retain];
-        
+      
         [currentlyConnectedSensor setText:[peripheral name]];
         
         [currentTemperatureLabel setText:[NSString stringWithFormat:@"%dº", (int)[currentlyDisplayingService temperature]]];

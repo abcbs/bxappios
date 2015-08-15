@@ -12,6 +12,7 @@
 
 @property (strong, nonatomic) CBPeripheralManager       *peripheralManager;
 @property (strong, nonatomic) CBMutableCharacteristic   *transferCharacteristic;
+@property (strong, nonatomic) CBMutableService *transferService ;
 @property (strong, nonatomic) NSData                    *dataToSend;
 @property (nonatomic, readwrite) NSInteger              sendDataIndex;
 
@@ -68,14 +69,14 @@
     
     // Then the service
     //2.创建周边服务
-    CBMutableService *transferService = [[CBMutableService alloc] initWithType:[CBUUID UUIDWithString:TRANSFER_SERVICE_UUID]
+    self.transferService = [[CBMutableService alloc] initWithType:[CBUUID UUIDWithString:TRANSFER_SERVICE_UUID]
                                                                        primary:YES];
     
     // Add the characteristic to the service
     /**3.特征值添加到服务中
      *   一个周边可以有多个服务，一个服务可以有多个特征值
      */
-    transferService.characteristics = @[self.transferCharacteristic];
+    self.transferService.characteristics = @[self.transferCharacteristic];
     
     // And add it to the peripheral manager
     /**4.服务添加到周边管理者（Peripheral Manager）是用于发布服务
@@ -85,14 +86,14 @@
      *  现在，如果没有Error，你可以开始广播服务了：
      *
      */
-    [self.peripheralManager addService:transferService];
+    [self.peripheralManager addService:self.transferService];
 }
 
 /**Added LiuJQ 20150813
  *   5. 可以发布消息，周边管理者开始广播服务
  *      当执行addService方法后执行如下回调，当你发布一个服务和任何一个相关特征的描述到GATI数据库的时候执行
  *
- *      L146,即上面方法peripheralManagerDidUpdateState把服务添加到周边管理者（Peripheral Manager）是用于发布服务。
+ *      方法peripheralManagerDidUpdateState把服务添加到周边管理者是用于发布服务。
  *   一旦完成这个，周边管理者会通知他的代理方法-peripheralManager:didAddService:error:。
  *   现在，如果没有Error，你可以开始广播服务了：
  */
@@ -298,7 +299,6 @@
     self.navigationItem.rightBarButtonItem = rightButton;
 }
 
-
 /** Finishes the editing */
 - (void)dismissKeyboard
 {
@@ -320,8 +320,5 @@
         [self.peripheralManager stopAdvertising];
     }
 }
-
-
-
 
 @end

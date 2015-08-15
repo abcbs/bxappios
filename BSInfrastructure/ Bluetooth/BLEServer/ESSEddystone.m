@@ -1,41 +1,22 @@
-// Copyright 2015 Google Inc. All rights reserved.
-//
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
-//
-//    http://www.apache.org/licenses/LICENSE-2.0
-//
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
 
 #import "ESSEddystone.h"
 
 #import <CoreBluetooth/CoreBluetooth.h>
 
-/**
- * The Bluetooth Service ID for Eddystones.
- */
-static NSString *const kEddystoneServiceID = @"FEAA";
-
-/**
- * Eddystones can have different frame types. Within the frames, these are (some of) the possible
- * values. See the Eddystone spec for complete details.
- */
-static const uint8_t kEddystoneUIDFrameTypeID = 0x00;
-static const uint8_t kEddystoneTLMFrameTypeID = 0x20;
-
 // Note that for these Eddystone structures, the endianness of the individual fields is big-endian,
 // so you'll want to translate back to host format when necessary.
+// Eddystone结构是高端字节法则big-endian，需要翻译为主机格式
+
 // Note that in the Eddystone spec, the beaconID (UID) is divided into 2 fields, a 10 byte namespace
 // and a 6 byte instance id. However, since we ALWAYS use these in combination as a 16 byte
 // beaconID, we'll have our structure here reflect that.
+// Eddystone规范规定，beaconID (UID)包括两个域，10个字节的namespace，6个字节的实例ID
+// 总共使用16个字节
+// ESSBeaconID反应了这种结构
+
 typedef struct __attribute__((packed)) {
   uint8_t frameType;
-  int8_t  txPower;
+  int8_t  txPower;//信号量在Android端为-100~20
   uint8_t zipBeaconID[16];
 } ESSEddystoneUIDFrameFields;
 
@@ -45,9 +26,9 @@ static inline BOOL IsEqualOrBothNil(id a, id b) {
 }
 
 /**
- *=-----------------------------------------------------------------------------------------------=
+ *=---------------------------------------------------------=
  * ESSBeaconID
- *=-----------------------------------------------------------------------------------------------=
+ *=---------------------------------------------------------=
  */
 @implementation ESSBeaconID
 
@@ -100,25 +81,32 @@ static inline BOOL IsEqualOrBothNil(id a, id b) {
 }
 
 @end
-
+/**
+ *=------------------ESSBeaconID定义结束-------------------=
+ */
 
 /**
- *=-----------------------------------------------------------------------------------------------=
+ *=--------------------------------------------------------=
  * ESSBeaconInfo
- *=-----------------------------------------------------------------------------------------------=
+ *=--------------------------------------------------------=
  */
 @implementation ESSBeaconInfo
 
 /**
  * Given the advertising frames from CoreBluetooth for a device with the Eddystone Service ID,
  * figure out what type of frame it is.
+ *
+ * 根据设备得服务ID从广告信息中获取信息的种类
  */
 + (ESSFrameType)frameTypeForFrame:(NSDictionary *)advFrameList {
+  // 根据Service的ID获取框架数据
   NSData *frameData = advFrameList[[self eddystoneServiceID]];
 
   // It's an Eddystone ADV frame. Now check if it's a UID (ID) or TLM (telemetry) frame.
-  if (frameData) {//数据
+  //获取到广告数据，
+  if (frameData) {//框架数据
     uint8_t frameType;
+    //框架类型
     if ([frameData length] > 1) {
       frameType = ((uint8_t *)[frameData bytes])[0];
 
@@ -174,6 +162,7 @@ static inline BOOL IsEqualOrBothNil(id a, id b) {
 
   NSData *beaconIDData = [NSData dataWithBytes:&uidFrame.zipBeaconID
                                         length:sizeof(uidFrame.zipBeaconID)];
+    
   ESSBeaconID *beaconID = [[ESSBeaconID alloc] initWithType:kESSBeaconTypeEddystone
                                                    beaconID:beaconIDData];
   if (beaconID == nil) {
@@ -191,13 +180,28 @@ static inline BOOL IsEqualOrBothNil(id a, id b) {
       _beaconID, _RSSI, _txPower];
 }
 
-
+/**
+ *  尽管这是单例的实际定义，但在Foundation框架中不一定是这样。
+ *  比如NSFileManger和NSNotificationCenter，分别通过它们的类方法defaultManager和defaultCenter获取。
+ *  尽管不是严格意义的单例，这些类方法返回一个可以在应用的所有代码中访问到的类的共享实例。
+ *
+ *  在本文中我们也会采用该方法,用于实现单例模式的函数。
+ *      该函数就是dispatch_once：
+ *      void dispatch_once( dispatch_once_t *predicate, dispatch_block_t block);
+ *      该函数接收一个dispatch_once用于检查该代码块是否已经被调度的谓词（是一个长整型，实际上作为BOOL使用）。
+ *      它还接收一个希望在应用的生命周期内仅被调度一次的代码块，对于本例就用于shared实例的实例化。
+ *      dispatch_once不仅意味着代码仅会被运行一次，而且还是线程安全的，
+ *      这就意味着你不需要使用诸如@synchronized之类的来防止使用多个线程或者队列时不同步的问题。
+ *
+ *
+ *  服务的CBUUID的单例
+ */
 + (CBUUID *)eddystoneServiceID {
   static CBUUID *_singleton;
   static dispatch_once_t oncePredicate;
 
   dispatch_once(&oncePredicate, ^{
-    _singleton = [CBUUID UUIDWithString:kEddystoneServiceID];
+    _singleton = [CBUUID UUIDWithString:kESSEddystoneServiceID];
   });
 
   return _singleton;

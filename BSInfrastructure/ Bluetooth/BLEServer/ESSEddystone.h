@@ -37,6 +37,31 @@
 #import <Foundation/Foundation.h>
 #import <CoreBluetooth/CoreBluetooth.h>
 
+static int const notify_mtu=20;
+
+static NSString *const  kESSddystoneCharacteristicUUID=@"08590F7E-DB05-467E-8757-72F6FAEB13D5";
+
+static NSString *const kESSEddystoneServiceID = @"FEAA";
+/**
+ * The Bluetooth Service ID for Eddystones.
+ * Android定义的ServiceUUID为
+ * 0000FEAA-0000-1000-8000-00805F9B34FB
+ */
+
+
+/**
+ * Eddystones can have different frame types. Within the frames, these are (some of) the possible
+ * values. See the Eddystone spec for complete details.
+ */
+//
+/**
+ * Eddystone-URL frame type value.
+ * static final byte URL_FRAME_TYPE = 0x10;//苹果没有实现这种方式
+ */
+static const uint8_t kEddystoneUIDFrameTypeID = 0x00;
+static const uint8_t kEddystoneTLMFrameTypeID = 0x20;
+
+
 typedef NS_ENUM(NSUInteger, ESSBeaconType) {
   kESSBeaconTypeEddystone = 1,
 };
@@ -48,10 +73,10 @@ typedef NS_ENUM(NSUInteger, ESSFrameType) {
 };
 
 /**
- *=-----------------------------------------------------------------------------------------------=
+ *=--------------------------------------------------------------=
  * ESSBeaconID
  * 包括beacon类型和beaconID
- *=-----------------------------------------------------------------------------------------------=
+ *=--------------------------------------------------------------=
  */
 @interface ESSBeaconID : NSObject <NSCopying>
 
@@ -72,9 +97,9 @@ typedef NS_ENUM(NSUInteger, ESSFrameType) {
 
 
 /**
- *=-----------------------------------------------------------------------------------------------=
+ *=---------------------------------------------------------=
  * ESSBeaconInfo
- *=-----------------------------------------------------------------------------------------------=
+ *=---------------------------------------------------------=
  */
 @interface ESSBeaconInfo : NSObject
 

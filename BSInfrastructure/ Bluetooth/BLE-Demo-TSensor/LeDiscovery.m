@@ -211,7 +211,6 @@
 	[centralManager cancelPeripheralConnection:peripheral];
 }
 
-
 - (void) centralManager:(CBCentralManager *)central didConnectPeripheral:(CBPeripheral *)peripheral
 {
 	LeTemperatureAlarmService	*service	= nil;
@@ -229,7 +228,6 @@
     [peripheralDelegate alarmServiceDidChangeStatus:service];
 	[discoveryDelegate discoveryDidRefresh];
 }
-
 
 - (void) centralManager:(CBCentralManager *)central didFailToConnectPeripheral:(CBPeripheral *)peripheral error:(NSError *)error
 {
@@ -269,7 +267,7 @@
 {
     static CBCentralManagerState previousState = -1;
     
-	switch ([centralManager state]) {
+	switch (centralManager.state) {
 		case CBCentralManagerStatePoweredOff:
 		{
             [self clearDevices];

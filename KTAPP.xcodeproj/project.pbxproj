@@ -422,6 +422,8 @@
 		846AA28C1B733D3700420BC2 /* LOUserPayMaintainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846AA28A1B733D3700420BC2 /* LOUserPayMaintainViewController.m */; };
 		846AA28F1B733D5600420BC2 /* LOUserPayDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846AA28E1B733D5600420BC2 /* LOUserPayDetailViewController.m */; };
 		846AA2901B733D5600420BC2 /* LOUserPayDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846AA28E1B733D5600420BC2 /* LOUserPayDetailViewController.m */; };
+		846FC4561B7FA65100496F96 /* ESSBeaconIssue.m in Sources */ = {isa = PBXBuildFile; fileRef = 846FC4551B7FA65100496F96 /* ESSBeaconIssue.m */; };
+		846FC4571B7FA65100496F96 /* ESSBeaconIssue.m in Sources */ = {isa = PBXBuildFile; fileRef = 846FC4551B7FA65100496F96 /* ESSBeaconIssue.m */; };
 		8470761A1B3A5F7800F28180 /* SetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 847076181B3A5F7800F28180 /* SetCell.m */; };
 		8470761B1B3A5F7800F28180 /* SetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847076191B3A5F7800F28180 /* SetCell.xib */; };
 		847076231B3A89F000F28180 /* recommendCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 8470761E1B3A89F000F28180 /* recommendCard.m */; };
@@ -1703,6 +1705,8 @@
 		846AA28A1B733D3700420BC2 /* LOUserPayMaintainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LOUserPayMaintainViewController.m; sourceTree = "<group>"; };
 		846AA28D1B733D5600420BC2 /* LOUserPayDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LOUserPayDetailViewController.h; sourceTree = "<group>"; };
 		846AA28E1B733D5600420BC2 /* LOUserPayDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LOUserPayDetailViewController.m; sourceTree = "<group>"; };
+		846FC4541B7FA65100496F96 /* ESSBeaconIssue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESSBeaconIssue.h; sourceTree = "<group>"; };
+		846FC4551B7FA65100496F96 /* ESSBeaconIssue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESSBeaconIssue.m; sourceTree = "<group>"; };
 		847076171B3A5F7800F28180 /* SetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetCell.h; sourceTree = "<group>"; };
 		847076181B3A5F7800F28180 /* SetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetCell.m; sourceTree = "<group>"; };
 		847076191B3A5F7800F28180 /* SetCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SetCell.xib; sourceTree = "<group>"; };
@@ -3986,6 +3990,8 @@
 				84DB2F021B7CCB700041588B /* ESSTimer.m */,
 				84E6C0961B7DD06C00289D94 /* ESSIssueViewController.h */,
 				84E6C0971B7DD06C00289D94 /* ESSIssueViewController.m */,
+				846FC4541B7FA65100496F96 /* ESSBeaconIssue.h */,
+				846FC4551B7FA65100496F96 /* ESSBeaconIssue.m */,
 			);
 			path = BLEServer;
 			sourceTree = "<group>";
@@ -6046,6 +6052,7 @@
 				84BF8FDE1B4AC2FA001042F1 /* BSUITabBarCommonController.m in Sources */,
 				84BF8FE01B4AC2FA001042F1 /* BSContentObjectNavigation.m in Sources */,
 				84BF8FE21B4AC2FA001042F1 /* BSFCRollingADImageUIView.m in Sources */,
+				846FC4571B7FA65100496F96 /* ESSBeaconIssue.m in Sources */,
 				84BF8FE51B4AC2FA001042F1 /* BSUIImageTitleTableViewCell.m in Sources */,
 				844570CE1B4D63F8000CA1C7 /* BLEDevicesTableViewController.m in Sources */,
 				84BF8FE71B4AC2FA001042F1 /* BSUISingleImageTableViewCell.m in Sources */,
@@ -6314,6 +6321,7 @@
 				847433211B2A934000B030C4 /* applyShop.m in Sources */,
 				847076251B3A89F000F28180 /* recommendguest.m in Sources */,
 				8405CB841B5566940014AF8D /* UserInfoDomain.m in Sources */,
+				846FC4561B7FA65100496F96 /* ESSBeaconIssue.m in Sources */,
 				84832D2C1B564E5700FB6D28 /* CustomerAppointmentSessionDomain.m in Sources */,
 				8405CBB51B5572D40014AF8D /* BusinessProductAdvert.m in Sources */,
 				84BA96851B2829D500388B58 /* WaterSending.m in Sources */,

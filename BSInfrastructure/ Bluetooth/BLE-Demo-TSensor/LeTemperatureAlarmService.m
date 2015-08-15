@@ -15,6 +15,7 @@ NSString *kAlarmServiceEnteredForegroundNotification = @"kAlarmServiceEnteredFor
 //实现类要遵守协议<CBCentralManagerDelegate,CBPeripheralDelegate>
 @interface LeTemperatureAlarmService() <CBPeripheralDelegate> {
 @private
+    
     CBPeripheral		*servicePeripheral;
     
     CBService			*temperatureAlarmService;

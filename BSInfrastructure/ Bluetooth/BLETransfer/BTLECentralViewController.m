@@ -106,9 +106,9 @@
  *
  *      这个调用通知Central Manager代理（在这个例子中就是view controller），一个附带着广播数据和信号质量
  *  (RSSI-Received Signal Strength Indicator)的周边被发现。这是一个很酷的参数，知道了信号质量，你可以用它去判断远近。
- *  任何广播、扫描的响应数据保存在advertisementData 中，可以通过CBAdvertisementData 来访问它。
- *
- *  现在，你可以停止扫描，而去连接周边了
+ *      
+ *  任何广播、扫描的响应数据保存在advertisementData中，可以通过CBAdvertisementData 来访问它。
+ *  现在，你可以停止扫描，而去连接周边了。
  */
 - (void)centralManager:(CBCentralManager *)central didDiscoverPeripheral:(CBPeripheral *)peripheral advertisementData:(NSDictionary *)advertisementData RSSI:(NSNumber *)RSSI
 {
@@ -120,25 +120,26 @@
     if (self.discoveredPeripheral != peripheral) {
         // Save a local copy of the peripheral, so CoreBluetooth doesn't get rid of it
         self.discoveredPeripheral = peripheral;
-        // And connect
+        // And connect,发现周边之后连接周边
+        /**
+         *  options 参数是一个可选的NSDictionary，如果需要，可以用以下的键（Key），它们的值始终是一个boolean。
+         *      CBConnectPeripheralOptionNotifyOnConnectionKey
+         *      CBConnectPeripheralOptionNotifyOnDisconnectionKey
+         */
+        //
         BSLog(@"Connecting to peripheral %@", peripheral);
         [self.centralManager connectPeripheral:peripheral options:nil];
     }
 }
 
 
-/** If the connection fails for whatever reason, we need to deal with it.
- */
-- (void)centralManager:(CBCentralManager *)central didFailToConnectPeripheral:(CBPeripheral *)peripheral error:(NSError *)error
-{
-    BSLog(@"Failed to connect to %@. (%@)", peripheral, [error localizedDescription]);
-    [self cleanup];
-}
-
-
-/** We've connected to the peripheral, now we need to discover the services and characteristics to find the 'transfer' characteristic.
- *  基于连接的结果，代理（这个例子中是view controller）会接收centralManager:didFailToConnectPeripheral:error:或者centralManager:didConnectPeripheral:。
- *  如果成功了，你可以访问广播服务的那个周边。因此，在didConnectPeripheral 回调中，你可以写以下代码：
+/**4.连接周边后的回调
+ *      We've connected to the peripheral, now we need to discover the services and characteristics to
+ *  find the 'transfer' characteristic.
+ *
+ *      基于连接的结果，代理（也就是本控制器）会接收centralManager:didFailToConnectPeripheral:error:
+ *      或者centralManager:didConnectPeripheral:。
+ *      如果成功了，你可以访问广播服务的那个周边。因此，在didConnectPeripheral 回调中，你可以写以下代码：
  */
 - (void)centralManager:(CBCentralManager *)central didConnectPeripheral:(CBPeripheral *)peripheral
 {
@@ -157,11 +158,31 @@
     peripheral.delegate = self;
     
     // Search only for services that match our UUID
+    // 查询匹配UUID的服务
     [peripheral discoverServices:@[[CBUUID UUIDWithString:TRANSFER_SERVICE_UUID]]];
 }
 
+/** If the connection fails for whatever reason, we need to deal with it.
+ */
+- (void)centralManager:(CBCentralManager *)central didFailToConnectPeripheral:(CBPeripheral *)peripheral error:(NSError *)error
+{
+    BSLog(@"Failed to connect to %@. (%@)", peripheral, [error localizedDescription]);
+    [self cleanup];
+}
 
-/** The Transfer Service was discovered
+
+/** Once the disconnection happens, we need to clean up our local copy of the peripheral
+ */
+- (void)centralManager:(CBCentralManager *)central didDisconnectPeripheral:(CBPeripheral *)peripheral error:(NSError *)error
+{
+    BSLog(@"Peripheral Disconnected");
+    self.discoveredPeripheral = nil;
+    // We're disconnected, so start scanning again
+    [self scan];
+}
+
+
+/** 5.The Transfer Service was discovered
  *  周边开始用一个回调通知它的代理。在上一个方法中，请求周边去寻找服务，周边代理接收-peripheral:didDiscoverServices:。
  *  如果没有Error，可以请求周边去寻找它的服务所列出的特征，
  */
@@ -184,7 +205,7 @@
 }
 
 
-/** The Transfer characteristic was discovered.
+/** 6.The Transfer characteristic was discovered.
  *  Once this has been found, we want to subscribe to it, which lets the peripheral know we want the data it contains
  *  
  *      现在，如果一个特征被发现，周边代理会接收-peripheral:didDiscoverCharacteristicsForService:error:。
@@ -212,7 +233,7 @@
     // Once this is complete, we just need to wait for the data to come in.
 }
 
-/** The peripheral letting us know whether our subscribe/unsubscribe happened or not
+/** 7.The peripheral letting us know whether our subscribe/unsubscribe happened or not
  *
  *  如果一个特征的值被更新，然后周边代理接收-peripheral:didUpdateNotificationStateForCharacteristic:error:。
  *  你可以用-readValueForCharacteristic:读取新的值：
@@ -243,7 +264,7 @@
     }
 }
 
-/** This callback lets us know more data has arrived via notification on the characteristic
+/** 8.This callback lets us know more data has arrived via notification on the characteristic
  *
  *  当周边发送新的值，周边代理接收-peripheral:didUpdateValueForCharacteristic:error:。
  *  这个方法的第二个参数包含特征。你可以用value属性读取他的值。这是一个包含特征的值的NSData。
@@ -278,21 +299,6 @@
     // Log it
     BSLog(@"Received: %@", stringFromData);
 }
-
-
-
-
-/** Once the disconnection happens, we need to clean up our local copy of the peripheral
- */
-- (void)centralManager:(CBCentralManager *)central didDisconnectPeripheral:(CBPeripheral *)peripheral error:(NSError *)error
-{
-    BSLog(@"Peripheral Disconnected");
-    self.discoveredPeripheral = nil;
-    
-    // We're disconnected, so start scanning again
-    [self scan];
-}
-
 
 /** Call this when things either go wrong, or you're done with the connection.
  *  This cancels any subscriptions if there are any, or straight disconnects if not.
