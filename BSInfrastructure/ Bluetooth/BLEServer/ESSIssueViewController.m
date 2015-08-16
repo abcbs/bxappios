@@ -70,8 +70,9 @@
     if (self.advertisingSwitch.on) {
         [self.advertisingSwitch setOn:NO];
         [beaconIssue stopIssue];
+        //[textView resignFirstResponder];
     }
-    [textView resignFirstResponder];
+   
 }
 
 

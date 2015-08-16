@@ -16,6 +16,8 @@ static const char *const kBeaconsIssuseQueueName = "kESSBeaconIssuseBeaconsOpera
     //定义分发队列
     dispatch_queue_t _beaconIssuseQueue;
     ESSBeaconInfo *beaconInfo;
+    ESSBeaconID *essBeaconID;
+    NSNumber *rssi;
 }
 
 
@@ -81,15 +83,22 @@ static const char *const kBeaconsIssuseQueueName = "kESSBeaconIssuseBeaconsOpera
 {
     BSLog(@"Central subscribed to characteristic");
     // Get the data
-    //self.dataToSend = [self.textView.text dataUsingEncoding:NSUTF8StringEncoding];
     if ([_delegate respondsToSelector:@selector(sendingData:)]) {
         self.dataToSend=[_delegate sendingData:self];
     }
     // Reset the index
     self.sendDataIndex = 0;
-    
-    beaconInfo=[ESSBeaconInfo new];
-    
+
+    //实例化ESSBeaconID
+    NSData *beaconID= [kESSEddystoneServiceID dataUsingEncoding:NSUTF8StringEncoding]; ;
+     essBeaconID= [[ESSBeaconID alloc] initWithType:kESSBeaconTypeEddystone
+        beaconID:beaconID];
+
+    rssi= [NSNumber numberWithInt:RSSI];
+    beaconInfo=[[ESSBeaconInfo alloc] initWithBeaconID:essBeaconID
+                                    txPower:@(ADVERTISE_TX_POWER_MEDIUM)
+                                       RSSI:rssi
+                                  telemetry:self.dataToSend];
     [self sendData];
     
 }
@@ -113,11 +122,18 @@ static const char *const kBeaconsIssuseQueueName = "kESSBeaconIssuseBeaconsOpera
 }
 
 - (BOOL)fixBeaconData{
-    return [self.peripheralManager updateValue:[@"EOM" dataUsingEncoding:NSUTF8StringEncoding] forCharacteristic:self.transferCharacteristic onSubscribedCentrals:nil];
+    //beaconInfo
+    NSData *data=[@"EOM" dataUsingEncoding:NSUTF8StringEncoding];
+    return [self.peripheralManager updateValue:data forCharacteristic:self.transferCharacteristic onSubscribedCentrals:nil];
 }
 
 - (BOOL)didBeaconData:(NSData *)value{
-    return [self.peripheralManager updateValue:value forCharacteristic:self.transferCharacteristic onSubscribedCentrals:nil];
+    beaconInfo=[[ESSBeaconInfo alloc] initWithBeaconID:essBeaconID
+             txPower:@(ADVERTISE_TX_POWER_MEDIUM)
+             RSSI:rssi
+             telemetry:self.dataToSend];
+    
+    return [self.peripheralManager updateValue:self.dataToSend forCharacteristic:self.transferCharacteristic onSubscribedCentrals:nil];
 }
 
 /** Sends the next amount of data to the connected central
@@ -208,7 +224,8 @@ static const char *const kBeaconsIssuseQueueName = "kESSBeaconIssuseBeaconsOpera
      @{ CBAdvertisementDataServiceUUIDsKey : @[[CBUUID UUIDWithString:kESSEddystoneServiceID]] }];
 }
 
-- (void)stopSIssue{
+
+- (void)stopIssue{
     [self.peripheralManager stopAdvertising];
 }
 

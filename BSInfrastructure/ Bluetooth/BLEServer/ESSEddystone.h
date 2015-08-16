@@ -34,10 +34,12 @@
  *
  */
 
+
 #import <Foundation/Foundation.h>
 #import <CoreBluetooth/CoreBluetooth.h>
 
 static int const notify_mtu=20;
+static int const  RSSI=  10;
 
 static NSString *const  kESSddystoneCharacteristicUUID=@"08590F7E-DB05-467E-8757-72F6FAEB13D5";
 
@@ -72,6 +74,15 @@ typedef NS_ENUM(NSUInteger, ESSFrameType) {
   kESSEddystoneTelemetryFrameType,//遥测; 遥感勘测
 };
 
+typedef NS_ENUM(NSUInteger, ESSTxPowerType) {
+    ADVERTISE_TX_POWER_HIGH = -16,//
+    ADVERTISE_TX_POWER_MEDIUM = -26,//
+    ADVERTISE_TX_POWER_LOW=-35,//
+    ADVERTISE_TX_POWER_DEFUALT=-59
+};
+
+
+
 /**
  *=--------------------------------------------------------------=
  * ESSBeaconID
@@ -93,12 +104,15 @@ typedef NS_ENUM(NSUInteger, ESSFrameType) {
  */
 @property(nonatomic, copy, readonly) NSData *beaconID;
 
+//LiuJQ Added for Issuse
+- (instancetype)initWithType:(ESSBeaconType)beaconType
+                    beaconID:(NSData *)beaconID;
 @end
 
 
 /**
  *=---------------------------------------------------------=
- * ESSBeaconInfo
+ *                   ESSBeaconInfo
  *=---------------------------------------------------------=
  */
 @interface ESSBeaconInfo : NSObject
@@ -165,4 +179,9 @@ typedef NS_ENUM(NSUInteger, ESSFrameType) {
 
 + (ESSBeaconInfo *)testBeaconFromBeaconIDString:(NSString *)beaconID;
 
+//LiuJQ Added
+- (instancetype)initWithBeaconID:(ESSBeaconID *)beaconID
+                         txPower:(NSNumber *)txPower
+                            RSSI:(NSNumber *)RSSI
+                       telemetry:(NSData *)telemetry;
 @end

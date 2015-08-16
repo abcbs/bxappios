@@ -27,7 +27,7 @@ static inline BOOL IsEqualOrBothNil(id a, id b) {
 
 /**
  *=---------------------------------------------------------=
- * ESSBeaconID
+ *             ESSBeaconID
  *=---------------------------------------------------------=
  */
 @implementation ESSBeaconID
@@ -87,7 +87,7 @@ static inline BOOL IsEqualOrBothNil(id a, id b) {
 
 /**
  *=--------------------------------------------------------=
- * ESSBeaconInfo
+ *                    ESSBeaconInfo
  *=--------------------------------------------------------=
  */
 @implementation ESSBeaconInfo
