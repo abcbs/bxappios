@@ -50,13 +50,6 @@
     [super viewWillDisappear:animated];
 }
 
-
-- (void)peripheralManager:(CBPeripheralManager *)peripheral central:(CBCentral *)central didSubscribeToCharacteristic:(CBCharacteristic *)characteristic
-{
-    BSLog(@"Central subscribed to characteristic");
-  
-}
-
 - (NSData *)sendingData:(ESSBeaconIssue *)issue{
     return [self.textView.text dataUsingEncoding:NSUTF8StringEncoding];
 }
@@ -81,8 +74,10 @@
 - (void)textViewDidBeginEditing:(UITextView *)textView
 {
     // We need to add this manually so we have a way to dismiss the keyboard
-    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"确定" style:UIBarButtonItemStylePlain target:self action:@selector(dismissKeyboard)];
+    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc]
+        initWithTitle:@"确定" style:UIBarButtonItemStylePlain target:self action:@selector(dismissKeyboard)];
     self.navigationItem.rightBarButtonItem = rightButton;
+    rightButton.tintColor=[UIColor whiteColor];
 }
 
 

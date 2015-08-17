@@ -288,6 +288,7 @@
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TlF-XT-qLx">
                                 <rect key="frame" x="99" y="85" width="51" height="31"/>
                                 <connections>
+                                    <action selector="switchChanged:" destination="8rJ-Kc-sve" eventType="valueChanged" id="12S-L5-mRq"/>
                                     <action selector="switchChanged:" destination="thQ-rR-eN1" eventType="valueChanged" id="eKe-6P-jun"/>
                                 </connections>
                             </switch>
@@ -337,8 +338,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="9fY-M5-9su" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                         <segue destination="tCc-iR-JgA" kind="relationship" relationship="viewControllers" id="8w8-92-Xyv"/>
+                        <segue destination="9fY-M5-9su" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                         <segue destination="58d-4s-NyQ" kind="relationship" relationship="viewControllers" id="NB1-du-rdK"/>
                         <segue destination="smd-g7-Hcr" kind="relationship" relationship="viewControllers" id="xng-b3-vUS"/>
                         <segue destination="H9g-kR-Ufh" kind="relationship" relationship="viewControllers" id="RvB-xR-Cnf"/>

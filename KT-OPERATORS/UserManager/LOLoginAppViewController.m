@@ -106,6 +106,9 @@
                           initBSecurity:BSEncryptionAlgorithmRSA];
     NSString *encrAcc=[security encryptString:self.account.text];
     BSLog(@"加密账户信息为:\t%@",encrAcc);
+    
+    //NSHTTPCookieStorage *cookieStorage=nil;
+    //NSHTTPCookie  *cookie=nil;
     /*
     //DES加密
     security=[BSSecurityFactory initBSecurity:BSEncryptionAlgorithmDES];

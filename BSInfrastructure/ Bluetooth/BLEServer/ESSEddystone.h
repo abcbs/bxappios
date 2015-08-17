@@ -43,7 +43,13 @@ static int const  RSSI=  10;
 
 static NSString *const  kESSddystoneCharacteristicUUID=@"08590F7E-DB05-467E-8757-72F6FAEB13D5";
 
-static NSString *const kESSEddystoneServiceID = @"FEAA";
+static NSString *const kEddystoneServiceID = @"FEAA";
+
+static NSString *const  kEddystoneNamespace=@"1234567890";
+static NSString *const  kEddystoneServiceInstance= @"AABBCC";
+static NSUInteger const  kESSEddystoneServiceIDLenght=16;
+
+static NSString *const kESSEddystoneServiceID = @"0000FEAA-0000-1000-8000-00805F9B34FB";
 /**
  * The Bluetooth Service ID for Eddystones.
  * Android定义的ServiceUUID为
@@ -62,7 +68,149 @@ static NSString *const kESSEddystoneServiceID = @"FEAA";
  */
 static const uint8_t kEddystoneUIDFrameTypeID = 0x00;
 static const uint8_t kEddystoneTLMFrameTypeID = 0x20;
+/**
+ * struct   MYINFO
+ *
+ * {
+ *
+ *  int   a;
+ *
+ *  long  b;
+ *
+ *  char  c;
+ *
+ *  };
+ *
+ *  struct  MYINFO    infoStruct;
+ *
+ *  infoStruct.a = 100;
+ *
+ *  infoStruct.b =10000;
+ *
+ *  infoStruct.c = 'c';
+ *
+ * 1.   将   infoStruct转换为NSData
+ *
+ *      NSData * msgData = [[NSData alloc]
+ *          initWithBytes:&infoStruct length:sizeof(infoStruct)];
+ *
+ * 2.  将    msgData转换为  MYINFO  对象。
+ *
+ *  struct  MYINFO  infoStruct2;
+ *
+ *  [msgData getBytes:&infoStruct2 length:sizeof(infoStruct2)];
+ 
+ */
 
+/**
+ * 按照posix标准，一般整形对应的*_t类型为：
+ *
+ *      1字节     uint8_t
+ *
+ *      2字节     uint16_t
+ *
+ *      4字节     uint32_t
+ *
+ *      8字节     uint64_t
+ *
+ *  typedef signed char int8_t;
+ *
+ *  typedef unsigned char uint8_t;
+ *
+ *  typedef int int16_t;
+ *
+ *  typedef unsigned int uint16_t;
+ *
+ *  typedef long int32_t;
+ *
+ *  typedef unsigned long uint32_t;
+ *
+ *  typedef long long int64_t;
+ *
+ *  typedef unsigned long long uint64_t;
+ *
+ *  typedef int16_t intptr_t;
+ *
+ *  typedef uint16_t uintptr_t;
+
+ */
+
+
+// Note that for these Eddystone structures, the endianness of the individual fields is big-endian,
+// so you'll want to translate back to host format when necessary.
+
+// Eddystone结构是高端字节法则big-endian，需要翻译为主机格式
+
+// Note that in the Eddystone spec, the beaconID (UID) is divided into 2 fields, a 10 byte namespace
+
+// and a 6 byte instance id. However, since we ALWAYS use these in combination as a 16 byte
+// beaconID, we'll have our structure here reflect that.
+
+// Eddystone规范规定，beaconID (UID)包括两个域，10个字节的namespace，6个字节的实例ID
+// 总共使用16个字节
+
+// ESSBeaconID反应了这种结构
+/*
+ private byte[] buildServiceData() throws IOException {
+    byte txPower = txPowerLevelToByteValue();
+ 
+    //命名空间10个字节
+    byte[] namespaceBytes = toByteArray(namespace.getText().toString());
+ 
+    //实例的ID
+    byte[] instanceBytes = toByteArray(instance.getText().toString());
+ 
+    ByteArrayOutputStream os = new ByteArrayOutputStream();
+ 
+    //private static final byte FRAME_TYPE_UID = 0x00;
+    //txPower (byte) -16
+    //1.前两个字节
+    os.write(new byte[]{FRAME_TYPE_UID, txPower});
+    //命名空间10个字节
+    os.write(namespaceBytes);
+    //实例名称6个字节
+    os.write(instanceBytes);
+    return os.toByteArray();
+ }
+ 
+ private void startAdvertising() {
+ 
+    AdvertiseSettings advertiseSettings = new AdvertiseSettings.Builder()
+        .setAdvertiseMode(advertiseMode)
+        .setTxPowerLevel(txPowerLevel)
+        .setConnectable(true)
+        .build();
+ 
+    byte[] serviceData = null;
+    try {
+        serviceData = buildServiceData();
+    } catch (IOException e) {
+ 
+    }
+ 
+    AdvertiseData advertiseData = new AdvertiseData.Builder()
+        .addServiceData(SERVICE_UUID, serviceData)
+        .addServiceUuid(SERVICE_UUID)
+        .setIncludeTxPowerLevel(false)
+        .setIncludeDeviceName(false)
+        .build();
+ 
+    adv.startAdvertising(advertiseSettings, advertiseData, advertiseCallback);
+ }
+
+*/
+
+//框架协议格式
+typedef struct __attribute__((packed)) {
+    uint8_t frameType;
+    int8_t  txPower;//信号量在Android端为-100~20
+    uint8_t zipBeaconID[16];
+} ESSEddystoneUIDFrameFields;
+
+// Test equality, ensuring that nil is equal to itself.
+static inline BOOL IsEqualOrBothNil(id a, id b) {
+    return ((a == b) || (a && b && [a isEqual:b]));
+}
 
 typedef NS_ENUM(NSUInteger, ESSBeaconType) {
   kESSBeaconTypeEddystone = 1,

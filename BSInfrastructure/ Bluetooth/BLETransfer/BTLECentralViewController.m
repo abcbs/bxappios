@@ -198,6 +198,7 @@
     // Discover the characteristic we want...
     // Loop through the newly filled peripheral.services array, just in case there's more than one.
     for (CBService *service in peripheral.services) {
+        //发现特征值
         [peripheral discoverCharacteristics:
             @[[CBUUID UUIDWithString:TRANSFER_CHARACTERISTIC_UUID]]
             forService:service];
@@ -276,7 +277,7 @@
               [error localizedDescription]);
         return;
     }
-    
+    //具体特征值的数据
     NSString *stringFromData = [[NSString alloc]
                                 initWithData:characteristic.value encoding:NSUTF8StringEncoding];
     

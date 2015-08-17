@@ -2,29 +2,6 @@
 #import "ESSEddystone.h"
 
 #import <CoreBluetooth/CoreBluetooth.h>
-
-// Note that for these Eddystone structures, the endianness of the individual fields is big-endian,
-// so you'll want to translate back to host format when necessary.
-// Eddystone结构是高端字节法则big-endian，需要翻译为主机格式
-
-// Note that in the Eddystone spec, the beaconID (UID) is divided into 2 fields, a 10 byte namespace
-// and a 6 byte instance id. However, since we ALWAYS use these in combination as a 16 byte
-// beaconID, we'll have our structure here reflect that.
-// Eddystone规范规定，beaconID (UID)包括两个域，10个字节的namespace，6个字节的实例ID
-// 总共使用16个字节
-// ESSBeaconID反应了这种结构
-
-typedef struct __attribute__((packed)) {
-  uint8_t frameType;
-  int8_t  txPower;//信号量在Android端为-100~20
-  uint8_t zipBeaconID[16];
-} ESSEddystoneUIDFrameFields;
-
-// Test equality, ensuring that nil is equal to itself.
-static inline BOOL IsEqualOrBothNil(id a, id b) {
-  return ((a == b) || (a && b && [a isEqual:b]));
-}
-
 /**
  *=---------------------------------------------------------=
  *             ESSBeaconID
@@ -147,6 +124,7 @@ static inline BOOL IsEqualOrBothNil(id a, id b) {
                                 telemetry:(NSData *)telemetry
                                      RSSI:(NSNumber *)RSSI {
   // Make sure this frame has the correct frame type identifier
+  //无符号
   uint8_t frameType;
   [UIDFrameData getBytes:&frameType length:1];
   if (frameType != kEddystoneUIDFrameTypeID) {
@@ -164,7 +142,7 @@ static inline BOOL IsEqualOrBothNil(id a, id b) {
                                         length:sizeof(uidFrame.zipBeaconID)];
     
   ESSBeaconID *beaconID = [[ESSBeaconID alloc] initWithType:kESSBeaconTypeEddystone
-                                                   beaconID:beaconIDData];
+      beaconID:beaconIDData];
   if (beaconID == nil) {
     return nil;
   }

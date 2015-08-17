@@ -285,7 +285,7 @@
         [self.advertisingSwitch setOn:NO];
         [self.peripheralManager stopAdvertising];
     }
-    [textView resignFirstResponder];
+    //[textView resignFirstResponder];
 }
 
 
