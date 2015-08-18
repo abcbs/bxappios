@@ -162,9 +162,9 @@ static NSString *const kSeenCacheOnLostTimer = @"on_lost_timer";
   //A dictionary containing service-specific advertisement data. Keys are CBUUID
   //根据服务得CBUUID获取服务得数据， Key为CBUUID，其数据是Service
   NSDictionary *serviceData = advertisementData[CBAdvertisementDataServiceDataKey];
-    if (serviceData==nil) {
-         serviceData = advertisementData[CBAdvertisementDataLocalNameKey];
-    }
+  if (serviceData==nil) {
+     serviceData = advertisementData[CBAdvertisementDataLocalNameKey];
+  }
   // If it's a telemetry (TLM) frame, then save it into our cache so that the next time we get a
   // UID frame (i.e. an Eddystone "sighting"), we can include the telemetry with it.
   // 如果是遥感，缓存UUID
