@@ -133,7 +133,7 @@ static const char *const kBeaconsIssuseQueueName = "kESSBeaconIssuseBeaconsOpera
 
 - (void)peripheralManager:(CBPeripheralManager *)peripheral central:(CBCentral *)central didSubscribeToCharacteristic:(CBCharacteristic *)characteristic
 {
-    BSLog(@"中心可以订阅特征值...");
+    BSLog(@"发布订阅信息，didSubscribeToCharacteristic");
     // Get the data
     if ([_delegate respondsToSelector:@selector(sendingData:)]) {
        self.dataToSend=[_delegate sendingData:self];
@@ -161,7 +161,7 @@ static const char *const kBeaconsIssuseQueueName = "kESSBeaconIssuseBeaconsOpera
 - (void)peripheralManagerDidStartAdvertising:(CBPeripheralManager *)peripheral error:(NSError *)error{
     BSLog(@"可以发布消息，周边管理者开始广播服务,等待中心订阅");
     if (error==nil) {
-        BSLog(@"中心可以订阅特征值...");
+        BSLog(@"发布广告信息");
         // Get the data
         if ([_delegate respondsToSelector:@selector(sendingData:)]) {
             self.dataToSend=[_delegate sendingData:self];
