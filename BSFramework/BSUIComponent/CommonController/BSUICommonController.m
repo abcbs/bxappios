@@ -32,7 +32,7 @@
     //设置导航栏颜色
     [BSUIComponentView navigationHeader:self.navigationController];
     //设置Tab栏
-    [BSUIComponentView changeTabBarWithNotification:self addedInfo:nil];
+    [BSUIComponentView changeTabBarWithNotification:self addedInfo:self.inform];
     [self modifiedStyle];
 }
 
@@ -40,6 +40,7 @@
 - (void)viewDidAppear:(BOOL)animated{
 
     BSLog(@"viewDidAppear 对象的视图已经加入到窗口时调用,%@",self.description);
+    [BSUIComponentView changeTabBarWithNotification:self addedInfo:self.inform];
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder
@@ -54,6 +55,8 @@
 
 -(void) viewDidDisappear:(BOOL)animated{
     BSLog(@"BSUICommonController viewDidDisappear,%@",self.description);
+    [BSUIComponentView changeTabBarWithNotification:self addedInfo:nil];
+
     [super viewDidDisappear:animated];
 }
 

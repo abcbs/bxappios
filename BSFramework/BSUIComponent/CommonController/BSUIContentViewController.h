@@ -15,4 +15,6 @@
 
 @property (nonatomic,assign)BOOL bDisplayReturnButtonNav;
 
+@property (nonatomic,retain) NSString *inform;
+
 @end

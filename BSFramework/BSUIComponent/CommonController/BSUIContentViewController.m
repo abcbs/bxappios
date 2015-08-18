@@ -30,7 +30,7 @@
         
     }
     //设置Tab栏
-    [BSUIComponentView changeTabBarWithNotification:self addedInfo:nil];
+    [BSUIComponentView changeTabBarWithNotification:self addedInfo:self.inform];
     [self modifiedStyle];
 }
 
@@ -38,6 +38,7 @@
 - (void)viewDidAppear:(BOOL)animated{
     
     BSLog(@"viewDidAppear 对象的视图已经加入到窗口时调用,%@",self.description);
+    [BSUIComponentView changeTabBarWithNotification:self addedInfo:self.inform];
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder

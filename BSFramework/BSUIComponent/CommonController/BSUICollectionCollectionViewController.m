@@ -39,7 +39,7 @@
         
     }
     
-    [BSUIComponentView changeTabBarWithNotification:self addedInfo:nil];
+    [BSUIComponentView changeTabBarWithNotification:self addedInfo:self.inform];
     
     [self modifiedStyle];
     

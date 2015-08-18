@@ -41,7 +41,7 @@
         
     }
     [BSUIComponentView navigationHeader:self.navigationController];
-    
+   [BSUIComponentView changeTabBarWithNotification:self addedInfo:self.inform];
     [self modifiedStyle];
     
     if(!HUD){
@@ -83,7 +83,7 @@
 
 - (void)viewDidAppear:(BOOL)animated{
     NSLog(@"对象的视图已经加入到窗口时调用");
-    
+    [BSUIComponentView changeTabBarWithNotification:self addedInfo:self.inform];
    _timer= [NSTimer scheduledTimerWithTimeInterval:0.1
            target:self selector:@selector(progressTracking) userInfo:self repeats:YES];
      

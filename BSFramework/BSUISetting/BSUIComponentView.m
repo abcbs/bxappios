@@ -307,24 +307,27 @@ BSDeprecated("建议使用统一处理方式，使用initNavigationHeaderWithDef
    }
 
 +(void)changeTabBarWithNotification:(UIViewController *)uiViewController addedInfo:(NSString *)info{
+    //uiViewController.tabBarItem.badgeValue=info;
     UITabBar *bar=rootTabBarController.tabBar;
-    UIBarItem *item=bar.items[0];
-    if (info) {
-        NSString *name=[[NSString stringWithString:item.title]stringByAppendingString:info];
-        [BSUIComponentView changeTabMoreWithTitle:name withVC:uiViewController];
-    }
+    UITabBarItem *item=(UITabBarItem* )bar.items[0];
+    item.badgeValue=info;
+    //rootTabBarController.tabBarItem.badgeValue=@"10";
+    //if (info) {
+    //    NSString *name=[[NSString stringWithString:item.title]stringByAppendingString:info];
+    //    [BSUIComponentView changeTabMoreWithTitle:name withVC:uiViewController];
+    //}
+
     
 }
 
 
 +(void)changeTabMoreWithTitle:(NSString*) title withVC:(UIViewController*)vc{
-    
     if(vc.tabBarController){
         if(vc.tabBarController.moreNavigationController){
             UITabBar *tb = vc.tabBarController.moreNavigationController.tabBarController.tabBar;
             UIBarItem *selectItem=tb.selectedItem;
-            
-            //selectItem.title  = title;
+            //tb.badgeValue=title;
+            selectItem.title  = title;
             selectItem.image = [UIImage imageNamed:@"second_normal"];
             //1.创建图片
             UIImage *selectmage = [UIImage imageNamed:@"second_selected"];

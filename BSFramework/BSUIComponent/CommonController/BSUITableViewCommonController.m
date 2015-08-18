@@ -35,7 +35,7 @@
         
     }
   
-    [BSUIComponentView changeTabBarWithNotification:self addedInfo:nil];
+    [BSUIComponentView changeTabBarWithNotification:self addedInfo:self.inform];
     [self modifiedStyle];
     if (self.tableView==nil) {
         NSLog(@" BSUITableViewCommonController tableView is null");
@@ -53,7 +53,7 @@
 
 - (void)viewDidAppear:(BOOL)animated{
     BSLog(@"BSUICommonController viewDidAppear,%@",self.description);
-
+    [BSUIComponentView changeTabBarWithNotification:self addedInfo:self.inform];
 }
 
 

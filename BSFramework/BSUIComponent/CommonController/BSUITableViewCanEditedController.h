@@ -13,6 +13,8 @@
 @property (nonatomic,assign)BOOL bDisplaySearchButtonNav;
 
 @property (nonatomic,assign)BOOL bDisplayReturnButtonNav;
+
+@property (nonatomic,retain) NSString *inform;
 /**
  *返回方法
  */

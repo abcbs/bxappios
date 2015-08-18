@@ -25,13 +25,22 @@
 @implementation LOLoginUserListViewController
 
 - (void)viewDidLoad {
+    self.inform=@"10";
     [super viewDidLoad];
     self.tableView.separatorStyle=UITableViewCellSeparatorStyleSingleLine;
     self.tableView.separatorColor=[UIColor blackColor];
     
     [self loadLoginUser:nil];
+ 
+    
 }
 
+- (void)viewDidAppear:(BOOL)animated{
+    self.inform=@"8";
+    BSLog(@"LOLoginUserListViewController viewDidAppear 消息通知,%@",self.inform);
+    [super viewDidAppear:YES];
+    
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

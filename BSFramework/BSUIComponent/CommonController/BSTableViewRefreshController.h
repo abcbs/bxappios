@@ -18,6 +18,8 @@
 
 @property (nonatomic,assign)BOOL bDisplayReturnButtonNav;
 
+@property (nonatomic,retain) NSString *inform;
+
 @property (nonatomic, retain) MBProgressHUD *HUD;
 
 @property (nonatomic,retain)  NSMutableArray *dataTable;
