@@ -77,23 +77,36 @@
  */
 + (ESSFrameType)frameTypeForFrame:(NSDictionary *)advFrameList {
   // 根据Service的ID获取框架数据
-  NSData *frameData = advFrameList[[self eddystoneServiceID]];
+    if ([advFrameList isKindOfClass:[NSDictionary class]]) {
+        NSData *frameData = advFrameList[[self eddystoneServiceID]];
+        
+        // It's an Eddystone ADV frame. Now check if it's a UID (ID) or TLM (telemetry) frame.
+        //获取到广告数据，
+        if (frameData) {//框架数据
+            uint8_t frameType;
+            //框架类型
+            if ([frameData length] > 1) {
+                frameType = ((uint8_t *)[frameData bytes])[0];
+                
+                if (frameType == kEddystoneUIDFrameTypeID) {
+                    return kESSEddystoneUIDFrameType;
+                } else if (frameType == kEddystoneTLMFrameTypeID) {
+                    return kESSEddystoneTelemetryFrameType;
+                }
+            }
 
-  // It's an Eddystone ADV frame. Now check if it's a UID (ID) or TLM (telemetry) frame.
-  //获取到广告数据，
-  if (frameData) {//框架数据
-    uint8_t frameType;
-    //框架类型
-    if ([frameData length] > 1) {
-      frameType = ((uint8_t *)[frameData bytes])[0];
-
-      if (frameType == kEddystoneUIDFrameTypeID) {
-        return kESSEddystoneUIDFrameType;
-      } else if (frameType == kEddystoneTLMFrameTypeID) {
-        return kESSEddystoneTelemetryFrameType;
-      }
     }
-  }
+    }else if([advFrameList isKindOfClass:[NSString class]]){
+        NSString *adv=(NSString *)advFrameList;
+        NSString *ft=[adv substringToIndex:1];
+        if ([ft integerValue]== kESSEddystoneUIDFrameType) {
+            return kESSEddystoneUIDFrameType;
+        } else if ([ft integerValue]==kESSEddystoneTelemetryFrameType) {
+            return kESSEddystoneTelemetryFrameType;
+        }
+    }
+    
+    
 
   return kESSEddystoneUnknownFrameType;
 }

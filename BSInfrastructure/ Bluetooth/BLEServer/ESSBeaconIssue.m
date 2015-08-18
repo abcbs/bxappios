@@ -21,6 +21,7 @@ static const char *const kBeaconsIssuseQueueName = "kESSBeaconIssuseBeaconsOpera
     NSString *identifier;
     NSDictionary *advertisingData;
     NSDictionary *essstoneAdvertising;
+    CBUUID *eddystoneServiceUUID;
 }
 
 
@@ -90,6 +91,7 @@ static const char *const kBeaconsIssuseQueueName = "kESSBeaconIssuseBeaconsOpera
    
     if (advertisingData==nil) {
         //frameType类型
+        /*
         NSString *stringInt = [NSString stringWithFormat:@"%d",
                               kEddystoneUIDFrameTypeID];
         
@@ -124,13 +126,58 @@ static const char *const kBeaconsIssuseQueueName = "kESSBeaconIssuseBeaconsOpera
              @[[CBUUID UUIDWithString:kESSEddystoneServiceID]],
                 CBAdvertisementDataServiceDataKey:essstoneAdvertising
          };
-       
+        */
+        advertisingData=[self genAdvertisingData];
         [self.peripheralManager startAdvertising:advertisingData];
     }
     BSLog(@"周边信标服务初始化完成");
    });
 }
 
+-(NSDictionary *)genAdvertisingData{
+    if (advertisingData==nil) {
+        
+    
+    NSString *stringInt = [NSString stringWithFormat:@"%d",
+                           kEddystoneUIDFrameTypeID];
+    
+    NSData *frameType=
+    [stringInt dataUsingEncoding:NSUTF8StringEncoding];
+    
+    //frameType=[NSData alloc]i
+    if (eddystoneServiceUUID==nil) {
+            eddystoneServiceUUID = [ESSBeaconInfo eddystoneServiceID];
+    }
+    //ESSStoneBeacon广播数据
+    ESSEddystoneUIDFrameFields uidFrame;
+    uidFrame.frameType=0;
+    uidFrame.txPower=-50;
+    //广告是kEddystoneServiceID
+    
+    //6个字节
+    NSString *serviceInstance= kEddystoneServiceInstance;
+    serviceInstance=[kEddystoneNamespace stringByAppendingString:serviceInstance];
+    
+    memcpy(uidFrame.zipBeaconID, [serviceInstance
+                                  UTF8String], sizeof(uidFrame.zipBeaconID)+1);
+    //广告数据
+    NSData *data= [[NSData alloc]initWithBytes:&uidFrame length:sizeof(ESSEddystoneUIDFrameFields)];
+    
+    essstoneAdvertising=@{kESSEddystoneServiceID:frameType,
+                          eddystoneServiceUUID:data
+                          };
+        advertisingData =@{
+                           CBAdvertisementDataLocalNameKey:@"11AAAAAAAAAABBBBBB",
+                          
+                       CBAdvertisementDataServiceUUIDsKey :
+                           eddystoneServiceUUID
+                           //,
+                       //CBAdvertisementDataServiceDataKey:essstoneAdvertising
+                       };
+    }
+    return advertisingData;
+
+}
 - (void)peripheralManager:(CBPeripheralManager *)peripheral central:(CBCentral *)central didSubscribeToCharacteristic:(CBCharacteristic *)characteristic
 {
     BSLog(@"发布订阅信息，didSubscribeToCharacteristic");
@@ -174,7 +221,8 @@ static const char *const kBeaconsIssuseQueueName = "kESSBeaconIssuseBeaconsOpera
 }
 
 - (BOOL)fixBeaconData{
-    return [self sendESSBeaconData:kEddystoneServiceInstance];
+    NSData *value= [self sendESSBeaconData:kEddystoneServiceInstance];
+    return [self didBeaconData:value];
 }
 
 - (BOOL)didBeaconData:(NSObject *)value{
@@ -284,10 +332,17 @@ static const char *const kBeaconsIssuseQueueName = "kESSBeaconIssuseBeaconsOpera
     }
 }
 
+
 - (void)startIssue{
-    // Starts advertising the service
-    [self.peripheralManager startAdvertising:
-     @{ CBAdvertisementDataServiceUUIDsKey : @[[CBUUID UUIDWithString:kESSEddystoneServiceID]] }];
+
+    advertisingData =@{
+                      
+                       CBAdvertisementDataLocalNameKey : @"11AAAAAAAAAABBBBBB",
+                       CBAdvertisementDataServiceUUIDsKey :
+                           @[[CBUUID UUIDWithString:kESSEddystoneServiceID]]};
+    [self.peripheralManager startAdvertising:advertisingData];
+    //[self.peripheralManager startAdvertising:
+    // @{ CBAdvertisementDataServiceUUIDsKey : @[[CBUUID UUIDWithString:kESSEddystoneServiceID]] }];
 }
 
 
