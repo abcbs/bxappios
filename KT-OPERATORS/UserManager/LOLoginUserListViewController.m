@@ -91,10 +91,7 @@
  */
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if ([UserManager checkSession]==NO) {
-        [self navigating:self storybord:@"LOLoginManager" identity:@"LOLoginAppViewController" canUseStoryboard:YES];
-        return;
-    }
+ 
     LoginUser *lu;
     if (tableView == self.tableView)
     {
@@ -152,11 +149,6 @@ titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([UserManager checkSession]==NO) {
-        [self navigating:self storybord:@"LOLoginManager" identity:@"LOLoginAppViewController" canUseStoryboard:YES];
-        
-         return;
-    }
     if ([segue.identifier isEqualToString:@"BrowseLoginUser"])
     {//浏览信息
        evc =

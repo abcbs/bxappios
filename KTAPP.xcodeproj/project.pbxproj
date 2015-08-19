@@ -191,6 +191,7 @@
 		844570DC1B4D67D5000CA1C7 /* BTLEPeripheralViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844570D71B4D67D5000CA1C7 /* BTLEPeripheralViewController.m */; };
 		844A32061B4064310045CA6C /* BSUIBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 844A32051B4064310045CA6C /* BSUIBarButtonItem.m */; };
 		844E50BB1B2F2EE500A69F91 /* BSHTTPNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 844E50B41B2F2EE500A69F91 /* BSHTTPNetworking.m */; };
+		84517B761B8438C900469111 /* libKT-LO-Controller.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 847415C31B63AF90005BF59D /* libKT-LO-Controller.a */; };
 		84578F531B35D11D00C3A4EA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84578F521B35D11D00C3A4EA /* ViewController.m */; };
 		84578F781B35E80700C3A4EA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84578F7A1B35E80700C3A4EA /* LaunchScreen.xib */; };
 		845A02231B3DA1F3007F5327 /* BSUIImageTitleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 845A02221B3DA1F3007F5327 /* BSUIImageTitleTableViewCell.m */; };
@@ -2532,6 +2533,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84517B761B8438C900469111 /* libKT-LO-Controller.a in Frameworks */,
 				84EA96F11B57D82000AC549F /* libKT-LS-Controller.a in Frameworks */,
 				84A076601B21AAC8001CE3A2 /* AddressBook.framework in Frameworks */,
 				843DA8861B21D56300924AE6 /* TencentOpenAPI.framework in Frameworks */,

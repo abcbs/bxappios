@@ -190,10 +190,7 @@ titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([UserManager checkSession]==NO) {
-        [self navigating:self storybord:@"LOLoginManager" identity:@"LOLoginAppViewController" canUseStoryboard:YES];
-        return;
-    }
+   
     if ([segue.identifier isEqualToString:@"BrowseCommodity"])
     {//浏览商品信息
          LSProductDetailTableViewController *evc = (LSProductDetailTableViewController *)segue.destinationViewController;
@@ -291,4 +288,6 @@ titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
     _bsList = [bm loadBusinessProduct:product];
     
 }
+
+
 @end

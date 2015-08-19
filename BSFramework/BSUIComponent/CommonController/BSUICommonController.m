@@ -9,7 +9,7 @@
 #import "BSUICommonController.h"
 #import "BSUIFrameworkHeader.h"
 #import "BSCMFrameworkHeader.h"
-
+#import "UserManager.h"
 @implementation BSUICommonController
 
 
@@ -95,6 +95,17 @@
  */
 - (void)touchAction:(UIGestureRecognizer *)gester{
     BSLog(@"子类应当继承此方法实现完成轮播功能功能");
+}
+
+//控制是否可以根据故事板跳转
+-(BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
+{
+    BOOL isLogin=[UserManager checkSession];
+    if (isLogin==NO) {
+        [self navigating:self storybord:@"LOLoginManager" identity:@"LOLoginAppViewController" canUseStoryboard:YES];
+        
+    }
+    return isLogin;
 }
 /**
  *页面跳转公共方法

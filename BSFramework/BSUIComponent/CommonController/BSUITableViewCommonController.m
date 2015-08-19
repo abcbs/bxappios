@@ -9,6 +9,7 @@
 #import "BSUITableViewCommonController.h"
 #import "BSUIFrameworkHeader.h"
 #import "BSCMFrameworkHeader.h"
+#import "UserManager.h"
 
 @implementation BSUITableViewCommonController
 
@@ -104,6 +105,17 @@
 #pragma mark --轮播事件响应 有轮播图，需要点击轮播图处理信息
 - (void)touchAction:(UIGestureRecognizer *)gester{
     BSLog(@"子类应当继承此方法实现完成轮播功能功能");
+}
+
+#pragma mark --控制是否可以根据故事板跳转
+-(BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
+{
+    BOOL isLogin=[UserManager checkSession];
+    if (isLogin==NO) {
+        [self navigating:self storybord:@"LOLoginManager" identity:@"LOLoginAppViewController" canUseStoryboard:YES];
+        
+    }
+    return isLogin;
 }
 
 #pragma mark --编码或者不在一个故事板中得跳转方法
