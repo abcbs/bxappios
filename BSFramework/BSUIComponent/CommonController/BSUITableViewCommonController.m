@@ -52,6 +52,14 @@
     
 }
 
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    if ((self = [super initWithCoder:aDecoder]))
+    {
+        BSLog(@"init initWithCoder%@",self.description);
+    }
+    return self;
+}
 - (void)viewDidAppear:(BOOL)animated{
     BSLog(@"BSUICommonController viewDidAppear,%@",self.description);
     [BSUIComponentView changeTabBarWithNotification:self addedInfo:self.inform];

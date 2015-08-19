@@ -17,7 +17,8 @@
 UITabBarController * rootTabBarController;
 
 @interface BSUIComponentView (){
-    }
+    //NSArray *tabBarItemArray;
+}
 
 @property (strong,nonatomic) UIViewController *rootUIViewController;
 
@@ -25,7 +26,27 @@ UITabBarController * rootTabBarController;
 
 @implementation BSUIComponentView
 
+static  NSArray *tabBarItemArray;
 
+static  UITabBar  *gTabBar;
+
+
++(UITabBar *)displayGlobleTabBar{
+    if (gTabBar) {
+        gTabBar.hidden=NO;
+
+    }
+    return gTabBar;
+}
+
++(void )initGobleTabBar:(UITabBar *)tabBar{
+    if (gTabBar==nil) {
+         gTabBar=tabBar;
+    }
+}
++(NSArray *)globleTabBarItemArray{
+    return tabBarItemArray;
+}
 /**
  *显示确定和取消两种按钮
  */
@@ -309,13 +330,14 @@ BSDeprecated("建议使用统一处理方式，使用initNavigationHeaderWithDef
 +(void)changeTabBarWithNotification:(UIViewController *)uiViewController addedInfo:(NSString *)info{
     //uiViewController.tabBarItem.badgeValue=info;
     UITabBar *bar=rootTabBarController.tabBar;
-    UITabBarItem *item=(UITabBarItem* )bar.items[0];
+    UITabBarItem *item=(UITabBarItem* )bar.selectedItem;
     item.badgeValue=info;
     //rootTabBarController.tabBarItem.badgeValue=@"10";
-    //if (info) {
-    //    NSString *name=[[NSString stringWithString:item.title]stringByAppendingString:info];
-    //    [BSUIComponentView changeTabMoreWithTitle:name withVC:uiViewController];
-    //}
+    tabBarItemArray=bar.items;
+    if (info) {
+        NSString *name=[[NSString stringWithString:item.title]stringByAppendingString:info];
+        [BSUIComponentView changeTabMoreWithTitle:name withVC:uiViewController];
+    }
 
     
 }
@@ -327,7 +349,7 @@ BSDeprecated("建议使用统一处理方式，使用initNavigationHeaderWithDef
             UITabBar *tb = vc.tabBarController.moreNavigationController.tabBarController.tabBar;
             UIBarItem *selectItem=tb.selectedItem;
             //tb.badgeValue=title;
-            selectItem.title  = title;
+            //selectItem.title  = title;
             selectItem.image = [UIImage imageNamed:@"second_normal"];
             //1.创建图片
             UIImage *selectmage = [UIImage imageNamed:@"second_selected"];

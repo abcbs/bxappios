@@ -68,7 +68,9 @@ didEndCustomizingViewControllers :( NSArray *)viewControllers
 
 - (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item{
     NSLog(@"KTLBMainTabBarController tabBar:didSelectItem");
-     tabBar.tintColor=[BSUIComponentView  navigationColor];
+    tabBar.tintColor=[BSUIComponentView  navigationColor];
+    //获取当前需要显示badgeValue的位置，作为默认的tag，设置tag为-1000，在配置中查找此值。
+    
 }
 
 - (void)tabBar:(UITabBar *)tabBar didBeginCustomizingItems:(NSArray *)items{
@@ -94,20 +96,31 @@ didEndCustomizingViewControllers :( NSArray *)viewControllers
 }
 
 - (void)viewDidAppear:(BOOL)animated{
-     NSLog(@"KTLBMainTabBarController viewDidAppear 对象的视图已经加入到窗口时调用");
-    [self hideTabBar];
+    NSLog(@"KTLBMainTabBarController viewDidAppear 对象的视图已经加入到窗口时调用");
+    NSArray *arrays=[BSUIComponentView globleTabBarItemArray];
+    //根据配置和通知信息修改TabBar的badgeValue
+    if (arrays) {
+        UITabBarItem * item=(UITabBarItem *)arrays[2];
+        item.badgeValue=@"测";
+    }
+     [self hideTabBar];
+     [self displayTabBar];
 }
 
 
 - (void)hideTabBar {
-    
-    self.tabBar.hidden = NO;
+    [BSUIComponentView initGobleTabBar:self.tabBar];
+    self.tabBar.hidden = YES;
     
 }
 
-
+- (void)displayTabBar {
+    // self.tabBar.hidden = NO;
+    [BSUIComponentView displayGlobleTabBar];
+}
 - (void)doneClick{
     NSLog(@"TabBar子类应当继承此方法实现完成功能");
+    [self displayTabBar];
 }
 
 @end

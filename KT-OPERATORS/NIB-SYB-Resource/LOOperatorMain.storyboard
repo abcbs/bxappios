@@ -212,7 +212,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xoL-C0-JWS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="492" y="-16"/>
+            <point key="canvasLocation" x="554" y="-10"/>
         </scene>
         <!--促销监管-->
         <scene sceneID="oaK-bf-bT0">
@@ -237,7 +237,7 @@
         <scene sceneID="KKT-fq-Avr">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lfn-DK-kuL" userLabel="监管运营导航" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="监管运营" image="wdqzs.png" id="fdO-Fl-FLe"/>
+                    <tabBarItem key="tabBarItem" tag="1" title="监管运营" image="wdqzs.png" badgeValue="new" id="fdO-Fl-FLe"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="K23-75-Oct">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

@@ -1368,7 +1368,7 @@
         <scene sceneID="vdx-M6-pLw">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BI3-2j-0ND" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="注册" image="wdqzs.png" id="Ixa-61-RiF"/>
+                    <tabBarItem key="tabBarItem" tag="1" title="注册" image="wdqzs.png" badgeValue="new" id="Ixa-61-RiF"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Bkm-n8-Mxz">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1398,9 +1398,9 @@
         <image name="xysjs.png" width="29" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="tIN-wE-4BT"/>
         <segue reference="p3n-hI-IpE"/>
         <segue reference="DQQ-0G-0B4"/>
+        <segue reference="SGJ-wc-1d4"/>
         <segue reference="YmF-Kw-kTw"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -116,4 +116,10 @@ target:(id<NavigationProcess>)target
 + (void)autoSytleLay:(UIView *)allView;
 
 +(void )initNavigationWithPermission:(UIViewController *)viewController;
+
++(NSArray *)globleTabBarItemArray;
+
++(UITabBar *)displayGlobleTabBar;
+
++(void )initGobleTabBar:(UITabBar *)tabBar;
 @end
