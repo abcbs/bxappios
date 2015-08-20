@@ -132,6 +132,7 @@ BSDeprecated("建议使用统一处理方式，使用initNavigationHeaderWithDef
     [button.layer setMasksToBounds:YES];
     [button.layer setCornerRadius:10.0]; //设置矩形四个圆角半径
     [button.layer setBorderWidth:1.0]; //边框宽度
+    
     [button setBackgroundColor:[BSUIComponentView navigationColor]];
       
     [button setTitleColor:[UIColor whiteColor]forState:UIControlStateNormal];

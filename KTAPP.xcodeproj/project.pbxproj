@@ -1245,7 +1245,7 @@
 		84F28FDD1B62C66E001078D8 /* BSImagePicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84F28FE01B62C66E001078D8 /* BSImagePicker.storyboard */; };
 		84F28FDE1B62C66E001078D8 /* BSImagePicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84F28FE01B62C66E001078D8 /* BSImagePicker.storyboard */; };
 		84F28FEE1B6387C4001078D8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F28FED1B6387C4001078D8 /* main.m */; };
-		84F28FF11B6387C4001078D8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F28FF01B6387C4001078D8 /* AppDelegate.m */; };
+		84F28FF11B6387C4001078D8 /* MYAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F28FF01B6387C4001078D8 /* MYAppDelegate.m */; };
 		84F28FFC1B6387C4001078D8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84F28FFB1B6387C4001078D8 /* Images.xcassets */; };
 		84F28FFF1B6387C4001078D8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F28FFD1B6387C4001078D8 /* LaunchScreen.xib */; };
 		84F290141B638909001078D8 /* LOOperatorMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84F290131B638909001078D8 /* LOOperatorMain.storyboard */; };
@@ -2379,8 +2379,8 @@
 		84F28FE91B6387C3001078D8 /* KT-OPERATORS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "KT-OPERATORS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84F28FEC1B6387C4001078D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84F28FED1B6387C4001078D8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		84F28FEF1B6387C4001078D8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		84F28FF01B6387C4001078D8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		84F28FEF1B6387C4001078D8 /* MYAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MYAppDelegate.h; sourceTree = "<group>"; };
+		84F28FF01B6387C4001078D8 /* MYAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MYAppDelegate.m; sourceTree = "<group>"; };
 		84F28FFB1B6387C4001078D8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		84F28FFE1B6387C4001078D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		84F290131B638909001078D8 /* LOOperatorMain.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LOOperatorMain.storyboard; sourceTree = "<group>"; };
@@ -4373,8 +4373,8 @@
 		84F290151B63892B001078D8 /* MainFrame-Group */ = {
 			isa = PBXGroup;
 			children = (
-				84F28FEF1B6387C4001078D8 /* AppDelegate.h */,
-				84F28FF01B6387C4001078D8 /* AppDelegate.m */,
+				84F28FEF1B6387C4001078D8 /* MYAppDelegate.h */,
+				84F28FF01B6387C4001078D8 /* MYAppDelegate.m */,
 				84F28FFB1B6387C4001078D8 /* Images.xcassets */,
 				84F28FFD1B6387C4001078D8 /* LaunchScreen.xib */,
 				847415BB1B63AED1005BF59D /* LOBuyerSuperMainIndexViewController.h */,
@@ -6166,7 +6166,7 @@
 				844168A51B69F05F0060F9A7 /* LOADAduitViewController.m in Sources */,
 				843B2E6F1B74E89C009FC187 /* LOLoginAppViewController.m in Sources */,
 				846AA2771B73325A00420BC2 /* LOUserInfoDomainDetailViewController.m in Sources */,
-				84F28FF11B6387C4001078D8 /* AppDelegate.m in Sources */,
+				84F28FF11B6387C4001078D8 /* MYAppDelegate.m in Sources */,
 				847415BD1B63AED1005BF59D /* LOBuyerSuperMainIndexViewController.m in Sources */,
 				844168A11B69EFF50060F9A7 /* LOBusinssSuperViewController.m in Sources */,
 				846333E01B70ED8F006ED649 /* LOProductCatalogueDetailViewController.m in Sources */,

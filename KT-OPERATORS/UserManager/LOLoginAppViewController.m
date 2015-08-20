@@ -28,15 +28,19 @@
     self.bDisplayReturnButtonNav=YES;
     
     [super viewDidLoad];
-   
+    //设置TextField键盘
     [self delelageForTextField];
+    //设置界面元素样式
     [self initSubViews];
 }
 
 - (void)initSubViews
 {
-
+    //修改样式
+    //登陆按钮
     [BSUIComponentView configButtonStyle:self.loginButton];
+    //注册按钮
+    [BSUIComponentView configButtonStyle:self.registerButton];
     [BSUIComponentView configButtonStyle:self.resetPasswordButton];
     [BSUIComponentView configTextField:self.password];
     [BSUIComponentView configTextField:self.account];
@@ -48,6 +52,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark -设置界面只读可写控制条件
 -(void)modifiedStyle{
     self.resetPasswordButton.backgroundColor=[BSUIComponentView navigationColor];
     self.loginButton.backgroundColor=[BSUIComponentView navigationColor];
@@ -192,4 +197,7 @@
     //canUseStoryboard:YES noLoginCheck:YES];
     [self navigating:bsContentObject];
 }
+
+
+
 @end

@@ -24,6 +24,8 @@
 
 @property (strong, nonatomic) IBOutlet UITextField *againPassword;
 
+@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *checkActivityIndicator;
+
 //获取验证码
 @property (strong, nonatomic) IBOutlet UIButton *checkNumberButton;
 
