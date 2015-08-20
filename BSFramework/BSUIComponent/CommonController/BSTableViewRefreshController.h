@@ -20,6 +20,8 @@
 
 @property (nonatomic,retain) NSString *inform;
 
+@property (nonatomic,retain)BSTableContentObject * bsContentObject;
+
 @property (nonatomic, retain) MBProgressHUD *HUD;
 
 @property (nonatomic,retain)  NSMutableArray *dataTable;

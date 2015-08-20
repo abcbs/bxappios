@@ -115,9 +115,12 @@
 #pragma mark --控制是否可以根据故事板跳转
 -(BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
 {
+    if(self.bsContentObject.noNeedLoginCheck){
+        return YES;
+    }
     BOOL isLogin=[UserManager checkSession];
     if (isLogin==NO) {
-        [self navigating:self storybord:@"LOLoginManager" identity:@"LOLoginAppViewController" canUseStoryboard:YES];
+        [self navigating:self storybord:@"LOUserManager" identity:@"LOLoginAppViewController" canUseStoryboard:YES];
         
     }
     return isLogin;
@@ -125,9 +128,12 @@
 
 #pragma mark --登陆工具方法
 -(BOOL)checkAndLogin{
+    if(self.bsContentObject.noNeedLoginCheck){
+        return YES;
+    }
     BOOL isLogin=[UserManager checkSession];
     if (isLogin==NO) {
-        [self navigating:self storybord:@"LOLoginManager" identity:@"LOLoginAppViewController" canUseStoryboard:YES];
+        [self navigating:self storybord:@"LOUserManager" identity:@"LOLoginAppViewController" canUseStoryboard:YES];
         
     }
     return isLogin;

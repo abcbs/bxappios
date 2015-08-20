@@ -70,9 +70,6 @@
 }
 
 
-- (IBAction)resetPasswordClick:(id)sender {
-    
-}
 -(BOOL) checkRightfulData{
     
     //UIColor *defualtColor=[UIColor lightTextColor];
@@ -170,5 +167,16 @@
     }
 }
 
+//跳转到注册页面
+- (IBAction)registerAction:(id)sender {
+    [self navigating:self storybord:@"LOUserManager" identity:@"LOLoginUserMaintainViewController"
+    canUseStoryboard:YES noLoginCheck:YES];
 
+}
+
+//跳转到重设密码
+- (IBAction)resetPasswordClick:(id)sender {
+    [self navigating:self storybord:@"LOUserManager" identity:@"LOLoginUserMaintainViewController"
+    canUseStoryboard:YES noLoginCheck:YES];
+}
 @end

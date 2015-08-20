@@ -121,9 +121,12 @@
 #pragma mark --控制是否可以根据故事板跳转
 -(BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
 {
+    if(self.bsContentObject.noNeedLoginCheck){
+        return YES;
+    }
     BOOL isLogin=[UserManager checkSession];
     if (isLogin==NO) {
-        [self navigating:self storybord:@"LOLoginManager" identity:@"LOLoginAppViewController" canUseStoryboard:YES];
+        [self navigating:self storybord:@"LOUserManager" identity:@"LOLoginAppViewController" canUseStoryboard:YES];
         
     }
     return isLogin;
@@ -131,9 +134,12 @@
 
 #pragma mark --登陆工具方法
 -(BOOL)checkAndLogin{
+    if(self.bsContentObject.noNeedLoginCheck){
+        return YES;
+    }
     BOOL isLogin=[UserManager checkSession];
     if (isLogin==NO) {
-        [self navigating:self storybord:@"LOLoginManager" identity:@"LOLoginAppViewController" canUseStoryboard:YES];
+        [self navigating:self storybord:@"LOUserManager" identity:@"LOLoginAppViewController" canUseStoryboard:YES];
         
     }
     return isLogin;
@@ -142,6 +148,13 @@
 #pragma mark --编码或者不在一个故事板中得跳转方法
 -(void)navigating:(UIViewController *)callerController storybord:(NSString *)storybordName identity:(NSString *)identity canUseStoryboard:(BOOL)useStoryboard{
     BSTableContentObject * bsContentObject=[BSTableContentObject initWithController:callerController storybord:storybordName identity:identity canUseStoryboard:useStoryboard];
+    [self navigating:bsContentObject];
+}
+
+#pragma mark --编码或者不在一个故事板中得跳转方法
+-(void)navigating:(UIViewController *)callerController storybord:(NSString *)storybordName identity:(NSString *)identity canUseStoryboard:(BOOL)useStoryboard noLoginCheck:(BOOL) check{
+    BSTableContentObject * bsContentObject=[BSTableContentObject initWithController:callerController storybord:storybordName identity:identity canUseStoryboard:useStoryboard];
+    bsContentObject.noNeedLoginCheck=check;
     [self navigating:bsContentObject];
 }
 

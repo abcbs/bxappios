@@ -16,6 +16,8 @@
 @property (nonatomic,assign)BOOL bDisplayReturnButtonNav;
 
 @property (nonatomic,retain) NSString *inform;
+
+@property (nonatomic,retain)BSTableContentObject * bsContentObject;
 /**
  *公共回退方法
  */

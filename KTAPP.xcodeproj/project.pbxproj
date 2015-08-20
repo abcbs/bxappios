@@ -32,9 +32,6 @@
 		84002BE21B6A448400CDB9EA /* LOBusinessDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84002BE11B6A448400CDB9EA /* LOBusinessDetailViewController.m */; };
 		84002BE31B6A448400CDB9EA /* LOBusinessDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84002BE11B6A448400CDB9EA /* LOBusinessDetailViewController.m */; };
 		8404A1711B78F34100660BAD /* libKT-LO-Controller.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 847415C31B63AF90005BF59D /* libKT-LO-Controller.a */; };
-		8404A1731B78F45B00660BAD /* LOLoginManager.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8404A1721B78F45B00660BAD /* LOLoginManager.storyboard */; };
-		8404A1741B78F45B00660BAD /* LOLoginManager.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8404A1721B78F45B00660BAD /* LOLoginManager.storyboard */; };
-		8404A1751B78F45B00660BAD /* LOLoginManager.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8404A1721B78F45B00660BAD /* LOLoginManager.storyboard */; };
 		84052EA01B73856500FAB304 /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84052E9F1B73856500FAB304 /* UserManager.m */; };
 		84052EA11B73856500FAB304 /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84052E9F1B73856500FAB304 /* UserManager.m */; };
 		84052EA41B73881400FAB304 /* UserOrderAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = 84052EA31B73881400FAB304 /* UserOrderAddress.m */; };
@@ -1456,7 +1453,6 @@
 		84002BDF1B6A425700CDB9EA /* LOBusinessManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LOBusinessManagerDelegate.h; sourceTree = "<group>"; };
 		84002BE01B6A448400CDB9EA /* LOBusinessDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LOBusinessDetailViewController.h; sourceTree = "<group>"; };
 		84002BE11B6A448400CDB9EA /* LOBusinessDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LOBusinessDetailViewController.m; sourceTree = "<group>"; };
-		8404A1721B78F45B00660BAD /* LOLoginManager.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LOLoginManager.storyboard; sourceTree = "<group>"; };
 		84052E9E1B73856500FAB304 /* UserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserManager.h; sourceTree = "<group>"; };
 		84052E9F1B73856500FAB304 /* UserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserManager.m; sourceTree = "<group>"; };
 		84052EA21B73881400FAB304 /* UserOrderAddress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserOrderAddress.h; sourceTree = "<group>"; };
@@ -4370,7 +4366,6 @@
 				844168951B69EEEE0060F9A7 /* LOBusinessrSuper.storyboard */,
 				84EA1A811B6FCB040058161E /* LOCatagoryManager.storyboard */,
 				846AA2681B732FED00420BC2 /* LOUserManager.storyboard */,
-				8404A1721B78F45B00660BAD /* LOLoginManager.storyboard */,
 			);
 			path = "NIB-SYB-Resource";
 			sourceTree = "<group>";
@@ -4923,7 +4918,6 @@
 				84EA98521B57E21F00AC549F /* f-1.png in Resources */,
 				8461B7591B54BB69002A7C43 /* userProtocol.xib in Resources */,
 				84EA98901B57E21F00AC549F /* ywchh.png in Resources */,
-				8404A1741B78F45B00660BAD /* LOLoginManager.storyboard in Resources */,
 				84EA98681B57E21F00AC549F /* tuikuandan.png in Resources */,
 				84EA97B21B57E21F00AC549F /* img_01.jpg in Resources */,
 				8461B75C1B54BB69002A7C43 /* SystemSetCell.xib in Resources */,
@@ -5229,7 +5223,6 @@
 				84F290201B638BA7001078D8 /* KTWaterDetailsViewController.storyboard in Resources */,
 				8474152B1B639312005BF59D /* icon-1x-01.png in Resources */,
 				847415171B639312005BF59D /* im_baojie.png in Resources */,
-				8404A1751B78F45B00660BAD /* LOLoginManager.storyboard in Resources */,
 				8412CA8F1B79EB12004EDFAB /* rsaCertReq.csr in Resources */,
 				847415951B639312005BF59D /* 2.jpg in Resources */,
 				847415811B639312005BF59D /* forget password-head.png in Resources */,
@@ -5484,7 +5477,6 @@
 				84EA99011B57E21F00AC549F /* paiduiquhao.png in Resources */,
 				84EA97C31B57E21F00AC549F /* 98ss@2x.png in Resources */,
 				84EA98671B57E21F00AC549F /* tuikuandan.png in Resources */,
-				8404A1731B78F45B00660BAD /* LOLoginManager.storyboard in Resources */,
 				84EA98E11B57E21F00AC549F /* dizhi.png in Resources */,
 				84EA98D71B57E21F00AC549F /* 3.jpg in Resources */,
 				84EA98871B57E21F00AC549F /* qxdd.png in Resources */,

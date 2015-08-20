@@ -31,7 +31,7 @@
     if (!bs.noNeedLoginCheck) {
         BOOL isLogin=[UserManager checkSession];
         if (isLogin==NO) {
-            bs=[BSTableContentObject initWithController:viewController storybord:@"LOLoginManager"
+            bs=[BSTableContentObject initWithController:viewController storybord:@"LOUserManager"
                 identity:@"LOLoginAppViewController"
                 canUseStoryboard:YES];
         }

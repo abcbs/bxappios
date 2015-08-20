@@ -17,4 +17,6 @@
 
 @property (nonatomic,retain) NSString *inform;
 
+@property (nonatomic,retain)BSTableContentObject * bsContentObject;
+
 @end

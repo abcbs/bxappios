@@ -28,4 +28,9 @@
 
 - (IBAction)loginClick:(id)sender;
 
+
+@property (strong, nonatomic) IBOutlet UIButton *registerButton;
+
+- (IBAction)registerAction:(id)sender;
+
 @end
