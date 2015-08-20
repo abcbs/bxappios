@@ -176,7 +176,7 @@
 
 //跳转到重设密码
 - (IBAction)resetPasswordClick:(id)sender {
-    [self navigating:self storybord:@"LOUserManager" identity:@"LOLoginUserMaintainViewController"
+    [self navigating:self storybord:@"LOUserManager" identity:@"LOResetPasswordViewController"
     canUseStoryboard:YES noLoginCheck:YES];
 }
 @end
