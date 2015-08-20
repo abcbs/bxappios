@@ -10,6 +10,10 @@
 
 @implementation LoginUser
 
+- (id)copyWithZone:(NSZone *)zone {
+    return self;
+}
+
 - (void)encodeWithCoder:(NSCoder *)aCoder
 {
     //用户名

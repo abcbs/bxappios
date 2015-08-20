@@ -42,6 +42,9 @@
     return self;
 }
 
+- (id)copyWithZone:(NSZone *)zone {
+    return self;
+}
 - (NSString *)description
 {
     return [NSString stringWithFormat:@"客户取消订单\t%lid, :商品标示 %ld, 取消原因: %ld \t产品名称: %@", (long)_id, (long)_businessProductId, (long)_businessId, _comment];

@@ -33,6 +33,10 @@
     return self;
 }
 
+- (id)copyWithZone:(NSZone *)zone {
+    return self;
+}
+
 - (NSString *)description
 {
     return [NSString stringWithFormat:@"会话信息\t%@\t用户名:%@", _sessionId,_username];

@@ -10,6 +10,10 @@
 
 @implementation UserOrderAddress
 
+- (id)copyWithZone:(NSZone *)zone {
+    return self;
+}
+
 - (void)encodeWithCoder:(NSCoder *)aCoder
 {
     

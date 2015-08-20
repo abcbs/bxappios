@@ -13,17 +13,7 @@
 #import "LOLoginAppViewController.h"
 
 @implementation BSContentObjectNavigation
-#pragma mark --登陆工具方法
 
--(BOOL)checkAndLogin:(UIViewController *)viewController{
-    BOOL isLogin=[UserManager checkSession];
-    if (isLogin==NO) {
-
-       
-        
-    }
-    return isLogin;
-}
 
 +(void)navigatingControllWithStorybord:(UIViewController *)viewController bsContentObject:(BSTableContentObject*)bsContentObject{
     BSTableContentObject* bs=bsContentObject;
@@ -56,7 +46,7 @@
     
     //不是手工编码根据配置的方法执行具体的方法
     if (bsContentObject.method) {
-        [goControl setValue:bsContentObject.method forKeyPath:@"method"];
+        [goControl setValue:bsContentObject.neededMethodData forKeyPath:bsContentObject.method];
     }
 
     [viewController.navigationController
@@ -70,7 +60,10 @@
     Class clzz =bsContentObject.colClass;
     UIViewController *goControl =[[clzz alloc] init];
     
-    //[viewController presentViewController:goControl animated:NO completion:nil];
+    //不是手工编码根据配置的方法执行具体的方法
+    if (bsContentObject.method) {
+        [goControl setValue:bsContentObject.neededMethodData forKeyPath:bsContentObject.method];
+    }
     
     [viewController.navigationController
         pushViewController:goControl animated:YES];

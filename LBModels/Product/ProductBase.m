@@ -78,6 +78,10 @@
     return self;
 }
 
+- (id)copyWithZone:(NSZone *)zone {
+    return self;
+}
+
 - (NSString *)description
 {
     return [NSString stringWithFormat:@"商品基本信息\t%lid, 名称: %@ ", (long)_id, _name];

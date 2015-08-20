@@ -10,6 +10,7 @@
 
 @interface UserSession : NSObject
 
+
 @property (retain,nonatomic) NSString * sessionId;
 
 @property (retain,nonatomic) NSString * username;

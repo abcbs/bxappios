@@ -64,6 +64,10 @@
     return self;
 }
 
+- (id)copyWithZone:(NSZone *)zone {
+    return self;
+}
+
 - (NSString *)description
 {
     return [NSString stringWithFormat:@"支付工具\t%lid, :支付工具 %ld, 支付工具名称: %@ \t用户标示: %ld", (long)_id, (long)_payTool, _name, (long)_userId];

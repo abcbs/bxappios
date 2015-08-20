@@ -53,6 +53,9 @@
     return self;
 }
 
+- (id)copyWithZone:(NSZone *)zone {
+    return self;
+}
 
 -(NSString *)description{
     return [NSString stringWithFormat:@"商圈预约:%ld，预约备注:%@ 预约服务类型:%ld\t预约人ID:%ld",

@@ -176,7 +176,20 @@
 
 //跳转到重设密码
 - (IBAction)resetPasswordClick:(id)sender {
-    [self navigating:self storybord:@"LOUserManager" identity:@"LOResetPasswordViewController"
-    canUseStoryboard:YES noLoginCheck:YES];
+    //跳转界面之前需要传递值的情况
+    BSTableContentObject * bsContentObject=[BSTableContentObject initWithController:self storybord:@"LOUserManager"
+        identity:@"LOResetPasswordViewController"
+        canUseStoryboard:YES];
+    
+    bsContentObject.noNeedLoginCheck=YES;
+    bsContentObject.method=@"loginUser";
+    if (loginUser==nil) {
+        loginUser=[[LoginUser alloc]init];
+        loginUser.userName=self.account.text;
+    }
+    bsContentObject.neededMethodData=loginUser;
+    //[self navigating:self storybord:@"LOUserManager" identity:@"LOResetPasswordViewController"
+    //canUseStoryboard:YES noLoginCheck:YES];
+    [self navigating:bsContentObject];
 }
 @end

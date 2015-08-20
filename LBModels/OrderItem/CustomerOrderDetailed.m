@@ -73,6 +73,9 @@
     return self;
 }
 
+- (id)copyWithZone:(NSZone *)zone {
+    return self;
+}
 - (NSString *)description
 {
     return [NSString stringWithFormat:@"客户订单详细\t%lid, :商品标示 %ld, 数量: %@ \t用户标示: %ld", (long)_id, (long)_businessProductId, _detailOrderNumber, (long)_userBaseId];

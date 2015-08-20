@@ -25,6 +25,10 @@
     
 }
 
+- (id)copyWithZone:(NSZone *)zone {
+    return self;
+}
+
 - (NSString *)description
 {
     return [NSString stringWithFormat:@"商家商品上下架\t%lid, :商品标示 %ld, 商家标示: %ld \t上下架备注: %@", (long)_id, (long)_businessProductId, (long)_bussinessId, _comment];

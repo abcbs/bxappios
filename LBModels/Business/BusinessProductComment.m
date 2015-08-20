@@ -51,6 +51,10 @@
     return self;
 }
 
+- (id)copyWithZone:(NSZone *)zone {
+    return self;
+}
+
 - (NSString *)description
 {
     return [NSString stringWithFormat:@"商家产品评论\t%lid, :商品标示 %ld, 评论者: %@ \t评论: %@", (long)_id, (long)_businessProductId, _userName, _comment];

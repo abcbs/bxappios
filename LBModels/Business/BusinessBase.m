@@ -97,6 +97,9 @@
     
 }
 
+- (id)copyWithZone:(NSZone *)zone {
+    return self;
+}
 
 -(NSString *)description{
     return [NSString stringWithFormat:@"商家基本信息:%ld，商家名称:%@",

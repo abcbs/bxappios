@@ -10,6 +10,10 @@
 
 @implementation UserDetailed
 
+- (id)copyWithZone:(NSZone *)zone {
+    return self;
+}
+
 - (void)encodeWithCoder:(NSCoder *)aCoder
 {
     

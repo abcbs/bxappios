@@ -39,6 +39,10 @@
     return self;
 }
 
+- (id)copyWithZone:(NSZone *)zone {
+    return self;
+}
+
 - (NSString *)description
 {
     return [NSString stringWithFormat:@"商家经营范围\t%lid, :businessid %ld \t经营范围名称: %@", (long)_id, (long)_businessId, _name];

@@ -7,8 +7,11 @@
 //
 
 #import "BSUITableViewCommonController.h"
+#import "LBModelsHeader.h"
 
 @interface LOResetPasswordViewController : BSUITableViewCommonController
+
+@property (strong, nonatomic)  LoginUser *loginUser;;
 
 //手机号
 @property (strong, nonatomic) IBOutlet UITextField *phone;

@@ -190,6 +190,10 @@
     return self;
 }
 
+- (id)copyWithZone:(NSZone *)zone {
+    return self;
+}
+
 - (NSString *)description
 {
     return [NSString stringWithFormat:@"商家产品\t%lid, :商品分类 %ld, 商家名称: %@ \t商品名称: %@", (long)_id, (long)_productCatalogueId, _businessName, _name];

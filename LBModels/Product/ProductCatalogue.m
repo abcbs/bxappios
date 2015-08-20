@@ -47,6 +47,10 @@
     return self;
 }
 
+- (id)copyWithZone:(NSZone *)zone {
+    return self;
+}
+
 - (NSString *)description
 {
     return [NSString stringWithFormat:@"服务与商品类型\t%@, 备注 %@, 序号: %ld", _code, _comment, (long)_serialize];

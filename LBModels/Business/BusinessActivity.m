@@ -53,7 +53,9 @@
     return self;
 }
 
-
+- (id)copyWithZone:(NSZone *)zone {
+    return self;
+}
 -(NSString *)description{
     return [NSString stringWithFormat:@"商家活动:%ld，活动标题:%@ 活动内容:%@",
             (long)self.id,self.title,self.content];

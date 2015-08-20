@@ -19,7 +19,7 @@
     self.bDisplayReturnButtonNav=YES;
     [super viewDidLoad];
     [self initSubViews];
- 
+    [self setupData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,6 +36,12 @@
     [BSUIComponentView configTextField:self.againPassword];
     [BSUIComponentView configTextField:self.phone];
     [BSUIComponentView configTextField:self.checkNumber];
+}
+
+-(void)setupData{
+    if (self.loginUser) {
+        self.phone.text=self.loginUser.userName;
+    }
 }
 /*
 #pragma mark - Navigation
