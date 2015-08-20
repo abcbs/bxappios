@@ -49,6 +49,9 @@ static UserSession *session;
 }
 
 +(BOOL)checkSession{
+    if (!DEFAULT_ROLE) {
+        return YES;
+    }
     if (!session) {
         return NO;
     }
