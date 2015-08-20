@@ -37,6 +37,7 @@
     BSTableContentObject *recommend=[BSTableContentObject initWithContentObject:@"洗车"
                               methodName:nil imageName:@"98xc"
                                colClass:nil];
+    recommend.noNeedLoginCheck=YES;
     
     [bsTable addBSTableContent:recommend sectionHeader:@"便捷服务"];
     
@@ -45,7 +46,8 @@
                                  initWithContentObject:@"送水"
                                  methodName:nil imageName:@"98ss"
                                  vcClass:@"LBSendingWaterTableViewController"];
-    
+    commu.noNeedLoginCheck=YES;
+
     [bsTable addBSTableContent:commu sectionHeader:@"便捷服务"];
    
     
@@ -54,27 +56,28 @@
                                 methodName:nil
                                 imageName:@"98bj"
                                 colClass:nil];
+    bank.noNeedLoginCheck=YES;
     [bsTable addBSTableContent:bank sectionHeader:@"便捷服务"];
     
     
     BSTableContentObject *tech=[BSTableContentObject initWithContentObject:@"家政" methodName:nil imageName:@"98jz" colClass:nil];
-    
+    tech.noNeedLoginCheck=YES;
     [bsTable addBSTableContent:tech sectionHeader:@"便捷服务"];
     
     //超市
     tech=[BSTableContentObject initWithContentObject:@"超市" methodName:nil imageName:@"98cs" colClass:nil];
-    
+    tech.noNeedLoginCheck=YES;
     [bsTable addBSTableContent:tech sectionHeader:@"便捷服务"];
     
     
     //预约服务
     BSTableContentObject *appointment=[BSTableContentObject initWithContentObject:@"洗车" methodName:nil imageName:@"98xc" colClass:nil];
-    
+    appointment.noNeedLoginCheck=YES;
     [bsTable addBSTableContent:appointment sectionHeader:@"预约服务"];
     
     //配置错误
     BSTableContentObject *lifeService=[BSTableContentObject initWithContentObject:@"送水" methodName:nil imageName:@"98ss" colClass:[LBSendingWaterTableViewController class]];
-    
+    lifeService.noNeedLoginCheck=YES;
     [bsTable addBSTableContent:lifeService sectionHeader:@"预约服务"];
     
       

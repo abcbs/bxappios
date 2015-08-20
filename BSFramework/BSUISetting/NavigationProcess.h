@@ -26,6 +26,10 @@
 -(void)modifiedStyle;
 
 /**
+ *登陆判断
+ */
+-(BOOL)checkAndLogin;
+/**
  *公共导航到下一页Controller
  */
 -(void)navigating:(BSTableContentObject*)bsContentObject;

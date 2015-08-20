@@ -75,6 +75,8 @@
 
 @property (assign,nonatomic)BOOL canUseStoryboard;
 
+@property (assign,nonatomic)BOOL noNeedLoginCheck;
+
 /**
  *使用故事板跳转，默认方式
  */

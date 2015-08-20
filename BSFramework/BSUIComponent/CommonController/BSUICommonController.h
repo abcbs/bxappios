@@ -25,4 +25,5 @@
  */
 - (void)doneClick;
 
+-(BOOL)checkAndLogin;
 @end

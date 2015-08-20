@@ -23,6 +23,7 @@
 @synthesize colCapatibilty;
 @synthesize callerViewController;
 @synthesize canUseStoryboard;
+@synthesize noNeedLoginCheck;
 
 -(instancetype)initWithContentObject:(NSString *)title methodName:(NSString *)name
                            imageName:(NSString *)imageName vcClass:(NSString *)clzzName colClass:(Class)clzz{

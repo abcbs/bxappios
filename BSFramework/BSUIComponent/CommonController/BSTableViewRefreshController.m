@@ -215,6 +215,15 @@
     return isLogin;
 }
 
+#pragma mark --登陆工具方法
+-(BOOL)checkAndLogin{
+    BOOL isLogin=[UserManager checkSession];
+    if (isLogin==NO) {
+        [self navigating:self storybord:@"LOLoginManager" identity:@"LOLoginAppViewController" canUseStoryboard:YES];
+        
+    }
+    return isLogin;
+}
 /**
  *页面跳转公共方法
  */

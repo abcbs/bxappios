@@ -9,13 +9,38 @@
 #import "BSContentObjectNavigation.h"
 #import <UIKit/UIKit.h>
 #import "BSCMFrameworkHeader.h"
+#import "UserManager.h"
+#import "LOLoginAppViewController.h"
+
 @implementation BSContentObjectNavigation
+#pragma mark --登陆工具方法
+
+-(BOOL)checkAndLogin:(UIViewController *)viewController{
+    BOOL isLogin=[UserManager checkSession];
+    if (isLogin==NO) {
+
+       
+        
+    }
+    return isLogin;
+}
 
 +(void)navigatingControllWithStorybord:(UIViewController *)viewController bsContentObject:(BSTableContentObject*)bsContentObject{
-    if (bsContentObject.canUseStoryboard) {
-        [BSContentObjectNavigation prepareControllWithStorybord:viewController bsContentObject:bsContentObject];
+    BSTableContentObject* bs=bsContentObject;
+    
+    if (!bs.noNeedLoginCheck) {
+        BOOL isLogin=[UserManager checkSession];
+        if (isLogin==NO) {
+            bs=[BSTableContentObject initWithController:viewController storybord:@"LOLoginManager"
+                identity:@"LOLoginAppViewController"
+                canUseStoryboard:YES];
+        }
+    }
+    if (bs.canUseStoryboard) {
+        [BSContentObjectNavigation prepareControllWithStorybord:viewController bsContentObject:bs];
     }else{
-        [BSContentObjectNavigation prepareControllWithNib:viewController bsContentObject:bsContentObject];
+       
+        [BSContentObjectNavigation prepareControllWithNib:viewController bsContentObject:bs];
     }
 }
 
@@ -33,14 +58,9 @@
     if (bsContentObject.method) {
         [goControl setValue:bsContentObject.method forKeyPath:@"method"];
     }
-    /*
-    UINavigationController* nav = [[UINavigationController alloc]  initWithRootViewController:goControl];
-    
-    BSPhotoViewController
-     */
-    //送水界面此时没有状态栏
-    //[viewController.navigationController presentModalViewController:goControl animated:YES];
-    [viewController.navigationController pushViewController:goControl animated:YES];
+
+    [viewController.navigationController
+        pushViewController:goControl animated:YES];
 }
 
 /**
@@ -52,7 +72,8 @@
     
     //[viewController presentViewController:goControl animated:NO completion:nil];
     
-    [viewController.navigationController pushViewController:goControl animated:YES];
+    [viewController.navigationController
+        pushViewController:goControl animated:YES];
 
 }
 

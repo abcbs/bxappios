@@ -8,6 +8,8 @@
 
 #import "BSUITabBarCommonController.h"
 #import "BSCMFrameworkHeader.h"
+#import "UserManager.h"
+
 @interface BSUITabBarCommonController ()
 
 @end
@@ -78,6 +80,16 @@
 -(void)modifiedStyle{
     BSLog(@"根据权限修改元素显示，子类需实现");
     [BSUIComponentView initNavigationWithPermission:self];
+}
+
+#pragma mark --登陆工具方法
+-(BOOL)checkAndLogin{
+    BOOL isLogin=[UserManager checkSession];
+    if (isLogin==NO) {
+        [self navigating:self storybord:@"LOLoginManager" identity:@"LOLoginAppViewController" canUseStoryboard:YES];
+        
+    }
+    return isLogin;
 }
 /*
 #pragma mark - Navigation

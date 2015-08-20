@@ -96,10 +96,13 @@
     return cell;
 }
 #pragma mark --默认处理方法
+
+
 -(void)modifiedStyle{
     BSLog(@"根据权限修改元素显示，子类需实现");
     [BSUIComponentView initNavigationWithPermission:self];
 }
+
 #pragma mark --默认返回方法，仅仅在人工提供的状态栏中使用
 - (void)backClick{
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -118,6 +121,16 @@
 #pragma mark --控制是否可以根据故事板跳转
 -(BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
 {
+    BOOL isLogin=[UserManager checkSession];
+    if (isLogin==NO) {
+        [self navigating:self storybord:@"LOLoginManager" identity:@"LOLoginAppViewController" canUseStoryboard:YES];
+        
+    }
+    return isLogin;
+}
+
+#pragma mark --登陆工具方法
+-(BOOL)checkAndLogin{
     BOOL isLogin=[UserManager checkSession];
     if (isLogin==NO) {
         [self navigating:self storybord:@"LOLoginManager" identity:@"LOLoginAppViewController" canUseStoryboard:YES];
