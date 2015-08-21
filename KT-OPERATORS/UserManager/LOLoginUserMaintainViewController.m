@@ -228,20 +228,16 @@
     self.navigationItem.rightBarButtonItem = nil;
     //营业执照
     if (isEdit) {
-        if (DATA_IS_LOCAL) {
-            [self.editDelegate editedLoginUser:self.loginUser];
-            [self.navigationController popViewControllerAnimated:YES];
-
-        }else{//非本地处理方式
-            [self.editDelegate editedLoginUser:self.loginUser  blockArray:^(NSObject *response,NSError *error,ErrorMessage *errorMessage){
-                 alert = [self displayAlert];
-                 [alert show];
-              }];
-        }
+        [self.editDelegate editedLoginUser:self.loginUser  blockArray:^(NSObject *response,NSError *error,ErrorMessage *errorMessage){
+            alert = [self displayAlert];
+            [alert show];
+        }];
+        [self.navigationController popViewControllerAnimated:YES];
        
     }
     if (!isEdit)
     {
+        //用户注册，由TabBar进入
         self.loginUser=[LoginUser new];
         self.loginUser.userName=self.anonName.text;
         self.loginUser.realName=self.realName.text;
@@ -256,36 +252,30 @@
         }
 
         if (self.editDelegate) {
-            if (DATA_IS_LOCAL) {
-                [self.editDelegate addLoginUser:self.loginUser];
-                [self toPageController];
-            }else{
             [self.editDelegate addLoginUser:self.loginUser
                                  blockArray:^(NSObject *response,NSError *error,ErrorMessage *errorMessage){
+                                     
+                                     alert =[self displayAlert];
+                                     //通过给定标题添加按钮
+                                     [alert show];
+                                     
+                                 }];
+            [self nextData];
 
-                 alert =[self displayAlert];
-                 //通过给定标题添加按钮
-                 [alert show];
-                
-            }];
-            }
-        }else{
+        }else{//由TabBar进入得应当到登陆界面
             UserManager *um=[UserManager userManager];
-            if (DATA_IS_LOCAL) {
-                [um insertLoginUser:self.loginUser];
-            }else{
-               [um insertLoginUser:self.loginUser
-                       blockArray:^(NSObject *response,NSError *error,ErrorMessage *errorMessage){
-                           BSLog(@"UserManager");
-                           alert =[self displayAlert];
-                           [alert show];
-                       }
-              ];
-            }
+            [um insertLoginUser:self.loginUser
+                     blockArray:^(NSObject *response,NSError *error,ErrorMessage *errorMessage){
+                         BSLog(@"UserManager");
+                         alert =[self displayAlert];
+                         [alert show];
+                     }
+             ];
+             //[self.navigationController popViewControllerAnimated:YES];
         }
         
     }
-    [self.navigationController popViewControllerAnimated:YES];
+   
     
 }
 

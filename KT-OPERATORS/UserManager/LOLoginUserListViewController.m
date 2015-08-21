@@ -249,7 +249,7 @@ titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
  *新增
  */
 - (void)addLoginUser:(LoginUser *) user
-          blockArray:(void (^)(NSObject *response, NSError *error,ErrorMessage *errorMessage))block{
+          blockArray:(BSHTTPResponse)block{
     if (!_bsList)
     {
         _bsList = [NSMutableArray array];

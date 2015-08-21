@@ -11,6 +11,7 @@
 
 #import "Conf.h"
 #import "ErrorMessage.h"
+#import "BSIFTTHeader.h"
 
 #pragma mark--第三方网络组件
 

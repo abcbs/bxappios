@@ -21,7 +21,7 @@ static RemoteUserManager *instance;
 }
 
 -(void)insertLoginUser:(LoginUser *) user
-            blockArray:(void (^)(NSObject *response, NSError *error,ErrorMessage *errorMessage))block{
+            blockArray:(BSHTTPResponse)block{
     NSDictionary *dic1 = [NSDictionary dictionaryWithObjectsAndKeys:user.realName,@"name",user.address,@"address",user.phoneNum,@"phone",nil];
     NSDictionary *dic2 = [NSDictionary dictionaryWithObjectsAndKeys:user.sex,@"sex",nil];
     NSDictionary *dic3 = [NSDictionary dictionaryWithObjectsAndKeys:user.userName,@"username",user.passWord,@"password",user.commitCode,@"confirmPassword",nil];
@@ -37,24 +37,25 @@ static RemoteUserManager *instance;
     
 }
 
--(NSMutableArray *) loadLoginUser:(LoginUser *)user  blockArray:(void (^)(NSObject *response, NSError *error,ErrorMessage *errorMessage))block{
+-(NSMutableArray *) loadLoginUser:(LoginUser *)user
+                       blockArray:(BSHTTPResponse)block{
     return nil;
 }
 
 -(void)updateLoginUser:(LoginUser *) user
-            blockArray:(void (^)(NSObject *response, NSError *error,ErrorMessage *errorMessage))block{
+            blockArray:(BSHTTPResponse)block{
      BSLog(@"更新登陆数据");
 }
 
 
 -(void)removeLoginUser:(LoginUser *) user
-            blockArray:(void (^)(NSObject *response, NSError *error,ErrorMessage *errorMessage))block{
+            blockArray:(BSHTTPResponse)block{
     BSLog(@"删除登陆数据");
 }
 
 #pragma mark -登陆方法
 -(void)loginWithUser:(LoginUser *) user
-          blockArray:(void (^)(NSObject *response, NSError *error,ErrorMessage *errorMessage))block{
+          blockArray:(BSHTTPResponse)block{
     
       NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:user.userName,@"username",user.passWord,@"password", nil];
     

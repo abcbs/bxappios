@@ -7,6 +7,7 @@
 //
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "ErrorMessage.h"
 
 @interface Conf : NSObject
 
@@ -245,6 +246,9 @@ extern float autoSizeScaleY;
 #define USER_LONGIN_NUMBER 5
 #define DATA_IS_LOCAL YES
 
+typedef void (^BSHTTPResponse)(NSObject *response,
+                               NSError *error,
+                               ErrorMessage *bsErrorMessage);
 
 +(NSDate*) convertDateFromString:(NSString*)uiDate;
 

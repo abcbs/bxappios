@@ -109,28 +109,31 @@
     
 }
 
+/*
 -(void)editedLoginUser:(LoginUser *)user{
     self.loginUser =user ;
     
     [_browseDelegate editedLoginUser:self.loginUser];
     [self display];
 }
+*/
 
-- (void)editedLoginUser:(LoginUser *) user  blockArray:(void (^)(NSObject *response, NSError *error,ErrorMessage *errorMessage))block{
+- (void)editedLoginUser:(LoginUser *) user  blockArray:(BSHTTPResponse)block{
     self.loginUser =user ;
     
     [_browseDelegate editedLoginUser:self.loginUser blockArray:block];
     [self display];
     
 }
+/*
 - (void)addLoginUser:(LoginUser *)user{
     self.loginUser=user;
     [_browseDelegate addLoginUser:self.loginUser ];
     [self display];
 }
-
+*/
 - (void)addLoginUser:(LoginUser *) user
-          blockArray:(void (^)(NSObject *response, NSError *error,ErrorMessage *errorMessage))block{
+          blockArray:(BSHTTPResponse)block{
     self.loginUser=user;
     [_browseDelegate addLoginUser:self.loginUser blockArray:block];
     [self display];

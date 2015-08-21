@@ -26,9 +26,7 @@ typedef void (^BSHTTPRequestSuccess)
 
 typedef void (^BSHTTPRequestFailure)(NSError *error);
 
-typedef void (^BSHTTPResponse)(NSObject *response,
-                               NSError *error,
-                               ErrorMessage *bsErrorMessage);
+
 
 @interface BSHTTPNetworking : NSObject
 

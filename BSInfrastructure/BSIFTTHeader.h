@@ -24,7 +24,10 @@
 
 #import "BSPhotoImagePickerController.h"
 
-
+/**
+ *消息推送相关
+ */
+#import  "BSTRPushHelper.h"
 
 #pragma mark -BLE处理组件
 

@@ -126,6 +126,7 @@
 		8425E18C1B67644200A93C43 /* BSPhotoTakeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8425E18A1B67644200A93C43 /* BSPhotoTakeController.m */; };
 		8425E18F1B6765DA00A93C43 /* BSPhotoImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8425E18E1B6765DA00A93C43 /* BSPhotoImagePickerController.m */; };
 		8425E1901B6765DA00A93C43 /* BSPhotoImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8425E18E1B6765DA00A93C43 /* BSPhotoImagePickerController.m */; };
+		843163091B874DA100D5CC2C /* PassKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 843163081B874DA100D5CC2C /* PassKit.framework */; };
 		843B2E6F1B74E89C009FC187 /* LOLoginAppViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 843B2E6E1B74E89C009FC187 /* LOLoginAppViewController.m */; };
 		843B2E701B74E89C009FC187 /* LOLoginAppViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 843B2E6E1B74E89C009FC187 /* LOLoginAppViewController.m */; };
 		843B2E731B74E8DC009FC187 /* LOResetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 843B2E721B74E8DC009FC187 /* LOResetPasswordViewController.m */; };
@@ -189,6 +190,31 @@
 		844A32061B4064310045CA6C /* BSUIBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 844A32051B4064310045CA6C /* BSUIBarButtonItem.m */; };
 		844E50BB1B2F2EE500A69F91 /* BSHTTPNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 844E50B41B2F2EE500A69F91 /* BSHTTPNetworking.m */; };
 		84517B761B8438C900469111 /* libKT-LO-Controller.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 847415C31B63AF90005BF59D /* libKT-LO-Controller.a */; };
+		84517B781B86124600469111 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84517B771B86124600469111 /* CFNetwork.framework */; };
+		84517B791B86125300469111 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E511A511AF07DB800BF1D03 /* CoreGraphics.framework */; };
+		84517B7B1B86129A00469111 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 84517B7A1B86129A00469111 /* libz.dylib */; };
+		84517B7C1B8612D500469111 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 84517B7A1B86129A00469111 /* libz.dylib */; };
+		84517B7D1B8612E900469111 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E8377631B035BB300782034 /* libsqlite3.dylib */; };
+		84517B7E1B8612F300469111 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E8377511B033E9700782034 /* SystemConfiguration.framework */; };
+		84517B7F1B8612FC00469111 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E83775B1B033EF300782034 /* Security.framework */; };
+		84517B801B86130600469111 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E8377531B033EAB00782034 /* QuartzCore.framework */; };
+		84517B811B86131200469111 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A076591B21AA8D001CE3A2 /* CoreLocation.framework */; };
+		84517B821B86131C00469111 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E511A511AF07DB800BF1D03 /* CoreGraphics.framework */; };
+		84517B831B86132600469111 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84517B771B86124600469111 /* CFNetwork.framework */; };
+		84517BA41B8626FE00469111 /* libPushSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84517BA31B8626FE00469111 /* libPushSDK.a */; };
+		84517BA51B8626FE00469111 /* libPushSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84517BA31B8626FE00469111 /* libPushSDK.a */; };
+		84517BA61B8626FE00469111 /* libPushSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84517BA31B8626FE00469111 /* libPushSDK.a */; };
+		84517BA71B86277D00469111 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E8377551B033EBD00782034 /* CoreTelephony.framework */; };
+		84517BA81B8627E400469111 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E8377551B033EBD00782034 /* CoreTelephony.framework */; };
+		84517BA91B8627F500469111 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84517B771B86124600469111 /* CFNetwork.framework */; };
+		84517BAB1B86280400469111 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84517BAA1B86280400469111 /* CoreFoundation.framework */; };
+		84517BAC1B86280E00469111 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E8377511B033E9700782034 /* SystemConfiguration.framework */; };
+		84517BAD1B86281800469111 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E511A511AF07DB800BF1D03 /* CoreGraphics.framework */; };
+		84517BAE1B86282700469111 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E511A4F1AF07DAD00BF1D03 /* Foundation.framework */; };
+		84517BAF1B86283100469111 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E83775B1B033EF300782034 /* Security.framework */; };
+		84517BB01B86284200469111 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 84517B7A1B86129A00469111 /* libz.dylib */; };
+		84517BB41B8628F800469111 /* BSTRPushHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 84517BB31B8628F800469111 /* BSTRPushHelper.m */; };
+		84517BB51B8628F800469111 /* BSTRPushHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 84517BB31B8628F800469111 /* BSTRPushHelper.m */; };
 		84578F531B35D11D00C3A4EA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84578F521B35D11D00C3A4EA /* ViewController.m */; };
 		84578F781B35E80700C3A4EA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84578F7A1B35E80700C3A4EA /* LaunchScreen.xib */; };
 		845A02231B3DA1F3007F5327 /* BSUIImageTitleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 845A02221B3DA1F3007F5327 /* BSUIImageTitleTableViewCell.m */; };
@@ -1552,6 +1578,8 @@
 		8425E18A1B67644200A93C43 /* BSPhotoTakeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSPhotoTakeController.m; sourceTree = "<group>"; };
 		8425E18D1B6765DA00A93C43 /* BSPhotoImagePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSPhotoImagePickerController.h; sourceTree = "<group>"; };
 		8425E18E1B6765DA00A93C43 /* BSPhotoImagePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSPhotoImagePickerController.m; sourceTree = "<group>"; };
+		843163081B874DA100D5CC2C /* PassKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PassKit.framework; path = System/Library/Frameworks/PassKit.framework; sourceTree = SDKROOT; };
+		8431630A1B874DA100D5CC2C /* 民生小区.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "民生小区.entitlements"; sourceTree = SOURCE_ROOT; };
 		843B2E6D1B74E89C009FC187 /* LOLoginAppViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LOLoginAppViewController.h; sourceTree = "<group>"; };
 		843B2E6E1B74E89C009FC187 /* LOLoginAppViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LOLoginAppViewController.m; sourceTree = "<group>"; };
 		843B2E711B74E8DC009FC187 /* LOResetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LOResetPasswordViewController.h; sourceTree = "<group>"; };
@@ -1619,6 +1647,13 @@
 		844A32051B4064310045CA6C /* BSUIBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUIBarButtonItem.m; sourceTree = "<group>"; };
 		844E50B31B2F2EE500A69F91 /* BSHTTPNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSHTTPNetworking.h; sourceTree = "<group>"; };
 		844E50B41B2F2EE500A69F91 /* BSHTTPNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSHTTPNetworking.m; sourceTree = "<group>"; };
+		84517B771B86124600469111 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		84517B7A1B86129A00469111 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		84517BA21B8626FE00469111 /* APService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APService.h; sourceTree = "<group>"; };
+		84517BA31B8626FE00469111 /* libPushSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libPushSDK.a; sourceTree = "<group>"; };
+		84517BAA1B86280400469111 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		84517BB21B8628F800469111 /* BSTRPushHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSTRPushHelper.h; sourceTree = "<group>"; };
+		84517BB31B8628F800469111 /* BSTRPushHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSTRPushHelper.m; sourceTree = "<group>"; };
 		84578F511B35D11D00C3A4EA /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		84578F521B35D11D00C3A4EA /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		84578F771B35E7F700C3A4EA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
@@ -2481,10 +2516,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84517BB01B86284200469111 /* libz.dylib in Frameworks */,
+				84517BAF1B86283100469111 /* Security.framework in Frameworks */,
+				84517BAE1B86282700469111 /* Foundation.framework in Frameworks */,
+				84517BAD1B86281800469111 /* CoreGraphics.framework in Frameworks */,
+				84517BAC1B86280E00469111 /* SystemConfiguration.framework in Frameworks */,
+				84517BAB1B86280400469111 /* CoreFoundation.framework in Frameworks */,
+				84517BA91B8627F500469111 /* CFNetwork.framework in Frameworks */,
+				84517BA81B8627E400469111 /* CoreTelephony.framework in Frameworks */,
 				8404A1711B78F34100660BAD /* libKT-LO-Controller.a in Frameworks */,
 				8461B5941B54B112002A7C43 /* libKT-LB-Controller.a in Frameworks */,
 				84ECE43C1B4FC627003D1AEE /* libKT-FRAME-PK.a in Frameworks */,
 				84ECE43D1B4FC627003D1AEE /* libKT-MODEL-MODULE.a in Frameworks */,
+				84517BA51B8626FE00469111 /* libPushSDK.a in Frameworks */,
 				1F419A00A37F657FA5AC2D9F /* libPods-KT-BUSINESS-SELLER.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2517,10 +2561,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84517BA71B86277D00469111 /* CoreTelephony.framework in Frameworks */,
+				84517B7C1B8612D500469111 /* libz.dylib in Frameworks */,
+				84517B831B86132600469111 /* CFNetwork.framework in Frameworks */,
+				84517B821B86131C00469111 /* CoreGraphics.framework in Frameworks */,
+				84517B811B86131200469111 /* CoreLocation.framework in Frameworks */,
+				84517B801B86130600469111 /* QuartzCore.framework in Frameworks */,
+				84517B7F1B8612FC00469111 /* Security.framework in Frameworks */,
+				84517B7E1B8612F300469111 /* SystemConfiguration.framework in Frameworks */,
+				84517B7D1B8612E900469111 /* libsqlite3.dylib in Frameworks */,
 				847415BA1B63A01F005BF59D /* libKT-LS-Controller.a in Frameworks */,
 				84F290161B638B0B001078D8 /* libKT-FRAME-PK.a in Frameworks */,
 				84F290171B638B0B001078D8 /* libKT-LB-Controller.a in Frameworks */,
 				84F290191B638B0B001078D8 /* libKT-MODEL-MODULE.a in Frameworks */,
+				84517BA61B8626FE00469111 /* libPushSDK.a in Frameworks */,
 				44222CFA887ECC3DD4D6D39A /* libPods-KT-OPERATORS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2529,6 +2583,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84517B7B1B86129A00469111 /* libz.dylib in Frameworks */,
+				0E8377641B035BB300782034 /* libsqlite3.dylib in Frameworks */,
+				0E8377521B033E9700782034 /* SystemConfiguration.framework in Frameworks */,
+				0E83775C1B033EF300782034 /* Security.framework in Frameworks */,
+				0E8377541B033EAB00782034 /* QuartzCore.framework in Frameworks */,
+				843163091B874DA100D5CC2C /* PassKit.framework in Frameworks */,
+				84A0765A1B21AA8D001CE3A2 /* CoreLocation.framework in Frameworks */,
+				84517B791B86125300469111 /* CoreGraphics.framework in Frameworks */,
+				84517B781B86124600469111 /* CFNetwork.framework in Frameworks */,
 				84517B761B8438C900469111 /* libKT-LO-Controller.a in Frameworks */,
 				84EA96F11B57D82000AC549F /* libKT-LS-Controller.a in Frameworks */,
 				84A076601B21AAC8001CE3A2 /* AddressBook.framework in Frameworks */,
@@ -2538,9 +2601,7 @@
 				843DA87C1B21D56300924AE6 /* QZoneConnection.framework in Frameworks */,
 				84A0765E1B21AAA7001CE3A2 /* CoreText.framework in Frameworks */,
 				84A0765C1B21AA9A001CE3A2 /* MediaPlayer.framework in Frameworks */,
-				84A0765A1B21AA8D001CE3A2 /* CoreLocation.framework in Frameworks */,
 				84A076581B21AA7D001CE3A2 /* CoreMotion.framework in Frameworks */,
-				0E8377641B035BB300782034 /* libsqlite3.dylib in Frameworks */,
 				0E83775E1B033F3F00782034 /* MessageUI.framework in Frameworks */,
 				843DA8821B21D56300924AE6 /* AGCommon.framework in Frameworks */,
 				84A076561B21AA47001CE3A2 /* Accounts.framework in Frameworks */,
@@ -2552,13 +2613,10 @@
 				843DA8851B21D56300924AE6 /* ShareSDKCoreService.framework in Frameworks */,
 				843DA88C1B21D56300924AE6 /* ShareSDK.framework in Frameworks */,
 				0E8377601B035B8F00782034 /* ImageIO.framework in Frameworks */,
-				0E83775C1B033EF300782034 /* Security.framework in Frameworks */,
 				0E83775A1B033EE600782034 /* libz.1.2.5.dylib in Frameworks */,
 				0E8377581B033ED300782034 /* libicucore.dylib in Frameworks */,
 				0E8377561B033EBD00782034 /* CoreTelephony.framework in Frameworks */,
 				843DA87D1B21D56300924AE6 /* SinaWeiboConnection.framework in Frameworks */,
-				0E8377541B033EAB00782034 /* QuartzCore.framework in Frameworks */,
-				0E8377521B033E9700782034 /* SystemConfiguration.framework in Frameworks */,
 				843DA88E1B21D56300924AE6 /* ShareSDKFlatShareViewUI.framework in Frameworks */,
 				0E8377621B035BAB00782034 /* libstdc++.dylib in Frameworks */,
 				843DA8791B21D56300924AE6 /* FacebookConnection.framework in Frameworks */,
@@ -2570,6 +2628,7 @@
 				843DA87F1B21D56300924AE6 /* TencentWeiboConnection.framework in Frameworks */,
 				843DA88F1B21D56300924AE6 /* ShareSDKShareActionSheet.framework in Frameworks */,
 				06FDBA07377F3472C78B3516 /* libPods-KTAPP.a in Frameworks */,
+				84517BA41B8626FE00469111 /* libPushSDK.a in Frameworks */,
 				843DA8781B21D56200924AE6 /* CopyConnection.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2850,6 +2909,24 @@
 				845A02341B3DBA7E007F5327 /* UIView+Frame.m */,
 			);
 			path = BSUISetting;
+			sourceTree = "<group>";
+		};
+		84517BA11B8626FE00469111 /* JPush-iOS-SDK-1.7.4 */ = {
+			isa = PBXGroup;
+			children = (
+				84517BA21B8626FE00469111 /* APService.h */,
+				84517BA31B8626FE00469111 /* libPushSDK.a */,
+			);
+			path = "JPush-iOS-SDK-1.7.4";
+			sourceTree = "<group>";
+		};
+		84517BB11B8628BF00469111 /* MPush */ = {
+			isa = PBXGroup;
+			children = (
+				84517BB21B8628F800469111 /* BSTRPushHelper.h */,
+				84517BB31B8628F800469111 /* BSTRPushHelper.m */,
+			);
+			path = MPush;
 			sourceTree = "<group>";
 		};
 		845A02271B3DABF0007F5327 /* Base */ = {
@@ -3738,6 +3815,7 @@
 		84BA968E1B2829FC00388B58 /* BSTransfer */ = {
 			isa = PBXGroup;
 			children = (
+				84517BB11B8628BF00469111 /* MPush */,
 				84DAA4A11B7AE6120070BF83 /* Crypto */,
 				8412CA731B79EB12004EDFAB /* CertFile */,
 				848C7C341B79A38A000774A1 /* Base64 */,
@@ -4420,6 +4498,10 @@
 		A0028F341ADE4D5500747D8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				843163081B874DA100D5CC2C /* PassKit.framework */,
+				84517BAA1B86280400469111 /* CoreFoundation.framework */,
+				84517B7A1B86129A00469111 /* libz.dylib */,
+				84517B771B86124600469111 /* CFNetwork.framework */,
 				84ECE4341B4FC50B003D1AEE /* libPods-KT-FRAME-PK.a */,
 				84BF8FBA1B4AC1E8001042F1 /* libPods-KTAPP.a */,
 				84BF8FB61B4AC0EF001042F1 /* libPods-KTAPP.a */,
@@ -4479,8 +4561,8 @@
 				84BA96921B282A0500388B58 /* LBControl */,
 				84F28FEA1B6387C3001078D8 /* KT-OPERATORS */,
 				84BF8F5F1B4AB63C001042F1 /* KT-BUSINESS-SELLER */,
-				84BF8F911B4ABA7E001042F1 /* KT-FRAME-PK */,
 				84BF902C1B4AC55D001042F1 /* KT-MODEL-MODULE */,
+				84BF8F911B4ABA7E001042F1 /* KT-FRAME-PK */,
 				84EA96B41B57D2D400AC549F /* KT-LS-Controller */,
 				847415C41B63AF90005BF59D /* KT-LO-Controller */,
 				A0028F341ADE4D5500747D8A /* Frameworks */,
@@ -4507,6 +4589,8 @@
 		A04366AB1AD7B550005842EE /* KTAPP */ = {
 			isa = PBXGroup;
 			children = (
+				8431630A1B874DA100D5CC2C /* 民生小区.entitlements */,
+				84517BA11B8626FE00469111 /* JPush-iOS-SDK-1.7.4 */,
 				84EA96F21B57E21F00AC549F /* Resources */,
 				8420435F1B2991770002C868 /* DLSlideView */,
 				843DA8501B21D56200924AE6 /* ShareSDK-iOS-v2.11.0 */,
@@ -4865,6 +4949,11 @@
 					A04366A81AD7B550005842EE = {
 						CreatedOnToolsVersion = 6.1;
 						DevelopmentTeam = MC8M456VH7;
+						SystemCapabilities = {
+							com.apple.Passbook = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -6067,6 +6156,7 @@
 				848C7C331B79A301000774A1 /* BSSecurity.m in Sources */,
 				84BF8FFA1B4AC2FA001042F1 /* YYHMantleModelSerializer.m in Sources */,
 				84E6C0991B7DD06C00289D94 /* ESSIssueViewController.m in Sources */,
+				84517BB51B8628F800469111 /* BSTRPushHelper.m in Sources */,
 				84E9D79B1B61E10C00F2CD24 /* BSAlbumCell.m in Sources */,
 				84BF8FFC1B4AC2FA001042F1 /* YYHModelRoute.m in Sources */,
 				84BF8FFE1B4AC2FA001042F1 /* YYHModelRouter.m in Sources */,
@@ -6237,6 +6327,7 @@
 				A0F0C3F51B10209500CE406D /* CommodityEvaluationRequest.m in Sources */,
 				A0F0C3F01B10209500CE406D /* DeleteShoppingCartParams.m in Sources */,
 				84DB2F031B7CCB700041588B /* ESSBeaconScanner.m in Sources */,
+				84517BB41B8628F800469111 /* BSTRPushHelper.m in Sources */,
 				84F84ADA1B7C4E2B008DF38F /* BSDesSecurity.m in Sources */,
 				84820A641B285F320093B87B /* LBSendingWaterTableViewController..m in Sources */,
 				A0F0C3F91B10209500CE406D /* ViewShoppingCartRequest.m in Sources */,
@@ -6546,6 +6637,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/parse-osx-library-1",
+					"$(PROJECT_DIR)/民生小区/parse-osx-library-1",
+				);
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -6557,6 +6653,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
+					"$(PROJECT_DIR)/民生小区/JPush-iOS-SDK-1.7.4",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "$(inherited) $(BUILT_PRODUCTS_DIR)";
@@ -6572,6 +6669,11 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/parse-osx-library-1",
+					"$(PROJECT_DIR)/民生小区/parse-osx-library-1",
+				);
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "KT-BUSINESS-SELLER/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
@@ -6579,6 +6681,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
+					"$(PROJECT_DIR)/民生小区/JPush-iOS-SDK-1.7.4",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "$(inherited) $(BUILT_PRODUCTS_DIR)";
@@ -6698,6 +6801,11 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/parse-osx-library-1",
+					"$(PROJECT_DIR)/民生小区/parse-osx-library-1",
+				);
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -6706,6 +6814,10 @@
 				INFOPLIST_FILE = "KT-OPERATORS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/民生小区/JPush-iOS-SDK-1.7.4",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -6720,10 +6832,19 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/parse-osx-library-1",
+					"$(PROJECT_DIR)/民生小区/parse-osx-library-1",
+				);
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "KT-OPERATORS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/民生小区/JPush-iOS-SDK-1.7.4",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -6823,6 +6944,8 @@
 					"$(PROJECT_DIR)/民生小区/ShareSDK-iOS-v2.11.0/Extend/QQConnectSDK",
 					"$(PROJECT_DIR)/民生小区/ShareSDK-iOS-v2.11.0",
 					"$(PROJECT_DIR)/民生小区/ShareSDK-iOS-v2.11.0/UI",
+					"$(PROJECT_DIR)/parse-osx-library-1",
+					"$(PROJECT_DIR)/民生小区/parse-osx-library-1",
 				);
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = "民生小区/Info.plist";
@@ -6833,6 +6956,7 @@
 					"$(PROJECT_DIR)/民生小区/ShareSDK-iOS-v2.11.0/Extend/SinaWeiboSDK",
 					"$(PROJECT_DIR)/民生小区/ShareSDK-iOS-v2.11.0/Extend/TencentWeiboSDK",
 					"$(PROJECT_DIR)/民生小区/ShareSDK-iOS-v2.11.0/Extend/WeChatSDK",
+					"$(PROJECT_DIR)/民生小区/JPush-iOS-SDK-1.7.4",
 				);
 				MACH_O_TYPE = mh_execute;
 				PRODUCT_NAME = "民生小区";
@@ -6857,6 +6981,8 @@
 					"$(PROJECT_DIR)/民生小区/ShareSDK-iOS-v2.11.0/Extend/QQConnectSDK",
 					"$(PROJECT_DIR)/民生小区/ShareSDK-iOS-v2.11.0",
 					"$(PROJECT_DIR)/民生小区/ShareSDK-iOS-v2.11.0/UI",
+					"$(PROJECT_DIR)/parse-osx-library-1",
+					"$(PROJECT_DIR)/民生小区/parse-osx-library-1",
 				);
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = "民生小区/Info.plist";
@@ -6867,6 +6993,7 @@
 					"$(PROJECT_DIR)/民生小区/ShareSDK-iOS-v2.11.0/Extend/SinaWeiboSDK",
 					"$(PROJECT_DIR)/民生小区/ShareSDK-iOS-v2.11.0/Extend/TencentWeiboSDK",
 					"$(PROJECT_DIR)/民生小区/ShareSDK-iOS-v2.11.0/Extend/WeChatSDK",
+					"$(PROJECT_DIR)/民生小区/JPush-iOS-SDK-1.7.4",
 				);
 				MACH_O_TYPE = mh_execute;
 				PRODUCT_NAME = "民生小区";
