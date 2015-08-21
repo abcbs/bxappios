@@ -10,6 +10,15 @@
 #import "BSUIFrameworkHeader.h"
 #import "RemoteUserManager.h"
 #import "UserSession.h"
+
+static const char *const kDataLocalOperationQueueName = "kDataLocalOperationQueue";
+
+@interface UserManager(){
+    
+     dispatch_queue_t _queue;
+}
+@end
+
 @implementation UserManager
 
 static UserManager *instance;
@@ -18,6 +27,7 @@ static UserSession *session;
 
 +(UserManager *)userManager{
     if (DATA_IS_LOCAL) {
+      
         return [self localUserManager];
     }else{
        return  [RemoteUserManager remoteInstance];
@@ -28,11 +38,17 @@ static UserSession *session;
 +(UserManager *) localUserManager{
     if (!instance) {
         instance=[[super allocWithZone:nil]init];
+        
     }
     return instance;
 }
-
-
+- (instancetype)init {
+    if ((self = [super init]) != nil) {
+        _queue =
+        dispatch_queue_create(kDataLocalOperationQueueName, NULL);
+    }
+    return self;
+}
 
 +(void) registSession:(UserSession *)userSession{
     if (!session) {
@@ -65,7 +81,12 @@ static UserSession *session;
 }
 #pragma mark -商家经营类型
 
--(NSMutableArray *) loadLoginUser:(LoginUser *)user  blockArray:(void (^)(NSObject *response, NSError *error,ErrorMessage *errorMessage))block{
+-(NSMutableArray *) loadLoginUser:(LoginUser *)user  blockArray:(BSHTTPResponse)block{
+    [self loadLoginUser:user];
+    if (block) {
+        block(nil,nil,nil);
+        
+    }
     return [self loadLoginUser:user];
 }
 
@@ -80,8 +101,16 @@ static UserSession *session;
 }
 //本地适配远程方法
 -(void)insertLoginUser:(LoginUser *) user
-            blockArray:(void (^)(NSObject *response, NSError *error,ErrorMessage *errorMessage))block{
-    [self insertLoginUser:user];
+            blockArray:(BSHTTPResponse)block{
+    
+    dispatch_async(_queue, ^{
+        [self insertLoginUser:user];
+    });
+    if (block) {
+        block(nil,nil,nil);
+        
+    }
+    
 }
 - (void)insertLoginUser:(LoginUser *) user{
     NSMutableArray * bsList=[self localForLoginUser ];
@@ -90,9 +119,16 @@ static UserSession *session;
     [NSKeyedArchiver archiveRootObject:bsList toFile:path];
 }
 
--(void)updateLoginUser:(LoginUser *) user
-            blockArray:(void (^)(NSObject *response, NSError *error,ErrorMessage *errorMessage))block{
-    [self updateLoginUser:user atIndex:0];
+-(void)updateLoginUser:(LoginUser *) user atIndex:(NSInteger)index
+            blockArray:(BSHTTPResponse)block{
+     dispatch_async(_queue, ^{
+         [self updateLoginUser:user atIndex:index];
+     });
+    if (block) {
+        block(nil,nil,nil);
+        
+    }
+    
 }
 
 -(void)updateLoginUser:(LoginUser *) user
@@ -109,9 +145,10 @@ static UserSession *session;
 
 
 -(void)removeLoginUser:(LoginUser *) user
-            blockArray:(void (^)(NSObject *response, NSError *error,ErrorMessage *errorMessage))block{
+            blockArray:(BSHTTPResponse)block{
     [self removeLoginUser:user];
 }
+
 -(void)removeLoginUser:(LoginUser *) user{
     NSMutableArray * bsList=[self localForLoginUser ];
     NSString *path = [self pathForLoginUser];
@@ -149,7 +186,7 @@ static UserSession *session;
 
 #pragma mark -登陆方法
 -(void)loginWithUser:(LoginUser *) user
-          blockArray:(void (^)(NSObject *response, NSError *error,ErrorMessage *errorMessage))block{
+          blockArray:(BSHTTPResponse)block{
     BSLog(@"loginWithUser");
 }
 @end

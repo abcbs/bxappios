@@ -102,8 +102,9 @@
 
     //验证码
     self.checkNumber.text=nil;
-
     
+    //图片
+    self.headerImage.image=[UIImage imageNamed:@"a9-xiao-120.png"];
 
 }
 
@@ -229,10 +230,9 @@
     //营业执照
     if (isEdit) {
         [self.editDelegate editedLoginUser:self.loginUser  blockArray:^(NSObject *response,NSError *error,ErrorMessage *errorMessage){
-            alert = [self displayAlert];
-            [alert show];
+            [self.navigationController popViewControllerAnimated:YES];
         }];
-        [self.navigationController popViewControllerAnimated:YES];
+        
        
     }
     if (!isEdit)
@@ -254,24 +254,17 @@
         if (self.editDelegate) {
             [self.editDelegate addLoginUser:self.loginUser
                                  blockArray:^(NSObject *response,NSError *error,ErrorMessage *errorMessage){
-                                     
-                                     alert =[self displayAlert];
-                                     //通过给定标题添加按钮
-                                     [alert show];
-                                     
+                                     [self nextData];
                                  }];
-            [self nextData];
-
         }else{//由TabBar进入得应当到登陆界面
             UserManager *um=[UserManager userManager];
             [um insertLoginUser:self.loginUser
                      blockArray:^(NSObject *response,NSError *error,ErrorMessage *errorMessage){
-                         BSLog(@"UserManager");
                          alert =[self displayAlert];
                          [alert show];
                      }
              ];
-             //[self.navigationController popViewControllerAnimated:YES];
+            
         }
         
     }
@@ -288,7 +281,7 @@
 {
     
     UIBarButtonItem *rightButton = [[UIBarButtonItem alloc]
-                                    initWithTitle:@"保存" style:UIBarButtonItemStylePlain target:self action:@selector(saveData)];
+                                    initWithTitle:@"下一个" style:UIBarButtonItemStylePlain target:self action:@selector(saveData)];
     self.navigationItem.rightBarButtonItem = rightButton;
     self.loginUser=nil;
     self.loginUser=[LoginUser new];

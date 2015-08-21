@@ -42,7 +42,7 @@ static RemoteUserManager *instance;
     return nil;
 }
 
--(void)updateLoginUser:(LoginUser *) user
+-(void)updateLoginUser:(LoginUser *) user atIndex:(NSInteger)index
             blockArray:(BSHTTPResponse)block{
      BSLog(@"更新登陆数据");
 }

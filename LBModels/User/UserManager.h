@@ -10,6 +10,7 @@
 #import "LoginUser.h"
 #import "ErrorMessage.h"
 #import "UserSession.h"
+#import "Conf.h"
 
 @interface UserManager : NSObject
 
@@ -28,30 +29,31 @@
 #pragma mark -商家经营类型
 -(NSMutableArray *) loadLoginUser:(LoginUser *)user;
 
--(NSMutableArray *) loadLoginUser:(LoginUser *)user  blockArray:(void (^)(NSObject *response, NSError *error,ErrorMessage *errorMessage))block; 
+-(NSMutableArray *) loadLoginUser:(LoginUser *)user
+                       blockArray:(BSHTTPResponse)block;
 
 - (void)insertLoginUser:(LoginUser *) user;
 
 -(void)insertLoginUser:(LoginUser *) user
-            blockArray:(void (^)(NSObject *response, NSError *error,ErrorMessage *errorMessage))block;
+            blockArray:(BSHTTPResponse)block;
 
 
 -(void)updateLoginUser:(LoginUser *) user
                       atIndex:(NSInteger)index;
 
--(void)updateLoginUser:(LoginUser *) user
-            blockArray:(void (^)(NSObject *response, NSError *error,ErrorMessage *errorMessage))block;
+-(void)updateLoginUser:(LoginUser *) user atIndex:(NSInteger)index
+            blockArray:(BSHTTPResponse)block;
 
 -(void)removeLoginUser:(LoginUser *) user;
 
 -(void)removeLoginUser:(LoginUser *) user
-            blockArray:(void (^)(NSObject *response, NSError *error,ErrorMessage *errorMessage))block;
+            blockArray:(BSHTTPResponse)block;
 
 -(void)removeLoginUserWithIndex:(NSInteger) index;
 
 
 #pragma mark -登陆方法
 -(void)loginWithUser:(LoginUser *) user
-            blockArray:(void (^)(NSObject *response, NSError *error,ErrorMessage *errorMessage))block;
+            blockArray:(BSHTTPResponse)block;
 
 @end

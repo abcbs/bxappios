@@ -197,7 +197,7 @@ titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
     [self.tableView reloadData];
     UserManager *um=[UserManager userManager];
     
-    [um updateLoginUser:user blockArray:block];
+    [um updateLoginUser:user atIndex:_bsIndex blockArray:block];
 }
 
 /**

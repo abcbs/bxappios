@@ -18,7 +18,7 @@
 -(void)insertLoginUser:(LoginUser *) user
             blockArray:(BSHTTPResponse)block;
 
--(void)updateLoginUser:(LoginUser *) user
+-(void)updateLoginUser:(LoginUser *) user atIndex:(NSInteger)index
             blockArray:(BSHTTPResponse)block;
 
 
