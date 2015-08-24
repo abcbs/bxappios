@@ -25,6 +25,18 @@
                 identity:@"LOLoginAppViewController"
                 canUseStoryboard:YES];
         }
+        
+        if (bs.canUseStoryboard) {
+            //需要修改跳转的Controller
+            //将原来的bsContentObject设置为bs的跳转方法
+            //
+            bs.method=@"bsContentObject";
+            bs.neededMethodData=bsContentObject;//没有copy方法则报错
+            [BSContentObjectNavigation prepareControllWithStorybord:viewController bsContentObject:bs];
+        }else{
+            [BSContentObjectNavigation prepareControllWithNib:viewController bsContentObject:bs];
+        }
+        return;
     }
     if (bs.canUseStoryboard) {
         [BSContentObjectNavigation prepareControllWithStorybord:viewController bsContentObject:bs];

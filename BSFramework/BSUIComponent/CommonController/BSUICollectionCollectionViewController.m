@@ -54,6 +54,9 @@
 
 - (void)viewDidAppear:(BOOL)animated{
     BSLog(@"BSUICollectionCollectionViewController viewDidAppear,%@",self.description);
+    [BSUIComponentView changeTabBarWithNotification:self addedInfo:self.inform];
+    [BSUIComponentView initNavigationWithPermission:self];
+    [self modifiedStyle];
     
 }
 #pragma mark --默认处理方法

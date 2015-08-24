@@ -33,4 +33,9 @@
 #import "BSSecurity.h"
 
 #import "BSSecurityFactory.h"
+
+//md5,sha1
+#import "NSData+CommonCrypto.h"
+
+
 #endif

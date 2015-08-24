@@ -9,6 +9,7 @@
 #import "BSSecurityFactory.h"
 #import "BSSecurity.h"
 #import "BSDesSecurity.h"
+#import "BSAesSecurity.h"
 
 @implementation BSSecurityFactory
 
@@ -24,6 +25,9 @@
             break;
         case BSEncryptionAlgorithmDES:
             instance= [BSDesSecurity sharedBSSecurity];
+            break;
+        case BSEncryptionAlgorithmAES:
+            instance= [BSAesSecurity sharedBSSecurity];
             break;
         default:
             instance= [BSSecurity sharedBSSecurity];

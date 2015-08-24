@@ -10,6 +10,7 @@
 #import "BSUIFrameworkHeader.h"
 #import "RemoteUserManager.h"
 #import "UserSession.h"
+#import "NSData+CommonCrypto.h"
 
 static const char *const kDataLocalOperationQueueName = "kDataLocalOperationQueue";
 
@@ -188,5 +189,13 @@ static UserSession *session;
 -(void)loginWithUser:(LoginUser *) user
           blockArray:(BSHTTPResponse)block{
     BSLog(@"loginWithUser");
+    UserSession *us=[UserSession new];
+    us.sessionId=[user.userName md5_base64];
+    us.username=user.userName;
+    us.status=@"1";
+    if (block) {
+        block(us,nil,nil);
+        
+    }
 }
 @end

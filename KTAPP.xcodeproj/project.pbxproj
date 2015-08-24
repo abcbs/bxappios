@@ -189,6 +189,10 @@
 		844570DC1B4D67D5000CA1C7 /* BTLEPeripheralViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844570D71B4D67D5000CA1C7 /* BTLEPeripheralViewController.m */; };
 		844A32061B4064310045CA6C /* BSUIBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 844A32051B4064310045CA6C /* BSUIBarButtonItem.m */; };
 		844E50BB1B2F2EE500A69F91 /* BSHTTPNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 844E50B41B2F2EE500A69F91 /* BSHTTPNetworking.m */; };
+		844FFE901B8B4C4600658A36 /* BSAesSecurity.m in Sources */ = {isa = PBXBuildFile; fileRef = 844FFE8F1B8B4C4600658A36 /* BSAesSecurity.m */; };
+		844FFE911B8B4C4600658A36 /* BSAesSecurity.m in Sources */ = {isa = PBXBuildFile; fileRef = 844FFE8F1B8B4C4600658A36 /* BSAesSecurity.m */; };
+		844FFE941B8B542300658A36 /* NSData+CommonCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 844FFE931B8B542300658A36 /* NSData+CommonCrypto.m */; };
+		844FFE951B8B542300658A36 /* NSData+CommonCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 844FFE931B8B542300658A36 /* NSData+CommonCrypto.m */; };
 		84517B761B8438C900469111 /* libKT-LO-Controller.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 847415C31B63AF90005BF59D /* libKT-LO-Controller.a */; };
 		84517B781B86124600469111 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84517B771B86124600469111 /* CFNetwork.framework */; };
 		84517B791B86125300469111 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E511A511AF07DB800BF1D03 /* CoreGraphics.framework */; };
@@ -1647,6 +1651,10 @@
 		844A32051B4064310045CA6C /* BSUIBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUIBarButtonItem.m; sourceTree = "<group>"; };
 		844E50B31B2F2EE500A69F91 /* BSHTTPNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSHTTPNetworking.h; sourceTree = "<group>"; };
 		844E50B41B2F2EE500A69F91 /* BSHTTPNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSHTTPNetworking.m; sourceTree = "<group>"; };
+		844FFE8E1B8B4C4600658A36 /* BSAesSecurity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSAesSecurity.h; sourceTree = "<group>"; };
+		844FFE8F1B8B4C4600658A36 /* BSAesSecurity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSAesSecurity.m; sourceTree = "<group>"; };
+		844FFE921B8B542300658A36 /* NSData+CommonCrypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+CommonCrypto.h"; sourceTree = "<group>"; };
+		844FFE931B8B542300658A36 /* NSData+CommonCrypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+CommonCrypto.m"; sourceTree = "<group>"; };
 		84517B771B86124600469111 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		84517B7A1B86129A00469111 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		84517BA21B8626FE00469111 /* APService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APService.h; sourceTree = "<group>"; };
@@ -3563,6 +3571,8 @@
 				84F84AD91B7C4E2B008DF38F /* BSDesSecurity.m */,
 				84F84ADC1B7C5A8C008DF38F /* BSSecurityFactory.h */,
 				84F84ADD1B7C5A8C008DF38F /* BSSecurityFactory.m */,
+				844FFE8E1B8B4C4600658A36 /* BSAesSecurity.h */,
+				844FFE8F1B8B4C4600658A36 /* BSAesSecurity.m */,
 			);
 			path = Security;
 			sourceTree = "<group>";
@@ -4045,6 +4055,8 @@
 		84DAA4A11B7AE6120070BF83 /* Crypto */ = {
 			isa = PBXGroup;
 			children = (
+				844FFE921B8B542300658A36 /* NSData+CommonCrypto.h */,
+				844FFE931B8B542300658A36 /* NSData+CommonCrypto.m */,
 				84F84AD41B7C4BA3008DF38F /* BSDesCrypto.h */,
 				84F84AD51B7C4BA3008DF38F /* BSDesCrypto.m */,
 				84DAA4A21B7AE6120070BF83 /* BSRSACrypto.h */,
@@ -6111,6 +6123,7 @@
 				84DB2F081B7CCB700041588B /* ESSTimer.m in Sources */,
 				84F28FD41B62BB31001078D8 /* BSPhotoViewController.m in Sources */,
 				844570DA1B4D67D5000CA1C7 /* BTLECentralViewController.m in Sources */,
+				844FFE911B8B4C4600658A36 /* BSAesSecurity.m in Sources */,
 				84F84ADB1B7C4E2B008DF38F /* BSDesSecurity.m in Sources */,
 				84D19FF11B4C440500BA25BF /* LeTemperatureAlarmService.m in Sources */,
 				844570DC1B4D67D5000CA1C7 /* BTLEPeripheralViewController.m in Sources */,
@@ -6135,6 +6148,7 @@
 				84BF8FDE1B4AC2FA001042F1 /* BSUITabBarCommonController.m in Sources */,
 				84BF8FE01B4AC2FA001042F1 /* BSContentObjectNavigation.m in Sources */,
 				84BF8FE21B4AC2FA001042F1 /* BSFCRollingADImageUIView.m in Sources */,
+				844FFE951B8B542300658A36 /* NSData+CommonCrypto.m in Sources */,
 				846FC4571B7FA65100496F96 /* ESSBeaconIssue.m in Sources */,
 				84BF8FE51B4AC2FA001042F1 /* BSUIImageTitleTableViewCell.m in Sources */,
 				844570CE1B4D63F8000CA1C7 /* BLEDevicesTableViewController.m in Sources */,
@@ -6453,6 +6467,7 @@
 				8405CBB91B5573770014AF8D /* BusinessProductComment.m in Sources */,
 				847433131B2A915C00B030C4 /* myWallet.m in Sources */,
 				847432D01B2A8AF700B030C4 /* VPImageCropperViewController.m in Sources */,
+				844FFE901B8B4C4600658A36 /* BSAesSecurity.m in Sources */,
 				A0F0C3EA1B10209500CE406D /* DeleteShoppingCartResult.m in Sources */,
 				A0F0C3F81B10209500CE406D /* UpdateShoppingCartRequest.m in Sources */,
 				84E9D7AA1B61E10C00F2CD24 /* BSVideoIndicatorView.m in Sources */,
@@ -6476,6 +6491,7 @@
 				847076641B3A9DFB00F28180 /* BSTableSection.m in Sources */,
 				845A022C1B3DABF0007F5327 /* Conf.m in Sources */,
 				84BA96791B2829D500388B58 /* BusinessManager.m in Sources */,
+				844FFE941B8B542300658A36 /* NSData+CommonCrypto.m in Sources */,
 				84D19FE71B4C36EC00BA25BF /* LeTemperatureAlarmService.m in Sources */,
 				847433121B2A915C00B030C4 /* cardBinding.m in Sources */,
 				84DAA4A41B7AE6120070BF83 /* BSRSACrypto.m in Sources */,

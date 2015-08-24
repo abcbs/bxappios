@@ -233,7 +233,7 @@ extern float autoSizeScaleY;
 /**
  *人员角色
  */
-#define DEFAULT_ROLE NO
+#define DEFAULT_ROLE YES
 
 //一般用户、商户联系人、商户法人、运营人员
 #define USER_TYPE_COMMON   @"0"

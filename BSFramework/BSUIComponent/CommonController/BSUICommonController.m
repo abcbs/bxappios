@@ -41,6 +41,8 @@
 
     BSLog(@"viewDidAppear 对象的视图已经加入到窗口时调用,%@",self.description);
     [BSUIComponentView changeTabBarWithNotification:self addedInfo:self.inform];
+    [BSUIComponentView initNavigationWithPermission:self];
+    [self modifiedStyle];
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder
@@ -72,7 +74,7 @@
 
 -(void)modifiedStyle{
     BSLog(@"根据权限修改元素显示，子类需实现");
-    [BSUIComponentView initNavigationWithPermission:self];
+    
 }
 
 /**

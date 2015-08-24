@@ -61,8 +61,11 @@
     return self;
 }
 - (void)viewDidAppear:(BOOL)animated{
+    
     BSLog(@"BSUICommonController viewDidAppear,%@",self.description);
     [BSUIComponentView changeTabBarWithNotification:self addedInfo:self.inform];
+    [BSUIComponentView initNavigationWithPermission:self];
+    [self modifiedStyle];
 }
 
 
@@ -100,7 +103,7 @@
 
 -(void)modifiedStyle{
     BSLog(@"根据权限修改元素显示，子类需实现");
-    [BSUIComponentView initNavigationWithPermission:self];
+
 }
 
 #pragma mark --默认返回方法，仅仅在人工提供的状态栏中使用
@@ -157,6 +160,7 @@
     bsContentObject.noNeedLoginCheck=check;
     [self navigating:bsContentObject];
 }
+
 
 #pragma mark --功能装配控制器的跳转方法
 -(void)navigating:(BSTableContentObject*)bsContentObject{

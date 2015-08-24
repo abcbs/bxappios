@@ -107,9 +107,18 @@
     [self.resetPasswordButton setEnabled:NO];
     BSSecurity *security=[BSSecurityFactory
                           initBSecurity:BSEncryptionAlgorithmRSA];
+   
     NSString *encrAcc=[security encryptString:self.account.text];
     BSLog(@"加密账户信息为:\t%@",encrAcc);
+     /*
+    BSSecurity *aessecurity=[BSSecurityFactory
+                          initBSecurity:BSEncryptionAlgorithmAES];
+    NSString *aesAcc=[aessecurity encryptString:self.account.text];
+    BSLog(@"加密账户信息为:\t%@",aesAcc);
     
+    NSString *aesdd=[aessecurity decryptString:aesAcc];
+    BSLog(@"AES账户信息为:\t%@",aesdd);
+    */
     //NSHTTPCookieStorage *cookieStorage=nil;
     //NSHTTPCookie  *cookie=nil;
     /*
@@ -139,7 +148,11 @@
         [self.loginButton setEnabled:YES];
         
         [self.resetPasswordButton setEnabled:YES];
-        [self.navigationController popViewControllerAnimated:YES];
+        if (self.bsContentObject) {
+            [self navigating:self.bsContentObject];
+        }else {
+            [self.navigationController popViewControllerAnimated:YES];
+        }
        }
     ];
     

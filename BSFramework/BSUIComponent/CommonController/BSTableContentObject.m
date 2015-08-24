@@ -25,6 +25,9 @@
 @synthesize canUseStoryboard;
 @synthesize noNeedLoginCheck;
 
+- (id)copyWithZone:(NSZone *)zone {
+    return self;
+}
 -(instancetype)initWithContentObject:(NSString *)title methodName:(NSString *)name
                            imageName:(NSString *)imageName vcClass:(NSString *)clzzName colClass:(Class)clzz{
     self = [super init];
@@ -49,9 +52,6 @@
     self.colImageName=imageName;
     self.storybordName=storybord;
     self.canUseStoryboard=YES;
-    return self;
-
-    
     return self;
     
 }

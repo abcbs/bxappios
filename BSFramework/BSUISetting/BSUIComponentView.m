@@ -10,6 +10,7 @@
 #import "BSUIFrameworkHeader.h"
 #import "BSUIBlockButton.h"
 #import "BSUIBarButtonItem.h"
+#import "UserManager.h"
 
 #define CONFIRM_TITLE @"错误提示"
 #define CONFIRM_BUTTON_NAME @"确定"
@@ -257,6 +258,7 @@ BSDeprecated("建议使用统一处理方式，使用initNavigationHeaderWithDef
     if (!searchItem&&!returnItem) {//有两类按钮
         [BSUIComponentView initNarHeaderWithDefault:currentController
                                               title:title];
+        //默认动作
     }else if (!searchItem&&returnItem){//有查询没有返回，左侧按钮删除
         currentController.navigationItem.leftBarButtonItem=nil;
         currentController.navigationItem.leftBarButtonItems=nil;
@@ -469,7 +471,8 @@ BSDeprecated("建议使用统一处理方式，使用initNavigationHeaderWithDef
 }
 
 +(void )initNavigationWithPermission:(UIViewController *)viewController{
-    if (DEFAULT_ROLE) {
+    BOOL isLogin=[UserManager checkSession];
+    if (!isLogin) {
         viewController.navigationItem.rightBarButtonItem=nil;
         viewController.navigationItem.rightBarButtonItems=nil;
     }

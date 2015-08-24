@@ -58,6 +58,8 @@
 - (void)viewDidAppear:(BOOL)animated{
     BSLog(@"BSUICommonController viewDidAppear,%@",self.description);
     [BSUIComponentView changeTabBarWithNotification:self addedInfo:self.inform];
+    [BSUIComponentView initNavigationWithPermission:self];
+    [self modifiedStyle];
     
 }
 
@@ -94,8 +96,6 @@
 #pragma mark --默认处理方法
 -(void)modifiedStyle{
     BSLog(@"根据权限修改元素显示，公共权限控制导航栏，右侧按钮，子类需实现");
-    [BSUIComponentView initNavigationWithPermission:self];
-    
 }
 #pragma mark --默认返回方法，仅仅在人工提供的状态栏中使用
 - (void)backClick{
@@ -142,6 +142,14 @@
 #pragma mark --编码或者不在一个故事板中得跳转方法
 -(void)navigating:(UIViewController *)callerController storybord:(NSString *)storybordName identity:(NSString *)identity canUseStoryboard:(BOOL)useStoryboard{
     BSTableContentObject * bsContentObject=[BSTableContentObject initWithController:callerController storybord:storybordName identity:identity canUseStoryboard:useStoryboard];
+    [self navigating:bsContentObject];
+}
+
+
+#pragma mark --编码或者不在一个故事板中得跳转方法
+-(void)navigating:(UIViewController *)callerController storybord:(NSString *)storybordName identity:(NSString *)identity canUseStoryboard:(BOOL)useStoryboard noLoginCheck:(BOOL) check{
+    BSTableContentObject * bsContentObject=[BSTableContentObject initWithController:callerController storybord:storybordName identity:identity canUseStoryboard:useStoryboard];
+    bsContentObject.noNeedLoginCheck=check;
     [self navigating:bsContentObject];
 }
 

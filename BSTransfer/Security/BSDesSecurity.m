@@ -16,7 +16,6 @@
     self = [super init];
     if (self) {
         self.des = [[BSDesCrypto alloc] init];
-        //default padding bettween java and ios
        
     }
     return self;

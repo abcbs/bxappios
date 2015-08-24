@@ -76,6 +76,8 @@
     
     return [self.securityBSRSACrypto decryptWithPrivateKey:plainData];;
 }
+
+
 - (NSString *)decryptString:(NSString *)plainText{
     NSData *data = [plainText base64DecodedData];
 
