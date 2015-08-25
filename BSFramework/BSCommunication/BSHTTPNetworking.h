@@ -30,23 +30,8 @@ typedef void (^BSHTTPRequestFailure)(NSError *error);
 
 @interface BSHTTPNetworking : NSObject
 
-+ (instancetype)manager;
-
-- (instancetype)initWithManager;
 
 +(instancetype)httpManager;
-
-
-
-- (AFHTTPRequestOperation *)GET:(NSString *)URLString
-                            parameters:(id)parameters
-                            success:(BSAFRequestSuccess)success
-                            failure:(BSAFRequestFailure)failure;
-
-- (AFHTTPRequestOperation *)POST:(NSString *)URLString
-                            parameters:(id)parameters
-                            success:(BSAFRequestSuccess)success
-                            failure:(BSAFRequestFailure)failure;
 
 +(void)httpGET:(NSString *)restPath
     pathPattern:(NSString * )pathPattern

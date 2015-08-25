@@ -17,7 +17,7 @@
 
 @property (nonatomic, strong) AFHTTPRequestOperationManager *bsmanager;
 
-@property (nonatomic, strong) YYHModelRouter *router;
+@property (nonatomic, strong) BSModelRouter *router;
 
 @end
 
@@ -28,11 +28,11 @@
 @synthesize router;
 
 
-
+/*
 + (instancetype)manager {
     return [[super alloc] initWithManager];
 }
-
+*/
 
 
 +(instancetype)httpManager
@@ -46,7 +46,7 @@
         return nil;
     }
     if(!self.router) {
-        self.router=  [[YYHModelRouter alloc]
+        self.router=  [[BSModelRouter alloc]
                        initWithBaseURL:[NSURL URLWithString:KBS_URL]];
     }
     return self;
@@ -248,73 +248,4 @@
 }
 
 
-#pragma mark - AFHTTPRequestOperation Handles
-
-- (instancetype)initWithManager
-{
-    self = [super init];
-    if (!self) {
-        return nil;
-    }
-    if(!self.bsmanager) {
-       self.bsmanager= [AFHTTPRequestOperationManager manager];
-    }
-    return self;
-
-}
-
-
-- (AFHTTPRequestOperation *)GET:(NSString *)URLString
-                            parameters:(id)parameters
-                            success:(BSAFRequestSuccess)success
-                            failure:(BSAFRequestFailure)failure
-{
-    
-    return [bsmanager GET:URLString parameters:parameters
-                  success:[self requestSuccessBlockWithAFHTTPRequestOperation:success failure:failure]
-                  failure:[self requestFailureBlockWithAFHTTPRequestOperation:success failure:failure]];
-    
-}
-
-- (AFHTTPRequestOperation *)POST:(NSString *)URLString
-                            parameters:(id)parameters
-                            success:(BSAFRequestSuccess)success
-                            failure:(BSAFRequestFailure)failure
-{
-    
-    //申明返回的结果是json类型
-    bsmanager.responseSerializer = [AFJSONResponseSerializer serializer];
-    //申明请求的数据是json类型
-    bsmanager.requestSerializer=[AFJSONRequestSerializer serializer];
-    return [bsmanager POST:URLString
-                parameters:parameters
-                   success:[self requestSuccessBlockWithAFHTTPRequestOperation:success failure:failure]
-                   failure:[self requestFailureBlockWithAFHTTPRequestOperation:success failure:failure]
-            ];
-}
-
-
-- (void (^)(AFHTTPRequestOperation *operation, id responseObject))requestSuccessBlockWithAFHTTPRequestOperation:(BSAFRequestSuccess)success
-    failure:(BSAFRequestFailure)failure
-{
-    return ^(AFHTTPRequestOperation *operation, id responseObject) {
-        if (success) {
-            success(operation,responseObject);
-        }
-        
-    };
-}
-
-- (void (^)(AFHTTPRequestOperation *operation, NSError *error))requestFailureBlockWithAFHTTPRequestOperation:(BSAFRequestSuccess)success
-    failure:(BSAFRequestFailure)failure
-{
-    return ^(AFHTTPRequestOperation *operation, NSError *error) {
-        if (failure) {
-           //failure(operation,error);
-            [BSUIComponentView
-             confirmUIAlertView:error.description
-             ];
-        }
-    };
-}
 @end

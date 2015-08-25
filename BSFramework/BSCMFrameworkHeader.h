@@ -17,7 +17,7 @@
 
 #import "AFNetworking.h"
 
-#import "YYHModelRouter.h"
+#import "BSModelRouter.h"
 
 #import "AFNetworkActivityLogger.h"
 

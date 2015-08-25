@@ -106,15 +106,16 @@
 		8412CA8D1B79EB12004EDFAB /* rsaCertReq.csr in Resources */ = {isa = PBXBuildFile; fileRef = 8412CA7A1B79EB12004EDFAB /* rsaCertReq.csr */; };
 		8412CA8E1B79EB12004EDFAB /* rsaCertReq.csr in Resources */ = {isa = PBXBuildFile; fileRef = 8412CA7A1B79EB12004EDFAB /* rsaCertReq.csr */; };
 		8412CA8F1B79EB12004EDFAB /* rsaCertReq.csr in Resources */ = {isa = PBXBuildFile; fileRef = 8412CA7A1B79EB12004EDFAB /* rsaCertReq.csr */; };
+		841F95051B8C54D1001B26B5 /* BSModelSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 841F95041B8C54D1001B26B5 /* BSModelSerializer.m */; };
+		841F95061B8C54D1001B26B5 /* BSModelSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 841F95041B8C54D1001B26B5 /* BSModelSerializer.m */; };
 		842042A21B2983B40002C868 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8420429F1B2983B40002C868 /* AppDelegate.m */; };
 		842042AE1B2984D80002C868 /* KTCarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 842042A71B2984D80002C868 /* KTCarCell.m */; };
 		842042AF1B2984D80002C868 /* KTCarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842042A81B2984D80002C868 /* KTCarCell.xib */; };
 		842042B01B2984D80002C868 /* KTCartFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 842042AA1B2984D80002C868 /* KTCartFooterView.m */; };
 		842042B11B2984D80002C868 /* KTCartTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 842042AC1B2984D80002C868 /* KTCartTableView.m */; };
 		842042B21B2984D80002C868 /* KTCartTableView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 842042AD1B2984D80002C868 /* KTCartTableView.storyboard */; };
-		842042BF1B29881B0002C868 /* YYHMantleModelSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 842042BE1B29881B0002C868 /* YYHMantleModelSerializer.m */; };
-		842042C51B2988410002C868 /* YYHModelRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = 842042C11B2988410002C868 /* YYHModelRoute.m */; };
-		842042C61B2988410002C868 /* YYHModelRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 842042C31B2988410002C868 /* YYHModelRouter.m */; };
+		842042C51B2988410002C868 /* BSModelRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = 842042C11B2988410002C868 /* BSModelRoute.m */; };
+		842042C61B2988410002C868 /* BSModelRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 842042C31B2988410002C868 /* BSModelRouter.m */; };
 		842043721B2991770002C868 /* DLLRUCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 842043631B2991770002C868 /* DLLRUCache.m */; };
 		842043731B2991770002C868 /* DLCustomSlideView.m in Sources */ = {isa = PBXBuildFile; fileRef = 842043651B2991770002C868 /* DLCustomSlideView.m */; };
 		842043741B2991770002C868 /* DLSlideView.m in Sources */ = {isa = PBXBuildFile; fileRef = 842043671B2991770002C868 /* DLSlideView.m */; };
@@ -800,9 +801,8 @@
 		84BF8FF11B4AC2FA001042F1 /* BSUIComponentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E97AB61B307535001D4100 /* BSUIComponentView.m */; };
 		84BF8FF31B4AC2FA001042F1 /* BSUIBlockButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8474DEAA1B3F474700D9DE36 /* BSUIBlockButton.m */; };
 		84BF8FF61B4AC2FA001042F1 /* BSUIBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 844A32051B4064310045CA6C /* BSUIBarButtonItem.m */; };
-		84BF8FFA1B4AC2FA001042F1 /* YYHMantleModelSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 842042BE1B29881B0002C868 /* YYHMantleModelSerializer.m */; };
-		84BF8FFC1B4AC2FA001042F1 /* YYHModelRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = 842042C11B2988410002C868 /* YYHModelRoute.m */; };
-		84BF8FFE1B4AC2FA001042F1 /* YYHModelRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 842042C31B2988410002C868 /* YYHModelRouter.m */; };
+		84BF8FFC1B4AC2FA001042F1 /* BSModelRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = 842042C11B2988410002C868 /* BSModelRoute.m */; };
+		84BF8FFE1B4AC2FA001042F1 /* BSModelRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 842042C31B2988410002C868 /* BSModelRouter.m */; };
 		84BF90421B4AC5DB001042F1 /* BusinessManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BA96491B2829D500388B58 /* BusinessManager.m */; };
 		84BF90441B4AC5DB001042F1 /* CustomerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BA964C1B2829D500388B58 /* CustomerManager.m */; };
 		84BF90461B4AC634001042F1 /* PayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BA96641B2829D500388B58 /* PayManager.m */; };
@@ -1545,6 +1545,8 @@
 		8412CA781B79EB12004EDFAB /* rsa_public_key.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = rsa_public_key.pem; sourceTree = "<group>"; };
 		8412CA791B79EB12004EDFAB /* rsaCert.crt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = rsaCert.crt; sourceTree = "<group>"; };
 		8412CA7A1B79EB12004EDFAB /* rsaCertReq.csr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = rsaCertReq.csr; sourceTree = "<group>"; };
+		841F95031B8C54D1001B26B5 /* BSModelSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSModelSerializer.h; sourceTree = "<group>"; };
+		841F95041B8C54D1001B26B5 /* BSModelSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSModelSerializer.m; sourceTree = "<group>"; };
 		8420429E1B2983B40002C868 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8420429F1B2983B40002C868 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		842042A61B2984D80002C868 /* KTCarCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTCarCell.h; sourceTree = "<group>"; };
@@ -1555,13 +1557,11 @@
 		842042AB1B2984D80002C868 /* KTCartTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTCartTableView.h; sourceTree = "<group>"; };
 		842042AC1B2984D80002C868 /* KTCartTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTCartTableView.m; sourceTree = "<group>"; };
 		842042AD1B2984D80002C868 /* KTCartTableView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = KTCartTableView.storyboard; sourceTree = "<group>"; };
-		842042BD1B29881B0002C868 /* YYHMantleModelSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYHMantleModelSerializer.h; sourceTree = "<group>"; };
-		842042BE1B29881B0002C868 /* YYHMantleModelSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYHMantleModelSerializer.m; sourceTree = "<group>"; };
-		842042C01B2988410002C868 /* YYHModelRoute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYHModelRoute.h; sourceTree = "<group>"; };
-		842042C11B2988410002C868 /* YYHModelRoute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYHModelRoute.m; sourceTree = "<group>"; };
-		842042C21B2988410002C868 /* YYHModelRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYHModelRouter.h; sourceTree = "<group>"; };
-		842042C31B2988410002C868 /* YYHModelRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYHModelRouter.m; sourceTree = "<group>"; };
-		842042C41B2988410002C868 /* YYHModelSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYHModelSerialization.h; sourceTree = "<group>"; };
+		842042C01B2988410002C868 /* BSModelRoute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSModelRoute.h; sourceTree = "<group>"; };
+		842042C11B2988410002C868 /* BSModelRoute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSModelRoute.m; sourceTree = "<group>"; };
+		842042C21B2988410002C868 /* BSModelRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSModelRouter.h; sourceTree = "<group>"; };
+		842042C31B2988410002C868 /* BSModelRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSModelRouter.m; sourceTree = "<group>"; };
+		842042C41B2988410002C868 /* BSModelSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSModelSerialization.h; sourceTree = "<group>"; };
 		842043611B2991770002C868 /* DLCacheProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLCacheProtocol.h; sourceTree = "<group>"; };
 		842043621B2991770002C868 /* DLLRUCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLLRUCache.h; sourceTree = "<group>"; };
 		842043631B2991770002C868 /* DLLRUCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLLRUCache.m; sourceTree = "<group>"; };
@@ -3831,7 +3831,7 @@
 				848C7C341B79A38A000774A1 /* Base64 */,
 				848C7C2F1B79A293000774A1 /* Security */,
 				84BA968F1B2829FC00388B58 /* Serializers */,
-				84BA96911B2829FC00388B58 /* YYHModelRouter */,
+				84BA96911B2829FC00388B58 /* HttpRouter */,
 			);
 			path = BSTransfer;
 			sourceTree = "<group>";
@@ -3839,29 +3839,22 @@
 		84BA968F1B2829FC00388B58 /* Serializers */ = {
 			isa = PBXGroup;
 			children = (
-				84BA96901B2829FC00388B58 /* Mantle */,
+				841F95031B8C54D1001B26B5 /* BSModelSerializer.h */,
+				841F95041B8C54D1001B26B5 /* BSModelSerializer.m */,
 			);
 			path = Serializers;
 			sourceTree = "<group>";
 		};
-		84BA96901B2829FC00388B58 /* Mantle */ = {
+		84BA96911B2829FC00388B58 /* HttpRouter */ = {
 			isa = PBXGroup;
 			children = (
-				842042BD1B29881B0002C868 /* YYHMantleModelSerializer.h */,
-				842042BE1B29881B0002C868 /* YYHMantleModelSerializer.m */,
+				842042C01B2988410002C868 /* BSModelRoute.h */,
+				842042C11B2988410002C868 /* BSModelRoute.m */,
+				842042C21B2988410002C868 /* BSModelRouter.h */,
+				842042C31B2988410002C868 /* BSModelRouter.m */,
+				842042C41B2988410002C868 /* BSModelSerialization.h */,
 			);
-			path = Mantle;
-			sourceTree = "<group>";
-		};
-		84BA96911B2829FC00388B58 /* YYHModelRouter */ = {
-			isa = PBXGroup;
-			children = (
-				842042C01B2988410002C868 /* YYHModelRoute.h */,
-				842042C11B2988410002C868 /* YYHModelRoute.m */,
-				842042C21B2988410002C868 /* YYHModelRouter.h */,
-				842042C31B2988410002C868 /* YYHModelRouter.m */,
-				842042C41B2988410002C868 /* YYHModelSerialization.h */,
-			);
+			name = HttpRouter;
 			path = YYHModelRouter;
 			sourceTree = "<group>";
 		};
@@ -6111,6 +6104,7 @@
 				84F84AD71B7C4BA3008DF38F /* BSDesCrypto.m in Sources */,
 				8425E18C1B67644200A93C43 /* BSPhotoTakeController.m in Sources */,
 				8461B72C1B54BAB5002A7C43 /* KTHandyViewController.m in Sources */,
+				841F95061B8C54D1001B26B5 /* BSModelSerializer.m in Sources */,
 				84D19FED1B4C440500BA25BF /* BSBLEViewController.m in Sources */,
 				844570D21B4D672D000CA1C7 /* BLEInfo.m in Sources */,
 				84D19FEF1B4C440500BA25BF /* LeDiscovery.m in Sources */,
@@ -6168,12 +6162,11 @@
 				844570CA1B4D6323000CA1C7 /* BLEDeviceDetailsTableViewController.m in Sources */,
 				84E9D7A51B61E10C00F2CD24 /* BSImagePickerController.m in Sources */,
 				848C7C331B79A301000774A1 /* BSSecurity.m in Sources */,
-				84BF8FFA1B4AC2FA001042F1 /* YYHMantleModelSerializer.m in Sources */,
 				84E6C0991B7DD06C00289D94 /* ESSIssueViewController.m in Sources */,
 				84517BB51B8628F800469111 /* BSTRPushHelper.m in Sources */,
 				84E9D79B1B61E10C00F2CD24 /* BSAlbumCell.m in Sources */,
-				84BF8FFC1B4AC2FA001042F1 /* YYHModelRoute.m in Sources */,
-				84BF8FFE1B4AC2FA001042F1 /* YYHModelRouter.m in Sources */,
+				84BF8FFC1B4AC2FA001042F1 /* BSModelRoute.m in Sources */,
+				84BF8FFE1B4AC2FA001042F1 /* BSModelRouter.m in Sources */,
 				84BF8FAD1B4ABC88001042F1 /* BSUICommonController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -6361,7 +6354,7 @@
 				845A02351B3DBA7E007F5327 /* UIView+Frame.m in Sources */,
 				84052EA01B73856500FAB304 /* UserManager.m in Sources */,
 				84832D591B565DAC00FB6D28 /* OrderCartsDomain.m in Sources */,
-				842042C51B2988410002C868 /* YYHModelRoute.m in Sources */,
+				842042C51B2988410002C868 /* BSModelRoute.m in Sources */,
 				84BA96861B2829D500388B58 /* WaterSendingDetails.m in Sources */,
 				8470765B1B3A8F1400F28180 /* adsCell.m in Sources */,
 				842043741B2991770002C868 /* DLSlideView.m in Sources */,
@@ -6386,6 +6379,7 @@
 				844570CD1B4D63F8000CA1C7 /* BLEDevicesTableViewController.m in Sources */,
 				8405CB7C1B5564A90014AF8D /* BusinessActivity.m in Sources */,
 				8474DEA31B3F004B00D9DE36 /* KTLBNavigationController.m in Sources */,
+				841F95051B8C54D1001B26B5 /* BSModelSerializer.m in Sources */,
 				84E6C0981B7DD06C00289D94 /* ESSIssueViewController.m in Sources */,
 				84BA96881B2829D500388B58 /* ShoppingCart.m in Sources */,
 				844A32061B4064310045CA6C /* BSUIBarButtonItem.m in Sources */,
@@ -6401,7 +6395,6 @@
 				842043721B2991770002C868 /* DLLRUCache.m in Sources */,
 				84BA96831B2829D500388B58 /* ProductManager.m in Sources */,
 				845A02381B3DBADD007F5327 /* RegistUtil.m in Sources */,
-				842042BF1B29881B0002C868 /* YYHMantleModelSerializer.m in Sources */,
 				84118EFE1B667AD50052E275 /* BSPhotoTakeViewController.m in Sources */,
 				84832D5D1B565E5300FB6D28 /* OrderDetailBusinessDomain.m in Sources */,
 				84DB2F071B7CCB700041588B /* ESSTimer.m in Sources */,
@@ -6510,7 +6503,7 @@
 				84E6C08F1B7DCBA100289D94 /* ESSScannerViewController.m in Sources */,
 				84BA96871B2829D500388B58 /* CartList.m in Sources */,
 				844168B11B6A1E7C0060F9A7 /* BusinessCatalogue.m in Sources */,
-				842042C61B2988410002C868 /* YYHModelRouter.m in Sources */,
+				842042C61B2988410002C868 /* BSModelRouter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
