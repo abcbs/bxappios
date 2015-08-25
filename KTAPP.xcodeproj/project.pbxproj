@@ -108,6 +108,8 @@
 		8412CA8F1B79EB12004EDFAB /* rsaCertReq.csr in Resources */ = {isa = PBXBuildFile; fileRef = 8412CA7A1B79EB12004EDFAB /* rsaCertReq.csr */; };
 		841F95051B8C54D1001B26B5 /* BSModelSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 841F95041B8C54D1001B26B5 /* BSModelSerializer.m */; };
 		841F95061B8C54D1001B26B5 /* BSModelSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 841F95041B8C54D1001B26B5 /* BSModelSerializer.m */; };
+		841F950A1B8C59DA001B26B5 /* BSDigestAuthorization.m in Sources */ = {isa = PBXBuildFile; fileRef = 841F95091B8C59DA001B26B5 /* BSDigestAuthorization.m */; };
+		841F950B1B8C59DA001B26B5 /* BSDigestAuthorization.m in Sources */ = {isa = PBXBuildFile; fileRef = 841F95091B8C59DA001B26B5 /* BSDigestAuthorization.m */; };
 		842042A21B2983B40002C868 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8420429F1B2983B40002C868 /* AppDelegate.m */; };
 		842042AE1B2984D80002C868 /* KTCarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 842042A71B2984D80002C868 /* KTCarCell.m */; };
 		842042AF1B2984D80002C868 /* KTCarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842042A81B2984D80002C868 /* KTCarCell.xib */; };
@@ -189,7 +191,6 @@
 		844570DB1B4D67D5000CA1C7 /* BTLEPeripheralViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844570D71B4D67D5000CA1C7 /* BTLEPeripheralViewController.m */; };
 		844570DC1B4D67D5000CA1C7 /* BTLEPeripheralViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844570D71B4D67D5000CA1C7 /* BTLEPeripheralViewController.m */; };
 		844A32061B4064310045CA6C /* BSUIBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 844A32051B4064310045CA6C /* BSUIBarButtonItem.m */; };
-		844E50BB1B2F2EE500A69F91 /* BSHTTPNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 844E50B41B2F2EE500A69F91 /* BSHTTPNetworking.m */; };
 		844FFE901B8B4C4600658A36 /* BSAesSecurity.m in Sources */ = {isa = PBXBuildFile; fileRef = 844FFE8F1B8B4C4600658A36 /* BSAesSecurity.m */; };
 		844FFE911B8B4C4600658A36 /* BSAesSecurity.m in Sources */ = {isa = PBXBuildFile; fileRef = 844FFE8F1B8B4C4600658A36 /* BSAesSecurity.m */; };
 		844FFE941B8B542300658A36 /* NSData+CommonCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 844FFE931B8B542300658A36 /* NSData+CommonCrypto.m */; };
@@ -225,7 +226,6 @@
 		845A02231B3DA1F3007F5327 /* BSUIImageTitleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 845A02221B3DA1F3007F5327 /* BSUIImageTitleTableViewCell.m */; };
 		845A022C1B3DABF0007F5327 /* Conf.m in Sources */ = {isa = PBXBuildFile; fileRef = 845A02291B3DABF0007F5327 /* Conf.m */; };
 		845A022D1B3DABF0007F5327 /* ErrorMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 845A022B1B3DABF0007F5327 /* ErrorMessage.m */; };
-		845A02311B3DBA1F007F5327 /* EHNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 845A02301B3DBA1F007F5327 /* EHNetwork.m */; };
 		845A02351B3DBA7E007F5327 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 845A02341B3DBA7E007F5327 /* UIView+Frame.m */; };
 		845A02381B3DBADD007F5327 /* RegistUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 845A02371B3DBADD007F5327 /* RegistUtil.m */; };
 		845A02411B3DE9FE007F5327 /* BSUISingleImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 845A02401B3DE9FE007F5327 /* BSUISingleImageTableViewCell.m */; };
@@ -701,6 +701,10 @@
 		8474DEB51B3F7D0600D9DE36 /* BSUICommonController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8474DEB41B3F7D0600D9DE36 /* BSUICommonController.m */; };
 		8476A0461B4BB93100DB2CF0 /* BSUISingleImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8476A0451B4BB93100DB2CF0 /* BSUISingleImageTableViewCell.xib */; };
 		847B30881B3290DD007003D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 847B308A1B3290DD007003D7 /* Main.storyboard */; };
+		847C1C721B8CADBE00BCBEC9 /* BSHTTPNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 847C1C6F1B8CADBE00BCBEC9 /* BSHTTPNetworking.m */; };
+		847C1C731B8CADBE00BCBEC9 /* BSHTTPNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 847C1C6F1B8CADBE00BCBEC9 /* BSHTTPNetworking.m */; };
+		847C1C741B8CADBE00BCBEC9 /* EHNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 847C1C711B8CADBE00BCBEC9 /* EHNetwork.m */; };
+		847C1C751B8CADBE00BCBEC9 /* EHNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 847C1C711B8CADBE00BCBEC9 /* EHNetwork.m */; };
 		848058151B39A377005817D7 /* BSFCRollingADImageUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 848058131B39A377005817D7 /* BSFCRollingADImageUIView.m */; };
 		848058161B39A377005817D7 /* ADTImagePlayer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848058141B39A377005817D7 /* ADTImagePlayer.xib */; };
 		8480581B1B39AEEF005817D7 /* BSTableViewRefreshController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8480581A1B39AEEF005817D7 /* BSTableViewRefreshController.m */; };
@@ -784,7 +788,6 @@
 		84BF8FAD1B4ABC88001042F1 /* BSUICommonController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8474DEB41B3F7D0600D9DE36 /* BSUICommonController.m */; };
 		84BF8FC41B4AC2FA001042F1 /* Conf.m in Sources */ = {isa = PBXBuildFile; fileRef = 845A02291B3DABF0007F5327 /* Conf.m */; };
 		84BF8FC61B4AC2FA001042F1 /* ErrorMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 845A022B1B3DABF0007F5327 /* ErrorMessage.m */; };
-		84BF8FCA1B4AC2FA001042F1 /* BSHTTPNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 844E50B41B2F2EE500A69F91 /* BSHTTPNetworking.m */; };
 		84BF8FCD1B4AC2FA001042F1 /* BSTableViewRefreshController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8480581A1B39AEEF005817D7 /* BSTableViewRefreshController.m */; };
 		84BF8FCF1B4AC2FA001042F1 /* BSTableSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 847076631B3A9DFB00F28180 /* BSTableSection.m */; };
 		84BF8FD11B4AC2FA001042F1 /* BSTableContentObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 847076661B3AA01B00F28180 /* BSTableContentObject.m */; };
@@ -1547,6 +1550,8 @@
 		8412CA7A1B79EB12004EDFAB /* rsaCertReq.csr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = rsaCertReq.csr; sourceTree = "<group>"; };
 		841F95031B8C54D1001B26B5 /* BSModelSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSModelSerializer.h; sourceTree = "<group>"; };
 		841F95041B8C54D1001B26B5 /* BSModelSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSModelSerializer.m; sourceTree = "<group>"; };
+		841F95081B8C59DA001B26B5 /* BSDigestAuthorization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSDigestAuthorization.h; sourceTree = "<group>"; };
+		841F95091B8C59DA001B26B5 /* BSDigestAuthorization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSDigestAuthorization.m; sourceTree = "<group>"; };
 		8420429E1B2983B40002C868 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8420429F1B2983B40002C868 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		842042A61B2984D80002C868 /* KTCarCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTCarCell.h; sourceTree = "<group>"; };
@@ -1649,8 +1654,6 @@
 		844570D81B4D67D5000CA1C7 /* TransferService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransferService.h; sourceTree = "<group>"; };
 		844A32041B4064310045CA6C /* BSUIBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUIBarButtonItem.h; sourceTree = "<group>"; };
 		844A32051B4064310045CA6C /* BSUIBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUIBarButtonItem.m; sourceTree = "<group>"; };
-		844E50B31B2F2EE500A69F91 /* BSHTTPNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSHTTPNetworking.h; sourceTree = "<group>"; };
-		844E50B41B2F2EE500A69F91 /* BSHTTPNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSHTTPNetworking.m; sourceTree = "<group>"; };
 		844FFE8E1B8B4C4600658A36 /* BSAesSecurity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSAesSecurity.h; sourceTree = "<group>"; };
 		844FFE8F1B8B4C4600658A36 /* BSAesSecurity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSAesSecurity.m; sourceTree = "<group>"; };
 		844FFE921B8B542300658A36 /* NSData+CommonCrypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+CommonCrypto.h"; sourceTree = "<group>"; };
@@ -1677,8 +1680,6 @@
 		845A022A1B3DABF0007F5327 /* ErrorMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ErrorMessage.h; sourceTree = "<group>"; };
 		845A022B1B3DABF0007F5327 /* ErrorMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ErrorMessage.m; sourceTree = "<group>"; };
 		845A022E1B3DB13B007F5327 /* BSCMFrameworkHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSCMFrameworkHeader.h; sourceTree = "<group>"; };
-		845A022F1B3DBA1F007F5327 /* EHNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHNetwork.h; sourceTree = "<group>"; };
-		845A02301B3DBA1F007F5327 /* EHNetwork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHNetwork.m; sourceTree = "<group>"; };
 		845A02321B3DBA7E007F5327 /* KTff.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTff.pch; sourceTree = "<group>"; };
 		845A02331B3DBA7E007F5327 /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
 		845A02341B3DBA7E007F5327 /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
@@ -2039,6 +2040,10 @@
 		8476A0401B4BAC8C00DB2CF0 /* BSUICommonController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUICommonController.h; sourceTree = "<group>"; };
 		8476A0451B4BB93100DB2CF0 /* BSUISingleImageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSUISingleImageTableViewCell.xib; sourceTree = "<group>"; };
 		847B30891B3290DD007003D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		847C1C6E1B8CADBE00BCBEC9 /* BSHTTPNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSHTTPNetworking.h; sourceTree = "<group>"; };
+		847C1C6F1B8CADBE00BCBEC9 /* BSHTTPNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSHTTPNetworking.m; sourceTree = "<group>"; };
+		847C1C701B8CADBE00BCBEC9 /* EHNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHNetwork.h; sourceTree = "<group>"; };
+		847C1C711B8CADBE00BCBEC9 /* EHNetwork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHNetwork.m; sourceTree = "<group>"; };
 		848058121B39A377005817D7 /* BSFCRollingADImageUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSFCRollingADImageUIView.h; sourceTree = "<group>"; };
 		848058131B39A377005817D7 /* BSFCRollingADImageUIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSFCRollingADImageUIView.m; sourceTree = "<group>"; };
 		848058141B39A377005817D7 /* ADTImagePlayer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ADTImagePlayer.xib; sourceTree = "<group>"; };
@@ -2697,6 +2702,15 @@
 			path = CertFile;
 			sourceTree = "<group>";
 		};
+		841F95071B8C5951001B26B5 /* Authorization */ = {
+			isa = PBXGroup;
+			children = (
+				841F95081B8C59DA001B26B5 /* BSDigestAuthorization.h */,
+				841F95091B8C59DA001B26B5 /* BSDigestAuthorization.m */,
+			);
+			path = Authorization;
+			sourceTree = "<group>";
+		};
 		842042A51B2984D80002C868 /* ShoppingCart */ = {
 			isa = PBXGroup;
 			children = (
@@ -2878,17 +2892,6 @@
 				844570D81B4D67D5000CA1C7 /* TransferService.h */,
 			);
 			path = BLETransfer;
-			sourceTree = "<group>";
-		};
-		844E50B21B2F2EE500A69F91 /* BSCommunication */ = {
-			isa = PBXGroup;
-			children = (
-				845A022F1B3DBA1F007F5327 /* EHNetwork.h */,
-				845A02301B3DBA1F007F5327 /* EHNetwork.m */,
-				844E50B31B2F2EE500A69F91 /* BSHTTPNetworking.h */,
-				844E50B41B2F2EE500A69F91 /* BSHTTPNetworking.m */,
-			);
-			path = BSCommunication;
 			sourceTree = "<group>";
 		};
 		844E50B51B2F2EE500A69F91 /* BSUIComponent */ = {
@@ -3486,6 +3489,17 @@
 			path = LoginRegister;
 			sourceTree = "<group>";
 		};
+		847C1C6D1B8CADBE00BCBEC9 /* BSCommunication */ = {
+			isa = PBXGroup;
+			children = (
+				847C1C6E1B8CADBE00BCBEC9 /* BSHTTPNetworking.h */,
+				847C1C6F1B8CADBE00BCBEC9 /* BSHTTPNetworking.m */,
+				847C1C701B8CADBE00BCBEC9 /* EHNetwork.h */,
+				847C1C711B8CADBE00BCBEC9 /* EHNetwork.m */,
+			);
+			path = BSCommunication;
+			sourceTree = "<group>";
+		};
 		848058111B39A377005817D7 /* CommonView */ = {
 			isa = PBXGroup;
 			children = (
@@ -3832,6 +3846,8 @@
 				848C7C2F1B79A293000774A1 /* Security */,
 				84BA968F1B2829FC00388B58 /* Serializers */,
 				84BA96911B2829FC00388B58 /* HttpRouter */,
+				841F95071B8C5951001B26B5 /* Authorization */,
+				847C1C6D1B8CADBE00BCBEC9 /* BSCommunication */,
 			);
 			path = BSTransfer;
 			sourceTree = "<group>";
@@ -4036,7 +4052,6 @@
 			children = (
 				84EBA0081B416E0E003309F6 /* Basic-Demo */,
 				845A02271B3DABF0007F5327 /* Base */,
-				844E50B21B2F2EE500A69F91 /* BSCommunication */,
 				844E50B51B2F2EE500A69F91 /* BSUIComponent */,
 				844E50B91B2F2EE500A69F91 /* BSUISetting */,
 				845A02241B3DA669007F5327 /* BSUIFrameworkHeader.h */,
@@ -4559,8 +4574,8 @@
 			children = (
 				A04366AB1AD7B550005842EE /* KTAPP */,
 				84BA968A1B2829F300388B58 /* BSInfrastructure */,
-				84D358CB1B2B0C0500CCEE8B /* BSFramework */,
 				84BA968E1B2829FC00388B58 /* BSTransfer */,
+				84D358CB1B2B0C0500CCEE8B /* BSFramework */,
 				84BA96411B2829D500388B58 /* LBModels */,
 				84832D241B564D7E00FB6D28 /* LFModels */,
 				84BA96921B282A0500388B58 /* LBControl */,
@@ -6102,6 +6117,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84F84AD71B7C4BA3008DF38F /* BSDesCrypto.m in Sources */,
+				847C1C751B8CADBE00BCBEC9 /* EHNetwork.m in Sources */,
 				8425E18C1B67644200A93C43 /* BSPhotoTakeController.m in Sources */,
 				8461B72C1B54BAB5002A7C43 /* KTHandyViewController.m in Sources */,
 				841F95061B8C54D1001B26B5 /* BSModelSerializer.m in Sources */,
@@ -6109,6 +6125,7 @@
 				844570D21B4D672D000CA1C7 /* BLEInfo.m in Sources */,
 				84D19FEF1B4C440500BA25BF /* LeDiscovery.m in Sources */,
 				84E71F351B4E5473003089B2 /* BLEDevicesAddTableViewController.m in Sources */,
+				841F950B1B8C59DA001B26B5 /* BSDigestAuthorization.m in Sources */,
 				845AC3511B674C870077E0ED /* BSUICollectionCollectionViewController.m in Sources */,
 				84E9D7A31B61E10C00F2CD24 /* BSCheckmarkView.m in Sources */,
 				84EAFF601B596C8900A90992 /* BSUITableViewCanEditedController.m in Sources */,
@@ -6124,7 +6141,6 @@
 				84DB2F041B7CCB700041588B /* ESSBeaconScanner.m in Sources */,
 				84BF8FC41B4AC2FA001042F1 /* Conf.m in Sources */,
 				84BF8FC61B4AC2FA001042F1 /* ErrorMessage.m in Sources */,
-				84BF8FCA1B4AC2FA001042F1 /* BSHTTPNetworking.m in Sources */,
 				84E9D79F1B61E10C00F2CD24 /* BSAssetCell.m in Sources */,
 				84BF8FCD1B4AC2FA001042F1 /* BSTableViewRefreshController.m in Sources */,
 				84E6C0901B7DCBA100289D94 /* ESSScannerViewController.m in Sources */,
@@ -6163,6 +6179,7 @@
 				84E9D7A51B61E10C00F2CD24 /* BSImagePickerController.m in Sources */,
 				848C7C331B79A301000774A1 /* BSSecurity.m in Sources */,
 				84E6C0991B7DD06C00289D94 /* ESSIssueViewController.m in Sources */,
+				847C1C731B8CADBE00BCBEC9 /* BSHTTPNetworking.m in Sources */,
 				84517BB51B8628F800469111 /* BSTRPushHelper.m in Sources */,
 				84E9D79B1B61E10C00F2CD24 /* BSAlbumCell.m in Sources */,
 				84BF8FFC1B4AC2FA001042F1 /* BSModelRoute.m in Sources */,
@@ -6354,6 +6371,7 @@
 				845A02351B3DBA7E007F5327 /* UIView+Frame.m in Sources */,
 				84052EA01B73856500FAB304 /* UserManager.m in Sources */,
 				84832D591B565DAC00FB6D28 /* OrderCartsDomain.m in Sources */,
+				847C1C741B8CADBE00BCBEC9 /* EHNetwork.m in Sources */,
 				842042C51B2988410002C868 /* BSModelRoute.m in Sources */,
 				84BA96861B2829D500388B58 /* WaterSendingDetails.m in Sources */,
 				8470765B1B3A8F1400F28180 /* adsCell.m in Sources */,
@@ -6422,7 +6440,6 @@
 				842043751B2991770002C868 /* DLFixedTabbarView.m in Sources */,
 				847432F71B2A8E5500B030C4 /* AlreadyCommit.m in Sources */,
 				A0F0C3E81B10209500CE406D /* BasicResponse.m in Sources */,
-				845A02311B3DBA1F007F5327 /* EHNetwork.m in Sources */,
 				84578F531B35D11D00C3A4EA /* ViewController.m in Sources */,
 				8470763E1B3A8B9000F28180 /* appointmentController.m in Sources */,
 				A0F0C3F31B10209500CE406D /* ViewShoppingCartParams.m in Sources */,
@@ -6476,7 +6493,6 @@
 				84832D301B564EA200FB6D28 /* BusinessCartDomain.m in Sources */,
 				A0F0C3EB1B10209500CE406D /* JoinShoppingCartResult.m in Sources */,
 				84E9D79A1B61E10C00F2CD24 /* BSAlbumCell.m in Sources */,
-				844E50BB1B2F2EE500A69F91 /* BSHTTPNetworking.m in Sources */,
 				842043731B2991770002C868 /* DLCustomSlideView.m in Sources */,
 				A0F0C3F11B10209500CE406D /* JoinShoppingCartParams.m in Sources */,
 				842042B11B2984D80002C868 /* KTCartTableView.m in Sources */,
@@ -6489,6 +6505,7 @@
 				847433121B2A915C00B030C4 /* cardBinding.m in Sources */,
 				84DAA4A41B7AE6120070BF83 /* BSRSACrypto.m in Sources */,
 				8405CB991B556C8F0014AF8D /* BusinessBase.m in Sources */,
+				847C1C721B8CADBE00BCBEC9 /* BSHTTPNetworking.m in Sources */,
 				847432EA1B2A8DCC00B030C4 /* WaitPaymentDetail.m in Sources */,
 				84832D381B56549700FB6D28 /* ShoppingCartListDomain.m in Sources */,
 				84832D4C1B565B0500FB6D28 /* CustomerOrderDetailed.m in Sources */,
@@ -6497,6 +6514,7 @@
 				84F84AD61B7C4BA3008DF38F /* BSDesCrypto.m in Sources */,
 				84BA96821B2829D500388B58 /* PayManager.m in Sources */,
 				84EAFF671B596F2400A90992 /* BSUITableViewCommonController.m in Sources */,
+				841F950A1B8C59DA001B26B5 /* BSDigestAuthorization.m in Sources */,
 				84E71F341B4E5473003089B2 /* BLEDevicesAddTableViewController.m in Sources */,
 				84E9D7A41B61E10C00F2CD24 /* BSImagePickerController.m in Sources */,
 				84EAFF5E1B5969EF00A90992 /* BSUITableViewCanEditedController.m in Sources */,

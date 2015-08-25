@@ -61,8 +61,9 @@ static RemoteUserManager *instance;
 -(void)loginWithUser:(LoginUser *) user
           blockArray:(BSHTTPResponse)block{
     
-      NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:user.userName,@"username",user.passWord,@"password", nil];
-    
+    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:user.userName,@"username",user.passWord,@"password", nil];
+    //设置登陆得密码
+    [BSHTTPNetworking currentUser:user];
     [BSHTTPNetworking httpPOST:USER_LOGIN_SCHEMA
                    pathPattern:USER_LOGIN_SCHEMA
                     parameters:dic

@@ -65,6 +65,47 @@ NSString * const YYHModelRouterErrorDomain = @"com.yayuhh.YYHModelRouterError";
 
 #pragma mark - Initialization
 
+- (instancetype)initWithBaseURL:(NSURL *)url sessionConfiguration:(NSURLSessionConfiguration *)configuration{
+    if ((self = [super init])) {
+        _baseURL = url;
+        _sessionManager = [[AFHTTPSessionManager alloc] initWithBaseURL:_baseURL
+                                                   sessionConfiguration:configuration
+                           ];
+        
+        _sessionManager.requestSerializer=[AFJSONRequestSerializer serializer];
+        
+        _sessionManager.responseSerializer=[AFJSONResponseSerializer serializer];
+        
+        [_sessionManager.reachabilityManager
+         setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+             switch (status) {
+                 case AFNetworkReachabilityStatusReachableViaWWAN:
+                     NSLog(@"目前网络状态WWAN");
+                     netStatus=@"WAN";
+                     break;
+                     
+                 case AFNetworkReachabilityStatusReachableViaWiFi:
+                     NSLog(@"目前网络为WiFi");
+                     netStatus=@"WiFi";
+                     break;
+                 case AFNetworkReachabilityStatusNotReachable:
+                     NSLog(@"目前没有网络环境");
+                     netStatus=@"NoNet";
+                     break;
+                 default:
+                     break;
+             }
+         }];
+        
+        [_sessionManager.reachabilityManager startMonitoring];
+#ifdef HAS_MANTLE
+        _modelSerializer = [[BSModelSerializer alloc] init];
+#endif
+    }
+    
+    return self;
+}
+
 - (instancetype)initWithBaseURL:(NSURL *)url {
     if ((self = [super init])) {
         _baseURL = url;

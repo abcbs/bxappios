@@ -24,7 +24,7 @@
 /**
  *基础URL
  */
-#define KBS_URL @"http://192.168.0.110:8090/"
+#define KBS_URL @"http://192.168.1.102:8090/"
 
 #pragma mark--iOS显示适配
 
@@ -242,9 +242,12 @@ extern float autoSizeScaleY;
 #define USER_TYPE_OPERATOR @"3"
 //anonymity
 #define USER_TYPE_ANONY    @"4"
-
+//多少次之后，系统把用户锁定
 #define USER_LONGIN_NUMBER 5
-#define DATA_IS_LOCAL YES
+//认证（摘要认证）之后，需要系统重新提供登陆
+#define AUTHORIZATION_RETRY 2
+
+#define DATA_IS_LOCAL NO
 
 typedef void (^BSHTTPResponse)(NSObject *response,
                                NSError *error,

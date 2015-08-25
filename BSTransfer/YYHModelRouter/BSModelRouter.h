@@ -24,7 +24,7 @@ typedef void (^YYHModelRequestFailure)(NSError *error);
  Initialize a model router with a base URL.
  */
 - (instancetype)initWithBaseURL:(NSURL *)url;
-
+- (instancetype)initWithBaseURL:(NSURL *)url sessionConfiguration:(NSURLSessionConfiguration *)configuration;
 /**
  Add a route for a GET request.
  @param pathPattern Request path pattern.

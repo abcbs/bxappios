@@ -11,6 +11,7 @@
 #import "RemoteUserManager.h"
 #import "UserSession.h"
 #import "NSData+CommonCrypto.h"
+#import "BSDigestAuthorization.h"
 
 static const char *const kDataLocalOperationQueueName = "kDataLocalOperationQueue";
 
@@ -66,6 +67,7 @@ static UserSession *session;
 }
 
 +(BOOL)checkSession{
+    BSDigestAuthorization *digest=[BSDigestAuthorization instaceDigestAuthorization];
     if (!DEFAULT_ROLE) {
         return YES;
     }
