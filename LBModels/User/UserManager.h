@@ -44,11 +44,13 @@
 -(void)updateLoginUser:(LoginUser *) user atIndex:(NSInteger)index
             blockArray:(BSHTTPResponse)block;
 
+#pragma mark --下个版本将废除无block的方法
 -(void)removeLoginUser:(LoginUser *) user;
 
 -(void)removeLoginUser:(LoginUser *) user
             blockArray:(BSHTTPResponse)block;
 
+#pragma mark --下个版本将废除无block的方法
 -(void)removeLoginUserWithIndex:(NSInteger) index;
 
 

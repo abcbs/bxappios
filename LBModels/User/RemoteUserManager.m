@@ -53,6 +53,10 @@ static RemoteUserManager *instance;
     BSLog(@"删除登陆数据");
 }
 
+-(void)removeLoginUser:(LoginUser *) user{
+    BSLog(@"删除登陆数据");
+}
+
 #pragma mark -登陆方法
 -(void)loginWithUser:(LoginUser *) user
           blockArray:(BSHTTPResponse)block{
