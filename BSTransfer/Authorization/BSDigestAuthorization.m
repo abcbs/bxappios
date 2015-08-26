@@ -144,7 +144,7 @@ static NSString *digestAuthString;
     */
   
     digestAuthString =
-    [NSString stringWithFormat:@"%@ username=%@ digest-uri=%@",
+    [NSString stringWithFormat:@"%@ username=\"%@\" digest-uri=\"%@\"",
         authenticate,user,uri];
     BSLog(@"组装的摘要字符串为:\t%@",digestAuthString);
     [config setHTTPAdditionalHeaders:@{@"Authorization":digestAuthString}];
