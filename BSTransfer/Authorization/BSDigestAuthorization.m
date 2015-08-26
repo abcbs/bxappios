@@ -41,6 +41,7 @@
 
 static NSURLSessionConfiguration *config;
 static BSDigestAuthorization *instance;
+static NSString *digestAuthString;
 
 + (id)copyWithZone:(NSZone *)zone {
     return self;
@@ -142,15 +143,28 @@ static BSDigestAuthorization *instance;
     opaque="5ccc069c403ebaf9f0171e9517f40e41"　 ←　服务器端质询响应信息
     */
   
-    NSString *authString =
+    digestAuthString =
     [NSString stringWithFormat:@"%@ username=%@ digest-uri=%@",
         authenticate,user,uri];
-    BSLog(@"组装的摘要字符串为:\t%@",authString);
-    [config setHTTPAdditionalHeaders:@{@"Authorization":authString}];
+    BSLog(@"组装的摘要字符串为:\t%@",digestAuthString);
+    [config setHTTPAdditionalHeaders:@{@"Authorization":digestAuthString}];
     
+}
+
+-(NSString *)currentDigestAuthorization{
+    return digestAuthString;
+}
+
+-(void)setRequestSerializer:(AFHTTPRequestSerializer <AFURLRequestSerialization> *)requestSerializer{
+    //[manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    //[manager.requestSerializer setValue:@"application/json; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+    if (digestAuthString) {
+        [requestSerializer setValue:digestAuthString forHTTPHeaderField:@"Authorization"];
+    }
 }
 
 -(NSURLSessionConfiguration *)currentConfiguration{
     return config;
 }
+
 @end

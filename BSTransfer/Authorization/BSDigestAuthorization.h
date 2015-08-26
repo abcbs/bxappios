@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "BSCMFrameworkHeader.h"
 
 @interface BSDigestAuthorization : NSObject
 
@@ -17,4 +18,9 @@
 -(void)digestAuthorization:(NSString *)user digestURI:(NSString *) uri headerAuthenticate:(NSString *)authenticate;
 
 -(NSURLSessionConfiguration *)currentConfiguration;
+
+-(NSString *)currentDigestAuthorization;
+
+-(void)setRequestSerializer:(AFHTTPRequestSerializer <AFURLRequestSerialization> *)requestSerializer;
+
 @end

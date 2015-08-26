@@ -11,6 +11,7 @@
 #import "ErrorMessage.h"
 #import "MJExtension.h"
 #import "AFNetworking.h"
+#import "BSDigestAuthorization.h"
 
 #if defined(__has_include)
 #if __has_include("MJExtension.h")
@@ -63,17 +64,21 @@ NSString * const YYHModelRouterErrorDomain = @"com.yayuhh.YYHModelRouterError";
 @implementation BSModelRouter
 @synthesize netStatus;
 
+static BSDigestAuthorization *digestAuthorization;
 #pragma mark - Initialization
 
 - (instancetype)initWithBaseURL:(NSURL *)url sessionConfiguration:(NSURLSessionConfiguration *)configuration{
     if ((self = [super init])) {
         _baseURL = url;
+        digestAuthorization=[BSDigestAuthorization instaceDigestAuthorization];
         _sessionManager = [[AFHTTPSessionManager alloc] initWithBaseURL:_baseURL
                                                    sessionConfiguration:configuration
                            ];
         
         _sessionManager.requestSerializer=[AFJSONRequestSerializer serializer];
-        
+        //设置请求头
+        [digestAuthorization setRequestSerializer:_sessionManager.requestSerializer];
+
         _sessionManager.responseSerializer=[AFJSONResponseSerializer serializer];
         
         [_sessionManager.reachabilityManager
@@ -108,13 +113,15 @@ NSString * const YYHModelRouterErrorDomain = @"com.yayuhh.YYHModelRouterError";
 
 - (instancetype)initWithBaseURL:(NSURL *)url {
     if ((self = [super init])) {
+        digestAuthorization=[BSDigestAuthorization instaceDigestAuthorization];
         _baseURL = url;
         _sessionManager = [[AFHTTPSessionManager alloc] initWithBaseURL:_baseURL];
         
         _sessionManager.requestSerializer=[AFJSONRequestSerializer serializer];
         
         _sessionManager.responseSerializer=[AFJSONResponseSerializer serializer];
-        
+        //如果包含认证方式则设置请求头信息
+        [digestAuthorization setRequestSerializer:_sessionManager.requestSerializer];
         [_sessionManager.reachabilityManager
             setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
             switch (status) {
