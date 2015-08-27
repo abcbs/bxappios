@@ -300,12 +300,12 @@ static int loginRetryNumber;
         //uriResponse=[[NSString alloc]initWithFormat:@"%@%@",KBS_URL,uri];
         NSString *realmResponse=[[authenticate substringToIndex:6] lowercaseString];
         if ([realmResponse containsString:@"digest"]) {//
-            //[digestAuthorization digestAuthorization:@"marcin" password:@"michalski"
-            //                               digestURI:uri httpMethod:httpMethod
-            //                      headerAuthenticate:authenticate];
-            [digestAuthorization digestAuthorization:@"anonymous" password:@""
+            [digestAuthorization digestAuthorization:@"marcin" password:@"michalski"
                                            digestURI:uri httpMethod:httpMethod
                                   headerAuthenticate:authenticate];
+            //[digestAuthorization digestAuthorization:@"anonymous" password:@""
+            //                               digestURI:uri httpMethod:httpMethod
+            //                      headerAuthenticate:authenticate];
 
         }
         BSLog(@"系统出现异常，详细信息:\n%@",error);

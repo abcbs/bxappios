@@ -206,7 +206,7 @@ static NSMutableDictionary *ncUriDict;
     NSString * a2Md5=[a2 md5HexDigest];
     NSString * digest=nil;
     NSString * nc=[self ncCurrent:uri];
-
+    NSString *cnonce ;
     if (qop==nil) {
         //digest = a1Md5 + ":" + nonce + ":" + a2Md5;
         digest =[[NSString alloc]initWithFormat:@"%@:%@:%@",a1Md5, nonce,a2Md5];
@@ -220,7 +220,7 @@ static NSMutableDictionary *ncUriDict;
         long expiryTime = interval + (nonceValiditySeconds * 1000);
         NSString *signatureValue=[[NSString alloc]initWithFormat:@"%ld:%@",expiryTime, DIGEST_NONCE_KEY];
         signatureValue=[signatureValue md5HexDigest];
-        NSString *cnonce = [[NSString alloc]initWithFormat:@"%ld:%@",expiryTime, signatureValue];
+        cnonce = [[NSString alloc]initWithFormat:@"%ld:%@",expiryTime, signatureValue];
         cnonce=[cnonce base64EncodedString];
 
         digest =[[NSString alloc]initWithFormat:@"%@:%@:%@:%@:%@:%@",a1Md5, nonce,nc,cnonce,qop,a2Md5];
@@ -235,13 +235,12 @@ static NSMutableDictionary *ncUriDict;
         @throw expression;
     }
     if (digest) {
-        //BSLog(@"");
         digest=[digest md5HexDigest];
     }
     
     digestAuthString =
-    [NSString stringWithFormat:@"%@ , username=\"%@\"  , response=\"%@\" uri=\"%@\"",
-        authenticate,username,digest, uri];
+    [NSString stringWithFormat:@"%@ , username=\"%@\"  , response=\"%@\" , uri=\"%@\" ,nc=\"%@\" , cnonce=\"%@\" ",
+        authenticate,username,digest, uri,nc,cnonce];
     BSLog(@"组装的摘要字符串为:\t%@",digestAuthString);
     [config setHTTPAdditionalHeaders:@{@"Authorization":digestAuthString}];
     
