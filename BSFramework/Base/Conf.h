@@ -24,7 +24,7 @@
 /**
  *基础URL
  */
-#define KBS_URL @"http://192.168.0.106:8090/"
+#define KBS_URL @"http://192.168.0.110:8090/"
 
 #pragma mark--iOS显示适配
 
@@ -246,6 +246,10 @@ extern float autoSizeScaleY;
 #define USER_LONGIN_NUMBER 5
 //认证（摘要认证）之后，需要系统重新提供登陆
 #define AUTHORIZATION_RETRY 2
+
+//摘要认证
+#define DIGEST_NONCE_KEY @"testNonce"
+#define DIGEST_NONCE_VALIDITY_SEC 10000
 
 #define DATA_IS_LOCAL NO
 

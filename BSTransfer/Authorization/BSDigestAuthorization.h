@@ -15,12 +15,15 @@
 
 -(void)basicAuthorization:(NSString *)user password:(NSString *)password;
 
--(void)digestAuthorization:(NSString *)user digestURI:(NSString *) uri headerAuthenticate:(NSString *)authenticate;
+-(void)digestAuthorization:(NSString *)user password:(NSString *)password  digestURI:(NSString *) uri
+                httpMethod:(NSString *)httpMethod headerAuthenticate:(NSString *)authenticate;
 
 -(NSURLSessionConfiguration *)currentConfiguration;
 
 -(NSString *)currentDigestAuthorization;
 
 -(void)setRequestSerializer:(AFHTTPRequestSerializer <AFURLRequestSerialization> *)requestSerializer;
+
+-(void) ncDisgest:(NSString *)uri;
 
 @end

@@ -25,6 +25,10 @@ typedef void (^BSHTTPRequestFailure)(NSError *error);
 
 
 @interface BSHTTPNetworking : NSObject
+//GET,POST
+@property (nonatomic, retain)NSString *httpMethod;
+//请求的URL
+@property (nonatomic, retain)NSString *uri;
 
 +(void)currentUser:(LoginUser *)user;
 

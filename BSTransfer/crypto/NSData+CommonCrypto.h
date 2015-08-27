@@ -56,6 +56,10 @@ extern NSString * const kCommonCryptoErrorDomain;
 
 - (NSString *) md5_base64;
 
+- (NSString *)decodeHex:(NSString *)hexString ;
+
+- (NSString *)encodeHex:(NSString *)string;
+
 @end
 
 

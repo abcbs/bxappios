@@ -29,10 +29,16 @@
 //@synthesize bsmanager;
 
 @synthesize router;
+@synthesize uri;
+@synthesize httpMethod;
 
 static LoginUser *loginUser;
+
 static BSDigestAuthorization *digestAuthorization;
+
 static int loginRetryNumber;
+
+
 
 +(void)currentUser:(LoginUser *)user{
     loginUser=user;
@@ -133,9 +139,11 @@ static int loginRetryNumber;
     NSLog(@"本次请求URL\t%@",KBS_URL);
     NSLog(@"本次请求路径为%@",restPath);
     NSLog(@"本次请求方法GET");
-    
-    [BSHTTPNetworking httpManager];
-    
+    uri=pathPattern;
+    httpMethod=@"GET";
+    uri=[[NSString alloc]initWithFormat:@"%@%@",KBS_URL,pathPattern];
+    //[BSHTTPNetworking httpManager];
+    [digestAuthorization ncDisgest:uri];
     [router routeGET:pathPattern modelClass:[modelClass class] keyPath:keyPath];
     
     [router GET:restPath parameters:nil
@@ -209,9 +217,11 @@ static int loginRetryNumber;
     NSLog(@"本次请求路径为\t%@",restPath);
     NSLog(@"本次请求参数\t%@",parameters);
     NSLog(@"本次请求方法POST");
-    
+    //uri=pathPattern;
+    uri=[[NSString alloc]initWithFormat:@"%@%@",KBS_URL,pathPattern];
+    httpMethod=@"POST";
     //[BSHTTPNetworking httpManager];
-    
+    [digestAuthorization ncDisgest:uri];
     [router routePOST:pathPattern modelClass:[modelClass class] keyPath:keyPath];
     
     [router POST:restPath parameters:parameters
@@ -283,19 +293,21 @@ static int loginRetryNumber;
         //key	__NSCFConstantString *	@"Www-Authenticate"	0x00000001107bc478
         //value	__NSCFString *	@"Digest realm=\"REST-Realm\", qop=\"auth\", nonce=\"MTQ0MDUyNDE4OTUxOTplYjAyY2UyYzhhOGQ1MTU4YjRmMWVhNjQ0NzRiMDZjOQ==\""	0x00007f83a870e290
         NSString *authenticate=(NSString *)[headerFields objectForKey:@"Www-Authenticate"];
-   
-        NSString *uri=(NSString *)[dict objectForKey:@"NSErrorFailingURLKey"];;
-        [digestAuthorization digestAuthorization:@"loginUser.userName"
-                              digestURI:uri
-                              headerAuthenticate:authenticate];
         BSLog(@"系统出现异常，权限信息:\n%@",authenticate);
-        //key	__NSCFConstantString *	@"Date"	0x00000001107bbc98
-        NSString *date=(NSString *)[headerFields objectForKey:@"Date"];
-        BSLog(@"系统出现异常，时间戳信息:\n%@",date);
+        
+        //NSString *uriResponse=(NSString *)[dict objectForKey:@"NSErrorFailingURLKey"];
+        //
+        //uriResponse=[[NSString alloc]initWithFormat:@"%@%@",KBS_URL,uri];
+        NSString *realmResponse=[[authenticate substringToIndex:6] lowercaseString];
+        if ([realmResponse containsString:@"digest"]) {//
+            //[digestAuthorization digestAuthorization:@"marcin" password:@"michalski"
+            //                               digestURI:uri httpMethod:httpMethod
+            //                      headerAuthenticate:authenticate];
+            [digestAuthorization digestAuthorization:@"anonymous" password:@""
+                                           digestURI:uri httpMethod:httpMethod
+                                  headerAuthenticate:authenticate];
 
-        
-        BSLog(@"系统出现异常，响应信息:\n%@",httpResponse);
-        
+        }
         BSLog(@"系统出现异常，详细信息:\n%@",error);
         //如果是权限问题继续提交
         if ([localizedDescription containsString:@"401"]&&loginRetryNumber<AUTHORIZATION_RETRY) {

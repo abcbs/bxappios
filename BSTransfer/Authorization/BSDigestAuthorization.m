@@ -32,16 +32,27 @@
  */
 
 @interface BSDigestAuthorization (){
+   
+    
 }
 
 @end
 
 
 @implementation BSDigestAuthorization
-
+//Session配置信息
 static NSURLSessionConfiguration *config;
+//单例
 static BSDigestAuthorization *instance;
+
+//摘要字符串
 static NSString *digestAuthString;
+//客户端时间间隔
+static long nonceValiditySeconds;
+//客户端摘要字符串
+static NSString * digestNonceKey;
+
+static NSMutableDictionary *ncUriDict;
 
 + (id)copyWithZone:(NSZone *)zone {
     return self;
@@ -58,7 +69,10 @@ static NSString *digestAuthString;
 - (instancetype)init {
     if ((self = [super init]) != nil) {
         static dispatch_once_t oncePredicate;
-        
+        //计算nonce的方法
+        digestNonceKey=DIGEST_NONCE_KEY;
+        nonceValiditySeconds=DIGEST_NONCE_VALIDITY_SEC;
+        ncUriDict=[ NSMutableDictionary dictionary];
         dispatch_once(&oncePredicate, ^{
             config =  [NSURLSessionConfiguration defaultSessionConfiguration];
         });
@@ -126,9 +140,43 @@ static NSString *digestAuthString;
 
 
 
--(void)digestAuthorization:(NSString *)user digestURI:(NSString *) uri headerAuthenticate:(NSString *)authenticate
+-(void)digestAuthorization:(NSString *)username password:(NSString *)password  digestURI:(NSString *) uri
+        httpMethod:(NSString *)httpMethod headerAuthenticate:(NSString *)authenticate
 
 {
+    BSLog(@"响应的摘要信息:\t%@",authenticate);
+    //
+    NSParameterAssert(authenticate);
+    
+    //Digest realm="REST-Realm", qop="auth", nonce="MTQ0MDYwMzI3OTYzMToyYTNmMmQ4Mzc1NDlmNmRhOGRlOTUyYWY2OGJkYWM3Yg=="
+
+    NSString *realm=nil;
+    NSString *qop=nil;
+    NSString *nonce=nil;
+    @try {
+        
+        NSArray *array = [authenticate componentsSeparatedByString:@","]; //从字符A中分隔成2个元素的数组
+        NSParameterAssert(array);
+        NSString *realmResponse=array[0];
+        realmResponse=[realmResponse substringFromIndex:7];
+        realm= [realmResponse componentsSeparatedByString:@"\""][1];
+        qop=[array[1] componentsSeparatedByString:@"\""][1];
+        nonce=[array[2] componentsSeparatedByString:@"\""][1];
+
+    }
+    @catch (NSException *exception) {
+        BSLog(@"摘要请求处理异常");
+        NSString *n=[[NSString alloc]initWithFormat:
+                     @"处理响应摘要完成\nrealm:\t%@\tqop:\t%@\tnonce:\t%@",realm,qop,nonce ];
+        BSLog(@"处理响应摘要完成\nrealm:  \t%@   \tqop: \t%@\tnonce:\t%@",realm,qop,nonce);
+        NSException *e = [NSException
+                          exceptionWithName: @"摘要请求处理异常"
+                          reason: n
+                          userInfo: nil];
+        @throw e;
+    }
+    BSLog(@"处理响应摘要完成\nrealm:  \t%@   \tqop: \t%@\tnonce:\t%@",realm,qop,nonce);
+   
     /*
     Authorization: Digest
     username="Mufasa",　 ←　客户端已知信息
@@ -142,10 +190,58 @@ static NSString *digestAuthString;
     response="6629fae49393a05397450978507c4ef1", ←　最终的摘要信息 ha3
     opaque="5ccc069c403ebaf9f0171e9517f40e41"　 ←　服务器端质询响应信息
     */
-  
+    
+    /**
+     *  ① 用户名:realm:密码　⇒　ha1
+     *  ② HTTP方法:URI　⇒　ha2
+     *  ③ ha1:nonce:nc:cnonce:qop:ha2　⇒　ha3
+    */
+    //String a1Md5;
+    //String a2 = httpMethod + ":" + uri;
+    //String a2Md5 = md5Hex(a2);
+    NSString * a1 =[[NSString alloc]initWithFormat:@"%@:%@:%@",username, realm,password];
+    NSString * a1Md5=[a1 md5HexDigest];
+    
+    NSString * a2 =[[NSString alloc]initWithFormat:@"%@:%@",httpMethod, uri];
+    NSString * a2Md5=[a2 md5HexDigest];
+    NSString * digest=nil;
+    NSString * nc=[self ncCurrent:uri];
+
+    if (qop==nil) {
+        //digest = a1Md5 + ":" + nonce + ":" + a2Md5;
+        digest =[[NSString alloc]initWithFormat:@"%@:%@:%@",a1Md5, nonce,a2Md5];
+    }else if ([qop isEqualToString: @"auth"]){
+       //digest = a1Md5 + ":" + nonce + ":" + nc + ":" + cnonce + ":" + qop + ":" + a2Md5;
+        //计算cnonce
+        //根据当前时间与配置值获得的过期事件值
+        NSDate *datenow = [NSDate date];//现在时间,你可以输出来看下是什么格式
+        NSTimeZone *zone = [NSTimeZone systemTimeZone];
+        NSInteger interval = [zone secondsFromGMTForDate:datenow];
+        long expiryTime = interval + (nonceValiditySeconds * 1000);
+        NSString *signatureValue=[[NSString alloc]initWithFormat:@"%ld:%@",expiryTime, DIGEST_NONCE_KEY];
+        signatureValue=[signatureValue md5HexDigest];
+        NSString *cnonce = [[NSString alloc]initWithFormat:@"%ld:%@",expiryTime, signatureValue];
+        cnonce=[cnonce base64EncodedString];
+
+        digest =[[NSString alloc]initWithFormat:@"%@:%@:%@:%@:%@:%@",a1Md5, nonce,nc,cnonce,qop,a2Md5];
+    }else{
+        NSString *n=[[NSString alloc]initWithFormat:
+                     @"处理响应摘要完成\nrealm:\t%@\tqop:\t%@\tnonce:\t%@",realm,qop,nonce ];
+        NSException *expression = [NSException
+                          exceptionWithName: @"摘要请求,不支持qop"
+                          reason: n
+                          userInfo: nil];
+
+        @throw expression;
+    }
+    if (digest) {
+        //BSLog(@"");
+        digest=[digest md5HexDigest];
+    }
+    
     digestAuthString =
-    [NSString stringWithFormat:@"%@ username=\"%@\" digest-uri=\"%@\"",
-        authenticate,user,uri];
+    [NSString stringWithFormat:@"%@ , username=\"%@\"  , response=\"%@\" uri=\"%@\"",
+        authenticate,username,digest, uri];
     BSLog(@"组装的摘要字符串为:\t%@",digestAuthString);
     [config setHTTPAdditionalHeaders:@{@"Authorization":digestAuthString}];
     
@@ -167,4 +263,25 @@ static NSString *digestAuthString;
     return config;
 }
 
+-(void) ncDisgest:(NSString *)uri{
+    NSString *ncUri=(NSString *)[ncUriDict objectForKey:uri];
+    NSString *currentStr=[[NSString alloc]initWithFormat:@"%d",1 ];
+    if (ncUri) {
+        int current=[ncUri intValue];
+        current++;
+        currentStr=[[NSString alloc]initWithFormat:@"%d",current ];
+        //[ncUriDict setObject:currentStr forKey:uri];
+    }
+    [ncUriDict setObject:currentStr forKey:uri];
+}
+
+-(NSString *)ncCurrent:(NSString *)uri{
+    NSString *ncUri=(NSString *)[ncUriDict objectForKey:uri];
+    int current=1;
+    if (ncUri) {
+        current=[ncUri intValue];
+    }
+    NSString *nc=[[NSString alloc]initWithFormat:@"%x",current ];
+    return nc;
+}
 @end
