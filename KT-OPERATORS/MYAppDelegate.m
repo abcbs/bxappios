@@ -56,8 +56,9 @@ BMKMapManager* _mapManager;
     
     // 要使用百度地图，请先启动BaiduMapManager
     _mapManager = [[BMKMapManager alloc]init];
-    //KXQxiGCqaCib7zLU0kshFuYs
-    //
+    //百度地图应用名称KT_PIO
+    //百度地图安全码abc.KT-OPERATORS
+    //Bundle display name:$(PRODUCT_NAME)或者其他文字，此项不能为空，否则启动失败
     BOOL ret = [_mapManager start:@"X4yr9eWQWA3A2CY44Nwm5MZd" generalDelegate:self];
     
     if (!ret) {
@@ -84,29 +85,6 @@ BMKMapManager* _mapManager;
     
     return YES;
 }
-
-#pragma mark -百度地图
-- (void)onGetNetworkState:(int)iError
-{
-    if (0 == iError) {
-        BSLog(@"APP联网成功");
-    }
-    else{
-        BSLog(@"APP联网失败 %d",iError);
-    }
-    
-}
-
-- (void)onGetPermissionState:(int)iError
-{
-    if (0 == iError) {
-        BSLog(@"APP授权成功");
-    }
-    else {
-        BSLog(@"APP授权失败 %d",iError);
-    }
-}
-
 
 #pragma mark -多次打开应用执行的两个方法-再次打开1
 #pragma mark -再次运行
@@ -216,14 +194,16 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo {
     //[BSTRPushHelper handleRemoteNotification:userInfo completion:completionHandler];
     
     // 应用正处理前台状态下，不会收到推送消息，因此在此处需要额外处理一下
-    //if (application.applicationState == UIApplicationStateActive) {
+    /*
+    if (application.applicationState == UIApplicationStateActive) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"收到远程推送消息"
                    message:userInfo[@"aps"][@"alert"]
                    delegate:nil
                    cancelButtonTitle:@"取消"
                    otherButtonTitles:@"确定", nil];
         [alert show];
-    //}
+    }
+    */
 }  
 #endif
 
@@ -266,4 +246,29 @@ didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSe
 -(void)removeNotification{
     [[UIApplication sharedApplication] cancelAllLocalNotifications];
 }
+#pragma mark 通知机制接口结束
+
+#pragma mark -百度地图运行状态测试开始
+- (void)onGetNetworkState:(int)iError
+{
+    if (0 == iError) {
+        BSLog(@"APP联网成功");
+    }
+    else{
+        BSLog(@"APP联网失败 %d",iError);
+    }
+    
+}
+
+- (void)onGetPermissionState:(int)iError
+{
+    if (0 == iError) {
+        BSLog(@"APP授权成功");
+    }
+    else {
+        BSLog(@"APP授权失败 %d",iError);
+    }
+}
+#pragma mark -百度地图运行状态测试结束
+
 @end
