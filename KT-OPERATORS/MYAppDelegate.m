@@ -9,11 +9,14 @@
 #import "MYAppDelegate.h"
 #import "BSUIFrameworkHeader.h"
 #import "BSCMFrameworkHeader.h"
-//#import <Parse/Parse.h>
+#import <BaiduMapAPI/BMapKit.h>
 
-@interface MYAppDelegate ()
+@interface MYAppDelegate () <UIApplicationDelegate, BMKGeneralDelegate> {
+    }
 
 @end
+
+BMKMapManager* _mapManager;
 
 @implementation MYAppDelegate
 
@@ -51,6 +54,19 @@
         [[UIApplication sharedApplication]registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound  categories:nil]];
     }
     
+    // 要使用百度地图，请先启动BaiduMapManager
+    _mapManager = [[BMKMapManager alloc]init];
+    //KXQxiGCqaCib7zLU0kshFuYs
+    //
+    BOOL ret = [_mapManager start:@"X4yr9eWQWA3A2CY44Nwm5MZd" generalDelegate:self];
+    
+    if (!ret) {
+        BSLog(@"/*=--------APP百度地图启动失败------------+=/");
+    }else{
+        BSLog(@"/*=--------APP百度地图启动成功------------+=/");
+
+    }
+    
     //注册设备
     [[UIApplication sharedApplication] registerForRemoteNotifications];
      //设置消息推送
@@ -62,10 +78,34 @@
     
     [userInfo writeToFile:@"/Users/kenshincui/Desktop/didFinishLaunchingWithOptions.txt" atomically:YES];
     NSLog(@"didFinishLaunchingWithOptions:The userInfo is %@.",userInfo);
-    */ 
+    */
+    //NSString *identifier = [[NSBundle mainBundle] bundleIdentifier];
+
+    
     return YES;
 }
 
+#pragma mark -百度地图
+- (void)onGetNetworkState:(int)iError
+{
+    if (0 == iError) {
+        BSLog(@"APP联网成功");
+    }
+    else{
+        BSLog(@"APP联网失败 %d",iError);
+    }
+    
+}
+
+- (void)onGetPermissionState:(int)iError
+{
+    if (0 == iError) {
+        BSLog(@"APP授权成功");
+    }
+    else {
+        BSLog(@"APP授权失败 %d",iError);
+    }
+}
 
 
 #pragma mark -多次打开应用执行的两个方法-再次打开1
