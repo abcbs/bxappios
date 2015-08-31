@@ -1247,6 +1247,13 @@
 		84EA9A911B57F17800AC549F /* LSBusinessIndexMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84EA9A8F1B57F17800AC549F /* LSBusinessIndexMain.storyboard */; };
 		84EAAD061B62520800E9C8BC /* LSProductMaintainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E767CD1B60DB9C0018A9E3 /* LSProductMaintainViewController.m */; };
 		84EAAD071B62520800E9C8BC /* LSProductManagerDelegate.h in Sources */ = {isa = PBXBuildFile; fileRef = 84EB39751B58EFDE00AD9F66 /* LSProductManagerDelegate.h */; };
+		84EAD9F31B943BF700302A90 /* BSBaiduViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EAD9F21B943BF700302A90 /* BSBaiduViewController.m */; };
+		84EAD9F41B943BF700302A90 /* BSBaiduViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EAD9F21B943BF700302A90 /* BSBaiduViewController.m */; };
+		84EAD9F71B94409100302A90 /* BSBaiduPOIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EAD9F61B94409100302A90 /* BSBaiduPOIViewController.m */; };
+		84EAD9F81B94409100302A90 /* BSBaiduPOIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EAD9F61B94409100302A90 /* BSBaiduPOIViewController.m */; };
+		84EAD9FB1B9443DF00302A90 /* BSBaiduLBSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EAD9FA1B9443DF00302A90 /* BSBaiduLBSViewController.m */; };
+		84EAD9FC1B9443DF00302A90 /* BSBaiduLBSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EAD9FA1B9443DF00302A90 /* BSBaiduLBSViewController.m */; };
+		84EAD9FD1B94457900302A90 /* BaiduMapAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F58D431B93F3EC002C535B /* BaiduMapAPI.framework */; };
 		84EAFF5B1B59563300A90992 /* LSProductManagerMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8461B7941B54CF57002A7C43 /* LSProductManagerMain.storyboard */; };
 		84EAFF5E1B5969EF00A90992 /* BSUITableViewCanEditedController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EAFF5D1B5969EF00A90992 /* BSUITableViewCanEditedController.m */; };
 		84EAFF601B596C8900A90992 /* BSUITableViewCanEditedController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EAFF5D1B5969EF00A90992 /* BSUITableViewCanEditedController.m */; };
@@ -2411,6 +2418,12 @@
 		84EA97AF1B57E21F00AC549F /* yuan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yuan.png; sourceTree = "<group>"; };
 		84EA97B01B57E21F00AC549F /* yyfw9_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yyfw9_01.png; sourceTree = "<group>"; };
 		84EA9A8F1B57F17800AC549F /* LSBusinessIndexMain.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LSBusinessIndexMain.storyboard; sourceTree = "<group>"; };
+		84EAD9F11B943BF700302A90 /* BSBaiduViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSBaiduViewController.h; sourceTree = "<group>"; };
+		84EAD9F21B943BF700302A90 /* BSBaiduViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSBaiduViewController.m; sourceTree = "<group>"; };
+		84EAD9F51B94409100302A90 /* BSBaiduPOIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSBaiduPOIViewController.h; sourceTree = "<group>"; };
+		84EAD9F61B94409100302A90 /* BSBaiduPOIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSBaiduPOIViewController.m; sourceTree = "<group>"; };
+		84EAD9F91B9443DF00302A90 /* BSBaiduLBSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSBaiduLBSViewController.h; sourceTree = "<group>"; };
+		84EAD9FA1B9443DF00302A90 /* BSBaiduLBSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSBaiduLBSViewController.m; sourceTree = "<group>"; };
 		84EAFF5C1B5969EF00A90992 /* BSUITableViewCanEditedController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUITableViewCanEditedController.h; sourceTree = "<group>"; };
 		84EAFF5D1B5969EF00A90992 /* BSUITableViewCanEditedController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUITableViewCanEditedController.m; sourceTree = "<group>"; };
 		84EAFF651B596F2400A90992 /* BSUITableViewCommonController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUITableViewCommonController.h; sourceTree = "<group>"; };
@@ -2587,6 +2600,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84EAD9FD1B94457900302A90 /* BaiduMapAPI.framework in Frameworks */,
 				EA79D78216B8C4DE3A174D57 /* libPods-KT-MODEL-MODULE.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -4442,6 +4456,12 @@
 			isa = PBXGroup;
 			children = (
 				84EDB1A01B937849006D925B /* BaiduMap_IOSSDK_v2.8.1_Lib */,
+				84EAD9F11B943BF700302A90 /* BSBaiduViewController.h */,
+				84EAD9F21B943BF700302A90 /* BSBaiduViewController.m */,
+				84EAD9F51B94409100302A90 /* BSBaiduPOIViewController.h */,
+				84EAD9F61B94409100302A90 /* BSBaiduPOIViewController.m */,
+				84EAD9F91B9443DF00302A90 /* BSBaiduLBSViewController.h */,
+				84EAD9FA1B9443DF00302A90 /* BSBaiduLBSViewController.m */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -6189,6 +6209,7 @@
 				84D19FF11B4C440500BA25BF /* LeTemperatureAlarmService.m in Sources */,
 				844570DC1B4D67D5000CA1C7 /* BTLEPeripheralViewController.m in Sources */,
 				84DB2F041B7CCB700041588B /* ESSBeaconScanner.m in Sources */,
+				84EAD9F41B943BF700302A90 /* BSBaiduViewController.m in Sources */,
 				84BF8FC41B4AC2FA001042F1 /* Conf.m in Sources */,
 				84BF8FC61B4AC2FA001042F1 /* ErrorMessage.m in Sources */,
 				84E9D79F1B61E10C00F2CD24 /* BSAssetCell.m in Sources */,
@@ -6199,10 +6220,12 @@
 				84BF8FCF1B4AC2FA001042F1 /* BSTableSection.m in Sources */,
 				84BF8FD11B4AC2FA001042F1 /* BSTableContentObject.m in Sources */,
 				84E9D79D1B61E10C00F2CD24 /* BSAlbumsViewController.m in Sources */,
+				84EAD9F81B94409100302A90 /* BSBaiduPOIViewController.m in Sources */,
 				84BF8FD31B4AC2FA001042F1 /* UIViewController+BSTableObject.m in Sources */,
 				84BF8FD51B4AC2FA001042F1 /* BSUITableViewInitRuntimeController.m in Sources */,
 				84BF8FDA1B4AC2FA001042F1 /* BSTableViewCellData.m in Sources */,
 				84E9D7AB1B61E10C00F2CD24 /* BSVideoIndicatorView.m in Sources */,
+				84EAD9FC1B9443DF00302A90 /* BSBaiduLBSViewController.m in Sources */,
 				84BF8FDC1B4AC2FA001042F1 /* BSTableViewMultCellData.m in Sources */,
 				84DAA4A51B7AE6120070BF83 /* BSRSACrypto.m in Sources */,
 				84BF8FDE1B4AC2FA001042F1 /* BSUITabBarCommonController.m in Sources */,
@@ -6407,6 +6430,7 @@
 				A0F0C3F91B10209500CE406D /* ViewShoppingCartRequest.m in Sources */,
 				842042AE1B2984D80002C868 /* KTCarCell.m in Sources */,
 				A14656F71ADEB5A400571E9A /* KTFooterView.m in Sources */,
+				84EAD9FB1B9443DF00302A90 /* BSBaiduLBSViewController.m in Sources */,
 				84C06D9B1B3AF3BA000BB45C /* BSUITableViewInitRuntimeController.m in Sources */,
 				847076311B3A8AF800F28180 /* communicateController.m in Sources */,
 				8405CB781B55617D0014AF8D /* ProductBase.m in Sources */,
@@ -6504,9 +6528,11 @@
 				8405CBAD1B5570700014AF8D /* BusinessProduct.m in Sources */,
 				8474DEAB1B3F474700D9DE36 /* BSUIBlockButton.m in Sources */,
 				84E9D7A81B61E10C00F2CD24 /* BSVideoIconView.m in Sources */,
+				84EAD9F31B943BF700302A90 /* BSBaiduViewController.m in Sources */,
 				8461B72B1B54BAB5002A7C43 /* KTHandyViewController.m in Sources */,
 				A0F0C3EE1B10209500CE406D /* BasicParams.m in Sources */,
 				842043761B2991770002C868 /* DLScrollTabbarView.m in Sources */,
+				84EAD9F71B94409100302A90 /* BSBaiduPOIViewController.m in Sources */,
 				847076331B3A8AF800F28180 /* expressController.m in Sources */,
 				847433091B2A908000B030C4 /* userProtocol.m in Sources */,
 				8405CBC51B5575420014AF8D /* BusinessProductStock.m in Sources */,
@@ -6837,6 +6863,10 @@
 			baseConfigurationReference = FC5704F4BEFF5B468EADE5E0 /* Pods-KT-MODEL-MODULE.debug.xcconfig */;
 			buildSettings = {
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/BSInfrastructure/Map/BaiduMap_IOSSDK_v2.8.1_Lib",
+				);
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -6856,6 +6886,10 @@
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/BSInfrastructure/Map/BaiduMap_IOSSDK_v2.8.1_Lib",
+				);
 				GCC_NO_COMMON_BLOCKS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited)";

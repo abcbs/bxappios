@@ -38,4 +38,6 @@
 #import "NSData+CommonCrypto.h"
 
 
+#import <BaiduMapAPI/BMapKit.h>
+
 #endif
