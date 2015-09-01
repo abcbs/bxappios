@@ -33,6 +33,11 @@
     [BSUIComponentView navigationHeader:self.navigationController];
     //设置Tab栏
     [BSUIComponentView changeTabBarWithNotification:self addedInfo:self.inform];
+    //设置TextField键盘
+    [self delelageForTextField];
+    //设置界面元素样式
+    [self initSubViews];
+
     [self modifiedStyle];
 }
 
@@ -42,8 +47,14 @@
     BSLog(@"viewDidAppear 对象的视图已经加入到窗口时调用,%@",self.description);
     [BSUIComponentView changeTabBarWithNotification:self addedInfo:self.inform];
     [BSUIComponentView initNavigationWithPermission:self];
+    //设置TextField键盘
+    [self delelageForTextField];
+    //设置界面元素样式
+    [self initSubViews];
+
     [self modifiedStyle];
 }
+
 
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
@@ -69,6 +80,26 @@
 }
 
 - (void)dealloc{
+    
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    
+    [textField resignFirstResponder];
+    return YES;
+}
+
+- (void)initSubViews
+{
+    //修改样式
+    //登陆按钮
+   
+    
+}
+
+-(void)delelageForTextField{
+   
+    
     
 }
 
