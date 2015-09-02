@@ -473,8 +473,8 @@ BSDeprecated("建议使用统一处理方式，使用initNavigationHeaderWithDef
 +(void )initNavigationWithPermission:(UIViewController *)viewController{
     BOOL isLogin=[UserManager checkSession];
     if (!isLogin) {
-        viewController.navigationItem.rightBarButtonItem=nil;
-        viewController.navigationItem.rightBarButtonItems=nil;
+        //viewController.navigationItem.rightBarButtonItem=nil;
+        //viewController.navigationItem.rightBarButtonItems=nil;
     }
 }
 @end
