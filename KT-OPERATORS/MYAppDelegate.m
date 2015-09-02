@@ -60,7 +60,6 @@ BMKMapManager* _mapManager;
     //百度地图安全码abc.KT-OPERATORS
     //Bundle display name:$(PRODUCT_NAME)或者其他文字，此项不能为空，否则启动失败
     BOOL ret = [_mapManager start:@"X4yr9eWQWA3A2CY44Nwm5MZd" generalDelegate:self];
-    
     if (!ret) {
         BSLog(@"/*=--------APP百度地图启动失败------------+=/");
     }else{
@@ -101,6 +100,7 @@ BMKMapManager* _mapManager;
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     //注应用程序在启动时，调用了applicationDidFinishLaunching方法之后也会调用此方法，所以确保代码能够分清复原与启动.
     BSLog(@"\n/*=---------------App首次(再次)运行\n\t\tapplicationDidBecomeActive\n-------------------=*/");
+    [BMKMapView didForeGround];//当应用恢复前台状态时调用，回复地图的渲染和opengl相关的操作
 
 }
 
@@ -111,6 +111,7 @@ BMKMapManager* _mapManager;
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
     //系统将要停止，适当保存数据，当有电话进来或者锁屏，这时你的应用程会挂起，在这时，UIApplicationDelegate委托会收到通知，调用 applicationWillResignActive 方法，你可以重写这个方法，做挂起前的工作，比如关闭网络，保存数据。
     BSLog(@"\n/*=---------------App首次（再次）关闭\n\t\tapplicationWillResignActive\n-------------------=*/");
+    [BMKMapView willBackGround];//当应用即将后台时调用，停止一切调用opengl相关的操作
 
 }
 

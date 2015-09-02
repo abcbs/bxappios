@@ -1,9 +1,6 @@
 //
 //  RadarUploadViewController.h
-//  IphoneMapSdkDemo
-//
-//  Created by wzy on 15/5/7.
-//  Copyright (c) 2015年 Baidu. All rights reserved.
+//  开发者利用周边雷达功能，可以便捷的在自己的应用内，帮助用户实现查找周边跟“我”使同样一款App的人，这样一个功能。
 //
 
 #import <UIKit/UIKit.h>

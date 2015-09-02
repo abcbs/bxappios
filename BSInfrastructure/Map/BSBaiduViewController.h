@@ -9,7 +9,7 @@
 #import "BSUICommonController.h"
 #import "BSCMFrameworkHeader.h"
 
-@interface BSBaiduViewController : BSUICommonController<BMKMapViewDelegate,UIGestureRecognizerDelegate>{
+@interface BSBaiduViewController : BSUICommonController<BMKMapViewDelegate,BMKGeoCodeSearchDelegate,UIGestureRecognizerDelegate>{
     
     
     IBOutlet UIView *controllerView;
@@ -34,12 +34,30 @@
     //显示，点击、长按或双击地图以获取地图状态
     IBOutlet UILabel* _showMsgLabel;
     
-    //
+    //截图按钮
+    IBOutlet UIButton *_snopImageButton;
+    
+    //取消截图
     IBOutlet UIButton* _closeButton;
     
     IBOutlet UIImageView* _imgView;
     
     IBOutlet UIView* _hiddenView;
+    
+    //UI控制
+    IBOutlet UISwitch *_zoomSwitch;
+    
+    IBOutlet UISwitch *_moveSwitch;
+    
+    IBOutlet UISwitch *_scaleSwith;
+    
+    //地图定位
+    IBOutlet UITextField* _coordinateXText;
+    IBOutlet UITextField* _coordinateYText;
+    IBOutlet UITextField* _cityText;
+    IBOutlet UITextField* _addrText;
+    BMKGeoCodeSearch* _geocodesearch;
+ 
 }
 
 
@@ -65,6 +83,19 @@
 - (IBAction)closeButtonClicked:(id)sender;
 
 - (IBAction)hideControllerClick:(id)sender;
+
+//UI控制操作
+- (IBAction)zoomSwitchAction:(UISwitch *)sender;
+
+- (IBAction)moveSwitchAction:(UISwitch *)sender;
+
+- (IBAction)scaleSwitchAction:(UISwitch *)sender;
+
+//地图定位，获取经纬度
+-(IBAction)onClickGeocode;
+
+//根据经纬度取得地址
+-(IBAction)onClickReverseGeocode;
 
 
 @end

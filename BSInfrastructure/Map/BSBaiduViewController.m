@@ -9,7 +9,10 @@
 #import "BSBaiduViewController.h"
 #import "BSCMFrameworkHeader.h"
 
-@interface BSBaiduViewController ()<UITextFieldDelegate>
+@interface BSBaiduViewController ()<UITextFieldDelegate>{
+    //经纬度
+    bool isGeoSearch;
+}
 @end
 
 @implementation BSBaiduViewController
@@ -25,10 +28,21 @@
     
     [_mapView setBaiduHeatMapEnabled:NO];
     
+    _geocodesearch = [[BMKGeoCodeSearch alloc]init];
+    _coordinateXText.text = @"116.403981";//维度
+    _coordinateYText.text = @"39.915101";//经度
+    _cityText.text = @"北京";
+    _addrText.text = @"天安门";
+    [_mapView setZoomLevel:16];
+
+    
     //设置TextField键盘
     [self delelageForTextField];
     //设置界面元素样式
     [self initSubViews];
+    
+    //
+    self.navigationItem.rightBarButtonItem.tintColor=[UIColor whiteColor];
 
 }
 
@@ -37,13 +51,16 @@
     [_mapView viewWillAppear];
     _mapView.delegate = self; // 此处记得不用的时候需要置nil，否则影响内存的释放
     //切换为普通地图
+    _geocodesearch.delegate = self; // 此处记得不用的时候需要置nil，否则影响内存的释放
     [self initSubViews];
+    [self hideController];
     
 }
 
 -(void)viewWillDisappear:(BOOL)animated {
     [_mapView viewWillDisappear];
     _mapView.delegate = nil; // 不用时，置nil
+    _geocodesearch.delegate = nil;
 }
 - (void)viewDidUnload {
     [super viewDidUnload];
@@ -51,6 +68,9 @@
     // e.g. self.myOutlet = nil;
 }
 - (void)dealloc {
+    if (_geocodesearch != nil) {
+        _geocodesearch = nil;
+    }
     if (_mapView) {
         _mapView = nil;
     }
@@ -60,7 +80,9 @@
 {
     //修改样式
     //登陆按钮
-    [BSUIComponentView configButtonStyle:_closeButton];
+    //[BSUIComponentView configButtonStyle:_closeButton];
+    controllerView.hidden=YES;
+
     
 }
 
@@ -73,6 +95,13 @@
     
     //俯视度
     _overlookdegree.delegate=self;
+    
+    //
+    _coordinateXText.delegate=self;
+    _coordinateYText.delegate=self;
+    _cityText.delegate=self;
+    _addrText.delegate=self;
+    
    
     
 }
@@ -115,7 +144,11 @@
     NSLog(@"onClickedMapPoi-%@",mapPoi.text);
     NSString* showmeg = [NSString stringWithFormat:@"您点击了底图标注:%@,\r\n当前经度:%f,当前纬度:%f,\r\nZoomLevel=%d;RotateAngle=%d;OverlookAngle=%d", mapPoi.text,mapPoi.pt.longitude,mapPoi.pt.latitude, (int)_mapView.zoomLevel,_mapView.rotation,_mapView.overlooking];
     _showMsgLabel.text = showmeg;
+    _addrText.text=mapPoi.text;
+    _coordinateYText.text=[NSString stringWithFormat:@"%f",mapPoi.pt.latitude];
+    _coordinateXText.text=[NSString stringWithFormat:@"%f",mapPoi.pt.longitude];
 }
+
 /**
  *点中底图空白处会回调此接口
  *@param mapview 地图View
@@ -140,6 +173,11 @@
     NSString* showmeg = [NSString stringWithFormat:@"您双击了地图(double click).\r\n当前经度:%f,当前纬度:%f,\r\nZoomLevel=%d;RotateAngle=%d;OverlookAngle=%d", coordinate.longitude,coordinate.latitude,
                          (int)_mapView.zoomLevel,_mapView.rotation,_mapView.overlooking];
     _showMsgLabel.text = showmeg;
+    _coordinateXText.text = [NSString stringWithFormat:@"%f",
+                             coordinate.longitude];//纬度
+    
+    _coordinateYText.text = [NSString stringWithFormat:@"%f",
+                             coordinate.latitude];//经度
 }
 
 /**
@@ -153,16 +191,23 @@
     NSString* showmeg = [NSString stringWithFormat:@"您长按了地图(long pressed).\r\n当前经度:%f,当前纬度:%f,\r\nZoomLevel=%d;RotateAngle=%d;OverlookAngle=%d", coordinate.longitude,coordinate.latitude,
                          (int)_mapView.zoomLevel,_mapView.rotation,_mapView.overlooking];
     _showMsgLabel.text = showmeg;
+    _coordinateXText.text = [NSString stringWithFormat:@"%f",
+                            coordinate.longitude];//纬度
+    
+    _coordinateYText.text = [NSString stringWithFormat:@"%f",
+                             coordinate.latitude];//经度
+
     
 }
+
 - (void)mapView:(BMKMapView *)mapView regionDidChangeAnimated:(BOOL)animated
 {
     NSString* showmeg = [NSString stringWithFormat:@"地图区域发生了变化(x=%d,y=%d,\r\nwidth=%d,height=%d).\r\nZoomLevel=%d;RotateAngle=%d;OverlookAngle=%d",(int)_mapView.visibleMapRect.origin.x,(int)_mapView.visibleMapRect.origin.y,(int)_mapView.visibleMapRect.size.width,(int)_mapView.visibleMapRect.size.height,(int)_mapView.zoomLevel,_mapView.rotation,_mapView.overlooking];
     
     _showMsgLabel.text = showmeg;
     
+    
 }
-
 
 
 - (void)mapViewDidFinishLoading:(BMKMapView *)mapView {
@@ -262,16 +307,17 @@
 
 }
 
-
-
 - (IBAction)snapshot:(id)sender {
     //mapView
     _hiddenView.hidden = false;
+    _closeButton.enabled=YES;
+    _snopImageButton.enabled=NO;
     [self.mapView bringSubviewToFront:_hiddenView];
     //获得地图当前可视区域截图
     _imgView.image = [_mapView takeSnapshot];
     //_closeButton.frame=BSRectMake(115, 340, _closeButton.frame.size.width, _closeButton.frame.size.height);
     
+    //controllerView.hidden=YES;
     [_hiddenView bringSubviewToFront:_closeButton];
     self.navigationItem.rightBarButtonItem.enabled = false;
 
@@ -282,6 +328,8 @@
 {
     //关闭截图
     _hiddenView.hidden = true;
+    _snopImageButton.enabled=YES;
+    _closeButton.enabled=NO;
     [self.mapView sendSubviewToBack:_hiddenView];
     _imgView.image = nil;
     self.navigationItem.rightBarButtonItem.enabled = true;
@@ -292,22 +340,152 @@
 
 - (IBAction)hideControllerClick:(id)sender {
     controllerView.hidden=YES;
-    //CGRect frame=_mapView.frame;
-    //_mapView.frame=BSRectMake(0, 0, frame.size.width, frame.size.height);
+    [self hideController];
+}
+
+-(void)hideController{
     UIBarButtonItem *rightButton = [[UIBarButtonItem alloc]
                                     initWithTitle:@"显示控制" style:UIBarButtonItemStylePlain target:self action:@selector(displayControllerView)];
     self.navigationItem.rightBarButtonItem = rightButton;
     self.navigationItem.rightBarButtonItem.tintColor=[UIColor whiteColor];
-}
 
+}
 -(void)displayControllerView{
     controllerView.hidden=NO;
-    //CGRect frame=_mapView.frame;
-    //_mapView.frame=BSRectMake(0, 260, frame.size.width, frame.size.height);
     UIBarButtonItem *rightButton = [[UIBarButtonItem alloc]
                                     initWithTitle:@"隐藏控制" style:UIBarButtonItemStylePlain target:self action:@selector(hideControllerClick:)];
     self.navigationItem.rightBarButtonItem = rightButton;
     self.navigationItem.rightBarButtonItem.tintColor=[UIColor whiteColor];
 
 }
+
+#pragma mark 底图手势开关
+
+- (IBAction)zoomSwitchAction:(UISwitch *)sender {
+    UISwitch *tempSwitch = (UISwitch *)sender;
+    _mapView.zoomEnabled = [tempSwitch isOn];
+}
+
+- (IBAction)moveSwitchAction:(UISwitch *)sender {
+    UISwitch *tempSwitch = (UISwitch *)sender;
+    _mapView.scrollEnabled = [tempSwitch isOn];
+}
+
+- (IBAction)scaleSwitchAction:(UISwitch *)sender {
+    UISwitch *tempSwitch = (UISwitch *)sender;
+    _mapView.showMapScaleBar = [tempSwitch isOn];
+    //自定义比例尺的位置
+    _mapView.mapScaleBarPosition = CGPointMake(_mapView.frame.size.width - 70, _mapView.frame.size.height - 40);
+}
+
+#pragma mark -地图定位
+//根据anntation生成对应的View
+- (BMKAnnotationView *)mapView:(BMKMapView *)view viewForAnnotation:(id <BMKAnnotation>)annotation
+{
+    NSString *AnnotationViewID = @"annotationViewID";
+    //根据指定标识查找一个可被复用的标注View，一般在delegate中使用，用此函数来代替新申请一个View
+    BMKAnnotationView *annotationView = [view dequeueReusableAnnotationViewWithIdentifier:AnnotationViewID];
+    if (annotationView == nil) {
+        annotationView = [[BMKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:AnnotationViewID];
+        ((BMKPinAnnotationView*)annotationView).pinColor = BMKPinAnnotationColorRed;
+        ((BMKPinAnnotationView*)annotationView).animatesDrop = YES;
+    }
+    
+    annotationView.centerOffset = CGPointMake(0, -(annotationView.frame.size.height * 0.5));
+    annotationView.annotation = annotation;
+    annotationView.canShowCallout = TRUE;
+    return annotationView;
+}
+
+
+- (void)onGetGeoCodeResult:(BMKGeoCodeSearch *)searcher result:(BMKGeoCodeResult *)result errorCode:(BMKSearchErrorCode)error
+{
+    NSArray* array = [NSArray arrayWithArray:_mapView.annotations];
+    [_mapView removeAnnotations:array];
+    array = [NSArray arrayWithArray:_mapView.overlays];
+    [_mapView removeOverlays:array];
+    if (error == 0) {
+        BMKPointAnnotation* item = [[BMKPointAnnotation alloc]init];
+        item.coordinate = result.location;
+        item.title = result.address;
+        [_mapView addAnnotation:item];
+        _mapView.centerCoordinate = result.location;
+        NSString* titleStr;
+        NSString* showmeg;
+        
+        titleStr = @"正向地理编码";
+        showmeg = [NSString stringWithFormat:@"经度:%f,纬度:%f",item.coordinate.latitude,item.coordinate.longitude];
+        //设置经纬度输入框的值
+       _coordinateXText.text = [NSString stringWithFormat:@"%f",item.coordinate.longitude];//纬度
+        
+        _coordinateYText.text = [NSString stringWithFormat:@"%f",item.coordinate.latitude];//经度
+
+        showmeg = [NSString stringWithFormat:@"经度:%f,纬度:%f",item.coordinate.latitude,item.coordinate.longitude];
+        UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:titleStr message:showmeg delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定",nil];
+        [myAlertView show];
+    }
+}
+
+-(void) onGetReverseGeoCodeResult:(BMKGeoCodeSearch *)searcher result:(BMKReverseGeoCodeResult *)result errorCode:(BMKSearchErrorCode)error
+{
+    NSArray* array = [NSArray arrayWithArray:_mapView.annotations];
+    [_mapView removeAnnotations:array];
+    array = [NSArray arrayWithArray:_mapView.overlays];
+    [_mapView removeOverlays:array];
+    if (error == 0) {
+        BMKPointAnnotation* item = [[BMKPointAnnotation alloc]init];
+        item.coordinate = result.location;
+        item.title = result.address;
+        [_mapView addAnnotation:item];
+        _mapView.centerCoordinate = result.location;
+        NSString* titleStr;
+        NSString* showmeg;
+        titleStr = @"反向地理编码";
+        showmeg = [NSString stringWithFormat:@"%@",item.title];
+        _addrText.text=result.address;
+        UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:titleStr message:showmeg delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定",nil];
+        [myAlertView show];
+    }
+}
+#pragma mark -地图
+-(IBAction)onClickReverseGeocode
+{
+    isGeoSearch = false;
+    CLLocationCoordinate2D pt = (CLLocationCoordinate2D){0, 0};
+    if (_coordinateXText.text != nil && _coordinateYText.text != nil) {
+        pt = (CLLocationCoordinate2D){[_coordinateYText.text floatValue], [_coordinateXText.text floatValue]};
+    }
+    BMKReverseGeoCodeOption *reverseGeocodeSearchOption = [[BMKReverseGeoCodeOption alloc]init];
+    reverseGeocodeSearchOption.reverseGeoPoint = pt;
+    BOOL flag = [_geocodesearch reverseGeoCode:reverseGeocodeSearchOption];
+    if(flag)
+    {
+        NSLog(@"反geo检索发送成功");
+    }
+    else
+    {
+        NSLog(@"反geo检索发送失败");
+    }
+    
+}
+
+-(IBAction)onClickGeocode
+{
+    isGeoSearch = true;
+    BMKGeoCodeSearchOption *geocodeSearchOption = [[BMKGeoCodeSearchOption alloc]init];
+    geocodeSearchOption.city= _cityText.text;
+    geocodeSearchOption.address = _addrText.text;
+    BOOL flag = [_geocodesearch geoCode:geocodeSearchOption];
+    if(flag)
+    {
+        NSLog(@"geo检索发送成功");
+    }
+    else
+    {
+        NSLog(@"geo检索发送失败");
+    }
+    
+}
+
+
 @end
