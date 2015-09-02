@@ -13,6 +13,14 @@
     
     
     IBOutlet UIView *controllerView;
+    //基本区域
+    
+    IBOutlet UIView *baseUIControllerView;
+    
+    IBOutlet UIView *searchUIControllerView;
+    
+    //控制器段显示
+    IBOutlet UISegmentedControl *controllerSegmented;
     //收缩
     IBOutlet UIButton *_zoom;
     
@@ -97,5 +105,7 @@
 //根据经纬度取得地址
 -(IBAction)onClickReverseGeocode;
 
+//显示关键字
+- (IBAction)onEditingChangedAddredss:(id)sender;
 
 @end
