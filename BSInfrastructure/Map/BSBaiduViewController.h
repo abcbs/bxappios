@@ -11,6 +11,9 @@
 
 @interface BSBaiduViewController : BSUICommonController<BMKMapViewDelegate,BMKGeoCodeSearchDelegate,UIGestureRecognizerDelegate>{
     
+    BMKGeoCodeSearch* _geocodesearch;
+    BMKPoiSearch* _poisearch;
+    BMKShareURLSearch* _shareurlsearch;
     
     IBOutlet UIView *controllerView;
     //基本区域
@@ -21,6 +24,7 @@
     
     //控制器段显示
     IBOutlet UISegmentedControl *controllerSegmented;
+    
     //收缩
     IBOutlet UIButton *_zoom;
     
@@ -61,10 +65,41 @@
     
     //地图定位
     IBOutlet UITextField* _coordinateXText;
+    
     IBOutlet UITextField* _coordinateYText;
+    
     IBOutlet UITextField* _cityText;
+    
     IBOutlet UITextField* _addrText;
-    BMKGeoCodeSearch* _geocodesearch;
+
+    //POI,兴趣点检索
+    IBOutlet UITextField* _poiCityText;
+    
+    IBOutlet UITextField* _keyText;
+    
+    IBOutlet UIButton* _nextPageButton;
+    
+
+    int curPage;
+    
+    //短URL操作
+    IBOutlet UIButton* _poiShortUrlButton;
+    IBOutlet UIButton* _reverseGeoShortUrlButton;
+    bool isPoiShortUrlShare;
+    
+    //收藏
+    IBOutlet UIControl *updateView;
+    
+    IBOutlet UILabel *coorLabel;
+    
+    IBOutlet UITextField *nameTextField;
+    
+    IBOutlet UITextField *updateLatTextField;
+    
+    IBOutlet UITextField *updateLonTextField;
+    
+    IBOutlet UITextField *updateNameTextField;
+
  
 }
 
@@ -73,7 +108,10 @@
 
 @property (strong, nonatomic) IBOutlet UISegmentedControl *segment;
 
+//选择地图类型Segmented
 - (IBAction)changeMapType:(id)sender;
+
+- (IBAction)changeControllerType:(id)sender;
 
 - (IBAction)switchValueChanged:(id)sender;
 
@@ -107,5 +145,27 @@
 
 //显示关键字
 - (IBAction)onEditingChangedAddredss:(id)sender;
+
+//POI
+-(IBAction)onClickOk;
+
+-(IBAction)onClickNextPage;
+
+//短URL
+-(IBAction)poiShortUrlShare;
+
+-(IBAction)reverseGeoShortUrlShare;
+
+
+//收藏
+- (IBAction)saveAction:(id)sender;
+
+- (IBAction)getAllAction:(id)sender;
+
+- (IBAction)deleteAllAction:(id)sender;
+
+- (IBAction)updateCancelAction:(id)sender;
+
+- (IBAction)updateSaveAction:(id)sender;
 
 @end

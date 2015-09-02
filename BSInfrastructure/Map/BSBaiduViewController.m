@@ -285,6 +285,26 @@
 
 }
 
+- (IBAction)changeControllerType:(id)sender {
+    NSInteger index = controllerSegmented.selectedSegmentIndex;
+    switch (index) {
+        case 0:
+            [baseUIControllerView setHidden:NO];
+            [searchUIControllerView setHidden:YES];
+            break;
+            
+        case 1:
+            [baseUIControllerView setHidden:YES];
+            [searchUIControllerView setHidden:NO];
+            break;
+            
+        default:
+            [baseUIControllerView setHidden:YES];
+            [searchUIControllerView setHidden:NO];
+            break;
+    }
+}
+
 - (IBAction)switchValueChanged:(id)sender {
     UISwitch *switchControl = (UISwitch*)sender;
     BOOL isOn = switchControl.isOn;
@@ -469,9 +489,6 @@
     
 }
 
-- (IBAction)onEditingChangedAddredss:(id)sender {
-}
-
 -(IBAction)onClickGeocode
 {
     isGeoSearch = true;
@@ -491,4 +508,43 @@
 }
 
 
+- (IBAction)onEditingChangedAddredss:(id)sender {
+}
+
+-(IBAction)onClickOk{
+    
+}
+
+-(IBAction)onClickNextPage{
+    
+}
+
+//短URL
+-(IBAction)poiShortUrlShare{
+    
+}
+-(IBAction)reverseGeoShortUrlShare{
+    
+}
+
+//收藏
+- (IBAction)saveAction:(id)sender{
+    
+}
+
+- (IBAction)getAllAction:(id)sender{
+    
+}
+
+- (IBAction)deleteAllAction:(id)sender{
+    
+}
+
+- (IBAction)updateCancelAction:(id)sender{
+    
+}
+
+- (IBAction)updateSaveAction:(id)sender{
+    
+}
 @end
