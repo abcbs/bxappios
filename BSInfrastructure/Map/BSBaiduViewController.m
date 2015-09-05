@@ -19,8 +19,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //BMKMapView* mapView = [[BMKMapView alloc]initWithFrame:CGRectMake(0, 0, 320, 480)];
-    //self.view = mapView;
+    //设置TextField键盘
+    [self delelageForTextField];
+    //设置界面元素样式
+    [self initSubViews];
     [self addCustomGestures];//添加自定义的手势
     self.segment.selectedSegmentIndex = 0;
     [_mapView setTrafficEnabled:NO];
@@ -29,17 +31,19 @@
     [_mapView setBaiduHeatMapEnabled:NO];
     
     _geocodesearch = [[BMKGeoCodeSearch alloc]init];
-    _coordinateXText.text = @"116.403981";//维度
-    _coordinateYText.text = @"39.915101";//经度
-    _cityText.text = @"北京";
-    _addrText.text = @"天安门";
+    
+    _poisearch = [[BMKPoiSearch alloc]init];
+    
+    //_coordinateXText.text = @"116.403981";//维度
+    //_coordinateYText.text = @"39.915101";//经度
+    //_cityText.text = @"北京";
+    //_addrText.text = @"天安门";
     [_mapView setZoomLevel:16];
 
+    //
+    _nextPageButton.enabled = false;
+    _mapView.isSelectedAnnotationViewFront = YES;
     
-    //设置TextField键盘
-    [self delelageForTextField];
-    //设置界面元素样式
-    [self initSubViews];
     
     //
     self.navigationItem.rightBarButtonItem.tintColor=[UIColor whiteColor];
@@ -52,6 +56,7 @@
     _mapView.delegate = self; // 此处记得不用的时候需要置nil，否则影响内存的释放
     //切换为普通地图
     _geocodesearch.delegate = self; // 此处记得不用的时候需要置nil，否则影响内存的释放
+     _poisearch.delegate = self; // 此处记得不用的时候需要置nil，否则影响内存的释放
     [self initSubViews];
     [self hideController];
     
@@ -61,6 +66,9 @@
     [_mapView viewWillDisappear];
     _mapView.delegate = nil; // 不用时，置nil
     _geocodesearch.delegate = nil;
+    _poisearch.delegate=nil;
+    
+    
 }
 - (void)viewDidUnload {
     [super viewDidUnload];
@@ -68,6 +76,9 @@
     // e.g. self.myOutlet = nil;
 }
 - (void)dealloc {
+    if (_poisearch!=nil) {
+        _poisearch=nil;
+    }
     if (_geocodesearch != nil) {
         _geocodesearch = nil;
     }
@@ -102,6 +113,9 @@
     _cityText.delegate=self;
     _addrText.delegate=self;
     
+    //POI查找
+    _poiCityText.delegate=self;
+    _keyText.delegate=self;
    
     
 }
@@ -144,7 +158,7 @@
     NSLog(@"onClickedMapPoi-%@",mapPoi.text);
     NSString* showmeg = [NSString stringWithFormat:@"您点击了底图标注:%@,\r\n当前经度:%f,当前纬度:%f,\r\nZoomLevel=%d;RotateAngle=%d;OverlookAngle=%d", mapPoi.text,mapPoi.pt.longitude,mapPoi.pt.latitude, (int)_mapView.zoomLevel,_mapView.rotation,_mapView.overlooking];
     _showMsgLabel.text = showmeg;
-    _addrText.text=mapPoi.text;
+    //_addrText.text=mapPoi.text;
     _coordinateYText.text=[NSString stringWithFormat:@"%f",mapPoi.pt.latitude];
     _coordinateXText.text=[NSString stringWithFormat:@"%f",mapPoi.pt.longitude];
 }
@@ -462,7 +476,9 @@
         NSString* showmeg;
         titleStr = @"反向地理编码";
         showmeg = [NSString stringWithFormat:@"%@",item.title];
-        _addrText.text=result.address;
+        //_addrText.text=result.address;
+        //_keyText.text=result.address;
+        
         UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:titleStr message:showmeg delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定",nil];
         [myAlertView show];
     }
@@ -507,16 +523,157 @@
     
 }
 
-
+//点击地址编辑弹出提示信息
 - (IBAction)onEditingChangedAddredss:(id)sender {
+    
 }
 
+
 -(IBAction)onClickOk{
-    
+    //如果有兴趣点
+    NSArray* array = [NSArray arrayWithArray:_mapView.annotations];
+    [_mapView removeAnnotations:array];
+    curPage = 0;
+    if ([_keyText.text isEqualToString:@""]) {
+        [self searchByBMKCitySearchOption];
+    }else{
+         [self searchByBMKNearbySearchOption];
+    }
 }
 
 -(IBAction)onClickNextPage{
+    curPage++;
+    if ([_keyText.text isEqualToString:@""]) {
+        [self searchByBMKCitySearchOption];
+    }else{
+        [self searchByBMKNearbySearchOption];
+    }
+}
+
+-(void)searchByBMKNearbySearchOption{
+    BMKNearbySearchOption *option = [[BMKNearbySearchOption alloc]init];
+    option.pageIndex = curPage;
+    option.pageCapacity = 100;
+    option.radius=500;
+    option.location = (CLLocationCoordinate2D){[_coordinateYText.text doubleValue], [_coordinateXText.text doubleValue]};
+    //CLLocationCoordinate2D pt = (CLLocationCoordinate2D){0, 0};
+    option.keyword = _keyText.text;
+    BOOL flag = [_poisearch poiSearchNearBy:option];
+    if(flag)
+    {
+        _nextPageButton.enabled = true;
+        _savePOIButton.enabled=true;
+        NSLog(@"城市内检索发送成功");
+    }
+    else
+    {
+        _nextPageButton.enabled = false;
+        _savePOIButton.enabled=false;
+        NSLog(@"城市内检索发送失败");
+    }
+
+}
+
+-(void)searchByBMKCitySearchOption{
+    //curPage = 0;
+    BMKCitySearchOption *citySearchOption = [[BMKCitySearchOption alloc]init];
+    citySearchOption.pageIndex = curPage;
+    citySearchOption.pageCapacity = 100;
+    //
+    citySearchOption.city= _cityText.text;
+    citySearchOption.keyword = _addrText.text;
+
+    BOOL flag = [_poisearch poiSearchInCity:citySearchOption];
+    if(flag)
+    {
+        _nextPageButton.enabled = true;
+        _savePOIButton.enabled=true;
+        NSLog(@"城市内检索发送成功");
+    }
+    else
+    {
+        _nextPageButton.enabled = false;
+        _savePOIButton.enabled=false;
+        NSLog(@"城市内检索发送失败");
+    }
+
     
+}
+
+-(void)searchByBMKPoiDetailSearchOption:(NSString *)uid{
+    //初始化检索服务
+    //POI详情检索
+    BMKPoiDetailSearchOption* option = [[BMKPoiDetailSearchOption alloc] init];
+    option.poiUid = uid;//POI搜索结果中获取的uid
+    BOOL flag = [_poisearch poiDetailSearch:option];
+    if(flag)
+    {
+        //详情检索发起成功
+    }
+    else
+    {
+        //详情检索发送失败
+    }
+}
+#pragma mark implement BMKSearchDelegate
+- (void)onGetPoiResult:(BMKPoiSearch *)searcher result:(BMKPoiResult*)result errorCode:(BMKSearchErrorCode)error
+{
+    // 清楚屏幕中所有的annotation
+    NSArray* array = [NSArray arrayWithArray:_mapView.annotations];
+    [_mapView removeAnnotations:array];
+    
+    if (error == BMK_SEARCH_NO_ERROR) {
+        NSMutableArray *annotations = [NSMutableArray array];
+        for (int i = 0; i < result.poiInfoList.count; i++) {
+            BMKPoiInfo* poi = [result.poiInfoList objectAtIndex:i];
+            BMKPointAnnotation* item = [[BMKPointAnnotation alloc]init];
+            item.coordinate = poi.pt;
+            item.title = poi.name;
+            item.subtitle=[NSString stringWithFormat:@"电话:%@地址:%@",poi.phone,poi.address];
+            [self searchByBMKPoiDetailSearchOption:poi.uid];
+            [annotations addObject:item];
+        }
+        [_mapView addAnnotations:annotations];
+        [_mapView showAnnotations:annotations animated:YES];
+    } else if (error == BMK_SEARCH_AMBIGUOUS_ROURE_ADDR){
+        NSLog(@"起始点有歧义");
+    } else {
+        // 各种情况的判断。。。
+    }
+}
+
+-(void)onGetPoiDetailResult:(BMKPoiSearch *)searcher result:(BMKPoiDetailResult *)poiDetailResult errorCode:(BMKSearchErrorCode)errorCode
+{
+    /**
+     NSString* name;
+     CLLocationCoordinate2D pt;
+     NSString* address;
+     NSString* phone;
+     NSString* uid;
+     NSString* tag;
+     NSString* detailUrl;
+     NSString* type;
+     double  price;
+     double overallRating;
+     double asteRating;
+     double serviceRating;
+     double environmentRating;
+     double facilityRating;
+     double hygieneRating;
+     double technologyRating;
+     int imageNum;
+     int grouponNum;
+     int commentNum;
+     int favoriteNum;
+     int checkInNum;
+     NSString* _shopHours;
+
+     */
+    if(errorCode == BMK_SEARCH_NO_ERROR){
+        BSLog(@"详细信息:分类\t%@\t名称:%@\t电话:%@\tURL:%@\t价格:%f营业时间:%@",poiDetailResult.tag,
+              poiDetailResult.name,poiDetailResult.address,poiDetailResult.detailUrl
+              ,poiDetailResult.price,poiDetailResult.shopHours);
+    }
 }
 
 //短URL

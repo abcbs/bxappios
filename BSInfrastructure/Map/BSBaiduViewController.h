@@ -9,7 +9,7 @@
 #import "BSUICommonController.h"
 #import "BSCMFrameworkHeader.h"
 
-@interface BSBaiduViewController : BSUICommonController<BMKMapViewDelegate,BMKGeoCodeSearchDelegate,UIGestureRecognizerDelegate>{
+@interface BSBaiduViewController : BSUICommonController<BMKMapViewDelegate,BMKGeoCodeSearchDelegate,BMKPoiSearchDelegate, UIGestureRecognizerDelegate>{
     
     BMKGeoCodeSearch* _geocodesearch;
     BMKPoiSearch* _poisearch;
@@ -79,6 +79,7 @@
     
     IBOutlet UIButton* _nextPageButton;
     
+    IBOutlet UIButton *_savePOIButton;
 
     int curPage;
     
