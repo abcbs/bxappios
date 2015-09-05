@@ -9,18 +9,25 @@
 #import "BSUICommonController.h"
 #import "BSCMFrameworkHeader.h"
 
-@interface BSBaiduViewController : BSUICommonController<BMKMapViewDelegate,BMKGeoCodeSearchDelegate,BMKPoiSearchDelegate, UIGestureRecognizerDelegate>{
+@interface BSBaiduViewController : BSUICommonController<BMKMapViewDelegate,BMKGeoCodeSearchDelegate,BMKPoiSearchDelegate, BMKSuggestionSearchDelegate,BMKLocationServiceDelegate,UIGestureRecognizerDelegate>{
     
     BMKGeoCodeSearch* _geocodesearch;
     BMKPoiSearch* _poisearch;
     BMKShareURLSearch* _shareurlsearch;
+    BMKSuggestionSearch *_suggestionsearch;
+    BMKLocationService* _locService;
     
     IBOutlet UIView *controllerView;
-    //基本区域
     
+    //基本区域
     IBOutlet UIView *baseUIControllerView;
     
+    //查询与POI控制区
     IBOutlet UIView *searchUIControllerView;
+    
+    //定位与检索
+    
+    IBOutlet UIView *localtionUIControllerView;
     
     //控制器段显示
     IBOutlet UISegmentedControl *controllerSegmented;
@@ -101,6 +108,14 @@
     
     IBOutlet UITextField *updateNameTextField;
 
+    //定位
+    IBOutlet UIButton* startBtn;
+    
+    IBOutlet UIButton* stopBtn;
+    
+    IBOutlet UIButton* followingBtn;
+    
+    IBOutlet UIButton* followHeadBtn;
  
 }
 
@@ -168,5 +183,14 @@
 - (IBAction)updateCancelAction:(id)sender;
 
 - (IBAction)updateSaveAction:(id)sender;
+
+//定位
+-(IBAction)startLocation:(id)sender;
+
+-(IBAction)stopLocation:(id)sender;
+
+-(IBAction)startFollowing:(id)sender;
+
+-(IBAction)startFollowHeading:(id)sender;
 
 @end

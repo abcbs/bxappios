@@ -34,18 +34,29 @@
     
     _poisearch = [[BMKPoiSearch alloc]init];
     
-    //_coordinateXText.text = @"116.403981";//维度
-    //_coordinateYText.text = @"39.915101";//经度
-    //_cityText.text = @"北京";
-    //_addrText.text = @"天安门";
+    _suggestionsearch =[[BMKSuggestionSearch alloc]init];
+   
+    _shareurlsearch = [[BMKShareURLSearch alloc]init];
+
     [_mapView setZoomLevel:16];
 
     //
     _nextPageButton.enabled = false;
+    
     _mapView.isSelectedAnnotationViewFront = YES;
     
+    [baseUIControllerView setHidden:YES];
+    [searchUIControllerView setHidden:NO];
+    [localtionUIControllerView setHidden:YES];
+    //定位
+    _locService = [[BMKLocationService alloc]init];
+    [followHeadBtn setEnabled:NO];
+    [followingBtn setAlpha:0.6];
+    [followingBtn setEnabled:NO];
+    [followHeadBtn setAlpha:0.6];
+    [stopBtn setEnabled:NO];
+    [stopBtn setAlpha:0.6];
     
-    //
     self.navigationItem.rightBarButtonItem.tintColor=[UIColor whiteColor];
 
 }
@@ -57,6 +68,8 @@
     //切换为普通地图
     _geocodesearch.delegate = self; // 此处记得不用的时候需要置nil，否则影响内存的释放
      _poisearch.delegate = self; // 此处记得不用的时候需要置nil，否则影响内存的释放
+     _suggestionsearch.delegate = self;
+     _locService.delegate = self;
     [self initSubViews];
     [self hideController];
     
@@ -67,7 +80,9 @@
     _mapView.delegate = nil; // 不用时，置nil
     _geocodesearch.delegate = nil;
     _poisearch.delegate=nil;
-    
+    _suggestionsearch.delegate =nil;
+    _shareurlsearch.delegate=nil;
+     _locService.delegate = nil;
     
 }
 - (void)viewDidUnload {
@@ -81,6 +96,15 @@
     }
     if (_geocodesearch != nil) {
         _geocodesearch = nil;
+    }
+    if (_suggestionsearch) {
+        _suggestionsearch=nil;
+    }
+    if (_shareurlsearch) {
+        _shareurlsearch=nil;
+    }
+    if (_locService) {
+        _locService=nil;
     }
     if (_mapView) {
         _mapView = nil;
@@ -302,18 +326,27 @@
 - (IBAction)changeControllerType:(id)sender {
     NSInteger index = controllerSegmented.selectedSegmentIndex;
     switch (index) {
-        case 0:
+        case 0://基本的
             [baseUIControllerView setHidden:NO];
+            [localtionUIControllerView setHidden:YES];
             [searchUIControllerView setHidden:YES];
             break;
             
-        case 1:
+        case 1://检查
             [baseUIControllerView setHidden:YES];
+            [localtionUIControllerView setHidden:YES];
             [searchUIControllerView setHidden:NO];
+            break;
+            
+        case 2://定位
+            [baseUIControllerView setHidden:YES];
+            [localtionUIControllerView setHidden:NO];
+            [searchUIControllerView setHidden:YES];
             break;
             
         default:
             [baseUIControllerView setHidden:YES];
+            [localtionUIControllerView setHidden:YES];
             [searchUIControllerView setHidden:NO];
             break;
     }
@@ -676,6 +709,16 @@
     }
 }
 
+//建议检索
+//实现Delegate处理回调结果
+- (void)onGetSuggestionResult:(BMKSuggestionSearch*)searcher result:(BMKSuggestionResult*)result errorCode:(BMKSearchErrorCode)error{
+    if (error == BMK_SEARCH_NO_ERROR) {
+        //在此处理正常结果
+    }
+    else {
+        NSLog(@"抱歉，未找到结果");
+    }
+}
 //短URL
 -(IBAction)poiShortUrlShare{
     
@@ -704,4 +747,115 @@
 - (IBAction)updateSaveAction:(id)sender{
     
 }
+
+
+//普通态
+-(IBAction)startLocation:(id)sender
+{
+    NSLog(@"进入普通定位态");
+    // [_mapView setZoomLevel:14];
+    [_locService startUserLocationService];
+    _mapView.showsUserLocation = NO;//先关闭显示的定位图层
+    _mapView.userTrackingMode = BMKUserTrackingModeNone;//设置定位的状态
+    _mapView.showsUserLocation = YES;//显示定位图层
+    [startBtn setEnabled:NO];
+    [startBtn setAlpha:0.6];
+    [stopBtn setEnabled:YES];
+    [stopBtn setAlpha:1.0];
+    [followHeadBtn setEnabled:YES];
+    [followHeadBtn setAlpha:1.0];
+    [followingBtn setEnabled:YES];
+    [followingBtn setAlpha:1.0];
+}
+//罗盘态
+-(IBAction)startFollowHeading:(id)sender
+{
+    NSLog(@"进入罗盘态");
+    // [_mapView setZoomLevel:14];
+    _mapView.showsUserLocation = NO;
+    _mapView.userTrackingMode = BMKUserTrackingModeFollowWithHeading;
+    _mapView.showsUserLocation = YES;
+    
+}
+//跟随态
+-(IBAction)startFollowing:(id)sender
+{
+    NSLog(@"进入跟随态");
+    // [_mapView setZoomLevel:14];
+    _mapView.showsUserLocation = NO;
+    _mapView.userTrackingMode = BMKUserTrackingModeFollow;
+    _mapView.showsUserLocation = YES;
+    
+}
+//停止定位
+-(IBAction)stopLocation:(id)sender
+{
+    // [_mapView setZoomLevel:14];
+    [_locService stopUserLocationService];
+    _mapView.showsUserLocation = NO;
+    [stopBtn setEnabled:NO];
+    [stopBtn setAlpha:0.6];
+    [followHeadBtn setEnabled:NO];
+    [followHeadBtn setAlpha:0.6];
+    [followingBtn setEnabled:NO];
+    [followingBtn setAlpha:0.6];
+    [startBtn setEnabled:YES];
+    [startBtn setAlpha:1.0];
+}
+
+/**
+ *在地图View将要启动定位时，会调用此函数
+ *@param mapView 地图View
+ */
+- (void)willStartLocatingUser
+{
+    NSLog(@"start locate");
+}
+
+/**
+ *用户方向更新后，会调用此函数
+ *@param userLocation 新的用户位置
+ */
+- (void)didUpdateUserHeading:(BMKUserLocation *)userLocation
+{
+    [_mapView updateLocationData:userLocation];
+    NSLog(@"heading is %@",userLocation.heading);
+}
+
+/**
+ *用户位置更新后，会调用此函数
+ *@param userLocation 新的用户位置
+ */
+- (void)didUpdateBMKUserLocation:(BMKUserLocation *)userLocation
+{
+    //    NSLog(@"didUpdateUserLocation lat %f,long %f",userLocation.location.coordinate.latitude,userLocation.location.coordinate.longitude);
+    [_mapView updateLocationData:userLocation];
+    NSString* showmeg = [NSString stringWithFormat:@"您点击了底图标注:%@,\r\n当前经度:%f,当前纬度:%f,\r\nZoomLevel=%d;RotateAngle=%d;OverlookAngle=%d", userLocation.title,
+                         userLocation.location.coordinate.longitude ,userLocation.location.coordinate.latitude, (int)_mapView.zoomLevel,_mapView.rotation,_mapView.overlooking];
+    _showMsgLabel.text = showmeg;
+    //_addrText.text=mapPoi.text;
+    _coordinateYText.text=[NSString stringWithFormat:@"%f",userLocation.location.coordinate.latitude];
+    _coordinateXText.text=[NSString stringWithFormat:@"%f",userLocation.location.coordinate.longitude];
+}
+
+/**
+ *在地图View停止定位后，会调用此函数
+ *@param mapView 地图View
+ */
+- (void)didStopLocatingUser
+{
+    NSLog(@"stop locate");
+}
+
+/**
+ *定位失败后，会调用此函数
+ *@param mapView 地图View
+ *@param error 错误号，参考CLError.h中定义的错误号
+ */
+- (void)didFailToLocateUserWithError:(NSError *)error
+{
+    NSLog(@"location error");
+}
+
+
 @end
