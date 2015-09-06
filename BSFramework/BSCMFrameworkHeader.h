@@ -40,4 +40,5 @@
 
 #import <BaiduMapAPI/BMapKit.h>
 
+#import "MyAnimatedAnnotationView.h"
 #endif

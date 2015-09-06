@@ -13,6 +13,8 @@
     //经纬度
     bool isGeoSearch;
     //int radius;
+    BMKPointAnnotation* searchPointAnnotation;
+    NSMutableArray *_searchResultPoi;
 }
 @end
 
@@ -45,6 +47,8 @@
     //radius=500;
     _nextPageButton.enabled = false;
     
+    //查询结果存放值
+    _searchResultPoi=[[NSMutableArray alloc]init];
     _mapView.isSelectedAnnotationViewFront = YES;
     
     [baseUIControllerView setHidden:YES];
@@ -256,6 +260,23 @@
 //根据anntation生成对应的View
 - (BMKAnnotationView *)mapView:(BMKMapView *)view viewForAnnotation:(id <BMKAnnotation>)annotation
 {
+    //画当前点
+    //searchPointAnnotation
+    if (annotation == searchPointAnnotation) {
+        NSString *AnnotationViewID = @"AnimatedAnnotation";
+        MyAnimatedAnnotationView *annotationView = nil;
+        if (annotationView == nil) {
+            annotationView = [[MyAnimatedAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:AnnotationViewID];
+        }
+        NSMutableArray *images = [NSMutableArray array];
+        for (int i = 1; i < 4; i++) {
+            UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"poi_%d.png", i]];
+            [images addObject:image];
+        }
+        annotationView.annotationImages = images;
+        return annotationView;
+    }
+
     NSString *AnnotationViewID = @"annotationViewID";
     //根据指定标识查找一个可被复用的标注View，一般在delegate中使用，用此函数来代替新申请一个View
     BMKAnnotationView *annotationView = [view dequeueReusableAnnotationViewWithIdentifier:AnnotationViewID];
@@ -269,6 +290,138 @@
     annotationView.annotation = annotation;
     annotationView.canShowCallout = TRUE;
     return annotationView;
+}
+
+#pragma mark -添加覆盖物，即形状
+- (BMKOverlayView *)mapView:(BMKMapView *)mapView viewForOverlay:(id <BMKOverlay>)overlay{
+    if ([overlay isKindOfClass:[BMKCircle class]]){
+        BMKCircleView* circleView = [[BMKCircleView alloc] initWithOverlay:overlay];
+        circleView.fillColor = [[UIColor cyanColor] colorWithAlphaComponent:0.1];
+        circleView.strokeColor = [[UIColor blueColor] colorWithAlphaComponent:0.5];
+        circleView.lineWidth = 1.0;
+        
+        return circleView;
+    }
+    return nil;
+}
+
+#pragma mark implement BMKSearchDelegate
+- (void)onGetPoiResult:(BMKPoiSearch *)searcher result:(BMKPoiResult*)result errorCode:(BMKSearchErrorCode)error
+{
+    // 清楚屏幕中所有的annotation
+    NSArray* annotations = [NSArray arrayWithArray:_mapView.annotations];
+ 
+
+    BOOL isSearchPOI=NO;
+    if (annotations.count>0) {
+        BMKPointAnnotation *searchPOIAnn= annotations[0];
+        if ([searchPOIAnn.title isEqualToString:@"搜索位置"]) {
+            isSearchPOI=YES;
+            [_mapView addAnnotation:searchPOIAnn];
+        }else {
+            [_mapView removeAnnotations:annotations];
+
+        }
+    }else {
+        [_mapView removeAnnotations:annotations];
+
+    }
+    
+    
+    NSArray* overlays = [NSArray arrayWithArray:_mapView.overlays];
+    [_mapView removeAnnotations:overlays];
+
+    if (error == BMK_SEARCH_NO_ERROR) {
+        NSMutableArray *annotations = [NSMutableArray array];
+        BSLog(@"检索数量为:%lu",(unsigned long)result.poiInfoList.count);
+        for (int i = 0; i < result.poiInfoList.count; i++) {
+            BMKPoiInfo* poi = [result.poiInfoList objectAtIndex:i];
+            [_searchResultPoi addObject:poi];
+            BMKPointAnnotation* item = [[BMKPointAnnotation alloc]init];
+            item.coordinate = poi.pt;
+            //item.title = poi.name;
+            
+            [self searchByBMKPoiDetailSearchOption:poi.uid];
+            //计算同关键点的距离
+            BMKMapPoint point1 = BMKMapPointForCoordinate(CLLocationCoordinate2DMake([_coordinateYText.text doubleValue],[_coordinateXText.text doubleValue]));
+            BMKMapPoint point2 = BMKMapPointForCoordinate(CLLocationCoordinate2DMake(poi.pt.latitude,poi.pt.longitude));//latitude
+            CLLocationDistance distance = BMKMetersBetweenMapPoints(point1,point2);
+            //距离取整数
+            item.subtitle=[NSString stringWithFormat:@"电话:%@\t地址:%@",poi.phone,poi.address];
+            //判断是否在搜索半径内
+            //int d=[_radiosText.text intValue];
+            BOOL ptInCircle = BMKCircleContainsCoordinate(CLLocationCoordinate2DMake([_coordinateYText.text doubleValue],[_coordinateXText.text doubleValue]), CLLocationCoordinate2DMake(poi.pt.latitude,poi.pt.longitude), [_radiosText.text intValue]);
+            if (ptInCircle) {
+                item.title=[NSString stringWithFormat:@"%@  距离:%.0f  R:是",poi.name,(double)distance];
+            }else{
+                item.title=[NSString stringWithFormat:@"%@  距离:%.0f  R:否",poi.name,(double)distance];
+            }
+            
+            [annotations addObject:item];
+        }
+        //添加覆盖物
+        CLLocationCoordinate2D coor;
+        coor.latitude = [_coordinateYText.text doubleValue];//39.915;
+        coor.longitude = [_coordinateXText.text doubleValue];//116.404;
+        BMKCircle* circle = [BMKCircle circleWithCenterCoordinate:coor radius:[_radiosText.text intValue]];
+        [_mapView addOverlay:circle];
+        [_mapView addAnnotations:annotations];
+        [_mapView showAnnotations:annotations animated:YES];
+    } else if (error == BMK_SEARCH_AMBIGUOUS_ROURE_ADDR){
+        BSLog(@"起始点有歧义");
+    } else if (error == BMK_SEARCH_RESULT_NOT_FOUND){
+        BSLog(@"查找结束,总共发现POI为:\t%lu",(unsigned long)_searchResultPoi.count);
+        NSString *showmeg=[NSString stringWithFormat:@"查找关键字:%@\t或者在经纬度附近找%@\t发现共计:%lu条",
+                            _addrText.text,_keyText.text,(unsigned long)_searchResultPoi.count];
+        //showmeg = [NSString stringWithFormat:@"经度:%f,纬度:%f",item.coordinate.latitude,item.coordinate.longitude];
+        UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:@"查询关键信息" message:showmeg delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定",nil];
+        [myAlertView show];
+    }
+}
+
+-(void)onGetPoiDetailResult:(BMKPoiSearch *)searcher result:(BMKPoiDetailResult *)poiDetailResult errorCode:(BMKSearchErrorCode)errorCode
+{
+    /**
+     NSString* name;
+     CLLocationCoordinate2D pt;
+     NSString* address;
+     NSString* phone;
+     NSString* uid;
+     NSString* tag;
+     NSString* detailUrl;
+     NSString* type;
+     double  price;
+     double overallRating;
+     double asteRating;
+     double serviceRating;
+     double environmentRating;
+     double facilityRating;
+     double hygieneRating;
+     double technologyRating;
+     int imageNum;
+     int grouponNum;
+     int commentNum;
+     int favoriteNum;
+     int checkInNum;
+     NSString* _shopHours;
+     
+     */
+    if(errorCode == BMK_SEARCH_NO_ERROR){
+        BSLog(@"详细信息:分类\t%@\t名称:%@\t电话:%@\tURL:%@\t价格:%f营业时间:%@",poiDetailResult.tag,
+              poiDetailResult.name,poiDetailResult.address,poiDetailResult.detailUrl
+              ,poiDetailResult.price,poiDetailResult.shopHours);
+    }
+}
+
+//建议检索
+//实现Delegate处理回调结果
+- (void)onGetSuggestionResult:(BMKSuggestionSearch*)searcher result:(BMKSuggestionResult*)result errorCode:(BMKSearchErrorCode)error{
+    if (error == BMK_SEARCH_NO_ERROR) {
+        //在此处理正常结果
+    }
+    else {
+        BSLog(@"抱歉，未找到结果");
+    }
 }
 
 #pragma mark -百度地图，由地址获取经纬度
@@ -337,92 +490,6 @@
     BSLog(@"地图初始化完成");
 }
 
-#pragma mark implement BMKSearchDelegate
-- (void)onGetPoiResult:(BMKPoiSearch *)searcher result:(BMKPoiResult*)result errorCode:(BMKSearchErrorCode)error
-{
-    // 清楚屏幕中所有的annotation
-    NSArray* array = [NSArray arrayWithArray:_mapView.annotations];
-    [_mapView removeAnnotations:array];
-    
-    if (error == BMK_SEARCH_NO_ERROR) {
-        NSMutableArray *annotations = [NSMutableArray array];
-        for (int i = 0; i < result.poiInfoList.count; i++) {
-            BMKPoiInfo* poi = [result.poiInfoList objectAtIndex:i];
-            BMKPointAnnotation* item = [[BMKPointAnnotation alloc]init];
-            item.coordinate = poi.pt;
-            //item.title = poi.name;
-            
-            [self searchByBMKPoiDetailSearchOption:poi.uid];
-            //计算同关键点的距离
-            BMKMapPoint point1 = BMKMapPointForCoordinate(CLLocationCoordinate2DMake([_coordinateYText.text doubleValue],[_coordinateXText.text doubleValue]));
-            BMKMapPoint point2 = BMKMapPointForCoordinate(CLLocationCoordinate2DMake(poi.pt.latitude,poi.pt.longitude));//latitude
-            CLLocationDistance distance = BMKMetersBetweenMapPoints(point1,point2);
-            //距离取整数
-            item.subtitle=[NSString stringWithFormat:@"电话:%@\t地址:%@",poi.phone,poi.address];
-            //判断是否在搜索半径内
-            //int d=[_radiosText.text intValue];
-            BOOL ptInCircle = BMKCircleContainsCoordinate(CLLocationCoordinate2DMake([_coordinateYText.text doubleValue],[_coordinateXText.text doubleValue]), CLLocationCoordinate2DMake(poi.pt.latitude,poi.pt.longitude), [_radiosText.text intValue]);
-            if (ptInCircle) {
-                item.title=[NSString stringWithFormat:@"%@  距离:%.0f  R:是",poi.name,(double)distance];
-            }else{
-                item.title=[NSString stringWithFormat:@"%@  距离:%.0f  R:否",poi.name,(double)distance];
-            }
-            
-            [annotations addObject:item];
-        }
-        [_mapView addAnnotations:annotations];
-        [_mapView showAnnotations:annotations animated:YES];
-    } else if (error == BMK_SEARCH_AMBIGUOUS_ROURE_ADDR){
-        NSLog(@"起始点有歧义");
-    } else {
-        // 各种情况的判断。。。
-    }
-}
-
--(void)onGetPoiDetailResult:(BMKPoiSearch *)searcher result:(BMKPoiDetailResult *)poiDetailResult errorCode:(BMKSearchErrorCode)errorCode
-{
-    /**
-     NSString* name;
-     CLLocationCoordinate2D pt;
-     NSString* address;
-     NSString* phone;
-     NSString* uid;
-     NSString* tag;
-     NSString* detailUrl;
-     NSString* type;
-     double  price;
-     double overallRating;
-     double asteRating;
-     double serviceRating;
-     double environmentRating;
-     double facilityRating;
-     double hygieneRating;
-     double technologyRating;
-     int imageNum;
-     int grouponNum;
-     int commentNum;
-     int favoriteNum;
-     int checkInNum;
-     NSString* _shopHours;
-     
-     */
-    if(errorCode == BMK_SEARCH_NO_ERROR){
-        BSLog(@"详细信息:分类\t%@\t名称:%@\t电话:%@\tURL:%@\t价格:%f营业时间:%@",poiDetailResult.tag,
-              poiDetailResult.name,poiDetailResult.address,poiDetailResult.detailUrl
-              ,poiDetailResult.price,poiDetailResult.shopHours);
-    }
-}
-
-//建议检索
-//实现Delegate处理回调结果
-- (void)onGetSuggestionResult:(BMKSuggestionSearch*)searcher result:(BMKSuggestionResult*)result errorCode:(BMKSearchErrorCode)error{
-    if (error == BMK_SEARCH_NO_ERROR) {
-        //在此处理正常结果
-    }
-    else {
-        BSLog(@"抱歉，未找到结果");
-    }
-}
 #pragma mark -百度地图代理方法结束
 
 #pragma mark - 添加自定义的手势（若不自定义手势，不需要下面的代码）
@@ -619,6 +686,7 @@
 #pragma mark -点击事件，根据经纬度获取地理信息
 -(IBAction)onClickReverseGeocode
 {
+    //反向
     isGeoSearch = false;
     CLLocationCoordinate2D pt = (CLLocationCoordinate2D){0, 0};
     if (_coordinateXText.text != nil && _coordinateYText.text != nil) {
@@ -630,6 +698,8 @@
     if(flag)
     {
         BSLog(@"反geo检索发送成功");
+        //把经纬度标示在地图上
+        [self addPointAnnotation];
     }
     else
     {
@@ -638,6 +708,7 @@
     
 }
 
+#pragma mark -根据经纬度找地址
 -(IBAction)onClickGeocode
 {
     isGeoSearch = true;
@@ -648,6 +719,7 @@
     if(flag)
     {
         BSLog(@"geo检索发送成功");
+        [self addPointAnnotation];
     }
     else
     {
@@ -656,13 +728,22 @@
     
 }
 
-//点击地址编辑弹出提示信息
-- (IBAction)onEditingChangedAddredss:(id)sender {
-    
+//添加标注
+- (void)addPointAnnotation
+{
+    searchPointAnnotation = [[BMKPointAnnotation alloc]init];
+        CLLocationCoordinate2D coor;
+        coor.latitude = [_coordinateYText.text floatValue];//39.915;
+        coor.longitude =[_coordinateXText.text floatValue];// 116.404;
+        searchPointAnnotation.coordinate = coor;
+        searchPointAnnotation.title = @"搜索位置";
+        searchPointAnnotation.subtitle = [NSString stringWithFormat:@"%@",_addrText.text];
+    [_mapView addAnnotation:searchPointAnnotation];
 }
 
-
+#pragma mark -查找关键字POI的基本入口方法
 -(IBAction)onClickOk{
+    [_searchResultPoi removeAllObjects];
     //如果有兴趣点
     NSArray* array = [NSArray arrayWithArray:_mapView.annotations];
     [_mapView removeAnnotations:array];
@@ -698,6 +779,7 @@
         _nextPageButton.enabled = true;
         _savePOIButton.enabled=true;
         BSLog(@"城市内检索发送成功");
+        [self addPointAnnotation];
     }
     else
     {
@@ -723,6 +805,7 @@
         _nextPageButton.enabled = true;
         _savePOIButton.enabled=true;
         NSLog(@"城市内检索发送成功");
+        [self addPointAnnotation];
     }
     else
     {
@@ -853,6 +936,7 @@
 {
     [_mapView updateLocationData:userLocation];
     BSLog(@"heading is %@",userLocation.heading);
+    
 }
 
 /**
@@ -877,6 +961,7 @@
 - (void)didStopLocatingUser
 {
     BSLog(@"stop locate");
+    
 }
 
 /**
@@ -889,5 +974,8 @@
     BSLog(@"location error");
 }
 
-
+//点击地址编辑弹出提示信息
+- (IBAction)onEditingChangedAddredss:(id)sender {
+    
+}
 @end

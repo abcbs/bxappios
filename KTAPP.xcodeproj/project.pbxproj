@@ -760,6 +760,8 @@
 		84A0765C1B21AA9A001CE3A2 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A0765B1B21AA9A001CE3A2 /* MediaPlayer.framework */; };
 		84A0765E1B21AAA7001CE3A2 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A0765D1B21AAA7001CE3A2 /* CoreText.framework */; };
 		84A076601B21AAC8001CE3A2 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A0765F1B21AAC8001CE3A2 /* AddressBook.framework */; };
+		84B29FFD1B9C0CFF00D6145F /* MyAnimatedAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B29FFC1B9C0CFF00D6145F /* MyAnimatedAnnotationView.m */; };
+		84B29FFE1B9C0CFF00D6145F /* MyAnimatedAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B29FFC1B9C0CFF00D6145F /* MyAnimatedAnnotationView.m */; };
 		84BA96791B2829D500388B58 /* BusinessManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BA96491B2829D500388B58 /* BusinessManager.m */; };
 		84BA967A1B2829D500388B58 /* CustomerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BA964C1B2829D500388B58 /* CustomerManager.m */; };
 		84BA967B1B2829D500388B58 /* AFAppDotNetAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BA964F1B2829D500388B58 /* AFAppDotNetAPIClient.m */; };
@@ -2169,6 +2171,8 @@
 		84A0765B1B21AA9A001CE3A2 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		84A0765D1B21AAA7001CE3A2 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		84A0765F1B21AAC8001CE3A2 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		84B29FFB1B9C0CFF00D6145F /* MyAnimatedAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAnimatedAnnotationView.h; sourceTree = "<group>"; };
+		84B29FFC1B9C0CFF00D6145F /* MyAnimatedAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAnimatedAnnotationView.m; sourceTree = "<group>"; };
 		84BA96481B2829D500388B58 /* BusinessManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusinessManager.h; sourceTree = "<group>"; };
 		84BA96491B2829D500388B58 /* BusinessManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusinessManager.m; sourceTree = "<group>"; };
 		84BA964B1B2829D500388B58 /* CustomerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomerManager.h; sourceTree = "<group>"; };
@@ -4543,6 +4547,8 @@
 				84EDB1A01B937849006D925B /* BaiduMap_IOSSDK_v2.8.1_Lib */,
 				84EAD9F11B943BF700302A90 /* BSBaiduViewController.h */,
 				84EAD9F21B943BF700302A90 /* BSBaiduViewController.m */,
+				84B29FFB1B9C0CFF00D6145F /* MyAnimatedAnnotationView.h */,
+				84B29FFC1B9C0CFF00D6145F /* MyAnimatedAnnotationView.m */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -6324,6 +6330,7 @@
 				84F28FD41B62BB31001078D8 /* BSPhotoViewController.m in Sources */,
 				844570DA1B4D67D5000CA1C7 /* BTLECentralViewController.m in Sources */,
 				844FFE911B8B4C4600658A36 /* BSAesSecurity.m in Sources */,
+				84B29FFE1B9C0CFF00D6145F /* MyAnimatedAnnotationView.m in Sources */,
 				84F84ADB1B7C4E2B008DF38F /* BSDesSecurity.m in Sources */,
 				84D19FF11B4C440500BA25BF /* LeTemperatureAlarmService.m in Sources */,
 				844570DC1B4D67D5000CA1C7 /* BTLEPeripheralViewController.m in Sources */,
@@ -6620,6 +6627,7 @@
 				84E9D7A61B61E10C00F2CD24 /* BSSlomoIconView.m in Sources */,
 				8405CBC91B5577660014AF8D /* UserPay.m in Sources */,
 				84832D611B565EAC00FB6D28 /* UserBaseAndSessionDomain.m in Sources */,
+				84B29FFD1B9C0CFF00D6145F /* MyAnimatedAnnotationView.m in Sources */,
 				84BA96811B2829D500388B58 /* RegistModel.m in Sources */,
 				847076231B3A89F000F28180 /* recommendCard.m in Sources */,
 				84052EB51B73B4D100FAB304 /* BSValidatePredicate.m in Sources */,
