@@ -15,6 +15,8 @@
     //int radius;
     BMKPointAnnotation* searchPointAnnotation;
     NSMutableArray *_searchResultPoi;
+    //从地址翻译为经纬度时是否显示提示框，默认显示
+    BOOL isShowCoordInfo;
 }
 @end
 
@@ -243,7 +245,6 @@
     
     _coordinateYText.text = [NSString stringWithFormat:@"%f",
                              coordinate.latitude];//经度
-
     
 }
 
@@ -326,8 +327,6 @@
         [_mapView removeAnnotations:annotations];
 
     }
-    
-    
     NSArray* overlays = [NSArray arrayWithArray:_mapView.overlays];
     [_mapView removeAnnotations:overlays];
 
@@ -356,8 +355,9 @@
             }else{
                 item.title=[NSString stringWithFormat:@"%@  距离:%.0f  R:否",poi.name,(double)distance];
             }
-            
-            [annotations addObject:item];
+            if (ptInCircle){//仅仅检索范围内
+                [annotations addObject:item];
+            }
         }
         //添加覆盖物
         CLLocationCoordinate2D coor;
@@ -446,11 +446,13 @@
        _coordinateXText.text = [NSString stringWithFormat:@"%f",item.coordinate.longitude];//纬度
         
         _coordinateYText.text = [NSString stringWithFormat:@"%f",item.coordinate.latitude];//经度
+        if (!isShowCoordInfo) {
+            showmeg = [NSString stringWithFormat:@"经度:%f,纬度:%f",item.coordinate.latitude,item.coordinate.longitude];
+            UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:titleStr message:showmeg delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定",nil];
+            [myAlertView show];
 
-        showmeg = [NSString stringWithFormat:@"经度:%f,纬度:%f",item.coordinate.latitude,item.coordinate.longitude];
-        UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:titleStr message:showmeg delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定",nil];
-        [myAlertView show];
-    }
+        }
+      }
 }
 
 #pragma mark -百度地图由经纬度获取地址信息
@@ -525,7 +527,7 @@
     /*
      *do something
      */
-    BSLog(@"my handleSingleTap");
+    //BSLog(@"my handleSingleTap");
 }
 
 - (void)handleDoubleTap:(UITapGestureRecognizer *)theDoubleTap {
@@ -743,6 +745,10 @@
 
 #pragma mark -查找关键字POI的基本入口方法
 -(IBAction)onClickOk{
+    //首先查出经纬度
+    //对话框是否显示
+    isShowCoordInfo=YES;
+    [self onClickGeocode];
     [_searchResultPoi removeAllObjects];
     //如果有兴趣点
     NSArray* array = [NSArray arrayWithArray:_mapView.annotations];
@@ -939,6 +945,7 @@
     
 }
 
+#pragma mark -百度地位定位API
 /**
  *用户位置更新后，会调用此函数
  *@param userLocation 新的用户位置
@@ -949,7 +956,7 @@
     NSString* showmeg = [NSString stringWithFormat:@"您点击了底图标注:%@,\r\n当前经度:%f,当前纬度:%f,\r\nZoomLevel=%d;RotateAngle=%d;OverlookAngle=%d", userLocation.title,
                          userLocation.location.coordinate.longitude ,userLocation.location.coordinate.latitude, (int)_mapView.zoomLevel,_mapView.rotation,_mapView.overlooking];
     _showMsgLabel.text = showmeg;
-    //_addrText.text=mapPoi.text;
+    _addrText.text=userLocation.title;
     _coordinateYText.text=[NSString stringWithFormat:@"%f",userLocation.location.coordinate.latitude];
     _coordinateXText.text=[NSString stringWithFormat:@"%f",userLocation.location.coordinate.longitude];
 }
