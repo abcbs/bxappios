@@ -182,7 +182,9 @@
     NSLog(@"onClickedMapPoi-%@",mapPoi.text);
     NSString* showmeg = [NSString stringWithFormat:@"您点击了底图标注:%@,\r\n当前经度:%f,当前纬度:%f,\r\nZoomLevel=%d;RotateAngle=%d;OverlookAngle=%d", mapPoi.text,mapPoi.pt.longitude,mapPoi.pt.latitude, (int)_mapView.zoomLevel,_mapView.rotation,_mapView.overlooking];
     _showMsgLabel.text = showmeg;
-    //_addrText.text=mapPoi.text;
+    _addrText.text=mapPoi.text;
+    //_cityText.text=mapPoi.text;
+   
     _coordinateYText.text=[NSString stringWithFormat:@"%f",mapPoi.pt.latitude];
     _coordinateXText.text=[NSString stringWithFormat:@"%f",mapPoi.pt.longitude];
 }
@@ -211,6 +213,7 @@
     NSString* showmeg = [NSString stringWithFormat:@"您双击了地图(double click).\r\n当前经度:%f,当前纬度:%f,\r\nZoomLevel=%d;RotateAngle=%d;OverlookAngle=%d", coordinate.longitude,coordinate.latitude,
                          (int)_mapView.zoomLevel,_mapView.rotation,_mapView.overlooking];
     _showMsgLabel.text = showmeg;
+    
     _coordinateXText.text = [NSString stringWithFormat:@"%f",
                              coordinate.longitude];//纬度
     
@@ -509,9 +512,17 @@
         NSString* showmeg;
         titleStr = @"反向地理编码";
         showmeg = [NSString stringWithFormat:@"%@",item.title];
-        //_addrText.text=result.address;
-        //_keyText.text=result.address;
         
+        _cityText.text=result.addressDetail.city;
+        
+        //返回的兴趣点
+        NSArray *pioResult=result.poiList;
+        if (pioResult.count>0) {
+            BMKPoiInfo* pioInfo=pioResult[0];
+            _addrText.text=pioInfo.name;
+            showmeg = [NSString stringWithFormat:@"名称:%@\t%@",pioInfo.name,item.title];
+
+        }
         UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:titleStr message:showmeg delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定",nil];
         [myAlertView show];
     }

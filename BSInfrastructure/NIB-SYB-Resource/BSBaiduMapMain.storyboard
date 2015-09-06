@@ -541,7 +541,7 @@
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="7Gi-oD-d37">
                                         <rect key="frame" x="8" y="218" width="289" height="29"/>
                                         <segments>
-                                            <segment title="地图显示基本控制"/>
+                                            <segment title="地图基本控制"/>
                                             <segment title="检索与地址查找"/>
                                             <segment title="定位跟踪"/>
                                         </segments>
