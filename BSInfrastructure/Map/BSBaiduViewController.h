@@ -101,18 +101,6 @@
     
     bool isPoiShortUrlShare;
     
-    //收藏
-    IBOutlet UIControl *updateView;
-    
-    IBOutlet UILabel *coorLabel;
-    
-    IBOutlet UITextField *nameTextField;
-    
-    IBOutlet UITextField *updateLatTextField;
-    
-    IBOutlet UITextField *updateLonTextField;
-    
-    IBOutlet UITextField *updateNameTextField;
 
     //定位
     IBOutlet UIButton* startBtn;
@@ -186,9 +174,7 @@
 
 - (IBAction)deleteAllAction:(id)sender;
 
-- (IBAction)updateCancelAction:(id)sender;
 
-- (IBAction)updateSaveAction:(id)sender;
 
 //定位
 -(IBAction)startLocation:(id)sender;

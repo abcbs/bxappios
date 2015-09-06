@@ -8,15 +8,37 @@
 
 #import "BSBaiduViewController.h"
 #import "BSCMFrameworkHeader.h"
+#import "PromptInfo.h"
+#define INDEX_TAG_DIS   1000
+
+@interface MyFavoriteAnnotation : BMKPointAnnotation
+
+@property (nonatomic, assign) NSInteger favIndex;
+@property (nonatomic, strong) BMKFavPoiInfo *favPoiInfo;
+
+@end
+
+@implementation MyFavoriteAnnotation
+
+@synthesize favIndex = _favIndex;
+@synthesize favPoiInfo = _favPoiInfo;
+
+@end
+
 
 @interface BSBaiduViewController ()<UITextFieldDelegate>{
     //经纬度
     bool isGeoSearch;
     //int radius;
     BMKPointAnnotation* searchPointAnnotation;
+    //当前搜索的节点
     NSMutableArray *_searchResultPoi;
     //从地址翻译为经纬度时是否显示提示框，默认显示
     BOOL isShowCoordInfo;
+    //收藏
+    BMKFavPoiManager *_favManager;
+    NSMutableArray *_favPoiInfos;
+    NSInteger _curFavIndex;
 }
 @end
 
@@ -43,6 +65,11 @@
    
     _shareurlsearch = [[BMKShareURLSearch alloc]init];
 
+    //收藏
+    _favManager = [[BMKFavPoiManager alloc] init];
+    
+     _favPoiInfos = [NSMutableArray array];
+    //
     [_mapView setZoomLevel:16];
 
     //周边查找时，设置周边的默认距离
@@ -90,7 +117,7 @@
     _poisearch.delegate=nil;
     _suggestionsearch.delegate =nil;
     _shareurlsearch.delegate=nil;
-     _locService.delegate = nil;
+    _locService.delegate = nil;
     
 }
 - (void)viewDidUnload {
@@ -113,6 +140,9 @@
     }
     if (_locService) {
         _locService=nil;
+    }
+    if (_favManager ) {
+        _favManager = nil;
     }
     if (_mapView) {
         _mapView = nil;
@@ -144,7 +174,7 @@
     _coordinateYText.delegate=self;
     _cityText.delegate=self;
     _addrText.delegate=self;
-    
+    _radiosText.delegate=self;
     //POI查找
     _poiCityText.delegate=self;
     _keyText.delegate=self;
@@ -257,10 +287,79 @@
     
 }
 
+// 根据anntation生成对应的View
+- (BMKAnnotationView *)viewForAnnotation:(id <BMKAnnotation>)annotation
+{
+    BMKPinAnnotationView *annotationView = [[BMKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"FavPoiMark"];
+    // 设置颜色
+    annotationView.pinColor = BMKPinAnnotationColorPurple;
+    // 从天上掉下效果
+    annotationView.animatesDrop = NO;
+    // 设置可拖拽
+    annotationView.draggable = YES;
+    annotationView.canShowCallout = YES;
+    annotationView.annotation = annotation;
+    
+    MyFavoriteAnnotation *myAnotation = (MyFavoriteAnnotation *)annotation;
+    ///添加更新按钮
+    
+    UIButton *updateButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    updateButton.frame = CGRectMake(10, 0, 32, 41);
+    [updateButton setTitle:@"更新" forState:UIControlStateNormal];
+    [updateButton addTarget:self action:@selector(updateAction:) forControlEvents:UIControlEventTouchUpInside];
+    updateButton.tag = myAnotation.favIndex + INDEX_TAG_DIS;
+     
+    annotationView.leftCalloutAccessoryView = updateButton;
+     
+    ///添加删除按钮
+    UIButton *delButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    delButton.frame = CGRectMake(10, 0, 32, 41);
+    [delButton setTitle:@"删除" forState:UIControlStateNormal];
+    [delButton addTarget:self action:@selector(deleteAction:) forControlEvents:UIControlEventTouchUpInside];
+    delButton.tag = myAnotation.favIndex + INDEX_TAG_DIS;
+    annotationView.rightCalloutAccessoryView = delButton;
+    
+    return annotationView;
+}
+
+//点击paopao更新按钮
+- (void)updateAction:(id)sender {
+    UIButton *button = (UIButton*)sender;
+    _curFavIndex = button.tag - INDEX_TAG_DIS;
+    if (_curFavIndex < _favPoiInfos.count) {
+        BMKFavPoiInfo *favInfo = [_favPoiInfos objectAtIndex:_curFavIndex];
+        _coordinateXText.text = [NSString stringWithFormat:@"%lf", favInfo.pt.latitude];
+        _coordinateXText.text = [NSString stringWithFormat:@"%lf", favInfo.pt.longitude];
+        _addrText.text = favInfo.poiName;
+        [_addrText becomeFirstResponder];
+        //
+    }
+}
+
+//点击paopao删除按钮
+- (void)deleteAction:(id)sender {
+    UIButton *button = (UIButton*)sender;
+    NSInteger favIndex = button.tag - INDEX_TAG_DIS;
+    if (favIndex < _favPoiInfos.count) {
+        BMKFavPoiInfo *favInfo = [_favPoiInfos objectAtIndex:favIndex];
+        if ([_favManager deleteFavPoi:favInfo.favId]) {
+            [_favPoiInfos removeObjectAtIndex:favIndex];
+            [self updateMapAnnotations];
+            [PromptInfo showText:@"删除成功"];
+            return;
+        }
+    }
+    [PromptInfo showText:@"删除失败"];
+}
+
 #pragma mark -百度地图标注方法
 //根据anntation生成对应的View
 - (BMKAnnotationView *)mapView:(BMKMapView *)view viewForAnnotation:(id <BMKAnnotation>)annotation
 {
+    //收藏MyFavoriteAnnotation
+    if ([annotation isKindOfClass:[MyFavoriteAnnotation class]]) {
+        return [self viewForAnnotation:annotation];
+    }
     //画当前点
     //searchPointAnnotation
     if (annotation == searchPointAnnotation) {
@@ -277,7 +376,8 @@
         annotationView.annotationImages = images;
         return annotationView;
     }
-
+    
+    //正常的显示
     NSString *AnnotationViewID = @"annotationViewID";
     //根据指定标识查找一个可被复用的标注View，一般在delegate中使用，用此函数来代替新申请一个View
     BMKAnnotationView *annotationView = [view dequeueReusableAnnotationViewWithIdentifier:AnnotationViewID];
@@ -290,9 +390,42 @@
     annotationView.centerOffset = CGPointMake(0, -(annotationView.frame.size.height * 0.5));
     annotationView.annotation = annotation;
     annotationView.canShowCallout = TRUE;
+    //增加处理事件
+    UIButton *updateButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    updateButton.frame = CGRectMake(10, 0, 32, 41);
+    [updateButton setTitle:@"更新" forState:UIControlStateNormal];
+    [updateButton addTarget:self action:@selector(updatePIOAction:) forControlEvents:UIControlEventTouchUpInside];
+    //updateButton.tag = myAnotation.favIndex + INDEX_TAG_DIS;
+    
+    annotationView.leftCalloutAccessoryView = updateButton;
+    
+    ///添加删除按钮
+    UIButton *delButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    delButton.frame = CGRectMake(10, 0, 32, 41);
+    [delButton setTitle:@"删除" forState:UIControlStateNormal];
+    [delButton addTarget:self action:@selector(deletePOIAction:) forControlEvents:UIControlEventTouchUpInside];
+    //delButton.tag = annotation. + INDEX_TAG_DIS;
+    annotationView.rightCalloutAccessoryView = delButton;
+
     return annotationView;
 }
 
+-(void)updatePIOAction:(id)sender{
+    [PromptInfo showText:@"更新成功"];
+}
+//点击paopao删除按钮
+- (void)deletePOIAction:(id)sender {
+    //UIButton *button = (UIButton*)sender;
+    //NSInteger favIndex = button.tag - INDEX_TAG_DIS;
+    //if (favIndex < _favPoiInfos.count) {
+    //BMKPoiInfo *bmkInfo = [_searchResultPoi objectAtIndex:favIndex];
+        //if () {
+    //[_mapView  removeAnnotation:annotation];
+    //[_searchResultPoi removeObjectAtIndex:favIndex];
+            //[self updateMapAnnotations];
+     [PromptInfo showText:@"删除成功"];
+     return;
+}
 #pragma mark -添加覆盖物，即形状
 - (BMKOverlayView *)mapView:(BMKMapView *)mapView viewForOverlay:(id <BMKOverlay>)overlay{
     if ([overlay isKindOfClass:[BMKCircle class]]){
@@ -534,7 +667,7 @@
     /*
      *do something
      */
-    BSLog(@"my handleDoubleTap");
+    //BSLog(@"my handleDoubleTap");
 }
 
 /*
@@ -657,6 +790,7 @@
     self.navigationItem.rightBarButtonItem.tintColor=[UIColor whiteColor];
     
 }
+
 -(void)displayControllerView{
     controllerView.hidden=NO;
     UIBarButtonItem *rightButton = [[UIBarButtonItem alloc]
@@ -817,7 +951,7 @@
     {
         _nextPageButton.enabled = false;
         _savePOIButton.enabled=false;
-        NSLog(@"城市内检索发送失败");
+        BSLog(@"城市内检索发送失败");
     }
 
     
@@ -851,22 +985,90 @@
 
 //收藏
 - (IBAction)saveAction:(id)sender{
-    
+    [self saveAction];
 }
 
+-(void)saveAction{
+    if (_searchResultPoi.count<1) {
+        [PromptInfo showText:@"没有要收藏的数据"];
+        return;
+    }
+    int i=0;
+    int pos=0;
+   
+    for ( BMKPoiInfo* poi in _searchResultPoi) {
+        i++;
+        BMKFavPoiInfo *poiInfo ;
+        poiInfo = [[BMKFavPoiInfo alloc] init];
+        CLLocationCoordinate2D coor;
+        coor.latitude = [_coordinateYText.text doubleValue];//39.915;
+        coor.longitude = [_coordinateXText.text doubleValue];//116.404;
+        poiInfo.pt = poi.pt;
+        poiInfo.poiName =poi.name;
+        NSInteger res = [_favManager addFavPoi:poiInfo];
+        if (res != 1) {
+            pos++;
+            BSLog(@"第%d条数据失败,名称为:%@,地址为%@",i,poi.name,poi.address);
+        }
+    }//
+    if (pos>0) {
+        NSString *str=[NSString stringWithFormat:@"收藏的数据,共计%d条失败",pos];
+        [PromptInfo showText:str];
+    }else{
+        NSString *str=[NSString stringWithFormat:@"收藏成功,共计%d条",i];
+        [PromptInfo showText:str];
+    }
+   
+}
+
+//展现所有客户端收藏数据
 - (IBAction)getAllAction:(id)sender{
-    
+    NSArray *favPois = [_favManager getAllFavPois];
+    if (favPois == nil) {
+        return;
+    }
+    [_favPoiInfos removeAllObjects];
+    [_favPoiInfos addObjectsFromArray:favPois];
+    [self updateMapAnnotations];
 }
 
+///更新地图标注
+- (void)updateMapAnnotations {
+    [_mapView removeAnnotations:_mapView.annotations];
+    NSInteger index = 0;
+    NSMutableArray *annos = [NSMutableArray array];
+    for (BMKFavPoiInfo *info in _favPoiInfos) {
+        MyFavoriteAnnotation *favAnnotation = [[MyFavoriteAnnotation alloc] init];
+        favAnnotation.title = info.poiName;
+        favAnnotation.coordinate = info.pt;
+        favAnnotation.favPoiInfo = info;
+        favAnnotation.favIndex = index;
+        
+        [annos addObject:favAnnotation];
+        index++;
+    }
+    NSString *strInfo=[NSString stringWithFormat: @"从收藏中获得的标注为%ld",(long)index];
+    // BSLog(strInfo);
+    [PromptInfo showText:strInfo];
+    [_mapView addAnnotations:annos];
+    //[_mapView showAnnotations:annos animated:YES];
+}
+
+//
 - (IBAction)deleteAllAction:(id)sender{
-    
+    BOOL res = [_favManager clearAllFavPois];
+    if (res) {
+        [PromptInfo showText:@"清除成功"];
+        [_favPoiInfos removeAllObjects];
+        [self updateMapAnnotations];
+    } else {
+        [PromptInfo showText:@"清除失败"];
+    }
+
 }
 
-- (IBAction)updateCancelAction:(id)sender{
-    
-}
 
-- (IBAction)updateSaveAction:(id)sender{
+-(void) updateSaveAction{
     
 }
 
