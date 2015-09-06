@@ -87,12 +87,18 @@
     IBOutlet UIButton* _nextPageButton;
     
     IBOutlet UIButton *_savePOIButton;
-
+    
+    //查找距离半径
+    
+    IBOutlet UITextField *_radiosText;
+    
     int curPage;
     
     //短URL操作
     IBOutlet UIButton* _poiShortUrlButton;
+    
     IBOutlet UIButton* _reverseGeoShortUrlButton;
+    
     bool isPoiShortUrlShare;
     
     //收藏

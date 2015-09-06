@@ -1249,8 +1249,6 @@
 		84EAAD071B62520800E9C8BC /* LSProductManagerDelegate.h in Sources */ = {isa = PBXBuildFile; fileRef = 84EB39751B58EFDE00AD9F66 /* LSProductManagerDelegate.h */; };
 		84EAD9F31B943BF700302A90 /* BSBaiduViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EAD9F21B943BF700302A90 /* BSBaiduViewController.m */; };
 		84EAD9F41B943BF700302A90 /* BSBaiduViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EAD9F21B943BF700302A90 /* BSBaiduViewController.m */; };
-		84EAD9F71B94409100302A90 /* BSBaiduPOIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EAD9F61B94409100302A90 /* BSBaiduPOIViewController.m */; };
-		84EAD9F81B94409100302A90 /* BSBaiduPOIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EAD9F61B94409100302A90 /* BSBaiduPOIViewController.m */; };
 		84EAD9FD1B94457900302A90 /* BaiduMapAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F58D431B93F3EC002C535B /* BaiduMapAPI.framework */; };
 		84EADA001B95744100302A90 /* BSRadarUploadViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 84EAD9FF1B95744100302A90 /* BSRadarUploadViewController.mm */; };
 		84EADA011B95744100302A90 /* BSRadarUploadViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 84EAD9FF1B95744100302A90 /* BSRadarUploadViewController.mm */; };
@@ -2460,8 +2458,6 @@
 		84EA9A8F1B57F17800AC549F /* LSBusinessIndexMain.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LSBusinessIndexMain.storyboard; sourceTree = "<group>"; };
 		84EAD9F11B943BF700302A90 /* BSBaiduViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSBaiduViewController.h; sourceTree = "<group>"; };
 		84EAD9F21B943BF700302A90 /* BSBaiduViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSBaiduViewController.m; sourceTree = "<group>"; };
-		84EAD9F51B94409100302A90 /* BSBaiduPOIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSBaiduPOIViewController.h; sourceTree = "<group>"; };
-		84EAD9F61B94409100302A90 /* BSBaiduPOIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSBaiduPOIViewController.m; sourceTree = "<group>"; };
 		84EAD9FE1B95744100302A90 /* BSRadarUploadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSRadarUploadViewController.h; sourceTree = "<group>"; };
 		84EAD9FF1B95744100302A90 /* BSRadarUploadViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BSRadarUploadViewController.mm; sourceTree = "<group>"; };
 		84EADA031B95758700302A90 /* PromptInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PromptInfo.h; sourceTree = "<group>"; };
@@ -4547,8 +4543,6 @@
 				84EDB1A01B937849006D925B /* BaiduMap_IOSSDK_v2.8.1_Lib */,
 				84EAD9F11B943BF700302A90 /* BSBaiduViewController.h */,
 				84EAD9F21B943BF700302A90 /* BSBaiduViewController.m */,
-				84EAD9F51B94409100302A90 /* BSBaiduPOIViewController.h */,
-				84EAD9F61B94409100302A90 /* BSBaiduPOIViewController.m */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -6346,7 +6340,6 @@
 				84BF8FCF1B4AC2FA001042F1 /* BSTableSection.m in Sources */,
 				84BF8FD11B4AC2FA001042F1 /* BSTableContentObject.m in Sources */,
 				84E9D79D1B61E10C00F2CD24 /* BSAlbumsViewController.m in Sources */,
-				84EAD9F81B94409100302A90 /* BSBaiduPOIViewController.m in Sources */,
 				84BF8FD31B4AC2FA001042F1 /* UIViewController+BSTableObject.m in Sources */,
 				84BF8FD51B4AC2FA001042F1 /* BSUITableViewInitRuntimeController.m in Sources */,
 				84BF8FDA1B4AC2FA001042F1 /* BSTableViewCellData.m in Sources */,
@@ -6660,7 +6653,6 @@
 				8461B72B1B54BAB5002A7C43 /* KTHandyViewController.m in Sources */,
 				A0F0C3EE1B10209500CE406D /* BasicParams.m in Sources */,
 				842043761B2991770002C868 /* DLScrollTabbarView.m in Sources */,
-				84EAD9F71B94409100302A90 /* BSBaiduPOIViewController.m in Sources */,
 				847076331B3A8AF800F28180 /* expressController.m in Sources */,
 				847433091B2A908000B030C4 /* userProtocol.m in Sources */,
 				8405CBC51B5575420014AF8D /* BusinessProductStock.m in Sources */,

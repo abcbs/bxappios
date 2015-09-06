@@ -113,7 +113,7 @@
                             <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rlx-0R-CiK" userLabel="地图功能区域">
                                 <rect key="frame" x="0.0" y="44" width="320" height="276"/>
                                 <subviews>
-                                    <view hidden="YES" tag="20" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zm6-SL-joP" userLabel="查询与坐标翻译">
+                                    <view tag="20" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zm6-SL-joP" userLabel="查询与坐标翻译">
                                         <rect key="frame" x="0.0" y="30" width="316" height="200"/>
                                         <subviews>
                                             <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v7y-tR-biC" userLabel="收藏视图" customClass="UIControl">
@@ -231,14 +231,25 @@
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="坐标附近" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x52-Zq-NR8">
-                                                <rect key="frame" x="16" y="91" width="60" height="29"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="附近" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x52-Zq-NR8">
+                                                <rect key="frame" x="16" y="91" width="50" height="29"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="餐厅" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bdz-rZ-yI3">
-                                                <rect key="frame" x="60" y="91" width="230" height="30"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="500" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bdz-rZ-yI3">
+                                                <rect key="frame" x="50" y="91" width="80" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="米(m)找" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2g8-Zr-M3D">
+                                                <rect key="frame" x="130" y="91" width="110" height="29"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="餐厅" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FK3-iy-iZU">
+                                                <rect key="frame" x="180" y="91" width="120" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -572,11 +583,12 @@
                         <outlet property="_coordinateYText" destination="SqI-8i-oTa" id="qb8-IU-MSB"/>
                         <outlet property="_hiddenView" destination="dev-Lg-41E" id="YKB-ZF-lq5"/>
                         <outlet property="_imgView" destination="rQq-aX-Gtb" id="Dm6-eR-Ckh"/>
-                        <outlet property="_keyText" destination="bdz-rZ-yI3" id="Mo0-pX-Eqi"/>
+                        <outlet property="_keyText" destination="FK3-iy-iZU" id="qXK-gP-nhn"/>
                         <outlet property="_moveSwitch" destination="R2z-4o-3ks" id="AiJ-86-9xc"/>
                         <outlet property="_nextPageButton" destination="Eje-uL-AlG" id="PqL-pT-iew"/>
                         <outlet property="_overlook" destination="eQ6-1H-fFV" id="juc-Lm-Pul"/>
                         <outlet property="_overlookdegree" destination="Nsu-4a-NV0" id="D9d-tG-DTl"/>
+                        <outlet property="_radiosText" destination="bdz-rZ-yI3" id="XlQ-qp-hWq"/>
                         <outlet property="_rotate" destination="bxU-dM-bZ7" id="14S-Vp-mSi"/>
                         <outlet property="_rotatedegree" destination="T9q-CA-3kU" id="Tge-1C-pN2"/>
                         <outlet property="_savePOIButton" destination="d1b-5W-Fg3" id="vK6-pt-RJc"/>
