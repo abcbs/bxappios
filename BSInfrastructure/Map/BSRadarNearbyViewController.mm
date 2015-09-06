@@ -38,7 +38,9 @@
     _tableView.scrollEnabled = YES;
     _tableView.clipsToBounds = YES;
     [_scrollView addSubview:_tableView];
+    
     _mapView = [[BMKMapView alloc] initWithFrame:CGRectMake(rect.size.width, 0, rect.size.width, rect.size.height)];
+    
     _mapView.showsUserLocation = YES;
     [_scrollView addSubview:_mapView];
     _preButton.enabled = NO;
@@ -46,6 +48,7 @@
     _curPageLabel.hidden = NO;
     
     _radarManager = [BMKRadarManager getRadarManagerInstance];
+    
     _curPageIndex = 0;
     
     _nearbyInfos = [NSMutableArray array];
@@ -143,6 +146,7 @@
     BMKRadarNearbySearchOption *option = [[BMKRadarNearbySearchOption alloc] init]
     ;
     option.radius = 8000;
+    
     option.sortType = BMK_RADAR_SORT_TYPE_DISTANCE_FROM_NEAR_TO_FAR;
     option.centerPt = _myCoor;
     option.pageIndex = pageIndex;
@@ -203,6 +207,8 @@
  */
 - (void)onGetRadarNearbySearchResult:(BMKRadarNearbyResult *)result error:(BMKRadarErrorCode)error {
     BSLog(@"onGetRadarNearbySearchResult  %d", error);
+    //需要绑定应用的地址为：
+    //  http://developer.baidu.com/map/index.php?title=radar
     if (error == BMK_RADAR_NO_ERROR) {
         BSLog(@"result.infoList.count:  %d", (int)result.infoList.count);
         self.nearbyInfos = (NSMutableArray *)result.infoList;
@@ -212,6 +218,9 @@
         _preButton.enabled = _curPageIndex != 0;
     }else if(error==BMK_RADAR_AK_NOT_BIND){
         BSLog(@"app key没有绑定，请到管理后台绑定,错误码为\t%u",error);
+        BSLog(@"查询结果计数为:  %d", (int)result.infoList.count);
+    }else if(error==BMK_RADAR_NO_RESULT){
+        BSLog(@"没有相同的应用\t%u",error);
         BSLog(@"查询结果计数为:  %d", (int)result.infoList.count);
     }
 }

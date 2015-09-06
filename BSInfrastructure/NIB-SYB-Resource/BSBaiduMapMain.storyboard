@@ -620,9 +620,9 @@
                     </tabBar>
                     <connections>
                         <segue destination="M5Z-q6-uad" kind="relationship" relationship="viewControllers" id="HG2-Uc-jMh"/>
-                        <segue destination="eBs-EC-EfD" kind="relationship" relationship="viewControllers" id="N8G-mD-BTU"/>
                         <segue destination="TCT-Dc-wQN" kind="relationship" relationship="viewControllers" id="bOw-0Q-fl7"/>
                         <segue destination="sz9-Sw-vfX" kind="relationship" relationship="viewControllers" id="S43-8U-DtF"/>
+                        <segue destination="eBs-EC-EfD" kind="relationship" relationship="viewControllers" id="N8G-mD-BTU"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RZP-FR-yFh" userLabel="First Responder" sceneMemberID="firstResponder"/>
