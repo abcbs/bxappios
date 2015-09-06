@@ -1029,7 +1029,7 @@
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HOb-xo-ibc" userLabel="定位与跟踪">
                                         <rect key="frame" x="1" y="38" width="318" height="200"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nn3-aj-8Fb">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nn3-aj-8Fb">
                                                 <rect key="frame" x="8" y="0.0" width="61" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="61" id="FOi-sd-I45"/>
@@ -1096,6 +1096,7 @@
                                             <constraint firstItem="Kbd-00-Pzn" firstAttribute="leading" secondItem="Bsa-FZ-MbP" secondAttribute="trailing" constant="8" id="YWw-eS-nm3"/>
                                             <constraint firstItem="Kbd-00-Pzn" firstAttribute="baseline" secondItem="Bsa-FZ-MbP" secondAttribute="baseline" id="ZIJ-5Q-ZpS"/>
                                             <constraint firstItem="Bsa-FZ-MbP" firstAttribute="leading" secondItem="xhp-7Y-aSp" secondAttribute="trailing" constant="15" id="aF1-cm-y9U"/>
+                                            <constraint firstItem="Nn3-aj-8Fb" firstAttribute="baseline" secondItem="xhp-7Y-aSp" secondAttribute="baseline" id="cgr-Ca-jR1"/>
                                             <constraint firstItem="xhp-7Y-aSp" firstAttribute="leading" secondItem="Nn3-aj-8Fb" secondAttribute="trailing" constant="9" id="dqx-ku-0IM"/>
                                             <constraint firstItem="Bsa-FZ-MbP" firstAttribute="leading" secondItem="xhp-7Y-aSp" secondAttribute="trailing" constant="15" id="iEC-pi-ZD3"/>
                                             <constraint firstItem="Kbd-00-Pzn" firstAttribute="leading" secondItem="Bsa-FZ-MbP" secondAttribute="trailing" constant="8" id="irZ-g3-fjn"/>
