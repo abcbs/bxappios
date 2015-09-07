@@ -128,7 +128,7 @@
                                     <constraint firstAttribute="trailing" secondItem="rQq-aX-Gtb" secondAttribute="trailing" id="xJX-Oo-Uzf"/>
                                 </constraints>
                             </view>
-                            <view hidden="YES" alpha="0.59999999999999964" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rlx-0R-CiK" userLabel="地图功能区域">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rlx-0R-CiK" userLabel="地图功能区域">
                                 <rect key="frame" x="0.0" y="44" width="320" height="276"/>
                                 <subviews>
                                     <view tag="20" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zm6-SL-joP" userLabel="查询与坐标翻译">
@@ -920,7 +920,8 @@
                                         </connections>
                                     </segmentedControl>
                                 </subviews>
-                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <color key="tintColor" red="0.42977059998077616" green="0.0" blue="0.05487078467719219" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="7Gi-oD-d37" firstAttribute="top" secondItem="rlx-0R-CiK" secondAttribute="top" constant="218" id="3EY-Zc-nOQ"/>
                                     <constraint firstItem="SPl-Et-BtR" firstAttribute="top" secondItem="zm6-SL-joP" secondAttribute="bottom" constant="24" id="6zb-sk-2wy"/>

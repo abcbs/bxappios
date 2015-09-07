@@ -352,7 +352,7 @@
         _coordinateXText.text = [NSString stringWithFormat:@"%lf", favInfo.pt.latitude];
         _coordinateXText.text = [NSString stringWithFormat:@"%lf", favInfo.pt.longitude];
         _addrText.text = favInfo.poiName;
-        [_addrText becomeFirstResponder];
+        //[_addrText becomeFirstResponder];
         //
     }
 }
@@ -419,8 +419,8 @@
     //增加处理事件
     UIButton *updateButton = [UIButton buttonWithType:UIButtonTypeSystem];
     updateButton.frame = CGRectMake(10, 0, 32, 41);
-    [updateButton setTitle:@"收藏" forState:UIControlStateNormal];
-    [updateButton addTarget:self action:@selector(updatePIOAction:) forControlEvents:UIControlEventTouchUpInside];
+    [updateButton setTitle:@"更新" forState:UIControlStateNormal];
+    [updateButton addTarget:self action:@selector(selectedPOIAction:) forControlEvents:UIControlEventTouchUpInside];
     if ([annotation isKindOfClass:[MySearchAnnotation class]]) {
         MySearchAnnotation *myAnotation=annotation;
         updateButton.tag = myAnotation.searchIndex + INDEX_TAG_DIS;
@@ -429,11 +429,11 @@
     //
     annotationView.leftCalloutAccessoryView = updateButton;
     
-    ///添加删除按钮
+    ///添加更新按钮
     UIButton *delButton = [UIButton buttonWithType:UIButtonTypeSystem];
     delButton.frame = CGRectMake(10, 0, 32, 41);
-    [delButton setTitle:@"删除" forState:UIControlStateNormal];
-    [delButton addTarget:self action:@selector(deletePOIAction:) forControlEvents:UIControlEventTouchUpInside];
+    [delButton setTitle:@"收藏" forState:UIControlStateNormal];
+    [delButton addTarget:self action:@selector(updatePIOAction:) forControlEvents:UIControlEventTouchUpInside];
     if ([annotation isKindOfClass:[MySearchAnnotation class]]) {
         MySearchAnnotation *myAnotation=annotation;
         delButton.tag = myAnotation.searchIndex + INDEX_TAG_DIS;
@@ -456,23 +456,29 @@
             //[_mapView  removeAnnotation:annotation];
             BMKPoiInfo* poi=annotation.searchPoiInfo;// [_searchResultPoi objectAtIndex:0];
             [self favSinglePOI:poi];
+            [self updateMapAnnotations];
             //[_searchResultPoi removeObjectAtIndex:favIndex];
         }
     }
     [PromptInfo showText:@"收藏成功"];
 }
 //点击paopao删除按钮
-- (void)deletePOIAction:(id)sender {
-    //UIButton *button = (UIButton*)sender;
-    //NSInteger favIndex = button.tag - INDEX_TAG_DIS;
-    //if (favIndex < _favPoiInfos.count) {
-    //BMKPoiInfo *bmkInfo = [_searchResultPoi objectAtIndex:favIndex];
-        //if () {
-    //[_mapView  removeAnnotation:annotation];
-    //[_searchResultPoi removeObjectAtIndex:favIndex];
-            //[self updateMapAnnotations];
-     [PromptInfo showText:@"删除成功"];
-     return;
+- (void)selectedPOIAction:(id)sender {
+    UIButton *button = (UIButton*)sender;
+    NSInteger favIndex = button.tag - INDEX_TAG_DIS;
+    if (favIndex < _searchResultAnn.count) {
+        //BMKPoiInfo *bmkInfo = [_searchResultAnn objectAtIndex:favIndex];
+        MySearchAnnotation *annotation = [_searchResultAnn objectAtIndex:favIndex];
+
+        if (annotation) {
+            BMKPoiInfo* poi=annotation.searchPoiInfo;
+            _coordinateXText.text = [NSString stringWithFormat:@"%lf", poi.pt.latitude];
+            _coordinateXText.text = [NSString stringWithFormat:@"%lf", poi.pt.longitude];
+            _addrText.text = poi.name;
+            [PromptInfo showText:@"更新成功"];
+        }
+    }
+
 }
 #pragma mark -添加覆盖物，即形状
 - (BMKOverlayView *)mapView:(BMKMapView *)mapView viewForOverlay:(id <BMKOverlay>)overlay{
@@ -1065,6 +1071,7 @@
 
 }
 
+//收藏私有实现，暂时没有使用
 -(void)saveAction{
     if (_searchResultPoi.count<1) {
         [PromptInfo showText:@"没有要收藏的数据"];
@@ -1121,7 +1128,6 @@
 ///更新地图标注
 - (void)updateMapAnnotations {
     //[_mapView removeAnnotations:_mapView.annotations];
-    [_mapView setZoomLevel:17];
     NSInteger index = 0;
     NSArray *_favPoiInfos= [_favManager getAllFavPois];
     NSMutableArray *annos = [NSMutableArray array];
@@ -1131,11 +1137,17 @@
         favAnnotation.title = info.poiName;
         favAnnotation.coordinate = info.pt;
         favAnnotation.favPoiInfo = info;
-        if (![annos containsObject:favAnnotation]) {
+        favAnnotation.favIndex = index;
+        if (![_favPoiInfos containsObject:favAnnotation]){
             [annos addObject:favAnnotation];
-        }
-        BSLog(@"第%ld条数据,名称为:%@,地址为%@,\t@经度:%f,纬度:%f",
+            BSLog(@"第%ld条数据,名称为:%@,地址为%@,\t@经度:%f,纬度:%f",
                (long)index,info.poiName,info.address,favAnnotation.coordinate.latitude,favAnnotation.coordinate.longitude);
+        }else{
+            BOOL res = [_favManager updateFavPoi:info.favId favPoiInfo:info];
+            if (!res) {
+                [PromptInfo showText:@"更新失败"];
+            }
+        }
 
         
     }
@@ -1170,7 +1182,8 @@
 -(IBAction)startLocation:(id)sender
 {
     BSLog(@"进入普通定位态");
-     [_mapView setZoomLevel:16];
+    //
+    //[_mapView setZoomLevel:16];
     [_locService startUserLocationService];
     _mapView.showsUserLocation = NO;//先关闭显示的定位图层
     _mapView.userTrackingMode = BMKUserTrackingModeNone;//设置定位的状态
@@ -1207,7 +1220,7 @@
 //停止定位
 -(IBAction)stopLocation:(id)sender
 {
-    // [_mapView setZoomLevel:14];
+     [_mapView setZoomLevel:14];
     [_locService stopUserLocationService];
     _mapView.showsUserLocation = NO;
     [stopBtn setEnabled:NO];
