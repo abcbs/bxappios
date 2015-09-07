@@ -27,7 +27,20 @@
 @synthesize favPoiInfo = _favPoiInfo;
 
 @end
+//BMKPointAnnotation
+@interface MySearchAnnotation : BMKPointAnnotation
 
+@property (nonatomic, assign) NSInteger searchIndex;
+@property (nonatomic, strong) BMKPoiInfo *searchPoiInfo;
+
+@end
+
+@implementation MySearchAnnotation
+
+@synthesize searchIndex = _searchIndex;
+@synthesize searchPoiInfo = _searchPoiInfo;
+
+@end
 
 @interface BSBaiduViewController ()<UITextFieldDelegate>{
     //经纬度
@@ -36,6 +49,9 @@
     BMKPointAnnotation* searchPointAnnotation;
     //当前搜索的节点
     NSMutableArray *_searchResultPoi;
+    //当前搜索的节点
+    NSMutableArray *_searchResultAnn;
+    //当前搜索点
     //从地址翻译为经纬度时是否显示提示框，默认显示
     BOOL isShowCoordInfo;
     //收藏
@@ -67,7 +83,7 @@
     _suggestionsearch =[[BMKSuggestionSearch alloc]init];
    
     _shareurlsearch = [[BMKShareURLSearch alloc]init];
-
+    
     //收藏
     _favManager = [[BMKFavPoiManager alloc] init];
     
@@ -80,6 +96,8 @@
     
     //查询结果存放值
     _searchResultPoi=[[NSMutableArray alloc]init];
+    _searchResultAnn=[[NSMutableArray alloc]init];
+    
     _mapView.isSelectedAnnotationViewFront = YES;
     
     [baseUIControllerView setHidden:YES];
@@ -289,7 +307,7 @@
     
 }
 
-// 根据anntation生成对应的View
+// 根据anntation生成对应的View,搜藏夹功能
 - (BMKAnnotationView *)viewForAnnotation:(id <BMKAnnotation>)annotation
 {
     BMKPinAnnotationView *annotationView = [[BMKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"FavPoiMark"];
@@ -382,6 +400,8 @@
     }
     
     //正常的显示
+    //搜索到的封装为MySearchAnnotation
+    
     NSString *AnnotationViewID = @"annotationViewID";
     //根据指定标识查找一个可被复用的标注View，一般在delegate中使用，用此函数来代替新申请一个View
     BMKAnnotationView *annotationView = [view dequeueReusableAnnotationViewWithIdentifier:AnnotationViewID];
@@ -392,15 +412,21 @@
     }
     
     annotationView.centerOffset = CGPointMake(0, -(annotationView.frame.size.height * 0.5));
+    
     annotationView.annotation = annotation;
+
     annotationView.canShowCallout = TRUE;
     //增加处理事件
     UIButton *updateButton = [UIButton buttonWithType:UIButtonTypeSystem];
     updateButton.frame = CGRectMake(10, 0, 32, 41);
-    [updateButton setTitle:@"更新" forState:UIControlStateNormal];
+    [updateButton setTitle:@"收藏" forState:UIControlStateNormal];
     [updateButton addTarget:self action:@selector(updatePIOAction:) forControlEvents:UIControlEventTouchUpInside];
-    //updateButton.tag = myAnotation.favIndex + INDEX_TAG_DIS;
-    
+    if ([annotation isKindOfClass:[MySearchAnnotation class]]) {
+        MySearchAnnotation *myAnotation=annotation;
+        updateButton.tag = myAnotation.searchIndex + INDEX_TAG_DIS;
+
+    }
+    //
     annotationView.leftCalloutAccessoryView = updateButton;
     
     ///添加删除按钮
@@ -408,14 +434,32 @@
     delButton.frame = CGRectMake(10, 0, 32, 41);
     [delButton setTitle:@"删除" forState:UIControlStateNormal];
     [delButton addTarget:self action:@selector(deletePOIAction:) forControlEvents:UIControlEventTouchUpInside];
+    if ([annotation isKindOfClass:[MySearchAnnotation class]]) {
+        MySearchAnnotation *myAnotation=annotation;
+        delButton.tag = myAnotation.searchIndex + INDEX_TAG_DIS;
+        
+    }
     //delButton.tag = annotation. + INDEX_TAG_DIS;
     annotationView.rightCalloutAccessoryView = delButton;
 
     return annotationView;
 }
 
+//单点收藏
 -(void)updatePIOAction:(id)sender{
-    [PromptInfo showText:@"更新成功"];
+    //[PromptInfo showText:@"更新成功"];
+    UIButton *button = (UIButton*)sender;
+    NSInteger favIndex = button.tag - INDEX_TAG_DIS;
+    if (favIndex < _searchResultAnn.count) {
+        MySearchAnnotation *annotation = [_searchResultAnn objectAtIndex:favIndex];
+        if (annotation) {
+            //[_mapView  removeAnnotation:annotation];
+            BMKPoiInfo* poi=annotation.searchPoiInfo;// [_searchResultPoi objectAtIndex:0];
+            [self favSinglePOI:poi];
+            //[_searchResultPoi removeObjectAtIndex:favIndex];
+        }
+    }
+    [PromptInfo showText:@"收藏成功"];
 }
 //点击paopao删除按钮
 - (void)deletePOIAction:(id)sender {
@@ -472,8 +516,12 @@
         BSLog(@"检索数量为:%lu",(unsigned long)result.poiInfoList.count);
         for (int i = 0; i < result.poiInfoList.count; i++) {
             BMKPoiInfo* poi = [result.poiInfoList objectAtIndex:i];
-            [_searchResultPoi addObject:poi];
-            BMKPointAnnotation* item = [[BMKPointAnnotation alloc]init];
+            [_searchResultPoi addObject:poi];//
+           
+            //BMKPointAnnotation* item = [[BMKPointAnnotation alloc]init];
+            MySearchAnnotation* item = [[MySearchAnnotation alloc]init];
+            item.searchIndex=[_searchResultPoi count]-1;
+            item.searchPoiInfo=poi;
             item.coordinate = poi.pt;
             //item.title = poi.name;
             
@@ -492,9 +540,10 @@
             }else{
                 item.title=[NSString stringWithFormat:@"%@  距离:%.0f  R:否",poi.name,(double)distance];
             }
-            if (ptInCircle){//仅仅检索范围内
+            //if (ptInCircle){//仅仅检索范围内
                 [annotations addObject:item];
-            }
+                [_searchResultAnn addObject:item];
+            //}
         }
         //添加覆盖物
         CLLocationCoordinate2D coor;
@@ -1002,23 +1051,8 @@
    
     for (i=0; i< _searchResultPoi.count;i++ ) {
         BMKPoiInfo* poi= [_searchResultPoi objectAtIndex:i];
-        //i++;
-        BMKFavPoiInfo *poiInfo = [[BMKFavPoiInfo alloc] init];
-        poiInfo.pt = poi.pt;
-        poiInfo.poiName =poi.name;
-        poiInfo.poiUid=poi.uid;
-        poiInfo.address=poi.address;
-        poiInfo.cityName=poi.city;
-        NSInteger res = [_favManager addFavPoi:poiInfo];
-        BSLog(@"第%d条数据,名称为:%@,地址为%@,\t@经度:%f,纬度:%f",i,poiInfo.poiName,poiInfo.address,poiInfo.pt.latitude,poiInfo.pt.longitude);
-        if (res != 1) {
-            pos++;
-             NSString *str=[NSString stringWithFormat:@"第%d条数据失败,名称为:%@,地址为%@",i,poi.name,poi.address];
-            BSLog(@"第%d条数据失败,名称为:%@,地址为%@",i,poi.name,poi.address);
-            [PromptInfo showText:str];
-        }
-        poiInfo=nil;
-    }//
+        [self favSinglePOI:poi];
+        }//
     if (pos>0) {
         NSString *str=[NSString stringWithFormat:@"收藏的数据,共计%d条失败",pos];
         [PromptInfo showText:str];
@@ -1031,6 +1065,24 @@
    
 }
 
+-(void)favSinglePOI:(BMKPoiInfo*) poi{
+    BMKFavPoiInfo *poiInfo = [[BMKFavPoiInfo alloc] init];
+    poiInfo.pt = poi.pt;
+    poiInfo.poiName =poi.name;
+    poiInfo.poiUid=poi.uid;
+    poiInfo.address=poi.address;
+    poiInfo.cityName=poi.city;
+    NSInteger res = [_favManager addFavPoi:poiInfo];
+    BSLog(@"数据,名称为:%@,地址为%@,\t@经度:%f,纬度:%f",poiInfo.poiName,poiInfo.address,poiInfo.pt.latitude,poiInfo.pt.longitude);
+    if (res != 1) {
+        //pos++;
+        NSString *str=[NSString stringWithFormat:@"搜藏数据失败,名称为:%@,地址为%@",poi.name,poi.address];
+        //BSLog(@"第%d条数据失败,名称为:%@,地址为%@",i,poi.name,poi.address);
+        [PromptInfo showText:str];
+    }
+    poiInfo=nil;
+
+}
 //展现所有客户端收藏数据
 - (IBAction)getAllAction:(id)sender{
     NSArray *favPois = [_favManager getAllFavPois];
@@ -1044,7 +1096,7 @@
 
 ///更新地图标注
 - (void)updateMapAnnotations {
-    [_mapView removeAnnotations:_mapView.annotations];
+    //[_mapView removeAnnotations:_mapView.annotations];
     [_mapView setZoomLevel:17];
     NSInteger index = 0;
     NSArray *_favPoiInfos= [_favManager getAllFavPois];
@@ -1066,7 +1118,7 @@
     NSString *strInfo=[NSString stringWithFormat: @"从收藏中获得的标注为%ld",(long)index];
     [PromptInfo showText:strInfo];
     [_mapView addAnnotations:annos];
-    //[_mapView showAnnotations:annos animated:YES];
+    [_mapView showAnnotations:annos animated:YES];
 }
 
 //
