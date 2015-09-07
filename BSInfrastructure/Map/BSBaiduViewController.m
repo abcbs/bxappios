@@ -1038,7 +1038,31 @@
 
 //收藏
 - (IBAction)saveAction:(id)sender{
-    [self saveAction];
+    //[self saveAction];
+
+    CLLocationCoordinate2D coor = (CLLocationCoordinate2D){0, 0};
+    if (_coordinateXText.text != nil && _coordinateYText.text != nil) {
+        coor = (CLLocationCoordinate2D){[_coordinateYText.text floatValue], [_coordinateXText.text floatValue]};
+    }
+    if (_addrText.text.length == 0) {
+        [PromptInfo showText:@"请输入名称"];
+        return;
+    }
+    
+    if (coor.latitude == 0 &&coor.longitude == 0) {
+        [PromptInfo showText:@"请获取经纬度"];
+        return;
+    }
+    BMKFavPoiInfo *poiInfo = [[BMKFavPoiInfo alloc] init];
+    poiInfo.pt =coor;
+    poiInfo.poiName = _addrText.text;
+    NSInteger res = [_favManager addFavPoi:poiInfo];
+    if (res == 1) {
+        [PromptInfo showText:@"保存成功"];
+    } else {
+        [PromptInfo showText:@"保存失败"];
+    }
+
 }
 
 -(void)saveAction{
