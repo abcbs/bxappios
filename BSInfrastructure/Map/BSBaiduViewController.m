@@ -9,6 +9,9 @@
 #import "BSBaiduViewController.h"
 #import "BSCMFrameworkHeader.h"
 #import "PromptInfo.h"
+#import <BaiduMapAPI/BMapKit.h>
+#import "MyAnimatedAnnotationView.h"
+
 #define INDEX_TAG_DIS   1000
 
 @interface MyFavoriteAnnotation : BMKPointAnnotation

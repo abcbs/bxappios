@@ -8,8 +8,8 @@
 
 #import "BSUICommonController.h"
 #import "BSCMFrameworkHeader.h"
-
-@interface BSBaiduViewController : BSUICommonController<BMKMapViewDelegate,BMKGeoCodeSearchDelegate,BMKPoiSearchDelegate, BMKSuggestionSearchDelegate,BMKLocationServiceDelegate,UIGestureRecognizerDelegate>{
+#import "BaiduMapAPI/BMapKit.h"
+@interface BSBaiduViewController : BSUICommonController<BMKMapViewDelegate,BMKGeoCodeSearchDelegate,BMKPoiSearchDelegate, BMKSuggestionSearchDelegate,BMKLocationServiceDelegate,BMKShareURLSearchDelegate,UIGestureRecognizerDelegate>{
     
     BMKGeoCodeSearch* _geocodesearch;
     BMKPoiSearch* _poisearch;

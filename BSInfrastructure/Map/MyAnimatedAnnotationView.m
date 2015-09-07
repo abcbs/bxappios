@@ -7,7 +7,7 @@
 //
 
 #import "MyAnimatedAnnotationView.h"
-
+#import <BaiduMapAPI/BMapKit.h>
 @implementation MyAnimatedAnnotationView
 
 @synthesize annotationImageView = _annotationImageView;

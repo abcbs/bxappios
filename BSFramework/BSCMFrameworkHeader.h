@@ -38,7 +38,7 @@
 #import "NSData+CommonCrypto.h"
 
 
-#import <BaiduMapAPI/BMapKit.h>
+//#import <BaiduMapAPI/BMapKit.h>
 
-#import "MyAnimatedAnnotationView.h"
+//#import "MyAnimatedAnnotationView.h"
 #endif
