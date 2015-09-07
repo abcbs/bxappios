@@ -40,7 +40,7 @@
     BOOL isShowCoordInfo;
     //收藏
     BMKFavPoiManager *_favManager;
-    NSMutableArray *_favPoiInfos;
+
     NSInteger _curFavIndex;
 }
 @end
@@ -71,7 +71,6 @@
     //收藏
     _favManager = [[BMKFavPoiManager alloc] init];
     
-     _favPoiInfos = [NSMutableArray array];
     //
     [_mapView setZoomLevel:16];
 
@@ -328,6 +327,7 @@
 //点击paopao更新按钮
 - (void)updateAction:(id)sender {
     UIButton *button = (UIButton*)sender;
+    NSArray *_favPoiInfos= [_favManager getAllFavPois];
     _curFavIndex = button.tag - INDEX_TAG_DIS;
     if (_curFavIndex < _favPoiInfos.count) {
         BMKFavPoiInfo *favInfo = [_favPoiInfos objectAtIndex:_curFavIndex];
@@ -343,10 +343,11 @@
 - (void)deleteAction:(id)sender {
     UIButton *button = (UIButton*)sender;
     NSInteger favIndex = button.tag - INDEX_TAG_DIS;
+    NSArray *_favPoiInfos= [_favManager getAllFavPois];
     if (favIndex < _favPoiInfos.count) {
         BMKFavPoiInfo *favInfo = [_favPoiInfos objectAtIndex:favIndex];
         if ([_favManager deleteFavPoi:favInfo.favId]) {
-            [_favPoiInfos removeObjectAtIndex:favIndex];
+            //[_favPoiInfos removeObjectAtIndex:favIndex];
             [self updateMapAnnotations];
             [PromptInfo showText:@"删除成功"];
             return;
@@ -999,26 +1000,32 @@
     int i=0;
     int pos=0;
    
-    for ( BMKPoiInfo* poi in _searchResultPoi) {
-        i++;
-        BMKFavPoiInfo *poiInfo ;
-        poiInfo = [[BMKFavPoiInfo alloc] init];
-        CLLocationCoordinate2D coor;
-        coor.latitude = [_coordinateYText.text doubleValue];//39.915;
-        coor.longitude = [_coordinateXText.text doubleValue];//116.404;
+    for (i=0; i< _searchResultPoi.count;i++ ) {
+        BMKPoiInfo* poi= [_searchResultPoi objectAtIndex:i];
+        //i++;
+        BMKFavPoiInfo *poiInfo = [[BMKFavPoiInfo alloc] init];
         poiInfo.pt = poi.pt;
         poiInfo.poiName =poi.name;
+        poiInfo.poiUid=poi.uid;
+        poiInfo.address=poi.address;
+        poiInfo.cityName=poi.city;
         NSInteger res = [_favManager addFavPoi:poiInfo];
+        BSLog(@"第%d条数据,名称为:%@,地址为%@,\t@经度:%f,纬度:%f",i,poiInfo.poiName,poiInfo.address,poiInfo.pt.latitude,poiInfo.pt.longitude);
         if (res != 1) {
             pos++;
+             NSString *str=[NSString stringWithFormat:@"第%d条数据失败,名称为:%@,地址为%@",i,poi.name,poi.address];
             BSLog(@"第%d条数据失败,名称为:%@,地址为%@",i,poi.name,poi.address);
+            [PromptInfo showText:str];
         }
+        poiInfo=nil;
     }//
     if (pos>0) {
         NSString *str=[NSString stringWithFormat:@"收藏的数据,共计%d条失败",pos];
         [PromptInfo showText:str];
     }else{
-        NSString *str=[NSString stringWithFormat:@"收藏成功,共计%d条",i];
+        NSArray *favPois = [_favManager getAllFavPois];
+        NSString *str=[NSString stringWithFormat:@"收藏成功,共计%d条,当前收藏夹数量%lu",
+                       i,(unsigned long)favPois.count];
         [PromptInfo showText:str];
     }
    
@@ -1030,28 +1037,33 @@
     if (favPois == nil) {
         return;
     }
-    [_favPoiInfos removeAllObjects];
-    [_favPoiInfos addObjectsFromArray:favPois];
+    //[_favPoiInfos removeAllObjects];
+    //[_favPoiInfos addObjectsFromArray:favPois];
     [self updateMapAnnotations];
 }
 
 ///更新地图标注
 - (void)updateMapAnnotations {
     [_mapView removeAnnotations:_mapView.annotations];
+    [_mapView setZoomLevel:17];
     NSInteger index = 0;
+    NSArray *_favPoiInfos= [_favManager getAllFavPois];
     NSMutableArray *annos = [NSMutableArray array];
-    for (BMKFavPoiInfo *info in _favPoiInfos) {
+    for (index = 0;index <_favPoiInfos.count;index++) {
+        BMKFavPoiInfo *info = [_favPoiInfos objectAtIndex:index];
         MyFavoriteAnnotation *favAnnotation = [[MyFavoriteAnnotation alloc] init];
         favAnnotation.title = info.poiName;
         favAnnotation.coordinate = info.pt;
         favAnnotation.favPoiInfo = info;
-        favAnnotation.favIndex = index;
+        if (![annos containsObject:favAnnotation]) {
+            [annos addObject:favAnnotation];
+        }
+        BSLog(@"第%ld条数据,名称为:%@,地址为%@,\t@经度:%f,纬度:%f",
+               (long)index,info.poiName,info.address,favAnnotation.coordinate.latitude,favAnnotation.coordinate.longitude);
+
         
-        [annos addObject:favAnnotation];
-        index++;
     }
     NSString *strInfo=[NSString stringWithFormat: @"从收藏中获得的标注为%ld",(long)index];
-    // BSLog(strInfo);
     [PromptInfo showText:strInfo];
     [_mapView addAnnotations:annos];
     //[_mapView showAnnotations:annos animated:YES];
@@ -1059,10 +1071,12 @@
 
 //
 - (IBAction)deleteAllAction:(id)sender{
+   //  NSMutableArray *annos = [NSMutableArray array];
     BOOL res = [_favManager clearAllFavPois];
     if (res) {
         [PromptInfo showText:@"清除成功"];
-        [_favPoiInfos removeAllObjects];
+        //[_favPoiInfos removeAllObjects];
+        //_mapView removeAnnotations:_mapView.annotations];
         [self updateMapAnnotations];
     } else {
         [PromptInfo showText:@"清除失败"];
