@@ -248,6 +248,8 @@
 
 #pragma mark - BMKMapViewDelegate
 #pragma mark 底图手势操作
+
+#pragma mark -点击地图动作开始
 /**
  *点中底图标注后会回调此接口
  *@param mapview 地图View
@@ -256,7 +258,7 @@
 - (void)mapView:(BMKMapView *)mapView onClickedMapPoi:(BMKMapPoi*)mapPoi
 {
     BSLog(@"onClickedMapPoi-%@",mapPoi.text);
-    NSString* showmeg = [NSString stringWithFormat:@"您点击了底图标注:%@,\r\n当前经度:%f,当前纬度:%f,\r\nZoomLevel=%d;RotateAngle=%d;OverlookAngle=%d", mapPoi.text,mapPoi.pt.longitude,mapPoi.pt.latitude, (int)_mapView.zoomLevel,_mapView.rotation,_mapView.overlooking];
+    NSString* showmeg = [NSString stringWithFormat:@"底图标注:%@,当前经度:%f,当前纬度:%f,ZoomLevel=%d;RotateAngle=%d;OverlookAngle=%d", mapPoi.text,mapPoi.pt.longitude,mapPoi.pt.latitude, (int)_mapView.zoomLevel,_mapView.rotation,_mapView.overlooking];
     _showMsgLabel.text = showmeg;
     _addrText.text=mapPoi.text;
     //_cityText.text=mapPoi.text;
@@ -273,9 +275,14 @@
 - (void)mapView:(BMKMapView *)mapView onClickedMapBlank:(CLLocationCoordinate2D)coordinate
 {
     BSLog(@"onClickedMapBlank-latitude==%f,longitude==%f",coordinate.latitude,coordinate.longitude);
-    NSString* showmeg = [NSString stringWithFormat:@"您点击了地图空白处(blank click).\r\n当前经度:%f,当前纬度:%f,\r\nZoomLevel=%d;RotateAngle=%d;OverlookAngle=%d", coordinate.longitude,coordinate.latitude,
+    NSString* showmeg = [NSString stringWithFormat:@"当前经度:%f,当前纬度:%f,ZoomLevel=%d;RotateAngle=%d;OverlookAngle=%d", coordinate.longitude,coordinate.latitude,
                          (int)_mapView.zoomLevel,_mapView.rotation,_mapView.overlooking];
     _showMsgLabel.text = showmeg;
+    _coordinateXText.text = [NSString stringWithFormat:@"%f",
+                             coordinate.longitude];//纬度
+    
+    _coordinateYText.text = [NSString stringWithFormat:@"%f",
+                             coordinate.latitude];//经度
 }
 
 /**
@@ -286,7 +293,7 @@
 - (void)mapview:(BMKMapView *)mapView onDoubleClick:(CLLocationCoordinate2D)coordinate
 {
     BSLog(@"onDoubleClick-latitude==%f,longitude==%f",coordinate.latitude,coordinate.longitude);
-    NSString* showmeg = [NSString stringWithFormat:@"您双击了地图(double click).\r\n当前经度:%f,当前纬度:%f,\r\nZoomLevel=%d;RotateAngle=%d;OverlookAngle=%d", coordinate.longitude,coordinate.latitude,
+    NSString* showmeg = [NSString stringWithFormat:@"当前经度:%f,当前纬度:%f,ZoomLevel=%d;RotateAngle=%d;OverlookAngle=%d", coordinate.longitude,coordinate.latitude,
                          (int)_mapView.zoomLevel,_mapView.rotation,_mapView.overlooking];
     _showMsgLabel.text = showmeg;
     
@@ -305,7 +312,7 @@
 - (void)mapview:(BMKMapView *)mapView onLongClick:(CLLocationCoordinate2D)coordinate
 {
     BSLog(@"onLongClick-latitude==%f,longitude==%f",coordinate.latitude,coordinate.longitude);
-    NSString* showmeg = [NSString stringWithFormat:@"您长按了地图(long pressed).\r\n当前经度:%f,当前纬度:%f,\r\nZoomLevel=%d;RotateAngle=%d;OverlookAngle=%d", coordinate.longitude,coordinate.latitude,
+    NSString* showmeg = [NSString stringWithFormat:@"当前经度:%f,当前纬度:%f,ZoomLevel=%d;RotateAngle=%d;OverlookAngle=%d", coordinate.longitude,coordinate.latitude,
                          (int)_mapView.zoomLevel,_mapView.rotation,_mapView.overlooking];
     _showMsgLabel.text = showmeg;
     _coordinateXText.text = [NSString stringWithFormat:@"%f",
@@ -318,13 +325,14 @@
 
 - (void)mapView:(BMKMapView *)mapView regionDidChangeAnimated:(BOOL)animated
 {
-    NSString* showmeg = [NSString stringWithFormat:@"地图区域发生了变化(x=%d,y=%d,\r\nwidth=%d,height=%d).\r\nZoomLevel=%d;RotateAngle=%d;OverlookAngle=%d",(int)_mapView.visibleMapRect.origin.x,(int)_mapView.visibleMapRect.origin.y,(int)_mapView.visibleMapRect.size.width,(int)_mapView.visibleMapRect.size.height,(int)_mapView.zoomLevel,_mapView.rotation,_mapView.overlooking];
+    NSString* showmeg = [NSString stringWithFormat:@"地图区域发生了变化(x=%d,y=%d,width=%d,height=%d).ZoomLevel=%d;RotateAngle=%d;OverlookAngle=%d",(int)_mapView.visibleMapRect.origin.x,(int)_mapView.visibleMapRect.origin.y,(int)_mapView.visibleMapRect.size.width,(int)_mapView.visibleMapRect.size.height,(int)_mapView.zoomLevel,_mapView.rotation,_mapView.overlooking];
     
     _showMsgLabel.text = showmeg;
     
-    
-}
+ }
+#pragma mark -点击地图动作结束
 
+#pragma mark -地图收藏私有方法开始
 // 根据anntation生成对应的View,搜藏夹功能
 - (BMKAnnotationView *)viewForAnnotation:(id <BMKAnnotation>)annotation
 {
@@ -391,6 +399,7 @@
     }
     [PromptInfo showText:@"删除失败"];
 }
+#pragma mark -地图收藏私有方法结束
 
 #pragma mark -百度地图标注方法
 //根据anntation生成对应的View
@@ -463,7 +472,7 @@
     return annotationView;
 }
 
-//单点收藏
+//地图点击标注动作
 -(void)updatePIOAction:(id)sender{
     //[PromptInfo showText:@"更新成功"];
     UIButton *button = (UIButton*)sender;
@@ -480,7 +489,8 @@
     }
     [PromptInfo showText:@"收藏成功"];
 }
-//点击paopao选中更新经纬度
+
+//地图点击标注动作选中更新经纬度
 - (void)selectedPOIAction:(id)sender {
     UIButton *button = (UIButton*)sender;
     NSInteger favIndex = button.tag - INDEX_TAG_DIS;
@@ -498,6 +508,7 @@
     }
 
 }
+
 #pragma mark -添加覆盖物，即形状
 - (BMKOverlayView *)mapView:(BMKMapView *)mapView viewForOverlay:(id <BMKOverlay>)overlay{
     if ([overlay isKindOfClass:[BMKCircle class]]){
