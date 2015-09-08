@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "BSUIFrameworkHeader.h"
 
-@interface BSUITabBarCommonController : UITabBarController<NavigationProcess>
+@interface BSUITabBarCommonController : UITabBarController<NavigationProcess,UITextFieldDelegate>
 
 @property (nonatomic,assign)BOOL bDisplaySearchButtonNav;
 

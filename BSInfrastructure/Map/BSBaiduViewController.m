@@ -146,6 +146,7 @@
     
 }
 
+
 -(void)viewWillDisappear:(BOOL)animated {
     [_mapView viewWillDisappear];
     _mapView.delegate = nil; // 不用时，置nil
@@ -332,6 +333,21 @@
  }
 #pragma mark -点击地图动作结束
 
+- (void)mapView:(BMKMapView *)mapView didAddOverlayViews:(NSArray *)overlayViews{
+    BSLog(@"当mapView新添加overlay views时，调用此接口");
+
+}
+
+/**
+ *当mapView新添加annotation views时，调用此接口
+ *@param mapView 地图View
+ *@param views 新添加的annotation views
+ */
+- (void)mapView:(BMKMapView *)mapView didAddAnnotationViews:(NSArray *)views{
+    BSLog(@"当mapView新添加annotation views时");
+
+}
+
 #pragma mark -地图收藏私有方法开始
 // 根据anntation生成对应的View,搜藏夹功能
 - (BMKAnnotationView *)viewForAnnotation:(id <BMKAnnotation>)annotation
@@ -485,9 +501,38 @@
             [self favSinglePOI:poi];
             [self updateMapAnnotations];
             //[_searchResultPoi removeObjectAtIndex:favIndex];
+            [PromptInfo showText:@"收藏查询点成功"];
+            return;
         }
+    }else{//非查询（通过定位）方式的收藏
+        [self favLocaction];
+        [PromptInfo showText:@"收藏定位点成功"];
+        return;
     }
-    [PromptInfo showText:@"收藏成功"];
+    [PromptInfo showText:@"收藏失败"];
+}
+
+-(void)favLocaction{
+    BMKFavPoiInfo *poiInfo = [[BMKFavPoiInfo alloc] init];
+    CLLocationCoordinate2D coor;
+    coor.latitude = [_coordinateYText.text doubleValue];//39.915;
+    coor.longitude = [_coordinateXText.text doubleValue];//116.404;
+    poiInfo.pt = coor;
+    poiInfo.poiName =_addrText.text;
+    //poiInfo.poiUid=poi.uid;
+    //poiInfo.address=poi.address;
+    poiInfo.cityName=_cityText.text;
+    NSInteger res = [_favManager addFavPoi:poiInfo];
+    BSLog(@"数据,名称为:%@,地址为%@,\t@经度:%f,纬度:%f",poiInfo.poiName,poiInfo.address,poiInfo.pt.latitude,poiInfo.pt.longitude);
+    if (res != 1) {
+        //pos++;
+        NSString *str=[NSString stringWithFormat:@"搜藏数据失败,名称为:%@",
+                       _addrText.text];
+        //BSLog(@"第%d条数据失败,名称为:%@,地址为%@",i,poi.name,poi.address);
+        [PromptInfo showText:str];
+    }
+    poiInfo=nil;
+    
 }
 
 //地图点击标注动作选中更新经纬度
@@ -577,11 +622,11 @@
                     BOOL flag = [_shareurlsearch requestPoiDetailShareURL:detailShareUrlSearchOption];
                     if(flag)
                     {
-                        NSLog(@"详情url检索发送成功");
+                        BSLog(@"详情url检索发送成功");
                     }
                     else
                     {
-                        NSLog(@"详情url检索发送失败");
+                        BSLog(@"详情url检索发送失败");
                     }
 
 
@@ -622,8 +667,9 @@
         NSString *showmeg=[NSString stringWithFormat:@"查找关键字:%@\t或者在经纬度附近找%@\t发现共计:%lu条",
                             _addrText.text,_keyText.text,(unsigned long)_searchResultPoi.count];
         //showmeg = [NSString stringWithFormat:@"经度:%f,纬度:%f",item.coordinate.latitude,item.coordinate.longitude];
-        UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:@"查询关键信息" message:showmeg delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定",nil];
-        [myAlertView show];
+        //UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:@"查询关键信息" message:showmeg delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定",nil];
+        //[myAlertView show];
+        [PromptInfo showText:showmeg];
     }
 }
 

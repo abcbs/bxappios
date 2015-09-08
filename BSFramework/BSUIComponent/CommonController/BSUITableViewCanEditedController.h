@@ -8,7 +8,7 @@
 #import <UIKit/UIKit.h>
 #import "BSUIFrameworkHeader.h"
 
-@interface BSUITableViewCanEditedController :UITableViewController<NavigationProcess,BSImagePlayerDelegate>
+@interface BSUITableViewCanEditedController :UITableViewController<NavigationProcess,BSImagePlayerDelegate,UITextFieldDelegate>
 
 @property (nonatomic,assign)BOOL bDisplaySearchButtonNav;
 

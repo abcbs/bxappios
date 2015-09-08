@@ -122,4 +122,10 @@
     bsContentObject.noNeedLoginCheck=check;
     [self navigating:bsContentObject];
 }
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    
+    [textField resignFirstResponder];
+    return YES;
+}
 @end

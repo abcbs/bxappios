@@ -115,6 +115,11 @@
     [_mapView updateLocationData:location];
 }
 
+-(void)delelageForTextField{
+    
+    
+}
+
 ///获取周边信息
 - (IBAction)nearbyAction:(id)sender {
     [self nearbySearchWithPageIndex:0];
@@ -146,11 +151,11 @@
     BMKRadarNearbySearchOption *option = [[BMKRadarNearbySearchOption alloc] init]
     ;
     option.radius = 8000;
-    
-    option.sortType = BMK_RADAR_SORT_TYPE_DISTANCE_FROM_NEAR_TO_FAR;
+    //根据时间排序
+    option.sortType = BMK_RADAR_SORT_TYPE_TIME_FROM_RECENT_TO_PAST;
     option.centerPt = _myCoor;
     option.pageIndex = pageIndex;
-    option.pageCapacity = 2;
+    option.pageCapacity = 100;
         NSDate *eDate = [NSDate date];
             eDate = [NSDate dateWithTimeInterval:-3600 * 3 sinceDate:eDate];
         NSDate *date = [NSDate dateWithTimeInterval:-3600 * 4 sinceDate:eDate];
@@ -158,7 +163,7 @@
         dateRange.startDate = date;
         dateRange.endDate = eDate;
     //    NSLog(@"%@ ,  %@", date, eDate);
-        option.dateRange = dateRange;
+    //    option.dateRange = dateRange;
     
     BOOL res = [_radarManager getRadarNearbySearchRequest:option];
     if (res) {

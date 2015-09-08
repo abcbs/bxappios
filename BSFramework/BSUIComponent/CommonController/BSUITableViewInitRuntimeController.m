@@ -336,4 +336,10 @@ titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
     BSLog(@"上次选中的行是  \n indexpath=%@",indexPath);
     return indexPath;
 }
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    
+    [textField resignFirstResponder];
+    return YES;
+}
 @end

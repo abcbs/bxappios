@@ -157,4 +157,11 @@
 -(void)navigating:(BSTableContentObject*)bsContentObject{
     [BSContentObjectNavigation navigatingControllWithStorybord:self       bsContentObject:bsContentObject];
 }
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    
+    [textField resignFirstResponder];
+    return YES;
+}
+
 @end

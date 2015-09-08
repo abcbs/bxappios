@@ -214,5 +214,10 @@
     NSLog(@"location error");
 }
 
+-(void)delelageForTextField{
+   self.userTextField.delegate=self;
+   self.infoTextField.delegate=self;
+}
+
 
 @end

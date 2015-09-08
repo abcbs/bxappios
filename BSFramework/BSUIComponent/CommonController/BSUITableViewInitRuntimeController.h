@@ -11,7 +11,7 @@
 
 
 @interface BSUITableViewInitRuntimeController :
-    BSUICommonController<UITableViewDataSource,UITableViewDelegate,NavigationProcess>
+    BSUICommonController<UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate,NavigationProcess>
 
 @property (retain, nonatomic) BSTableSection *bSTableObjects;
 

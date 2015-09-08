@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "BSUIFrameworkHeader.h"
-@interface BSUICollectionCollectionViewController : UICollectionViewController<NavigationProcess>
+@interface BSUICollectionCollectionViewController : UICollectionViewController<NavigationProcess,UITextFieldDelegate>
 
 @property (nonatomic,assign)BOOL bDisplaySearchButtonNav;
 

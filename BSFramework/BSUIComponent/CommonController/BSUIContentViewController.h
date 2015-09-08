@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "BSUIFrameworkHeader.h"
 #import "BSFCRollingADImageUIView.h"
-@interface BSUIContentViewController : UIViewController<NavigationProcess,BSImagePlayerDelegate>
+@interface BSUIContentViewController : UIViewController<NavigationProcess,BSImagePlayerDelegate,UITextFieldDelegate>
 
 @property (nonatomic,assign)BOOL bDisplaySearchButtonNav;
 
