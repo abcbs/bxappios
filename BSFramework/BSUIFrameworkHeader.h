@@ -97,7 +97,7 @@
  */
 #import "BSUIComponentView.h"
 
-
+#import "BSWebViewViewController.h"
 
 CG_INLINE CGRect BSRectMake(CGFloat x, CGFloat y, CGFloat width, CGFloat height)
 {

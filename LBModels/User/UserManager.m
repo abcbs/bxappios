@@ -67,7 +67,7 @@ static UserSession *session;
 }
 
 +(BOOL)checkSession{
-    BSDigestAuthorization *digest=[BSDigestAuthorization instaceDigestAuthorization];
+    //BSDigestAuthorization *digest=[BSDigestAuthorization instaceDigestAuthorization];
     if (!DEFAULT_ROLE) {
         return YES;
     }

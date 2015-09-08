@@ -11,6 +11,7 @@
 #import "PromptInfo.h"
 #import <BaiduMapAPI/BMapKit.h>
 #import "MyAnimatedAnnotationView.h"
+#import "BSWebViewViewController.h"
 
 #define INDEX_TAG_DIS   1000
 
@@ -58,6 +59,21 @@
     BMKFavPoiManager *_favManager;
 
     NSInteger _curFavIndex;
+    
+    //短URL共享
+    BOOL isPoiShortUrlShare;
+    //名称
+    NSString* sharedGeoName;
+    //地址
+    NSString* sharedAddr;
+    //坐标
+    //CLLocationCoordinate2D pt;
+    //短串
+    NSString* shortUrl;
+    //分享字符串
+    NSString* sharedShowmeg;
+
+    
 }
 @end
 
@@ -111,7 +127,6 @@
     [followHeadBtn setAlpha:0.6];
     [stopBtn setEnabled:NO];
     [stopBtn setAlpha:0.6];
-    
     self.navigationItem.rightBarButtonItem.tintColor=[UIColor whiteColor];
 
 }
@@ -125,6 +140,7 @@
      _poisearch.delegate = self; // 此处记得不用的时候需要置nil，否则影响内存的释放
      _suggestionsearch.delegate = self;
      _locService.delegate = self;
+    _shareurlsearch.delegate=self;
     [self initSubViews];
     [self hideController];
     
@@ -138,6 +154,8 @@
     _suggestionsearch.delegate =nil;
     _shareurlsearch.delegate=nil;
     _locService.delegate = nil;
+    //短URL
+    isPoiShortUrlShare=NO;
     
 }
 - (void)viewDidUnload {
@@ -462,7 +480,7 @@
     }
     [PromptInfo showText:@"收藏成功"];
 }
-//点击paopao删除按钮
+//点击paopao选中更新经纬度
 - (void)selectedPOIAction:(id)sender {
     UIButton *button = (UIButton*)sender;
     NSInteger favIndex = button.tag - INDEX_TAG_DIS;
@@ -520,6 +538,7 @@
     if (error == BMK_SEARCH_NO_ERROR) {
         NSMutableArray *annotations = [NSMutableArray array];
         BSLog(@"检索数量为:%lu",(unsigned long)result.poiInfoList.count);
+        //将数据保存到图标上
         for (int i = 0; i < result.poiInfoList.count; i++) {
             BMKPoiInfo* poi = [result.poiInfoList objectAtIndex:i];
             [_searchResultPoi addObject:poi];//
@@ -530,7 +549,33 @@
             item.searchPoiInfo=poi;
             item.coordinate = poi.pt;
             //item.title = poi.name;
-            
+            //处理共享短URL逻辑
+            if (isPoiShortUrlShare) {//true可以共享短URL
+                //以市内查找
+                if (i==0) {//获取第一个点数据
+                    _mapView.centerCoordinate = poi.pt;
+                    //保存数据用于分享
+                    //名字
+                    sharedGeoName = poi.name;
+                    //地址
+                    sharedAddr = [[NSString alloc] initWithString:poi.address];
+                    //发起短串搜索获取poi分享url
+                    BMKPoiDetailShareURLOption *detailShareUrlSearchOption =
+                        [[BMKPoiDetailShareURLOption alloc]init];
+                    detailShareUrlSearchOption.uid=poi.uid;
+                    BOOL flag = [_shareurlsearch requestPoiDetailShareURL:detailShareUrlSearchOption];
+                    if(flag)
+                    {
+                        NSLog(@"详情url检索发送成功");
+                    }
+                    else
+                    {
+                        NSLog(@"详情url检索发送失败");
+                    }
+
+
+                }
+            }
             [self searchByBMKPoiDetailSearchOption:poi.uid];
             //计算同关键点的距离
             BMKMapPoint point1 = BMKMapPointForCoordinate(CLLocationCoordinate2DMake([_coordinateYText.text doubleValue],[_coordinateXText.text doubleValue]));
@@ -660,6 +705,35 @@
         item.title = result.address;
         [_mapView addAnnotation:item];
         _mapView.centerCoordinate = result.location;
+        
+        //短URL处理
+        if (isPoiShortUrlShare) {
+            _mapView.centerCoordinate = result.location;
+            //保存数据用于分享用
+            //名字－－泡泡上显示的名字，可以自定义
+            sharedGeoName =[NSString stringWithFormat:@"BS:%@",_addrText.text];
+            //地址
+            sharedAddr = result.address;
+            //发起短串搜索获取反geo分享url
+            BMKLocationShareURLOption *option = [[BMKLocationShareURLOption alloc]init];
+            option.snippet = sharedAddr;
+            option.name = sharedGeoName;
+            //坐标
+            CLLocationCoordinate2D pt;
+            pt.latitude = [_coordinateYText.text doubleValue];//39.915;
+            pt.longitude = [_coordinateXText.text doubleValue];//116.404;
+            option.location = pt;
+            BOOL flag = [_shareurlsearch requestLocationShareURL:option];
+            if(flag)
+            {
+                NSLog(@"反geourl检索发送成功");
+            }
+            else
+            {
+                NSLog(@"反geourl检索发送失败");
+            }
+
+        }
         NSString* titleStr;
         NSString* showmeg;
         titleStr = @"反向地理编码";
@@ -684,7 +758,109 @@
     BSLog(@"地图初始化完成");
 }
 
+//3.返回短串分享url
+- (void)onGetPoiDetailShareURLResult:(BMKShareURLSearch *)searcher result:(BMKShareURLResult *)result errorCode:(BMKSearchErrorCode)error
+{
+    shortUrl = result.url;
+    if (error == BMK_SEARCH_NO_ERROR)
+    {
+        if(sharedShowmeg!=nil)
+        {
+            sharedShowmeg = nil;
+        }
+        sharedShortUrl.text=shortUrl;
+        browseSharedShortUrlBtn.enabled=YES;
+        sharedShowmeg = [NSString stringWithFormat:@"这里是:%@\r\n%@\r\n%@",sharedGeoName,sharedAddr,shortUrl];
+        UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:@"短串分享" message:sharedShowmeg delegate:self cancelButtonTitle:nil otherButtonTitles:@"分享",@"取消",nil];
+        myAlertView.tag = 1000;
+        [myAlertView show];
+    }
+}
+
+- (void)onGetLocationShareURLResult:(BMKShareURLSearch *)searcher result:(BMKShareURLResult *)result errorCode:(BMKSearchErrorCode)error
+{
+    shortUrl = result.url;
+    if (error == BMK_SEARCH_NO_ERROR)
+    {
+        if(sharedShowmeg!=nil)
+        {
+            sharedShowmeg = nil;
+        }
+        //共享短URL已经存在
+        sharedShortUrl.text=shortUrl;
+        browseSharedShortUrlBtn.enabled=YES;
+        
+        sharedShowmeg = [NSString stringWithFormat:@"APP共享:%@\r\n%@\r\n%@",sharedGeoName,sharedAddr,shortUrl];
+        UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:@"短串分享" message:sharedShowmeg delegate:self cancelButtonTitle:nil otherButtonTitles:@"分享",@"取消",nil];
+        myAlertView.tag = 1000;
+        [myAlertView show];
+    }
+}
+
+
 #pragma mark -百度地图代理方法结束
+
+#pragma mark UIAlertView delegate
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (alertView.tag ==1000 )
+    {
+        switch (buttonIndex)
+        {
+            case 0://确定
+            {
+                Class messageClass = (NSClassFromString(@"MFMessageComposeViewController"));
+                if (messageClass != nil) {
+                    if ([messageClass canSendText]) {
+                        MFMessageComposeViewController *picker = [[MFMessageComposeViewController alloc] init];
+                        picker.messageComposeDelegate = self;
+                        picker.body = [NSString stringWithFormat:@"%@",sharedShowmeg];
+                        //[self.navigationController pushViewController:picker animated:YES];
+                        [self presentViewController:picker animated:YES completion:nil];
+                    } else {
+                        UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:@"当前设备暂时没有办法发送短信" message:nil delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定",nil];
+                        [myAlertView show];
+                    }
+                }
+                
+            }
+            case 1://取消
+            {
+            }
+            break;
+            default:
+            {
+                
+            }
+            break;
+        }
+    }
+    
+}
+
+#pragma mark MFMessageComposeViewControllerDelegate
+
+- (void)messageComposeViewController:(MFMessageComposeViewController *)controller
+                 didFinishWithResult:(MessageComposeResult)result
+{
+    // Notifies users about errors associated with the interface
+    switch (result) {
+        case MessageComposeResultCancelled:
+            //用户自己取消，不用提醒
+            break;
+        case MessageComposeResultSent:
+            //后续可能不能够成功发送，所以暂时不提醒
+            break;
+        case MessageComposeResultFailed:
+            NSLog(@"短信发送失败");
+            break;
+        default:
+            NSLog(@"短信没有发送");
+            break;
+    }
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 #pragma mark - 添加自定义的手势（若不自定义手势，不需要下面的代码）
 
@@ -1033,13 +1209,28 @@
     }
 }
 
-//短URL
+//短URL共享，首先是查找，而后在查找结果中组织共享数据
 -(IBAction)poiShortUrlShare{
+    isPoiShortUrlShare=YES;
+    [self searchByBMKCitySearchOption];
     
 }
 
 -(IBAction)reverseGeoShortUrlShare{
-    
+    //坐标
+    isPoiShortUrlShare=YES;
+    [self onClickReverseGeocode];
+}
+//显示共享的短URL
+- (IBAction)browseSharedShortUrlAction:(id)sender {
+
+    BSTableContentObject *bs=[BSTableContentObject
+           initWithContentObject:nil
+           methodName:@"requestURL" imageName:nil
+           colClass:[BSWebViewViewController class]];
+    bs.neededMethodData=shortUrl;
+    [self navigating:bs];
+
 }
 
 //收藏

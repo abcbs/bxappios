@@ -9,7 +9,10 @@
 #import "BSUICommonController.h"
 #import "BSCMFrameworkHeader.h"
 #import "BaiduMapAPI/BMapKit.h"
-@interface BSBaiduViewController : BSUICommonController<BMKMapViewDelegate,BMKGeoCodeSearchDelegate,BMKPoiSearchDelegate, BMKSuggestionSearchDelegate,BMKLocationServiceDelegate,BMKShareURLSearchDelegate,UIGestureRecognizerDelegate>{
+#import <MessageUI/MessageUI.h>
+#import <MessageUI/MFMessageComposeViewController.h>
+
+@interface BSBaiduViewController : BSUICommonController<BMKMapViewDelegate,BMKGeoCodeSearchDelegate,BMKPoiSearchDelegate, BMKSuggestionSearchDelegate,BMKLocationServiceDelegate,BMKShareURLSearchDelegate,UIGestureRecognizerDelegate,MFMessageComposeViewControllerDelegate>{
     
     BMKGeoCodeSearch* _geocodesearch;
     BMKPoiSearch* _poisearch;
@@ -99,9 +102,10 @@
     
     IBOutlet UIButton* _reverseGeoShortUrlButton;
     
-    bool isPoiShortUrlShare;
+    IBOutlet UITextField *sharedShortUrl;
     
-
+    
+    IBOutlet UIButton *browseSharedShortUrlBtn;
     //定位
     IBOutlet UIButton* startBtn;
     
@@ -165,6 +169,8 @@
 -(IBAction)poiShortUrlShare;
 
 -(IBAction)reverseGeoShortUrlShare;
+
+- (IBAction)browseSharedShortUrlAction:(id)sender;
 
 
 //收藏

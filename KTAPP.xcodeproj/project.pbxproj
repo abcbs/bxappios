@@ -1291,6 +1291,20 @@
 		84EADA371B95C59500302A90 /* texture_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 84EADA131B95C59500302A90 /* texture_arrow.png */; };
 		84EADA3A1B95C6F600302A90 /* BSRadarNearbyViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 84EADA391B95C6F500302A90 /* BSRadarNearbyViewController.mm */; };
 		84EADA3B1B95C6F600302A90 /* BSRadarNearbyViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 84EADA391B95C6F500302A90 /* BSRadarNearbyViewController.mm */; };
+		84EADEDC1B9EA86C0098ABCE /* back_disable.png in Resources */ = {isa = PBXBuildFile; fileRef = 84EADED81B9EA86C0098ABCE /* back_disable.png */; };
+		84EADEDD1B9EA86C0098ABCE /* back_disable.png in Resources */ = {isa = PBXBuildFile; fileRef = 84EADED81B9EA86C0098ABCE /* back_disable.png */; };
+		84EADEDE1B9EA86C0098ABCE /* back_disable.png in Resources */ = {isa = PBXBuildFile; fileRef = 84EADED81B9EA86C0098ABCE /* back_disable.png */; };
+		84EADEDF1B9EA86C0098ABCE /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 84EADED91B9EA86C0098ABCE /* back.png */; };
+		84EADEE01B9EA86C0098ABCE /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 84EADED91B9EA86C0098ABCE /* back.png */; };
+		84EADEE11B9EA86C0098ABCE /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 84EADED91B9EA86C0098ABCE /* back.png */; };
+		84EADEE21B9EA86C0098ABCE /* forward_disable.png in Resources */ = {isa = PBXBuildFile; fileRef = 84EADEDA1B9EA86C0098ABCE /* forward_disable.png */; };
+		84EADEE31B9EA86C0098ABCE /* forward_disable.png in Resources */ = {isa = PBXBuildFile; fileRef = 84EADEDA1B9EA86C0098ABCE /* forward_disable.png */; };
+		84EADEE41B9EA86C0098ABCE /* forward_disable.png in Resources */ = {isa = PBXBuildFile; fileRef = 84EADEDA1B9EA86C0098ABCE /* forward_disable.png */; };
+		84EADEE51B9EA86C0098ABCE /* forward.png in Resources */ = {isa = PBXBuildFile; fileRef = 84EADEDB1B9EA86C0098ABCE /* forward.png */; };
+		84EADEE61B9EA86C0098ABCE /* forward.png in Resources */ = {isa = PBXBuildFile; fileRef = 84EADEDB1B9EA86C0098ABCE /* forward.png */; };
+		84EADEE71B9EA86C0098ABCE /* forward.png in Resources */ = {isa = PBXBuildFile; fileRef = 84EADEDB1B9EA86C0098ABCE /* forward.png */; };
+		84EADEEE1B9EAA2E0098ABCE /* BSWebViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EADEED1B9EAA2E0098ABCE /* BSWebViewViewController.m */; };
+		84EADEEF1B9EAA2E0098ABCE /* BSWebViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EADEED1B9EAA2E0098ABCE /* BSWebViewViewController.m */; };
 		84EAFF5B1B59563300A90992 /* LSProductManagerMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8461B7941B54CF57002A7C43 /* LSProductManagerMain.storyboard */; };
 		84EAFF5E1B5969EF00A90992 /* BSUITableViewCanEditedController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EAFF5D1B5969EF00A90992 /* BSUITableViewCanEditedController.m */; };
 		84EAFF601B596C8900A90992 /* BSUITableViewCanEditedController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EAFF5D1B5969EF00A90992 /* BSUITableViewCanEditedController.m */; };
@@ -2497,6 +2511,12 @@
 		84EADA131B95C59500302A90 /* texture_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = texture_arrow.png; sourceTree = "<group>"; };
 		84EADA381B95C6F500302A90 /* BSRadarNearbyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSRadarNearbyViewController.h; sourceTree = "<group>"; };
 		84EADA391B95C6F500302A90 /* BSRadarNearbyViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BSRadarNearbyViewController.mm; sourceTree = "<group>"; };
+		84EADED81B9EA86C0098ABCE /* back_disable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back_disable.png; sourceTree = "<group>"; };
+		84EADED91B9EA86C0098ABCE /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
+		84EADEDA1B9EA86C0098ABCE /* forward_disable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = forward_disable.png; sourceTree = "<group>"; };
+		84EADEDB1B9EA86C0098ABCE /* forward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = forward.png; sourceTree = "<group>"; };
+		84EADEEC1B9EAA2E0098ABCE /* BSWebViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSWebViewViewController.h; sourceTree = "<group>"; };
+		84EADEED1B9EAA2E0098ABCE /* BSWebViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSWebViewViewController.m; sourceTree = "<group>"; };
 		84EAFF5C1B5969EF00A90992 /* BSUITableViewCanEditedController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUITableViewCanEditedController.h; sourceTree = "<group>"; };
 		84EAFF5D1B5969EF00A90992 /* BSUITableViewCanEditedController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUITableViewCanEditedController.m; sourceTree = "<group>"; };
 		84EAFF651B596F2400A90992 /* BSUITableViewCommonController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUITableViewCommonController.h; sourceTree = "<group>"; };
@@ -3666,6 +3686,8 @@
 		848058171B39AEEF005817D7 /* CommonController */ = {
 			isa = PBXGroup;
 			children = (
+				84EADEEC1B9EAA2E0098ABCE /* BSWebViewViewController.h */,
+				84EADEED1B9EAA2E0098ABCE /* BSWebViewViewController.m */,
 				848058181B39AEEF005817D7 /* BSTableListProtocol.h */,
 				848058191B39AEEF005817D7 /* BSTableViewRefreshController.h */,
 				8480581A1B39AEEF005817D7 /* BSTableViewRefreshController.m */,
@@ -4354,6 +4376,10 @@
 		84EA97171B57E21F00AC549F /* TabBarImage */ = {
 			isa = PBXGroup;
 			children = (
+				84EADED81B9EA86C0098ABCE /* back_disable.png */,
+				84EADED91B9EA86C0098ABCE /* back.png */,
+				84EADEDA1B9EA86C0098ABCE /* forward_disable.png */,
+				84EADEDB1B9EA86C0098ABCE /* forward.png */,
 				84EA97181B57E21F00AC549F /* bjfw@2x.png */,
 				84EA97191B57E21F00AC549F /* bjfwh@2x.png */,
 				84EA971A1B57E21F00AC549F /* first_normal.png */,
@@ -5333,6 +5359,7 @@
 				84EA97FC1B57E21F00AC549F /* first_selected.png in Resources */,
 				84EA98021B57E21F00AC549F /* icon-1x-02.png in Resources */,
 				84EA98221B57E21F00AC549F /* third_selected@2x.png in Resources */,
+				84EADEDD1B9EA86C0098ABCE /* back_disable.png in Resources */,
 				84EA98C21B57E21F00AC549F /* radio_unchecked@2x.png in Resources */,
 				84EA99061B57E21F00AC549F /* putong.png in Resources */,
 				84EA97DE1B57E21F00AC549F /* im_jia.png in Resources */,
@@ -5387,6 +5414,7 @@
 				84EA98361B57E21F00AC549F /* a11.png in Resources */,
 				84EA97CC1B57E21F00AC549F /* icon_district.png in Resources */,
 				84ECE4401B4FC792003D1AEE /* BSUISingleImageTableViewCell.xib in Resources */,
+				84EADEE31B9EA86C0098ABCE /* forward_disable.png in Resources */,
 				84EA991A1B57E21F00AC549F /* yyfw9_01.png in Resources */,
 				84EA980C1B57E21F00AC549F /* icon-1x-3.png in Resources */,
 				84EA98F21B57E21F00AC549F /* im_kaika.png in Resources */,
@@ -5434,8 +5462,10 @@
 				84EA989A1B57E21F00AC549F /* 银行卡绑定-3.png in Resources */,
 				84EA97B81B57E21F00AC549F /* img_04.jpg in Resources */,
 				84EA98061B57E21F00AC549F /* icon-1x-04.png in Resources */,
+				84EADEE01B9EA86C0098ABCE /* back.png in Resources */,
 				84EA97E01B57E21F00AC549F /* im_Magnifier.jpg in Resources */,
 				84EA982A1B57E21F00AC549F /* xysjh@2x.png in Resources */,
+				84EADEE61B9EA86C0098ABCE /* forward.png in Resources */,
 				84EA98BC1B57E21F00AC549F /* radio_checked.png in Resources */,
 				84EA98B81B57E21F00AC549F /* login-4.png in Resources */,
 				84EA97DA1B57E21F00AC549F /* im_car.png in Resources */,
@@ -5483,6 +5513,7 @@
 				847415371B639312005BF59D /* shfwh@2x.png in Resources */,
 				8412CA891B79EB12004EDFAB /* rsa_public_key.pem in Resources */,
 				847415071B639312005BF59D /* img_04.jpg in Resources */,
+				84EADEE71B9EA86C0098ABCE /* forward.png in Resources */,
 				847415571B639312005BF59D /* h_01.png in Resources */,
 				8474157F1B639312005BF59D /* forget password-3.png in Resources */,
 				847415A91B639312005BF59D /* jl_01.png in Resources */,
@@ -5501,6 +5532,7 @@
 				847415B11B639312005BF59D /* tukuail.png in Resources */,
 				8474158F1B639312005BF59D /* register-2.png in Resources */,
 				84F290251B638BC0001078D8 /* BSUISingleImageTableViewCell.xib in Resources */,
+				84EADEE41B9EA86C0098ABCE /* forward_disable.png in Resources */,
 				8474150C1B639312005BF59D /* 98jz@2x.png in Resources */,
 				8474159B1B639312005BF59D /* dizhi.png in Resources */,
 				847415211B639312005BF59D /* tabbar_discover@2x.png in Resources */,
@@ -5602,6 +5634,7 @@
 				847415841B639312005BF59D /* login-2.png in Resources */,
 				84F3095F1B9D49170070EF19 /* AMap.bundle in Resources */,
 				84F3094D1B9D42D70070EF19 /* mapapi.bundle in Resources */,
+				84EADEDE1B9EA86C0098ABCE /* back_disable.png in Resources */,
 				8474154D1B639312005BF59D /* APP-000-640-1136-4寸规格.jpg in Resources */,
 				847415411B639312005BF59D /* 640-90.png in Resources */,
 				847415221B639312005BF59D /* tabbar_discover@3x.png in Resources */,
@@ -5627,6 +5660,7 @@
 				847415781B639312005BF59D /* 银行卡绑定-6.png in Resources */,
 				8474157E1B639312005BF59D /* forget password-2.png in Resources */,
 				847415681B639312005BF59D /* ddlb_01.png in Resources */,
+				84EADEE11B9EA86C0098ABCE /* back.png in Resources */,
 				8412CA801B79EB12004EDFAB /* private_key.p12 in Resources */,
 				847415E41B63B6E2005BF59D /* FDTake.strings in Resources */,
 				847415881B639312005BF59D /* radio_checked.png in Resources */,
@@ -5808,6 +5842,7 @@
 				84EA989B1B57E21F00AC549F /* 银行卡绑定-6.png in Resources */,
 				84EA98631B57E21F00AC549F /* regist.png in Resources */,
 				84EA97DF1B57E21F00AC549F /* im_Magnifier.jpg in Resources */,
+				84EADEDC1B9EA86C0098ABCE /* back_disable.png in Resources */,
 				84EA98D51B57E21F00AC549F /* 2.jpg in Resources */,
 				847432DC1B2A8CE500B030C4 /* MyOrderCell.xib in Resources */,
 				84EA98BB1B57E21F00AC549F /* radio_checked.png in Resources */,
@@ -5867,6 +5902,7 @@
 				84EA985F1B57E21F00AC549F /* LoginPicture.png in Resources */,
 				8412CA8A1B79EB12004EDFAB /* rsaCert.crt in Resources */,
 				84EA97E71B57E21F00AC549F /* sstb.png in Resources */,
+				84EADEE51B9EA86C0098ABCE /* forward.png in Resources */,
 				84EA97D31B57E21F00AC549F /* icon_search.png in Resources */,
 				847076321B3A8AF800F28180 /* communicateController.xib in Resources */,
 				84EA98AF1B57E21F00AC549F /* login-0.png in Resources */,
@@ -5896,6 +5932,7 @@
 				84EA983B1B57E21F00AC549F /* a5.png in Resources */,
 				84F28FD51B62C642001078D8 /* PhotoTake.storyboard in Resources */,
 				84EADA291B95C59500302A90 /* poi_3.png in Resources */,
+				84EADEDF1B9EA86C0098ABCE /* back.png in Resources */,
 				84EA98231B57E21F00AC549F /* wdqzh@2x.png in Resources */,
 				843DA8831B21D56300924AE6 /* ShareSDKLocalizable.strings in Resources */,
 				84EA97E31B57E21F00AC549F /* im_shui.png in Resources */,
@@ -5926,6 +5963,7 @@
 				84EA98211B57E21F00AC549F /* third_selected@2x.png in Resources */,
 				84EA98BF1B57E21F00AC549F /* radio_unchecked.png in Resources */,
 				847432F81B2A8E5500B030C4 /* AlreadyCommit.xib in Resources */,
+				84EADEE21B9EA86C0098ABCE /* forward_disable.png in Resources */,
 				84EA99091B57E21F00AC549F /* tuijian_01.png in Resources */,
 				843DA8841B21D56300924AE6 /* Resource.bundle in Resources */,
 				84EA98C71B57E21F00AC549F /* register-1.png in Resources */,
@@ -6427,6 +6465,7 @@
 				84E9D7A71B61E10C00F2CD24 /* BSSlomoIconView.m in Sources */,
 				84118EFF1B667AD50052E275 /* BSPhotoTakeViewController.m in Sources */,
 				84BF8FF11B4AC2FA001042F1 /* BSUIComponentView.m in Sources */,
+				84EADEEF1B9EAA2E0098ABCE /* BSWebViewViewController.m in Sources */,
 				84BF8FF31B4AC2FA001042F1 /* BSUIBlockButton.m in Sources */,
 				84E9D7A11B61E10C00F2CD24 /* BSAssetsViewController.m in Sources */,
 				84F84ADF1B7C5A8C008DF38F /* BSSecurityFactory.m in Sources */,
@@ -6636,6 +6675,7 @@
 				847C1C741B8CADBE00BCBEC9 /* EHNetwork.m in Sources */,
 				842042C51B2988410002C868 /* BSModelRoute.m in Sources */,
 				84BA96861B2829D500388B58 /* WaterSendingDetails.m in Sources */,
+				84EADEEE1B9EAA2E0098ABCE /* BSWebViewViewController.m in Sources */,
 				8470765B1B3A8F1400F28180 /* adsCell.m in Sources */,
 				842043741B2991770002C868 /* DLSlideView.m in Sources */,
 				84E9D79E1B61E10C00F2CD24 /* BSAssetCell.m in Sources */,
