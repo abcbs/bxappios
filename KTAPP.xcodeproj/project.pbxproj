@@ -832,6 +832,18 @@
 		84D19FEF1B4C440500BA25BF /* LeDiscovery.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D19FE11B4C36EC00BA25BF /* LeDiscovery.m */; };
 		84D19FF11B4C440500BA25BF /* LeTemperatureAlarmService.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D19FE31B4C36EC00BA25BF /* LeTemperatureAlarmService.m */; };
 		84D19FF81B4C451F00BA25BF /* BSUISingleImageTableViewCell.xib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8476A0451B4BB93100DB2CF0 /* BSUISingleImageTableViewCell.xib */; };
+		84D2DA611BA061F600E4C6EB /* FaceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D2DA601BA061F600E4C6EB /* FaceView.m */; };
+		84D2DA621BA061F600E4C6EB /* FaceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D2DA601BA061F600E4C6EB /* FaceView.m */; };
+		84D2DA651BA063D200E4C6EB /* FunctionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D2DA641BA063D200E4C6EB /* FunctionView.m */; };
+		84D2DA661BA063D200E4C6EB /* FunctionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D2DA641BA063D200E4C6EB /* FunctionView.m */; };
+		84D2DA691BA0672D00E4C6EB /* ImageModelClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D2DA681BA0672D00E4C6EB /* ImageModelClass.m */; };
+		84D2DA6A1BA0672D00E4C6EB /* ImageModelClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D2DA681BA0672D00E4C6EB /* ImageModelClass.m */; };
+		84D2DA6D1BA0685A00E4C6EB /* HistoryImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D2DA6C1BA0685A00E4C6EB /* HistoryImage.m */; };
+		84D2DA6E1BA0685A00E4C6EB /* HistoryImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D2DA6C1BA0685A00E4C6EB /* HistoryImage.m */; };
+		84D2DA711BA0696000E4C6EB /* ToolView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D2DA701BA0696000E4C6EB /* ToolView.m */; };
+		84D2DA721BA0696000E4C6EB /* ToolView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D2DA701BA0696000E4C6EB /* ToolView.m */; };
+		84D2DA791BA06DB000E4C6EB /* MoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D2DA781BA06DB000E4C6EB /* MoreView.m */; };
+		84D2DA7A1BA06DB000E4C6EB /* MoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D2DA781BA06DB000E4C6EB /* MoreView.m */; };
 		84DAA4A41B7AE6120070BF83 /* BSRSACrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DAA4A31B7AE6120070BF83 /* BSRSACrypto.m */; };
 		84DAA4A51B7AE6120070BF83 /* BSRSACrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DAA4A31B7AE6120070BF83 /* BSRSACrypto.m */; };
 		84DB2F031B7CCB700041588B /* ESSBeaconScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DB2EFE1B7CCB700041588B /* ESSBeaconScanner.m */; };
@@ -2278,6 +2290,18 @@
 		84D19FE31B4C36EC00BA25BF /* LeTemperatureAlarmService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeTemperatureAlarmService.m; sourceTree = "<group>"; };
 		84D19FE81B4C3CE900BA25BF /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
 		84D19FEA1B4C430000BA25BF /* BSIFTTHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSIFTTHeader.h; sourceTree = "<group>"; };
+		84D2DA5F1BA061F600E4C6EB /* FaceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FaceView.h; sourceTree = "<group>"; };
+		84D2DA601BA061F600E4C6EB /* FaceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FaceView.m; sourceTree = "<group>"; };
+		84D2DA631BA063D200E4C6EB /* FunctionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FunctionView.h; sourceTree = "<group>"; };
+		84D2DA641BA063D200E4C6EB /* FunctionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FunctionView.m; sourceTree = "<group>"; };
+		84D2DA671BA0672D00E4C6EB /* ImageModelClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageModelClass.h; sourceTree = "<group>"; };
+		84D2DA681BA0672D00E4C6EB /* ImageModelClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageModelClass.m; sourceTree = "<group>"; };
+		84D2DA6B1BA0685A00E4C6EB /* HistoryImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryImage.h; sourceTree = "<group>"; };
+		84D2DA6C1BA0685A00E4C6EB /* HistoryImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryImage.m; sourceTree = "<group>"; };
+		84D2DA6F1BA0696000E4C6EB /* ToolView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolView.h; sourceTree = "<group>"; };
+		84D2DA701BA0696000E4C6EB /* ToolView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolView.m; sourceTree = "<group>"; };
+		84D2DA771BA06DB000E4C6EB /* MoreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreView.h; sourceTree = "<group>"; };
+		84D2DA781BA06DB000E4C6EB /* MoreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreView.m; sourceTree = "<group>"; };
 		84DAA4A21B7AE6120070BF83 /* BSRSACrypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSRSACrypto.h; sourceTree = "<group>"; };
 		84DAA4A31B7AE6120070BF83 /* BSRSACrypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSRSACrypto.m; sourceTree = "<group>"; };
 		84DB2EFD1B7CCB700041588B /* ESSBeaconScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESSBeaconScanner.h; sourceTree = "<group>"; };
@@ -4609,6 +4633,18 @@
 			children = (
 				84EBA0091B416E37003309F6 /* ClassForSelectors.h */,
 				84EBA00A1B416E37003309F6 /* ClassForSelectors.m */,
+				84D2DA5F1BA061F600E4C6EB /* FaceView.h */,
+				84D2DA601BA061F600E4C6EB /* FaceView.m */,
+				84D2DA631BA063D200E4C6EB /* FunctionView.h */,
+				84D2DA641BA063D200E4C6EB /* FunctionView.m */,
+				84D2DA671BA0672D00E4C6EB /* ImageModelClass.h */,
+				84D2DA681BA0672D00E4C6EB /* ImageModelClass.m */,
+				84D2DA6B1BA0685A00E4C6EB /* HistoryImage.h */,
+				84D2DA6C1BA0685A00E4C6EB /* HistoryImage.m */,
+				84D2DA6F1BA0696000E4C6EB /* ToolView.h */,
+				84D2DA701BA0696000E4C6EB /* ToolView.m */,
+				84D2DA771BA06DB000E4C6EB /* MoreView.h */,
+				84D2DA781BA06DB000E4C6EB /* MoreView.m */,
 			);
 			path = "Basic-Demo";
 			sourceTree = "<group>";
@@ -6439,6 +6475,8 @@
 				8425E18C1B67644200A93C43 /* BSPhotoTakeController.m in Sources */,
 				8461B72C1B54BAB5002A7C43 /* KTHandyViewController.m in Sources */,
 				841F95061B8C54D1001B26B5 /* BSModelSerializer.m in Sources */,
+				84D2DA721BA0696000E4C6EB /* ToolView.m in Sources */,
+				84D2DA6A1BA0672D00E4C6EB /* ImageModelClass.m in Sources */,
 				84D19FED1B4C440500BA25BF /* BSBLEViewController.m in Sources */,
 				844570D21B4D672D000CA1C7 /* BLEInfo.m in Sources */,
 				84D19FEF1B4C440500BA25BF /* LeDiscovery.m in Sources */,
@@ -6447,6 +6485,7 @@
 				84EBF0271B9FF42D00B3F16A /* UIImage+Rotate.m in Sources */,
 				841F950B1B8C59DA001B26B5 /* BSDigestAuthorization.m in Sources */,
 				845AC3511B674C870077E0ED /* BSUICollectionCollectionViewController.m in Sources */,
+				84D2DA7A1BA06DB000E4C6EB /* MoreView.m in Sources */,
 				84E9D7A31B61E10C00F2CD24 /* BSCheckmarkView.m in Sources */,
 				84EAFF601B596C8900A90992 /* BSUITableViewCanEditedController.m in Sources */,
 				8425E1901B6765DA00A93C43 /* BSPhotoImagePickerController.m in Sources */,
@@ -6491,6 +6530,7 @@
 				84BF8FE71B4AC2FA001042F1 /* BSUISingleImageTableViewCell.m in Sources */,
 				84EAFF681B596F2400A90992 /* BSUITableViewCommonController.m in Sources */,
 				84BF8FE91B4AC2FA001042F1 /* BSUIFiveColTableViewCell.m in Sources */,
+				84D2DA6E1BA0685A00E4C6EB /* HistoryImage.m in Sources */,
 				84E9D7A71B61E10C00F2CD24 /* BSSlomoIconView.m in Sources */,
 				84118EFF1B667AD50052E275 /* BSPhotoTakeViewController.m in Sources */,
 				84BF8FF11B4AC2FA001042F1 /* BSUIComponentView.m in Sources */,
@@ -6498,6 +6538,7 @@
 				84BF8FF31B4AC2FA001042F1 /* BSUIBlockButton.m in Sources */,
 				84E9D7A11B61E10C00F2CD24 /* BSAssetsViewController.m in Sources */,
 				84F84ADF1B7C5A8C008DF38F /* BSSecurityFactory.m in Sources */,
+				84D2DA621BA061F600E4C6EB /* FaceView.m in Sources */,
 				84BF8FF61B4AC2FA001042F1 /* BSUIBarButtonItem.m in Sources */,
 				84052EB61B73B4D100FAB304 /* BSValidatePredicate.m in Sources */,
 				84F28F9D1B626F9C001078D8 /* BSUIContentViewController.m in Sources */,
@@ -6507,6 +6548,7 @@
 				848C7C331B79A301000774A1 /* BSSecurity.m in Sources */,
 				84E6C0991B7DD06C00289D94 /* ESSIssueViewController.m in Sources */,
 				847C1C731B8CADBE00BCBEC9 /* BSHTTPNetworking.m in Sources */,
+				84D2DA661BA063D200E4C6EB /* FunctionView.m in Sources */,
 				84517BB51B8628F800469111 /* BSTRPushHelper.m in Sources */,
 				84E9D79B1B61E10C00F2CD24 /* BSAlbumCell.m in Sources */,
 				84BF8FFC1B4AC2FA001042F1 /* BSModelRoute.m in Sources */,
@@ -6664,6 +6706,7 @@
 				846333E41B71017C006ED649 /* OrderItemManager.m in Sources */,
 				A05E9BDF1AE79DD5008C97C9 /* KTTabBarButton.m in Sources */,
 				A0F0C3EC1B10209500CE406D /* UpdateShoppingCartResult.m in Sources */,
+				84D2DA791BA06DB000E4C6EB /* MoreView.m in Sources */,
 				8405CBCD1B5577E80014AF8D /* UserPaySessionDomain.m in Sources */,
 				843B2E771B74FAE5009FC187 /* RemoteUserManager.m in Sources */,
 				8460AE7A1B42569300022280 /* BSTableViewCellData.m in Sources */,
@@ -6688,6 +6731,7 @@
 				847076311B3A8AF800F28180 /* communicateController.m in Sources */,
 				84EADA3A1B95C6F600302A90 /* BSRadarNearbyViewController.mm in Sources */,
 				84EADA001B95744100302A90 /* BSRadarUploadViewController.mm in Sources */,
+				84D2DA611BA061F600E4C6EB /* FaceView.m in Sources */,
 				8405CB781B55617D0014AF8D /* ProductBase.m in Sources */,
 				84BA967D1B2829D500388B58 /* Delcartlist.m in Sources */,
 				84F309431B9D41DC0070EF19 /* PromptInfo.m in Sources */,
@@ -6698,6 +6742,7 @@
 				844570D91B4D67D5000CA1C7 /* BTLECentralViewController.m in Sources */,
 				842043781B2991770002C868 /* DLUtility.m in Sources */,
 				84E9D7A21B61E10C00F2CD24 /* BSCheckmarkView.m in Sources */,
+				84D2DA651BA063D200E4C6EB /* FunctionView.m in Sources */,
 				845A02351B3DBA7E007F5327 /* UIView+Frame.m in Sources */,
 				84052EA01B73856500FAB304 /* UserManager.m in Sources */,
 				84832D591B565DAC00FB6D28 /* OrderCartsDomain.m in Sources */,
@@ -6721,6 +6766,7 @@
 				8405CB741B55612C0014AF8D /* ProductCatalogue.m in Sources */,
 				84F28F9C1B626F9C001078D8 /* BSUIContentViewController.m in Sources */,
 				84BA96891B2829D500388B58 /* LoginUser.m in Sources */,
+				84D2DA691BA0672D00E4C6EB /* ImageModelClass.m in Sources */,
 				8405CBB11B5572250014AF8D /* BusinessProductAduit.m in Sources */,
 				8474331D1B2A92B400B030C4 /* LoginViewController.m in Sources */,
 				847076521B3A8C4500F28180 /* queueController.m in Sources */,
@@ -6766,6 +6812,7 @@
 				8405CB841B5566940014AF8D /* UserInfoDomain.m in Sources */,
 				846FC4561B7FA65100496F96 /* ESSBeaconIssue.m in Sources */,
 				84832D2C1B564E5700FB6D28 /* CustomerAppointmentSessionDomain.m in Sources */,
+				84D2DA711BA0696000E4C6EB /* ToolView.m in Sources */,
 				8405CBB51B5572D40014AF8D /* BusinessProductAdvert.m in Sources */,
 				84BA96851B2829D500388B58 /* WaterSending.m in Sources */,
 				844570DB1B4D67D5000CA1C7 /* BTLEPeripheralViewController.m in Sources */,
@@ -6790,6 +6837,7 @@
 				8474DEAB1B3F474700D9DE36 /* BSUIBlockButton.m in Sources */,
 				84E9D7A81B61E10C00F2CD24 /* BSVideoIconView.m in Sources */,
 				84EAD9F31B943BF700302A90 /* BSBaiduViewController.m in Sources */,
+				84D2DA6D1BA0685A00E4C6EB /* HistoryImage.m in Sources */,
 				8461B72B1B54BAB5002A7C43 /* KTHandyViewController.m in Sources */,
 				A0F0C3EE1B10209500CE406D /* BasicParams.m in Sources */,
 				842043761B2991770002C868 /* DLScrollTabbarView.m in Sources */,

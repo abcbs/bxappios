@@ -14,7 +14,7 @@
 //http://www.apple.com
 //file://Steve.Jobs.pdf
 
-@interface BSWebViewViewController ()<UISearchBarDelegate,UIWebViewDelegate>{
+@interface BSWebViewViewController ()<UISearchBarDelegate,UIWebViewDelegate,UITextFieldDelegate,UITextViewDelegate>{
     UIWebView *_webView;
     UIToolbar *_toolbar;
     UISearchBar *_searchBar;
@@ -34,6 +34,32 @@
         [self request:self.requestURL];
     }
 }
+
+-(void)viewWillAppear:(BOOL)animated {
+    //[self registerForKeyboardNotifications];
+    [super viewWillAppear:animated];
+    
+    
+}
+
+-(void) viewDidDisappear:(BOOL)animated{
+    BSLog(@"BSUICommonController viewDidDisappear,%@",self.description);
+    [BSUIComponentView changeTabBarWithNotification:self addedInfo:nil];
+    
+    [super viewDidDisappear:animated];
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    BSLog(@"BSUICommonController viewWillDisappear,%@",self.description);
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [super viewWillDisappear:animated];
+    
+}
+
+- (void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 
 #pragma mark - 私有方法
 #pragma mark 界面布局
@@ -156,4 +182,55 @@
     }
     [self request:_searchBar.text];
 }
+
+#pragma mark -
+#pragma mark 解决虚拟键盘挡住UITextField的方法
+- (void)keyboardWillShow:(NSNotification *)noti
+{
+    //键盘输入的界面调整
+    //键盘的高度
+    //键盘输入的界面调整
+    //键盘的高度
+    float height = 216.0;
+    CGRect frame = self.view.frame;
+    frame.size = CGSizeMake(frame.size.width, frame.size.height - height);
+    [UIView beginAnimations:@"Curl" context:nil];//动画开始
+    [UIView setAnimationDuration:0.30];
+    [UIView setAnimationDelegate:self];
+    [self.view setFrame:frame];
+    [UIView commitAnimations];
+}
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    // When the user presses return, take focus away from the text field so that the keyboard is dismissed.
+    NSTimeInterval animationDuration = 0.30f;
+    [UIView beginAnimations:@"ResizeForKeyboard" context:nil];
+    [UIView setAnimationDuration:animationDuration];
+    CGRect rect = CGRectMake(0.0f, 0.0f, self.view.frame.size.width, self.view.frame.size.height);
+    //CGRect rect = CGRectMake(0.0f, 20.0f, self.view.frame.size.width, self.view.frame.size.height);
+    self.view.frame = rect;
+    [UIView commitAnimations];
+    [textField resignFirstResponder];
+    return YES;
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    CGRect frame = textField.frame;
+    int offset = frame.origin.y + 32 - (self.view.frame.size.height - 216.0);//键盘高度216
+    NSTimeInterval animationDuration = 0.30f;
+    [UIView beginAnimations:@"ResizeForKeyBoard" context:nil];
+    [UIView setAnimationDuration:animationDuration];
+    float width = self.view.frame.size.width;
+    float height = self.view.frame.size.height;
+    if(offset > 0)
+    {
+        CGRect rect = CGRectMake(0.0f, -offset,width,height);
+        self.view.frame = rect;
+    }
+    [UIView commitAnimations];
+}
+
+
 @end

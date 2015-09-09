@@ -37,6 +37,43 @@
     
 }
 
+- (void)viewDidAppear:(BOOL)animated{
+    NSLog(@"对象的视图已经加入到窗口时调用");
+    [BSUIComponentView changeTabBarWithNotification:self addedInfo:self.inform];
+    //设置TextField键盘
+    [self delelageForTextField];
+    //设置界面元素样式
+    //[self initSubViews];
+    [self modifiedStyle];
+    
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    //[self registerForKeyboardNotifications];
+    [super viewWillAppear:animated];
+    
+    
+}
+
+-(void) viewDidDisappear:(BOOL)animated{
+    BSLog(@"BSUICommonController viewDidDisappear,%@",self.description);
+    [BSUIComponentView changeTabBarWithNotification:self addedInfo:nil];
+    
+    [super viewDidDisappear:animated];
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    BSLog(@"BSUICommonController viewWillDisappear,%@",self.description);
+    //[[NSNotificationCenter defaultCenter] removeObserver:self];
+    [super viewWillDisappear:animated];
+    
+}
+
+- (void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+
 -(void)setSeparatorStyle:(UITableViewCellSeparatorStyle *)separatorStyle{
     if (self.tableView) {
         self.tableView.separatorStyle=*(separatorStyle);
@@ -337,9 +374,5 @@ titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
     return indexPath;
 }
 
-- (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    
-    [textField resignFirstResponder];
-    return YES;
-}
+
 @end

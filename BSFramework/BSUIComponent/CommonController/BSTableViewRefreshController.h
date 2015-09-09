@@ -12,7 +12,7 @@
 #import "BSUIFrameworkHeader.h"
 #import "BSTableListProtocol.h"
 
-@interface BSTableViewRefreshController : UITableViewController<BSTableListProtocol,MBProgressHUDDelegate,NavigationProcess>
+@interface BSTableViewRefreshController : UITableViewController<BSTableListProtocol,MBProgressHUDDelegate,NavigationProcess,UITextFieldDelegate,UITextViewDelegate>
 
 @property (nonatomic,assign)BOOL bDisplaySearchButtonNav;
 
@@ -28,4 +28,9 @@
 
 @property (retain, nonatomic) UILabel *errorInfo;
 
+@property (nonatomic,retain) UIToolbar * keyboardToolBar;
+
+#pragma mark -键盘添加事件
+-(void)keyboardDone:(id)sender;
+-(void) delelageForTextField;
 @end

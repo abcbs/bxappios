@@ -87,6 +87,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillDisappear:) name:UIKeyboardWillHideNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(viewControllerWillRotate:) name:UIKeyboardCoViewWillRotateNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(viewControllerDidRotate:) name:UIKeyboardCoViewDidRotateNotification object:nil];
+    
 
 }
 

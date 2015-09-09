@@ -31,7 +31,16 @@
     }
     //设置Tab栏
     [BSUIComponentView changeTabBarWithNotification:self addedInfo:self.inform];
+    //设置TextField键盘
+    [self delelageForTextField];
+    //设置界面元素样式
+    [self initSubViews];
+    
     [self modifiedStyle];
+    
+    [self registerForKeyboardNotifications];
+    
+    
 }
 
 
@@ -40,8 +49,39 @@
     BSLog(@"viewDidAppear 对象的视图已经加入到窗口时调用,%@",self.description);
     [BSUIComponentView changeTabBarWithNotification:self addedInfo:self.inform];
     [BSUIComponentView initNavigationWithPermission:self];
+    //设置TextField键盘
+    [self delelageForTextField];
+    //设置界面元素样式
+    [self initSubViews];
+    
     [self modifiedStyle];
 }
+
+-(void)viewWillAppear:(BOOL)animated {
+    [self registerForKeyboardNotifications];
+    [super viewWillAppear:animated];
+    
+    
+}
+
+-(void) viewDidDisappear:(BOOL)animated{
+    BSLog(@"BSUICommonController viewDidDisappear,%@",self.description);
+    [BSUIComponentView changeTabBarWithNotification:self addedInfo:nil];
+    
+    [super viewDidDisappear:animated];
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    BSLog(@"BSUICommonController viewWillDisappear,%@",self.description);
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [super viewWillDisappear:animated];
+    
+}
+
+- (void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
@@ -53,26 +93,14 @@
 }
 
 
--(void) viewDidDisappear:(BOOL)animated{
-    BSLog(@"BSUICommonController viewDidDisappear,%@",self.description);
-    [super viewDidDisappear:animated];
-}
-
-- (void)viewWillDisappear:(BOOL)animated{
-    BSLog(@"BSUICommonController viewWillDisappear,%@",self.description);
-    [super viewWillDisappear:animated];
-    
-}
-
-- (void)dealloc{
-    
-}
-
 -(void)modifiedStyle{
     BSLog(@"根据权限修改元素显示，子类需实现");
    
 }
 
+-(void) initSubViews{
+    BSLog(@"初始化样式");
+}
 /**
  *公共返回按钮
  */
@@ -142,10 +170,117 @@
     [self navigating:bsContentObject];
 }
 
-- (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    
+#pragma mark -
+#pragma mark 解决虚拟键盘挡住UITextField的方法
+- (void)keyboardWillShow:(NSNotification *)noti
+{
+    //键盘输入的界面调整
+    //键盘的高度
+    //键盘输入的界面调整
+    //键盘的高度
+    float height = 216.0;
+    CGRect frame = self.view.frame;
+    frame.size = CGSizeMake(frame.size.width, frame.size.height - height);
+    [UIView beginAnimations:@"Curl" context:nil];//动画开始
+    [UIView setAnimationDuration:0.30];
+    [UIView setAnimationDelegate:self];
+    [self.view setFrame:frame];
+    [UIView commitAnimations];
+}
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    // When the user presses return, take focus away from the text field so that the keyboard is dismissed.
+    NSTimeInterval animationDuration = 0.30f;
+    [UIView beginAnimations:@"ResizeForKeyboard" context:nil];
+    [UIView setAnimationDuration:animationDuration];
+    CGRect rect = CGRectMake(0.0f, 0.0f, self.view.frame.size.width, self.view.frame.size.height);
+    //CGRect rect = CGRectMake(0.0f, 20.0f, self.view.frame.size.width, self.view.frame.size.height);
+    self.view.frame = rect;
+    [UIView commitAnimations];
     [textField resignFirstResponder];
     return YES;
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    CGRect frame = textField.frame;
+    int offset = frame.origin.y + 32 - (self.view.frame.size.height - 216.0);//键盘高度216
+    NSTimeInterval animationDuration = 0.30f;
+    [UIView beginAnimations:@"ResizeForKeyBoard" context:nil];
+    [UIView setAnimationDuration:animationDuration];
+    float width = self.view.frame.size.width;
+    float height = self.view.frame.size.height;
+    if(offset > 0)
+    {
+        CGRect rect = CGRectMake(0.0f, -offset,width,height);
+        self.view.frame = rect;
+    }
+    [UIView commitAnimations];
+}
+
+#pragma mark -键盘事件
+-(void)keyboardDone:(id)sender{
+    BSLog(@"键盘事件-确定查询");
+}
+
+//设置代理
+-(void)delelageForTextField{
+    BSLog(@"设置Text");
+    
+    
+}
+
+- (void)textViewDidChange:(UITextView *)textView
+{
+    [textView resignFirstResponder];
+}
+
+#pragma mark -
+
+#pragma mark -键盘添加Button
+- (void) registerForKeyboardNotifications{
+    
+    //当键盘出来的时候通过通知来获取键盘的信息
+    //注册为键盘的监听着
+    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+    [center addObserver:self selector:@selector(keyNotification:) name:UIKeyboardWillChangeFrameNotification object:nil];
+    
+}
+
+-(UIToolbar *)keyboardToolBar{
+    if (_keyboardToolBar==nil) {
+        //TextView的键盘定制回收按钮
+        _keyboardToolBar = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, 320, 30)];
+        
+        UIBarButtonItem * item1 = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(keyboardDone:)];
+        UIBarButtonItem * item2 = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+        UIBarButtonItem * item3 = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+        _keyboardToolBar.items = @[item2,item3,item1];
+    }
+    return _keyboardToolBar;
+}
+
+-(void) keyNotification : (NSNotification *) notification
+{
+    NSLog(@"%@", notification.userInfo);
+    
+    //self.keyBoardDic = notification.userInfo;
+    //获取键盘移动后的坐标点的坐标点
+    //CGRect rect = [self.keyBoardDic[@"UIKeyboardFrameEndUserInfoKey"] CGRectValue];
+    
+    //把键盘的坐标系改成当前我们window的坐标系
+    //CGRect r1 = [self.view convertRect:rect fromView:self.view.window];
+    /*
+     [UIView animateWithDuration:[self.keyBoardDic[UIKeyboardAnimationDurationUserInfoKey] floatValue] animations:^{
+     CGRect frame = self.toolView.frame;
+     
+     frame.origin.y = r1.origin.y - frame.size.height;
+     
+     //根据键盘的高度来改变toolView的高度
+     self.toolView.frame = frame;
+     }];
+     */
 }
 
 @end

@@ -11,13 +11,14 @@
 
 
 @interface BSUITableViewInitRuntimeController :
-    BSUICommonController<UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate,NavigationProcess>
+    BSUICommonController<UITableViewDataSource,UITableViewDelegate,NavigationProcess>
 
 @property (retain, nonatomic) BSTableSection *bSTableObjects;
 
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 
+//@property (nonatomic,retain) UIToolbar * keyboardToolBar;
 
 /**
  *设置分割线风格，默认为没有分割线

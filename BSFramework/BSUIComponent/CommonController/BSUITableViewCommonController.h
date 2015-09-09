@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "BSUIFrameworkHeader.h"
-@interface BSUITableViewCommonController : UITableViewController<NavigationProcess,BSImagePlayerDelegate,UITextFieldDelegate>
+@interface BSUITableViewCommonController : UITableViewController<NavigationProcess,BSImagePlayerDelegate,UITextFieldDelegate,UITextViewDelegate>
 
 @property (nonatomic,assign)BOOL bDisplaySearchButtonNav;
 
@@ -17,6 +17,8 @@
 @property (nonatomic,retain) NSString *inform;
 
 @property (nonatomic,retain)BSTableContentObject * bsContentObject;
+
+@property (nonatomic,retain) UIToolbar * keyboardToolBar;
 /**
  *返回方法
  */
@@ -26,8 +28,14 @@
  */
 - (void)doneClick;
 
+- (void)initSubViews;
+
 - (void)navigating:(BSTableContentObject*)bsContentObject;
 
 - (UITableViewCell *)obtainCellWith:(NSString *)identifer;
+
+#pragma mark -键盘添加事件
+-(void)keyboardDone:(id)sender;
+-(void) delelageForTextField;
 
 @end

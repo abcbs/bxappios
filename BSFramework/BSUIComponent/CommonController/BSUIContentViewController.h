@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "BSUIFrameworkHeader.h"
 #import "BSFCRollingADImageUIView.h"
-@interface BSUIContentViewController : UIViewController<NavigationProcess,BSImagePlayerDelegate,UITextFieldDelegate>
+@interface BSUIContentViewController : UIViewController<NavigationProcess,BSImagePlayerDelegate,UITextFieldDelegate,UITextViewDelegate>
 
 @property (nonatomic,assign)BOOL bDisplaySearchButtonNav;
 
@@ -19,4 +19,10 @@
 
 @property (nonatomic,retain)BSTableContentObject * bsContentObject;
 
+@property (nonatomic,retain) UIToolbar * keyboardToolBar;
+
+#pragma mark -键盘添加事件
+-(void)keyboardDone:(id)sender;
+-(void) delelageForTextField;
+-(void) initSubViews;
 @end

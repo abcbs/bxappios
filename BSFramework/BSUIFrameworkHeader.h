@@ -99,6 +99,10 @@
 
 #import "BSWebViewViewController.h"
 
+/**
+ *  以代理方式需要实现的方法，这种方法可以实现多个普通的按钮
+ *  示例代码: WayPointRouteSearchViewController
+ */
 #import "BSUIKeyboardCoView.h"
 
 CG_INLINE CGRect BSRectMake(CGFloat x, CGFloat y, CGFloat width, CGFloat height)

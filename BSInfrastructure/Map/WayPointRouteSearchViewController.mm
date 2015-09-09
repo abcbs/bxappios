@@ -10,6 +10,14 @@
 #import "UIImage+Rotate.h"
 #import "PromptInfo.h"
 #import "BSCMFrameworkHeader.h"
+
+#import "FunctionView.h"
+#import "ImageModelClass.h"
+#import "ToolView.h"
+#import "MoreView.h"
+#import "HistoryImage.h"
+
+
 #define MYBUNDLE_NAME @ "mapapi.bundle"
 #define MYBUNDLE_PATH [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent: MYBUNDLE_NAME]
 #define MYBUNDLE [NSBundle bundleWithPath: MYBUNDLE_PATH]
@@ -28,8 +36,29 @@
     int keyboardhight;
     
 }
-@property (nonatomic,retain) NSDictionary* keyBoardDic;
-@property (nonatomic,retain) UIToolbar * toolBar;
+
+//自定义组件
+@property (nonatomic, strong) ToolView *toolView;
+
+@property (nonatomic, strong) FunctionView *functionView;
+
+@property (nonatomic, strong) MoreView *moreView;
+
+//系统组件
+@property (strong, nonatomic) IBOutlet UITextView *myTextView;
+
+
+
+@property (strong, nonatomic) IBOutlet UIImageView *imageView;
+
+@property (strong, nonatomic) NSString *sendString;
+
+//数据model
+@property (strong, nonatomic) ImageModelClass  *imageMode;
+
+@property (strong, nonatomic)HistoryImage *tempImage;
+
+
 @end
 
 @implementation WayPointRouteSearchViewController
@@ -59,31 +88,145 @@
 {
     [super viewDidLoad];
     _routesearch = [[BMKRouteSearch alloc]init];
+    /*
+    //从sqlite中读取数据
+    self.imageMode = [[ImageModelClass alloc] init];
+    
+    
+    //实例化FunctionView
+    self.functionView = [[FunctionView alloc] initWithFrame:CGRectMake(0, 0, 320, 216)];
+    self.functionView.backgroundColor = [UIColor blackColor];
+    
+    //设置资源加载的文件名
+    self.functionView.plistFileName = @"emoticons";
+    
+    __weak __block WayPointRouteSearchViewController *copy_self = self;
+    //获取图片并显示
+    [self.functionView setFunctionBlock:^(UIImage *image, NSString *imageText)
+     {
+         NSString *str = [NSString stringWithFormat:@"%@%@",copy_self.myTextView.text, imageText];
+         
+         copy_self.myTextView.text = str;
+         copy_self.imageView.image = image;
+         
+         //把使用过的图片存入sqlite
+         NSData *imageData = UIImagePNGRepresentation(image);
+         [copy_self.imageMode save:imageData ImageText:imageText];
+     }];
+    
+    
+    //实例化MoreView
+    self.moreView = [[MoreView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
+    //self.moreView.backgroundColor = [UIColor blackColor];
+    //[self.moreView setMoreBlock:^(NSInteger index) {
+        //NSLog(@"MoreIndex = %d",index);
+    //}];
+    
+    //进行ToolView的实例化
+    //self.toolView = [[ToolView alloc] initWithFrame:CGRectZero];
+    //self.toolView.backgroundColor = [UIColor blackColor];
+    //[self.view addSubview:self.toolView];
+    
+    //给ToolView添加约束
+    //开启自动布局
+    //self.toolView.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    //水平约束
+   // NSArray *toolHConstraint = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[_toolView]|" options:0 metrics:0 views:NSDictionaryOfVariableBindings(_toolView)];
+    //[self.view addConstraints:toolHConstraint];
+    
+    //垂直约束
+   // NSArray *toolVConstraint = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[_toolView(44)]|" options:0 metrics:0 views:NSDictionaryOfVariableBindings(_toolView)];
+    
+    //[self.view addConstraints:toolVConstraint];
+    */
+    //回调toolView中的方法
+    /*
+    [self.toolView setToolIndex:^(NSInteger index)
+     {
+         NSLog(@"%ld", (long)index);
+         
+         switch (index) {
+             case 1:
+                 [copy_self changeKeyboardToFunction];
+                 break;
+                 
+             case 2:
+                 [copy_self changeKeyboardToFunction];
+                 break;
+                 
+             default:
+                 break;
+         }
+         
+     }];
+     */
+   
+   
+    //myTextView.inputAccessoryView =toolBar;
+    _startAddrText.inputAccessoryView =[self keyboardToolBar];
+    _endAddrText.inputAccessoryView =[self keyboardToolBar];
+    _wayPointAddrText.inputAccessoryView =[self keyboardToolBar];
 }
 
+
+#pragma mark -键盘事件
+-(void)keyboardDone:(id)sender{
+    [PromptInfo showText:@"确定查询-单Button实现"];
+}
+
+#pragma mark -以代理BSUIKeyboardCoViewDelegate实现的具体事件
+- (IBAction)keyAction:(id)sender {
+    [PromptInfo showText:@"确定查询-多Button实现"];
+}
+//键盘增加多Button
+//切换键盘的方法
+/*
+-(void) changeKeyboardToFunction
+{
+    if ([self.myTextView.inputView isEqual:self.functionView])
+    {
+        self.myTextView.inputView = nil;
+        [self.myTextView reloadInputViews];
+    }
+    else
+    {
+        self.myTextView.inputView = self.functionView;
+        [self.myTextView reloadInputViews];
+    }
+    
+    if (![self.myTextView isFirstResponder])
+    {
+        [self.myTextView becomeFirstResponder];
+    }
+}
+*/
+
+
 -(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     [_mapView viewWillAppear];
     _mapView.delegate = self; // 此处记得不用的时候需要置nil，否则影响内存的释放
     _routesearch.delegate = self; // 此处记得不用的时候需要置nil，否则影响内存的释放
- 
+     
 }
 
 -(void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
     [_mapView viewWillDisappear];
     _mapView.delegate = nil; // 不用时，置nil
     _routesearch.delegate = nil; // 不用时，置nil
 
 }
 
-
+- (void) dealloc{
+    //Unregister notifications
+    //[[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 
 
 -(IBAction)textFiledReturnEditing:(id)sender {
     [sender resignFirstResponder];
-}
-
-- (IBAction)keyAction:(id)sender {
-    [PromptInfo showText:@"确定查询"];
 }
 
 - (BMKAnnotationView*)getRouteAnnotationView:(BMKMapView *)mapview viewForAnnotation:(RouteAnnotation*)routeAnnotation
@@ -381,7 +524,7 @@
     _cityText.delegate=self;
 }
 
-#pragma mark - Rotation control
+#pragma mark - Rotation control-以代理方式需要实现的方法，这种方法可以实现多个普通的按钮
 - (void) willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration{
     [[NSNotificationCenter defaultCenter] postNotificationName:UIKeyboardCoViewWillRotateNotification object:nil];
 }

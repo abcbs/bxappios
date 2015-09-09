@@ -10,8 +10,16 @@
 #import "BSUIFrameworkHeader.h"
 #import "BSCMFrameworkHeader.h"
 #import "UserManager.h"
-@implementation BSUICommonController
 
+@interface BSUICommonController(){
+    
+}
+
+@property (strong, nonatomic) NSDictionary *keyBoardDic;
+@end
+
+@implementation BSUICommonController
+//@synthesize keyboardToolBar;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -39,6 +47,8 @@
     [self initSubViews];
 
     [self modifiedStyle];
+    
+    [self registerForKeyboardNotifications];
 }
 
 
@@ -65,6 +75,12 @@
     return self;
 }
 
+-(void)viewWillAppear:(BOOL)animated {
+    [self registerForKeyboardNotifications];
+    [super viewWillAppear:animated];
+    
+    
+}
 
 -(void) viewDidDisappear:(BOOL)animated{
     BSLog(@"BSUICommonController viewDidDisappear,%@",self.description);
@@ -75,12 +91,58 @@
 
 - (void)viewWillDisappear:(BOOL)animated{
     BSLog(@"BSUICommonController viewWillDisappear,%@",self.description);
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
     [super viewWillDisappear:animated];
 
 }
 
 - (void)dealloc{
+  [[NSNotificationCenter defaultCenter] removeObserver:self];  
+}
+
+#pragma mark -键盘添加Button
+- (void) registerForKeyboardNotifications{
     
+    //当键盘出来的时候通过通知来获取键盘的信息
+    //注册为键盘的监听着
+    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+    [center addObserver:self selector:@selector(keyNotification:) name:UIKeyboardWillChangeFrameNotification object:nil];
+    
+}
+
+-(UIToolbar *)keyboardToolBar{
+    if (_keyboardToolBar==nil) {
+        //TextView的键盘定制回收按钮
+        _keyboardToolBar = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, 320, 30)];
+        
+        UIBarButtonItem * item1 = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(keyboardDone:)];
+        UIBarButtonItem * item2 = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+        UIBarButtonItem * item3 = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+        _keyboardToolBar.items = @[item2,item3,item1];
+    }
+    return _keyboardToolBar;
+}
+
+-(void) keyNotification : (NSNotification *) notification
+{
+    NSLog(@"%@", notification.userInfo);
+    
+    self.keyBoardDic = notification.userInfo;
+    //获取键盘移动后的坐标点的坐标点
+    //CGRect rect = [self.keyBoardDic[@"UIKeyboardFrameEndUserInfoKey"] CGRectValue];
+    
+    //把键盘的坐标系改成当前我们window的坐标系
+    //CGRect r1 = [self.view convertRect:rect fromView:self.view.window];
+    /*
+    [UIView animateWithDuration:[self.keyBoardDic[UIKeyboardAnimationDurationUserInfoKey] floatValue] animations:^{
+        CGRect frame = self.toolView.frame;
+        
+        frame.origin.y = r1.origin.y - frame.size.height;
+        
+        //根据键盘的高度来改变toolView的高度
+        self.toolView.frame = frame;
+    }];
+     */
 }
 
 
@@ -92,11 +154,6 @@
     
 }
 
--(void)delelageForTextField{
-   
-    
-    
-}
 
 -(void)modifiedStyle{
     BSLog(@"根据权限修改元素显示，子类需实现");
@@ -170,6 +227,7 @@
     
 }
 
+//废弃方法
 - (IBAction)View_TouchDown:(id)sender {
     // 发送resignFirstResponder.
     [[UIApplication sharedApplication] sendAction:@selector(resignFirstResponder) to:nil from:nil forEvent:nil];
@@ -223,5 +281,23 @@
     }
     [UIView commitAnimations];
 }
+
+#pragma mark -键盘事件
+-(void)keyboardDone:(id)sender{
+    BSLog(@"键盘事件-确定查询");
+}
+
+//设置代理
+-(void)delelageForTextField{
+    BSLog(@"设置Text");
+    
+    
+}
+
+- (void)textViewDidChange:(UITextView *)textView
+{
+    [textView resignFirstResponder];
+}
+
 #pragma mark -
 @end
