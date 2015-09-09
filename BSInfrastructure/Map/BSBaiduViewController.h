@@ -12,14 +12,17 @@
 #import <MessageUI/MessageUI.h>
 #import <MessageUI/MFMessageComposeViewController.h>
 
-@interface BSBaiduViewController : BSUICommonController<BMKMapViewDelegate,BMKGeoCodeSearchDelegate,BMKPoiSearchDelegate, BMKSuggestionSearchDelegate,BMKLocationServiceDelegate,BMKShareURLSearchDelegate,UIGestureRecognizerDelegate,MFMessageComposeViewControllerDelegate>{
+@interface BSBaiduViewController : BSUICommonController<BMKMapViewDelegate,BMKGeoCodeSearchDelegate,BMKPoiSearchDelegate, BMKSuggestionSearchDelegate,BMKLocationServiceDelegate,BMKShareURLSearchDelegate,BMKRouteSearchDelegate,UIGestureRecognizerDelegate,MFMessageComposeViewControllerDelegate>{
     
     BMKGeoCodeSearch* _geocodesearch;
     BMKPoiSearch* _poisearch;
     BMKShareURLSearch* _shareurlsearch;
     BMKSuggestionSearch *_suggestionsearch;
     BMKLocationService* _locService;
-    
+    BMKRouteSearch* _routesearch;
+
+    IBOutlet BMKMapView *_mapView;
+
     IBOutlet UIView *controllerView;
     
     //基本区域
@@ -114,11 +117,17 @@
     IBOutlet UIButton* followingBtn;
     
     IBOutlet UIButton* followHeadBtn;
- 
+    
+    IBOutlet UISegmentedControl *_compassSeg;
+    
+    
+    //道路规划
+    IBOutlet UITextField* _endCityText;
+    IBOutlet UITextField* _endAddrText;
 }
 
 
-@property (strong, nonatomic) IBOutlet BMKMapView *mapView;
+
 
 @property (strong, nonatomic) IBOutlet UISegmentedControl *segment;
 
@@ -190,5 +199,20 @@
 -(IBAction)startFollowing:(id)sender;
 
 -(IBAction)startFollowHeading:(id)sender;
+
+//指南针位置
+- (IBAction)compassSegAction:(id)sender;
+
+//公交
+-(IBAction)onClickBusSearch;
+
+//驾车
+-(IBAction)onClickDriveSearch;
+
+//步行
+-(IBAction)onClickWalkSearch;
+
+//驾车途径
+-(IBAction)onClickWayPointSearch;
 
 @end

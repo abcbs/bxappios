@@ -12,6 +12,28 @@
 #import <BaiduMapAPI/BMapKit.h>
 #import "MyAnimatedAnnotationView.h"
 #import "BSWebViewViewController.h"
+#import "UIImage+Rotate.h"
+#import "WayPointRouteSearchViewController.h"
+
+#define MYBUNDLE_NAME @ "mapapi.bundle"
+#define MYBUNDLE_PATH [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent: MYBUNDLE_NAME]
+#define MYBUNDLE [NSBundle bundleWithPath: MYBUNDLE_PATH]
+
+@interface RouteAnnotation : BMKPointAnnotation
+{
+    int _type; ///<0:起点 1：终点 2：公交 3：地铁 4:驾乘 5:途经点
+    int _degree;
+}
+
+@property (nonatomic) int type;
+@property (nonatomic) int degree;
+@end
+
+@implementation RouteAnnotation
+
+@synthesize type = _type;
+@synthesize degree = _degree;
+@end
 
 #define INDEX_TAG_DIS   1000
 
@@ -87,11 +109,6 @@
     [self initSubViews];
     [self addCustomGestures];//添加自定义的手势
     self.segment.selectedSegmentIndex = 0;
-    [_mapView setTrafficEnabled:NO];
-    [_mapView setBuildingsEnabled:YES];
-    
-    [_mapView setBaiduHeatMapEnabled:NO];
-    
     _geocodesearch = [[BMKGeoCodeSearch alloc]init];
     
     _poisearch = [[BMKPoiSearch alloc]init];
@@ -103,9 +120,17 @@
     //收藏
     _favManager = [[BMKFavPoiManager alloc] init];
     
+    _routesearch = [[BMKRouteSearch alloc]init];
     //
+    [_mapView setTrafficEnabled:NO];
+    [_mapView setBuildingsEnabled:YES];
+    [_mapView setBaiduHeatMapEnabled:NO];
     [_mapView setZoomLevel:16];
-
+    [ _mapView setShowMapScaleBar: NO];
+    CGPoint pt = CGPointMake(10,66);
+    [_mapView setCompassPosition:pt];
+    
+    _mapView.isSelectedAnnotationViewFront = YES;
     //周边查找时，设置周边的默认距离
     //radius=500;
     _nextPageButton.enabled = false;
@@ -113,9 +138,7 @@
     //查询结果存放值
     _searchResultPoi=[[NSMutableArray alloc]init];
     _searchResultAnn=[[NSMutableArray alloc]init];
-    
-    _mapView.isSelectedAnnotationViewFront = YES;
-    
+  
     [baseUIControllerView setHidden:YES];
     [searchUIControllerView setHidden:NO];
     [localtionUIControllerView setHidden:YES];
@@ -127,8 +150,11 @@
     [followHeadBtn setAlpha:0.6];
     [stopBtn setEnabled:NO];
     [stopBtn setAlpha:0.6];
+    
+    //设置指南针位置
+    
     self.navigationItem.rightBarButtonItem.tintColor=[UIColor whiteColor];
-
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -137,10 +163,12 @@
     _mapView.delegate = self; // 此处记得不用的时候需要置nil，否则影响内存的释放
     //切换为普通地图
     _geocodesearch.delegate = self; // 此处记得不用的时候需要置nil，否则影响内存的释放
-     _poisearch.delegate = self; // 此处记得不用的时候需要置nil，否则影响内存的释放
-     _suggestionsearch.delegate = self;
-     _locService.delegate = self;
+    _poisearch.delegate = self; // 此处记得不用的时候需要置nil，否则影响内存的释放
+    _suggestionsearch.delegate = self;
+    _locService.delegate = self;
     _shareurlsearch.delegate=self;
+    _routesearch.delegate = self; // 此处记得不用的时候需要置nil，否则影响内存的释放
+
     [self initSubViews];
     [self hideController];
     
@@ -155,8 +183,7 @@
     _suggestionsearch.delegate =nil;
     _shareurlsearch.delegate=nil;
     _locService.delegate = nil;
-    //短URL
-    isPoiShortUrlShare=NO;
+    _routesearch.delegate = nil; // 不用时，置nil
     
 }
 - (void)viewDidUnload {
@@ -182,6 +209,9 @@
     }
     if (_favManager ) {
         _favManager = nil;
+    }
+    if (_routesearch != nil) {
+        _routesearch = nil;
     }
     if (_mapView) {
         _mapView = nil;
@@ -214,9 +244,14 @@
     _cityText.delegate=self;
     _addrText.delegate=self;
     _radiosText.delegate=self;
+    
     //POI查找
     _poiCityText.delegate=self;
     _keyText.delegate=self;
+    
+    //道路规划
+    _endCityText.delegate=self;
+    _endAddrText.delegate=self;
    
     
 }
@@ -348,6 +383,38 @@
 
 }
 
+/**
+ *地图渲染每一帧画面过程中，以及每次需要重绘地图时（例如添加覆盖物）都会调用此接口
+ *@param mapview 地图View
+ *@param status 此时地图的状态
+ */
+- (void)mapView:(BMKMapView *)mapView onDrawMapFrame:(BMKMapStatus*)status{
+    //BSLog(@"地图渲染每一帧画面过程中，以及每次需要重绘地图时（例如添加覆盖物）都会调用此接口");
+
+}
+
+/**
+ *当选中一个annotation views时，调用此接口
+ *@param mapView 地图View
+ *@param views 选中的annotation views
+ */
+- (void)mapView:(BMKMapView *)mapView didSelectAnnotationView:(BMKAnnotationView *)view{
+    BSLog(@"当选中一个annotation views时，调用此接口");
+    id <BMKAnnotation> annotation =view.annotation;
+    //selectedAnn.
+}
+
+/**
+ *当点击annotation view弹出的泡泡时，调用此接口
+ *@param mapView 地图View
+ *@param view 泡泡所属的annotation view
+ */
+- (void)mapView:(BMKMapView *)mapView annotationViewForBubble:(BMKAnnotationView *)view{
+    BSLog(@"当点击annotation view弹出的泡泡时，调用此接口");
+    id <BMKAnnotation> annotation =view.annotation;
+}
+
+
 #pragma mark -地图收藏私有方法开始
 // 根据anntation生成对应的View,搜藏夹功能
 - (BMKAnnotationView *)viewForAnnotation:(id <BMKAnnotation>)annotation
@@ -380,6 +447,7 @@
     [delButton addTarget:self action:@selector(deleteAction:) forControlEvents:UIControlEventTouchUpInside];
     delButton.tag = myAnotation.favIndex + INDEX_TAG_DIS;
     annotationView.rightCalloutAccessoryView = delButton;
+    //annotationView.width=SCREEN_WIDTH/2;
     
     return annotationView;
 }
@@ -484,6 +552,7 @@
     }
     //delButton.tag = annotation. + INDEX_TAG_DIS;
     annotationView.rightCalloutAccessoryView = delButton;
+    //annotationView.width=SCREEN_WIDTH/2;
 
     return annotationView;
 }
@@ -768,7 +837,7 @@
             _mapView.centerCoordinate = result.location;
             //保存数据用于分享用
             //名字－－泡泡上显示的名字，可以自定义
-            sharedGeoName =[NSString stringWithFormat:@"BS:%@",_addrText.text];
+            sharedGeoName =_addrText.text;
             //地址
             sharedAddr = result.address;
             //发起短串搜索获取反geo分享url
@@ -1044,7 +1113,7 @@
     _hiddenView.hidden = false;
     _closeButton.enabled=YES;
     _snopImageButton.enabled=NO;
-    [self.mapView bringSubviewToFront:_hiddenView];
+    [_mapView bringSubviewToFront:_hiddenView];
     //获得地图当前可视区域截图
     _imgView.image = [_mapView takeSnapshot];
     //_closeButton.frame=BSRectMake(115, 340, _closeButton.frame.size.width, _closeButton.frame.size.height);
@@ -1062,7 +1131,7 @@
     _hiddenView.hidden = true;
     _snopImageButton.enabled=YES;
     _closeButton.enabled=NO;
-    [self.mapView sendSubviewToBack:_hiddenView];
+    [_mapView sendSubviewToBack:_hiddenView];
     _imgView.image = nil;
     self.navigationItem.rightBarButtonItem.enabled = true;
     //如果控制区域为隐藏则继续保持隐藏属性
@@ -1455,6 +1524,22 @@
     _mapView.showsUserLocation = YES;
     
 }
+
+//指南针
+- (IBAction)compassSegAction:(id)sender {
+    UISegmentedControl *tempSeg = (UISegmentedControl *)sender;
+    CGPoint pt;
+    if(tempSeg.selectedSegmentIndex==0)
+    {
+        pt = CGPointMake(10,66);
+    }
+    else
+    {
+        pt = CGPointMake(273,66);
+    }
+    [_mapView setCompassPosition:pt];
+    
+}
 //跟随态
 -(IBAction)startFollowing:(id)sender
 {
@@ -1509,12 +1594,15 @@
 - (void)didUpdateBMKUserLocation:(BMKUserLocation *)userLocation
 {
     [_mapView updateLocationData:userLocation];
-    NSString* showmeg = [NSString stringWithFormat:@"您点击了底图标注:%@,\r\n当前经度:%f,当前纬度:%f,\r\nZoomLevel=%d;RotateAngle=%d;OverlookAngle=%d", userLocation.title,
+    NSString* showmeg = [NSString stringWithFormat:@"定位信息:%@,\r\n当前经度:%f,当前纬度:%f,\r\nZoomLevel=%d;RotateAngle=%d;OverlookAngle=%d", userLocation.title,
                          userLocation.location.coordinate.longitude ,userLocation.location.coordinate.latitude, (int)_mapView.zoomLevel,_mapView.rotation,_mapView.overlooking];
     _showMsgLabel.text = showmeg;
     _addrText.text=userLocation.title;
     _coordinateYText.text=[NSString stringWithFormat:@"%f",userLocation.location.coordinate.latitude];
     _coordinateXText.text=[NSString stringWithFormat:@"%f",userLocation.location.coordinate.longitude];
+    
+    _mapView.centerCoordinate=userLocation.location.coordinate;
+
 }
 
 /**
@@ -1524,7 +1612,17 @@
 - (void)didStopLocatingUser
 {
     BSLog(@"stop locate");
-    
+    CLLocationCoordinate2D coor;
+    coor.latitude = [_coordinateYText.text doubleValue];//39.915;
+    coor.longitude = [_coordinateXText.text doubleValue];//116.404;
+    // 添加一个PointAnnotation
+    if (searchPointAnnotation!=nil) {
+        searchPointAnnotation=nil;
+    }
+    searchPointAnnotation= [[BMKPointAnnotation alloc]init];
+    searchPointAnnotation.coordinate = coor;
+    searchPointAnnotation.title = _addrText.text;
+    [_mapView addAnnotation:searchPointAnnotation];
 }
 
 /**
@@ -1535,10 +1633,114 @@
 - (void)didFailToLocateUserWithError:(NSError *)error
 {
     BSLog(@"location error");
+    CLLocationCoordinate2D coor;
+    coor.latitude = [_coordinateYText.text doubleValue];//39.915;
+    coor.longitude = [_coordinateXText.text doubleValue];//116.404;
+    BMKPointAnnotation* annotation = [[BMKPointAnnotation alloc]init];
+    annotation.coordinate = coor;
+    annotation.title = _addrText.text;
+    [_mapView addAnnotation:annotation];
+
+    
 }
 
 //点击地址编辑弹出提示信息
 - (IBAction)onEditingChangedAddredss:(id)sender {
     
+}
+
+-(IBAction)onClickBusSearch
+{
+    BMKPlanNode* start = [[BMKPlanNode alloc]init];
+    start.name = _addrText.text;
+    BMKPlanNode* end = [[BMKPlanNode alloc]init];
+    end.name = _endAddrText.text;
+    
+    BMKTransitRoutePlanOption *transitRouteSearchOption = [[BMKTransitRoutePlanOption alloc]init];
+    transitRouteSearchOption.city= _cityText.text;
+    transitRouteSearchOption.from = start;
+    transitRouteSearchOption.to = end;
+    BOOL flag = [_routesearch transitSearch:transitRouteSearchOption];
+    
+    if(flag)
+    {
+        NSLog(@"bus检索发送成功");
+    }
+    else
+    {
+        NSLog(@"bus检索发送失败");
+    }
+}
+
+-(IBAction)onClickDriveSearch
+{
+    BMKPlanNode* start = [[BMKPlanNode alloc]init];
+    start.name = _addrText.text;
+    start.cityName =_cityText.text;
+    BMKPlanNode* end = [[BMKPlanNode alloc]init];
+    end.name = _endAddrText.text;
+    end.cityName =_endCityText.text;
+    
+    BMKDrivingRoutePlanOption *drivingRouteSearchOption = [[BMKDrivingRoutePlanOption alloc]init];
+    drivingRouteSearchOption.from = start;
+    drivingRouteSearchOption.to = end;
+    BOOL flag = [_routesearch drivingSearch:drivingRouteSearchOption];
+    if(flag)
+    {
+        NSLog(@"car检索发送成功");
+    }
+    else
+    {
+        NSLog(@"car检索发送失败");
+    }
+    
+}
+
+-(IBAction)onClickWalkSearch
+{
+    
+    BMKPlanNode* start = [[BMKPlanNode alloc]init];
+    start.name = _addrText.text;
+    start.cityName =_cityText.text;
+    BMKPlanNode* end = [[BMKPlanNode alloc]init];
+    end.name = _endAddrText.text;
+    end.cityName = _endCityText.text;
+    
+    
+    BMKWalkingRoutePlanOption *walkingRouteSearchOption = [[BMKWalkingRoutePlanOption alloc]init];
+    walkingRouteSearchOption.from = start;
+    walkingRouteSearchOption.to = end;
+    BOOL flag = [_routesearch walkingSearch:walkingRouteSearchOption];
+    if(flag)
+    {
+        NSLog(@"walk检索发送成功");
+    }
+    else
+    {
+        NSLog(@"walk检索发送失败");
+    }
+    
+}
+
+-(IBAction)onClickWayPointSearch{
+    NSLog(@"路径点开始");
+    WayPointRouteSearchViewController * wayPointCont = [[WayPointRouteSearchViewController alloc]init];
+    wayPointCont.title = @"驾车途经点";
+    UIBarButtonItem *customLeftBarButtonItem = [[UIBarButtonItem alloc] init];
+    customLeftBarButtonItem.title = @"返回";
+    self.navigationItem.backBarButtonItem = customLeftBarButtonItem;
+    [self.navigationController pushViewController:wayPointCont animated:YES];
+
+}
+
+- (NSString*)getMyBundlePath1:(NSString *)filename
+{
+    
+    NSBundle * libBundle = MYBUNDLE ;
+    if ( libBundle && filename ){
+        NSString * s=[[libBundle resourcePath ] stringByAppendingPathComponent : filename];
+        return s;
+    }
+    return nil ;
 }
 @end

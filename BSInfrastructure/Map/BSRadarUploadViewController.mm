@@ -87,6 +87,7 @@
         NSLog(@"upload 成功");
     } else {
         NSLog(@"upload 失败");
+        [PromptInfo showText:@"发送位置失败"];
     }
 }
 
@@ -117,6 +118,7 @@
         NSLog(@"clear 成功");
     } else {
         NSLog(@"clear 失败");
+        
     }
 }
 

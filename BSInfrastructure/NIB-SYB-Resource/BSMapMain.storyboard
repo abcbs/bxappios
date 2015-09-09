@@ -131,7 +131,7 @@
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rlx-0R-CiK" userLabel="地图功能区域">
                                 <rect key="frame" x="0.0" y="44" width="320" height="276"/>
                                 <subviews>
-                                    <view tag="20" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zm6-SL-joP" userLabel="查询与坐标翻译">
+                                    <view hidden="YES" tag="20" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zm6-SL-joP" userLabel="查询与坐标翻译">
                                         <rect key="frame" x="0.0" y="22" width="316" height="200"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="检索" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d1b-1t-RDg">
@@ -836,6 +836,19 @@
                                                     <action selector="startLocation:" destination="O8t-lj-hhi" eventType="touchUpInside" id="Oyy-9N-0jV"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xhp-7Y-aSp">
+                                                <rect key="frame" x="77" y="0.0" width="63" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="as2-Vj-izG"/>
+                                                    <constraint firstAttribute="width" constant="63" id="w1D-TB-MHk"/>
+                                                </constraints>
+                                                <state key="normal" title="使用跟踪">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="startFollowing:" destination="O8t-lj-hhi" eventType="touchUpInside" id="XAV-do-dpi"/>
+                                                </connections>
+                                            </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bsa-FZ-MbP">
                                                 <rect key="frame" x="156" y="0.0" width="63" height="30"/>
                                                 <constraints>
@@ -855,38 +868,51 @@
                                                     <constraint firstAttribute="height" constant="30" id="M9X-ky-yer"/>
                                                     <constraint firstAttribute="width" constant="70" id="ysn-ZX-rqo"/>
                                                 </constraints>
-                                                <state key="normal" title="停止螺旋">
+                                                <state key="normal" title="停止定位">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="stopLocation:" destination="O8t-lj-hhi" eventType="touchUpInside" id="kC1-1u-u90"/>
                                                 </connections>
                                             </button>
-                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="地图短URL" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5iT-lM-n85">
-                                                <rect key="frame" x="17" y="54" width="85" height="21"/>
+                                            <label userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="指南针显示" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5iT-lM-n85">
+                                                <rect key="frame" x="17" y="52" width="85" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="0It-rx-qzR"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="MUa-6h-8AI"/>
                                                     <constraint firstAttribute="width" constant="85" id="ljS-Xq-wXV"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="85" id="nzr-Sr-TKe"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sxc-4G-cUj">
-                                                <rect key="frame" x="127" y="48" width="165" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="QGI-sf-ejl"/>
-                                                    <constraint firstAttribute="width" constant="165" id="t2G-A0-SBH"/>
-                                                </constraints>
+                                            <textField hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" enabled="NO" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sxc-4G-cUj">
+                                                <rect key="frame" x="127" y="48" width="2" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qmt-PS-YTM">
-                                                <rect key="frame" x="17" y="78" width="60" height="30"/>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="iKn-Ph-Lca">
+                                                <rect key="frame" x="110" y="48" width="108" height="29"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="108" id="Iq9-2L-vpC"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="28" id="Rtt-LQ-QrR"/>
+                                                </constraints>
+                                                <segments>
+                                                    <segment title="左边"/>
+                                                    <segment title="右边"/>
+                                                </segments>
+                                                <connections>
+                                                    <action selector="compassSegAction:" destination="O8t-lj-hhi" eventType="valueChanged" id="SOg-Ht-xpL"/>
+                                                </connections>
+                                            </segmentedControl>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qmt-PS-YTM">
+                                                <rect key="frame" x="17" y="83" width="60" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="60" id="7td-SK-1xS"/>
                                                     <constraint firstAttribute="height" constant="30" id="NVl-tN-WF6"/>
                                                 </constraints>
-                                                <state key="normal" title="地图共享URL">
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <state key="normal" title="地图共享">
                                                     <color key="titleColor" red="0.023897455170000002" green="1" blue="0.4771290097" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -894,17 +920,68 @@
                                                     <action selector="browseSharedShortUrlAction:" destination="O8t-lj-hhi" eventType="touchUpInside" id="oUn-AZ-DsD"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xhp-7Y-aSp">
-                                                <rect key="frame" x="77" y="0.0" width="63" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="as2-Vj-izG"/>
-                                                    <constraint firstAttribute="width" constant="63" id="w1D-TB-MHk"/>
-                                                </constraints>
-                                                <state key="normal" title="使用跟踪">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YxU-ZL-BFo" userLabel="线路规划">
+                                                <rect key="frame" x="8" y="121" width="289" height="2"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <nil key="highlightedColor"/>
+                                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="从当前位置到" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pd7-st-EcF">
+                                                <rect key="frame" x="13" y="130" width="85" height="32"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="北京" borderStyle="roundedRect" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nbc-8Y-QCE">
+                                                <rect key="frame" x="99" y="130" width="75" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="的" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hbl-OF-tb0">
+                                                <rect key="frame" x="178" y="134" width="24" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="XX地" borderStyle="roundedRect" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E7e-dW-WD8">
+                                                <rect key="frame" x="198" y="130" width="103" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ydA-Bd-s1E">
+                                                <rect key="frame" x="13" y="162" width="56" height="30"/>
+                                                <state key="normal" title="公交">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="startFollowing:" destination="O8t-lj-hhi" eventType="touchUpInside" id="XAV-do-dpi"/>
+                                                    <action selector="onClickBusSearch" destination="O8t-lj-hhi" eventType="touchUpInside" id="Hma-58-kam"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c69-IA-Isq">
+                                                <rect key="frame" x="80" y="162" width="69" height="30"/>
+                                                <state key="normal" title="驾车">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="onClickDriveSearch" destination="O8t-lj-hhi" eventType="touchUpInside" id="Et0-nt-Bmq"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DqG-kx-4vM">
+                                                <rect key="frame" x="162" y="162" width="49" height="30"/>
+                                                <state key="normal" title="步行">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="onClickWalkSearch" destination="O8t-lj-hhi" eventType="touchUpInside" id="PxL-m1-bkE"/>
+                                                </connections>
+                                            </button>
+                                            <button contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L82-nD-ETG">
+                                                <rect key="frame" x="227" y="162" width="70" height="30"/>
+                                                <state key="normal" title="驾车途径">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="onClickWayPointSearch" destination="O8t-lj-hhi" eventType="touchUpInside" id="c8V-1N-YpK"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -913,18 +990,24 @@
                                             <constraint firstAttribute="height" constant="200" id="0TO-Yo-leg"/>
                                             <constraint firstAttribute="bottom" secondItem="xhp-7Y-aSp" secondAttribute="bottom" constant="170" id="3ID-d7-mhA"/>
                                             <constraint firstAttribute="bottom" secondItem="Kbd-00-Pzn" secondAttribute="bottom" constant="170" id="3Z9-kM-eTk"/>
+                                            <constraint firstItem="Qmt-PS-YTM" firstAttribute="top" secondItem="5iT-lM-n85" secondAttribute="bottom" constant="10" id="55Z-8b-gSs"/>
                                             <constraint firstAttribute="bottom" secondItem="Sxc-4G-cUj" secondAttribute="bottom" constant="122" id="96H-ON-q23"/>
                                             <constraint firstItem="Kbd-00-Pzn" firstAttribute="leading" secondItem="Bsa-FZ-MbP" secondAttribute="trailing" constant="8" id="DL4-j6-waC"/>
+                                            <constraint firstAttribute="trailing" secondItem="iKn-Ph-Lca" secondAttribute="trailing" constant="100" id="ER3-36-569"/>
                                             <constraint firstItem="Sxc-4G-cUj" firstAttribute="leading" secondItem="5iT-lM-n85" secondAttribute="trailing" constant="25" id="FTb-B4-M4E"/>
+                                            <constraint firstItem="5iT-lM-n85" firstAttribute="top" secondItem="xhp-7Y-aSp" secondAttribute="bottom" constant="22" id="HVh-7H-Zkg"/>
                                             <constraint firstItem="xhp-7Y-aSp" firstAttribute="leading" secondItem="Nn3-aj-8Fb" secondAttribute="trailing" constant="9" id="ICk-QL-DNe"/>
                                             <constraint firstItem="Qmt-PS-YTM" firstAttribute="top" secondItem="5iT-lM-n85" secondAttribute="bottom" constant="3" id="JBy-ZV-7yv"/>
                                             <constraint firstAttribute="bottom" secondItem="Bsa-FZ-MbP" secondAttribute="bottom" constant="170" id="Job-GT-BuW"/>
                                             <constraint firstAttribute="bottom" secondItem="Nn3-aj-8Fb" secondAttribute="bottom" constant="170" id="LNc-r9-lqb"/>
                                             <constraint firstItem="Kbd-00-Pzn" firstAttribute="top" secondItem="HOb-xo-ibc" secondAttribute="top" id="PiS-ta-SM8"/>
                                             <constraint firstAttribute="trailing" secondItem="Kbd-00-Pzn" secondAttribute="trailing" constant="21" id="Qbn-CL-mFZ"/>
+                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="iKn-Ph-Lca" secondAttribute="bottom" constant="124" id="Qm6-3i-iNq"/>
                                             <constraint firstItem="Bsa-FZ-MbP" firstAttribute="leading" secondItem="xhp-7Y-aSp" secondAttribute="trailing" constant="15" id="R4S-I2-MAo"/>
                                             <constraint firstItem="Nn3-aj-8Fb" firstAttribute="top" secondItem="HOb-xo-ibc" secondAttribute="top" id="St7-ba-ihF"/>
                                             <constraint firstAttribute="trailing" secondItem="Sxc-4G-cUj" secondAttribute="trailing" constant="26" id="TW9-K1-nTU"/>
+                                            <constraint firstItem="iKn-Ph-Lca" firstAttribute="leading" secondItem="5iT-lM-n85" secondAttribute="trailing" constant="8" id="Vig-K1-nOu"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="iKn-Ph-Lca" secondAttribute="trailing" constant="100" id="YJy-CN-RI2"/>
                                             <constraint firstItem="xhp-7Y-aSp" firstAttribute="top" secondItem="HOb-xo-ibc" secondAttribute="top" id="acs-VE-RW7"/>
                                             <constraint firstItem="Bsa-FZ-MbP" firstAttribute="top" secondItem="HOb-xo-ibc" secondAttribute="top" id="c0m-1e-ZVZ"/>
                                             <constraint firstItem="5iT-lM-n85" firstAttribute="leading" secondItem="HOb-xo-ibc" secondAttribute="leading" constant="17" id="dL6-LA-lcy"/>
@@ -938,7 +1021,9 @@
                                             <constraint firstItem="Sxc-4G-cUj" firstAttribute="top" secondItem="Kbd-00-Pzn" secondAttribute="bottom" constant="18" id="oIz-AZ-174"/>
                                             <constraint firstItem="Qmt-PS-YTM" firstAttribute="leading" secondItem="HOb-xo-ibc" secondAttribute="leading" constant="17" id="rKC-f7-OUL"/>
                                             <constraint firstItem="Bsa-FZ-MbP" firstAttribute="leading" secondItem="xhp-7Y-aSp" secondAttribute="trailing" constant="15" id="u0I-Vu-Boy"/>
+                                            <constraint firstItem="iKn-Ph-Lca" firstAttribute="top" secondItem="xhp-7Y-aSp" secondAttribute="bottom" constant="18" id="uWX-Oh-FpW"/>
                                             <constraint firstItem="Nn3-aj-8Fb" firstAttribute="leading" secondItem="HOb-xo-ibc" secondAttribute="leading" constant="8" id="vZV-3Q-LXW"/>
+                                            <constraint firstAttribute="bottom" secondItem="iKn-Ph-Lca" secondAttribute="bottom" constant="124" id="xFP-mv-YaF"/>
                                             <constraint firstAttribute="trailing" secondItem="Qmt-PS-YTM" secondAttribute="trailing" constant="241" id="xz5-2v-k1T"/>
                                         </constraints>
                                     </view>
@@ -1016,11 +1101,15 @@
                         <outlet property="_addrText" destination="R2I-aB-ucl" id="5mX-4h-pHC"/>
                         <outlet property="_cityText" destination="fwa-bl-YD4" id="oGG-fV-N4W"/>
                         <outlet property="_closeButton" destination="bh7-FJ-4hk" id="qbz-Bk-90u"/>
+                        <outlet property="_compassSeg" destination="iKn-Ph-Lca" id="D2V-da-bKL"/>
                         <outlet property="_coordinateXText" destination="oo3-0B-3av" id="rxG-xs-Ow6"/>
                         <outlet property="_coordinateYText" destination="SqI-8i-oTa" id="qb8-IU-MSB"/>
+                        <outlet property="_endAddrText" destination="E7e-dW-WD8" id="zOp-vH-uCS"/>
+                        <outlet property="_endCityText" destination="nbc-8Y-QCE" id="iih-nr-GAi"/>
                         <outlet property="_hiddenView" destination="dev-Lg-41E" id="YKB-ZF-lq5"/>
                         <outlet property="_imgView" destination="rQq-aX-Gtb" id="Dm6-eR-Ckh"/>
                         <outlet property="_keyText" destination="FK3-iy-iZU" id="qXK-gP-nhn"/>
+                        <outlet property="_mapView" destination="3hn-sa-ktv" id="bdM-JS-3xU"/>
                         <outlet property="_moveSwitch" destination="R2z-4o-3ks" id="AiJ-86-9xc"/>
                         <outlet property="_nextPageButton" destination="Eje-uL-AlG" id="PqL-pT-iew"/>
                         <outlet property="_overlook" destination="eQ6-1H-fFV" id="juc-Lm-Pul"/>

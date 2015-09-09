@@ -18,6 +18,8 @@
 @property (nonatomic,retain) NSString *inform;
 
 @property (nonatomic,retain)BSTableContentObject * bsContentObject;
+
+- (IBAction)View_TouchDown:(id)sender;
 /**
  *公共回退方法
  */

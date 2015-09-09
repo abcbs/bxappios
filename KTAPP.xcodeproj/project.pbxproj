@@ -1315,6 +1315,15 @@
 		84EBA00B1B416E37003309F6 /* ClassForSelectors.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EBA00A1B416E37003309F6 /* ClassForSelectors.m */; };
 		84EBA0131B4189E0003309F6 /* LBLiferServiceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EBA0121B4189E0003309F6 /* LBLiferServiceController.m */; };
 		84EBA0161B41A307003309F6 /* KTLBMainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EBA0151B41A307003309F6 /* KTLBMainTabBarController.m */; };
+		84EBF0261B9FF42D00B3F16A /* UIImage+Rotate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EBF0231B9FF42D00B3F16A /* UIImage+Rotate.m */; };
+		84EBF0271B9FF42D00B3F16A /* UIImage+Rotate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EBF0231B9FF42D00B3F16A /* UIImage+Rotate.m */; };
+		84EBF02C1BA0022900B3F16A /* WayPointRouteSearchViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 84EBF02B1BA0022900B3F16A /* WayPointRouteSearchViewController.mm */; };
+		84EBF02D1BA0022900B3F16A /* WayPointRouteSearchViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 84EBF02B1BA0022900B3F16A /* WayPointRouteSearchViewController.mm */; };
+		84EBF02F1BA002C400B3F16A /* WayPointRouteSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84EBF02E1BA002C400B3F16A /* WayPointRouteSearchViewController.xib */; };
+		84EBF0301BA002C400B3F16A /* WayPointRouteSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84EBF02E1BA002C400B3F16A /* WayPointRouteSearchViewController.xib */; };
+		84EBF0311BA002C400B3F16A /* WayPointRouteSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84EBF02E1BA002C400B3F16A /* WayPointRouteSearchViewController.xib */; };
+		84EBF0341BA0538E00B3F16A /* BSUIKeyboardCoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EBF0331BA0538E00B3F16A /* BSUIKeyboardCoView.m */; };
+		84EBF0351BA0538E00B3F16A /* BSUIKeyboardCoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EBF0331BA0538E00B3F16A /* BSUIKeyboardCoView.m */; };
 		84ECA4501B569F9700452BC4 /* UserBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 84ECA44F1B569F9700452BC4 /* UserBase.m */; };
 		84ECA4511B56A49600452BC4 /* UserBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 84ECA44F1B569F9700452BC4 /* UserBase.m */; };
 		84ECE42D1B4F9BB4003D1AEE /* BSUIDefaultTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84ECE42C1B4F9BB4003D1AEE /* BSUIDefaultTableViewCell.m */; };
@@ -2530,6 +2539,13 @@
 		84EBA0121B4189E0003309F6 /* LBLiferServiceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBLiferServiceController.m; sourceTree = "<group>"; };
 		84EBA0141B41A307003309F6 /* KTLBMainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTLBMainTabBarController.h; sourceTree = "<group>"; };
 		84EBA0151B41A307003309F6 /* KTLBMainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTLBMainTabBarController.m; sourceTree = "<group>"; };
+		84EBF0221B9FF42D00B3F16A /* UIImage+Rotate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Rotate.h"; sourceTree = "<group>"; };
+		84EBF0231B9FF42D00B3F16A /* UIImage+Rotate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Rotate.m"; sourceTree = "<group>"; };
+		84EBF02A1BA0022900B3F16A /* WayPointRouteSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WayPointRouteSearchViewController.h; sourceTree = "<group>"; };
+		84EBF02B1BA0022900B3F16A /* WayPointRouteSearchViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WayPointRouteSearchViewController.mm; sourceTree = "<group>"; };
+		84EBF02E1BA002C400B3F16A /* WayPointRouteSearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WayPointRouteSearchViewController.xib; sourceTree = "<group>"; };
+		84EBF0321BA0538E00B3F16A /* BSUIKeyboardCoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUIKeyboardCoView.h; sourceTree = "<group>"; };
+		84EBF0331BA0538E00B3F16A /* BSUIKeyboardCoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUIKeyboardCoView.m; sourceTree = "<group>"; };
 		84ECA44E1B569F9700452BC4 /* UserBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserBase.h; sourceTree = "<group>"; };
 		84ECA44F1B569F9700452BC4 /* UserBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserBase.m; sourceTree = "<group>"; };
 		84ECE42B1B4F9BB4003D1AEE /* BSUIDefaultTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUIDefaultTableViewCell.h; sourceTree = "<group>"; };
@@ -3067,6 +3083,8 @@
 		844E50B91B2F2EE500A69F91 /* BSUISetting */ = {
 			isa = PBXGroup;
 			children = (
+				84EBF0321BA0538E00B3F16A /* BSUIKeyboardCoView.h */,
+				84EBF0331BA0538E00B3F16A /* BSUIKeyboardCoView.m */,
 				84052EB31B73B4D100FAB304 /* BSValidatePredicate.h */,
 				84052EB41B73B4D100FAB304 /* BSValidatePredicate.m */,
 				84E97AB51B307535001D4100 /* BSUIComponentView.h */,
@@ -4252,6 +4270,7 @@
 		84E6C0911B7DCCEF00289D94 /* NIB-SYB-Resource */ = {
 			isa = PBXGroup;
 			children = (
+				84EBF02E1BA002C400B3F16A /* WayPointRouteSearchViewController.xib */,
 				84E6C0921B7DCCEF00289D94 /* LSBLEIFTTUpHoldMain.storyboard */,
 				84FB97931B937DA20018790A /* BSMapMain.storyboard */,
 			);
@@ -4597,6 +4616,10 @@
 		84EDB19F1B937849006D925B /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				84EBF02A1BA0022900B3F16A /* WayPointRouteSearchViewController.h */,
+				84EBF02B1BA0022900B3F16A /* WayPointRouteSearchViewController.mm */,
+				84EBF0221B9FF42D00B3F16A /* UIImage+Rotate.h */,
+				84EBF0231B9FF42D00B3F16A /* UIImage+Rotate.m */,
 				84EAD9FE1B95744100302A90 /* BSRadarUploadViewController.h */,
 				84EAD9FF1B95744100302A90 /* BSRadarUploadViewController.mm */,
 				84EADA381B95C6F500302A90 /* BSRadarNearbyViewController.h */,
@@ -5310,6 +5333,7 @@
 				84EA98341B57E21F00AC549F /* a10.png in Resources */,
 				84EA98461B57E21F00AC549F /* APP-000-640-1136-4寸规格.jpg in Resources */,
 				84EA98941B57E21F00AC549F /* yzfbb.png in Resources */,
+				84EBF0301BA002C400B3F16A /* WayPointRouteSearchViewController.xib in Resources */,
 				84EA987A1B57E21F00AC549F /* ckxq-122.png in Resources */,
 				84EA97E21B57E21F00AC549F /* im_search.png in Resources */,
 				84EA97EE1B57E21F00AC549F /* tabbar_discover@3x.png in Resources */,
@@ -5580,6 +5604,7 @@
 				84EA1A841B6FCB040058161E /* LOCatagoryManager.storyboard in Resources */,
 				84EADA1F1B95C59500302A90 /* poi_2.png in Resources */,
 				8474153E1B639312005BF59D /* wdqzs@2x.png in Resources */,
+				84EBF0311BA002C400B3F16A /* WayPointRouteSearchViewController.xib in Resources */,
 				847415751B639312005BF59D /* zffs_01.png in Resources */,
 				847415421B639312005BF59D /* a-1.png in Resources */,
 				8474157D1B639312005BF59D /* forget password-1.png in Resources */,
@@ -5754,6 +5779,7 @@
 				84EA98FD1B57E21F00AC549F /* jl_01.png in Resources */,
 				84E6C0931B7DCCEF00289D94 /* LSBLEIFTTUpHoldMain.storyboard in Resources */,
 				84EA97FF1B57E21F00AC549F /* icon-1x-01.png in Resources */,
+				84EBF02F1BA002C400B3F16A /* WayPointRouteSearchViewController.xib in Resources */,
 				847432FC1B2A8E5500B030C4 /* Demo1ViewController.xib in Resources */,
 				84EA982B1B57E21F00AC549F /* xysjs@2x.png in Resources */,
 				84EA98F31B57E21F00AC549F /* im_paihao.png in Resources */,
@@ -6418,6 +6444,7 @@
 				84D19FEF1B4C440500BA25BF /* LeDiscovery.m in Sources */,
 				84EADA3B1B95C6F600302A90 /* BSRadarNearbyViewController.mm in Sources */,
 				84E71F351B4E5473003089B2 /* BLEDevicesAddTableViewController.m in Sources */,
+				84EBF0271B9FF42D00B3F16A /* UIImage+Rotate.m in Sources */,
 				841F950B1B8C59DA001B26B5 /* BSDigestAuthorization.m in Sources */,
 				845AC3511B674C870077E0ED /* BSUICollectionCollectionViewController.m in Sources */,
 				84E9D7A31B61E10C00F2CD24 /* BSCheckmarkView.m in Sources */,
@@ -6430,11 +6457,13 @@
 				844FFE911B8B4C4600658A36 /* BSAesSecurity.m in Sources */,
 				84B29FFE1B9C0CFF00D6145F /* MyAnimatedAnnotationView.m in Sources */,
 				84F84ADB1B7C4E2B008DF38F /* BSDesSecurity.m in Sources */,
+				84EBF02D1BA0022900B3F16A /* WayPointRouteSearchViewController.mm in Sources */,
 				84D19FF11B4C440500BA25BF /* LeTemperatureAlarmService.m in Sources */,
 				84F309531B9D440A0070EF19 /* PromptInfo.m in Sources */,
 				844570DC1B4D67D5000CA1C7 /* BTLEPeripheralViewController.m in Sources */,
 				84DB2F041B7CCB700041588B /* ESSBeaconScanner.m in Sources */,
 				84EAD9F41B943BF700302A90 /* BSBaiduViewController.m in Sources */,
+				84EBF0351BA0538E00B3F16A /* BSUIKeyboardCoView.m in Sources */,
 				84BF8FC41B4AC2FA001042F1 /* Conf.m in Sources */,
 				84BF8FC61B4AC2FA001042F1 /* ErrorMessage.m in Sources */,
 				84E9D79F1B61E10C00F2CD24 /* BSAssetCell.m in Sources */,
@@ -6679,6 +6708,7 @@
 				8470765B1B3A8F1400F28180 /* adsCell.m in Sources */,
 				842043741B2991770002C868 /* DLSlideView.m in Sources */,
 				84E9D79E1B61E10C00F2CD24 /* BSAssetCell.m in Sources */,
+				84EBF0261B9FF42D00B3F16A /* UIImage+Rotate.m in Sources */,
 				8469CD691B4121F000EF6757 /* LFRecommendViewController.m in Sources */,
 				84820A4E1B285D960093B87B /* MSWaterSendingCell.m in Sources */,
 				8474331C1B2A92B400B030C4 /* ForgetViewController.m in Sources */,
@@ -6740,6 +6770,7 @@
 				84BA96851B2829D500388B58 /* WaterSending.m in Sources */,
 				844570DB1B4D67D5000CA1C7 /* BTLEPeripheralViewController.m in Sources */,
 				847432F91B2A8E5500B030C4 /* AlreadyPayment.m in Sources */,
+				84EBF0341BA0538E00B3F16A /* BSUIKeyboardCoView.m in Sources */,
 				842043751B2991770002C868 /* DLFixedTabbarView.m in Sources */,
 				847432F71B2A8E5500B030C4 /* AlreadyCommit.m in Sources */,
 				A0F0C3E81B10209500CE406D /* BasicResponse.m in Sources */,
@@ -6751,6 +6782,7 @@
 				A0F0C3F71B10209500CE406D /* JoinShoppingCartRequest.m in Sources */,
 				847432FB1B2A8E5500B030C4 /* Demo1ViewController.m in Sources */,
 				8474331E1B2A92B400B030C4 /* RegisterViewController.m in Sources */,
+				84EBF02C1BA0022900B3F16A /* WayPointRouteSearchViewController.mm in Sources */,
 				84832D481B565A4B00FB6D28 /* CustomerOrderBase.m in Sources */,
 				84BA96801B2829D500388B58 /* orderDetailOneModel.m in Sources */,
 				84D19FE41B4C36EC00BA25BF /* BSBLEViewController.m in Sources */,
@@ -7269,6 +7301,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_INPUT_FILETYPE = automatic;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -7311,6 +7344,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_INPUT_FILETYPE = automatic;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;

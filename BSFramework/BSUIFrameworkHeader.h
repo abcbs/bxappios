@@ -99,6 +99,8 @@
 
 #import "BSWebViewViewController.h"
 
+#import "BSUIKeyboardCoView.h"
+
 CG_INLINE CGRect BSRectMake(CGFloat x, CGFloat y, CGFloat width, CGFloat height)
 {
     //autoStyleSize;
