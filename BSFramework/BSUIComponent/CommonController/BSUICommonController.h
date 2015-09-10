@@ -40,5 +40,6 @@
 #pragma mark -键盘添加事件
 -(void)keyboardDone:(id)sender;
 -(void) delelageForTextField;
+- (void)keyboardWillBeHidden:(NSNotification*)aNotification;
 
 @end

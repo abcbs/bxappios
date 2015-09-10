@@ -108,8 +108,43 @@
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
     [center addObserver:self selector:@selector(keyNotification:) name:UIKeyboardWillChangeFrameNotification object:nil];
     
+    //使用NSNotificationCenter 鍵盤出現時
+    [center addObserver:self
+      selector:@selector(keyboardWasShown:)
+      name:UIKeyboardDidShowNotification object:nil];
+    
+    //使用NSNotificationCenter 鍵盤隐藏時
+    [center addObserver:self
+      selector:@selector(keyboardWillBeHidden:)
+      name:UIKeyboardWillHideNotification object:nil];
+    
 }
 
+//实现当键盘出现的时候计算键盘的高度大小。用于输入框显示位置
+- (void)keyboardWasShown:(NSNotification*)aNotification
+{
+    NSDictionary* info = [aNotification userInfo];
+    //kbSize即為鍵盤尺寸 (有width, height)
+    CGSize kbSize = [[info objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].size;//得到鍵盤的高度
+    NSLog(@"hight_hitht:%f",kbSize.height);
+    int keyboardhight;
+    if(kbSize.height == 216)
+    {
+        keyboardhight = 0;
+    }
+    else
+    {
+        keyboardhight = 36;   //252 - 216 系统键盘的两个不同高度
+    }
+    //输入框位置动画加载
+    //[self begainMoveUpAnimation:keyboardhight];
+}
+
+//当键盘隐藏的时候
+- (void)keyboardWillBeHidden:(NSNotification*)aNotification
+{
+    //do something
+}
 -(UIToolbar *)keyboardToolBar{
     if (_keyboardToolBar==nil) {
         //TextView的键盘定制回收按钮
@@ -253,20 +288,23 @@
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
 {
+    
     // When the user presses return, take focus away from the text field so that the keyboard is dismissed.
     NSTimeInterval animationDuration = 0.30f;
     [UIView beginAnimations:@"ResizeForKeyboard" context:nil];
     [UIView setAnimationDuration:animationDuration];
-    CGRect rect = CGRectMake(0.0f, 0.0f, self.view.frame.size.width, self.view.frame.size.height);
-    //CGRect rect = CGRectMake(0.0f, 20.0f, self.view.frame.size.width, self.view.frame.size.height);
+    CGRect rect = CGRectMake(0,0, self.view.frame.size.width, self.view.frame.size.height);
+
     self.view.frame = rect;
     [UIView commitAnimations];
     [textField resignFirstResponder];
+    
     return YES;
 }
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
+    
     CGRect frame = textField.frame;
     int offset = frame.origin.y + 32 - (self.view.frame.size.height - 216.0);//键盘高度216
     NSTimeInterval animationDuration = 0.30f;
@@ -280,6 +318,7 @@
         self.view.frame = rect;
     }
     [UIView commitAnimations];
+     
 }
 
 #pragma mark -键盘事件

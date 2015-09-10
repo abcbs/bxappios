@@ -37,6 +37,8 @@
 
 @property (strong, nonatomic) IBOutlet UIView *controllerView;
 
+@property (strong, nonatomic) IBOutlet UIScrollView *controllerScollerView;
+
 -(IBAction)onDriveSearch;
 
 - (IBAction)textFiledReturnEditing:(id)sender;

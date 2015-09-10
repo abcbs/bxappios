@@ -41,7 +41,10 @@
     //
     //如果中间仍然没有选中，则使用中间值选择，它来自TableView
     NSString *searchKey;
-
+    
+    CGRect scrollViewframe;
+    //CGPoint touchPoint;
+    CGRect frameTextFirstResponder;
 }
 
 //自定义组件
@@ -111,6 +114,7 @@
     //
     self.controllerView.hidden=NO;
     sugesstPOIs=[NSMutableArray array];
+    scrollViewframe=self.controllerScollerView.frame;
 }
 
 - (NSInteger)tableView:(UITableView *)tableview numberOfRowsInSection:(NSInteger)section {
@@ -227,20 +231,43 @@
     self.keyBoardDic = notification.userInfo;
     //获取键盘移动后的坐标点的坐标点
     CGRect rect = [self.keyBoardDic[@"UIKeyboardFrameEndUserInfoKey"] CGRectValue];
-    
+
     //把键盘的坐标系改成当前我们window的坐标系
-    CGRect r1 = [self.view convertRect:rect fromView:self.view.window];
+    CGRect r1 = [self.view convertRect:rect
+                              fromView:self.view.window];
     
      [UIView animateWithDuration:[self.keyBoardDic[UIKeyboardAnimationDurationUserInfoKey] floatValue] animations:^{
-     CGRect frame = self.toolView.frame;
-     
-     frame.origin.y = r1.origin.y - frame.size.height;
-     
-     //根据键盘的高度来改变toolView的高度
-     self.toolView.frame = frame;
+     CGRect frame = self.controllerScollerView.frame;
+         
+     if (( frameTextFirstResponder.origin.y)<rect.origin.y){
+         frame.origin.y = r1.origin.y - frame.size.height+16;
+         //根据键盘的高度来改变toolView的高度
+         self.controllerScollerView.frame = frame;
+      }
      }];
      
 }
+
+
+- (void)keyboardWillBeHidden:(NSNotification*)aNotification
+{
+    self.controllerScollerView.frame=scrollViewframe;
+}
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+     //self.controllerScollerView.frame=scrollViewframe;
+     [textField resignFirstResponder];
+     return YES;
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    frameTextFirstResponder=textField.frame;
+    
+}
+
+
 
 -(void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
 {
