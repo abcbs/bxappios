@@ -30,7 +30,7 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                 </view>
                 <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="eDh-pa-fmb">
-                    <rect key="frame" x="0.0" y="231" width="320" height="291"/>
+                    <rect key="frame" x="0.0" y="236" width="320" height="291"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
@@ -130,22 +130,22 @@
                                         <action selector="textFiledReturnEditing:" destination="-1" eventType="editingDidEndOnExit" id="127"/>
                                     </connections>
                                 </textField>
-                                <button alpha="0.64999999999999969" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7">
-                                    <rect key="frame" x="230" y="6" width="82" height="32"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
-                                    <state key="normal" title="驾车搜索">
-                                        <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="onDriveSearch" destination="-1" eventType="touchUpInside" id="125"/>
-                                        <action selector="textFiledReturnEditing:" destination="-1" eventType="touchUpInside" id="130"/>
-                                    </connections>
-                                </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
                     </subviews>
                 </scrollView>
+                <button alpha="0.64999999999999969" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7">
+                    <rect key="frame" x="230" y="80" width="82" height="32"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                    <state key="normal" title="驾车搜索">
+                        <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="onDriveSearch" destination="-1" eventType="touchUpInside" id="125"/>
+                        <action selector="textFiledReturnEditing:" destination="-1" eventType="touchUpInside" id="130"/>
+                    </connections>
+                </button>
                 <view hidden="YES" opaque="NO" contentMode="scaleToFill" id="CnU-vn-bQT" userLabel="键盘按钮" customClass="BSUIKeyboardCoView">
                     <rect key="frame" x="0.0" y="516" width="320" height="30"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>

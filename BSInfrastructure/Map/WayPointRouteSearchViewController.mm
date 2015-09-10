@@ -242,7 +242,11 @@
      if (( frameTextFirstResponder.origin.y)<rect.origin.y){
          frame.origin.y = r1.origin.y - frame.size.height+16;
          //根据键盘的高度来改变toolView的高度
+         if (IS_IPHONE5) {
+             frame.origin.y = r1.origin.y - frame.size.height;
+         }
          self.controllerScollerView.frame = frame;
+
       }
      }];
      
