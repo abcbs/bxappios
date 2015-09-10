@@ -105,7 +105,7 @@
     
     tableView.hidden=YES;
     //
-    self.controllerView.hidden=YES;
+    self.controllerView.hidden=NO;
     sugesstPOIs=[NSMutableArray array];
 }
 
