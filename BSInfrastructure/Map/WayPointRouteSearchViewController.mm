@@ -47,8 +47,6 @@
 //系统组件
 @property (strong, nonatomic) IBOutlet UITextView *myTextView;
 
-
-
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
 
 @property (strong, nonatomic) NSString *sendString;
@@ -58,6 +56,7 @@
 
 @property (strong, nonatomic)HistoryImage *tempImage;
 
+@property (strong, nonatomic) NSDictionary * keyBoardDic;
 
 @end
 
@@ -88,11 +87,18 @@
 {
     [super viewDidLoad];
     _routesearch = [[BMKRouteSearch alloc]init];
-    /*
+    //初始化检索对象
+    _searchersuggestionSearch =[[BMKSuggestionSearch alloc]init];
+    //_suggestionSearch.delegate = self;
+    //[self keyboardConfigure];
+    _startAddrText.inputAccessoryView =[self keyboardToolBar];
+    _endAddrText.inputAccessoryView =[self keyboardToolBar];
+    _wayPointAddrText.inputAccessoryView =[self keyboardToolBar];
+}
+
+-(void)keyboardConfigure{
     //从sqlite中读取数据
     self.imageMode = [[ImageModelClass alloc] init];
-    
-    
     //实例化FunctionView
     self.functionView = [[FunctionView alloc] initWithFrame:CGRectMake(0, 0, 320, 216)];
     self.functionView.backgroundColor = [UIColor blackColor];
@@ -108,7 +114,6 @@
          
          copy_self.myTextView.text = str;
          copy_self.imageView.image = image;
-         
          //把使用过的图片存入sqlite
          NSData *imageData = UIImagePNGRepresentation(image);
          [copy_self.imageMode save:imageData ImageText:imageText];
@@ -117,31 +122,28 @@
     
     //实例化MoreView
     self.moreView = [[MoreView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
-    //self.moreView.backgroundColor = [UIColor blackColor];
-    //[self.moreView setMoreBlock:^(NSInteger index) {
-        //NSLog(@"MoreIndex = %d",index);
-    //}];
+    self.moreView.backgroundColor = [UIColor blackColor];
     
     //进行ToolView的实例化
-    //self.toolView = [[ToolView alloc] initWithFrame:CGRectZero];
-    //self.toolView.backgroundColor = [UIColor blackColor];
-    //[self.view addSubview:self.toolView];
+    self.toolView = [[ToolView alloc] initWithFrame:CGRectZero];
+    self.toolView.backgroundColor = [UIColor blackColor];
+    [self.view addSubview:self.toolView];
     
     //给ToolView添加约束
     //开启自动布局
-    //self.toolView.translatesAutoresizingMaskIntoConstraints = NO;
+    self.toolView.translatesAutoresizingMaskIntoConstraints = NO;
     
     //水平约束
-   // NSArray *toolHConstraint = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[_toolView]|" options:0 metrics:0 views:NSDictionaryOfVariableBindings(_toolView)];
-    //[self.view addConstraints:toolHConstraint];
+    NSArray *toolHConstraint = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[_toolView]|" options:0 metrics:0 views:NSDictionaryOfVariableBindings(_toolView)];
+    [self.view addConstraints:toolHConstraint];
     
     //垂直约束
-   // NSArray *toolVConstraint = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[_toolView(44)]|" options:0 metrics:0 views:NSDictionaryOfVariableBindings(_toolView)];
+    NSArray *toolVConstraint = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[_toolView(44)]|" options:0 metrics:0 views:NSDictionaryOfVariableBindings(_toolView)];
     
-    //[self.view addConstraints:toolVConstraint];
-    */
+    [self.view addConstraints:toolVConstraint];
+    
     //回调toolView中的方法
-    /*
+    
     [self.toolView setToolIndex:^(NSInteger index)
      {
          NSLog(@"%ld", (long)index);
@@ -158,21 +160,73 @@
              default:
                  break;
          }
-         
      }];
-     */
-   
-   
-    //myTextView.inputAccessoryView =toolBar;
-    _startAddrText.inputAccessoryView =[self keyboardToolBar];
-    _endAddrText.inputAccessoryView =[self keyboardToolBar];
-    _wayPointAddrText.inputAccessoryView =[self keyboardToolBar];
+     //
+    [self.moreView setMoreBlock:^(NSInteger index) {
+        NSLog(@"MoreIndex = %ld",(long)index);
+    }];
 }
 
 
+-(void) keyNotification : (NSNotification *) notification
+{
+    NSLog(@"%@", notification.userInfo);
+    
+    self.keyBoardDic = notification.userInfo;
+    //获取键盘移动后的坐标点的坐标点
+    CGRect rect = [self.keyBoardDic[@"UIKeyboardFrameEndUserInfoKey"] CGRectValue];
+    
+    //把键盘的坐标系改成当前我们window的坐标系
+    CGRect r1 = [self.view convertRect:rect fromView:self.view.window];
+    
+     [UIView animateWithDuration:[self.keyBoardDic[UIKeyboardAnimationDurationUserInfoKey] floatValue] animations:^{
+     CGRect frame = self.toolView.frame;
+     
+     frame.origin.y = r1.origin.y - frame.size.height;
+     
+     //根据键盘的高度来改变toolView的高度
+     self.toolView.frame = frame;
+     }];
+     
+}
+
+-(void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+{
+    //纵屏
+    if (UIInterfaceOrientationIsPortrait(toInterfaceOrientation)) {
+        CGRect frame = self.functionView.frame;
+        frame.size.height = 216;
+        self.functionView.frame = frame;
+        self.moreView.frame = frame;
+        
+    }
+    //横屏
+    if (UIInterfaceOrientationIsLandscape(toInterfaceOrientation)) {
+        CGRect frame = self.functionView.frame;
+        frame.size.height = 150;
+        self.functionView.frame = frame;
+        self.moreView.frame = frame;
+    }
+}
+
 #pragma mark -键盘事件
 -(void)keyboardDone:(id)sender{
-    [PromptInfo showText:@"确定查询-单Button实现"];
+    
+    //BMKSuggestionSearch
+    BMKSuggestionSearchOption* option = [[BMKSuggestionSearchOption alloc] init];
+    option.cityname = @"北京";
+    option.keyword  = @"中关村";
+    BOOL flag = [_searchersuggestionSearch suggestionSearch:option];
+    //[option release];
+    if(flag)
+    {
+        BSLog(@"建议检索发送成功");
+    }
+    else
+    {
+        BSLog(@"建议检索发送失败");
+        [PromptInfo showText:@"建议检索发送失败"];
+    }
 }
 
 #pragma mark -以代理BSUIKeyboardCoViewDelegate实现的具体事件
@@ -181,7 +235,6 @@
 }
 //键盘增加多Button
 //切换键盘的方法
-/*
 -(void) changeKeyboardToFunction
 {
     if ([self.myTextView.inputView isEqual:self.functionView])
@@ -200,14 +253,31 @@
         [self.myTextView becomeFirstResponder];
     }
 }
-*/
 
-
+-(void) changeKeyboardToMore{
+    if ([self.myTextView.inputView isEqual:self.functionView])
+    {
+        self.myTextView.inputView = nil;
+        [self.myTextView reloadInputViews];
+    }
+    else
+    {
+        self.myTextView.inputView = self.functionView;
+        [self.myTextView reloadInputViews];
+    }
+    
+    if (![self.myTextView isFirstResponder])
+    {
+        [self.myTextView becomeFirstResponder];
+    }
+    
+}
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [_mapView viewWillAppear];
     _mapView.delegate = self; // 此处记得不用的时候需要置nil，否则影响内存的释放
     _routesearch.delegate = self; // 此处记得不用的时候需要置nil，否则影响内存的释放
+    _searchersuggestionSearch.delegate = self;
      
 }
 
@@ -216,12 +286,14 @@
     [_mapView viewWillDisappear];
     _mapView.delegate = nil; // 不用时，置nil
     _routesearch.delegate = nil; // 不用时，置nil
+    _searchersuggestionSearch.delegate = nil;
 
 }
 
 - (void) dealloc{
     //Unregister notifications
     //[[NSNotificationCenter defaultCenter] removeObserver:self];
+    //[_searchersuggestionSearch
 }
 
 
@@ -315,6 +387,16 @@
 	}
 	
 	return view;
+}
+
+#pragma mark -百度地图建议查询
+- (void)onGetSuggestionResult:(BMKSuggestionSearch*)searcher result:(BMKSuggestionResult*)result errorCode:(BMKSearchErrorCode)error{
+    if (error == BMK_SEARCH_NO_ERROR) {
+        //在此处理正常结果
+    }
+    else {
+        NSLog(@"抱歉，未找到结果");
+    }
 }
 
 - (BMKAnnotationView *)mapView:(BMKMapView *)view viewForAnnotation:(id <BMKAnnotation>)annotation

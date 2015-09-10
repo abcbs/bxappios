@@ -3,7 +3,7 @@
 //  KTAPP
 //
 //  Created by admin on 15/8/31.
-//  Copyright (c) 2015年 itcast. All rights reserved.
+//  Copyright (c) 2015年 KingTeller. All rights reserved.
 //
 
 #import "BSBaiduViewController.h"
@@ -40,6 +40,7 @@
 @interface MyFavoriteAnnotation : BMKPointAnnotation
 
 @property (nonatomic, assign) NSInteger favIndex;
+
 @property (nonatomic, strong) BMKFavPoiInfo *favPoiInfo;
 
 @end
@@ -47,6 +48,7 @@
 @implementation MyFavoriteAnnotation
 
 @synthesize favIndex = _favIndex;
+
 @synthesize favPoiInfo = _favPoiInfo;
 
 @end
@@ -240,17 +242,29 @@
     
     //
     _coordinateXText.delegate=self;
+    
+    //
     _coordinateYText.delegate=self;
+    
+    //
     _cityText.delegate=self;
+    
+    //
     _addrText.delegate=self;
+    
+    //
     _radiosText.delegate=self;
     
     //POI查找
     _poiCityText.delegate=self;
+    
+    //
     _keyText.delegate=self;
     
     //道路规划
     _endCityText.delegate=self;
+    
+    //
     _endAddrText.delegate=self;
    
     
@@ -368,6 +382,8 @@
  }
 #pragma mark -点击地图动作结束
 
+
+#pragma mark -地图绘制功能开始
 - (void)mapView:(BMKMapView *)mapView didAddOverlayViews:(NSArray *)overlayViews{
     BSLog(@"当mapView新添加overlay views时，调用此接口");
 
@@ -378,6 +394,7 @@
  *@param mapView 地图View
  *@param views 新添加的annotation views
  */
+
 - (void)mapView:(BMKMapView *)mapView didAddAnnotationViews:(NSArray *)views{
     BSLog(@"当mapView新添加annotation views时");
 
@@ -401,7 +418,17 @@
 - (void)mapView:(BMKMapView *)mapView didSelectAnnotationView:(BMKAnnotationView *)view{
     BSLog(@"当选中一个annotation views时，调用此接口");
     id <BMKAnnotation> annotation =view.annotation;
-    //selectedAnn.
+    //annotation	MySearchAnnotation *	0x17106bf80	0x000000017106bf80
+    CLLocationCoordinate2D coordinate;
+
+    if ([annotation isKindOfClass:[MySearchAnnotation class]]){
+        //
+        MySearchAnnotation *ann=annotation;
+       // _addrText.text=ann.searchPoiInfo.address;
+        _cityText.text=ann.searchPoiInfo.city;
+        //coordinate=ann.searchPoiInfo.pt;
+
+    }
 }
 
 /**
@@ -415,9 +442,8 @@
 }
 
 
-#pragma mark -地图收藏私有方法开始
-// 根据anntation生成对应的View,搜藏夹功能
-- (BMKAnnotationView *)viewForAnnotation:(id <BMKAnnotation>)annotation
+#pragma mark -根据anntation生成对应的View,搜藏夹功能
+- (BMKAnnotationView *)mapView:(BMKMapView *)view viewForFavoriteAnnotation:(id <BMKAnnotation>)annotation
 {
     BMKPinAnnotationView *annotationView = [[BMKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"FavPoiMark"];
     // 设置颜色
@@ -447,72 +473,28 @@
     [delButton addTarget:self action:@selector(deleteAction:) forControlEvents:UIControlEventTouchUpInside];
     delButton.tag = myAnotation.favIndex + INDEX_TAG_DIS;
     annotationView.rightCalloutAccessoryView = delButton;
-    //annotationView.width=SCREEN_WIDTH/2;
-    
+     return annotationView;
+}
+
+#pragma mark -查找定位,搜索
+- (BMKAnnotationView *)mapView:(BMKMapView *)view viewForSearchPointAnnotation:(id <BMKAnnotation>)annotation{
+    NSString *AnnotationViewID = @"AnimatedAnnotation";
+    MyAnimatedAnnotationView *annotationView
+        = (MyAnimatedAnnotationView*)[view dequeueReusableAnnotationViewWithIdentifier:AnnotationViewID];
+    if (annotationView == nil) {
+        annotationView = [[MyAnimatedAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:AnnotationViewID];
+    }
+    NSMutableArray *images = [NSMutableArray array];
+    for (int i = 1; i < 4; i++) {
+        UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"poi_%d.png", i]];
+        [images addObject:image];
+    }
+    annotationView.annotationImages = images;
     return annotationView;
 }
 
-//点击paopao更新按钮
-- (void)updateAction:(id)sender {
-    UIButton *button = (UIButton*)sender;
-    NSArray *_favPoiInfos= [_favManager getAllFavPois];
-    _curFavIndex = button.tag - INDEX_TAG_DIS;
-    if (_curFavIndex < _favPoiInfos.count) {
-        BMKFavPoiInfo *favInfo = [_favPoiInfos objectAtIndex:_curFavIndex];
-        _coordinateXText.text = [NSString stringWithFormat:@"%lf", favInfo.pt.latitude];
-        _coordinateXText.text = [NSString stringWithFormat:@"%lf", favInfo.pt.longitude];
-        _addrText.text = favInfo.poiName;
-        //[_addrText becomeFirstResponder];
-        //
-    }
-}
-
-//点击paopao删除按钮
-- (void)deleteAction:(id)sender {
-    UIButton *button = (UIButton*)sender;
-    NSInteger favIndex = button.tag - INDEX_TAG_DIS;
-    NSArray *_favPoiInfos= [_favManager getAllFavPois];
-    if (favIndex < _favPoiInfos.count) {
-        BMKFavPoiInfo *favInfo = [_favPoiInfos objectAtIndex:favIndex];
-        if ([_favManager deleteFavPoi:favInfo.favId]) {
-            //[_favPoiInfos removeObjectAtIndex:favIndex];
-            [self updateMapAnnotations];
-            [PromptInfo showText:@"删除成功"];
-            return;
-        }
-    }
-    [PromptInfo showText:@"删除失败"];
-}
-#pragma mark -地图收藏私有方法结束
-
-#pragma mark -百度地图标注方法
-//根据anntation生成对应的View
-- (BMKAnnotationView *)mapView:(BMKMapView *)view viewForAnnotation:(id <BMKAnnotation>)annotation
-{
-    //收藏MyFavoriteAnnotation
-    if ([annotation isKindOfClass:[MyFavoriteAnnotation class]]) {
-        return [self viewForAnnotation:annotation];
-    }
-    //画当前点
-    //searchPointAnnotation
-    if (annotation == searchPointAnnotation) {
-        NSString *AnnotationViewID = @"AnimatedAnnotation";
-        MyAnimatedAnnotationView *annotationView = nil;
-        if (annotationView == nil) {
-            annotationView = [[MyAnimatedAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:AnnotationViewID];
-        }
-        NSMutableArray *images = [NSMutableArray array];
-        for (int i = 1; i < 4; i++) {
-            UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"poi_%d.png", i]];
-            [images addObject:image];
-        }
-        annotationView.annotationImages = images;
-        return annotationView;
-    }
-    
-    //正常的显示
-    //搜索到的封装为MySearchAnnotation
-    
+#pragma mark -一般查找
+- (BMKAnnotationView *)mapView:(BMKMapView *)view viewForCommonAnnotation:(id <BMKAnnotation>)annotation{
     NSString *AnnotationViewID = @"annotationViewID";
     //根据指定标识查找一个可被复用的标注View，一般在delegate中使用，用此函数来代替新申请一个View
     BMKAnnotationView *annotationView = [view dequeueReusableAnnotationViewWithIdentifier:AnnotationViewID];
@@ -525,7 +507,7 @@
     annotationView.centerOffset = CGPointMake(0, -(annotationView.frame.size.height * 0.5));
     
     annotationView.annotation = annotation;
-
+    
     annotationView.canShowCallout = TRUE;
     //增加处理事件
     UIButton *updateButton = [UIButton buttonWithType:UIButtonTypeSystem];
@@ -535,11 +517,10 @@
     if ([annotation isKindOfClass:[MySearchAnnotation class]]) {
         MySearchAnnotation *myAnotation=annotation;
         updateButton.tag = myAnotation.searchIndex + INDEX_TAG_DIS;
-
+        
     }
     //
     annotationView.leftCalloutAccessoryView = updateButton;
-    
     ///添加更新按钮
     UIButton *delButton = [UIButton buttonWithType:UIButtonTypeSystem];
     delButton.frame = CGRectMake(10, 0, 32, 41);
@@ -550,77 +531,29 @@
         delButton.tag = myAnotation.searchIndex + INDEX_TAG_DIS;
         
     }
-    //delButton.tag = annotation. + INDEX_TAG_DIS;
     annotationView.rightCalloutAccessoryView = delButton;
-    //annotationView.width=SCREEN_WIDTH/2;
-
     return annotationView;
+
 }
 
-//地图点击标注动作
--(void)updatePIOAction:(id)sender{
-    //[PromptInfo showText:@"更新成功"];
-    UIButton *button = (UIButton*)sender;
-    NSInteger favIndex = button.tag - INDEX_TAG_DIS;
-    if (favIndex < _searchResultAnn.count) {
-        MySearchAnnotation *annotation = [_searchResultAnn objectAtIndex:favIndex];
-        if (annotation) {
-            //[_mapView  removeAnnotation:annotation];
-            BMKPoiInfo* poi=annotation.searchPoiInfo;// [_searchResultPoi objectAtIndex:0];
-            [self favSinglePOI:poi];
-            [self updateMapAnnotations];
-            //[_searchResultPoi removeObjectAtIndex:favIndex];
-            [PromptInfo showText:@"收藏查询点成功"];
-            return;
-        }
-    }else{//非查询（通过定位）方式的收藏
-        [self favLocaction];
-        [PromptInfo showText:@"收藏定位点成功"];
-        return;
+#pragma mark -百度地图标注方法
+//根据anntation生成对应的View
+- (BMKAnnotationView *)mapView:(BMKMapView *)view viewForAnnotation:(id <BMKAnnotation>)annotation
+{
+    //收藏MyFavoriteAnnotation
+    if ([annotation isKindOfClass:[MyFavoriteAnnotation class]]) {
+        return [self mapView:view  viewForFavoriteAnnotation:annotation];
     }
-    [PromptInfo showText:@"收藏失败"];
-}
-
--(void)favLocaction{
-    BMKFavPoiInfo *poiInfo = [[BMKFavPoiInfo alloc] init];
-    CLLocationCoordinate2D coor;
-    coor.latitude = [_coordinateYText.text doubleValue];//39.915;
-    coor.longitude = [_coordinateXText.text doubleValue];//116.404;
-    poiInfo.pt = coor;
-    poiInfo.poiName =_addrText.text;
-    //poiInfo.poiUid=poi.uid;
-    //poiInfo.address=poi.address;
-    poiInfo.cityName=_cityText.text;
-    NSInteger res = [_favManager addFavPoi:poiInfo];
-    BSLog(@"数据,名称为:%@,地址为%@,\t@经度:%f,纬度:%f",poiInfo.poiName,poiInfo.address,poiInfo.pt.latitude,poiInfo.pt.longitude);
-    if (res != 1) {
-        //pos++;
-        NSString *str=[NSString stringWithFormat:@"搜藏数据失败,名称为:%@",
-                       _addrText.text];
-        //BSLog(@"第%d条数据失败,名称为:%@,地址为%@",i,poi.name,poi.address);
-        [PromptInfo showText:str];
-    }
-    poiInfo=nil;
+    //画当前点
+    //searchPointAnnotation
+    if (annotation == searchPointAnnotation) {
+        return [self mapView:view  viewForSearchPointAnnotation:annotation];
+    }else{
     
-}
-
-//地图点击标注动作选中更新经纬度
-- (void)selectedPOIAction:(id)sender {
-    UIButton *button = (UIButton*)sender;
-    NSInteger favIndex = button.tag - INDEX_TAG_DIS;
-    if (favIndex < _searchResultAnn.count) {
-        //BMKPoiInfo *bmkInfo = [_searchResultAnn objectAtIndex:favIndex];
-        MySearchAnnotation *annotation = [_searchResultAnn objectAtIndex:favIndex];
-
-        if (annotation) {
-            BMKPoiInfo* poi=annotation.searchPoiInfo;
-            _coordinateXText.text = [NSString stringWithFormat:@"%lf", poi.pt.latitude];
-            _coordinateXText.text = [NSString stringWithFormat:@"%lf", poi.pt.longitude];
-            _addrText.text = poi.name;
-            [PromptInfo showText:@"更新成功"];
-        }
+    //一般情况
+    return [self mapView:view viewForCommonAnnotation:
+            annotation];
     }
-
 }
 
 #pragma mark -添加覆盖物，即形状
@@ -636,14 +569,14 @@
     return nil;
 }
 
+#pragma mark -地图检索
 #pragma mark implement BMKSearchDelegate
 - (void)onGetPoiResult:(BMKPoiSearch *)searcher result:(BMKPoiResult*)result errorCode:(BMKSearchErrorCode)error
 {
     // 清楚屏幕中所有的annotation
     NSArray* annotations = [NSArray arrayWithArray:_mapView.annotations];
- 
-
     BOOL isSearchPOI=NO;
+    /*
     if (annotations.count>0) {
         BMKPointAnnotation *searchPOIAnn= annotations[0];
         if ([searchPOIAnn.title isEqualToString:@"搜索位置"]) {
@@ -655,7 +588,14 @@
         }
     }else {
         [_mapView removeAnnotations:annotations];
+        //
+        
 
+    }
+    */
+    [_mapView removeAnnotations:annotations];
+    if (searchPointAnnotation) {
+        [_mapView addAnnotation:searchPointAnnotation];
     }
     NSArray* overlays = [NSArray arrayWithArray:_mapView.overlays];
     [_mapView removeAnnotations:overlays];
@@ -729,16 +669,9 @@
         [_mapView addOverlay:circle];
         [_mapView addAnnotations:annotations];
         [_mapView showAnnotations:annotations animated:YES];
-    } else if (error == BMK_SEARCH_AMBIGUOUS_ROURE_ADDR){
-        BSLog(@"起始点有歧义");
-    } else if (error == BMK_SEARCH_RESULT_NOT_FOUND){
-        BSLog(@"查找结束,总共发现POI为:\t%lu",(unsigned long)_searchResultPoi.count);
-        NSString *showmeg=[NSString stringWithFormat:@"查找关键字:%@\t或者在经纬度附近找%@\t发现共计:%lu条",
-                            _addrText.text,_keyText.text,(unsigned long)_searchResultPoi.count];
-        //showmeg = [NSString stringWithFormat:@"经度:%f,纬度:%f",item.coordinate.latitude,item.coordinate.longitude];
-        //UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:@"查询关键信息" message:showmeg delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定",nil];
-        //[myAlertView show];
-        [PromptInfo showText:showmeg];
+    } else {
+        //搜索出现异常时
+        [self onGetResultInError:searcher result:result errorCode:error];
     }
 }
 
@@ -773,19 +706,15 @@
         BSLog(@"详细信息:分类\t%@\t名称:%@\t电话:%@\tURL:%@\t价格:%f营业时间:%@",poiDetailResult.tag,
               poiDetailResult.name,poiDetailResult.address,poiDetailResult.detailUrl
               ,poiDetailResult.price,poiDetailResult.shopHours);
+    }else {
+        //搜索出现异常时
+        //[self onGetResultInError:searcher result:poiDetailResult
+         //              error:errorCode:errorCode];
+         [self onGetResultInError:searcher
+                           result:poiDetailResult errorCode:errorCode];
     }
 }
 
-//建议检索
-//实现Delegate处理回调结果
-- (void)onGetSuggestionResult:(BMKSuggestionSearch*)searcher result:(BMKSuggestionResult*)result errorCode:(BMKSearchErrorCode)error{
-    if (error == BMK_SEARCH_NO_ERROR) {
-        //在此处理正常结果
-    }
-    else {
-        BSLog(@"抱歉，未找到结果");
-    }
-}
 
 #pragma mark -百度地图，由地址获取经纬度
 - (void)onGetGeoCodeResult:(BMKGeoCodeSearch *)searcher result:(BMKGeoCodeResult *)result errorCode:(BMKSearchErrorCode)error
@@ -794,28 +723,34 @@
     [_mapView removeAnnotations:array];
     array = [NSArray arrayWithArray:_mapView.overlays];
     [_mapView removeOverlays:array];
-    if (error == 0) {
-        BMKPointAnnotation* item = [[BMKPointAnnotation alloc]init];
-        item.coordinate = result.location;
-        item.title = result.address;
-        [_mapView addAnnotation:item];
+    if (error == BMK_SEARCH_NO_ERROR) {//
+        searchPointAnnotation = [[BMKPointAnnotation alloc]init];
+        //searchPointAnnotation
+        searchPointAnnotation.coordinate = result.location;
+        searchPointAnnotation.title = result.address;
+        [_mapView addAnnotation:searchPointAnnotation];
         _mapView.centerCoordinate = result.location;
         NSString* titleStr;
         NSString* showmeg;
         
         titleStr = @"正向地理编码";
-        showmeg = [NSString stringWithFormat:@"经度:%f,纬度:%f",item.coordinate.latitude,item.coordinate.longitude];
+        showmeg = [NSString stringWithFormat:@"经度:%f,纬度:%f",searchPointAnnotation.coordinate.latitude,searchPointAnnotation.coordinate.longitude];
         //设置经纬度输入框的值
-       _coordinateXText.text = [NSString stringWithFormat:@"%f",item.coordinate.longitude];//纬度
+       _coordinateXText.text = [NSString stringWithFormat:@"%f",searchPointAnnotation.coordinate.longitude];//纬度
         
-        _coordinateYText.text = [NSString stringWithFormat:@"%f",item.coordinate.latitude];//经度
+        _coordinateYText.text = [NSString stringWithFormat:@"%f",searchPointAnnotation.coordinate.latitude];//经度
         if (!isShowCoordInfo) {
-            showmeg = [NSString stringWithFormat:@"经度:%f,纬度:%f",item.coordinate.latitude,item.coordinate.longitude];
-            UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:titleStr message:showmeg delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定",nil];
-            [myAlertView show];
+            showmeg = [NSString stringWithFormat:@"经度:%f,纬度:%f",searchPointAnnotation.coordinate.latitude,searchPointAnnotation.coordinate.longitude];
+            //UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:titleStr message:showmeg delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定",nil];
+            //[myAlertView show];
+            [PromptInfo showText:showmeg];
 
         }
-      }
+    }else {
+        [self onGetResultInError:searcher
+                          result:result errorCode:error];
+ 
+    }
 }
 
 #pragma mark -百度地图由经纬度获取地址信息
@@ -825,11 +760,11 @@
     [_mapView removeAnnotations:array];
     array = [NSArray arrayWithArray:_mapView.overlays];
     [_mapView removeOverlays:array];
-    if (error == 0) {
-        BMKPointAnnotation* item = [[BMKPointAnnotation alloc]init];
-        item.coordinate = result.location;
-        item.title = result.address;
-        [_mapView addAnnotation:item];
+    if (error == BMK_SEARCH_NO_ERROR) {
+        searchPointAnnotation = [[BMKPointAnnotation alloc]init];
+        searchPointAnnotation.coordinate = result.location;
+        searchPointAnnotation.title = result.address;
+        [_mapView addAnnotation:searchPointAnnotation];
         _mapView.centerCoordinate = result.location;
         
         //短URL处理
@@ -863,7 +798,7 @@
         NSString* titleStr;
         NSString* showmeg;
         titleStr = @"反向地理编码";
-        showmeg = [NSString stringWithFormat:@"%@",item.title];
+        showmeg = [NSString stringWithFormat:@"%@",searchPointAnnotation.title];
         
         _cityText.text=result.addressDetail.city;
         
@@ -872,19 +807,20 @@
         if (pioResult.count>0) {
             BMKPoiInfo* pioInfo=pioResult[0];
             _addrText.text=pioInfo.name;
-            showmeg = [NSString stringWithFormat:@"名称:%@\t%@",pioInfo.name,item.title];
+            showmeg = [NSString stringWithFormat:@"名称:%@\t%@",pioInfo.name,searchPointAnnotation.title];
 
         }
-        UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:titleStr message:showmeg delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定",nil];
-        [myAlertView show];
+        //UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:titleStr message:showmeg delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定",nil];
+        //[myAlertView show];
+        [PromptInfo showText:showmeg];
+    }else {
+        [self onGetResultInError:searcher
+                          result:result errorCode:error];
     }
 }
 
-- (void)mapViewDidFinishLoading:(BMKMapView *)mapView {
-    BSLog(@"地图初始化完成");
-}
 
-//3.返回短串分享url
+//返回短串分享url
 - (void)onGetPoiDetailShareURLResult:(BMKShareURLSearch *)searcher result:(BMKShareURLResult *)result errorCode:(BMKSearchErrorCode)error
 {
     shortUrl = result.url;
@@ -900,6 +836,10 @@
         UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:@"短串分享" message:sharedShowmeg delegate:self cancelButtonTitle:nil otherButtonTitles:@"分享",@"取消",nil];
         myAlertView.tag = 1000;
         [myAlertView show];
+        //[PromptInfo showText:showmeg];
+    }else {
+        [self onGetResultInError:searcher
+                          result:result errorCode:error];
     }
 }
 
@@ -920,9 +860,176 @@
         UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:@"短串分享" message:sharedShowmeg delegate:self cancelButtonTitle:nil otherButtonTitles:@"分享",@"取消",nil];
         myAlertView.tag = 1000;
         [myAlertView show];
+    }else {
+        [self onGetResultInError:searcher
+                          result:result errorCode:error];
+
     }
 }
 
+//建议检索
+//实现Delegate处理回调结果
+- (void)onGetSuggestionResult:(BMKSuggestionSearch*)searcher result:(BMKSuggestionResult*)result errorCode:(BMKSearchErrorCode)error{
+    if (error == BMK_SEARCH_NO_ERROR) {
+        //在此处理正常结果
+    }
+    else {
+        [self onGetResultInError:searcher
+                          result:result errorCode:error];
+    }
+}
+
+- (void)mapViewDidFinishLoading:(BMKMapView *)mapView {
+    BSLog(@"地图初始化完成");
+}
+
+#pragma mark -地图搜索结果非正常情况处理
+
+
+//点击paopao更新按钮
+- (void)updateAction:(id)sender {
+    UIButton *button = (UIButton*)sender;
+    NSArray *_favPoiInfos= [_favManager getAllFavPois];
+    _curFavIndex = button.tag - INDEX_TAG_DIS;
+    if (_curFavIndex < _favPoiInfos.count) {
+        BMKFavPoiInfo *favInfo = [_favPoiInfos objectAtIndex:_curFavIndex];
+        _coordinateXText.text = [NSString stringWithFormat:@"%lf", favInfo.pt.latitude];
+        _coordinateXText.text = [NSString stringWithFormat:@"%lf", favInfo.pt.longitude];
+        _addrText.text = favInfo.poiName;
+        //[_addrText becomeFirstResponder];
+        //
+    }
+}
+
+//点击paopao删除按钮
+- (void)deleteAction:(id)sender {
+    UIButton *button = (UIButton*)sender;
+    NSInteger favIndex = button.tag - INDEX_TAG_DIS;
+    NSArray *_favPoiInfos= [_favManager getAllFavPois];
+    if (favIndex < _favPoiInfos.count) {
+        BMKFavPoiInfo *favInfo = [_favPoiInfos objectAtIndex:favIndex];
+        if ([_favManager deleteFavPoi:favInfo.favId]) {
+            //[_favPoiInfos removeObjectAtIndex:favIndex];
+            [self updateMapAnnotations];
+            [PromptInfo showText:@"删除成功"];
+            return;
+        }
+    }
+    [PromptInfo showText:@"删除失败"];
+}
+#pragma mark -地图收藏私有方法结束
+//地图点击标注动作
+-(void)updatePIOAction:(id)sender{
+    //[PromptInfo showText:@"更新成功"];
+    UIButton *button = (UIButton*)sender;
+    NSInteger favIndex = button.tag - INDEX_TAG_DIS;
+    if (favIndex < _searchResultAnn.count) {
+        MySearchAnnotation *annotation = [_searchResultAnn objectAtIndex:favIndex];
+        if (annotation) {
+            //[_mapView  removeAnnotation:annotation];
+            BMKPoiInfo* poi=annotation.searchPoiInfo;// [_searchResultPoi objectAtIndex:0];
+            [self favSinglePOI:poi];
+            [self updateMapAnnotations];
+            //[_searchResultPoi removeObjectAtIndex:favIndex];
+            [PromptInfo showText:@"收藏查询点成功"];
+            return;
+        }
+    }else{//非查询（通过定位）方式的收藏
+        [self favLocaction];
+        [PromptInfo showText:@"收藏定位点成功"];
+        return;
+    }
+    [PromptInfo showText:@"收藏失败"];
+}
+
+-(void)favLocaction{
+    BMKFavPoiInfo *poiInfo = [[BMKFavPoiInfo alloc] init];
+    CLLocationCoordinate2D coor;
+    coor.latitude = [_coordinateYText.text doubleValue];//39.915;
+    coor.longitude = [_coordinateXText.text doubleValue];//116.404;
+    poiInfo.pt = coor;
+    poiInfo.poiName =_addrText.text;
+    //poiInfo.poiUid=poi.uid;
+    //poiInfo.address=poi.address;
+    poiInfo.cityName=_cityText.text;
+    NSInteger res = [_favManager addFavPoi:poiInfo];
+    BSLog(@"数据,名称为:%@,地址为%@,\t@经度:%f,纬度:%f",poiInfo.poiName,poiInfo.address,poiInfo.pt.latitude,poiInfo.pt.longitude);
+    if (res != 1) {
+        //pos++;
+        NSString *str=[NSString stringWithFormat:@"搜藏数据失败,名称为:%@",
+                       _addrText.text];
+        //BSLog(@"第%d条数据失败,名称为:%@,地址为%@",i,poi.name,poi.address);
+        [PromptInfo showText:str];
+    }
+    poiInfo=nil;
+    
+}
+
+//地图点击标注动作选中更新经纬度
+- (void)selectedPOIAction:(id)sender {
+    UIButton *button = (UIButton*)sender;
+    NSInteger favIndex = button.tag - INDEX_TAG_DIS;
+    if (favIndex < _searchResultAnn.count) {
+        //BMKPoiInfo *bmkInfo = [_searchResultAnn objectAtIndex:favIndex];
+        MySearchAnnotation *annotation = [_searchResultAnn objectAtIndex:favIndex];
+        
+        if (annotation) {
+            BMKPoiInfo* poi=annotation.searchPoiInfo;
+            _coordinateXText.text = [NSString stringWithFormat:@"%lf", poi.pt.latitude];
+            _coordinateXText.text = [NSString stringWithFormat:@"%lf", poi.pt.longitude];
+            _addrText.text = poi.name;
+            [PromptInfo showText:@"更新成功"];
+        }
+    }
+    
+}
+
+/**
+ *  1. onGetPoiResult:(BMKPoiSearch *)searcher result:(BMKPoiResult*)result errorCode:(BMKSearchErrorCode)error
+ *
+ *  2. onGetPoiDetailResult:(BMKPoiSearch *)searcher result:(BMKPoiDetailResult *)poiDetailResult errorCode:(BMKSearchErrorCode)errorCode
+ *
+ *  3.onGetGeoCodeResult:(BMKGeoCodeSearch *)searcher result:(BMKGeoCodeResult *)result 由地址获取经纬度
+ *
+ *  4.onGetSuggestionResult:(BMKSuggestionSearch*)searcher result:(BMKSuggestionResult*)result errorCode:(BMKSearchErrorCode)error
+ *
+ *  5.onGetReverseGeoCodeResult:(BMKGeoCodeSearch *)searcher result:(BMKReverseGeoCodeResult *)result errorCode:(BMKSearchErrorCode)error
+ *
+ *  6. onGetPoiDetailShareURLResult:(BMKShareURLSearch *)searcher result:(BMKShareURLResult *)result errorCode:(BMKSearchErrorCode)error
+ *
+ *  7. onGetLocationShareURLResult:(BMKShareURLSearch *)searcher result:(BMKShareURLResult *)result errorCode:(BMKSearchErrorCode)error
+ */
+-(void )onGetResultInError:(id)searcher result:(id)result errorCode:(BMKSearchErrorCode)error{
+    //处理的几种情况
+    if (error == BMK_SEARCH_AMBIGUOUS_ROURE_ADDR){
+        BSLog(@"检索词有岐义");
+        [PromptInfo showText:@"检索词有岐义"];
+        
+    } else if (error == BMK_SEARCH_RESULT_NOT_FOUND){
+        //BMK_SEARCH_RESULT_NOT_FOUND,///<没有找到检索结果
+        BSLog(@"查找结束,总共发现POI为:\t%lu",(unsigned long)_searchResultPoi.count);
+        NSString *showmeg=[NSString stringWithFormat:@"查找关键字:%@\t或者在经纬度附近找%@\t发现共计:%lu条",
+                           _addrText.text,_keyText.text,(unsigned long)_searchResultPoi.count];
+        [PromptInfo showText:showmeg];
+    }  else if (error == BMK_SEARCH_RESULT_NOT_FOUND){
+        //BMK_SEARCH_AMBIGUOUS_ROURE_ADDR,///<检索地址有岐义
+    }  else if (error == BMK_SEARCH_NOT_SUPPORT_BUS){
+        //BMK_SEARCH_NOT_SUPPORT_BUS,///<该城市不支持公交搜索
+        
+    } else if (error==BMK_SEARCH_NOT_SUPPORT_BUS_2CITY){
+        //BMK_SEARCH_NOT_SUPPORT_BUS_2CITY,///<不支持跨城市公交
+    } else if (error==BMK_SEARCH_ST_EN_TOO_NEAR){
+        //BMK_SEARCH_ST_EN_TOO_NEAR,///<起终点太近
+    } else if (error==BMK_SEARCH_KEY_ERROR){
+        //BMK_SEARCH_KEY_ERROR,///<key错误
+    }  else if (error==BMK_SEARCH_NETWOKR_ERROR||error==BMK_SEARCH_NETWOKR_TIMEOUT){
+        //BMK_SEARCH_NETWOKR_ERROR,///网络连接错误
+        //BMK_SEARCH_NETWOKR_TIMEOUT,///网络连接超时
+    } else if (error==BMK_SEARCH_PERMISSION_UNFINISHED){
+        //BMK_SEARCH_PERMISSION_UNFINISHED,///还未完成鉴权，请在鉴权通过后重试
+    }
+    
+}
 
 #pragma mark -百度地图代理方法结束
 
@@ -963,6 +1070,7 @@
     }
     
 }
+
 
 #pragma mark MFMessageComposeViewControllerDelegate
 

@@ -29,7 +29,7 @@
         //1初始化表情按钮
         UIButton *faceButton = [[UIButton alloc] initWithFrame:CGRectZero];
         faceButton.backgroundColor = [UIColor orangeColor];
-        [faceButton setTitle:@"表情" forState:UIControlStateNormal];
+        [faceButton setTitle:@"建议查询" forState:UIControlStateNormal];
         [faceButton setShowsTouchWhenHighlighted:YES];
         [faceButton addTarget:self action:@selector(tapFaceButton:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:faceButton];
@@ -38,7 +38,7 @@
         //2.初始化更多按钮
         UIButton *moreButton = [[UIButton alloc] initWithFrame:CGRectZero];
         moreButton.backgroundColor = [UIColor grayColor];
-        [moreButton setTitle:@"More" forState:UIControlStateNormal];
+        [moreButton setTitle:@"精确查询" forState:UIControlStateNormal];
         [moreButton setShowsTouchWhenHighlighted:YES];
         [moreButton addTarget:self action:@selector(tapMoreButton:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:moreButton];

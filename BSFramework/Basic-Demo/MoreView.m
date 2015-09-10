@@ -8,14 +8,17 @@
 
 #import "MoreView.h"
 
+@interface MoreView ()
+
+//定义ToolIndex类型的block,用于接受外界传过来的block
+@property (nonatomic, strong) MoreIndex myBlock;
+
+@end
+
 @implementation MoreView
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+-(void) setMoreBlock:(MoreIndex) index{
+    self.myBlock = index;
 }
-*/
 
 @end

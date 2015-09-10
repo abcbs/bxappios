@@ -12,7 +12,7 @@
 #import "BSUIFrameworkHeader.h"
 #import "BSUIKeyboardCoView.h"
 
-@interface WayPointRouteSearchViewController : BSUICommonController <BMKMapViewDelegate, BMKRouteSearchDelegate,BSUIKeyboardCoViewDelegate> {
+@interface WayPointRouteSearchViewController : BSUICommonController <BMKMapViewDelegate, BMKRouteSearchDelegate,BSUIKeyboardCoViewDelegate,BMKSuggestionSearchDelegate> {
     
     IBOutlet UITextField* _startAddrText;
     IBOutlet UITextField* _wayPointAddrText;
@@ -30,7 +30,7 @@
     IBOutlet BMKMapView* _mapView;
     
     BMKRouteSearch* _routesearch;
-
+    BMKSuggestionSearch* _searchersuggestionSearch;
 }
 
 -(IBAction)onDriveSearch;
