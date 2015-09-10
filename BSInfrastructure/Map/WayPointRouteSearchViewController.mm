@@ -26,7 +26,7 @@
 {
 	int _type; ///<0:起点 1：终点 2：公交 3：地铁 4:驾乘 5:途经点
 	int _degree;
-}
+    }
 
 @property (nonatomic) int type;
 @property (nonatomic) int degree;
@@ -38,6 +38,10 @@
     NSMutableArray *sugesstPOIs;
     //当前输入框
     int textFieldIndex;
+    //
+    //如果中间仍然没有选中，则使用中间值选择，它来自TableView
+    NSString *searchKey;
+
 }
 
 //自定义组件
@@ -126,17 +130,19 @@
 
 - (void)tableView:(UITableView *)tableview didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableview deselectRowAtIndexPath:indexPath animated:YES];
-     NSString  *key= [sugesstPOIs objectAtIndex: indexPath.row];
+    
+     searchKey= [sugesstPOIs objectAtIndex: indexPath.row];
+
     if (textFieldIndex==1){
-        _startAddrText.text=key;
+        _startAddrText.text=searchKey;
          [_startAddrText resignFirstResponder];
     }else if (textFieldIndex==2){
-        _wayPointAddrText.text=key;
+        _wayPointAddrText.text=searchKey;
         [_wayPointAddrText resignFirstResponder];
 
     }
     else if (textFieldIndex==3){
-        _endAddrText.text=key;
+        _endAddrText.text=searchKey;
         [_endAddrText resignFirstResponder];
 
     }
@@ -259,7 +265,7 @@
 -(void)keyboardDone:(id)sender{
     BMKSuggestionSearchOption* option = [[BMKSuggestionSearchOption alloc] init];
     option.cityname =_cityText.text;
-    //option.
+
     if ([_startAddrText isFirstResponder]){
         option.keyword  =_startAddrText.text;
         textFieldIndex=1;
@@ -274,7 +280,32 @@
         [_endAddrText resignFirstResponder];
     }else{
         textFieldIndex=0;
-        [PromptInfo showText:@"不是选中"];
+        [PromptInfo showText:@"不是选中的输入域"];
+        return;
+    }
+
+    BOOL flag = [_searchersuggestionSearch suggestionSearch:option];
+    //[option release];
+    if(flag)
+    {
+        BSLog(@"建议检索发送成功");
+    }
+    else
+    {
+        BSLog(@"建议检索发送失败");
+        [PromptInfo showText:@"建议检索发送失败"];
+    }
+
+}
+
+-(void)searchSugguestPOI{
+    BMKSuggestionSearchOption* option = [[BMKSuggestionSearchOption alloc] init];
+    option.cityname =_cityText.text;
+    if (![searchKey isEqualToString:@""]) {
+        option.keyword=searchKey;
+    }else{
+        //textFieldIndex=0;
+        [PromptInfo showText:@"再次查询没有获取到建议值"];
         return;
     }
     BOOL flag = [_searchersuggestionSearch suggestionSearch:option];
@@ -288,8 +319,8 @@
         BSLog(@"建议检索发送失败");
         [PromptInfo showText:@"建议检索发送失败"];
     }
-}
 
+}
 #pragma mark -以代理BSUIKeyboardCoViewDelegate实现的具体事件
 - (IBAction)keyAction:(id)sender {
     [PromptInfo showText:@"确定查询-多Button实现"];
@@ -567,10 +598,11 @@
         [self mapViewFitPolyLine:polyLine];
 	}else if (error==BMK_SEARCH_AMBIGUOUS_KEYWORD){
         //BMK_SEARCH_AMBIGUOUS_ROURE_ADDR,///<检索地址有岐义
-         [PromptInfo showText:@"检索地址有岐义"];
+        [PromptInfo showText:@"检索关键词有岐义,再次检索"];
+        [self searchSugguestPOI];
     }else if (error==BMK_SEARCH_AMBIGUOUS_ROURE_ADDR){
-         [PromptInfo showText:@"检索地址有岐义"];
-    
+        [PromptInfo showText:@"检索地址有岐义，再次检索"];
+        [self searchSugguestPOI];
     }else if (error==BMK_SEARCH_NOT_SUPPORT_BUS){
         //BMK_SEARCH_NOT_SUPPORT_BUS,///<该城市不支持公交搜索
         [PromptInfo showText:@"该城市不支持公交搜索"];
