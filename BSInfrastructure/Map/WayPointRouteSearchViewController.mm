@@ -32,9 +32,12 @@
 @property (nonatomic) int degree;
 @end
 
-@interface WayPointRouteSearchViewController (){
+@interface WayPointRouteSearchViewController ()<UITableViewDataSource, UITableViewDelegate>{
     int keyboardhight;
-    
+    //建议查询结果
+    NSMutableArray *sugesstPOIs;
+    //当前输入框
+    int textFieldIndex;
 }
 
 //自定义组件
@@ -61,7 +64,7 @@
 @end
 
 @implementation WayPointRouteSearchViewController
-
+@synthesize tableView;
 
 - (NSString*)getMyBundlePath1:(NSString *)filename
 {
@@ -94,6 +97,50 @@
     _startAddrText.inputAccessoryView =[self keyboardToolBar];
     _endAddrText.inputAccessoryView =[self keyboardToolBar];
     _wayPointAddrText.inputAccessoryView =[self keyboardToolBar];
+    
+    tableView.delegate = self;
+    tableView.dataSource = self;
+    tableView.scrollEnabled = YES;
+    tableView.clipsToBounds = YES;
+    
+    tableView.hidden=YES;
+    //
+    self.controllerView.hidden=YES;
+    sugesstPOIs=[NSMutableArray array];
+}
+
+- (NSInteger)tableView:(UITableView *)tableview numberOfRowsInSection:(NSInteger)section {
+    return sugesstPOIs.count;
+}
+
+- (UITableViewCell*)tableView:(UITableView *)tableview cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *CellIdentifier = @"BaiduMapSeguestCell";
+    
+    UITableViewCell *cell = [tableview dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+    }
+    cell.textLabel.text = [sugesstPOIs objectAtIndex:indexPath.row];
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableview didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableview deselectRowAtIndexPath:indexPath animated:YES];
+     NSString  *key= [sugesstPOIs objectAtIndex: indexPath.row];
+    if (textFieldIndex==1){
+        _startAddrText.text=key;
+         [_startAddrText resignFirstResponder];
+    }else if (textFieldIndex==2){
+        _wayPointAddrText.text=key;
+        [_wayPointAddrText resignFirstResponder];
+
+    }
+    else if (textFieldIndex==3){
+        _endAddrText.text=key;
+        [_endAddrText resignFirstResponder];
+
+    }
+    tableView.hidden=YES;
 }
 
 -(void)keyboardConfigure{
@@ -156,8 +203,7 @@
              case 2:
                  [copy_self changeKeyboardToFunction];
                  break;
-                 
-             default:
+              default:
                  break;
          }
      }];
@@ -211,11 +257,26 @@
 
 #pragma mark -键盘事件
 -(void)keyboardDone:(id)sender{
-    
-    //BMKSuggestionSearch
     BMKSuggestionSearchOption* option = [[BMKSuggestionSearchOption alloc] init];
-    option.cityname = @"北京";
-    option.keyword  = @"中关村";
+    option.cityname =_cityText.text;
+    //option.
+    if ([_startAddrText isFirstResponder]){
+        option.keyword  =_startAddrText.text;
+        textFieldIndex=1;
+        [_startAddrText resignFirstResponder];
+    }else if ([_wayPointAddrText isFirstResponder]){
+        option.keyword  =_wayPointAddrText.text;
+        textFieldIndex=2;
+        [_wayPointAddrText resignFirstResponder];
+    }else if  ([_endAddrText isFirstResponder]){
+        option.keyword  =_endAddrText.text;
+        textFieldIndex=3;
+        [_endAddrText resignFirstResponder];
+    }else{
+        textFieldIndex=0;
+        [PromptInfo showText:@"不是选中"];
+        return;
+    }
     BOOL flag = [_searchersuggestionSearch suggestionSearch:option];
     //[option release];
     if(flag)
@@ -292,8 +353,16 @@
 
 - (void) dealloc{
     //Unregister notifications
-    //[[NSNotificationCenter defaultCenter] removeObserver:self];
-    //[_searchersuggestionSearch
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    if(_searchersuggestionSearch!=nil){
+        _searchersuggestionSearch=nil;
+    }
+    if (_routesearch!=nil) {
+        _routesearch=nil;
+    }
+    if (_mapView!=nil) {
+        _mapView=nil;
+    }
 }
 
 
@@ -393,7 +462,16 @@
 - (void)onGetSuggestionResult:(BMKSuggestionSearch*)searcher result:(BMKSuggestionResult*)result errorCode:(BMKSearchErrorCode)error{
     if (error == BMK_SEARCH_NO_ERROR) {
         //在此处理正常结果
-    }
+        //
+        if (result) {
+            [sugesstPOIs removeAllObjects];
+            tableView.hidden=NO;
+            for (NSString *key in result.keyList) {
+                 [sugesstPOIs addObject:key];
+            }
+        }
+        [tableView reloadData];
+     }
     else {
         NSLog(@"抱歉，未找到结果");
     }
@@ -427,7 +505,7 @@
 	if (error == BMK_SEARCH_NO_ERROR) {
         BMKDrivingRouteLine* plan = (BMKDrivingRouteLine*)[result.routes objectAtIndex:0];
         // 计算路线方案中的路段数目
-		int size = [plan.steps count];
+		int size = (int)[plan.steps count];
 		int planPointCounts = 0;
 		for (int i = 0; i < size; i++) {
             BMKDrivingStep* transitStep = [plan.steps objectAtIndex:i];
@@ -551,6 +629,7 @@
     if(flag)
     {
         NSLog(@"search success.");
+        self.controllerView.hidden=!self.controllerView.hidden;
     }
     else
     {

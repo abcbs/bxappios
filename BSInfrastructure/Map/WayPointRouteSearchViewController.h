@@ -31,12 +31,18 @@
     
     BMKRouteSearch* _routesearch;
     BMKSuggestionSearch* _searchersuggestionSearch;
+    
+    
 }
 
+@property (strong, nonatomic) IBOutlet UIView *controllerView;
+
 -(IBAction)onDriveSearch;
+
 - (IBAction)textFiledReturnEditing:(id)sender;
 //键盘按钮
 - (IBAction)keyAction:(id)sender;
 
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 @end
