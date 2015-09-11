@@ -258,19 +258,18 @@
     self.controllerScollerView.frame=scrollViewframe;
 }
 
--(BOOL)textFieldShouldReturn:(UITextField *)textField
-{
-     //self.controllerScollerView.frame=scrollViewframe;
-     [textField resignFirstResponder];
-     return YES;
-}
-
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
     frameTextFirstResponder=textField.frame;
     
 }
 
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+     //self.controllerScollerView.frame=scrollViewframe;
+     [textField resignFirstResponder];
+     return YES;
+}
 
 
 -(void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration

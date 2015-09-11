@@ -943,7 +943,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="XX地" borderStyle="roundedRect" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E7e-dW-WD8">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="天安门" borderStyle="roundedRect" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E7e-dW-WD8">
                                                 <rect key="frame" x="198" y="130" width="103" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -1049,7 +1049,7 @@
                                         </connections>
                                     </segmentedControl>
                                 </subviews>
-                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.42977059998077616" green="0.0" blue="0.05487078467719219" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="7Gi-oD-d37" firstAttribute="top" secondItem="rlx-0R-CiK" secondAttribute="top" constant="218" id="3EY-Zc-nOQ"/>
@@ -1072,6 +1072,14 @@
                                     <constraint firstItem="SPl-Et-BtR" firstAttribute="top" secondItem="HOb-xo-ibc" secondAttribute="bottom" constant="24" id="ziJ-7w-BnU"/>
                                 </constraints>
                             </view>
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="WzL-SV-g9Y" userLabel="建议词查询">
+                                <rect key="frame" x="0.0" y="330" width="320" height="168"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="168" id="LHk-0N-VSP"/>
+                                    <constraint firstAttribute="width" constant="320" id="akc-gd-edF"/>
+                                </constraints>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -1079,10 +1087,13 @@
                             <constraint firstItem="l44-dG-ia0" firstAttribute="top" secondItem="3hn-sa-ktv" secondAttribute="bottom" id="Q0U-pf-A7j"/>
                             <constraint firstItem="dev-Lg-41E" firstAttribute="leading" secondItem="T0k-ti-7HW" secondAttribute="leadingMargin" constant="-16" id="S1F-nj-qrw"/>
                             <constraint firstItem="3hn-sa-ktv" firstAttribute="top" secondItem="T0k-ti-7HW" secondAttribute="topMargin" id="SNm-B4-mth"/>
+                            <constraint firstItem="WzL-SV-g9Y" firstAttribute="leading" secondItem="T0k-ti-7HW" secondAttribute="leadingMargin" constant="-16" id="U2D-d8-b2e"/>
                             <constraint firstItem="dev-Lg-41E" firstAttribute="top" secondItem="T0k-ti-7HW" secondAttribute="topMargin" constant="22" id="UUZ-c7-JHr"/>
                             <constraint firstAttribute="trailingMargin" secondItem="rlx-0R-CiK" secondAttribute="trailing" constant="-16" id="Vxa-vr-KRM"/>
                             <constraint firstAttribute="bottomMargin" secondItem="dev-Lg-41E" secondAttribute="bottom" constant="40" id="WXJ-Xf-uK6"/>
                             <constraint firstItem="rlx-0R-CiK" firstAttribute="leading" secondItem="T0k-ti-7HW" secondAttribute="leadingMargin" constant="-16" id="agl-4J-j87"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="WzL-SV-g9Y" secondAttribute="trailing" constant="-16" id="bR9-py-SKw"/>
+                            <constraint firstItem="WzL-SV-g9Y" firstAttribute="top" secondItem="rlx-0R-CiK" secondAttribute="bottom" constant="10" id="dyI-bm-wyc"/>
                             <constraint firstItem="rlx-0R-CiK" firstAttribute="top" secondItem="T0k-ti-7HW" secondAttribute="topMargin" constant="44" id="jLu-zU-Hwl"/>
                             <constraint firstItem="3hn-sa-ktv" firstAttribute="leading" secondItem="T0k-ti-7HW" secondAttribute="leadingMargin" constant="-16" id="uLC-iS-wiu"/>
                             <constraint firstAttribute="trailingMargin" secondItem="dev-Lg-41E" secondAttribute="trailing" constant="-16" id="xVb-CN-bUe"/>
@@ -1139,6 +1150,7 @@
                         <outlet property="sharedShortUrl" destination="Sxc-4G-cUj" id="ryW-2s-bPt"/>
                         <outlet property="startBtn" destination="Nn3-aj-8Fb" id="1Ry-b0-nmh"/>
                         <outlet property="stopBtn" destination="Kbd-00-Pzn" id="pj3-5k-oTj"/>
+                        <outlet property="sugestTableView" destination="WzL-SV-g9Y" id="96F-dC-dfp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4xI-d5-iWw" userLabel="First Responder" sceneMemberID="firstResponder"/>

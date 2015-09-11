@@ -66,6 +66,8 @@
     //[self initSubViews];
     
     [self modifiedStyle];
+    
+    [self configSuggestTextFiled];
 
 }
 
@@ -340,6 +342,10 @@
 #pragma mark -键盘事件
 -(void)keyboardDone:(id)sender{
     BSLog(@"键盘事件-确定查询");
+}
+
+-(void)configSuggestTextFiled{
+    
 }
 
 //设置代理

@@ -49,6 +49,7 @@
     [self modifiedStyle];
     
     [self registerForKeyboardNotifications];
+    [self configSuggestTextFiled];
 }
 
 
@@ -144,6 +145,10 @@
 - (void)keyboardWillBeHidden:(NSNotification*)aNotification
 {
     //do something
+}
+
+-(void)configSuggestTextFiled{
+    
 }
 -(UIToolbar *)keyboardToolBar{
     if (_keyboardToolBar==nil) {

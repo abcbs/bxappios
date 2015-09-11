@@ -19,6 +19,7 @@
 #define MYBUNDLE_PATH [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent: MYBUNDLE_NAME]
 #define MYBUNDLE [NSBundle bundleWithPath: MYBUNDLE_PATH]
 
+static const char *const kOperationQueueName = "kESSLocationCheckOperationQueueName";
 @interface RouteAnnotation : BMKPointAnnotation
 {
     int _type; ///<0:起点 1：终点 2：公交 3：地铁 4:驾乘 5:途经点
@@ -100,6 +101,18 @@
     //如果是定位功能时，无需显示坐标提示框,如果是默认值NO,则提示
     BOOL isLocationPrompt;
     
+    //定义检查是否是需要实时定位的队列
+    dispatch_queue_t _beaconOperationsQueue;
+    
+    //
+    //建议查询结果
+    NSMutableArray *sugesstPOIs;
+    //当前输入框
+    int textFieldIndex;
+    //
+    //如果中间仍然没有选中，则使用中间值选择，它来自TableView
+    NSString *searchKey;
+    
 }
 @end
 
@@ -160,6 +173,22 @@
     self.navigationItem.rightBarButtonItem.tintColor=[UIColor whiteColor];
     //默认定位动作
     [self locatingWithConfig];
+
+    //创建一个自定义的串行队列,队列的属性被保留供将来使用，应该为NULL
+    _beaconOperationsQueue =
+    dispatch_queue_create(kOperationQueueName, NULL);
+    [self startScanningLocation];
+    
+    //建议词
+    sugestTableView.delegate = self;
+    sugestTableView.dataSource = self;
+    sugestTableView.scrollEnabled = YES;
+    sugestTableView.clipsToBounds = YES;
+    sugestTableView.hidden=YES;
+    sugestTableView.opaque=YES;
+    
+    sugesstPOIs=[NSMutableArray array];
+
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -507,6 +536,12 @@
     return annotationView;
 }
 
+#pragma mark -线路规划
+- (BMKAnnotationView *)mapView:(BMKMapView *)view viewForRouteAnnotation:(id <BMKAnnotation>)annotation
+{
+    return [self getRouteAnnotationView:view viewForAnnotation:(RouteAnnotation*)annotation];
+
+}
 #pragma mark -一般查找
 - (BMKAnnotationView *)mapView:(BMKMapView *)view viewForCommonAnnotation:(id <BMKAnnotation>)annotation{
     NSString *AnnotationViewID = @"annotationViewID";
@@ -558,6 +593,11 @@
     if ([annotation isKindOfClass:[MyFavoriteAnnotation class]]) {
         return [self mapView:view  viewForFavoriteAnnotation:annotation];
     }
+    //线路规划
+    if ([annotation isKindOfClass:[RouteAnnotation class]]) {
+        return [self mapView:view viewForRouteAnnotation:annotation];
+    }
+    
     //画当前点
     //searchPointAnnotation
     if (annotation == searchPointAnnotation) {
@@ -579,6 +619,14 @@
         circleView.lineWidth = 1.0;
         
         return circleView;
+    }
+    //线路规划
+    if ([overlay isKindOfClass:[BMKPolyline class]]) {
+        BMKPolylineView* polylineView = [[BMKPolylineView alloc] initWithOverlay:overlay];
+        polylineView.fillColor = [[UIColor cyanColor] colorWithAlphaComponent:1];
+        polylineView.strokeColor = [[UIColor blueColor] colorWithAlphaComponent:0.7];
+        polylineView.lineWidth = 3.0;
+        return polylineView;
     }
     return nil;
 }
@@ -888,13 +936,201 @@
     }
 }
 
-//建议检索
-//实现Delegate处理回调结果
-- (void)onGetSuggestionResult:(BMKSuggestionSearch*)searcher result:(BMKSuggestionResult*)result errorCode:(BMKSearchErrorCode)error{
+#pragma mark -线路规划检索
+#pragma mark -Bus
+- (void)onGetTransitRouteResult:(BMKRouteSearch*)searcher result:(BMKTransitRouteResult*)result errorCode:(BMKSearchErrorCode)error
+{
+    NSArray* array = [NSArray arrayWithArray:_mapView.annotations];
+    [_mapView removeAnnotations:array];
+    array = [NSArray arrayWithArray:_mapView.overlays];
+    [_mapView removeOverlays:array];
     if (error == BMK_SEARCH_NO_ERROR) {
-        //在此处理正常结果
+        BMKTransitRouteLine* plan = (BMKTransitRouteLine*)[result.routes objectAtIndex:0];
+        // 计算路线方案中的路段数目
+        int size = (int)[plan.steps count];
+        int planPointCounts = 0;
+        for (int i = 0; i < size; i++) {
+            BMKTransitStep* transitStep = [plan.steps objectAtIndex:i];
+            if(i==0){
+                RouteAnnotation* item = [[RouteAnnotation alloc]init];
+                item.coordinate = plan.starting.location;
+                item.title = @"起点";
+                item.type = 0;
+                [_mapView addAnnotation:item]; // 添加起点标注
+                
+            }else if(i==size-1){
+                RouteAnnotation* item = [[RouteAnnotation alloc]init];
+                item.coordinate = plan.terminal.location;
+                item.title = @"终点";
+                item.type = 1;
+                [_mapView addAnnotation:item]; // 添加起点标注
+            }
+            RouteAnnotation* item = [[RouteAnnotation alloc]init];
+            item.coordinate = transitStep.entrace.location;
+            item.title = transitStep.instruction;
+            item.type = 3;
+            [_mapView addAnnotation:item];
+            
+            //轨迹点总数累计
+            planPointCounts += transitStep.pointsCount;
+        }
+        
+        //轨迹点
+        BMKMapPoint * temppoints = new BMKMapPoint[planPointCounts];
+        int i = 0;
+        for (int j = 0; j < size; j++) {
+            BMKTransitStep* transitStep = [plan.steps objectAtIndex:j];
+            int k=0;
+            for(k=0;k<transitStep.pointsCount;k++) {
+                temppoints[i].x = transitStep.points[k].x;
+                temppoints[i].y = transitStep.points[k].y;
+                i++;
+            }
+            
+        }
+        // 通过points构建BMKPolyline
+        BMKPolyline* polyLine = [BMKPolyline polylineWithPoints:temppoints count:planPointCounts];
+        [_mapView addOverlay:polyLine]; // 添加路线overlay
+        delete []temppoints;
+        [self mapViewFitPolyLine:polyLine];
+    }else{
+        [self onGetResultInError:searcher
+                          result:result errorCode:error];
     }
-    else {
+}
+
+#pragma mark -驾车路线
+- (void)onGetDrivingRouteResult:(BMKRouteSearch*)searcher result:(BMKDrivingRouteResult*)result errorCode:(BMKSearchErrorCode)error
+{
+    NSArray* array = [NSArray arrayWithArray:_mapView.annotations];
+    [_mapView removeAnnotations:array];
+    array = [NSArray arrayWithArray:_mapView.overlays];
+    [_mapView removeOverlays:array];
+    if (error == BMK_SEARCH_NO_ERROR) {
+        BMKDrivingRouteLine* plan = (BMKDrivingRouteLine*)[result.routes objectAtIndex:0];
+        // 计算路线方案中的路段数目
+        int size =(int) [plan.steps count];
+        int planPointCounts = 0;
+        for (int i = 0; i < size; i++) {
+            BMKDrivingStep* transitStep = [plan.steps objectAtIndex:i];
+            if(i==0){
+                RouteAnnotation* item = [[RouteAnnotation alloc]init];
+                item.coordinate = plan.starting.location;
+                item.title = @"起点";
+                item.type = 0;
+                [_mapView addAnnotation:item]; // 添加起点标注
+                
+            }else if(i==size-1){
+                RouteAnnotation* item = [[RouteAnnotation alloc]init];
+                item.coordinate = plan.terminal.location;
+                item.title = @"终点";
+                item.type = 1;
+                [_mapView addAnnotation:item]; // 添加起点标注
+            }
+            //添加annotation节点
+            RouteAnnotation* item = [[RouteAnnotation alloc]init];
+            item.coordinate = transitStep.entrace.location;
+            item.title = transitStep.entraceInstruction;
+            item.degree = transitStep.direction * 30;
+            item.type = 4;
+            [_mapView addAnnotation:item];
+            
+            //轨迹点总数累计
+            planPointCounts += transitStep.pointsCount;
+        }
+        // 添加途经点
+        if (plan.wayPoints) {
+            for (BMKPlanNode* tempNode in plan.wayPoints) {
+                RouteAnnotation* item = [[RouteAnnotation alloc]init];
+                item = [[RouteAnnotation alloc]init];
+                item.coordinate = tempNode.pt;
+                item.type = 5;
+                item.title = tempNode.name;
+                [_mapView addAnnotation:item];
+            }
+        }
+        //轨迹点
+        BMKMapPoint * temppoints = new BMKMapPoint[planPointCounts];
+        int i = 0;
+        for (int j = 0; j < size; j++) {
+            BMKDrivingStep* transitStep = [plan.steps objectAtIndex:j];
+            int k=0;
+            for(k=0;k<transitStep.pointsCount;k++) {
+                temppoints[i].x = transitStep.points[k].x;
+                temppoints[i].y = transitStep.points[k].y;
+                i++;
+            }
+            
+        }
+        // 通过points构建BMKPolyline
+        BMKPolyline* polyLine = [BMKPolyline polylineWithPoints:temppoints count:planPointCounts];
+        [_mapView addOverlay:polyLine]; // 添加路线overlay
+        delete []temppoints;
+        [self mapViewFitPolyLine:polyLine];
+    }else{
+        [self onGetResultInError:searcher
+                          result:result errorCode:error];
+    }
+}
+
+#pragma mark -步行
+- (void)onGetWalkingRouteResult:(BMKRouteSearch*)searcher result:(BMKWalkingRouteResult*)result errorCode:(BMKSearchErrorCode)error
+{
+    NSArray* array = [NSArray arrayWithArray:_mapView.annotations];
+    [_mapView removeAnnotations:array];
+    array = [NSArray arrayWithArray:_mapView.overlays];
+    [_mapView removeOverlays:array];
+    if (error == BMK_SEARCH_NO_ERROR) {
+        BMKWalkingRouteLine* plan = (BMKWalkingRouteLine*)[result.routes objectAtIndex:0];
+        int size =(int) [plan.steps count];
+        int planPointCounts = 0;
+        for (int i = 0; i < size; i++) {
+            BMKWalkingStep* transitStep = [plan.steps objectAtIndex:i];
+            if(i==0){
+                RouteAnnotation* item = [[RouteAnnotation alloc]init];
+                item.coordinate = plan.starting.location;
+                item.title = @"起点";
+                item.type = 0;
+                [_mapView addAnnotation:item]; // 添加起点标注
+                
+            }else if(i==size-1){
+                RouteAnnotation* item = [[RouteAnnotation alloc]init];
+                item.coordinate = plan.terminal.location;
+                item.title = @"终点";
+                item.type = 1;
+                [_mapView addAnnotation:item]; // 添加起点标注
+            }
+            //添加annotation节点
+            RouteAnnotation* item = [[RouteAnnotation alloc]init];
+            item.coordinate = transitStep.entrace.location;
+            item.title = transitStep.entraceInstruction;
+            item.degree = transitStep.direction * 30;
+            item.type = 4;
+            [_mapView addAnnotation:item];
+            
+            //轨迹点总数累计
+            planPointCounts += transitStep.pointsCount;
+        }
+        
+        //轨迹点
+        BMKMapPoint * temppoints = new BMKMapPoint[planPointCounts];
+        int i = 0;
+        for (int j = 0; j < size; j++) {
+            BMKWalkingStep* transitStep = [plan.steps objectAtIndex:j];
+            int k=0;
+            for(k=0;k<transitStep.pointsCount;k++) {
+                temppoints[i].x = transitStep.points[k].x;
+                temppoints[i].y = transitStep.points[k].y;
+                i++;
+            }
+            
+        }
+        // 通过points构建BMKPolyline
+        BMKPolyline* polyLine = [BMKPolyline polylineWithPoints:temppoints count:planPointCounts];
+        [_mapView addOverlay:polyLine]; // 添加路线overlay
+        delete []temppoints;
+        [self mapViewFitPolyLine:polyLine];
+    }else{
         [self onGetResultInError:searcher
                           result:result errorCode:error];
     }
@@ -1032,9 +1268,14 @@
         NSString *showmeg=[NSString stringWithFormat:@"查找关键字:%@\t或者在经纬度附近找%@\t发现共计:%lu条,兴趣点标注个数:\t%lu",
             _addrText.text,_keyText.text,(unsigned long)_searchResultPoi.count,(unsigned long)_searchResultPoi.count];
         [PromptInfo showText:showmeg];
-    }  else if (error == BMK_SEARCH_RESULT_NOT_FOUND){
+    }  else if (error==BMK_SEARCH_AMBIGUOUS_KEYWORD){
+        //BMK_SEARCH_AMBIGUOUS_ROURE_ADDR,///<检索地址有岐义
+        [PromptInfo showText:@"检索关键词有岐义,再次检索"];
+        [self searchSugguestPOI];
+    }else if (error == BMK_SEARCH_AMBIGUOUS_ROURE_ADDR){
         //BMK_SEARCH_AMBIGUOUS_ROURE_ADDR,///<检索地址有岐义
         [PromptInfo showText:@"检索地址有岐义"];
+        [self searchSugguestPOI];
     }  else if (error == BMK_SEARCH_NOT_SUPPORT_BUS){
         //BMK_SEARCH_NOT_SUPPORT_BUS,///<该城市不支持公交搜索
         [PromptInfo showText:@"该城市不支持公交搜索"];
@@ -1055,6 +1296,146 @@
        [PromptInfo showText:@"还未完成鉴权，请在鉴权通过后重试"];
     }
     
+}
+
+
+#pragma mark -百度地图建议查询
+- (void)onGetSuggestionResult:(BMKSuggestionSearch*)searcher result:(BMKSuggestionResult*)result errorCode:(BMKSearchErrorCode)error{
+    if (error == BMK_SEARCH_NO_ERROR) {
+        //在此处理正常结果
+        //
+        if (result) {
+            [sugesstPOIs removeAllObjects];
+            sugestTableView.hidden=NO;
+            for (NSString *key in result.keyList) {
+                [sugesstPOIs addObject:key];
+            }
+        }
+        [sugestTableView reloadData];
+    }
+    else {
+        NSLog(@"抱歉，未找到结果");
+    }
+}
+
+#pragma mark -路线规划功能
+- (BMKAnnotationView*)getRouteAnnotationView:(BMKMapView *)mapview viewForAnnotation:(RouteAnnotation*)routeAnnotation
+{
+    BMKAnnotationView* view = nil;
+    switch (routeAnnotation.type) {
+        case 0:
+        {
+            view = [mapview dequeueReusableAnnotationViewWithIdentifier:@"start_node"];
+            if (view == nil) {
+                view = [[BMKAnnotationView alloc]initWithAnnotation:routeAnnotation reuseIdentifier:@"start_node"];
+                view.image = [UIImage imageWithContentsOfFile:[self getMyBundlePath1:@"images/icon_nav_start.png"]];
+                view.centerOffset = CGPointMake(0, -(view.frame.size.height * 0.5));
+                view.canShowCallout = TRUE;
+            }
+            view.annotation = routeAnnotation;
+        }
+            break;
+        case 1:
+        {
+            view = [mapview dequeueReusableAnnotationViewWithIdentifier:@"end_node"];
+            if (view == nil) {
+                view = [[BMKAnnotationView alloc]initWithAnnotation:routeAnnotation reuseIdentifier:@"end_node"];
+                view.image = [UIImage imageWithContentsOfFile:[self getMyBundlePath1:@"images/icon_nav_end.png"]];
+                view.centerOffset = CGPointMake(0, -(view.frame.size.height * 0.5));
+                view.canShowCallout = TRUE;
+            }
+            view.annotation = routeAnnotation;
+        }
+            break;
+        case 2:
+        {
+            view = [mapview dequeueReusableAnnotationViewWithIdentifier:@"bus_node"];
+            if (view == nil) {
+                view = [[BMKAnnotationView alloc]initWithAnnotation:routeAnnotation reuseIdentifier:@"bus_node"];
+                view.image = [UIImage imageWithContentsOfFile:[self getMyBundlePath1:@"images/icon_nav_bus.png"]];
+                view.canShowCallout = TRUE;
+            }
+            view.annotation = routeAnnotation;
+        }
+            break;
+        case 3:
+        {
+            view = [mapview dequeueReusableAnnotationViewWithIdentifier:@"rail_node"];
+            if (view == nil) {
+                view = [[BMKAnnotationView alloc]initWithAnnotation:routeAnnotation reuseIdentifier:@"rail_node"];
+                view.image = [UIImage imageWithContentsOfFile:[self getMyBundlePath1:@"images/icon_nav_rail.png"]];
+                view.canShowCallout = TRUE;
+            }
+            view.annotation = routeAnnotation;
+        }
+            break;
+        case 4:
+        {
+            view = [mapview dequeueReusableAnnotationViewWithIdentifier:@"route_node"];
+            if (view == nil) {
+                view = [[BMKAnnotationView alloc]initWithAnnotation:routeAnnotation reuseIdentifier:@"route_node"];
+                view.canShowCallout = TRUE;
+            } else {
+                [view setNeedsDisplay];
+            }
+            
+            UIImage* image = [UIImage imageWithContentsOfFile:[self getMyBundlePath1:@"images/icon_direction.png"]];
+            view.image = [image imageRotatedByDegrees:routeAnnotation.degree];
+            view.annotation = routeAnnotation;
+            
+        }
+            break;
+        case 5:
+        {
+            view = [mapview dequeueReusableAnnotationViewWithIdentifier:@"waypoint_node"];
+            if (view == nil) {
+                view = [[BMKAnnotationView alloc]initWithAnnotation:routeAnnotation reuseIdentifier:@"waypoint_node"];
+                view.canShowCallout = TRUE;
+            } else {
+                [view setNeedsDisplay];
+            }
+            
+            UIImage* image = [UIImage imageWithContentsOfFile:[self getMyBundlePath1:@"images/icon_nav_waypoint.png"]];
+            view.image = [image imageRotatedByDegrees:routeAnnotation.degree];
+            view.annotation = routeAnnotation;
+        }
+            break;
+        default:
+            break;
+    }
+    
+    return view;
+}
+
+//根据polyline设置地图范围
+- (void)mapViewFitPolyLine:(BMKPolyline *) polyLine {
+    CGFloat ltX, ltY, rbX, rbY;
+    if (polyLine.pointCount < 1) {
+        return;
+    }
+    BMKMapPoint pt = polyLine.points[0];
+    ltX = pt.x, ltY = pt.y;
+    rbX = pt.x, rbY = pt.y;
+    for (int i = 1; i < polyLine.pointCount; i++) {
+        BMKMapPoint pt = polyLine.points[i];
+        if (pt.x < ltX) {
+            ltX = pt.x;
+        }
+        if (pt.x > rbX) {
+            rbX = pt.x;
+        }
+        if (pt.y > ltY) {
+            ltY = pt.y;
+        }
+        if (pt.y < rbY) {
+            rbY = pt.y;
+        }
+    }
+    BMKMapRect rect;
+    rect.origin = BMKMapPointMake(ltX , ltY);
+    rect.size = BMKMapSizeMake(rbX - ltX, rbY - ltY);
+    [_mapView setVisibleMapRect:rect];
+    _mapView.zoomLevel = _mapView.zoomLevel - 0.3;
 }
 
 #pragma mark -百度地图代理方法结束
@@ -1831,6 +2212,22 @@
     
 }
 
+- (void)startScanningLocation {
+    [NSTimer scheduledTimerWithTimeInterval:5
+                                     target:self
+                                   selector:@selector(checkIsLocationPrompt)
+                                   userInfo:nil
+                                    repeats:YES];
+    dispatch_async(_beaconOperationsQueue, ^{
+
+    });
+}
+
+-(void)checkIsLocationPrompt{
+    if (isLocationPrompt) {
+        [self stopLocating];
+    }
+}
 //指南针
 - (IBAction)compassSegAction:(id)sender {
     UISegmentedControl *tempSeg = (UISegmentedControl *)sender;
@@ -1854,7 +2251,7 @@
 -(IBAction)onClickBusSearch
 {
     isPoiShortUrlShare=NO;
-    isLocationPrompt=NO;
+    isLocationPrompt=YES;
     BMKPlanNode* start = [[BMKPlanNode alloc]init];
     start.name = _addrText.text;
     BMKPlanNode* end = [[BMKPlanNode alloc]init];
@@ -1868,18 +2265,20 @@
     
     if(flag)
     {
-        NSLog(@"bus检索发送成功");
+        BSLog(@"bus检索发送成功");
     }
     else
     {
-        NSLog(@"bus检索发送失败");
+        BSLog(@"bus检索发送失败");
+        [PromptInfo showText:@"bus检索发送失败"];
+
     }
 }
 
 -(IBAction)onClickDriveSearch
 {
     isPoiShortUrlShare=NO;
-    isLocationPrompt=NO;
+    isLocationPrompt=YES;
     BMKPlanNode* start = [[BMKPlanNode alloc]init];
     start.name = _addrText.text;
     start.cityName =_cityText.text;
@@ -1893,11 +2292,12 @@
     BOOL flag = [_routesearch drivingSearch:drivingRouteSearchOption];
     if(flag)
     {
-        NSLog(@"car检索发送成功");
+        BSLog(@"car检索发送成功");
     }
     else
     {
-        NSLog(@"car检索发送失败");
+        BSLog(@"car检索发送失败");
+        [PromptInfo showText:@"car检索发送失败"];
     }
     
 }
@@ -1905,7 +2305,7 @@
 -(IBAction)onClickWalkSearch
 {
     isPoiShortUrlShare=NO;
-    isLocationPrompt=NO;
+    isLocationPrompt=YES;
     BMKPlanNode* start = [[BMKPlanNode alloc]init];
     start.name = _addrText.text;
     start.cityName =_cityText.text;
@@ -1920,19 +2320,19 @@
     BOOL flag = [_routesearch walkingSearch:walkingRouteSearchOption];
     if(flag)
     {
-        NSLog(@"walk检索发送成功");
+        BSLog(@"walk检索发送成功");
     }
     else
     {
-        NSLog(@"walk检索发送失败");
+        BSLog(@"walk检索发送失败");
+        [PromptInfo showText:@"walk检索发送失败"];
     }
     
 }
 
 -(IBAction)onClickWayPointSearch{
-    NSLog(@"路径点开始");
     isPoiShortUrlShare=NO;
-    isLocationPrompt=NO;
+    isLocationPrompt=YES;
     WayPointRouteSearchViewController * wayPointCont = [[WayPointRouteSearchViewController alloc]init];
     wayPointCont.title = @"驾车途经点";
     UIBarButtonItem *customLeftBarButtonItem = [[UIBarButtonItem alloc] init];
@@ -1952,4 +2352,128 @@
     }
     return nil ;
 }
+
+#pragma mark -推荐词实现
+-(void)configSuggestTextFiled{
+    _addrText.inputAccessoryView =[self keyboardToolBar];
+    _endAddrText.inputAccessoryView =[self keyboardToolBar];
+    _endCityText.inputAccessoryView =[self keyboardToolBar];
+}
+
+-(void)keyboardDone:(id)sender{
+     isLocationPrompt=YES;
+    _addrText.inputAccessoryView =[self keyboardToolBar];
+    _endAddrText.inputAccessoryView =[self keyboardToolBar];
+    _endCityText.inputAccessoryView =[self keyboardToolBar];
+    BMKSuggestionSearchOption* option = [[BMKSuggestionSearchOption alloc] init];
+    option.cityname =_cityText.text;
+    
+    if ([_addrText isFirstResponder]){
+        option.keyword  =_addrText.text;
+        textFieldIndex=1;
+        [_addrText resignFirstResponder];
+    }else if ([_endCityText isFirstResponder]){
+        option.keyword  =_endCityText.text;
+        textFieldIndex=2;
+        [_endCityText resignFirstResponder];
+    }else if  ([_endAddrText isFirstResponder]){
+        option.keyword  =_endAddrText.text;
+        textFieldIndex=3;
+        [_endAddrText resignFirstResponder];
+    }else{
+        textFieldIndex=0;
+        [PromptInfo showText:@"不是选中的输入域"];
+        return;
+    }
+    
+    BOOL flag = [_suggestionsearch suggestionSearch:option];
+    //[option release];
+    if(flag)
+    {
+        BSLog(@"建议检索发送成功");
+    }
+    else
+    {
+        BSLog(@"建议检索发送失败");
+        [PromptInfo showText:@"建议检索发送失败"];
+    }
+
+}
+
+-(void)searchSugguestPOI{
+    BMKSuggestionSearchOption* option = [[BMKSuggestionSearchOption alloc] init];
+    option.cityname =_cityText.text;
+    if (![searchKey isEqualToString:@""]) {
+        option.keyword=searchKey;
+    }else{
+        //textFieldIndex=0;
+        [PromptInfo showText:@"再次查询没有获取到建议值"];
+        return;
+    }
+    BOOL flag = [_suggestionsearch suggestionSearch:option];
+    //[option release];
+    if(flag)
+    {
+        BSLog(@"建议检索发送成功");
+    }
+    else
+    {
+        BSLog(@"建议检索发送失败");
+        [PromptInfo showText:@"建议检索发送失败"];
+    }
+    
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    BSLog(@"textFieldDidBeginEditing");
+    [super textFieldDidBeginEditing:textField];
+    //frameTextFirstResponder=textField.frame;
+    
+}
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    BSLog(@"textFieldShouldReturn");
+    [super textFieldShouldReturn:textField];
+    //self.controllerScollerView.frame=scrollViewframe;
+    [textField resignFirstResponder];
+    return YES;
+}
+
+- (NSInteger)tableView:(UITableView *)tableview numberOfRowsInSection:(NSInteger)section {
+    return sugesstPOIs.count;
+}
+
+- (UITableViewCell*)tableView:(UITableView *)tableview cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *CellIdentifier = @"BaiduMapSeguestCell";
+    
+    UITableViewCell *cell = [tableview dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+    }
+    cell.textLabel.text = [sugesstPOIs objectAtIndex:indexPath.row];
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableview didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableview deselectRowAtIndexPath:indexPath animated:YES];
+    
+    searchKey= [sugesstPOIs objectAtIndex: indexPath.row];
+
+    if (textFieldIndex==1){
+        _addrText.text=searchKey;
+        [_addrText resignFirstResponder];
+    }else if (textFieldIndex==2){
+        _endCityText.text=searchKey;
+        [_endCityText resignFirstResponder];
+        
+    }else if (textFieldIndex==3){
+        _endAddrText.text=searchKey;
+        [_endAddrText resignFirstResponder];
+        
+    }
+    sugestTableView.hidden=YES;
+}
+
 @end

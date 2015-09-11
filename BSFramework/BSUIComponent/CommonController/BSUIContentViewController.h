@@ -25,4 +25,6 @@
 -(void)keyboardDone:(id)sender;
 -(void) delelageForTextField;
 -(void) initSubViews;
+
+-(void)configSuggestTextFiled;
 @end

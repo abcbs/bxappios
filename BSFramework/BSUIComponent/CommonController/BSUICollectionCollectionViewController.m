@@ -70,6 +70,10 @@
     [self initSubViews];
     
     [self modifiedStyle];
+    
+    [self registerForKeyboardNotifications];
+    
+    [self configSuggestTextFiled];
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -255,6 +259,9 @@
     return _keyboardToolBar;
 }
 
+-(void)configSuggestTextFiled{
+    
+}
 -(void) keyNotification : (NSNotification *) notification
 {
     NSLog(@"%@", notification.userInfo);

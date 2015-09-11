@@ -58,6 +58,8 @@
     
     [self registerForKeyboardNotifications];
     
+    [self configSuggestTextFiled];
+    
 }
 
 
@@ -269,6 +271,10 @@
 -(void)delelageForTextField{
     BSLog(@"设置Text");
     
+    
+}
+
+-(void)configSuggestTextFiled{
     
 }
 

@@ -40,6 +40,7 @@
     
     [self registerForKeyboardNotifications];
     
+    [self configSuggestTextFiled];
     
 }
 
@@ -236,6 +237,9 @@
     [textView resignFirstResponder];
 }
 
+-(void)configSuggestTextFiled{
+    
+}
 #pragma mark -
 
 #pragma mark -键盘添加Button

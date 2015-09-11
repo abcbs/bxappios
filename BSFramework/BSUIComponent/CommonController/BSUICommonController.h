@@ -41,5 +41,5 @@
 -(void)keyboardDone:(id)sender;
 -(void) delelageForTextField;
 - (void)keyboardWillBeHidden:(NSNotification*)aNotification;
-
+-(void)configSuggestTextFiled;
 @end

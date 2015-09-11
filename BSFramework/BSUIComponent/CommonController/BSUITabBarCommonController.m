@@ -47,7 +47,10 @@
     
     [self modifiedStyle];
     
+    
     [self registerForKeyboardNotifications];
+    
+    [self configSuggestTextFiled];
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder
@@ -75,6 +78,8 @@
     //[self initSubViews];
     
     [self modifiedStyle];
+    
+    [self configSuggestTextFiled];
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -220,6 +225,10 @@
 -(void)delelageForTextField{
     BSLog(@"设置Text");
     
+    
+}
+
+-(void)configSuggestTextFiled{
     
 }
 

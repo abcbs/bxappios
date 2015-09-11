@@ -60,6 +60,8 @@
     [self modifiedStyle];
     
     [self registerForKeyboardNotifications];
+    
+    [self configSuggestTextFiled];
 }
 
 - (void)viewDidAppear:(BOOL)animated{
@@ -256,6 +258,9 @@
     
 }
 
+-(void)configSuggestTextFiled{
+    
+}
 - (void)initSubViews{
     BSLog(@"子视图修改");
 }

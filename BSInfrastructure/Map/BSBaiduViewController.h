@@ -12,7 +12,7 @@
 #import <MessageUI/MessageUI.h>
 #import <MessageUI/MFMessageComposeViewController.h>
 
-@interface BSBaiduViewController : BSUICommonController<BMKMapViewDelegate,BMKGeoCodeSearchDelegate,BMKPoiSearchDelegate, BMKSuggestionSearchDelegate,BMKLocationServiceDelegate,BMKShareURLSearchDelegate,BMKRouteSearchDelegate,UIGestureRecognizerDelegate,MFMessageComposeViewControllerDelegate>{
+@interface BSBaiduViewController : BSUICommonController<BMKMapViewDelegate,BMKGeoCodeSearchDelegate,BMKPoiSearchDelegate, BMKSuggestionSearchDelegate,BMKLocationServiceDelegate,BMKShareURLSearchDelegate,BMKRouteSearchDelegate,UIGestureRecognizerDelegate,MFMessageComposeViewControllerDelegate,UITableViewDataSource, UITableViewDelegate>{
     
     BMKGeoCodeSearch* _geocodesearch;
     BMKPoiSearch* _poisearch;
@@ -34,6 +34,9 @@
     //定位与检索
     
     IBOutlet UIView *localtionUIControllerView;
+    
+    //推荐词的TableView
+    IBOutlet UITableView *sugestTableView;
     
     //控制器段显示
     IBOutlet UISegmentedControl *controllerSegmented;
@@ -216,5 +219,7 @@
 
 //驾车途径
 -(IBAction)onClickWayPointSearch;
+
+
 
 @end
