@@ -156,6 +156,8 @@
     //设置指南针位置
     
     self.navigationItem.rightBarButtonItem.tintColor=[UIColor whiteColor];
+    //默认定位动作
+    [self locatingWithConfig];
     
 }
 
@@ -173,6 +175,9 @@
 
     [self initSubViews];
     [self hideController];
+    
+    //默认定位动作
+    [self locatingWithConfig];
     
 }
 
@@ -266,6 +271,7 @@
     
     //
     _endAddrText.delegate=self;
+ 
    
     
 }
@@ -419,7 +425,7 @@
     BSLog(@"当选中一个annotation views时，调用此接口");
     id <BMKAnnotation> annotation =view.annotation;
     //annotation	MySearchAnnotation *	0x17106bf80	0x000000017106bf80
-    CLLocationCoordinate2D coordinate;
+    //CLLocationCoordinate2D coordinate;
 
     if ([annotation isKindOfClass:[MySearchAnnotation class]]){
         //
@@ -438,7 +444,7 @@
  */
 - (void)mapView:(BMKMapView *)mapView annotationViewForBubble:(BMKAnnotationView *)view{
     BSLog(@"当点击annotation view弹出的泡泡时，调用此接口");
-    id <BMKAnnotation> annotation =view.annotation;
+    //id <BMKAnnotation> annotation =view.annotation;
 }
 
 
@@ -1633,14 +1639,7 @@
 //普通态
 -(IBAction)startLocation:(id)sender
 {
-    isPoiShortUrlShare=NO;
-    BSLog(@"进入普通定位态");
-    //
-    //[_mapView setZoomLevel:16];
-    [_locService startUserLocationService];
-    _mapView.showsUserLocation = NO;//先关闭显示的定位图层
-    _mapView.userTrackingMode = BMKUserTrackingModeNone;//设置定位的状态
-    _mapView.showsUserLocation = YES;//显示定位图层
+    [self locatingMap];
     [startBtn setEnabled:NO];
     [startBtn setAlpha:0.6];
     [stopBtn setEnabled:YES];
@@ -1650,6 +1649,31 @@
     [followingBtn setEnabled:YES];
     [followingBtn setAlpha:1.0];
 }
+
+-(void)locatingWithConfig{
+    if (!self.noCurrentLocation) {
+        [self locatingMap];
+    }
+   [self reverseGeocode];
+   [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(stopLocating) userInfo:nil repeats:NO];
+    //[self stopLocating];
+}
+
+
+//普通态
+-(void)locatingMap
+{
+    isPoiShortUrlShare=NO;
+    BSLog(@"进入普通定位态");
+    //
+    //[_mapView setZoomLevel:16];
+    [_locService startUserLocationService];
+    _mapView.showsUserLocation = NO;//先关闭显示的定位图层
+    _mapView.userTrackingMode = BMKUserTrackingModeNone;//设置定位的状态
+    _mapView.showsUserLocation = YES;//显示定位图层
+    
+}
+
 //罗盘态
 -(IBAction)startFollowHeading:(id)sender
 {
@@ -1680,9 +1704,16 @@
 //跟随态
 -(IBAction)startFollowing:(id)sender
 {
+    [self locationFollowing];
+    
+}
+
+//跟随态
+-(void)locationFollowing
+{
     BSLog(@"进入跟随态");
     isPoiShortUrlShare=NO;
-     [_mapView setZoomLevel:18];
+    [_mapView setZoomLevel:18];
     _mapView.showsUserLocation = NO;
     _mapView.userTrackingMode = BMKUserTrackingModeFollow;
     _mapView.showsUserLocation = YES;
@@ -1691,7 +1722,12 @@
 //停止定位
 -(IBAction)stopLocation:(id)sender
 {
-     [_mapView setZoomLevel:14];
+    [self stopLocating];
+}
+
+-(void)stopLocating
+{
+    [_mapView setZoomLevel:14];
     isPoiShortUrlShare=NO;
     [_locService stopUserLocationService];
     _mapView.showsUserLocation = NO;
@@ -1704,7 +1740,6 @@
     [startBtn setEnabled:YES];
     [startBtn setAlpha:1.0];
 }
-
 /**
  *在地图View将要启动定位时，会调用此函数
  *@param mapView 地图View
@@ -1736,7 +1771,9 @@
     NSString* showmeg = [NSString stringWithFormat:@"定位信息:%@,\r\n当前经度:%f,当前纬度:%f,\r\nZoomLevel=%d;RotateAngle=%d;OverlookAngle=%d", userLocation.title,
                          userLocation.location.coordinate.longitude ,userLocation.location.coordinate.latitude, (int)_mapView.zoomLevel,_mapView.rotation,_mapView.overlooking];
     _showMsgLabel.text = showmeg;
-    _addrText.text=userLocation.title;
+    if (self.noCurrentLocation) {
+        _addrText.text=userLocation.title;
+    }
     _coordinateYText.text=[NSString stringWithFormat:@"%f",userLocation.location.coordinate.latitude];
     _coordinateXText.text=[NSString stringWithFormat:@"%f",userLocation.location.coordinate.longitude];
     
