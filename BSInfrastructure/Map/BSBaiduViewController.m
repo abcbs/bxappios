@@ -575,7 +575,6 @@
 {
     // 清楚屏幕中所有的annotation
     NSArray* annotations = [NSArray arrayWithArray:_mapView.annotations];
-    BOOL isSearchPOI=NO;
     /*
     if (annotations.count>0) {
         BMKPointAnnotation *searchPOIAnn= annotations[0];
@@ -640,6 +639,7 @@
 
 
                 }
+                isPoiShortUrlShare=NO;
             }
             [self searchByBMKPoiDetailSearchOption:poi.uid];
             //计算同关键点的距离
@@ -672,6 +672,11 @@
     } else {
         //搜索出现异常时
         [self onGetResultInError:searcher result:result errorCode:error];
+        _nextPageButton.enabled=NO;
+        //点击下一条时
+        if (_searchResultPoi.count>0){
+            [_mapView addAnnotations:_searchResultAnn];
+        }
     }
 }
 
@@ -832,7 +837,7 @@
         }
         sharedShortUrl.text=shortUrl;
         browseSharedShortUrlBtn.enabled=YES;
-        sharedShowmeg = [NSString stringWithFormat:@"这里是:%@\r\n%@\r\n%@",sharedGeoName,sharedAddr,shortUrl];
+        sharedShowmeg = [NSString stringWithFormat:@"短串分享:%@\r\n%@\r\n%@",sharedGeoName,sharedAddr,shortUrl];
         UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:@"短串分享" message:sharedShowmeg delegate:self cancelButtonTitle:nil otherButtonTitles:@"分享",@"取消",nil];
         myAlertView.tag = 1000;
         [myAlertView show];
@@ -1293,6 +1298,13 @@
 {
     //反向
     isGeoSearch = false;
+    isPoiShortUrlShare=NO;
+    [self reverseGeocode];
+}
+
+#pragma mark -点击事件，根据经纬度获取地理信息
+-(void)reverseGeocode
+{
     CLLocationCoordinate2D pt = (CLLocationCoordinate2D){0, 0};
     if (_coordinateXText.text != nil && _coordinateYText.text != nil) {
         pt = (CLLocationCoordinate2D){[_coordinateYText.text floatValue], [_coordinateXText.text floatValue]};
@@ -1313,10 +1325,12 @@
     
 }
 
+
 #pragma mark -根据经纬度找地址
 -(IBAction)onClickGeocode
 {
     isGeoSearch = true;
+    isPoiShortUrlShare=NO;
     BMKGeoCodeSearchOption *geocodeSearchOption = [[BMKGeoCodeSearchOption alloc]init];
     geocodeSearchOption.city= _cityText.text;
     geocodeSearchOption.address = _addrText.text;
@@ -1351,8 +1365,14 @@
     //首先查出经纬度
     //对话框是否显示
     isShowCoordInfo=YES;
-    [self onClickGeocode];
+    isPoiShortUrlShare=NO;
+    //[self onClickGeocode];
     [_searchResultPoi removeAllObjects];
+    [_searchResultAnn removeAllObjects];
+    //按照兴趣点检索时，下一页按钮是否可用
+    if (!_nextPageButton.enabled) {
+        _nextPageButton.enabled=YES;
+    }
     //如果有兴趣点
     NSArray* array = [NSArray arrayWithArray:_mapView.annotations];
     [_mapView removeAnnotations:array];
@@ -1365,6 +1385,7 @@
 }
 
 -(IBAction)onClickNextPage{
+    isPoiShortUrlShare=NO;
     curPage++;
     if ([_keyText.text isEqualToString:@""]) {
         [self searchByBMKCitySearchOption];
@@ -1453,7 +1474,7 @@
 -(IBAction)reverseGeoShortUrlShare{
     //坐标
     isPoiShortUrlShare=YES;
-    [self onClickReverseGeocode];
+    [self reverseGeocode];
 }
 //显示共享的短URL
 - (IBAction)browseSharedShortUrlAction:(id)sender {
@@ -1470,7 +1491,7 @@
 //收藏
 - (IBAction)saveAction:(id)sender{
     //[self saveAction];
-
+    isPoiShortUrlShare=NO;
     CLLocationCoordinate2D coor = (CLLocationCoordinate2D){0, 0};
     if (_coordinateXText.text != nil && _coordinateYText.text != nil) {
         coor = (CLLocationCoordinate2D){[_coordinateYText.text floatValue], [_coordinateXText.text floatValue]};
@@ -1541,6 +1562,7 @@
 }
 //展现所有客户端收藏数据
 - (IBAction)getAllAction:(id)sender{
+    isPoiShortUrlShare=NO;
     NSArray *favPois = [_favManager getAllFavPois];
     if (favPois == nil) {
         return;
@@ -1606,6 +1628,7 @@
 //普通态
 -(IBAction)startLocation:(id)sender
 {
+    isPoiShortUrlShare=NO;
     BSLog(@"进入普通定位态");
     //
     //[_mapView setZoomLevel:16];
@@ -1626,6 +1649,7 @@
 -(IBAction)startFollowHeading:(id)sender
 {
     BSLog(@"进入罗盘态");
+    isPoiShortUrlShare=NO;
     [_mapView setZoomLevel:16];
     _mapView.showsUserLocation = NO;
     _mapView.userTrackingMode = BMKUserTrackingModeFollowWithHeading;
@@ -1652,6 +1676,7 @@
 -(IBAction)startFollowing:(id)sender
 {
     BSLog(@"进入跟随态");
+    isPoiShortUrlShare=NO;
      [_mapView setZoomLevel:18];
     _mapView.showsUserLocation = NO;
     _mapView.userTrackingMode = BMKUserTrackingModeFollow;
@@ -1662,6 +1687,7 @@
 -(IBAction)stopLocation:(id)sender
 {
      [_mapView setZoomLevel:14];
+    isPoiShortUrlShare=NO;
     [_locService stopUserLocationService];
     _mapView.showsUserLocation = NO;
     [stopBtn setEnabled:NO];
@@ -1759,6 +1785,7 @@
 
 -(IBAction)onClickBusSearch
 {
+    isPoiShortUrlShare=NO;
     BMKPlanNode* start = [[BMKPlanNode alloc]init];
     start.name = _addrText.text;
     BMKPlanNode* end = [[BMKPlanNode alloc]init];
@@ -1782,6 +1809,7 @@
 
 -(IBAction)onClickDriveSearch
 {
+    isPoiShortUrlShare=NO;
     BMKPlanNode* start = [[BMKPlanNode alloc]init];
     start.name = _addrText.text;
     start.cityName =_cityText.text;
@@ -1806,7 +1834,7 @@
 
 -(IBAction)onClickWalkSearch
 {
-    
+    isPoiShortUrlShare=NO;
     BMKPlanNode* start = [[BMKPlanNode alloc]init];
     start.name = _addrText.text;
     start.cityName =_cityText.text;
@@ -1832,6 +1860,7 @@
 
 -(IBAction)onClickWayPointSearch{
     NSLog(@"路径点开始");
+    isPoiShortUrlShare=NO;
     WayPointRouteSearchViewController * wayPointCont = [[WayPointRouteSearchViewController alloc]init];
     wayPointCont.title = @"驾车途经点";
     UIBarButtonItem *customLeftBarButtonItem = [[UIBarButtonItem alloc] init];
