@@ -1012,9 +1012,9 @@
         
     } else if (error == BMK_SEARCH_RESULT_NOT_FOUND){
         //BMK_SEARCH_RESULT_NOT_FOUND,///<没有找到检索结果
-        BSLog(@"查找结束,总共发现POI为:\t%lu",(unsigned long)_searchResultPoi.count);
-        NSString *showmeg=[NSString stringWithFormat:@"查找关键字:%@\t或者在经纬度附近找%@\t发现共计:%lu条",
-                           _addrText.text,_keyText.text,(unsigned long)_searchResultPoi.count];
+        BSLog(@"查找结束,总共发现POI为:\t%lu,兴趣点标注个数:\t%lu",(unsigned long)_searchResultPoi.count,(unsigned long)_searchResultPoi.count);
+        NSString *showmeg=[NSString stringWithFormat:@"查找关键字:%@\t或者在经纬度附近找%@\t发现共计:%lu条,兴趣点标注个数:\t%lu",
+            _addrText.text,_keyText.text,(unsigned long)_searchResultPoi.count,(unsigned long)_searchResultPoi.count];
         [PromptInfo showText:showmeg];
     }  else if (error == BMK_SEARCH_RESULT_NOT_FOUND){
         //BMK_SEARCH_AMBIGUOUS_ROURE_ADDR,///<检索地址有岐义
@@ -1374,8 +1374,8 @@
         _nextPageButton.enabled=YES;
     }
     //如果有兴趣点
-    NSArray* array = [NSArray arrayWithArray:_mapView.annotations];
-    [_mapView removeAnnotations:array];
+    [_mapView removeAnnotations:_mapView.annotations];
+    [_mapView removeOverlays:_mapView.overlays];
     curPage = 0;
     if ([_keyText.text isEqualToString:@""]) {
         [self searchByBMKCitySearchOption];
