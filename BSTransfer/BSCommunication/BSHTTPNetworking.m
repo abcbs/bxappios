@@ -136,9 +136,15 @@ static int loginRetryNumber;
     block:(BSHTTPResponse)block
     errorUILabel:( UILabel *)errorUILabel
 {
+    //增加网络连接可用性判断
+    NSString *netStatus =[[BSNetworkNotify sharedBSNetworkNotify] currentNetworkReachability];
+    if (![netStatus isEqualToString:@"AppNetOK"]) {
+        return ;
+    }
     NSLog(@"本次请求URL\t%@",KBS_URL);
     NSLog(@"本次请求路径为%@",restPath);
     NSLog(@"本次请求方法GET");
+    
     uri=pathPattern;
     httpMethod=@"GET";
     uri=[[NSString alloc]initWithFormat:@"%@%@",KBS_URL,pathPattern];
@@ -217,6 +223,11 @@ static int loginRetryNumber;
     NSLog(@"本次请求路径为\t%@",restPath);
     NSLog(@"本次请求参数\t%@",parameters);
     NSLog(@"本次请求方法POST");
+    //增加网络连接可用性判断
+    NSString *netStatus =[[BSNetworkNotify sharedBSNetworkNotify] currentNetworkReachability];
+    if (![netStatus isEqualToString:@"AppNetOK"]) {
+        return ;
+    }
     //uri=pathPattern;
     uri=[[NSString alloc]initWithFormat:@"%@%@",KBS_URL,pathPattern];
     httpMethod=@"POST";
@@ -282,16 +293,31 @@ static int loginRetryNumber;
     errorUILabel:( UILabel *)errorUILabel
 {
     return ^(NSError *error) {
-        
         NSDictionary *dict=error.userInfo;
         //错误码
         NSString *localizedDescription=[dict objectForKey:@"NSLocalizedDescription"];
         
         NSHTTPURLResponse *httpResponse=(NSHTTPURLResponse *)[dict objectForKey:@"com.alamofire.serialization.response.error.response"];
-        
-        NSDictionary *headerFields = [httpResponse allHeaderFields];
+ 
+        NSString *errorDescription=(NSString *)[dict objectForKey:@"NSLocalizedDescription"];
+  
+        int underlyingError=(int)[dict objectForKey:@"_kCFStreamErrorCodeKey"];
+       // [4]	(null)	 @"_kCFStreamErrorCodeKey" : (int)61/798
+        BSLog(@"系统出现异常，详细信息:\n%@",error);
+        BOOL bCode= error.code==-1004;
+        BOOL bResponse= httpResponse==nil;
+        //[5]	(null)	@"NSLocalizedDescription" : @"未能连接到服务器。"
+        BOOL bDesc=[errorDescription isEqualToString:@"未能连接到服务器。"];
+        BOOL bUnderError= underlyingError==978;
+        if((bCode || bResponse) && (bDesc|| bUnderError) ){
+            [[BSNetworkNotify sharedBSNetworkNotify] networkTimeOut];
+            return ;
+        }
+        [[BSNetworkNotify sharedBSNetworkNotify] networkRunning];
+
         //key	__NSCFConstantString *	@"Www-Authenticate"	0x00000001107bc478
         //value	__NSCFString *	@"Digest realm=\"REST-Realm\", qop=\"auth\", nonce=\"MTQ0MDUyNDE4OTUxOTplYjAyY2UyYzhhOGQ1MTU4YjRmMWVhNjQ0NzRiMDZjOQ==\""	0x00007f83a870e290
+        NSDictionary *headerFields = [httpResponse allHeaderFields];
         NSString *authenticate=(NSString *)[headerFields objectForKey:@"Www-Authenticate"];
         BSLog(@"系统出现异常，权限信息:\n%@",authenticate);
         
@@ -308,7 +334,8 @@ static int loginRetryNumber;
             //                      headerAuthenticate:authenticate];
 
         }
-        BSLog(@"系统出现异常，详细信息:\n%@",error);
+        
+
         //如果是权限问题继续提交
         if ([localizedDescription containsString:@"401"]&&loginRetryNumber<AUTHORIZATION_RETRY) {
             //权限认证出现异常,则再次请求

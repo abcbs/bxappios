@@ -237,8 +237,8 @@
 		8460AE831B426E4C00022280 /* BSContentObjectNavigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8460AE821B426E4C00022280 /* BSContentObjectNavigation.m */; };
 		8461B5941B54B112002A7C43 /* libKT-LB-Controller.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8461B57D1B54B0EC002A7C43 /* libKT-LB-Controller.a */; };
 		8461B60E1B54B266002A7C43 /* KTLBNavigationController.h in Sources */ = {isa = PBXBuildFile; fileRef = 8474DEA11B3F004B00D9DE36 /* KTLBNavigationController.h */; };
-		8461B60F1B54B266002A7C43 /* KTLBNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8474DEA21B3F004B00D9DE36 /* KTLBNavigationController.m */; };
-		8461B6111B54B266002A7C43 /* KTLBMainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EBA0151B41A307003309F6 /* KTLBMainTabBarController.m */; };
+		8461B60F1B54B266002A7C43 /* KTLBNavigationController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8474DEA21B3F004B00D9DE36 /* KTLBNavigationController.mm */; };
+		8461B6111B54B266002A7C43 /* KTLBMainTabBarController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 84EBA0151B41A307003309F6 /* KTLBMainTabBarController.mm */; };
 		8461B6121B54B2A3002A7C43 /* bankController.h in Sources */ = {isa = PBXBuildFile; fileRef = 847076461B3A8C4500F28180 /* bankController.h */; };
 		8461B6131B54B2A3002A7C43 /* bankController.m in Sources */ = {isa = PBXBuildFile; fileRef = 847076471B3A8C4500F28180 /* bankController.m */; };
 		8461B6141B54B2A3002A7C43 /* DropDownChooseProtocol.h in Sources */ = {isa = PBXBuildFile; fileRef = 847076481B3A8C4500F28180 /* DropDownChooseProtocol.h */; };
@@ -696,7 +696,7 @@
 		8474331D1B2A92B400B030C4 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 847433191B2A92B400B030C4 /* LoginViewController.m */; };
 		8474331E1B2A92B400B030C4 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8474331B1B2A92B400B030C4 /* RegisterViewController.m */; };
 		847433211B2A934000B030C4 /* applyShop.m in Sources */ = {isa = PBXBuildFile; fileRef = 847433201B2A934000B030C4 /* applyShop.m */; };
-		8474DEA31B3F004B00D9DE36 /* KTLBNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8474DEA21B3F004B00D9DE36 /* KTLBNavigationController.m */; };
+		8474DEA31B3F004B00D9DE36 /* KTLBNavigationController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8474DEA21B3F004B00D9DE36 /* KTLBNavigationController.mm */; };
 		8474DEAB1B3F474700D9DE36 /* BSUIBlockButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8474DEAA1B3F474700D9DE36 /* BSUIBlockButton.m */; };
 		8474DEB51B3F7D0600D9DE36 /* BSUICommonController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8474DEB41B3F7D0600D9DE36 /* BSUICommonController.m */; };
 		8476A0461B4BB93100DB2CF0 /* BSUISingleImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8476A0451B4BB93100DB2CF0 /* BSUISingleImageTableViewCell.xib */; };
@@ -1326,7 +1326,7 @@
 		84EB39761B58F11D00AD9F66 /* LSControllerHeader.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 84BF90571B4AC981001042F1 /* LSControllerHeader.h */; };
 		84EBA00B1B416E37003309F6 /* ClassForSelectors.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EBA00A1B416E37003309F6 /* ClassForSelectors.m */; };
 		84EBA0131B4189E0003309F6 /* LBLiferServiceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EBA0121B4189E0003309F6 /* LBLiferServiceController.m */; };
-		84EBA0161B41A307003309F6 /* KTLBMainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EBA0151B41A307003309F6 /* KTLBMainTabBarController.m */; };
+		84EBA0161B41A307003309F6 /* KTLBMainTabBarController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 84EBA0151B41A307003309F6 /* KTLBMainTabBarController.mm */; };
 		84EBF0261B9FF42D00B3F16A /* UIImage+Rotate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EBF0231B9FF42D00B3F16A /* UIImage+Rotate.m */; };
 		84EBF0271B9FF42D00B3F16A /* UIImage+Rotate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EBF0231B9FF42D00B3F16A /* UIImage+Rotate.m */; };
 		84EBF02C1BA0022900B3F16A /* WayPointRouteSearchViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 84EBF02B1BA0022900B3F16A /* WayPointRouteSearchViewController.mm */; };
@@ -2154,7 +2154,7 @@
 		8474331F1B2A934000B030C4 /* applyShop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = applyShop.h; sourceTree = "<group>"; };
 		847433201B2A934000B030C4 /* applyShop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = applyShop.m; sourceTree = "<group>"; };
 		8474DEA11B3F004B00D9DE36 /* KTLBNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTLBNavigationController.h; sourceTree = "<group>"; };
-		8474DEA21B3F004B00D9DE36 /* KTLBNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTLBNavigationController.m; sourceTree = "<group>"; };
+		8474DEA21B3F004B00D9DE36 /* KTLBNavigationController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = KTLBNavigationController.mm; sourceTree = "<group>"; };
 		8474DEA91B3F474700D9DE36 /* BSUIBlockButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUIBlockButton.h; sourceTree = "<group>"; };
 		8474DEAA1B3F474700D9DE36 /* BSUIBlockButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUIBlockButton.m; sourceTree = "<group>"; };
 		8474DEAC1B3F606C00D9DE36 /* NavigationProcess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationProcess.h; sourceTree = "<group>"; };
@@ -2566,7 +2566,7 @@
 		84EBA0111B4189E0003309F6 /* LBLiferServiceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBLiferServiceController.h; sourceTree = "<group>"; };
 		84EBA0121B4189E0003309F6 /* LBLiferServiceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBLiferServiceController.m; sourceTree = "<group>"; };
 		84EBA0141B41A307003309F6 /* KTLBMainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTLBMainTabBarController.h; sourceTree = "<group>"; };
-		84EBA0151B41A307003309F6 /* KTLBMainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTLBMainTabBarController.m; sourceTree = "<group>"; };
+		84EBA0151B41A307003309F6 /* KTLBMainTabBarController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = KTLBMainTabBarController.mm; sourceTree = "<group>"; };
 		84EBF0221B9FF42D00B3F16A /* UIImage+Rotate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Rotate.h"; sourceTree = "<group>"; };
 		84EBF0231B9FF42D00B3F16A /* UIImage+Rotate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Rotate.m"; sourceTree = "<group>"; };
 		84EBF02A1BA0022900B3F16A /* WayPointRouteSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WayPointRouteSearchViewController.h; sourceTree = "<group>"; };
@@ -4116,9 +4116,9 @@
 				84578F521B35D11D00C3A4EA /* ViewController.m */,
 				84578F7A1B35E80700C3A4EA /* LaunchScreen.xib */,
 				8474DEA11B3F004B00D9DE36 /* KTLBNavigationController.h */,
-				8474DEA21B3F004B00D9DE36 /* KTLBNavigationController.m */,
+				8474DEA21B3F004B00D9DE36 /* KTLBNavigationController.mm */,
 				84EBA0141B41A307003309F6 /* KTLBMainTabBarController.h */,
-				84EBA0151B41A307003309F6 /* KTLBMainTabBarController.m */,
+				84EBA0151B41A307003309F6 /* KTLBMainTabBarController.mm */,
 				84EA96EE1B57D62100AC549F /* LBHandySearchMainTableController.h */,
 				84EA96EF1B57D62100AC549F /* LBHandySearchMainTableController.m */,
 			);
@@ -6420,8 +6420,8 @@
 				8461B6841B54B2A4002A7C43 /* MSWaterSendingCell.h in Sources */,
 				8461B6851B54B2A4002A7C43 /* MSWaterSendingCell.m in Sources */,
 				8461B60E1B54B266002A7C43 /* KTLBNavigationController.h in Sources */,
-				8461B60F1B54B266002A7C43 /* KTLBNavigationController.m in Sources */,
-				8461B6111B54B266002A7C43 /* KTLBMainTabBarController.m in Sources */,
+				8461B60F1B54B266002A7C43 /* KTLBNavigationController.mm in Sources */,
+				8461B6111B54B266002A7C43 /* KTLBMainTabBarController.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6789,7 +6789,7 @@
 				844570D11B4D672D000CA1C7 /* BLEInfo.m in Sources */,
 				844570CD1B4D63F8000CA1C7 /* BLEDevicesTableViewController.m in Sources */,
 				8405CB7C1B5564A90014AF8D /* BusinessActivity.m in Sources */,
-				8474DEA31B3F004B00D9DE36 /* KTLBNavigationController.m in Sources */,
+				8474DEA31B3F004B00D9DE36 /* KTLBNavigationController.mm in Sources */,
 				841F95051B8C54D1001B26B5 /* BSModelSerializer.m in Sources */,
 				84E6C0981B7DD06C00289D94 /* ESSIssueViewController.m in Sources */,
 				84BA96881B2829D500388B58 /* ShoppingCart.m in Sources */,
@@ -6797,7 +6797,7 @@
 				847076711B3AB21300F28180 /* UIViewController+BSTableObject.m in Sources */,
 				8405CB801B5565990014AF8D /* HeadPortraitDomail.m in Sources */,
 				A0F0C3F21B10209500CE406D /* UpdateShoppingCartParams.m in Sources */,
-				84EBA0161B41A307003309F6 /* KTLBMainTabBarController.m in Sources */,
+				84EBA0161B41A307003309F6 /* KTLBMainTabBarController.mm in Sources */,
 				845A022D1B3DABF0007F5327 /* ErrorMessage.m in Sources */,
 				84832D3C1B5658CC00FB6D28 /* BusinessOrder.m in Sources */,
 				84832D401B56595B00FB6D28 /* BusinessOrderDetailDomain.m in Sources */,

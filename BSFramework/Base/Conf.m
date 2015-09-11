@@ -8,6 +8,7 @@
 
 #import "Conf.h"
 #import "BSUIFrameworkHeader.h"
+#import "BSNetworkNotify.h"
 
 @implementation Conf
 /**
@@ -87,6 +88,10 @@ NSString *bsNetstatus=@"缺省状态";
 
 
 +(NSInteger )checkNetWork{
+    NSString *netStatus =[[BSNetworkNotify sharedBSNetworkNotify] currentNetworkReachability];
+    if (![netStatus isEqualToString:@"AppNetOK"]) {
+        return networkError;
+    }
     if ([bsNetstatus isEqualToString:@"系统连接超时"]) {
         return networkError;
         

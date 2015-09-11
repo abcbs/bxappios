@@ -11,4 +11,7 @@
 -  ( void ) stopNetworkReachability;
 
 -  ( NSString * ) currentNetworkReachability;
+
+-(void) networkTimeOut;
+-(void) networkRunning;
 @end

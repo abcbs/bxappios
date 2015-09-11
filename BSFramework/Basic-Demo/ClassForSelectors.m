@@ -7,7 +7,7 @@
 //
 
 #import "ClassForSelectors.h"
-
+#import <UIKit/UIKit.h>
 
 
 @implementation ClassForSelectors
