@@ -77,7 +77,7 @@
 
 -(void)viewWillAppear:(BOOL)animated {
     [self registerForKeyboardNotifications];
-    [super viewWillAppear:animated];
+    [super viewWillAppear:animated];//
     
     
 }

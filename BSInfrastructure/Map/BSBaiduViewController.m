@@ -96,7 +96,9 @@
     NSString* shortUrl;
     //分享字符串
     NSString* sharedShowmeg;
-
+    
+    //如果是定位功能时，无需显示坐标提示框,如果是默认值NO,则提示
+    BOOL isLocationPrompt;
     
 }
 @end
@@ -158,7 +160,6 @@
     self.navigationItem.rightBarButtonItem.tintColor=[UIColor whiteColor];
     //默认定位动作
     [self locatingWithConfig];
-    
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -176,12 +177,18 @@
     [self initSubViews];
     [self hideController];
     
-    //默认定位动作
-    [self locatingWithConfig];
-    
 }
 
+- (void)viewDidAppear:(BOOL)animated{
+    [self locatingWithConfig];
+    [super viewDidDisappear:animated];
 
+}
+-(void) viewDidDisappear:(BOOL)animated{
+    //默认定位动作
+    //[self locatingWithConfig];
+    [super viewDidDisappear:animated];
+}
 -(void)viewWillDisappear:(BOOL)animated {
     [_mapView viewWillDisappear];
     _mapView.delegate = nil; // 不用时，置nil
@@ -191,6 +198,7 @@
     _shareurlsearch.delegate=nil;
     _locService.delegate = nil;
     _routesearch.delegate = nil; // 不用时，置nil
+
     
 }
 - (void)viewDidUnload {
@@ -823,7 +831,9 @@
         }
         //UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:titleStr message:showmeg delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定",nil];
         //[myAlertView show];
-        [PromptInfo showText:showmeg];
+        if (isLocationPrompt){
+            [PromptInfo showText:showmeg];
+        }
     }else {
         [self onGetResultInError:searcher
                           result:result errorCode:error];
@@ -1278,6 +1288,7 @@
 
 -(void)displayControllerView{
     controllerView.hidden=NO;
+    //isLocationPrompt=YES;
     UIBarButtonItem *rightButton = [[UIBarButtonItem alloc]
                                     initWithTitle:@"隐藏控制" style:UIBarButtonItemStylePlain target:self action:@selector(hideControllerClick:)];
     self.navigationItem.rightBarButtonItem = rightButton;
@@ -1310,6 +1321,7 @@
     //反向
     isGeoSearch = false;
     isPoiShortUrlShare=NO;
+    isLocationPrompt=YES;
     [self reverseGeocode];
 }
 
@@ -1342,6 +1354,7 @@
 {
     isGeoSearch = true;
     isPoiShortUrlShare=NO;
+    isLocationPrompt=YES;
     BMKGeoCodeSearchOption *geocodeSearchOption = [[BMKGeoCodeSearchOption alloc]init];
     geocodeSearchOption.city= _cityText.text;
     geocodeSearchOption.address = _addrText.text;
@@ -1377,6 +1390,7 @@
     //对话框是否显示
     isShowCoordInfo=YES;
     isPoiShortUrlShare=NO;
+    isLocationPrompt=YES;
     //[self onClickGeocode];
     [_searchResultPoi removeAllObjects];
     [_searchResultAnn removeAllObjects];
@@ -1397,6 +1411,7 @@
 
 -(IBAction)onClickNextPage{
     isPoiShortUrlShare=NO;
+    isLocationPrompt=YES;
     curPage++;
     if ([_keyText.text isEqualToString:@""]) {
         [self searchByBMKCitySearchOption];
@@ -1478,12 +1493,14 @@
 //短URL共享，首先是查找，而后在查找结果中组织共享数据
 -(IBAction)poiShortUrlShare{
     isPoiShortUrlShare=YES;
+    isLocationPrompt=YES;
     [self searchByBMKCitySearchOption];
     
 }
 
 -(IBAction)reverseGeoShortUrlShare{
     //坐标
+    isLocationPrompt=YES;
     isPoiShortUrlShare=YES;
     [self reverseGeocode];
 }
@@ -1503,6 +1520,7 @@
 - (IBAction)saveAction:(id)sender{
     //[self saveAction];
     isPoiShortUrlShare=NO;
+    isLocationPrompt=YES;
     CLLocationCoordinate2D coor = (CLLocationCoordinate2D){0, 0};
     if (_coordinateXText.text != nil && _coordinateYText.text != nil) {
         coor = (CLLocationCoordinate2D){[_coordinateYText.text floatValue], [_coordinateXText.text floatValue]};
@@ -1574,6 +1592,7 @@
 //展现所有客户端收藏数据
 - (IBAction)getAllAction:(id)sender{
     isPoiShortUrlShare=NO;
+    isLocationPrompt=YES;
     NSArray *favPois = [_favManager getAllFavPois];
     if (favPois == nil) {
         return;
@@ -1640,6 +1659,32 @@
 -(IBAction)startLocation:(id)sender
 {
     [self locatingMap];
+    
+}
+
+-(void)locatingWithConfig{
+    if (!self.noCurrentLocation) {
+        [self locatingMap];
+        //[self reverseGeocode];
+    }
+   
+    //[self stopLocating];
+}
+
+
+//普通态
+-(void)locatingMap
+{
+    //连接共享标示
+    isPoiShortUrlShare=NO;
+    isLocationPrompt=NO;
+    BSLog(@"进入普通定位态");
+    //
+    //[_mapView setZoomLevel:16];
+    [_locService startUserLocationService];
+    _mapView.showsUserLocation = NO;//先关闭显示的定位图层
+    _mapView.userTrackingMode = BMKUserTrackingModeNone;//设置定位的状态
+    _mapView.showsUserLocation = YES;//显示定位图层
     [startBtn setEnabled:NO];
     [startBtn setAlpha:0.6];
     [stopBtn setEnabled:YES];
@@ -1648,29 +1693,6 @@
     [followHeadBtn setAlpha:1.0];
     [followingBtn setEnabled:YES];
     [followingBtn setAlpha:1.0];
-}
-
--(void)locatingWithConfig{
-    if (!self.noCurrentLocation) {
-        [self locatingMap];
-    }
-   [self reverseGeocode];
-   [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(stopLocating) userInfo:nil repeats:NO];
-    //[self stopLocating];
-}
-
-
-//普通态
--(void)locatingMap
-{
-    isPoiShortUrlShare=NO;
-    BSLog(@"进入普通定位态");
-    //
-    //[_mapView setZoomLevel:16];
-    [_locService startUserLocationService];
-    _mapView.showsUserLocation = NO;//先关闭显示的定位图层
-    _mapView.userTrackingMode = BMKUserTrackingModeNone;//设置定位的状态
-    _mapView.showsUserLocation = YES;//显示定位图层
     
 }
 
@@ -1686,21 +1708,7 @@
     
 }
 
-//指南针
-- (IBAction)compassSegAction:(id)sender {
-    UISegmentedControl *tempSeg = (UISegmentedControl *)sender;
-    CGPoint pt;
-    if(tempSeg.selectedSegmentIndex==0)
-    {
-        pt = CGPointMake(10,66);
-    }
-    else
-    {
-        pt = CGPointMake(273,66);
-    }
-    [_mapView setCompassPosition:pt];
-    
-}
+
 //跟随态
 -(IBAction)startFollowing:(id)sender
 {
@@ -1739,6 +1747,7 @@
     [followingBtn setAlpha:0.6];
     [startBtn setEnabled:YES];
     [startBtn setAlpha:1.0];
+     isLocationPrompt=YES;
 }
 /**
  *在地图View将要启动定位时，会调用此函数
@@ -1773,6 +1782,8 @@
     _showMsgLabel.text = showmeg;
     if (self.noCurrentLocation) {
         _addrText.text=userLocation.title;
+    }else{
+        [self reverseGeocode];
     }
     _coordinateYText.text=[NSString stringWithFormat:@"%f",userLocation.location.coordinate.latitude];
     _coordinateXText.text=[NSString stringWithFormat:@"%f",userLocation.location.coordinate.longitude];
@@ -1820,6 +1831,21 @@
     
 }
 
+//指南针
+- (IBAction)compassSegAction:(id)sender {
+    UISegmentedControl *tempSeg = (UISegmentedControl *)sender;
+    CGPoint pt;
+    if(tempSeg.selectedSegmentIndex==0)
+    {
+        pt = CGPointMake(10,66);
+    }
+    else
+    {
+        pt = CGPointMake(273,66);
+    }
+    [_mapView setCompassPosition:pt];
+    
+}
 //点击地址编辑弹出提示信息
 - (IBAction)onEditingChangedAddredss:(id)sender {
     
@@ -1828,6 +1854,7 @@
 -(IBAction)onClickBusSearch
 {
     isPoiShortUrlShare=NO;
+    isLocationPrompt=NO;
     BMKPlanNode* start = [[BMKPlanNode alloc]init];
     start.name = _addrText.text;
     BMKPlanNode* end = [[BMKPlanNode alloc]init];
@@ -1852,6 +1879,7 @@
 -(IBAction)onClickDriveSearch
 {
     isPoiShortUrlShare=NO;
+    isLocationPrompt=NO;
     BMKPlanNode* start = [[BMKPlanNode alloc]init];
     start.name = _addrText.text;
     start.cityName =_cityText.text;
@@ -1877,6 +1905,7 @@
 -(IBAction)onClickWalkSearch
 {
     isPoiShortUrlShare=NO;
+    isLocationPrompt=NO;
     BMKPlanNode* start = [[BMKPlanNode alloc]init];
     start.name = _addrText.text;
     start.cityName =_cityText.text;
@@ -1903,6 +1932,7 @@
 -(IBAction)onClickWayPointSearch{
     NSLog(@"路径点开始");
     isPoiShortUrlShare=NO;
+    isLocationPrompt=NO;
     WayPointRouteSearchViewController * wayPointCont = [[WayPointRouteSearchViewController alloc]init];
     wayPointCont.title = @"驾车途经点";
     UIBarButtonItem *customLeftBarButtonItem = [[UIBarButtonItem alloc] init];
