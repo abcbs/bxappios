@@ -5,18 +5,21 @@
 //  Created by admin on 15/7/25.
 //  Copyright (c) 2015年 itcast. All rights reserved.
 //
-
+#define kNetworkNotReachability ([AFNetworkReachabilityManager sharedManager].networkReachabilityStatus <= 0)  //无网
 #import "MYAppDelegate.h"
 #import "BSUIFrameworkHeader.h"
 #import "BSCMFrameworkHeader.h"
 #import <BaiduMapAPI/BMapKit.h>
-
+#import <SystemConfiguration/SystemConfiguration.h>
+#import "PromptInfo.h"
 @interface MYAppDelegate () <UIApplicationDelegate, BMKGeneralDelegate> {
     }
 
 @end
 
 BMKMapManager* _mapManager;
+
+BSNetworkNotify *networkNotify;
 
 @implementation MYAppDelegate
 
@@ -27,10 +30,13 @@ BMKMapManager* _mapManager;
     //网络日志监控
     //[[AFNetworkActivityLogger sharedLogger] startLogging];
     //网络可用性监控
-    [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
-    //网络变化监控
-    [[AFNetworkReachabilityManager sharedManager] startMonitoring];
+    AFNetworkActivityIndicatorManager *networkActivityIndicatorManager=[AFNetworkActivityIndicatorManager sharedManager];
+    [networkActivityIndicatorManager setEnabled:YES];
     
+    
+    networkNotify=[BSNetworkNotify sharedBSNetworkNotify];
+    
+    [networkNotify startNetworkReachability];
     //默认颜色
     self.window.backgroundColor = [UIColor whiteColor];
     self.window.tintColor = [UIColor redColor];
@@ -93,6 +99,7 @@ BMKMapManager* _mapManager;
     [[UIApplication sharedApplication]setApplicationIconBadgeNumber:0];//进入前台取消应用消息图标
 }
 
+
 #pragma mark -首次运行方法
 #pragma mark -再次运行都执行下面的方法-再次打开-2
 #pragma mark -当程序复原时， 此委托方法会被调用，在此你可以通过之前挂起前保存的数据来恢复你的应用程序
@@ -101,7 +108,8 @@ BMKMapManager* _mapManager;
     //注应用程序在启动时，调用了applicationDidFinishLaunching方法之后也会调用此方法，所以确保代码能够分清复原与启动.
     BSLog(@"\n/*=---------------App首次(再次)运行\n\t\tapplicationDidBecomeActive\n-------------------=*/");
     [BMKMapView didForeGround];//当应用恢复前台状态时调用，回复地图的渲染和opengl相关的操作
-
+    
+    [networkNotify startNetworkReachability];
 }
 
 #pragma mark -下面是关闭时执行的两个方法-首次（再次）关闭1
@@ -112,6 +120,8 @@ BMKMapManager* _mapManager;
     //系统将要停止，适当保存数据，当有电话进来或者锁屏，这时你的应用程会挂起，在这时，UIApplicationDelegate委托会收到通知，调用 applicationWillResignActive 方法，你可以重写这个方法，做挂起前的工作，比如关闭网络，保存数据。
     BSLog(@"\n/*=---------------App首次（再次）关闭\n\t\tapplicationWillResignActive\n-------------------=*/");
     [BMKMapView willBackGround];//当应用即将后台时调用，停止一切调用opengl相关的操作
+    
+    [networkNotify stopNetworkReachability];
 
 }
 
@@ -257,6 +267,7 @@ didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSe
     }
     else{
         BSLog(@"APP联网失败 %d",iError);
+        [PromptInfo showWithText:@"APP联网失" topOffset:54 duration:2];
     }
     
 }
@@ -268,8 +279,10 @@ didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSe
     }
     else {
         BSLog(@"APP授权失败 %d",iError);
+        [PromptInfo showWithText:@"APP授权失败" topOffset:54 duration:2];
     }
 }
 #pragma mark -百度地图运行状态测试结束
+
 
 @end

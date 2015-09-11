@@ -122,4 +122,6 @@ target:(id<NavigationProcess>)target
 +(UITabBar *)displayGlobleTabBar;
 
 +(void )initGobleTabBar:(UITabBar *)tabBar;
+
+
 @end

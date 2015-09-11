@@ -1018,20 +1018,25 @@
         [PromptInfo showText:showmeg];
     }  else if (error == BMK_SEARCH_RESULT_NOT_FOUND){
         //BMK_SEARCH_AMBIGUOUS_ROURE_ADDR,///<检索地址有岐义
+        [PromptInfo showText:@"检索地址有岐义"];
     }  else if (error == BMK_SEARCH_NOT_SUPPORT_BUS){
         //BMK_SEARCH_NOT_SUPPORT_BUS,///<该城市不支持公交搜索
-        
+        [PromptInfo showText:@"该城市不支持公交搜索"];
     } else if (error==BMK_SEARCH_NOT_SUPPORT_BUS_2CITY){
         //BMK_SEARCH_NOT_SUPPORT_BUS_2CITY,///<不支持跨城市公交
+        [PromptInfo showText:@"不支持跨城市公交"];
     } else if (error==BMK_SEARCH_ST_EN_TOO_NEAR){
         //BMK_SEARCH_ST_EN_TOO_NEAR,///<起终点太近
+        [PromptInfo showText:@"起终点太近"];
     } else if (error==BMK_SEARCH_KEY_ERROR){
         //BMK_SEARCH_KEY_ERROR,///<key错误
     }  else if (error==BMK_SEARCH_NETWOKR_ERROR||error==BMK_SEARCH_NETWOKR_TIMEOUT){
         //BMK_SEARCH_NETWOKR_ERROR,///网络连接错误
         //BMK_SEARCH_NETWOKR_TIMEOUT,///网络连接超时
+        [PromptInfo showText:@"网络连接错误/网络连接超时"];
     } else if (error==BMK_SEARCH_PERMISSION_UNFINISHED){
         //BMK_SEARCH_PERMISSION_UNFINISHED,///还未完成鉴权，请在鉴权通过后重试
+       [PromptInfo showText:@"还未完成鉴权，请在鉴权通过后重试"];
     }
     
 }

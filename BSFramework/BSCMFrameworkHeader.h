@@ -22,7 +22,8 @@
 #import "AFNetworkActivityLogger.h"
 
 #import "AFNetworkActivityIndicatorManager.h"
-
+//网络可用性检查
+#import "BSNetworkNotify.h"
 /**
  *HTTP处理接口方法
  */
@@ -37,8 +38,7 @@
 //md5,sha1
 #import "NSData+CommonCrypto.h"
 
+#import <SystemConfiguration/SystemConfiguration.h>
+#import "PromptInfo.h"
 
-//#import <BaiduMapAPI/BMapKit.h>
-
-//#import "MyAnimatedAnnotationView.h"
 #endif

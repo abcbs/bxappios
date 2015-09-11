@@ -11,6 +11,8 @@
 #import "BSUIBlockButton.h"
 #import "BSUIBarButtonItem.h"
 #import "UserManager.h"
+#import <SystemConfiguration/SystemConfiguration.h>
+#import "PromptInfo.h"
 
 #define CONFIRM_TITLE @"错误提示"
 #define CONFIRM_BUTTON_NAME @"确定"
@@ -477,4 +479,6 @@ BSDeprecated("建议使用统一处理方式，使用initNavigationHeaderWithDef
         //viewController.navigationItem.rightBarButtonItems=nil;
     }
 }
+
+
 @end
