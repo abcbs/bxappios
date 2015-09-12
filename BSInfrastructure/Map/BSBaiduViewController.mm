@@ -2432,8 +2432,14 @@ static const char *const kOperationQueueName = "kESSLocationCheckOperationQueueN
 }
 
 -(void)configUIViewAndHighOffsetWithKeyBoard{
-    self.highOffsetWithKeyBoard=-36;
-    self.scrollViewWithKeyboard=localtionUIControllerView;
+    if ([[Conf deviceMachine] isEqualToString:@"iPhone 4S"]) {
+        self.highOffsetWithKeyBoard=-36;
+        self.scrollViewWithKeyboard=localtionUIControllerView;
+    }else{
+        //self.highOffsetWithKeyBoard=-36;
+    }
+   
+    
     
 }
 

@@ -90,6 +90,7 @@
 #define IS_IPHONE_6 (IS_IPHONE && ([[UIScreen mainScreen] nativeScale] == 2.0f)&&([[UIScreen mainScreen] bounds].size.height-667)==0)
 
 
++(NSString*)deviceMachine;
 /**
  *获取IOS版本
  */
