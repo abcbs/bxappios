@@ -188,6 +188,9 @@ static const char *const kOperationQueueName = "kESSLocationCheckOperationQueueN
     sugestTableView.opaque=YES;
     
     sugesstPOIs=[NSMutableArray array];
+    //键盘位置
+    self.scrollViewframe=self->localtionUIControllerView.frame;
+
 
 }
 
@@ -272,6 +275,7 @@ static const char *const kOperationQueueName = "kESSLocationCheckOperationQueueN
     
 }
 
+#pragma mark 键盘处理事件
 -(void)delelageForTextField{
      //旋转度
     _rotatedegree.delegate=self;
@@ -832,7 +836,8 @@ static const char *const kOperationQueueName = "kESSLocationCheckOperationQueueN
         searchPointAnnotation.coordinate = result.location;
         searchPointAnnotation.title = result.address;
         [_mapView addAnnotation:searchPointAnnotation];
-        _mapView.centerCoordinate = result.location;
+        
+        //_mapView.centerCoordinate = result.location;
         
         //短URL处理
         if (isPoiShortUrlShare) {
@@ -2061,7 +2066,7 @@ static const char *const kOperationQueueName = "kESSLocationCheckOperationQueueN
     isLocationPrompt=NO;
     BSLog(@"进入普通定位态");
     //
-    //[_mapView setZoomLevel:16];
+    [_mapView setZoomLevel:16];
     [_locService startUserLocationService];
     _mapView.showsUserLocation = NO;//先关闭显示的定位图层
     _mapView.userTrackingMode = BMKUserTrackingModeNone;//设置定位的状态
@@ -2116,7 +2121,7 @@ static const char *const kOperationQueueName = "kESSLocationCheckOperationQueueN
 
 -(void)stopLocating
 {
-    [_mapView setZoomLevel:14];
+    //[_mapView setZoomLevel:14];
     isPoiShortUrlShare=NO;
     [_locService stopUserLocationService];
     _mapView.showsUserLocation = NO;
@@ -2128,7 +2133,7 @@ static const char *const kOperationQueueName = "kESSLocationCheckOperationQueueN
     [followingBtn setAlpha:0.6];
     [startBtn setEnabled:YES];
     [startBtn setAlpha:1.0];
-     isLocationPrompt=YES;
+     //isLocationPrompt=YES;
 }
 /**
  *在地图View将要启动定位时，会调用此函数
@@ -2168,9 +2173,11 @@ static const char *const kOperationQueueName = "kESSLocationCheckOperationQueueN
     }
     _coordinateYText.text=[NSString stringWithFormat:@"%f",userLocation.location.coordinate.latitude];
     _coordinateXText.text=[NSString stringWithFormat:@"%f",userLocation.location.coordinate.longitude];
-    
-    _mapView.centerCoordinate=userLocation.location.coordinate;
+    if (!isLocationPrompt) {
+        _mapView.centerCoordinate=userLocation.location.coordinate;
 
+    }
+    
 }
 
 /**
@@ -2424,20 +2431,16 @@ static const char *const kOperationQueueName = "kESSLocationCheckOperationQueueN
     
 }
 
-- (void)textFieldDidBeginEditing:(UITextField *)textField
-{
-    BSLog(@"textFieldDidBeginEditing");
-    [super textFieldDidBeginEditing:textField];
-    //frameTextFirstResponder=textField.frame;
+-(void)configUIViewAndHighOffsetWithKeyBoard{
+    self.highOffsetWithKeyBoard=-36;
+    self.scrollViewWithKeyboard=localtionUIControllerView;
     
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    BSLog(@"textFieldShouldReturn");
     [super textFieldShouldReturn:textField];
-    //self.controllerScollerView.frame=scrollViewframe;
-    [textField resignFirstResponder];
+    [sugestTableView setHidden:YES];
     return YES;
 }
 

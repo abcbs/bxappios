@@ -16,6 +16,6 @@
 //@property (nonatomic,retain) UIToolbar * keyboardToolBar;
 
 #pragma mark -键盘添加事件
--(void)keyboardDone:(id)sender;
--(void) delelageForTextField;
+//-(void)keyboardDone:(id)sender;
+//-(void) delelageForTextField;
 @end

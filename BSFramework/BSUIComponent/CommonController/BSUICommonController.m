@@ -14,12 +14,14 @@
 @interface BSUICommonController(){
     
 }
-
-@property (strong, nonatomic) NSDictionary *keyBoardDic;
 @end
 
 @implementation BSUICommonController
-//@synthesize keyboardToolBar;
+
+@synthesize frameTextFirstResponder;
+@synthesize keyBoardDic;
+@synthesize highOffsetWithKeyBoard;
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -48,8 +50,11 @@
 
     [self modifiedStyle];
     
-    [self registerForKeyboardNotifications];
     [self configSuggestTextFiled];
+    
+    [self registerForKeyboardNotifications];
+    
+    [self configUIViewAndHighOffsetWithKeyBoard];
 }
 
 
@@ -101,55 +106,8 @@
   [[NSNotificationCenter defaultCenter] removeObserver:self];  
 }
 
-#pragma mark -键盘添加Button
-- (void) registerForKeyboardNotifications{
-    
-    //当键盘出来的时候通过通知来获取键盘的信息
-    //注册为键盘的监听着
-    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
-    [center addObserver:self selector:@selector(keyNotification:) name:UIKeyboardWillChangeFrameNotification object:nil];
-    
-    //使用NSNotificationCenter 鍵盤出現時
-    [center addObserver:self
-      selector:@selector(keyboardWasShown:)
-      name:UIKeyboardDidShowNotification object:nil];
-    
-    //使用NSNotificationCenter 鍵盤隐藏時
-    [center addObserver:self
-      selector:@selector(keyboardWillBeHidden:)
-      name:UIKeyboardWillHideNotification object:nil];
-    
-}
 
-//实现当键盘出现的时候计算键盘的高度大小。用于输入框显示位置
-- (void)keyboardWasShown:(NSNotification*)aNotification
-{
-    NSDictionary* info = [aNotification userInfo];
-    //kbSize即為鍵盤尺寸 (有width, height)
-    CGSize kbSize = [[info objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].size;//得到鍵盤的高度
-    NSLog(@"hight_hitht:%f",kbSize.height);
-    int keyboardhight;
-    if(kbSize.height == 216)
-    {
-        keyboardhight = 0;
-    }
-    else
-    {
-        keyboardhight = 36;   //252 - 216 系统键盘的两个不同高度
-    }
-    //输入框位置动画加载
-    //[self begainMoveUpAnimation:keyboardhight];
-}
 
-//当键盘隐藏的时候
-- (void)keyboardWillBeHidden:(NSNotification*)aNotification
-{
-    //do something
-}
-
--(void)configSuggestTextFiled{
-    
-}
 -(UIToolbar *)keyboardToolBar{
     if (_keyboardToolBar==nil) {
         //TextView的键盘定制回收按钮
@@ -161,28 +119,6 @@
         _keyboardToolBar.items = @[item2,item3,item1];
     }
     return _keyboardToolBar;
-}
-
--(void) keyNotification : (NSNotification *) notification
-{
-    NSLog(@"%@", notification.userInfo);
-    
-    self.keyBoardDic = notification.userInfo;
-    //获取键盘移动后的坐标点的坐标点
-    //CGRect rect = [self.keyBoardDic[@"UIKeyboardFrameEndUserInfoKey"] CGRectValue];
-    
-    //把键盘的坐标系改成当前我们window的坐标系
-    //CGRect r1 = [self.view convertRect:rect fromView:self.view.window];
-    /*
-    [UIView animateWithDuration:[self.keyBoardDic[UIKeyboardAnimationDurationUserInfoKey] floatValue] animations:^{
-        CGRect frame = self.toolView.frame;
-        
-        frame.origin.y = r1.origin.y - frame.size.height;
-        
-        //根据键盘的高度来改变toolView的高度
-        self.toolView.frame = frame;
-    }];
-     */
 }
 
 
@@ -275,6 +211,54 @@
 
 #pragma mark -
 #pragma mark 解决虚拟键盘挡住UITextField的方法
+#pragma mark -键盘添加Button
+- (void) registerForKeyboardNotifications{
+    
+    //当键盘出来的时候通过通知来获取键盘的信息
+    //注册为键盘的监听着
+    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+    [center addObserver:self selector:@selector(keyNotification:) name:UIKeyboardWillChangeFrameNotification object:nil];
+    
+    //使用NSNotificationCenter 鍵盤出現時
+    [center addObserver:self
+               selector:@selector(keyboardWasShown:)
+                   name:UIKeyboardDidShowNotification object:nil];
+    
+    //使用NSNotificationCenter 鍵盤隐藏時
+    [center addObserver:self
+               selector:@selector(keyboardWillBeHidden:)
+                   name:UIKeyboardWillHideNotification object:nil];
+    
+}
+
+-(void) keyNotification : (NSNotification *) notification
+{
+    NSLog(@"%@", notification.userInfo);
+    
+    self.keyBoardDic = notification.userInfo;
+    //获取键盘移动后的坐标点的坐标点
+    CGRect rect = [self.keyBoardDic[@"UIKeyboardFrameEndUserInfoKey"] CGRectValue];
+    
+    //把键盘的坐标系改成当前我们window的坐标系
+    CGRect r1 = [self.view convertRect:rect
+                              fromView:self.view.window];
+    
+    [UIView animateWithDuration:[self.keyBoardDic[UIKeyboardAnimationDurationUserInfoKey] floatValue] animations:^{
+        CGRect frame = self.scrollViewWithKeyboard.frame;
+        
+        if (( self.frameTextFirstResponder.origin.y)<rect.origin.y){
+            frame.origin.y = r1.origin.y - frame.size.height+self.highOffsetWithKeyBoard;
+            //根据键盘的高度来改变toolView的高度
+            if (IS_IPHONE5) {
+                frame.origin.y = r1.origin.y - frame.size.height;
+            }
+            self.scrollViewWithKeyboard.frame = frame;
+            
+        }
+    }];
+    
+}
+
 - (void)keyboardWillShow:(NSNotification *)noti
 {
     //键盘输入的界面调整
@@ -293,8 +277,7 @@
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    
-    // When the user presses return, take focus away from the text field so that the keyboard is dismissed.
+    [textField resignFirstResponder];
     NSTimeInterval animationDuration = 0.30f;
     [UIView beginAnimations:@"ResizeForKeyboard" context:nil];
     [UIView setAnimationDuration:animationDuration];
@@ -309,7 +292,7 @@
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
-    
+    self.frameTextFirstResponder=textField.frame;
     CGRect frame = textField.frame;
     int offset = frame.origin.y + 32 - (self.view.frame.size.height - 216.0);//键盘高度216
     NSTimeInterval animationDuration = 0.30f;
@@ -326,18 +309,53 @@
      
 }
 
+//实现当键盘出现的时候计算键盘的高度大小。用于输入框显示位置
+- (void)keyboardWasShown:(NSNotification*)aNotification
+{
+    NSDictionary* info = [aNotification userInfo];
+    //kbSize即為鍵盤尺寸 (有width, height)
+    CGSize kbSize = [[info objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].size;//得到鍵盤的高度
+    NSLog(@"hight_hitht:%f",kbSize.height);
+    int keyboardhight;
+    if(kbSize.height == 216)
+    {
+        keyboardhight = 0;
+    }
+    else
+    {
+        keyboardhight = 36;   //252 - 216 系统键盘的两个不同高度
+    }
+    //输入框位置动画加载
+    //[self begainMoveUpAnimation:keyboardhight];
+}
+
+//当键盘隐藏的时候
+- (void)keyboardWillBeHidden:(NSNotification*)aNotification
+{
+    self.scrollViewWithKeyboard.frame=self.scrollViewframe;
+}
+
+//键盘遮挡问题
+-(void)configUIViewAndHighOffsetWithKeyBoard{
+    
+}
+
 #pragma mark -键盘事件
 -(void)keyboardDone:(id)sender{
     BSLog(@"键盘事件-确定查询");
 }
 
-//设置代理
+//设置TextField代理
 -(void)delelageForTextField{
     BSLog(@"设置Text");
     
     
 }
 
+//百度地图建议搜索字段
+-(void)configSuggestTextFiled{
+    
+}
 - (void)textViewDidChange:(UITextView *)textView
 {
     [textView resignFirstResponder];

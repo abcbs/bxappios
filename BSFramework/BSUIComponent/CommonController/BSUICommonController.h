@@ -23,7 +23,17 @@
 
 @property (nonatomic,retain) UIToolbar * keyboardToolBar;
 
+@property (strong, nonatomic) NSDictionary *keyBoardDic;
+
+@property (nonatomic,assign) CGRect frameTextFirstResponder;
+@property (nonatomic,assign) CGRect scrollViewframe;
+@property (nonatomic,assign) CGFloat highOffsetWithKeyBoard;
+@property (nonatomic,retain) UIView *scrollViewWithKeyboard;
+
+-(void)configUIViewAndHighOffsetWithKeyBoard;
+
 - (IBAction)View_TouchDown:(id)sender;
+
 
 /**
  *公共回退方法
@@ -41,5 +51,6 @@
 -(void)keyboardDone:(id)sender;
 -(void) delelageForTextField;
 - (void)keyboardWillBeHidden:(NSNotification*)aNotification;
+//地图检查查找所需的TextField
 -(void)configSuggestTextFiled;
 @end

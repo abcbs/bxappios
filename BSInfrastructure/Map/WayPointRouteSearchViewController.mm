@@ -42,9 +42,9 @@
     //如果中间仍然没有选中，则使用中间值选择，它来自TableView
     NSString *searchKey;
     
-    CGRect scrollViewframe;
+    //CGRect scrollViewframe;
     //CGPoint touchPoint;
-    CGRect frameTextFirstResponder;
+    
 }
 
 //自定义组件
@@ -66,12 +66,13 @@
 
 @property (strong, nonatomic)HistoryImage *tempImage;
 
-@property (strong, nonatomic) NSDictionary * keyBoardDic;
+//@property (strong, nonatomic) NSDictionary * keyBoardDic;
 
 @end
 
 @implementation WayPointRouteSearchViewController
 @synthesize tableView;
+@dynamic keyBoardDic;
 
 - (NSString*)getMyBundlePath1:(NSString *)filename
 {
@@ -114,7 +115,7 @@
     //
     self.controllerView.hidden=NO;
     sugesstPOIs=[NSMutableArray array];
-    scrollViewframe=self.controllerScollerView.frame;
+    self.scrollViewframe=self.controllerScollerView.frame;
 }
 
 - (NSInteger)tableView:(UITableView *)tableview numberOfRowsInSection:(NSInteger)section {
@@ -223,7 +224,7 @@
     }];
 }
 
-
+/*
 -(void) keyNotification : (NSNotification *) notification
 {
     NSLog(@"%@", notification.userInfo);
@@ -239,7 +240,7 @@
      [UIView animateWithDuration:[self.keyBoardDic[UIKeyboardAnimationDurationUserInfoKey] floatValue] animations:^{
      CGRect frame = self.controllerScollerView.frame;
          
-     if (( frameTextFirstResponder.origin.y)<rect.origin.y){
+     if (( self.frameTextFirstResponder.origin.y)<rect.origin.y){
          frame.origin.y = r1.origin.y - frame.size.height+16;
          //根据键盘的高度来改变toolView的高度
          if (IS_IPHONE5) {
@@ -255,22 +256,20 @@
 
 - (void)keyboardWillBeHidden:(NSNotification*)aNotification
 {
-    self.controllerScollerView.frame=scrollViewframe;
+    self.controllerScollerView.frame=self.scrollViewframe;
 }
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
-    frameTextFirstResponder=textField.frame;
+    self.frameTextFirstResponder=textField.frame;
     
 }
-
--(BOOL)textFieldShouldReturn:(UITextField *)textField
-{
-     //self.controllerScollerView.frame=scrollViewframe;
-     [textField resignFirstResponder];
-     return YES;
+*/
+-(void)configUIViewAndHighOffsetWithKeyBoard{
+    self.highOffsetWithKeyBoard=-16;
+    self.scrollViewWithKeyboard=self.controllerScollerView;
+    
 }
-
 
 -(void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
 {

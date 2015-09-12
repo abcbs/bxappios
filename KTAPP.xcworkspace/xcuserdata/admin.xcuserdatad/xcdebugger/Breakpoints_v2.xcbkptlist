@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BSInfrastructure/Map/BSBaiduViewController.mm"
-            timestampString = "463689260.744695"
+            timestampString = "463766523.8102"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "951"
-            endingLineNumber = "951"
+            startingLineNumber = "956"
+            endingLineNumber = "956"
             landmarkName = "-onGetTransitRouteResult:result:errorCode:"
             landmarkType = "5">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BSInfrastructure/Map/BSBaiduViewController.mm"
-            timestampString = "463689260.744695"
+            timestampString = "463766523.8102"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1086"
-            endingLineNumber = "1086"
+            startingLineNumber = "1091"
+            endingLineNumber = "1091"
             landmarkName = "-onGetWalkingRouteResult:result:errorCode:"
             landmarkType = "5">
          </BreakpointContent>
@@ -42,12 +42,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BSInfrastructure/Map/BSBaiduViewController.mm"
-            timestampString = "463689307.802926"
+            timestampString = "463766523.8102"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "975"
-            endingLineNumber = "975"
+            startingLineNumber = "980"
+            endingLineNumber = "980"
             landmarkName = "-onGetTransitRouteResult:result:errorCode:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BSInfrastructure/Map/BSBaiduViewController.mm"
+            timestampString = "463766523.8102"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2442"
+            endingLineNumber = "2442"
+            landmarkName = "-textFieldShouldReturn:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
