@@ -304,11 +304,13 @@ static int loginRetryNumber;
         int underlyingError=(int)[dict objectForKey:@"_kCFStreamErrorCodeKey"];
        // [4]	(null)	 @"_kCFStreamErrorCodeKey" : (int)61/798
         BSLog(@"系统出现异常，详细信息:\n%@",error);
-        BOOL bCode= error.code==-1004;
+        BOOL bCode= error.code==-1004||error.code==-1001;
         BOOL bResponse= httpResponse==nil;
         //[5]	(null)	@"NSLocalizedDescription" : @"未能连接到服务器。"
-        BOOL bDesc=[errorDescription isEqualToString:@"未能连接到服务器。"];
-        BOOL bUnderError= underlyingError==978;
+        BOOL bDesc=([errorDescription isEqualToString:@"未能连接到服务器。"]||
+            [errorDescription isEqualToString:@"请求超时。"]);
+        //underlyingError	int	0	0
+        BOOL bUnderError= (underlyingError==978||underlyingError==0);
         if((bCode || bResponse) && (bDesc|| bUnderError) ){
             [[BSNetworkNotify sharedBSNetworkNotify] networkTimeOut];
             return ;

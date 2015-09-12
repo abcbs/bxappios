@@ -94,7 +94,8 @@ static  UITabBar  *gTabBar;
 +(void)navigationHeader:(UINavigationController *)navigationController{
     [navigationController.navigationBar setBarStyle:UIBarStyleBlack];
     [navigationController.navigationBar setBackgroundColor
-     :[UIColor redColor]];
+     :[BSUIComponentView navigationColor]];
+    [navigationController.navigationBar setTintColor:[UIColor whiteColor]];
 }
 
 /**
