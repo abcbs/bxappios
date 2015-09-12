@@ -56,7 +56,7 @@
 - ( void ) startNetworkReachability {
     
     if (!timer) {//isNetworkEnabledWithAFNetwork
-        timer  =  [ NSTimer  scheduledTimerWithTimeInterval: 5
+        timer  =  [ NSTimer  scheduledTimerWithTimeInterval: 30
                   target: self  selector: @selector (timerFireNetChecked)
                    userInfo:nil
                    repeats:YES ];
@@ -152,8 +152,8 @@
         
         if (nonWiFi==YES){
             BSLog(@"目前网络为WiFi");
-            [PromptInfo showWithText:@"目前网络为WiFi" topOffset:54 duration:2];
-            //statusString=@"WiFi";
+            //[PromptInfo showWithText:@"目前网络为WiFi" topOffset:54 duration:2];
+            statusString=@"WiFi";
         }
         if (!flagsReachable && nonWiFi) {
             BSLog(@"无WiFi/网络");
@@ -257,7 +257,7 @@
         }
         case ReachableViaWiFi:{
             statusString=@"WiFi";
-            [PromptInfo showWithText:@"目前网络为WiFi" topOffset:54 duration:2];
+            //[PromptInfo showWithText:@"目前网络为WiFi" topOffset:54 duration:2];
             
             break;
         }
