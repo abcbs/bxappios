@@ -154,6 +154,7 @@ didReceiveLocalNotification:(UILocalNotification *)notification{
     //[BSTRPushHelper showLocalNotificationAtFront:notification];
     NSDictionary *userInfo=notification.userInfo;
     NSLog(@"didReceiveLocalNotification:The userInfo is %@",userInfo);
+    /*
     if (application.applicationState == UIApplicationStateActive) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"收到本地推送消息"
              message:userInfo[@"aps"][@"alert"]
@@ -162,7 +163,7 @@ didReceiveLocalNotification:(UILocalNotification *)notification{
              otherButtonTitles:@"确定", nil];
         [alert show];
     }
-
+     */
 }
 
 #pragma mark -远程通知方法
@@ -186,15 +187,17 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo {
     BSLog(@"\n/*=---------------处理远程推送消息:\n\t%@\n\t\t\n-------------------=*/",userInfo);
     BSLog(@"收到推送消息:%@",
           [[userInfo objectForKey:@"aps"] objectForKey:@"alert"]);
-    //[BSTRPushHelper handleRemoteNotification:userInfo completion:nil];
-    //if (application.applicationState == UIApplicationStateActive) {
+    [BSTRPushHelper handleRemoteNotification:userInfo completion:nil];
+    /*
+    if (application.applicationState == UIApplicationStateActive) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"收到远程推送消息"
                      message:userInfo[@"aps"][@"alert"]
                      delegate:nil
                      cancelButtonTitle:@"取消"
                      otherButtonTitles:@"确定", nil];
         [alert show];
-    //}
+    }
+     */
 }
 
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_7_0
@@ -202,7 +205,7 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo {
                    :(NSDictionary *)userInfo fetchCompletionHandler
                    :(void (^)(UIBackgroundFetchResult))completionHandler {
     
-    //[BSTRPushHelper handleRemoteNotification:userInfo completion:completionHandler];
+    [BSTRPushHelper handleRemoteNotification:userInfo completion:completionHandler];
     
     // 应用正处理前台状态下，不会收到推送消息，因此在此处需要额外处理一下
     /*

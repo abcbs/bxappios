@@ -2,10 +2,10 @@
 #import "AppDelegate.h"
 #import "BSUIFrameworkHeader.h"
 #import "BSCMFrameworkHeader.h"
-//#import <BaiduMapAPI/BMapKit.h>
+#import <BaiduMapAPI/BMapKit.h>
 #import <SystemConfiguration/SystemConfiguration.h>
 #import "PromptInfo.h"
-@interface AppDelegate () <UIApplicationDelegate> {
+@interface AppDelegate () <UIApplicationDelegate,BMKGeneralDelegate> {
 }
 
 @end

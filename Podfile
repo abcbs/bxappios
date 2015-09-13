@@ -45,7 +45,7 @@ target 'KT-FRAME-PK' do
         pod 'MJRefresh','~>2.3.2'
         pod 'CocoaLumberjack','~>2.0.1'
         pod 'MBProgressHUD','~>0.9.1'
-        pod 'AFNetworkActivityLogger','~>2.0.4'
+#        pod 'AFNetworkActivityLogger','~>2.0.4'
 
 end
 
