@@ -66,7 +66,7 @@
                 imageName:@"im_post.png"
                 vcClass:@"LOProductCatalogueDetailViewController"];
     
-    
+    bsnMagamer.storybordName=@"LOCatagoryManager";
     [bsTable addBSTableContent:bsnMagamer
                  sectionHeader:@"用户（联系人）管理管理"];
     
@@ -76,7 +76,7 @@
                 imageName:@"im_activity.png"
                 vcClass:@"LOProductCatalogueDetailViewController"];
     
-    
+     bsnMagamer.storybordName=@"LOCatagoryManager";
     [bsTable addBSTableContent:bsnMagamer
                  sectionHeader:@"用户（联系人）管理管理"];
     
@@ -87,7 +87,7 @@
                 imageName:@"98bj@2x.png"
                 vcClass:@"LOProductCatalogueDetailViewController"];
     
-    
+     bsnMagamer.storybordName=@"LOCatagoryManager";
     [bsTable addBSTableContent:bsnMagamer
                  sectionHeader:@"用户（联系人）管理管理"];
     
@@ -98,7 +98,7 @@
                 imageName:@"im_post.png"
                 vcClass:@"LOProductCatalogueDetailViewController"];
     
-    
+     bsnMagamer.storybordName=@"LOCatagoryManager";
     [bsTable addBSTableContent:bsnMagamer sectionHeader:@"商户账户管理"];
     
     bsnMagamer=[BSTableContentObject
@@ -107,7 +107,7 @@
                 imageName:@"im_activity.png"
                 vcClass:@"LOProductCatalogueDetailViewController"];
     
-    
+     bsnMagamer.storybordName=@"LOCatagoryManager";
     [bsTable addBSTableContent:bsnMagamer sectionHeader:@"商户账户管理"];
     
 
@@ -117,7 +117,7 @@
                 imageName:@"98bj@2x.png"
                 vcClass:@"LOProductCatalogueDetailViewController"];
     
-    
+     bsnMagamer.storybordName=@"LOCatagoryManager";
     [bsTable addBSTableContent:bsnMagamer sectionHeader:@"商户账户管理"];
     
     [super setValue:bsTable forKey:@"bSTableObjects"];

@@ -90,4 +90,5 @@
  */
 #import "LOLoginAppViewController.h"
 
+#import "LOProductCatalogueDetailViewController.h"
 #endif
