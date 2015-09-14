@@ -5,6 +5,7 @@
 #import <AFNetworking/AFNetworking.h>
 @interface BSNetworkNotify (){
     NSString* statusString ;
+    NSString* statusApp ;
     NSTimer  * timer  ;
     //AFHTTPSessionManager *_sessionManager;
 }
@@ -45,14 +46,24 @@
 }
 
 -( NSString * ) currentNetworkReachability{
+    if ([statusApp isEqualToString:@"AppNetOK"]) {
+        BSLog(@"应用运行中");
+        [PromptInfo showWithText:@"应用运行中" topOffset:54 duration:2];
+        return statusApp;
+    }else{
+        statusApp=@"未能连接到服务器";
+        
+    }
     return statusString;
 }
 
 -(void) networkTimeOut{
-    statusString=@"未能连接到服务器";
+    statusApp=@"未能连接到服务器";
 }
+
+
 -(void)  networkRunning{
-    statusString=@"AppNetOK";
+    statusApp=@"AppNetOK";
 }
 - ( void ) startNetworkReachability {
     
@@ -127,7 +138,8 @@
     SCNetworkReachabilityFlags flags;
     
     bEnabled = SCNetworkReachabilityGetFlags(ref, &flags);
-    if ([statusString isEqualToString: @"未能连接到服务器"]) {
+    if ([statusApp isEqualToString: @"未能连接到服务器"]) {
+        
         [PromptInfo showWithText:@"服务连接超时或没有启动服务" topOffset:54 duration:2];
         //return;
     }
@@ -154,7 +166,7 @@
         if (nonWiFi==YES){
             BSLog(@"目前网络为WiFi");
             //[PromptInfo showWithText:@"目前网络为WiFi" topOffset:54 duration:2];
-            statusString=@"WiFi";
+            //statusString=@"WiFi";
             statusString=@"AppNetOK";
         }
         if (!flagsReachable && nonWiFi==NO) {

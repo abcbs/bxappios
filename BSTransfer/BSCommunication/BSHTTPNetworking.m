@@ -249,6 +249,7 @@ static int loginRetryNumber;
     block:(BSHTTPResponse)block
     errorUILabel:( UILabel *)errorUILabel{
     return ^(NSURLSessionDataTask *task, id responseObject, id model) {
+        [[BSNetworkNotify sharedBSNetworkNotify] networkRunning];
         [Conf handleNetworkError:nil];
         if (block&&![model isKindOfClass:[ErrorMessage class]]) {
             block(model,nil,nil);
@@ -315,7 +316,7 @@ static int loginRetryNumber;
             [[BSNetworkNotify sharedBSNetworkNotify] networkTimeOut];
             return ;
         }
-        [[BSNetworkNotify sharedBSNetworkNotify] networkRunning];
+        
 
         //key	__NSCFConstantString *	@"Www-Authenticate"	0x00000001107bc478
         //value	__NSCFString *	@"Digest realm=\"REST-Realm\", qop=\"auth\", nonce=\"MTQ0MDUyNDE4OTUxOTplYjAyY2UyYzhhOGQ1MTU4YjRmMWVhNjQ0NzRiMDZjOQ==\""	0x00007f83a870e290
