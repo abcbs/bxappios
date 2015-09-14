@@ -102,7 +102,7 @@ BSNetworkNotify *networkNotify;
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     //注应用程序在启动时，调用了applicationDidFinishLaunching方法之后也会调用此方法，所以确保代码能够分清复原与启动.
     BSLog(@"\n/*=---------------App首次(再次)运行\n\t\tapplicationDidBecomeActive\n-------------------=*/");
-    //[BMKMapView didForeGround];//当应用恢复前台状态时调用，回复地图的渲染和opengl相关的操作
+    [BMKMapView didForeGround];//当应用恢复前台状态时调用，回复地图的渲染和opengl相关的操作
     
     [networkNotify startNetworkReachability];
 }

@@ -122,23 +122,75 @@ static const char *const kOperationQueueName = "kESSLocationCheckOperationQueueN
     [super viewDidLoad];
     //设置TextField键盘
     [self delelageForTextField];
+  
+    [self addCustomGestures];//添加自定义的手势
+    [self initMapView];
     //设置界面元素样式
     [self initSubViews];
-    [self addCustomGestures];//添加自定义的手势
-    self.segment.selectedSegmentIndex = 0;
-    _geocodesearch = [[BMKGeoCodeSearch alloc]init];
     
-    _poisearch = [[BMKPoiSearch alloc]init];
+    [self startScanningLocation];
     
-    _suggestionsearch =[[BMKSuggestionSearch alloc]init];
+    [self locatingWithConfig];
+}
+
+-(void) initMapView{
+    
+    if (_geocodesearch==nil) {
+         _geocodesearch = [[BMKGeoCodeSearch alloc]init];
+    }
+    
+    if (_poisearch==nil) {
+        _poisearch = [[BMKPoiSearch alloc]init];
+    }
+    
+    if (_suggestionsearch==nil) {
+        _suggestionsearch =[[BMKSuggestionSearch alloc]init];
+    }
+    
+    if (_shareurlsearch==nil) {
+        _shareurlsearch = [[BMKShareURLSearch alloc]init];
+        
+    }
+    
+    if (_locService==nil) {
+        _locService = [[BMKLocationService alloc]init];
+    }
+    
+    if (_favManager==nil) {
+         _favManager = [[BMKFavPoiManager alloc] init];
+    }
    
-    _shareurlsearch = [[BMKShareURLSearch alloc]init];
+    if (_routesearch==nil) {
+        _routesearch = [[BMKRouteSearch alloc]init];
+       
+
+    }
     
-    //收藏
-    _favManager = [[BMKFavPoiManager alloc] init];
+    //查询结果存放值
+    if (_searchResultPoi==nil) {
+        _searchResultPoi=[[NSMutableArray alloc]init];
+        
+    }
     
-    _routesearch = [[BMKRouteSearch alloc]init];
+    if (_searchResultAnn==nil) {
+        _searchResultAnn=[[NSMutableArray alloc]init];
+    }
+    
+    if (sugesstPOIs==nil) {
+         sugesstPOIs=[NSMutableArray array];
+    }
+    if (_beaconOperationsQueue==nil) {
+        //创建一个自定义的串行队列,队列的属性被保留供将来使用，应该为NULL
+        _beaconOperationsQueue =
+        dispatch_queue_create(kOperationQueueName, NULL);
+
+    }
+   
+}
+
+-(void)initSubViews{
     //
+
     [_mapView setTrafficEnabled:NO];
     [_mapView setBuildingsEnabled:YES];
     [_mapView setBaiduHeatMapEnabled:NO];
@@ -152,50 +204,42 @@ static const char *const kOperationQueueName = "kESSLocationCheckOperationQueueN
     //radius=500;
     _nextPageButton.enabled = false;
     
-    //查询结果存放值
-    _searchResultPoi=[[NSMutableArray alloc]init];
-    _searchResultAnn=[[NSMutableArray alloc]init];
-  
+    //建议词
+    sugestTableView.delegate = self;
+    sugestTableView.dataSource = self;
+    
+    //键盘位置
+    self.scrollViewframe=self->localtionUIControllerView.frame;
+    
+    self.segment.selectedSegmentIndex = 0;
+    
     [baseUIControllerView setHidden:YES];
     [searchUIControllerView setHidden:NO];
     [localtionUIControllerView setHidden:YES];
+    [controllerView setHidden:YES];
+    
+    sugestTableView.scrollEnabled = YES;
+    sugestTableView.clipsToBounds = YES;
+    sugestTableView.hidden=YES;
+    sugestTableView.opaque=YES;
     //定位
-    _locService = [[BMKLocationService alloc]init];
+   
     [followHeadBtn setEnabled:NO];
     [followingBtn setAlpha:0.6];
     [followingBtn setEnabled:NO];
     [followHeadBtn setAlpha:0.6];
     [stopBtn setEnabled:NO];
     [stopBtn setAlpha:0.6];
-    
-    //设置指南针位置
-    
+
     self.navigationItem.rightBarButtonItem.tintColor=[UIColor whiteColor];
-    //默认定位动作
-    [self locatingWithConfig];
-
-    //创建一个自定义的串行队列,队列的属性被保留供将来使用，应该为NULL
-    _beaconOperationsQueue =
-    dispatch_queue_create(kOperationQueueName, NULL);
-    [self startScanningLocation];
-    
-    //建议词
-    sugestTableView.delegate = self;
-    sugestTableView.dataSource = self;
-    sugestTableView.scrollEnabled = YES;
-    sugestTableView.clipsToBounds = YES;
-    sugestTableView.hidden=YES;
-    sugestTableView.opaque=YES;
-    
-    sugesstPOIs=[NSMutableArray array];
-    //键盘位置
-    self.scrollViewframe=self->localtionUIControllerView.frame;
-
 
 }
 
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:YES];
+    [self initMapView];
+    [self initSubViews];
+    [self hideController];
     [_mapView viewWillAppear];
     _mapView.delegate = self; // 此处记得不用的时候需要置nil，否则影响内存的释放
     //切换为普通地图
@@ -205,15 +249,24 @@ static const char *const kOperationQueueName = "kESSLocationCheckOperationQueueN
     _locService.delegate = self;
     _shareurlsearch.delegate=self;
     _routesearch.delegate = self; // 此处记得不用的时候需要置nil，否则影响内存的释放
+}
 
-    [self initSubViews];
-    [self hideController];
+-(void)viewWillDisappear:(BOOL)animated {
+    [_mapView viewWillDisappear];
+   // _mapView.delegate = nil; // 不用时，置nil
+    _geocodesearch.delegate = nil;
+    _poisearch.delegate=nil;
+    _suggestionsearch.delegate =nil;
+    _shareurlsearch.delegate=nil;
+    _locService.delegate = nil;
+    _routesearch.delegate = nil; // 不用时，置nil
+    
     
 }
 
 - (void)viewDidAppear:(BOOL)animated{
     [self locatingWithConfig];
-    [super viewDidDisappear:animated];
+    [super viewDidAppear:animated];
 
 }
 -(void) viewDidDisappear:(BOOL)animated{
@@ -221,18 +274,7 @@ static const char *const kOperationQueueName = "kESSLocationCheckOperationQueueN
     //[self locatingWithConfig];
     [super viewDidDisappear:animated];
 }
--(void)viewWillDisappear:(BOOL)animated {
-    [_mapView viewWillDisappear];
-    _mapView.delegate = nil; // 不用时，置nil
-    _geocodesearch.delegate = nil;
-    _poisearch.delegate=nil;
-    _suggestionsearch.delegate =nil;
-    _shareurlsearch.delegate=nil;
-    _locService.delegate = nil;
-    _routesearch.delegate = nil; // 不用时，置nil
 
-    
-}
 - (void)viewDidUnload {
     [super viewDidUnload];
     // Release any retained subviews of the main view.
@@ -263,16 +305,6 @@ static const char *const kOperationQueueName = "kESSLocationCheckOperationQueueN
     if (_mapView) {
         _mapView = nil;
     }
-}
-
-- (void)initSubViews
-{
-    //修改样式
-    //登陆按钮
-    //[BSUIComponentView configButtonStyle:_closeButton];
-    controllerView.hidden=YES;
-
-    
 }
 
 #pragma mark 键盘处理事件

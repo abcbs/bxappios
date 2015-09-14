@@ -760,8 +760,6 @@
 		84A0765C1B21AA9A001CE3A2 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A0765B1B21AA9A001CE3A2 /* MediaPlayer.framework */; };
 		84A0765E1B21AAA7001CE3A2 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A0765D1B21AAA7001CE3A2 /* CoreText.framework */; };
 		84A076601B21AAC8001CE3A2 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A0765F1B21AAC8001CE3A2 /* AddressBook.framework */; };
-		84B29FFD1B9C0CFF00D6145F /* MyAnimatedAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B29FFC1B9C0CFF00D6145F /* MyAnimatedAnnotationView.m */; };
-		84B29FFE1B9C0CFF00D6145F /* MyAnimatedAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B29FFC1B9C0CFF00D6145F /* MyAnimatedAnnotationView.m */; };
 		84BA96791B2829D500388B58 /* BusinessManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BA96491B2829D500388B58 /* BusinessManager.m */; };
 		84BA967A1B2829D500388B58 /* CustomerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BA964C1B2829D500388B58 /* CustomerManager.m */; };
 		84BA967B1B2829D500388B58 /* AFAppDotNetAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BA964F1B2829D500388B58 /* AFAppDotNetAPIClient.m */; };
@@ -1261,10 +1259,6 @@
 		84EA9A911B57F17800AC549F /* LSBusinessIndexMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84EA9A8F1B57F17800AC549F /* LSBusinessIndexMain.storyboard */; };
 		84EAAD061B62520800E9C8BC /* LSProductMaintainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E767CD1B60DB9C0018A9E3 /* LSProductMaintainViewController.m */; };
 		84EAAD071B62520800E9C8BC /* LSProductManagerDelegate.h in Sources */ = {isa = PBXBuildFile; fileRef = 84EB39751B58EFDE00AD9F66 /* LSProductManagerDelegate.h */; };
-		84EAD9F31B943BF700302A90 /* BSBaiduViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 84EAD9F21B943BF700302A90 /* BSBaiduViewController.mm */; };
-		84EAD9F41B943BF700302A90 /* BSBaiduViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 84EAD9F21B943BF700302A90 /* BSBaiduViewController.mm */; };
-		84EADA001B95744100302A90 /* BSRadarUploadViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 84EAD9FF1B95744100302A90 /* BSRadarUploadViewController.mm */; };
-		84EADA011B95744100302A90 /* BSRadarUploadViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 84EAD9FF1B95744100302A90 /* BSRadarUploadViewController.mm */; };
 		84EADA141B95C59500302A90 /* arrowTexture.png in Resources */ = {isa = PBXBuildFile; fileRef = 84EADA081B95C59500302A90 /* arrowTexture.png */; };
 		84EADA151B95C59500302A90 /* arrowTexture.png in Resources */ = {isa = PBXBuildFile; fileRef = 84EADA081B95C59500302A90 /* arrowTexture.png */; };
 		84EADA161B95C59500302A90 /* arrowTexture.png in Resources */ = {isa = PBXBuildFile; fileRef = 84EADA081B95C59500302A90 /* arrowTexture.png */; };
@@ -1301,8 +1295,6 @@
 		84EADA351B95C59500302A90 /* texture_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 84EADA131B95C59500302A90 /* texture_arrow.png */; };
 		84EADA361B95C59500302A90 /* texture_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 84EADA131B95C59500302A90 /* texture_arrow.png */; };
 		84EADA371B95C59500302A90 /* texture_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 84EADA131B95C59500302A90 /* texture_arrow.png */; };
-		84EADA3A1B95C6F600302A90 /* BSRadarNearbyViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 84EADA391B95C6F500302A90 /* BSRadarNearbyViewController.mm */; };
-		84EADA3B1B95C6F600302A90 /* BSRadarNearbyViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 84EADA391B95C6F500302A90 /* BSRadarNearbyViewController.mm */; };
 		84EADEDC1B9EA86C0098ABCE /* back_disable.png in Resources */ = {isa = PBXBuildFile; fileRef = 84EADED81B9EA86C0098ABCE /* back_disable.png */; };
 		84EADEDD1B9EA86C0098ABCE /* back_disable.png in Resources */ = {isa = PBXBuildFile; fileRef = 84EADED81B9EA86C0098ABCE /* back_disable.png */; };
 		84EADEDE1B9EA86C0098ABCE /* back_disable.png in Resources */ = {isa = PBXBuildFile; fileRef = 84EADED81B9EA86C0098ABCE /* back_disable.png */; };
@@ -1327,10 +1319,6 @@
 		84EBA00B1B416E37003309F6 /* ClassForSelectors.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EBA00A1B416E37003309F6 /* ClassForSelectors.m */; };
 		84EBA0131B4189E0003309F6 /* LBLiferServiceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EBA0121B4189E0003309F6 /* LBLiferServiceController.m */; };
 		84EBA0161B41A307003309F6 /* KTLBMainTabBarController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 84EBA0151B41A307003309F6 /* KTLBMainTabBarController.mm */; };
-		84EBF0261B9FF42D00B3F16A /* UIImage+Rotate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EBF0231B9FF42D00B3F16A /* UIImage+Rotate.m */; };
-		84EBF0271B9FF42D00B3F16A /* UIImage+Rotate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EBF0231B9FF42D00B3F16A /* UIImage+Rotate.m */; };
-		84EBF02C1BA0022900B3F16A /* WayPointRouteSearchViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 84EBF02B1BA0022900B3F16A /* WayPointRouteSearchViewController.mm */; };
-		84EBF02D1BA0022900B3F16A /* WayPointRouteSearchViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 84EBF02B1BA0022900B3F16A /* WayPointRouteSearchViewController.mm */; };
 		84EBF02F1BA002C400B3F16A /* WayPointRouteSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84EBF02E1BA002C400B3F16A /* WayPointRouteSearchViewController.xib */; };
 		84EBF0301BA002C400B3F16A /* WayPointRouteSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84EBF02E1BA002C400B3F16A /* WayPointRouteSearchViewController.xib */; };
 		84EBF0311BA002C400B3F16A /* WayPointRouteSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84EBF02E1BA002C400B3F16A /* WayPointRouteSearchViewController.xib */; };
@@ -1424,18 +1412,48 @@
 		84F34DF41BA6BB1A00188756 /* BSMAMapMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84F34DF31BA6BB1A00188756 /* BSMAMapMain.storyboard */; };
 		84F34DF51BA6BB1A00188756 /* BSMAMapMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84F34DF31BA6BB1A00188756 /* BSMAMapMain.storyboard */; };
 		84F34DF61BA6BB1A00188756 /* BSMAMapMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84F34DF31BA6BB1A00188756 /* BSMAMapMain.storyboard */; };
-		84F34DFB1BA6BFDF00188756 /* BSMAMapMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F34DFA1BA6BFDF00188756 /* BSMAMapMainViewController.m */; };
-		84F34DFC1BA6BFDF00188756 /* BSMAMapMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F34DFA1BA6BFDF00188756 /* BSMAMapMainViewController.m */; };
-		84F34DFF1BA6C01D00188756 /* BSMAMapRadarUploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F34DFE1BA6C01D00188756 /* BSMAMapRadarUploadViewController.m */; };
-		84F34E001BA6C01D00188756 /* BSMAMapRadarUploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F34DFE1BA6C01D00188756 /* BSMAMapRadarUploadViewController.m */; };
-		84F34E031BA6C04900188756 /* BSMAMapRadarNearbyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F34E021BA6C04900188756 /* BSMAMapRadarNearbyViewController.m */; };
-		84F34E041BA6C04900188756 /* BSMAMapRadarNearbyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F34E021BA6C04900188756 /* BSMAMapRadarNearbyViewController.m */; };
 		84F34E0D1BA6C63300188756 /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F34DDD1BA6A30000188756 /* MAMapKit.framework */; };
 		84F34E0E1BA6C63400188756 /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F34DDD1BA6A30000188756 /* MAMapKit.framework */; };
 		84F34E0F1BA6C63400188756 /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F34DDD1BA6A30000188756 /* MAMapKit.framework */; };
 		84F34E101BA6C63700188756 /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F34DDD1BA6A30000188756 /* MAMapKit.framework */; };
 		84F34E111BA6C63800188756 /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F34DDD1BA6A30000188756 /* MAMapKit.framework */; };
 		84F34E121BA6C63800188756 /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F34DDD1BA6A30000188756 /* MAMapKit.framework */; };
+		84F34E1B1BA6E81E00188756 /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F34DDD1BA6A30000188756 /* MAMapKit.framework */; };
+		84F34E1C1BA6E82300188756 /* AMapSearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F34DDC1BA6A30000188756 /* AMapSearchKit.framework */; };
+		84F34E1D1BA6E82700188756 /* AMapCloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F34DDB1BA6A30000188756 /* AMapCloudKit.framework */; };
+		84F34E2B1BA6FFEC00188756 /* BSBaiduViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 84F34E201BA6FFEC00188756 /* BSBaiduViewController.mm */; };
+		84F34E2C1BA6FFEC00188756 /* BSBaiduViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 84F34E201BA6FFEC00188756 /* BSBaiduViewController.mm */; };
+		84F34E2D1BA6FFEC00188756 /* BSRadarNearbyViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 84F34E221BA6FFEC00188756 /* BSRadarNearbyViewController.mm */; };
+		84F34E2E1BA6FFEC00188756 /* BSRadarNearbyViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 84F34E221BA6FFEC00188756 /* BSRadarNearbyViewController.mm */; };
+		84F34E2F1BA6FFEC00188756 /* BSRadarUploadViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 84F34E241BA6FFEC00188756 /* BSRadarUploadViewController.mm */; };
+		84F34E301BA6FFEC00188756 /* BSRadarUploadViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 84F34E241BA6FFEC00188756 /* BSRadarUploadViewController.mm */; };
+		84F34E311BA6FFEC00188756 /* MyAnimatedAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F34E261BA6FFEC00188756 /* MyAnimatedAnnotationView.m */; };
+		84F34E321BA6FFEC00188756 /* MyAnimatedAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F34E261BA6FFEC00188756 /* MyAnimatedAnnotationView.m */; };
+		84F34E331BA6FFEC00188756 /* UIImage+Rotate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F34E281BA6FFEC00188756 /* UIImage+Rotate.m */; };
+		84F34E341BA6FFEC00188756 /* UIImage+Rotate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F34E281BA6FFEC00188756 /* UIImage+Rotate.m */; };
+		84F34E351BA6FFEC00188756 /* WayPointRouteSearchViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 84F34E2A1BA6FFEC00188756 /* WayPointRouteSearchViewController.mm */; };
+		84F34E361BA6FFEC00188756 /* WayPointRouteSearchViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 84F34E2A1BA6FFEC00188756 /* WayPointRouteSearchViewController.mm */; };
+		84F34E421BA6FFFD00188756 /* BaseMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F34E391BA6FFFD00188756 /* BaseMapViewController.m */; };
+		84F34E431BA6FFFD00188756 /* BaseMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F34E391BA6FFFD00188756 /* BaseMapViewController.m */; };
+		84F34E441BA6FFFD00188756 /* BSMAMapMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F34E3B1BA6FFFD00188756 /* BSMAMapMainViewController.m */; };
+		84F34E451BA6FFFD00188756 /* BSMAMapMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F34E3B1BA6FFFD00188756 /* BSMAMapMainViewController.m */; };
+		84F34E461BA6FFFD00188756 /* BSMAMapRadarNearbyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F34E3D1BA6FFFD00188756 /* BSMAMapRadarNearbyViewController.m */; };
+		84F34E471BA6FFFD00188756 /* BSMAMapRadarNearbyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F34E3D1BA6FFFD00188756 /* BSMAMapRadarNearbyViewController.m */; };
+		84F34E481BA6FFFD00188756 /* BSMAMapRadarUploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F34E3F1BA6FFFD00188756 /* BSMAMapRadarUploadViewController.m */; };
+		84F34E491BA6FFFD00188756 /* BSMAMapRadarUploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F34E3F1BA6FFFD00188756 /* BSMAMapRadarUploadViewController.m */; };
+		84F34E4A1BA6FFFD00188756 /* MapTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F34E411BA6FFFD00188756 /* MapTypeViewController.m */; };
+		84F34E4B1BA6FFFD00188756 /* MapTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F34E411BA6FFFD00188756 /* MapTypeViewController.m */; };
+		84F34E4E1BA7004600188756 /* BSBaseControllerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F34E4D1BA7004600188756 /* BSBaseControllerView.m */; };
+		84F34E4F1BA7004600188756 /* BSBaseControllerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F34E4D1BA7004600188756 /* BSBaseControllerView.m */; };
+		84F34E521BA7007400188756 /* BSMapSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F34E511BA7007400188756 /* BSMapSearchView.m */; };
+		84F34E531BA7007400188756 /* BSMapSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F34E511BA7007400188756 /* BSMapSearchView.m */; };
+		84F34E561BA7017800188756 /* BSRouteNaviView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F34E551BA7017800188756 /* BSRouteNaviView.m */; };
+		84F34E571BA7017800188756 /* BSRouteNaviView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F34E551BA7017800188756 /* BSRouteNaviView.m */; };
+		84F34E581BA7125300188756 /* libstdc++.6.0.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F309261B9D3D110070EF19 /* libstdc++.6.0.9.dylib */; };
+		84F34E591BA7125E00188756 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 84517B7A1B86129A00469111 /* libz.dylib */; };
+		84F34E5A1BA7127300188756 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F309211B9D3CA90070EF19 /* AudioToolbox.framework */; };
+		84F34E5B1BA7128400188756 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F309231B9D3CB40070EF19 /* AVFoundation.framework */; };
+		84F34E5C1BA7128E00188756 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A0765F1B21AAC8001CE3A2 /* AddressBook.framework */; };
 		84F58D491B93F628002C535B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A076591B21AA8D001CE3A2 /* CoreLocation.framework */; };
 		84F58D4A1B93F632002C535B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E8377531B033EAB00782034 /* QuartzCore.framework */; };
 		84F58D4B1B93F63C002C535B /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84FB97A21B93922F0018790A /* OpenGLES.framework */; };
@@ -2257,8 +2275,6 @@
 		84A0765B1B21AA9A001CE3A2 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		84A0765D1B21AAA7001CE3A2 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		84A0765F1B21AAC8001CE3A2 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
-		84B29FFB1B9C0CFF00D6145F /* MyAnimatedAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAnimatedAnnotationView.h; sourceTree = "<group>"; };
-		84B29FFC1B9C0CFF00D6145F /* MyAnimatedAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAnimatedAnnotationView.m; sourceTree = "<group>"; };
 		84BA96481B2829D500388B58 /* BusinessManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusinessManager.h; sourceTree = "<group>"; };
 		84BA96491B2829D500388B58 /* BusinessManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusinessManager.m; sourceTree = "<group>"; };
 		84BA964B1B2829D500388B58 /* CustomerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomerManager.h; sourceTree = "<group>"; };
@@ -2558,10 +2574,6 @@
 		84EA97AF1B57E21F00AC549F /* yuan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yuan.png; sourceTree = "<group>"; };
 		84EA97B01B57E21F00AC549F /* yyfw9_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yyfw9_01.png; sourceTree = "<group>"; };
 		84EA9A8F1B57F17800AC549F /* LSBusinessIndexMain.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LSBusinessIndexMain.storyboard; sourceTree = "<group>"; };
-		84EAD9F11B943BF700302A90 /* BSBaiduViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSBaiduViewController.h; sourceTree = "<group>"; };
-		84EAD9F21B943BF700302A90 /* BSBaiduViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BSBaiduViewController.mm; sourceTree = "<group>"; };
-		84EAD9FE1B95744100302A90 /* BSRadarUploadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSRadarUploadViewController.h; sourceTree = "<group>"; };
-		84EAD9FF1B95744100302A90 /* BSRadarUploadViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BSRadarUploadViewController.mm; sourceTree = "<group>"; };
 		84EADA081B95C59500302A90 /* arrowTexture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrowTexture.png; sourceTree = "<group>"; };
 		84EADA091B95C59500302A90 /* line_dash_texture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = line_dash_texture.png; sourceTree = "<group>"; };
 		84EADA0A1B95C59500302A90 /* poi_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = poi_1.png; sourceTree = "<group>"; };
@@ -2574,8 +2586,6 @@
 		84EADA111B95C59500302A90 /* radar_upload@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "radar_upload@2x.png"; sourceTree = "<group>"; };
 		84EADA121B95C59500302A90 /* test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test.png; sourceTree = "<group>"; };
 		84EADA131B95C59500302A90 /* texture_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = texture_arrow.png; sourceTree = "<group>"; };
-		84EADA381B95C6F500302A90 /* BSRadarNearbyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSRadarNearbyViewController.h; sourceTree = "<group>"; };
-		84EADA391B95C6F500302A90 /* BSRadarNearbyViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BSRadarNearbyViewController.mm; sourceTree = "<group>"; };
 		84EADED81B9EA86C0098ABCE /* back_disable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back_disable.png; sourceTree = "<group>"; };
 		84EADED91B9EA86C0098ABCE /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		84EADEDA1B9EA86C0098ABCE /* forward_disable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = forward_disable.png; sourceTree = "<group>"; };
@@ -2595,10 +2605,6 @@
 		84EBA0121B4189E0003309F6 /* LBLiferServiceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBLiferServiceController.m; sourceTree = "<group>"; };
 		84EBA0141B41A307003309F6 /* KTLBMainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTLBMainTabBarController.h; sourceTree = "<group>"; };
 		84EBA0151B41A307003309F6 /* KTLBMainTabBarController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = KTLBMainTabBarController.mm; sourceTree = "<group>"; };
-		84EBF0221B9FF42D00B3F16A /* UIImage+Rotate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Rotate.h"; sourceTree = "<group>"; };
-		84EBF0231B9FF42D00B3F16A /* UIImage+Rotate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Rotate.m"; sourceTree = "<group>"; };
-		84EBF02A1BA0022900B3F16A /* WayPointRouteSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WayPointRouteSearchViewController.h; sourceTree = "<group>"; };
-		84EBF02B1BA0022900B3F16A /* WayPointRouteSearchViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WayPointRouteSearchViewController.mm; sourceTree = "<group>"; };
 		84EBF02E1BA002C400B3F16A /* WayPointRouteSearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WayPointRouteSearchViewController.xib; sourceTree = "<group>"; };
 		84EBF0321BA0538E00B3F16A /* BSUIKeyboardCoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUIKeyboardCoView.h; sourceTree = "<group>"; };
 		84EBF0331BA0538E00B3F16A /* BSUIKeyboardCoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUIKeyboardCoView.m; sourceTree = "<group>"; };
@@ -2645,12 +2651,34 @@
 		84F34DDC1BA6A30000188756 /* AMapSearchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AMapSearchKit.framework; sourceTree = "<group>"; };
 		84F34DDD1BA6A30000188756 /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MAMapKit.framework; sourceTree = "<group>"; };
 		84F34DF31BA6BB1A00188756 /* BSMAMapMain.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BSMAMapMain.storyboard; sourceTree = "<group>"; };
-		84F34DF91BA6BFDF00188756 /* BSMAMapMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSMAMapMainViewController.h; sourceTree = "<group>"; };
-		84F34DFA1BA6BFDF00188756 /* BSMAMapMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSMAMapMainViewController.m; sourceTree = "<group>"; };
-		84F34DFD1BA6C01D00188756 /* BSMAMapRadarUploadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSMAMapRadarUploadViewController.h; sourceTree = "<group>"; };
-		84F34DFE1BA6C01D00188756 /* BSMAMapRadarUploadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSMAMapRadarUploadViewController.m; sourceTree = "<group>"; };
-		84F34E011BA6C04900188756 /* BSMAMapRadarNearbyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSMAMapRadarNearbyViewController.h; sourceTree = "<group>"; };
-		84F34E021BA6C04900188756 /* BSMAMapRadarNearbyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSMAMapRadarNearbyViewController.m; sourceTree = "<group>"; };
+		84F34E1F1BA6FFEC00188756 /* BSBaiduViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSBaiduViewController.h; sourceTree = "<group>"; };
+		84F34E201BA6FFEC00188756 /* BSBaiduViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BSBaiduViewController.mm; sourceTree = "<group>"; };
+		84F34E211BA6FFEC00188756 /* BSRadarNearbyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSRadarNearbyViewController.h; sourceTree = "<group>"; };
+		84F34E221BA6FFEC00188756 /* BSRadarNearbyViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BSRadarNearbyViewController.mm; sourceTree = "<group>"; };
+		84F34E231BA6FFEC00188756 /* BSRadarUploadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSRadarUploadViewController.h; sourceTree = "<group>"; };
+		84F34E241BA6FFEC00188756 /* BSRadarUploadViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BSRadarUploadViewController.mm; sourceTree = "<group>"; };
+		84F34E251BA6FFEC00188756 /* MyAnimatedAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAnimatedAnnotationView.h; sourceTree = "<group>"; };
+		84F34E261BA6FFEC00188756 /* MyAnimatedAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAnimatedAnnotationView.m; sourceTree = "<group>"; };
+		84F34E271BA6FFEC00188756 /* UIImage+Rotate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Rotate.h"; sourceTree = "<group>"; };
+		84F34E281BA6FFEC00188756 /* UIImage+Rotate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Rotate.m"; sourceTree = "<group>"; };
+		84F34E291BA6FFEC00188756 /* WayPointRouteSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WayPointRouteSearchViewController.h; sourceTree = "<group>"; };
+		84F34E2A1BA6FFEC00188756 /* WayPointRouteSearchViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WayPointRouteSearchViewController.mm; sourceTree = "<group>"; };
+		84F34E381BA6FFFD00188756 /* BaseMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseMapViewController.h; sourceTree = "<group>"; };
+		84F34E391BA6FFFD00188756 /* BaseMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseMapViewController.m; sourceTree = "<group>"; };
+		84F34E3A1BA6FFFD00188756 /* BSMAMapMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSMAMapMainViewController.h; sourceTree = "<group>"; };
+		84F34E3B1BA6FFFD00188756 /* BSMAMapMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSMAMapMainViewController.m; sourceTree = "<group>"; };
+		84F34E3C1BA6FFFD00188756 /* BSMAMapRadarNearbyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSMAMapRadarNearbyViewController.h; sourceTree = "<group>"; };
+		84F34E3D1BA6FFFD00188756 /* BSMAMapRadarNearbyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSMAMapRadarNearbyViewController.m; sourceTree = "<group>"; };
+		84F34E3E1BA6FFFD00188756 /* BSMAMapRadarUploadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSMAMapRadarUploadViewController.h; sourceTree = "<group>"; };
+		84F34E3F1BA6FFFD00188756 /* BSMAMapRadarUploadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSMAMapRadarUploadViewController.m; sourceTree = "<group>"; };
+		84F34E401BA6FFFD00188756 /* MapTypeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapTypeViewController.h; sourceTree = "<group>"; };
+		84F34E411BA6FFFD00188756 /* MapTypeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapTypeViewController.m; sourceTree = "<group>"; };
+		84F34E4C1BA7004600188756 /* BSBaseControllerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSBaseControllerView.h; sourceTree = "<group>"; };
+		84F34E4D1BA7004600188756 /* BSBaseControllerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSBaseControllerView.m; sourceTree = "<group>"; };
+		84F34E501BA7007400188756 /* BSMapSearchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSMapSearchView.h; sourceTree = "<group>"; };
+		84F34E511BA7007400188756 /* BSMapSearchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSMapSearchView.m; sourceTree = "<group>"; };
+		84F34E541BA7017800188756 /* BSRouteNaviView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSRouteNaviView.h; sourceTree = "<group>"; };
+		84F34E551BA7017800188756 /* BSRouteNaviView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSRouteNaviView.m; sourceTree = "<group>"; };
 		84F66D661B53E7DE00498734 /* LSHandySearchNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSHandySearchNavViewController.h; sourceTree = "<group>"; };
 		84F66D671B53E7DE00498734 /* LSHandySearchNavViewController..mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = LSHandySearchNavViewController..mm; sourceTree = "<group>"; };
 		84F7BD8C1BA5FAB200014E75 /* UIApplication+SellerAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+SellerAppDelegate.h"; sourceTree = "<group>"; };
@@ -2789,12 +2817,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84F34E5C1BA7128E00188756 /* AddressBook.framework in Frameworks */,
+				84F34E5B1BA7128400188756 /* AVFoundation.framework in Frameworks */,
+				84F34E5A1BA7127300188756 /* AudioToolbox.framework in Frameworks */,
+				84F34E591BA7125E00188756 /* libz.dylib in Frameworks */,
+				84F34E581BA7125300188756 /* libstdc++.6.0.9.dylib in Frameworks */,
 				84F58D4E1B93F659002C535B /* Security.framework in Frameworks */,
 				84F58D4D1B93F64F002C535B /* CoreGraphics.framework in Frameworks */,
+				84F34E1B1BA6E81E00188756 /* MAMapKit.framework in Frameworks */,
 				84F58D4C1B93F645002C535B /* SystemConfiguration.framework in Frameworks */,
 				84F58D4B1B93F63C002C535B /* OpenGLES.framework in Frameworks */,
+				84F34E1C1BA6E82300188756 /* AMapSearchKit.framework in Frameworks */,
 				84F58D4A1B93F632002C535B /* QuartzCore.framework in Frameworks */,
 				84F58D491B93F628002C535B /* CoreLocation.framework in Frameworks */,
+				84F34E1D1BA6E82700188756 /* AMapCloudKit.framework in Frameworks */,
 				01AEAFF491B315ECF3091828 /* libPods-KT-FRAME-PK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -4724,8 +4760,8 @@
 		84EDB19F1B937849006D925B /* Map */ = {
 			isa = PBXGroup;
 			children = (
-				84F34DF81BA6BDC300188756 /* BaiduMap */,
-				84F34E051BA6C20100188756 /* MAMAP */,
+				84F34E371BA6FFFD00188756 /* MAMAP */,
+				84F34E1E1BA6FFEC00188756 /* BaiduMap */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -4833,36 +4869,46 @@
 			path = AMap_iOS_Navi_V1.3.1_Lib;
 			sourceTree = "<group>";
 		};
-		84F34DF81BA6BDC300188756 /* BaiduMap */ = {
+		84F34E1E1BA6FFEC00188756 /* BaiduMap */ = {
 			isa = PBXGroup;
 			children = (
-				84EBF02A1BA0022900B3F16A /* WayPointRouteSearchViewController.h */,
-				84EBF02B1BA0022900B3F16A /* WayPointRouteSearchViewController.mm */,
-				84EBF0221B9FF42D00B3F16A /* UIImage+Rotate.h */,
-				84EBF0231B9FF42D00B3F16A /* UIImage+Rotate.m */,
-				84EAD9FE1B95744100302A90 /* BSRadarUploadViewController.h */,
-				84EAD9FF1B95744100302A90 /* BSRadarUploadViewController.mm */,
-				84EADA381B95C6F500302A90 /* BSRadarNearbyViewController.h */,
-				84EADA391B95C6F500302A90 /* BSRadarNearbyViewController.mm */,
-				84EAD9F11B943BF700302A90 /* BSBaiduViewController.h */,
-				84EAD9F21B943BF700302A90 /* BSBaiduViewController.mm */,
-				84B29FFB1B9C0CFF00D6145F /* MyAnimatedAnnotationView.h */,
-				84B29FFC1B9C0CFF00D6145F /* MyAnimatedAnnotationView.m */,
+				84F34E1F1BA6FFEC00188756 /* BSBaiduViewController.h */,
+				84F34E201BA6FFEC00188756 /* BSBaiduViewController.mm */,
+				84F34E211BA6FFEC00188756 /* BSRadarNearbyViewController.h */,
+				84F34E221BA6FFEC00188756 /* BSRadarNearbyViewController.mm */,
+				84F34E231BA6FFEC00188756 /* BSRadarUploadViewController.h */,
+				84F34E241BA6FFEC00188756 /* BSRadarUploadViewController.mm */,
+				84F34E251BA6FFEC00188756 /* MyAnimatedAnnotationView.h */,
+				84F34E261BA6FFEC00188756 /* MyAnimatedAnnotationView.m */,
+				84F34E271BA6FFEC00188756 /* UIImage+Rotate.h */,
+				84F34E281BA6FFEC00188756 /* UIImage+Rotate.m */,
+				84F34E291BA6FFEC00188756 /* WayPointRouteSearchViewController.h */,
+				84F34E2A1BA6FFEC00188756 /* WayPointRouteSearchViewController.mm */,
 			);
-			name = BaiduMap;
+			path = BaiduMap;
 			sourceTree = "<group>";
 		};
-		84F34E051BA6C20100188756 /* MAMAP */ = {
+		84F34E371BA6FFFD00188756 /* MAMAP */ = {
 			isa = PBXGroup;
 			children = (
-				84F34DF91BA6BFDF00188756 /* BSMAMapMainViewController.h */,
-				84F34DFA1BA6BFDF00188756 /* BSMAMapMainViewController.m */,
-				84F34DFD1BA6C01D00188756 /* BSMAMapRadarUploadViewController.h */,
-				84F34DFE1BA6C01D00188756 /* BSMAMapRadarUploadViewController.m */,
-				84F34E011BA6C04900188756 /* BSMAMapRadarNearbyViewController.h */,
-				84F34E021BA6C04900188756 /* BSMAMapRadarNearbyViewController.m */,
+				84F34E381BA6FFFD00188756 /* BaseMapViewController.h */,
+				84F34E391BA6FFFD00188756 /* BaseMapViewController.m */,
+				84F34E3A1BA6FFFD00188756 /* BSMAMapMainViewController.h */,
+				84F34E3B1BA6FFFD00188756 /* BSMAMapMainViewController.m */,
+				84F34E3C1BA6FFFD00188756 /* BSMAMapRadarNearbyViewController.h */,
+				84F34E3D1BA6FFFD00188756 /* BSMAMapRadarNearbyViewController.m */,
+				84F34E3E1BA6FFFD00188756 /* BSMAMapRadarUploadViewController.h */,
+				84F34E3F1BA6FFFD00188756 /* BSMAMapRadarUploadViewController.m */,
+				84F34E401BA6FFFD00188756 /* MapTypeViewController.h */,
+				84F34E411BA6FFFD00188756 /* MapTypeViewController.m */,
+				84F34E4C1BA7004600188756 /* BSBaseControllerView.h */,
+				84F34E4D1BA7004600188756 /* BSBaseControllerView.m */,
+				84F34E501BA7007400188756 /* BSMapSearchView.h */,
+				84F34E511BA7007400188756 /* BSMapSearchView.m */,
+				84F34E541BA7017800188756 /* BSRouteNaviView.h */,
+				84F34E551BA7017800188756 /* BSRouteNaviView.m */,
 			);
-			name = MAMAP;
+			path = MAMAP;
 			sourceTree = "<group>";
 		};
 		84F66D601B53E6A700498734 /* NIB-SYB-Resource */ = {
@@ -6570,7 +6616,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84F34E531BA7007400188756 /* BSMapSearchView.m in Sources */,
 				84F84AD71B7C4BA3008DF38F /* BSDesCrypto.m in Sources */,
+				84F34E2E1BA6FFEC00188756 /* BSRadarNearbyViewController.mm in Sources */,
 				847C1C751B8CADBE00BCBEC9 /* EHNetwork.m in Sources */,
 				8425E18C1B67644200A93C43 /* BSPhotoTakeController.m in Sources */,
 				8461B72C1B54BAB5002A7C43 /* KTHandyViewController.m in Sources */,
@@ -6580,9 +6628,7 @@
 				84D19FED1B4C440500BA25BF /* BSBLEViewController.m in Sources */,
 				844570D21B4D672D000CA1C7 /* BLEInfo.m in Sources */,
 				84D19FEF1B4C440500BA25BF /* LeDiscovery.m in Sources */,
-				84EADA3B1B95C6F600302A90 /* BSRadarNearbyViewController.mm in Sources */,
 				84E71F351B4E5473003089B2 /* BLEDevicesAddTableViewController.m in Sources */,
-				84EBF0271B9FF42D00B3F16A /* UIImage+Rotate.m in Sources */,
 				841F950B1B8C59DA001B26B5 /* BSDigestAuthorization.m in Sources */,
 				845AC3511B674C870077E0ED /* BSUICollectionCollectionViewController.m in Sources */,
 				84D2DA7A1BA06DB000E4C6EB /* MoreView.m in Sources */,
@@ -6594,47 +6640,50 @@
 				84F28FD41B62BB31001078D8 /* BSPhotoViewController.m in Sources */,
 				844570DA1B4D67D5000CA1C7 /* BTLECentralViewController.m in Sources */,
 				844FFE911B8B4C4600658A36 /* BSAesSecurity.m in Sources */,
-				84B29FFE1B9C0CFF00D6145F /* MyAnimatedAnnotationView.m in Sources */,
 				84F84ADB1B7C4E2B008DF38F /* BSDesSecurity.m in Sources */,
-				84EBF02D1BA0022900B3F16A /* WayPointRouteSearchViewController.mm in Sources */,
 				84D19FF11B4C440500BA25BF /* LeTemperatureAlarmService.m in Sources */,
 				84F309531B9D440A0070EF19 /* PromptInfo.m in Sources */,
 				844570DC1B4D67D5000CA1C7 /* BTLEPeripheralViewController.m in Sources */,
+				84F34E361BA6FFEC00188756 /* WayPointRouteSearchViewController.mm in Sources */,
+				84F34E4B1BA6FFFD00188756 /* MapTypeViewController.m in Sources */,
 				84DB2F041B7CCB700041588B /* ESSBeaconScanner.m in Sources */,
-				84EAD9F41B943BF700302A90 /* BSBaiduViewController.mm in Sources */,
 				84EBF0351BA0538E00B3F16A /* BSUIKeyboardCoView.m in Sources */,
 				84BF8FC41B4AC2FA001042F1 /* Conf.m in Sources */,
 				84BF8FC61B4AC2FA001042F1 /* ErrorMessage.m in Sources */,
 				84E9D79F1B61E10C00F2CD24 /* BSAssetCell.m in Sources */,
-				84F34E001BA6C01D00188756 /* BSMAMapRadarUploadViewController.m in Sources */,
 				84BF8FCD1B4AC2FA001042F1 /* BSTableViewRefreshController.m in Sources */,
+				84F34E431BA6FFFD00188756 /* BaseMapViewController.m in Sources */,
+				84F34E451BA6FFFD00188756 /* BSMAMapMainViewController.m in Sources */,
 				84E6C0901B7DCBA100289D94 /* ESSScannerViewController.m in Sources */,
 				84E9D7A91B61E10C00F2CD24 /* BSVideoIconView.m in Sources */,
 				848C7C381B79A38A000774A1 /* Base64.m in Sources */,
 				84BF8FCF1B4AC2FA001042F1 /* BSTableSection.m in Sources */,
 				84BF8FD11B4AC2FA001042F1 /* BSTableContentObject.m in Sources */,
+				84F34E341BA6FFEC00188756 /* UIImage+Rotate.m in Sources */,
 				84E9D79D1B61E10C00F2CD24 /* BSAlbumsViewController.m in Sources */,
 				84BF8FD31B4AC2FA001042F1 /* UIViewController+BSTableObject.m in Sources */,
-				84F34DFC1BA6BFDF00188756 /* BSMAMapMainViewController.m in Sources */,
 				84BF8FD51B4AC2FA001042F1 /* BSUITableViewInitRuntimeController.m in Sources */,
 				84BF8FDA1B4AC2FA001042F1 /* BSTableViewCellData.m in Sources */,
 				84E9D7AB1B61E10C00F2CD24 /* BSVideoIndicatorView.m in Sources */,
 				84BF8FDC1B4AC2FA001042F1 /* BSTableViewMultCellData.m in Sources */,
 				84DAA4A51B7AE6120070BF83 /* BSRSACrypto.m in Sources */,
 				84BF8FDE1B4AC2FA001042F1 /* BSUITabBarCommonController.m in Sources */,
+				84F34E491BA6FFFD00188756 /* BSMAMapRadarUploadViewController.m in Sources */,
 				84BF8FE01B4AC2FA001042F1 /* BSContentObjectNavigation.m in Sources */,
 				84BF8FE21B4AC2FA001042F1 /* BSFCRollingADImageUIView.m in Sources */,
+				84F34E2C1BA6FFEC00188756 /* BSBaiduViewController.mm in Sources */,
 				844FFE951B8B542300658A36 /* NSData+CommonCrypto.m in Sources */,
 				846FC4571B7FA65100496F96 /* ESSBeaconIssue.m in Sources */,
-				84F34E041BA6C04900188756 /* BSMAMapRadarNearbyViewController.m in Sources */,
 				84BF8FE51B4AC2FA001042F1 /* BSUIImageTitleTableViewCell.m in Sources */,
-				84EADA011B95744100302A90 /* BSRadarUploadViewController.mm in Sources */,
+				84F34E471BA6FFFD00188756 /* BSMAMapRadarNearbyViewController.m in Sources */,
 				844570CE1B4D63F8000CA1C7 /* BLEDevicesTableViewController.m in Sources */,
 				84BF8FE71B4AC2FA001042F1 /* BSUISingleImageTableViewCell.m in Sources */,
 				84EAFF681B596F2400A90992 /* BSUITableViewCommonController.m in Sources */,
 				84BF8FE91B4AC2FA001042F1 /* BSUIFiveColTableViewCell.m in Sources */,
 				84D2DA6E1BA0685A00E4C6EB /* HistoryImage.m in Sources */,
 				84E9D7A71B61E10C00F2CD24 /* BSSlomoIconView.m in Sources */,
+				84F34E4F1BA7004600188756 /* BSBaseControllerView.m in Sources */,
+				84F34E301BA6FFEC00188756 /* BSRadarUploadViewController.mm in Sources */,
 				84118EFF1B667AD50052E275 /* BSPhotoTakeViewController.m in Sources */,
 				84BF8FF11B4AC2FA001042F1 /* BSUIComponentView.m in Sources */,
 				84EADEEF1B9EAA2E0098ABCE /* BSWebViewViewController.m in Sources */,
@@ -6644,6 +6693,7 @@
 				84F84ADF1B7C5A8C008DF38F /* BSSecurityFactory.m in Sources */,
 				84D2DA621BA061F600E4C6EB /* FaceView.m in Sources */,
 				84BF8FF61B4AC2FA001042F1 /* BSUIBarButtonItem.m in Sources */,
+				84F34E571BA7017800188756 /* BSRouteNaviView.m in Sources */,
 				84052EB61B73B4D100FAB304 /* BSValidatePredicate.m in Sources */,
 				84EC6B5B1BA2A3EE00EE529B /* Reachability.m in Sources */,
 				84F28F9D1B626F9C001078D8 /* BSUIContentViewController.m in Sources */,
@@ -6652,6 +6702,7 @@
 				84E9D7A51B61E10C00F2CD24 /* BSImagePickerController.m in Sources */,
 				848C7C331B79A301000774A1 /* BSSecurity.m in Sources */,
 				84E6C0991B7DD06C00289D94 /* ESSIssueViewController.m in Sources */,
+				84F34E321BA6FFEC00188756 /* MyAnimatedAnnotationView.m in Sources */,
 				847C1C731B8CADBE00BCBEC9 /* BSHTTPNetworking.m in Sources */,
 				84D2DA661BA063D200E4C6EB /* FunctionView.m in Sources */,
 				84517BB51B8628F800469111 /* BSTRPushHelper.m in Sources */,
@@ -6790,6 +6841,7 @@
 				84D19FE61B4C36EC00BA25BF /* LeDiscovery.m in Sources */,
 				8460AE801B4259BE00022280 /* BSUITabBarCommonController.m in Sources */,
 				844570C91B4D6323000CA1C7 /* BLEDeviceDetailsTableViewController.m in Sources */,
+				84F34E421BA6FFFD00188756 /* BaseMapViewController.m in Sources */,
 				8474DEB51B3F7D0600D9DE36 /* BSUICommonController.m in Sources */,
 				848C7C371B79A38A000774A1 /* Base64.m in Sources */,
 				8470761A1B3A5F7800F28180 /* SetCell.m in Sources */,
@@ -6807,6 +6859,7 @@
 				842043771B2991770002C868 /* DLTabedSlideView.m in Sources */,
 				8405CB9D1B556D760014AF8D /* BusinessBaseDomail.m in Sources */,
 				847076561B3A8E1200F28180 /* communicateCell.m in Sources */,
+				84F34E521BA7007400188756 /* BSMapSearchView.m in Sources */,
 				847076501B3A8C4500F28180 /* DropDownListView.m in Sources */,
 				846333E41B71017C006ED649 /* OrderItemManager.m in Sources */,
 				A05E9BDF1AE79DD5008C97C9 /* KTTabBarButton.m in Sources */,
@@ -6818,7 +6871,9 @@
 				84EBA0131B4189E0003309F6 /* LBLiferServiceController.m in Sources */,
 				848C7C321B79A301000774A1 /* BSSecurity.m in Sources */,
 				84BA96841B2829D500388B58 /* Comment.m in Sources */,
+				84F34E441BA6FFFD00188756 /* BSMAMapMainViewController.m in Sources */,
 				8425E18B1B67644200A93C43 /* BSPhotoTakeController.m in Sources */,
+				84F34E481BA6FFFD00188756 /* BSMAMapRadarUploadViewController.m in Sources */,
 				842042B01B2984D80002C868 /* KTCartFooterView.m in Sources */,
 				84ECA4501B569F9700452BC4 /* UserBase.m in Sources */,
 				8480581B1B39AEEF005817D7 /* BSTableViewRefreshController.m in Sources */,
@@ -6834,8 +6889,6 @@
 				A14656F71ADEB5A400571E9A /* KTFooterView.m in Sources */,
 				84C06D9B1B3AF3BA000BB45C /* BSUITableViewInitRuntimeController.m in Sources */,
 				847076311B3A8AF800F28180 /* communicateController.m in Sources */,
-				84EADA3A1B95C6F600302A90 /* BSRadarNearbyViewController.mm in Sources */,
-				84EADA001B95744100302A90 /* BSRadarUploadViewController.mm in Sources */,
 				84D2DA611BA061F600E4C6EB /* FaceView.m in Sources */,
 				8405CB781B55617D0014AF8D /* ProductBase.m in Sources */,
 				84BA967D1B2829D500388B58 /* Delcartlist.m in Sources */,
@@ -6856,11 +6909,10 @@
 				842042C51B2988410002C868 /* BSModelRoute.m in Sources */,
 				84BA96861B2829D500388B58 /* WaterSendingDetails.m in Sources */,
 				84EADEEE1B9EAA2E0098ABCE /* BSWebViewViewController.m in Sources */,
-				84F34E031BA6C04900188756 /* BSMAMapRadarNearbyViewController.m in Sources */,
+				84F34E461BA6FFFD00188756 /* BSMAMapRadarNearbyViewController.m in Sources */,
 				8470765B1B3A8F1400F28180 /* adsCell.m in Sources */,
 				842043741B2991770002C868 /* DLSlideView.m in Sources */,
 				84E9D79E1B61E10C00F2CD24 /* BSAssetCell.m in Sources */,
-				84EBF0261B9FF42D00B3F16A /* UIImage+Rotate.m in Sources */,
 				8469CD691B4121F000EF6757 /* LFRecommendViewController.m in Sources */,
 				84820A4E1B285D960093B87B /* MSWaterSendingCell.m in Sources */,
 				8474331C1B2A92B400B030C4 /* ForgetViewController.m in Sources */,
@@ -6874,9 +6926,12 @@
 				84F28F9C1B626F9C001078D8 /* BSUIContentViewController.m in Sources */,
 				84BA96891B2829D500388B58 /* LoginUser.m in Sources */,
 				84D2DA691BA0672D00E4C6EB /* ImageModelClass.m in Sources */,
+				84F34E331BA6FFEC00188756 /* UIImage+Rotate.m in Sources */,
+				84F34E351BA6FFEC00188756 /* WayPointRouteSearchViewController.mm in Sources */,
 				8405CBB11B5572250014AF8D /* BusinessProductAduit.m in Sources */,
 				8474331D1B2A92B400B030C4 /* LoginViewController.m in Sources */,
 				847076521B3A8C4500F28180 /* queueController.m in Sources */,
+				84F34E561BA7017800188756 /* BSRouteNaviView.m in Sources */,
 				0E915F981B0C394800F47478 /* ValidateCode.m in Sources */,
 				844570D11B4D672D000CA1C7 /* BLEInfo.m in Sources */,
 				844570CD1B4D63F8000CA1C7 /* BLEDevicesTableViewController.m in Sources */,
@@ -6901,6 +6956,7 @@
 				84118EFE1B667AD50052E275 /* BSPhotoTakeViewController.m in Sources */,
 				84832D5D1B565E5300FB6D28 /* OrderDetailBusinessDomain.m in Sources */,
 				84DB2F071B7CCB700041588B /* ESSTimer.m in Sources */,
+				84F34E2F1BA6FFEC00188756 /* BSRadarUploadViewController.mm in Sources */,
 				84BA967B1B2829D500388B58 /* AFAppDotNetAPIClient.m in Sources */,
 				A04366AF1AD7B550005842EE /* main.m in Sources */,
 				84E97AB71B307535001D4100 /* BSUIComponentView.m in Sources */,
@@ -6910,7 +6966,6 @@
 				84E9D7A61B61E10C00F2CD24 /* BSSlomoIconView.m in Sources */,
 				8405CBC91B5577660014AF8D /* UserPay.m in Sources */,
 				84832D611B565EAC00FB6D28 /* UserBaseAndSessionDomain.m in Sources */,
-				84B29FFD1B9C0CFF00D6145F /* MyAnimatedAnnotationView.m in Sources */,
 				84BA96811B2829D500388B58 /* RegistModel.m in Sources */,
 				847076231B3A89F000F28180 /* recommendCard.m in Sources */,
 				84052EB51B73B4D100FAB304 /* BSValidatePredicate.m in Sources */,
@@ -6931,20 +6986,18 @@
 				84578F531B35D11D00C3A4EA /* ViewController.m in Sources */,
 				8470763E1B3A8B9000F28180 /* appointmentController.m in Sources */,
 				A0F0C3F31B10209500CE406D /* ViewShoppingCartParams.m in Sources */,
-				84F34DFF1BA6C01D00188756 /* BSMAMapRadarUploadViewController.m in Sources */,
 				847076441B3A8BE200F28180 /* lifeServiceController.m in Sources */,
 				8474330D1B2A90D800B030C4 /* SetViewController.m in Sources */,
 				A0F0C3F71B10209500CE406D /* JoinShoppingCartRequest.m in Sources */,
 				847432FB1B2A8E5500B030C4 /* Demo1ViewController.m in Sources */,
 				8474331E1B2A92B400B030C4 /* RegisterViewController.m in Sources */,
-				84EBF02C1BA0022900B3F16A /* WayPointRouteSearchViewController.mm in Sources */,
 				84832D481B565A4B00FB6D28 /* CustomerOrderBase.m in Sources */,
 				84BA96801B2829D500388B58 /* orderDetailOneModel.m in Sources */,
 				84D19FE41B4C36EC00BA25BF /* BSBLEViewController.m in Sources */,
 				8405CBAD1B5570700014AF8D /* BusinessProduct.m in Sources */,
+				84F34E4E1BA7004600188756 /* BSBaseControllerView.m in Sources */,
 				8474DEAB1B3F474700D9DE36 /* BSUIBlockButton.m in Sources */,
 				84E9D7A81B61E10C00F2CD24 /* BSVideoIconView.m in Sources */,
-				84EAD9F31B943BF700302A90 /* BSBaiduViewController.mm in Sources */,
 				84D2DA6D1BA0685A00E4C6EB /* HistoryImage.m in Sources */,
 				8461B72B1B54BAB5002A7C43 /* KTHandyViewController.m in Sources */,
 				A0F0C3EE1B10209500CE406D /* BasicParams.m in Sources */,
@@ -6956,9 +7009,11 @@
 				8470762F1B3A8AF800F28180 /* communicate.m in Sources */,
 				847076671B3AA01B00F28180 /* BSTableContentObject.m in Sources */,
 				84ECE42D1B4F9BB4003D1AEE /* BSUIDefaultTableViewCell.m in Sources */,
+				84F34E4A1BA6FFFD00188756 /* MapTypeViewController.m in Sources */,
 				847432E51B2A8D6800B030C4 /* SystemSetCell.m in Sources */,
 				84BA967A1B2829D500388B58 /* CustomerManager.m in Sources */,
 				847076511B3A8C4500F28180 /* enquireController.m in Sources */,
+				84F34E311BA6FFEC00188756 /* MyAnimatedAnnotationView.m in Sources */,
 				A0F0C3ED1B10209500CE406D /* ViewShoppingCartResult.m in Sources */,
 				847432DF1B2A8CE500B030C4 /* OrderDetailOneCell.m in Sources */,
 				84DB2F051B7CCB700041588B /* ESSEddystone.m in Sources */,
@@ -6969,6 +7024,7 @@
 				8405CBB91B5573770014AF8D /* BusinessProductComment.m in Sources */,
 				847433131B2A915C00B030C4 /* myWallet.m in Sources */,
 				847432D01B2A8AF700B030C4 /* VPImageCropperViewController.m in Sources */,
+				84F34E2D1BA6FFEC00188756 /* BSRadarNearbyViewController.mm in Sources */,
 				844FFE901B8B4C4600658A36 /* BSAesSecurity.m in Sources */,
 				A0F0C3EA1B10209500CE406D /* DeleteShoppingCartResult.m in Sources */,
 				A0F0C3F81B10209500CE406D /* UpdateShoppingCartRequest.m in Sources */,
@@ -6979,7 +7035,6 @@
 				846541ED1B42C47300DE2BC1 /* BSUIFiveColTableViewCell.m in Sources */,
 				842042A21B2983B40002C868 /* AppDelegate.m in Sources */,
 				84BA967E1B2829D500388B58 /* MyOrderModel.m in Sources */,
-				84F34DFB1BA6BFDF00188756 /* BSMAMapMainViewController.m in Sources */,
 				84EBA00B1B416E37003309F6 /* ClassForSelectors.m in Sources */,
 				84832D511B565BDF00FB6D28 /* OrderBaseAndDetailDomain.m in Sources */,
 				845AC3501B674C870077E0ED /* BSUICollectionCollectionViewController.m in Sources */,
@@ -7010,6 +7065,7 @@
 				841F950A1B8C59DA001B26B5 /* BSDigestAuthorization.m in Sources */,
 				84E71F341B4E5473003089B2 /* BLEDevicesAddTableViewController.m in Sources */,
 				84E9D7A41B61E10C00F2CD24 /* BSImagePickerController.m in Sources */,
+				84F34E2B1BA6FFEC00188756 /* BSBaiduViewController.mm in Sources */,
 				84EAFF5E1B5969EF00A90992 /* BSUITableViewCanEditedController.m in Sources */,
 				84E6C08F1B7DCBA100289D94 /* ESSScannerViewController.m in Sources */,
 				84EC6B5A1BA2A3EE00EE529B /* Reachability.m in Sources */,
@@ -7251,6 +7307,7 @@
 					"$(PROJECT_DIR)/BSInfrastructure/Map/BaiduMap_IOSSDK_v2.8.1_Lib",
 					"$(PROJECT_DIR)/BSInfrastructure/Map/AMap_iOS_Navi_V1.3.1_Lib",
 					"$(PROJECT_DIR)/民生小区/BaiduMap_IOSSDK_v2.8.1_Lib",
+					"$(PROJECT_DIR)/民生小区/AMap_iOS_Navi_V1.3.1_Lib",
 				);
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -7280,6 +7337,7 @@
 					"$(PROJECT_DIR)/BSInfrastructure/Map/BaiduMap_IOSSDK_v2.8.1_Lib",
 					"$(PROJECT_DIR)/BSInfrastructure/Map/AMap_iOS_Navi_V1.3.1_Lib",
 					"$(PROJECT_DIR)/民生小区/BaiduMap_IOSSDK_v2.8.1_Lib",
+					"$(PROJECT_DIR)/民生小区/AMap_iOS_Navi_V1.3.1_Lib",
 				);
 				GCC_NO_COMMON_BLOCKS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;

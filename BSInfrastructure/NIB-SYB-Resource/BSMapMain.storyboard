@@ -128,7 +128,7 @@
                                     <constraint firstAttribute="trailing" secondItem="rQq-aX-Gtb" secondAttribute="trailing" id="xJX-Oo-Uzf"/>
                                 </constraints>
                             </view>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rlx-0R-CiK" userLabel="地图功能区域">
+                            <view hidden="YES" alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rlx-0R-CiK" userLabel="地图功能区域">
                                 <rect key="frame" x="0.0" y="44" width="320" height="276"/>
                                 <subviews>
                                     <view hidden="YES" tag="20" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zm6-SL-joP" userLabel="查询与坐标翻译">

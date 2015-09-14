@@ -156,6 +156,7 @@
 
 - (IBAction)closeButtonClicked:(id)sender;
 
+//导航栏中显示和隐藏地图控制区域
 - (IBAction)hideControllerClick:(id)sender;
 
 //UI控制操作

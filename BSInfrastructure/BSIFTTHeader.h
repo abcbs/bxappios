@@ -77,6 +77,9 @@
 
 #import "BSRadarUploadViewController.h"
 
-
+//高德地图
+#import "BSMapSearchView.h"
+#import "BSBaseControllerView.h"
+#import "BSRouteNaviView.h"
 
 #endif
