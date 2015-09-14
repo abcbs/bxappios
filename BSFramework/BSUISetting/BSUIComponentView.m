@@ -286,8 +286,8 @@ BSDeprecated("建议使用统一处理方式，使用initNavigationHeaderWithDef
     
         UINavigationItem *nav=currentController.navigationItem;
         UIBarButtonItem *rightButtton=nav.rightBarButtonItem;
-        
-        UIBarButtonItem *searchButtonItem=[BSUIComponentView okBarButtonItem:currentController  target:currentController title:title image:@"icon_search.png"];
+        //检索按钮去掉标题
+        UIBarButtonItem *searchButtonItem=[BSUIComponentView okBarButtonItem:currentController  target:currentController title:@" " image:@"icon_search.png"];
         
         if (rightButtton) {
              NSMutableArray *arrays=[NSMutableArray array];
