@@ -780,7 +780,7 @@
 		84BA96881B2829D500388B58 /* ShoppingCart.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BA96731B2829D500388B58 /* ShoppingCart.m */; };
 		84BA96891B2829D500388B58 /* LoginUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BA96761B2829D500388B58 /* LoginUser.m */; };
 		84BF8F631B4AB63C001042F1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BF8F621B4AB63C001042F1 /* main.m */; };
-		84BF8F661B4AB63C001042F1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BF8F651B4AB63C001042F1 /* AppDelegate.m */; };
+		84BF8F661B4AB63C001042F1 /* SellerAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BF8F651B4AB63C001042F1 /* SellerAppDelegate.m */; };
 		84BF8F6C1B4AB63C001042F1 /* LSMainIndexViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 84BF8F6B1B4AB63C001042F1 /* LSMainIndexViewController.mm */; };
 		84BF8F711B4AB63C001042F1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84BF8F701B4AB63C001042F1 /* Images.xcassets */; };
 		84BF8FA71B4ABAE4001042F1 /* BSCMFrameworkHeader.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 845A022E1B3DB13B007F5327 /* BSCMFrameworkHeader.h */; };
@@ -1416,6 +1416,7 @@
 		84F58D4D1B93F64F002C535B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E511A511AF07DB800BF1D03 /* CoreGraphics.framework */; };
 		84F58D4E1B93F659002C535B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E83775B1B033EF300782034 /* Security.framework */; };
 		84F66D681B53E7DE00498734 /* LSHandySearchNavViewController..mm in Sources */ = {isa = PBXBuildFile; fileRef = 84F66D671B53E7DE00498734 /* LSHandySearchNavViewController..mm */; };
+		84F7BD8E1BA5FAB200014E75 /* UIApplication+SellerAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F7BD8D1BA5FAB200014E75 /* UIApplication+SellerAppDelegate.m */; };
 		84F84AD61B7C4BA3008DF38F /* BSDesCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F84AD51B7C4BA3008DF38F /* BSDesCrypto.m */; };
 		84F84AD71B7C4BA3008DF38F /* BSDesCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F84AD51B7C4BA3008DF38F /* BSDesCrypto.m */; };
 		84F84ADA1B7C4E2B008DF38F /* BSDesSecurity.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F84AD91B7C4E2B008DF38F /* BSDesSecurity.m */; };
@@ -2271,8 +2272,8 @@
 		84BF8F5E1B4AB63C001042F1 /* KT-BUSINESS-SELLER.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "KT-BUSINESS-SELLER.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84BF8F611B4AB63C001042F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84BF8F621B4AB63C001042F1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		84BF8F641B4AB63C001042F1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		84BF8F651B4AB63C001042F1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		84BF8F641B4AB63C001042F1 /* SellerAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SellerAppDelegate.h; sourceTree = "<group>"; };
+		84BF8F651B4AB63C001042F1 /* SellerAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SellerAppDelegate.m; sourceTree = "<group>"; };
 		84BF8F6A1B4AB63C001042F1 /* LSMainIndexViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSMainIndexViewController.h; sourceTree = "<group>"; };
 		84BF8F6B1B4AB63C001042F1 /* LSMainIndexViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = LSMainIndexViewController.mm; sourceTree = "<group>"; };
 		84BF8F701B4AB63C001042F1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -2616,6 +2617,8 @@
 		84F3095C1B9D49170070EF19 /* AMapNaviKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AMapNaviKit.framework; sourceTree = "<group>"; };
 		84F66D661B53E7DE00498734 /* LSHandySearchNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSHandySearchNavViewController.h; sourceTree = "<group>"; };
 		84F66D671B53E7DE00498734 /* LSHandySearchNavViewController..mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = LSHandySearchNavViewController..mm; sourceTree = "<group>"; };
+		84F7BD8C1BA5FAB200014E75 /* UIApplication+SellerAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+SellerAppDelegate.h"; sourceTree = "<group>"; };
+		84F7BD8D1BA5FAB200014E75 /* UIApplication+SellerAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+SellerAppDelegate.m"; sourceTree = "<group>"; };
 		84F84AD41B7C4BA3008DF38F /* BSDesCrypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSDesCrypto.h; sourceTree = "<group>"; };
 		84F84AD51B7C4BA3008DF38F /* BSDesCrypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSDesCrypto.m; sourceTree = "<group>"; };
 		84F84AD81B7C4E2B008DF38F /* BSDesSecurity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSDesSecurity.h; sourceTree = "<group>"; };
@@ -3167,12 +3170,14 @@
 			children = (
 				84C4A3531B504CDF00029E19 /* im_search.png */,
 				84ECE4301B4FC29D003D1AEE /* LaunchScreen.xib */,
-				84BF8F641B4AB63C001042F1 /* AppDelegate.h */,
-				84BF8F651B4AB63C001042F1 /* AppDelegate.m */,
+				84BF8F641B4AB63C001042F1 /* SellerAppDelegate.h */,
+				84BF8F651B4AB63C001042F1 /* SellerAppDelegate.m */,
 				84BF8F6A1B4AB63C001042F1 /* LSMainIndexViewController.h */,
 				84BF8F6B1B4AB63C001042F1 /* LSMainIndexViewController.mm */,
 				84F66D661B53E7DE00498734 /* LSHandySearchNavViewController.h */,
 				84F66D671B53E7DE00498734 /* LSHandySearchNavViewController..mm */,
+				84F7BD8C1BA5FAB200014E75 /* UIApplication+SellerAppDelegate.h */,
+				84F7BD8D1BA5FAB200014E75 /* UIApplication+SellerAppDelegate.m */,
 			);
 			name = "MainFrame-Group";
 			sourceTree = "<group>";
@@ -6465,9 +6470,10 @@
 			files = (
 				84BF8F6C1B4AB63C001042F1 /* LSMainIndexViewController.mm in Sources */,
 				8405CB341B5544280014AF8D /* LSBusinessActivityTableViewController.m in Sources */,
+				84F7BD8E1BA5FAB200014E75 /* UIApplication+SellerAppDelegate.m in Sources */,
 				8405CB7D1B5564A90014AF8D /* BusinessActivity.m in Sources */,
 				84EB39731B5899A000AD9F66 /* LSProductAduitTableViewController.m in Sources */,
-				84BF8F661B4AB63C001042F1 /* AppDelegate.m in Sources */,
+				84BF8F661B4AB63C001042F1 /* SellerAppDelegate.m in Sources */,
 				8461B79E1B550655002A7C43 /* LSProductADTableViewController.m in Sources */,
 				8461B7A11B550708002A7C43 /* LSProductUpperLowerViewController.m in Sources */,
 				8461B7981B55044D002A7C43 /* LSProductListTableViewController.m in Sources */,

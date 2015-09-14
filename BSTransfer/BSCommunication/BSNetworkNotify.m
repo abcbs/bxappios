@@ -23,6 +23,7 @@
 - (id) init{
     self = [super init];
     if (self){
+        //statusString=@"";
         //[self netwokrReachabilityInit];
     }
     return self;
@@ -56,7 +57,7 @@
 - ( void ) startNetworkReachability {
     
     if (!timer) {//isNetworkEnabledWithAFNetwork
-        timer  =  [ NSTimer  scheduledTimerWithTimeInterval: 30
+        timer  =  [ NSTimer  scheduledTimerWithTimeInterval: 5
                   target: self  selector: @selector (timerFireNetChecked)
                    userInfo:nil
                    repeats:YES ];
@@ -96,7 +97,7 @@
                         break;
                     case AFNetworkReachabilityStatusReachableViaWiFi:
                         BSLog(@"目前网络为WiFi");
-                        statusString=@"WiFi";
+                        statusString=@"AppNetOK";
                         bEnabled=TRUE;
                         
                         [PromptInfo showWithText:@"目前网络为WiFi" topOffset:54 duration:2];
@@ -154,9 +155,11 @@
             BSLog(@"目前网络为WiFi");
             //[PromptInfo showWithText:@"目前网络为WiFi" topOffset:54 duration:2];
             statusString=@"WiFi";
+            statusString=@"AppNetOK";
         }
-        if (!flagsReachable && nonWiFi) {
+        if (!flagsReachable && nonWiFi==NO) {
             BSLog(@"无WiFi/网络");
+            statusString=@"nonWiFi";
             [PromptInfo showWithText:@"无WiFi" topOffset:54 duration:2];
         }
         if (!bEnabled) {
@@ -256,7 +259,7 @@
             break;
         }
         case ReachableViaWiFi:{
-            statusString=@"WiFi";
+            statusString=@"AppNetOK";
             //[PromptInfo showWithText:@"目前网络为WiFi" topOffset:54 duration:2];
             
             break;

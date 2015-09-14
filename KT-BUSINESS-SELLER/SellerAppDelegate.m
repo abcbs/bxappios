@@ -1,11 +1,12 @@
 #define kNetworkNotReachability ([AFNetworkReachabilityManager sharedManager].networkReachabilityStatus <= 0)  //无网
-#import "AppDelegate.h"
+
+#import "SellerAppDelegate.h"
 #import "BSUIFrameworkHeader.h"
 #import "BSCMFrameworkHeader.h"
 #import <BaiduMapAPI/BMapKit.h>
 #import <SystemConfiguration/SystemConfiguration.h>
 #import "PromptInfo.h"
-@interface AppDelegate () <UIApplicationDelegate,BMKGeneralDelegate> {
+@interface SellerAppDelegate () <UIApplicationDelegate,BMKGeneralDelegate> {
 }
 
 @end
@@ -14,7 +15,7 @@ BMKMapManager* _mapManager;
 
 BSNetworkNotify *networkNotify;
 
-@implementation AppDelegate
+@implementation SellerAppDelegate
 
 #pragma mark -首次运行
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {

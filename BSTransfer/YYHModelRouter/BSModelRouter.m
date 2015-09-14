@@ -122,17 +122,19 @@ static BSDigestAuthorization *digestAuthorization;
         _sessionManager.responseSerializer=[AFJSONResponseSerializer serializer];
         //如果包含认证方式则设置请求头信息
         [digestAuthorization setRequestSerializer:_sessionManager.requestSerializer];
+        
         [_sessionManager.reachabilityManager
             setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
             switch (status) {
                 case AFNetworkReachabilityStatusReachableViaWWAN:
-                    NSLog(@"目前网络状态WWAN");
+                    //NSLog(@"目前网络状态WWAN");
                     netStatus=@"WAN";
                     break;
                     
                 case AFNetworkReachabilityStatusReachableViaWiFi:
                     NSLog(@"目前网络为WiFi");
-                    netStatus=@"WiFi";
+                    //statusString=@"AppNetOK";
+                    netStatus=@"AppNetOK";
                     break;
                 case AFNetworkReachabilityStatusNotReachable:
                     NSLog(@"目前没有网络环境");

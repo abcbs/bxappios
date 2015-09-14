@@ -1,5 +1,11 @@
 #define kNetworkNotReachability ([AFNetworkReachabilityManager sharedManager].networkReachabilityStatus <= 0)  //无网
 #import "AppDelegate.h"
+#import <ShareSDK/ShareSDK.h>
+#import <TencentOpenAPI/QQApiInterface.h>
+#import <TencentOpenAPI/TencentOAuth.h>
+#import "WXApi.h"
+#import "WeiboApi.h"
+#import "WeiboSDK.h"
 #import "BSUIFrameworkHeader.h"
 #import "BSCMFrameworkHeader.h"
 #import <BaiduMapAPI/BMapKit.h>
@@ -23,9 +29,37 @@ BSNetworkNotify *networkNotify;
     //网络日志监控
     //[[AFNetworkActivityLogger sharedLogger] startLogging];
     //网络可用性监控
-    AFNetworkActivityIndicatorManager *networkActivityIndicatorManager=[AFNetworkActivityIndicatorManager sharedManager];
-    [networkActivityIndicatorManager setEnabled:YES];
+    // Override point for customization after application launch.
+    //添加第三方平台
+    [ShareSDK registerApp:@"768dff8dce18"];
+    //短信分享功能
+    [ShareSDK connectSMS];
+    //添加新浪微博应用 注册网址 http://open.weibo.com
+    //    [ShareSDK connectSinaWeiboWithAppKey:@"568898243"
+    //                               appSecret:@"38a4f8204cc784f81f9f0daaf31e02e3"
+    //                             redirectUri:@"http://www.sharesdk.cn"];
+    //添加微信应用 注册网址 http://open.weixin.qq.com
+    //    [ShareSDK connectWeChatWithAppId:@"wxc94aa1ef40e14232"
+    //                           wechatCls:[WXApi class]];
+    [ShareSDK connectWeChatWithAppId:@"wxc94aa1ef40e14232"
+                           wechatCls:[WXApi class]];
+    //微信登陆的时候需要初始化
+    //    [ShareSDK connectWeChatWithAppId:@"wxc94aa1ef40e14232"
+    //                           appSecret:@"005bd65c9c2cdbafa5327c5d101a2dc4"
+    //                           wechatCls:[WXApi class]];
+    //添加QQ空间应用  注册网址  http://connect.qq.com/intro/login/
+    //    [ShareSDK connectQZoneWithAppKey:@"100371282"
+    //                           appSecret:@"aed9b0303e3ed1e27bae87c33761161d"
+    //                   qqApiInterfaceCls:[QQApiInterface class]
+    //                     tencentOAuthCls:[TencentOAuth class]];
     
+    //self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    //网络日志监控
+    [[AFNetworkActivityLogger sharedLogger] startLogging];
+    //网络可用性监控
+    [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
+    //网络变化监控
+    [[AFNetworkReachabilityManager sharedManager] startMonitoring];
     
     networkNotify=[BSNetworkNotify sharedBSNetworkNotify];
     
