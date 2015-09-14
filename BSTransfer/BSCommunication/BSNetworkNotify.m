@@ -54,7 +54,7 @@
         statusApp=@"未能连接到服务器";
         
     }
-    return statusString;
+    return statusApp;
 }
 
 -(void) networkTimeOut{

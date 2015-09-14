@@ -81,10 +81,37 @@
     
 }
 
+- (void)viewDidAppear:(BOOL)animated{
+    NSLog(@"对象的视图已经加入到窗口时调用");
+    [BSUIComponentView changeTabBarWithNotification:self addedInfo:self.inform];
+    _timer= [NSTimer scheduledTimerWithTimeInterval:0.1
+                                             target:self selector:@selector(progressTracking) userInfo:self repeats:YES];
+    
+    if(!HUD){
+        HUD = [[MBProgressHUD alloc] initWithView:self.view];
+        
+        //如果设置此属性则当前的view置于后台
+        //HUD.dimBackground = YES;
+        HUD.mode = MBProgressHUDModeDeterminate;
+        //设置对话框文字
+        HUD.labelText = @"请稍等";
+        HUD.delegate = self;
+        [self.view addSubview:HUD];
+    }
+
+    //设置TextField键盘
+    [self delelageForTextField];
+    //设置界面元素样式
+    //[self initSubViews];
+    
+    [self modifiedStyle];
+    
+}
 -(void) viewDidDisappear:(BOOL)animated{
     BSLog(@"BSUICommonController viewDidDisappear,%@",self.description);
     [BSUIComponentView changeTabBarWithNotification:self addedInfo:nil];
-    
+    _timer=nil;
+   
     [super viewDidDisappear:animated];
 }
 
@@ -100,7 +127,6 @@
     NSLog(@"TableView dealloc");
     self.tableView=nil;
     self.dataTable=nil;
-    self.HUD=nil;
 }
 
 
@@ -119,19 +145,7 @@
 }
 
 
-- (void)viewDidAppear:(BOOL)animated{
-    NSLog(@"对象的视图已经加入到窗口时调用");
-    [BSUIComponentView changeTabBarWithNotification:self addedInfo:self.inform];
-   _timer= [NSTimer scheduledTimerWithTimeInterval:0.1
-           target:self selector:@selector(progressTracking) userInfo:self repeats:YES];
-    //设置TextField键盘
-    [self delelageForTextField];
-    //设置界面元素样式
-    //[self initSubViews];
-    
-    [self modifiedStyle];
 
-}
 
 - (void)progressTracking
 {
@@ -140,13 +154,22 @@
 }
 
 -(void)process{
-    
-    while([Conf checkNetWork]==networkRight||[Conf checkNetWork]==networkError){
-        [HUD hide:YES];
-        if (_timer) {
-            [_timer invalidate];
-        }
+     @try {
+         while([Conf checkNetWork]==networkRight||[Conf checkNetWork]==networkError){
+             if (HUD!=nil ) {
+                [HUD hide:YES];
+                 //HUD=nil;
+             }
+             if (_timer!=nil &&_timer.isValid) {
+                [_timer invalidate];
+                //_timer=nil;
+            }
+         }
+     }
+    @catch (NSException *exception) {
+        BSLog(@"刷新列表时出现异常%@",exception.description);
     }
+    
 }
 - (void) viewDidUnload{
     NSLog( @"TableView dealloc%@",self.description);

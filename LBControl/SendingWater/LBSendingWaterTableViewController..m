@@ -90,7 +90,7 @@
 - (void)loadMoreData:(long) warterId dataCount:(int)cellCount
 {
     //显示对话框
-    [super.HUD showAnimated:YES whileExecutingBlock:^{
+    [self.HUD showAnimated:YES whileExecutingBlock:^{
         //获取业务数据方法
         [WaterSending
          listWaterList:warterId dataCount:cellCount
