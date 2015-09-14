@@ -120,6 +120,41 @@
      bsnMagamer.storybordName=@"LOCatagoryManager";
     [bsTable addBSTableContent:bsnMagamer sectionHeader:@"商户账户管理"];
     
+    //百度地图
+    BSTableContentObject *bleDevices=[BSTableContentObject
+                initWithContentObject:@"定位"
+                methodName:nil
+                imageName:@"im_reservation_jia.png"
+                vcClass:@"BSBaiduViewController"];
+    
+    bleDevices.storybordName=@"BSMapMain";
+    
+    
+    [bsTable addBSTableContent:bleDevices sectionHeader:@"百度地图"];
+    
+    //BTLECentralViewController
+    bleDevices=[BSTableContentObject
+                initWithContentObject:@"上传"
+                methodName:nil
+                imageName:@"im_vote.png"
+                vcClass:@"BSRadarUploadViewController"];
+    bleDevices.storybordName=@"BSMapMain";
+    
+    
+    [bsTable addBSTableContent:bleDevices sectionHeader:@"百度地图"];
+    
+    //BTLECentralViewController
+    bleDevices=[BSTableContentObject
+                initWithContentObject:@"周边"
+                methodName:nil
+                imageName:@"ww.png"
+                vcClass:@"BSRadarNearbyViewController"];
+    
+    bleDevices.storybordName=@"BSMapMain";
+    
+    [bsTable addBSTableContent:bleDevices sectionHeader:@"百度地图"];
+    
+
     [super setValue:bsTable forKey:@"bSTableObjects"];
     
     

@@ -1406,9 +1406,36 @@
 		84F309601B9D49170070EF19 /* AMapNavi.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 84F3095B1B9D49170070EF19 /* AMapNavi.bundle */; };
 		84F309611B9D49170070EF19 /* AMapNavi.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 84F3095B1B9D49170070EF19 /* AMapNavi.bundle */; };
 		84F309621B9D49170070EF19 /* AMapNavi.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 84F3095B1B9D49170070EF19 /* AMapNavi.bundle */; };
-		84F309631B9D49170070EF19 /* AMapNaviKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F3095C1B9D49170070EF19 /* AMapNaviKit.framework */; };
-		84F309641B9D49170070EF19 /* AMapNaviKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F3095C1B9D49170070EF19 /* AMapNaviKit.framework */; };
-		84F309651B9D49170070EF19 /* AMapNaviKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F3095C1B9D49170070EF19 /* AMapNaviKit.framework */; };
+		84F34DDE1BA6A30000188756 /* AMapCloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F34DDB1BA6A30000188756 /* AMapCloudKit.framework */; };
+		84F34DDF1BA6A30000188756 /* AMapCloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F34DDB1BA6A30000188756 /* AMapCloudKit.framework */; };
+		84F34DE01BA6A30000188756 /* AMapCloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F34DDB1BA6A30000188756 /* AMapCloudKit.framework */; };
+		84F34DE11BA6A30000188756 /* AMapSearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F34DDC1BA6A30000188756 /* AMapSearchKit.framework */; };
+		84F34DE21BA6A30000188756 /* AMapSearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F34DDC1BA6A30000188756 /* AMapSearchKit.framework */; };
+		84F34DE31BA6A30000188756 /* AMapSearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F34DDC1BA6A30000188756 /* AMapSearchKit.framework */; };
+		84F34DE71BA6A93F00188756 /* BaiduMapAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F309541B9D45700070EF19 /* BaiduMapAPI.framework */; };
+		84F34DE81BA6A95B00188756 /* BaiduMapAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F309541B9D45700070EF19 /* BaiduMapAPI.framework */; };
+		84F34DE91BA6A95D00188756 /* BaiduMapAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F309541B9D45700070EF19 /* BaiduMapAPI.framework */; };
+		84F34DEA1BA6A97300188756 /* AMapCloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F34DDB1BA6A30000188756 /* AMapCloudKit.framework */; };
+		84F34DEB1BA6A97400188756 /* AMapCloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F34DDB1BA6A30000188756 /* AMapCloudKit.framework */; };
+		84F34DEC1BA6A97400188756 /* AMapCloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F34DDB1BA6A30000188756 /* AMapCloudKit.framework */; };
+		84F34DED1BA6A97900188756 /* AMapSearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F34DDC1BA6A30000188756 /* AMapSearchKit.framework */; };
+		84F34DEE1BA6A97900188756 /* AMapSearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F34DDC1BA6A30000188756 /* AMapSearchKit.framework */; };
+		84F34DEF1BA6A97A00188756 /* AMapSearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F34DDC1BA6A30000188756 /* AMapSearchKit.framework */; };
+		84F34DF41BA6BB1A00188756 /* BSMAMapMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84F34DF31BA6BB1A00188756 /* BSMAMapMain.storyboard */; };
+		84F34DF51BA6BB1A00188756 /* BSMAMapMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84F34DF31BA6BB1A00188756 /* BSMAMapMain.storyboard */; };
+		84F34DF61BA6BB1A00188756 /* BSMAMapMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84F34DF31BA6BB1A00188756 /* BSMAMapMain.storyboard */; };
+		84F34DFB1BA6BFDF00188756 /* BSMAMapMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F34DFA1BA6BFDF00188756 /* BSMAMapMainViewController.m */; };
+		84F34DFC1BA6BFDF00188756 /* BSMAMapMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F34DFA1BA6BFDF00188756 /* BSMAMapMainViewController.m */; };
+		84F34DFF1BA6C01D00188756 /* BSMAMapRadarUploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F34DFE1BA6C01D00188756 /* BSMAMapRadarUploadViewController.m */; };
+		84F34E001BA6C01D00188756 /* BSMAMapRadarUploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F34DFE1BA6C01D00188756 /* BSMAMapRadarUploadViewController.m */; };
+		84F34E031BA6C04900188756 /* BSMAMapRadarNearbyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F34E021BA6C04900188756 /* BSMAMapRadarNearbyViewController.m */; };
+		84F34E041BA6C04900188756 /* BSMAMapRadarNearbyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F34E021BA6C04900188756 /* BSMAMapRadarNearbyViewController.m */; };
+		84F34E0D1BA6C63300188756 /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F34DDD1BA6A30000188756 /* MAMapKit.framework */; };
+		84F34E0E1BA6C63400188756 /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F34DDD1BA6A30000188756 /* MAMapKit.framework */; };
+		84F34E0F1BA6C63400188756 /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F34DDD1BA6A30000188756 /* MAMapKit.framework */; };
+		84F34E101BA6C63700188756 /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F34DDD1BA6A30000188756 /* MAMapKit.framework */; };
+		84F34E111BA6C63800188756 /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F34DDD1BA6A30000188756 /* MAMapKit.framework */; };
+		84F34E121BA6C63800188756 /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F34DDD1BA6A30000188756 /* MAMapKit.framework */; };
 		84F58D491B93F628002C535B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A076591B21AA8D001CE3A2 /* CoreLocation.framework */; };
 		84F58D4A1B93F632002C535B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E8377531B033EAB00782034 /* QuartzCore.framework */; };
 		84F58D4B1B93F63C002C535B /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84FB97A21B93922F0018790A /* OpenGLES.framework */; };
@@ -2614,7 +2641,16 @@
 		84F309541B9D45700070EF19 /* BaiduMapAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI.framework; sourceTree = "<group>"; };
 		84F3095A1B9D49170070EF19 /* AMap.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AMap.bundle; sourceTree = "<group>"; };
 		84F3095B1B9D49170070EF19 /* AMapNavi.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AMapNavi.bundle; sourceTree = "<group>"; };
-		84F3095C1B9D49170070EF19 /* AMapNaviKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AMapNaviKit.framework; sourceTree = "<group>"; };
+		84F34DDB1BA6A30000188756 /* AMapCloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AMapCloudKit.framework; sourceTree = "<group>"; };
+		84F34DDC1BA6A30000188756 /* AMapSearchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AMapSearchKit.framework; sourceTree = "<group>"; };
+		84F34DDD1BA6A30000188756 /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MAMapKit.framework; sourceTree = "<group>"; };
+		84F34DF31BA6BB1A00188756 /* BSMAMapMain.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BSMAMapMain.storyboard; sourceTree = "<group>"; };
+		84F34DF91BA6BFDF00188756 /* BSMAMapMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSMAMapMainViewController.h; sourceTree = "<group>"; };
+		84F34DFA1BA6BFDF00188756 /* BSMAMapMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSMAMapMainViewController.m; sourceTree = "<group>"; };
+		84F34DFD1BA6C01D00188756 /* BSMAMapRadarUploadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSMAMapRadarUploadViewController.h; sourceTree = "<group>"; };
+		84F34DFE1BA6C01D00188756 /* BSMAMapRadarUploadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSMAMapRadarUploadViewController.m; sourceTree = "<group>"; };
+		84F34E011BA6C04900188756 /* BSMAMapRadarNearbyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSMAMapRadarNearbyViewController.h; sourceTree = "<group>"; };
+		84F34E021BA6C04900188756 /* BSMAMapRadarNearbyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSMAMapRadarNearbyViewController.m; sourceTree = "<group>"; };
 		84F66D661B53E7DE00498734 /* LSHandySearchNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSHandySearchNavViewController.h; sourceTree = "<group>"; };
 		84F66D671B53E7DE00498734 /* LSHandySearchNavViewController..mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = LSHandySearchNavViewController..mm; sourceTree = "<group>"; };
 		84F7BD8C1BA5FAB200014E75 /* UIApplication+SellerAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+SellerAppDelegate.h"; sourceTree = "<group>"; };
@@ -2700,7 +2736,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84F34E121BA6C63800188756 /* MAMapKit.framework in Frameworks */,
+				84F34DED1BA6A97900188756 /* AMapSearchKit.framework in Frameworks */,
+				84F34DE91BA6A95D00188756 /* BaiduMapAPI.framework in Frameworks */,
 				1857C8056BA2B421AED3878E /* libPods-KT-LB-Controller.a in Frameworks */,
+				84F34DEA1BA6A97300188756 /* AMapCloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2708,7 +2748,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84F34E101BA6C63700188756 /* MAMapKit.framework in Frameworks */,
+				84F34DEF1BA6A97A00188756 /* AMapSearchKit.framework in Frameworks */,
+				84F34DE71BA6A93F00188756 /* BaiduMapAPI.framework in Frameworks */,
 				EB6B8E11539F93C29B8B97A1 /* libPods-KT-LO-Controller.a in Frameworks */,
+				84F34DEC1BA6A97400188756 /* AMapCloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2716,6 +2760,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84F34DE21BA6A30000188756 /* AMapSearchKit.framework in Frameworks */,
 				84F309331B9D3DE50070EF19 /* libstdc++.6.0.9.dylib in Frameworks */,
 				84517BB01B86284200469111 /* libz.dylib in Frameworks */,
 				84F309321B9D3DD50070EF19 /* AddressBook.framework in Frameworks */,
@@ -2726,7 +2771,7 @@
 				84517BAD1B86281800469111 /* CoreGraphics.framework in Frameworks */,
 				84517BAC1B86280E00469111 /* SystemConfiguration.framework in Frameworks */,
 				84517BAB1B86280400469111 /* CoreFoundation.framework in Frameworks */,
-				84F309641B9D49170070EF19 /* AMapNaviKit.framework in Frameworks */,
+				84F34E0E1BA6C63400188756 /* MAMapKit.framework in Frameworks */,
 				84517BA91B8627F500469111 /* CFNetwork.framework in Frameworks */,
 				84517BA81B8627E400469111 /* CoreTelephony.framework in Frameworks */,
 				8404A1711B78F34100660BAD /* libKT-LO-Controller.a in Frameworks */,
@@ -2736,6 +2781,7 @@
 				84ECE43D1B4FC627003D1AEE /* libKT-MODEL-MODULE.a in Frameworks */,
 				84517BA51B8626FE00469111 /* libPushSDK.a in Frameworks */,
 				1F419A00A37F657FA5AC2D9F /* libPods-KT-BUSINESS-SELLER.a in Frameworks */,
+				84F34DDF1BA6A30000188756 /* AMapCloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2765,7 +2811,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84F34E111BA6C63800188756 /* MAMapKit.framework in Frameworks */,
+				84F34DEE1BA6A97900188756 /* AMapSearchKit.framework in Frameworks */,
+				84F34DE81BA6A95B00188756 /* BaiduMapAPI.framework in Frameworks */,
 				3AE1A992B4EFFA0413C3EC73 /* libPods-KT-LS-Controller.a in Frameworks */,
+				84F34DEB1BA6A97400188756 /* AMapCloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2773,14 +2823,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84F309651B9D49170070EF19 /* AMapNaviKit.framework in Frameworks */,
 				84F309271B9D3D110070EF19 /* libstdc++.6.0.9.dylib in Frameworks */,
 				84517B7C1B8612D500469111 /* libz.dylib in Frameworks */,
 				84F309251B9D3CBD0070EF19 /* AddressBook.framework in Frameworks */,
 				84F309241B9D3CB40070EF19 /* AVFoundation.framework in Frameworks */,
+				84F34E0F1BA6C63400188756 /* MAMapKit.framework in Frameworks */,
 				84F309221B9D3CA90070EF19 /* AudioToolbox.framework in Frameworks */,
 				84517B7F1B8612FC00469111 /* Security.framework in Frameworks */,
 				84517B821B86131C00469111 /* CoreGraphics.framework in Frameworks */,
+				84F34DE31BA6A30000188756 /* AMapSearchKit.framework in Frameworks */,
 				84517B7E1B8612F300469111 /* SystemConfiguration.framework in Frameworks */,
 				84FB97A31B93922F0018790A /* OpenGLES.framework in Frameworks */,
 				84517B801B86130600469111 /* QuartzCore.framework in Frameworks */,
@@ -2790,6 +2841,7 @@
 				84517B7D1B8612E900469111 /* libsqlite3.dylib in Frameworks */,
 				847415BA1B63A01F005BF59D /* libKT-LS-Controller.a in Frameworks */,
 				84F290161B638B0B001078D8 /* libKT-FRAME-PK.a in Frameworks */,
+				84F34DE01BA6A30000188756 /* AMapCloudKit.framework in Frameworks */,
 				84F290171B638B0B001078D8 /* libKT-LB-Controller.a in Frameworks */,
 				84F309571B9D45700070EF19 /* BaiduMapAPI.framework in Frameworks */,
 				84F290191B638B0B001078D8 /* libKT-MODEL-MODULE.a in Frameworks */,
@@ -2804,6 +2856,7 @@
 			files = (
 				84F3092F1B9D3DB80070EF19 /* AudioToolbox.framework in Frameworks */,
 				84F3092E1B9D3DAE0070EF19 /* AVFoundation.framework in Frameworks */,
+				84F34E0D1BA6C63300188756 /* MAMapKit.framework in Frameworks */,
 				84F3092D1B9D3DA40070EF19 /* AddressBookUI.framework in Frameworks */,
 				84A076601B21AAC8001CE3A2 /* AddressBook.framework in Frameworks */,
 				84517B7B1B86129A00469111 /* libz.dylib in Frameworks */,
@@ -2813,7 +2866,7 @@
 				0E83775C1B033EF300782034 /* Security.framework in Frameworks */,
 				0E8377541B033EAB00782034 /* QuartzCore.framework in Frameworks */,
 				843163091B874DA100D5CC2C /* PassKit.framework in Frameworks */,
-				84F309631B9D49170070EF19 /* AMapNaviKit.framework in Frameworks */,
+				84F34DE11BA6A30000188756 /* AMapSearchKit.framework in Frameworks */,
 				84A0765A1B21AA8D001CE3A2 /* CoreLocation.framework in Frameworks */,
 				84517B791B86125300469111 /* CoreGraphics.framework in Frameworks */,
 				84517B781B86124600469111 /* CFNetwork.framework in Frameworks */,
@@ -2840,6 +2893,7 @@
 				0E8377601B035B8F00782034 /* ImageIO.framework in Frameworks */,
 				0E83775A1B033EE600782034 /* libz.1.2.5.dylib in Frameworks */,
 				0E8377581B033ED300782034 /* libicucore.dylib in Frameworks */,
+				84F34DDE1BA6A30000188756 /* AMapCloudKit.framework in Frameworks */,
 				0E8377561B033EBD00782034 /* CoreTelephony.framework in Frameworks */,
 				843DA87D1B21D56300924AE6 /* SinaWeiboConnection.framework in Frameworks */,
 				843DA88E1B21D56300924AE6 /* ShareSDKFlatShareViewUI.framework in Frameworks */,
@@ -4314,6 +4368,7 @@
 				84EBF02E1BA002C400B3F16A /* WayPointRouteSearchViewController.xib */,
 				84E6C0921B7DCCEF00289D94 /* LSBLEIFTTUpHoldMain.storyboard */,
 				84FB97931B937DA20018790A /* BSMapMain.storyboard */,
+				84F34DF31BA6BB1A00188756 /* BSMAMapMain.storyboard */,
 			);
 			path = "NIB-SYB-Resource";
 			sourceTree = "<group>";
@@ -4669,18 +4724,8 @@
 		84EDB19F1B937849006D925B /* Map */ = {
 			isa = PBXGroup;
 			children = (
-				84EBF02A1BA0022900B3F16A /* WayPointRouteSearchViewController.h */,
-				84EBF02B1BA0022900B3F16A /* WayPointRouteSearchViewController.mm */,
-				84EBF0221B9FF42D00B3F16A /* UIImage+Rotate.h */,
-				84EBF0231B9FF42D00B3F16A /* UIImage+Rotate.m */,
-				84EAD9FE1B95744100302A90 /* BSRadarUploadViewController.h */,
-				84EAD9FF1B95744100302A90 /* BSRadarUploadViewController.mm */,
-				84EADA381B95C6F500302A90 /* BSRadarNearbyViewController.h */,
-				84EADA391B95C6F500302A90 /* BSRadarNearbyViewController.mm */,
-				84EAD9F11B943BF700302A90 /* BSBaiduViewController.h */,
-				84EAD9F21B943BF700302A90 /* BSBaiduViewController.mm */,
-				84B29FFB1B9C0CFF00D6145F /* MyAnimatedAnnotationView.h */,
-				84B29FFC1B9C0CFF00D6145F /* MyAnimatedAnnotationView.m */,
+				84F34DF81BA6BDC300188756 /* BaiduMap */,
+				84F34E051BA6C20100188756 /* MAMAP */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -4779,11 +4824,45 @@
 		84F309591B9D49170070EF19 /* AMap_iOS_Navi_V1.3.1_Lib */ = {
 			isa = PBXGroup;
 			children = (
+				84F34DDB1BA6A30000188756 /* AMapCloudKit.framework */,
+				84F34DDC1BA6A30000188756 /* AMapSearchKit.framework */,
+				84F34DDD1BA6A30000188756 /* MAMapKit.framework */,
 				84F3095A1B9D49170070EF19 /* AMap.bundle */,
 				84F3095B1B9D49170070EF19 /* AMapNavi.bundle */,
-				84F3095C1B9D49170070EF19 /* AMapNaviKit.framework */,
 			);
 			path = AMap_iOS_Navi_V1.3.1_Lib;
+			sourceTree = "<group>";
+		};
+		84F34DF81BA6BDC300188756 /* BaiduMap */ = {
+			isa = PBXGroup;
+			children = (
+				84EBF02A1BA0022900B3F16A /* WayPointRouteSearchViewController.h */,
+				84EBF02B1BA0022900B3F16A /* WayPointRouteSearchViewController.mm */,
+				84EBF0221B9FF42D00B3F16A /* UIImage+Rotate.h */,
+				84EBF0231B9FF42D00B3F16A /* UIImage+Rotate.m */,
+				84EAD9FE1B95744100302A90 /* BSRadarUploadViewController.h */,
+				84EAD9FF1B95744100302A90 /* BSRadarUploadViewController.mm */,
+				84EADA381B95C6F500302A90 /* BSRadarNearbyViewController.h */,
+				84EADA391B95C6F500302A90 /* BSRadarNearbyViewController.mm */,
+				84EAD9F11B943BF700302A90 /* BSBaiduViewController.h */,
+				84EAD9F21B943BF700302A90 /* BSBaiduViewController.mm */,
+				84B29FFB1B9C0CFF00D6145F /* MyAnimatedAnnotationView.h */,
+				84B29FFC1B9C0CFF00D6145F /* MyAnimatedAnnotationView.m */,
+			);
+			name = BaiduMap;
+			sourceTree = "<group>";
+		};
+		84F34E051BA6C20100188756 /* MAMAP */ = {
+			isa = PBXGroup;
+			children = (
+				84F34DF91BA6BFDF00188756 /* BSMAMapMainViewController.h */,
+				84F34DFA1BA6BFDF00188756 /* BSMAMapMainViewController.m */,
+				84F34DFD1BA6C01D00188756 /* BSMAMapRadarUploadViewController.h */,
+				84F34DFE1BA6C01D00188756 /* BSMAMapRadarUploadViewController.m */,
+				84F34E011BA6C04900188756 /* BSMAMapRadarNearbyViewController.h */,
+				84F34E021BA6C04900188756 /* BSMAMapRadarNearbyViewController.m */,
+			);
+			name = MAMAP;
 			sourceTree = "<group>";
 		};
 		84F66D601B53E6A700498734 /* NIB-SYB-Resource */ = {
@@ -5550,6 +5629,7 @@
 				84EA98121B57E21F00AC549F /* second_normal@2x.png in Resources */,
 				84EA98F81B57E21F00AC549F /* im_reservation_baojie.png in Resources */,
 				84EA99081B57E21F00AC549F /* tuhongse.png in Resources */,
+				84F34DF51BA6BB1A00188756 /* BSMAMapMain.storyboard in Resources */,
 				84EA990A1B57E21F00AC549F /* tuijian_01.png in Resources */,
 				84EA97CE1B57E21F00AC549F /* icon_district@2x.png in Resources */,
 				84EADA1B1B95C59500302A90 /* poi_1.png in Resources */,
@@ -5782,6 +5862,7 @@
 				8474155E1B639312005BF59D /* tuikuandan.png in Resources */,
 				847415231B639312005BF59D /* xctb.png in Resources */,
 				847415851B639312005BF59D /* login-3.png in Resources */,
+				84F34DF61BA6BB1A00188756 /* BSMAMapMain.storyboard in Resources */,
 				847415081B639312005BF59D /* img_05.jpg in Resources */,
 				847415301B639312005BF59D /* icon-1x-2.png in Resources */,
 				8474151A1B639312005BF59D /* im_jia.png in Resources */,
@@ -5892,6 +5973,7 @@
 				84EA98A91B57E21F00AC549F /* forget password-3.png in Resources */,
 				847B30881B3290DD007003D7 /* Main.storyboard in Resources */,
 				84EA99071B57E21F00AC549F /* tuhongse.png in Resources */,
+				84F34DF41BA6BB1A00188756 /* BSMAMapMain.storyboard in Resources */,
 				84EA98031B57E21F00AC549F /* icon-1x-03.png in Resources */,
 				84EA98331B57E21F00AC549F /* a10.png in Resources */,
 				8412CA841B79EB12004EDFAB /* public_key.der in Resources */,
@@ -6524,6 +6606,7 @@
 				84BF8FC41B4AC2FA001042F1 /* Conf.m in Sources */,
 				84BF8FC61B4AC2FA001042F1 /* ErrorMessage.m in Sources */,
 				84E9D79F1B61E10C00F2CD24 /* BSAssetCell.m in Sources */,
+				84F34E001BA6C01D00188756 /* BSMAMapRadarUploadViewController.m in Sources */,
 				84BF8FCD1B4AC2FA001042F1 /* BSTableViewRefreshController.m in Sources */,
 				84E6C0901B7DCBA100289D94 /* ESSScannerViewController.m in Sources */,
 				84E9D7A91B61E10C00F2CD24 /* BSVideoIconView.m in Sources */,
@@ -6532,6 +6615,7 @@
 				84BF8FD11B4AC2FA001042F1 /* BSTableContentObject.m in Sources */,
 				84E9D79D1B61E10C00F2CD24 /* BSAlbumsViewController.m in Sources */,
 				84BF8FD31B4AC2FA001042F1 /* UIViewController+BSTableObject.m in Sources */,
+				84F34DFC1BA6BFDF00188756 /* BSMAMapMainViewController.m in Sources */,
 				84BF8FD51B4AC2FA001042F1 /* BSUITableViewInitRuntimeController.m in Sources */,
 				84BF8FDA1B4AC2FA001042F1 /* BSTableViewCellData.m in Sources */,
 				84E9D7AB1B61E10C00F2CD24 /* BSVideoIndicatorView.m in Sources */,
@@ -6542,6 +6626,7 @@
 				84BF8FE21B4AC2FA001042F1 /* BSFCRollingADImageUIView.m in Sources */,
 				844FFE951B8B542300658A36 /* NSData+CommonCrypto.m in Sources */,
 				846FC4571B7FA65100496F96 /* ESSBeaconIssue.m in Sources */,
+				84F34E041BA6C04900188756 /* BSMAMapRadarNearbyViewController.m in Sources */,
 				84BF8FE51B4AC2FA001042F1 /* BSUIImageTitleTableViewCell.m in Sources */,
 				84EADA011B95744100302A90 /* BSRadarUploadViewController.mm in Sources */,
 				844570CE1B4D63F8000CA1C7 /* BLEDevicesTableViewController.m in Sources */,
@@ -6771,6 +6856,7 @@
 				842042C51B2988410002C868 /* BSModelRoute.m in Sources */,
 				84BA96861B2829D500388B58 /* WaterSendingDetails.m in Sources */,
 				84EADEEE1B9EAA2E0098ABCE /* BSWebViewViewController.m in Sources */,
+				84F34E031BA6C04900188756 /* BSMAMapRadarNearbyViewController.m in Sources */,
 				8470765B1B3A8F1400F28180 /* adsCell.m in Sources */,
 				842043741B2991770002C868 /* DLSlideView.m in Sources */,
 				84E9D79E1B61E10C00F2CD24 /* BSAssetCell.m in Sources */,
@@ -6845,6 +6931,7 @@
 				84578F531B35D11D00C3A4EA /* ViewController.m in Sources */,
 				8470763E1B3A8B9000F28180 /* appointmentController.m in Sources */,
 				A0F0C3F31B10209500CE406D /* ViewShoppingCartParams.m in Sources */,
+				84F34DFF1BA6C01D00188756 /* BSMAMapRadarUploadViewController.m in Sources */,
 				847076441B3A8BE200F28180 /* lifeServiceController.m in Sources */,
 				8474330D1B2A90D800B030C4 /* SetViewController.m in Sources */,
 				A0F0C3F71B10209500CE406D /* JoinShoppingCartRequest.m in Sources */,
@@ -6892,6 +6979,7 @@
 				846541ED1B42C47300DE2BC1 /* BSUIFiveColTableViewCell.m in Sources */,
 				842042A21B2983B40002C868 /* AppDelegate.m in Sources */,
 				84BA967E1B2829D500388B58 /* MyOrderModel.m in Sources */,
+				84F34DFB1BA6BFDF00188756 /* BSMAMapMainViewController.m in Sources */,
 				84EBA00B1B416E37003309F6 /* ClassForSelectors.m in Sources */,
 				84832D511B565BDF00FB6D28 /* OrderBaseAndDetailDomain.m in Sources */,
 				845AC3501B674C870077E0ED /* BSUICollectionCollectionViewController.m in Sources */,
@@ -7008,6 +7096,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/BSInfrastructure/Map/BaiduMap_IOSSDK_v2.8.1_Lib",
+					"$(PROJECT_DIR)/民生小区/BaiduMap_IOSSDK_v2.8.1_Lib",
+					"$(PROJECT_DIR)/民生小区/AMap_iOS_Navi_V1.3.1_Lib",
 				);
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -7030,6 +7120,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/BSInfrastructure/Map/BaiduMap_IOSSDK_v2.8.1_Lib",
+					"$(PROJECT_DIR)/民生小区/BaiduMap_IOSSDK_v2.8.1_Lib",
+					"$(PROJECT_DIR)/民生小区/AMap_iOS_Navi_V1.3.1_Lib",
 				);
 				GCC_NO_COMMON_BLOCKS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
@@ -7047,6 +7139,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/BSInfrastructure/Map/BaiduMap_IOSSDK_v2.8.1_Lib",
+					"$(PROJECT_DIR)/民生小区/BaiduMap_IOSSDK_v2.8.1_Lib",
+					"$(PROJECT_DIR)/民生小区/AMap_iOS_Navi_V1.3.1_Lib",
 				);
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -7069,6 +7163,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/BSInfrastructure/Map/BaiduMap_IOSSDK_v2.8.1_Lib",
+					"$(PROJECT_DIR)/民生小区/BaiduMap_IOSSDK_v2.8.1_Lib",
+					"$(PROJECT_DIR)/民生小区/AMap_iOS_Navi_V1.3.1_Lib",
 				);
 				GCC_NO_COMMON_BLOCKS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
@@ -7249,6 +7345,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/BSInfrastructure/Map/BaiduMap_IOSSDK_v2.8.1_Lib",
+					"$(PROJECT_DIR)/民生小区/BaiduMap_IOSSDK_v2.8.1_Lib",
+					"$(PROJECT_DIR)/民生小区/AMap_iOS_Navi_V1.3.1_Lib",
 				);
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -7271,6 +7369,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/BSInfrastructure/Map/BaiduMap_IOSSDK_v2.8.1_Lib",
+					"$(PROJECT_DIR)/民生小区/BaiduMap_IOSSDK_v2.8.1_Lib",
+					"$(PROJECT_DIR)/民生小区/AMap_iOS_Navi_V1.3.1_Lib",
 				);
 				GCC_NO_COMMON_BLOCKS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;

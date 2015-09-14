@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Vcg-Yd-d1c">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--位置上传-->
+        <scene sceneID="dGR-s4-XmN">
+            <objects>
+                <viewController storyboardIdentifier="BSMAMapRadarUploadViewController.h" id="RN9-M2-RcO" userLabel="位置上传" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HVp-UN-9rP"/>
+                        <viewControllerLayoutGuide type="bottom" id="jCd-X8-GVA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eqK-0G-ojI">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="BnV-Rq-B8c"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FhE-iQ-7PN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1190" y="280"/>
+        </scene>
+        <!--周报检索-->
+        <scene sceneID="ptd-BU-3d7">
+            <objects>
+                <viewController storyboardIdentifier="BSMAMapRadarNearbyViewController" id="iji-h2-F0c" userLabel="周报检索" customClass="BSMAMapRadarNearbyViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gaZ-E7-wg3"/>
+                        <viewControllerLayoutGuide type="bottom" id="BFb-gU-t9O"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6i6-7x-dTE">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Xma-gt-HTB"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nfx-Ex-U86" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="66" y="641"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="lRi-tD-i7H">
+            <objects>
+                <viewController id="SJt-da-KIZ" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GkB-AF-6TD"/>
+                        <viewControllerLayoutGuide type="bottom" id="llv-WO-hft"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qFJ-Ly-17m">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="EGp-6Q-bec"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BfI-WX-KYR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="658" y="-353"/>
+        </scene>
+        <!--高德地图TABBAR-->
+        <scene sceneID="oUu-gS-FV8">
+            <objects>
+                <tabBarController storyboardIdentifier="KTLBMainTabBarController" id="Vcg-Yd-d1c" userLabel="高德地图TABBAR" customClass="KTLBMainTabBarController" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="s8S-lH-MVq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="zgf-OC-FdP" kind="relationship" relationship="viewControllers" id="9Dy-J0-J3K"/>
+                        <segue destination="n83-he-7zA" kind="relationship" relationship="viewControllers" id="P4y-ud-Ydu"/>
+                        <segue destination="cf5-eN-PWX" kind="relationship" relationship="viewControllers" id="Qgb-UB-U8g"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D6F-a8-Jo9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-466" y="-22"/>
+        </scene>
+        <!--定位-->
+        <scene sceneID="5Vb-02-Wvu">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zgf-OC-FdP" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="定位" image="second_normal.png" id="JMK-FK-FNo"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cos-qI-NNL">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="SJt-da-KIZ" kind="relationship" relationship="rootViewController" id="CwU-la-HBw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YUL-f7-bXB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="126" y="-353"/>
+        </scene>
+        <!--位置上传-->
+        <scene sceneID="d89-hD-gJG">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="n83-he-7zA" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="位置上传" image="radar_upload.png" id="jIr-Ix-xcJ"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="d9y-EB-ueF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="RN9-M2-RcO" kind="relationship" relationship="rootViewController" id="0OC-8W-lsm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Glf-S3-Hkb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="658" y="280"/>
+        </scene>
+        <!--周边检索-->
+        <scene sceneID="Qqq-qK-YoQ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cf5-eN-PWX" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="周边检索" image="radar_search.png" id="2Su-MP-3ne"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4TS-qh-AXe">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="iji-h2-F0c" kind="relationship" relationship="rootViewController" id="Nsz-a2-dJe"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DNR-jj-VlJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-466" y="641"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="radar_search.png" width="25" height="25"/>
+        <image name="radar_upload.png" width="25" height="25"/>
+        <image name="second_normal.png" width="30" height="30"/>
+    </resources>
+</document>

@@ -8,7 +8,7 @@
 
 #import "BSUICommonController.h"
 #import "BSCMFrameworkHeader.h"
-#import "BaiduMapAPI/BMapKit.h"
+#import <BaiduMapAPI/BMapKit.h>
 #import <MessageUI/MessageUI.h>
 #import <MessageUI/MFMessageComposeViewController.h>
 

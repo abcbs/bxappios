@@ -22,14 +22,16 @@
     BSTableSection *bsTable=[BSTableSection initWithHeaderVcClassContent:self.title//章节显示标题
        imageName:nil//章节显示图标
        headerViewClass:nil//章节显示视图
-       cellIdentifier:@"BSUIImageTitleTableViewCell"//采用的TableViewCell
-       cellClass:[BSUIImageTitleTableViewCell class]//TableViewCell实现
-       storyboard:@"LSBLEIFTTUpHoldMain" bsContent:nil];
+       cellIdentifier:@"BSUIFiveColTableViewCell"//采用的TableViewCell
+       cellClass:[BSUIFiveColTableViewCell class]//TableViewCell实现
+       storyboard:@"LSBLEIFTTUpHoldMain"
+       colCapatibilty:3//每个章节的row数量
+      bsContent:nil];
     
     
     
     BSTableContentObject *bleDevices=[BSTableContentObject
-                                      initWithContentObject:@"周边服务"
+                                      initWithContentObject:@"周边"
                                       methodName:nil
                                       imageName:@"im_reservation_jia.png"
                                       vcClass:@"BLEDevicesTableViewController"];
@@ -40,7 +42,7 @@
     
     //BTLECentralViewController
     bleDevices=[BSTableContentObject
-                 initWithContentObject:@"懒人查找"
+                 initWithContentObject:@"查找"
                  methodName:nil
                  imageName:@"im_vote.png"
                  vcClass:@"BTLECentralViewController"];
@@ -51,7 +53,7 @@
     
     //BTLECentralViewController
     bleDevices=[BSTableContentObject
-                initWithContentObject:@"周边广播"
+                initWithContentObject:@"广播"
                 methodName:nil
                 imageName:@"ww.png"
                 vcClass:@"BTLEPeripheralViewController"];
@@ -59,6 +61,41 @@
     
     
     [bsTable addBSTableContent:bleDevices sectionHeader:self.title];
+    
+    //百度地图
+    bleDevices=[BSTableContentObject
+                 initWithContentObject:@"定位"
+                 methodName:nil
+                 imageName:@"im_reservation_jia.png"
+                 vcClass:@"BSBaiduViewController"];
+    
+    bleDevices.storybordName=@"BSMapMain";
+    
+    
+    [bsTable addBSTableContent:bleDevices sectionHeader:@"百度地图"];
+    
+    //BTLECentralViewController
+    bleDevices=[BSTableContentObject
+                initWithContentObject:@"上传"
+                methodName:nil
+                imageName:@"im_vote.png"
+                vcClass:@"BSRadarUploadViewController"];
+     bleDevices.storybordName=@"BSMapMain";
+    
+    
+    [bsTable addBSTableContent:bleDevices sectionHeader:@"百度地图"];
+    
+    //BTLECentralViewController
+    bleDevices=[BSTableContentObject
+                initWithContentObject:@"周边"
+                methodName:nil
+                imageName:@"ww.png"
+                vcClass:@"BSRadarNearbyViewController"];
+    
+     bleDevices.storybordName=@"BSMapMain";
+    
+    [bsTable addBSTableContent:bleDevices sectionHeader:@"百度地图"];
+
     
     [super setValue:bsTable forKey:@"bSTableObjects"];
 }
@@ -71,25 +108,27 @@
 /**
  *改变行的高度（实现主个代理方法后 rowHeight 设定的高度无效）
  */
+/*
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return BSMarginY(160);
 }
-
+*/
 /**
  *覆盖父类实现，不显示章节标题
  */
-
+/*
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     return nil;
 }
-
+*/
 /**
  *覆盖，调整
  *每个section底部标题高度
  */
+/*
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     return BSMarginY(4);
 }
-
+*/
 @end

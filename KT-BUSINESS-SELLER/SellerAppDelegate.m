@@ -55,12 +55,12 @@ BSNetworkNotify *networkNotify;
     }
     
     // 要使用百度地图，请先启动BaiduMapManager
-    //_mapManager = [[BMKMapManager alloc]init];
+    _mapManager = [[BMKMapManager alloc]init];
     //百度地图应用名称KT_PIO
     //百度地图安全码abc.KT-OPERATORS
     //Bundle display name:$(PRODUCT_NAME)或者其他文字，此项不能为空，否则启动失败
     
-     BOOL ret = [_mapManager start:@"X4yr9eWQWA3A2CY44Nwm5MZd" generalDelegate:self];
+     BOOL ret = [_mapManager start:@"8bCZR8tPTI7QvoxWNefbTzIN" generalDelegate:self];
      if (!ret) {
      BSLog(@"/*=--------APP百度地图启动失败------------+=/");
      }else{

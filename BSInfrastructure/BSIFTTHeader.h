@@ -68,5 +68,15 @@
 #import "BTLEPeripheralViewController.h"
 
 
+//百度地图
+#import "BSBaiduViewController.h"
+
+#import "WayPointRouteSearchViewController.h"
+
+#import "BSRadarNearbyViewController.h"
+
+#import "BSRadarUploadViewController.h"
+
+
 
 #endif

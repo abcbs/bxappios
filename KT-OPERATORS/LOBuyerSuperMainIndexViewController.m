@@ -74,7 +74,7 @@
                 imageName:@"im_post.png"
                 vcClass:@"LOProductCatalogueDetailViewController"];
     
-    
+    bsnMagamer.storybordName=@"LOCatagoryManager";
     [bsTable addBSTableContent:bsnMagamer sectionHeader:@"企业人员管理"];
     
     bsnMagamer=[BSTableContentObject
@@ -83,7 +83,7 @@
                 imageName:@"im_activity.png"
                 vcClass:@"LOProductCatalogueDetailViewController"];
     
-    
+    bsnMagamer.storybordName=@"LOCatagoryManager";
     [bsTable addBSTableContent:bsnMagamer sectionHeader:@"企业人员管理"];
     
     
@@ -93,7 +93,7 @@
                 imageName:@"98bj@2x.png"
                 vcClass:@"LOProductCatalogueDetailViewController"];
     
-    
+    bsnMagamer.storybordName=@"LOCatagoryManager";
     [bsTable addBSTableContent:bsnMagamer sectionHeader:@"企业人员管理"];
 
     //行业监管

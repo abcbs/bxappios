@@ -12,6 +12,8 @@
 #import <BaiduMapAPI/BMapKit.h>
 #import <SystemConfiguration/SystemConfiguration.h>
 #import "PromptInfo.h"
+//#import <AMapNaviKit/AMapNaviKit.h>
+#import <MAMapKit/MAMapKit.h>
 @interface MYAppDelegate () <UIApplicationDelegate, BMKGeneralDelegate> {
     }
 
@@ -73,6 +75,9 @@ BSNetworkNotify *networkNotify;
 
     }
     
+    //高德地图
+    [MAMapServices sharedServices].apiKey =@"cd457b639b1c0dfc6eed1553cdb246d8";
+    //[AMapNaviServices sharedServices].apiKey =@"cd457b639b1c0dfc6eed1553cdb246d8";
     //注册设备
     [[UIApplication sharedApplication] registerForRemoteNotifications];
      //设置消息推送
