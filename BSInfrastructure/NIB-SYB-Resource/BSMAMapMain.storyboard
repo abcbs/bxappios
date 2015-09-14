@@ -7,7 +7,7 @@
         <!--位置上传-->
         <scene sceneID="dGR-s4-XmN">
             <objects>
-                <viewController storyboardIdentifier="BSMAMapRadarUploadViewController.h" id="RN9-M2-RcO" userLabel="位置上传" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BSMAMapRadarUploadViewController" id="RN9-M2-RcO" userLabel="位置上传" customClass="BSMAMapRadarUploadViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HVp-UN-9rP"/>
                         <viewControllerLayoutGuide type="bottom" id="jCd-X8-GVA"/>
@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="BnV-Rq-B8c"/>
+                    <navigationItem key="navigationItem" title="位置上传" id="BnV-Rq-B8c"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FhE-iQ-7PN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -37,17 +37,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Xma-gt-HTB"/>
+                    <navigationItem key="navigationItem" title="周边检索" id="Xma-gt-HTB"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nfx-Ex-U86" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="66" y="641"/>
         </scene>
-        <!--View Controller-->
+        <!--定位-->
         <scene sceneID="lRi-tD-i7H">
             <objects>
-                <viewController id="SJt-da-KIZ" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BSMAMapMainViewController" id="SJt-da-KIZ" userLabel="定位" customClass="BSMAMapRadarNearbyViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="GkB-AF-6TD"/>
                         <viewControllerLayoutGuide type="bottom" id="llv-WO-hft"/>
@@ -57,7 +57,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="EGp-6Q-bec"/>
+                    <navigationItem key="navigationItem" title="定位" id="EGp-6Q-bec"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BfI-WX-KYR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -85,10 +85,10 @@
             </objects>
             <point key="canvasLocation" x="-466" y="-22"/>
         </scene>
-        <!--定位-->
+        <!--定位导航-->
         <scene sceneID="5Vb-02-Wvu">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zgf-OC-FdP" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zgf-OC-FdP" userLabel="定位导航" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="定位" image="second_normal.png" id="JMK-FK-FNo"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="cos-qI-NNL">
@@ -104,10 +104,10 @@
             </objects>
             <point key="canvasLocation" x="126" y="-353"/>
         </scene>
-        <!--位置上传-->
+        <!--位置上传导航-->
         <scene sceneID="d89-hD-gJG">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="n83-he-7zA" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="n83-he-7zA" userLabel="位置上传导航" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="位置上传" image="radar_upload.png" id="jIr-Ix-xcJ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="d9y-EB-ueF">
@@ -123,10 +123,10 @@
             </objects>
             <point key="canvasLocation" x="658" y="280"/>
         </scene>
-        <!--周边检索-->
+        <!--周边检索导航-->
         <scene sceneID="Qqq-qK-YoQ">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cf5-eN-PWX" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cf5-eN-PWX" userLabel="周边检索导航" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="周边检索" image="radar_search.png" id="2Su-MP-3ne"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="4TS-qh-AXe">
