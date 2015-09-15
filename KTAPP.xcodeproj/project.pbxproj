@@ -1420,6 +1420,8 @@
 		84ECC7011BA8069C00965514 /* userPosition@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84ECC6A91BA8069C00965514 /* userPosition@2x.png */; };
 		84ECC7021BA8069C00965514 /* userPosition@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84ECC6A91BA8069C00965514 /* userPosition@2x.png */; };
 		84ECC7031BA8069C00965514 /* userPosition@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84ECC6A91BA8069C00965514 /* userPosition@2x.png */; };
+		84ECC7061BA8870B00965514 /* ScreenshotDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84ECC7051BA8870B00965514 /* ScreenshotDetailViewController.m */; };
+		84ECC7071BA8870B00965514 /* ScreenshotDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84ECC7051BA8870B00965514 /* ScreenshotDetailViewController.m */; };
 		84ECE42D1B4F9BB4003D1AEE /* BSUIDefaultTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84ECE42C1B4F9BB4003D1AEE /* BSUIDefaultTableViewCell.m */; };
 		84ECE42E1B4F9BB4003D1AEE /* BSUIDefaultTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84ECE42C1B4F9BB4003D1AEE /* BSUIDefaultTableViewCell.m */; };
 		84ECE4321B4FC29D003D1AEE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84ECE4301B4FC29D003D1AEE /* LaunchScreen.xib */; };
@@ -2734,6 +2736,8 @@
 		84ECC6A71BA8069C00965514 /* startPoint@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "startPoint@2x.png"; sourceTree = "<group>"; };
 		84ECC6A81BA8069C00965514 /* userPosition.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = userPosition.png; sourceTree = "<group>"; };
 		84ECC6A91BA8069C00965514 /* userPosition@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "userPosition@2x.png"; sourceTree = "<group>"; };
+		84ECC7041BA8870B00965514 /* ScreenshotDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScreenshotDetailViewController.h; sourceTree = "<group>"; };
+		84ECC7051BA8870B00965514 /* ScreenshotDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScreenshotDetailViewController.m; sourceTree = "<group>"; };
 		84ECE42B1B4F9BB4003D1AEE /* BSUIDefaultTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUIDefaultTableViewCell.h; sourceTree = "<group>"; };
 		84ECE42C1B4F9BB4003D1AEE /* BSUIDefaultTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUIDefaultTableViewCell.m; sourceTree = "<group>"; };
 		84ECE4301B4FC29D003D1AEE /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
@@ -5073,6 +5077,8 @@
 		84F34E371BA6FFFD00188756 /* MAMAP */ = {
 			isa = PBXGroup;
 			children = (
+				84ECC7041BA8870B00965514 /* ScreenshotDetailViewController.h */,
+				84ECC7051BA8870B00965514 /* ScreenshotDetailViewController.m */,
 				84F34E381BA6FFFD00188756 /* BaseMapViewController.h */,
 				84F34E391BA6FFFD00188756 /* BaseMapViewController.m */,
 				84F34E3A1BA6FFFD00188756 /* BSMAMapMainViewController.h */,
@@ -6902,6 +6908,7 @@
 				84D19FEF1B4C440500BA25BF /* LeDiscovery.m in Sources */,
 				84E71F351B4E5473003089B2 /* BLEDevicesAddTableViewController.m in Sources */,
 				841F950B1B8C59DA001B26B5 /* BSDigestAuthorization.m in Sources */,
+				84ECC7071BA8870B00965514 /* ScreenshotDetailViewController.m in Sources */,
 				845AC3511B674C870077E0ED /* BSUICollectionCollectionViewController.m in Sources */,
 				84D2DA7A1BA06DB000E4C6EB /* MoreView.m in Sources */,
 				84E9D7A31B61E10C00F2CD24 /* BSCheckmarkView.m in Sources */,
@@ -7215,6 +7222,7 @@
 				844A32061B4064310045CA6C /* BSUIBarButtonItem.m in Sources */,
 				847076711B3AB21300F28180 /* UIViewController+BSTableObject.m in Sources */,
 				8405CB801B5565990014AF8D /* HeadPortraitDomail.m in Sources */,
+				84ECC7061BA8870B00965514 /* ScreenshotDetailViewController.m in Sources */,
 				A0F0C3F21B10209500CE406D /* UpdateShoppingCartParams.m in Sources */,
 				84EBA0161B41A307003309F6 /* KTLBMainTabBarController.mm in Sources */,
 				845A022D1B3DABF0007F5327 /* ErrorMessage.m in Sources */,

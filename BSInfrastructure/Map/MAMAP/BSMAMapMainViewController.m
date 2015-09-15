@@ -8,8 +8,11 @@
 
 #import "BSMAMapMainViewController.h"
 #import "BSIFTTHeader.h"
+#import "ScreenshotDetailViewController.h"
 
-@interface BSMAMapMainViewController ()<UIGestureRecognizerDelegate>
+@interface BSMAMapMainViewController ()<UIGestureRecognizerDelegate>{
+    UIImage *screenshotImage ;
+}
 
 
 //导航栏中显示和隐藏地图控制区域
@@ -143,10 +146,8 @@
 
     [self initShapeLayer];
     
-    //[self startupAction];
-    
-    //captureAction[self.mapView addAnnotation:self.pointAnnotation];
-    //[self.mapView addOverlay:self.circle];
+    self.shapeLayer.hidden=YES;
+
 }
 
 - (void)initAnnotationAndOverlay
@@ -240,6 +241,27 @@
     [self startupAction];
 }
 
+- (IBAction)snapSaveClick:(id)sender {
+    //[self captureAction];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if (screenshotImage==nil){
+        
+    }
+    if ([segue.identifier isEqualToString:@"showSnapMap"])
+    {//浏览信息
+        [self captureAction];
+        ScreenshotDetailViewController *detailViewController =
+        (ScreenshotDetailViewController *)segue.destinationViewController;
+
+        detailViewController.screenshotImage = screenshotImage;
+        detailViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+
+    }
+   
+}
 
 - (IBAction)zoomLevelClick:(id)sender {
     [self.mapView setZoomLevel:[zoomdegree.text floatValue] animated:YES];
@@ -285,18 +307,12 @@
     CGRect inRect = [self.view convertRect:CGPathGetPathBoundingBox(self.shapeLayer.path)
                                     toView:self.mapView];
     
-    UIImage *screenshotImage = [self.mapView takeSnapshotInRect:inRect];
-    
-    [self transitionToDetailWithImage:screenshotImage];
+    screenshotImage = [self.mapView takeSnapshotInRect:inRect];
 }
 
 - (void)startupAction
 {
     self.started = !self.started;
-    
-    //self.navigationItem.rightBarButtonItem.title = StartupTitle(self.started);
-    
-    //[self.navigationController setToolbarHidden:!self.started animated:YES];
     
     self.mapView.scrollEnabled = !self.started;
     
@@ -324,30 +340,6 @@
 }
 
 #pragma mark - UIGestureRecognizerDelegate
-
-- (void)transitionToDetailWithImage:(UIImage *)image
-{
-    BSLog(@"调转到快照界面");
-}
-
-#pragma mark - MAMapViewDelegate
-
-- (MAOverlayRenderer *)mapView:(MAMapView *)mapView rendererForOverlay:(id <MAOverlay>)overlay
-{
-    if ([overlay isKindOfClass:[MACircle class]])
-    {
-        MACircleRenderer *circleRenderer = [[MACircleRenderer alloc] initWithCircle:overlay];
-        
-        circleRenderer.lineWidth   = 4;
-        circleRenderer.strokeColor = [UIColor blueColor];
-        circleRenderer.fillColor   = [[UIColor greenColor] colorWithAlphaComponent:0.3];
-        
-        return circleRenderer;
-    }
-    
-    return nil;
-}
-
 
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
 {
@@ -444,6 +436,25 @@
 
 
 #pragma mark -高德地图
+
+#pragma mark - MAMapViewDelegate
+
+- (MAOverlayRenderer *)mapView:(MAMapView *)mapView rendererForOverlay:(id <MAOverlay>)overlay
+{
+    if ([overlay isKindOfClass:[MACircle class]])
+    {
+        MACircleRenderer *circleRenderer = [[MACircleRenderer alloc] initWithCircle:overlay];
+        
+        circleRenderer.lineWidth   = 4;
+        circleRenderer.strokeColor = [UIColor blueColor];
+        circleRenderer.fillColor   = [[UIColor greenColor] colorWithAlphaComponent:0.3];
+        
+        return circleRenderer;
+    }
+    
+    return nil;
+}
+
 - (void)mapView:(MAMapView *)mapView didAddAnnotationViews:(NSArray *)views
 {
     MAAnnotationView *view = views[0];

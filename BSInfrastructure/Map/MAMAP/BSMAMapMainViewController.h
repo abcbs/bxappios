@@ -93,5 +93,8 @@
 
 - (IBAction)snapCaptureClick:(id)sender;
 
+- (IBAction)snapSaveClick:(id)sender;
+
+
 
 @end

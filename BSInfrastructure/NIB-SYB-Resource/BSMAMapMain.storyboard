@@ -96,6 +96,10 @@
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <state key="normal" title="保存快照"/>
+                                                <connections>
+                                                    <action selector="snapSaveClick:" destination="SJt-da-KIZ" eventType="touchUpInside" id="erU-rB-PG6"/>
+                                                    <segue destination="YBi-gF-mXF" kind="show" identifier="showSnapMap" id="9VS-xs-tsP"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="路况" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aVQ-hP-ANJ">
                                                 <rect key="frame" x="8" y="129" width="38" height="17"/>
@@ -227,7 +231,7 @@
                         <outlet property="overlookdegree" destination="dkm-A3-Otq" id="h1j-nD-n4Y"/>
                         <outlet property="overlookdegreeAction" destination="aPv-ap-SpT" id="hbg-te-c9V"/>
                         <outlet property="rotatedegreeAction" destination="s3B-DY-9eb" id="6I4-vb-nmU"/>
-                        <outlet property="saveScreenShotAction" destination="kxt-la-bkJ" id="Ofo-I5-Yvx"/>
+                        <outlet property="saveScreenShotAction" destination="kxt-la-bkJ" id="vaq-7N-RM2"/>
                         <outlet property="screenShotAction" destination="bLE-KO-Yx7" id="PCu-oG-5l9"/>
                         <outlet property="showUserLocationSegment" destination="qEI-bS-khZ" id="HEU-Ra-gxn"/>
                         <outlet property="singleTap" destination="UZX-En-MyQ" id="GOW-zH-vq4"/>
@@ -241,6 +245,26 @@
                 <tapGestureRecognizer id="Kqq-O6-5Ag" userLabel="双击手势"/>
             </objects>
             <point key="canvasLocation" x="390" y="-347"/>
+        </scene>
+        <!--地图快照-->
+        <scene sceneID="qeJ-Na-gQl">
+            <objects>
+                <viewController storyboardIdentifier="ScreenshotDetailViewController" id="YBi-gF-mXF" userLabel="地图快照" customClass="ScreenshotDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7Fc-9r-dvS"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ldw-1Y-FUO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="n0K-2k-3wE">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="地图快照" id="1t1-jx-SnV"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r9C-aX-wEs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="822" y="-347"/>
         </scene>
         <!--高德地图TABBAR-->
         <scene sceneID="oUu-gS-FV8">
