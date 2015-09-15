@@ -11,7 +11,10 @@
 -  ( void ) stopNetworkReachability;
 
 -  ( NSString * ) currentNetworkReachability;
+//4G/wifi/nonet
+-(NSString *) currentNetworkType;
 
 -(void) networkTimeOut;
 -(void) networkRunning;
+
 @end

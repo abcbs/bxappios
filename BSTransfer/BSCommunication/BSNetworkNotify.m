@@ -6,8 +6,10 @@
 @interface BSNetworkNotify (){
     NSString* statusString ;
     NSString* statusApp ;
+    NSString* netType;
     NSTimer  * timer  ;
     //AFHTTPSessionManager *_sessionManager;
+    AFNetworkReachabilityManager *reachabilityManager ;
 }
 
 @property (nonatomic) Reachability *hostReachability;
@@ -26,6 +28,8 @@
     if (self){
         //statusString=@"";
         //[self netwokrReachabilityInit];
+        reachabilityManager =[AFNetworkReachabilityManager sharedManager];
+        netType=@"noNet";
     }
     return self;
 }
@@ -47,8 +51,6 @@
 
 -( NSString * ) currentNetworkReachability{
     if ([statusApp isEqualToString:@"AppNetOK"]) {
-        BSLog(@"应用运行中");
-        [PromptInfo showWithText:@"应用运行中" topOffset:54 duration:2];
         return statusApp;
     }else{
         statusApp=@"未能连接到服务器";
@@ -57,6 +59,9 @@
     return statusApp;
 }
 
+-(NSString *) currentNetworkType{
+    return netType;
+}
 -(void) networkTimeOut{
     statusApp=@"未能连接到服务器";
 }
@@ -73,7 +78,7 @@
                    userInfo:nil
                    repeats:YES ];
     }
-    [self startMonitoring];
+    // [self startMonitoring];
     
 }
 
@@ -82,42 +87,47 @@
     [timer  invalidate ];
     timer  =  nil ;
     
-    //[_sessionManager startMonitoring];
-    
     //[self stopMonitoring];
-    [[AFNetworkReachabilityManager sharedManager] startMonitoring];
+    [ reachabilityManager stopMonitoring];
 }
 
 
 -(void)timerFireNetChecked{
-    [self isNetworkEnabled];
+    //[self isNetworkEnabled];
+    [self isNetworkEnabledWithAFNetwork];
     
 }
 
 //使用AFNetwork判断
 -(void) isNetworkEnabledWithAFNetwork{
     __block  BOOL bEnabled = FALSE;
-    [[AFNetworkReachabilityManager sharedManager] startMonitoring];
-    [[AFNetworkReachabilityManager sharedManager] setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+    __block NSString *local= statusApp;
+    [reachabilityManager startMonitoring];
+    
+    [reachabilityManager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        if ([local isEqualToString: @"未能连接到服务器"]) {
+            
+            [PromptInfo showWithText:@"服务连接超时或系统可能在维护中" topOffset:54 duration:2];
+            //return;
+        }
          switch (status) {
                     case AFNetworkReachabilityStatusReachableViaWWAN:
-                        BSLog(@"目前网络状态WWAN");
+                        //BSLog(@"目前网络状态WWAN");
                         [PromptInfo showWithText:@"蜂窝网覆盖的连接3G" topOffset:54 duration:2];
-                        statusString=@"WWAN";
+                        statusString=@"AppNetOK";
+                        netType=@"WWAN";
                         bEnabled=TRUE;
                         break;
                     case AFNetworkReachabilityStatusReachableViaWiFi:
-                        BSLog(@"目前网络为WiFi");
                         statusString=@"AppNetOK";
+                        netType=@"WiFi";
                         bEnabled=TRUE;
-                        
-                        [PromptInfo showWithText:@"目前网络为WiFi" topOffset:54 duration:2];
-                        
-                        break;
+                         //[PromptInfo showWithText:@"目前网络为WiFi" topOffset:54 duration:2];
+                         break;
                     case AFNetworkReachabilityStatusNotReachable:
-                        BSLog(@"目前没有应用启动");
-                        statusString=@"NoNet";
-                        [PromptInfo showWithText:@"能够连接网络，但是不能同服务建立连接"
+                        statusString=@"noNet";
+                        netType=@"noNet";
+                        [PromptInfo showWithText:@"无网络环境,请检查手机网络设置情况"
                                        topOffset:54 duration:2];
                         
                         break;
@@ -126,7 +136,7 @@
                 }
         
     }];
-    //return bEnabled;
+    [reachabilityManager stopMonitoring];
 }
 
 //-判断当前网络是否可用
@@ -176,7 +186,7 @@
         }
         if (!bEnabled) {
             BSLog(@"无网络环境");
-            statusString=@"NoNet";
+            statusString=@"noNet";
             [PromptInfo showWithText:@"无网络环境" topOffset:54 duration:2];
         }
         
@@ -260,12 +270,12 @@
     {
         case NotReachable: {
             BSLog(@"目前没有网络环境");
-            statusString=@"NoNet";
+            statusString=@"noNet";
             [PromptInfo showWithText:@"目前没有网络环境" topOffset:54 duration:2];
             break;
         }
         case ReachableViaWWAN:{
-            statusString=@"WWAN";
+            statusString=@"AppNetOK";
             BSLog(@"目前网络状态WWAN");
             [PromptInfo showWithText:@"蜂窝网覆盖的连接3G" topOffset:54 duration:2];
             break;

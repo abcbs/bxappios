@@ -138,7 +138,7 @@ static int loginRetryNumber;
 {
     //增加网络连接可用性判断
     NSString *netStatus =[[BSNetworkNotify sharedBSNetworkNotify] currentNetworkReachability];
-    if (netStatus!=nil&&![netStatus isEqualToString:@"AppNetOK"]) {
+    if (netStatus!=nil&&[netStatus isEqualToString:@"noNet"]) {
         return ;
     }
     NSLog(@"本次请求URL\t%@",KBS_URL);
@@ -225,7 +225,7 @@ static int loginRetryNumber;
     NSLog(@"本次请求方法POST");
     //增加网络连接可用性判断
     NSString *netStatus =[[BSNetworkNotify sharedBSNetworkNotify] currentNetworkReachability];
-    if (netStatus!=nil&&![netStatus isEqualToString:@"AppNetOK"]) {
+    if (netStatus!=nil&&[netStatus isEqualToString:@"noNet"]) {
         return ;
     }
     //uri=pathPattern;

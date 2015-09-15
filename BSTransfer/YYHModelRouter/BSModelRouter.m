@@ -80,7 +80,7 @@ static BSDigestAuthorization *digestAuthorization;
         [digestAuthorization setRequestSerializer:_sessionManager.requestSerializer];
 
         _sessionManager.responseSerializer=[AFJSONResponseSerializer serializer];
-        
+        /*
         [_sessionManager.reachabilityManager
          setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
              switch (status) {
@@ -103,6 +103,7 @@ static BSDigestAuthorization *digestAuthorization;
          }];
         
         [_sessionManager.reachabilityManager startMonitoring];
+         */
 #ifdef HAS_MANTLE
         _modelSerializer = [[BSModelSerializer alloc] init];
 #endif
@@ -122,7 +123,7 @@ static BSDigestAuthorization *digestAuthorization;
         _sessionManager.responseSerializer=[AFJSONResponseSerializer serializer];
         //如果包含认证方式则设置请求头信息
         [digestAuthorization setRequestSerializer:_sessionManager.requestSerializer];
-        
+        /*
         [_sessionManager.reachabilityManager
             setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
             switch (status) {
@@ -146,6 +147,7 @@ static BSDigestAuthorization *digestAuthorization;
         }];
         
         [_sessionManager.reachabilityManager startMonitoring];
+        */
 #ifdef HAS_MANTLE
         _modelSerializer = [[BSModelSerializer alloc] init];
 #endif
