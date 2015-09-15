@@ -136,6 +136,7 @@
 
 //默认取当前地址，也就是取值NO时为当前地址，此时检索与定位的条件均为当前手机位置
 @property (assign, nonatomic) BOOL noCurrentLocation;
+
 //选择地图类型Segmented
 - (IBAction)changeMapType:(id)sender;
 

@@ -316,8 +316,6 @@ static int loginRetryNumber;
             [[BSNetworkNotify sharedBSNetworkNotify] networkTimeOut];
             return ;
         }
-        
-
         //key	__NSCFConstantString *	@"Www-Authenticate"	0x00000001107bc478
         //value	__NSCFString *	@"Digest realm=\"REST-Realm\", qop=\"auth\", nonce=\"MTQ0MDUyNDE4OTUxOTplYjAyY2UyYzhhOGQ1MTU4YjRmMWVhNjQ0NzRiMDZjOQ==\""	0x00007f83a870e290
         NSDictionary *headerFields = [httpResponse allHeaderFields];
@@ -352,9 +350,7 @@ static int loginRetryNumber;
                                keyPath:@""
                                  block:(BSHTTPResponse)block
              ];
-            
-            
-            return ;
+             return ;
         }
         if (block&&loginRetryNumber>=AUTHORIZATION_RETRY) {
             
