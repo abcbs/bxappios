@@ -84,8 +84,8 @@
 - (void)viewDidAppear:(BOOL)animated{
     NSLog(@"对象的视图已经加入到窗口时调用");
     [BSUIComponentView changeTabBarWithNotification:self addedInfo:self.inform];
-    _timer= [NSTimer scheduledTimerWithTimeInterval:0.1
-                                             target:self selector:@selector(progressTracking) userInfo:self repeats:YES];
+    //_timer= [NSTimer scheduledTimerWithTimeInterval:0.1
+    //                                         target:self selector:@selector(progressTracking) userInfo:self repeats:YES];
     
     if(!HUD){
         HUD = [[MBProgressHUD alloc] initWithView:self.view];
@@ -110,7 +110,8 @@
 -(void) viewDidDisappear:(BOOL)animated{
     BSLog(@"BSUICommonController viewDidDisappear,%@",self.description);
     [BSUIComponentView changeTabBarWithNotification:self addedInfo:nil];
-    _timer=nil;
+    //[_timer invalidate];
+    //_timer=nil;
    
     [super viewDidDisappear:animated];
 }
@@ -156,14 +157,14 @@
 -(void)process{
      @try {
          while([Conf checkNetWork]==networkRight||[Conf checkNetWork]==networkError){
-             if (HUD!=nil ) {
-                [HUD hide:YES];
+             //if (HUD!=nil ) {
+             //   [HUD hide:YES];
                  //HUD=nil;
-             }
-             if (_timer!=nil &&_timer.isValid) {
-                [_timer invalidate];
+             //}
+             //if (_timer!=nil &&_timer.isValid) {
+             //   [_timer invalidate];
                 //_timer=nil;
-            }
+            //}
          }
      }
     @catch (NSException *exception) {
