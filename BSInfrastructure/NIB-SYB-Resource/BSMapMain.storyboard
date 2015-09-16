@@ -205,7 +205,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mej-uz-deQ">
+                                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mej-uz-deQ">
                                                 <rect key="frame" x="260" y="48" width="40" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="NfD-AL-iEm"/>
@@ -825,7 +825,7 @@
                                             <constraint firstItem="qga-y6-5ZG" firstAttribute="leading" secondItem="KZG-cY-mAd" secondAttribute="trailing" constant="6" id="zHT-he-dSx"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HOb-xo-ibc" userLabel="定位与跟踪">
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HOb-xo-ibc" userLabel="定位与跟踪">
                                         <rect key="frame" x="0.0" y="22" width="318" height="200"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nn3-aj-8Fb">
@@ -1086,7 +1086,7 @@
                                         </connections>
                                     </segmentedControl>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" red="0.42977059998077616" green="0.0" blue="0.05487078467719219" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="7Gi-oD-d37" firstAttribute="top" secondItem="rlx-0R-CiK" secondAttribute="top" constant="218" id="3EY-Zc-nOQ"/>
@@ -1180,10 +1180,19 @@
                         <outlet property="browseSharedShortUrlBtn" destination="Qmt-PS-YTM" id="3SL-5H-5jm"/>
                         <outlet property="controllerSegmented" destination="7Gi-oD-d37" id="YGb-AA-y3j"/>
                         <outlet property="controllerView" destination="rlx-0R-CiK" id="5eZ-k9-BFq"/>
+                        <outlet property="favBrowserBtn" destination="RYh-Np-yAa" id="fvk-tL-QnG"/>
+                        <outlet property="favDeleteBtn" destination="rq2-Et-7R4" id="Iv6-VD-Jdw"/>
+                        <outlet property="favStartBtn" destination="1zu-F0-rbe" id="GDb-qs-LpW"/>
                         <outlet property="followHeadBtn" destination="Bsa-FZ-MbP" id="fLg-5Y-Eea"/>
                         <outlet property="followingBtn" destination="xhp-7Y-aSp" id="f0R-0d-Pwf"/>
+                        <outlet property="geoBtn" destination="Rlh-CL-2Bu" id="Lj9-du-7LT"/>
+                        <outlet property="geoRevserBtn" destination="Mej-uz-deQ" id="mZ5-jX-cah"/>
                         <outlet property="localtionUIControllerView" destination="HOb-xo-ibc" id="of4-q6-AtZ"/>
                         <outlet property="mapView" destination="3hn-sa-ktv" id="3gS-vg-Dvr"/>
+                        <outlet property="poiSearchBtn" destination="tdN-tf-cOR" id="3HC-ru-sX3"/>
+                        <outlet property="rountWayBtn" destination="DqG-kx-4vM" id="OWp-Tc-mgd"/>
+                        <outlet property="routeBusBtn" destination="ydA-Bd-s1E" id="VXZ-cU-gmR"/>
+                        <outlet property="routeDriveBtn" destination="c69-IA-Isq" id="zEZ-pM-wjA"/>
                         <outlet property="searchUIControllerView" destination="zm6-SL-joP" id="gjL-D1-66z"/>
                         <outlet property="segment" destination="CLd-cl-3Xy" id="x5I-Rx-3oc"/>
                         <outlet property="sharedShortUrl" destination="Sxc-4G-cUj" id="ryW-2s-bPt"/>

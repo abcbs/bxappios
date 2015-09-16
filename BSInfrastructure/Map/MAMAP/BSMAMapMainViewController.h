@@ -72,13 +72,84 @@
     
     //俯视度
     IBOutlet UITextField *overlookdegree;
-    //
     
+    //地图UI控制，比例尺
     IBOutlet UIButton *zoomLevelAction;
     
     IBOutlet UIButton *rotatedegreeAction;
     
     IBOutlet UIButton *overlookdegreeAction;
+    
+    //地址检索功能，POI功能
+    //所在城市
+    IBOutlet UITextField *cityText;
+    
+    //查询地址
+    IBOutlet UITextField *addressText;
+    
+    //经度
+    IBOutlet UITextField *longitudeText;
+    
+    //纬度
+    IBOutlet UITextField *latitudeText;
+    
+    //获取经纬度
+    IBOutlet UIButton *geoAction;
+    
+    //通过经纬度获得地址
+    IBOutlet UIButton *revGeoAction;
+    
+    //查找访问
+    IBOutlet UITextField *rangRadius;
+    
+    //查询关键字
+    IBOutlet UITextField *keyText;
+    
+    //关键字查找开始
+    IBOutlet UIButton *poiFindAction;
+    
+    //查找下一组数据
+    IBOutlet UIButton *poiNextAction;
+    
+    //保存查询结果
+    IBOutlet UIButton *poiSaveAction;
+    
+    //收藏POI
+    IBOutlet UIButton *favSave;
+    
+    //查看收藏
+    IBOutlet UIButton *favBrowser;
+    
+    //取消收藏
+    IBOutlet UIButton *favDelete;
+    
+    //路线规划
+    //终点城市
+    IBOutlet UITextField *endCityText;
+    
+    //终点地址
+    IBOutlet UITextField *endAddressText;
+    
+    //公交
+    IBOutlet UIButton *routeByBusAction;
+    
+    //自驾
+    IBOutlet UIButton *routeBySelfDriving;
+    
+    //徒步前往
+    IBOutlet UIButton *routteByTrampAction;
+    
+    //自行车前往
+    IBOutlet UIButton *routeByBikeAction;
+    
+    //共享，按照地址
+    IBOutlet UIButton *addressSharedAction;
+    
+    //共享，按照经纬度
+    IBOutlet UIButton *geoSharedAction;
+    
+    //查看共享URL
+    IBOutlet UIButton *browseUrlAction;
 }
 
 //导航栏中显示和隐藏地图控制区域

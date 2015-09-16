@@ -190,7 +190,33 @@ static const char *const kOperationQueueName = "kESSLocationCheckOperationQueueN
 
 -(void)initSubViews{
     //
+    [BSUIComponentView configButtonStyle:geoBtn];
+    [BSUIComponentView configButtonStyle:geoRevserBtn];
+    [BSUIComponentView configButtonStyle:_zoom];
+    [BSUIComponentView configButtonStyle:_rotate];
+    [BSUIComponentView configButtonStyle:_overlook];
+    [BSUIComponentView configButtonStyle:_snopImageButton];
+    [BSUIComponentView configButtonStyle:_closeButton];
+    [BSUIComponentView configButtonStyle:_nextPageButton];
+    [BSUIComponentView configButtonStyle:_nextPageButton];
+    [BSUIComponentView configButtonStyle:_savePOIButton];
+    [BSUIComponentView configButtonStyle:_poiShortUrlButton];
+    [BSUIComponentView configButtonStyle:_reverseGeoShortUrlButton];
+    [BSUIComponentView configButtonStyle:favStartBtn];
+    [BSUIComponentView configButtonStyle:favDeleteBtn];
+    [BSUIComponentView configButtonStyle:poiSearchBtn];
 
+    [BSUIComponentView configButtonStyle:startBtn];
+    [BSUIComponentView configButtonStyle:stopBtn];
+    [BSUIComponentView configButtonStyle:followingBtn];
+    [BSUIComponentView configButtonStyle:followHeadBtn];
+    
+    
+    [BSUIComponentView configButtonStyle:browseSharedShortUrlBtn];
+    [BSUIComponentView configButtonStyle:routeBusBtn];
+    [BSUIComponentView configButtonStyle:routeDriveBtn];
+    [BSUIComponentView configButtonStyle:rountWayBtn];
+    
     [_mapView setTrafficEnabled:NO];
     [_mapView setBuildingsEnabled:YES];
     [_mapView setBaiduHeatMapEnabled:NO];
@@ -2165,7 +2191,7 @@ static const char *const kOperationQueueName = "kESSLocationCheckOperationQueueN
     [followingBtn setAlpha:0.6];
     [startBtn setEnabled:YES];
     [startBtn setAlpha:1.0];
-     //isLocationPrompt=YES;
+     isLocationPrompt=YES;
 }
 /**
  *在地图View将要启动定位时，会调用此函数
@@ -2293,9 +2319,10 @@ static const char *const kOperationQueueName = "kESSLocationCheckOperationQueueN
     isLocationPrompt=YES;
     BMKPlanNode* start = [[BMKPlanNode alloc]init];
     start.name = _addrText.text;
+    start.cityName=_cityText.text;
     BMKPlanNode* end = [[BMKPlanNode alloc]init];
     end.name = _endAddrText.text;
-    
+    end.cityName=_endCityText.text;
     BMKTransitRoutePlanOption *transitRouteSearchOption = [[BMKTransitRoutePlanOption alloc]init];
     transitRouteSearchOption.city= _cityText.text;
     transitRouteSearchOption.from = start;

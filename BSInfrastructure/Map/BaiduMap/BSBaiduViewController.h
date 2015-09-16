@@ -41,6 +41,12 @@
     //控制器段显示
     IBOutlet UISegmentedControl *controllerSegmented;
     
+    //地址转坐标
+    
+    IBOutlet UIButton *geoBtn;
+    
+    IBOutlet UIButton *geoRevserBtn;
+    
     //收缩
     IBOutlet UIButton *_zoom;
     
@@ -93,6 +99,8 @@
     
     IBOutlet UITextField* _keyText;
     
+    IBOutlet UIButton *poiSearchBtn;
+    
     IBOutlet UIButton* _nextPageButton;
     
     IBOutlet UIButton *_savePOIButton;
@@ -112,6 +120,18 @@
     
     
     IBOutlet UIButton *browseSharedShortUrlBtn;
+    
+    //搜藏按钮
+    
+    IBOutlet UIButton *favStartBtn;
+    
+    IBOutlet UIButton *favDeleteBtn;
+    
+    
+    IBOutlet UIButton *favBrowserBtn;
+    
+    
+    
     //定位
     IBOutlet UIButton* startBtn;
     
@@ -127,6 +147,14 @@
     //道路规划
     IBOutlet UITextField* _endCityText;
     IBOutlet UITextField* _endAddrText;
+    
+    
+    IBOutlet UIButton *routeBusBtn;
+    
+    IBOutlet UIButton *routeDriveBtn;
+    
+    
+    IBOutlet UIButton *rountWayBtn;
 }
 
 

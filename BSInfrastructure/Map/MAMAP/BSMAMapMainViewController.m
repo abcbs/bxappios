@@ -48,55 +48,88 @@
     self.mapView.mapType = segmentedControl.selectedSegmentIndex;
 }
 
-- (void)initToolBar
-{
-    /*
-    UIBarButtonItem *flexbleItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
-                                                                                 target:self
-                                                                                 action:nil];
-    
-    UISegmentedControl *mapTypeSegmentedControl = [[UISegmentedControl alloc] initWithItems:
-                                                   [NSArray arrayWithObjects:
-                                                    @"标准(Standard)",
-                                                    @"卫星(Satellite)",
-                                                    nil]];
-    */
-    mapTypeSegmentedControl.selectedSegmentIndex  = self.mapView.mapType;
-    [mapTypeSegmentedControl addTarget:self action:@selector(mapTypeAction:) forControlEvents:UIControlEventValueChanged];
-    /*
-    UIBarButtonItem *mayTypeItem = [[UIBarButtonItem alloc] initWithCustomView:mapTypeSegmentedControl];
-    
-    self.toolbarItems = [NSArray arrayWithObjects:flexbleItem, mayTypeItem, flexbleItem, nil];
-    */ 
-}
+
 
 #pragma mark - Life Cycle
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self initToolBar];
     
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+}
+
+#pragma mark 继承父类方法，键盘处理事件
+-(void)delelageForTextField{
     
-    //self.navigationController.toolbar.barStyle      = UIBarStyleBlack;
-    //self.navigationController.toolbar.translucent   = YES;
-    //[self.navigationController setToolbarHidden:NO animated:animated];
+    //比例
+    zoomdegree.delegate=self;
+    
+    //旋转度
+    rotatedegree.delegate=self;
+    
+    //俯视度
+    overlookdegree.delegate=self;
+    
+    //
+    cityText.delegate=self;
+    
+    //查询地址
+    addressText.delegate=self;
+    
+    //经度
+    longitudeText.delegate=self;
+    
+    //纬度
+    latitudeText.delegate=self;
+    
+    //查找访问
+    rangRadius.delegate=self;
+    
+    //查询关键字
+    keyText.delegate=self;
+    
+    //道路规划
+    endCityText.delegate=self;
+    
+    //终点地址
+    endAddressText.delegate=self;
+
     
 }
 
 #pragma mark -继承父类方法对视图格式化
 -(void)initSubViews{
-    
+    //基本控制
     [BSUIComponentView configButtonStyle:screenShotAction];
     [BSUIComponentView configButtonStyle:saveScreenShotAction];
     [BSUIComponentView configButtonStyle:zoomLevelAction];
     [BSUIComponentView configButtonStyle:rotatedegreeAction];
     [BSUIComponentView configButtonStyle:overlookdegreeAction];
+    
+    //地图查询，POI查询
+    [BSUIComponentView configButtonStyle:geoAction];
+    [BSUIComponentView configButtonStyle:revGeoAction];
+    [BSUIComponentView configButtonStyle:poiNextAction];
+    [BSUIComponentView configButtonStyle:poiFindAction];
+    [BSUIComponentView configButtonStyle:poiSaveAction];
+    [BSUIComponentView configButtonStyle:favBrowser];
+    [BSUIComponentView configButtonStyle:favDelete];
+    [BSUIComponentView configButtonStyle:favSave];
+
+    //线路规划
+    [BSUIComponentView configButtonStyle:routeByBusAction];
+    [BSUIComponentView configButtonStyle:routeBySelfDriving];
+    [BSUIComponentView configButtonStyle:routteByTrampAction];
+    [BSUIComponentView configButtonStyle:routeByBikeAction];
+    [BSUIComponentView configButtonStyle:addressSharedAction];
+    [BSUIComponentView configButtonStyle:geoSharedAction];
+    [BSUIComponentView configButtonStyle:browseUrlAction];
+    
     mapControllerView.hidden=YES;
     //显示控制区域
     [controllerSegmented addTarget:self action:@selector(changeControllerType:) forControlEvents:UIControlEventValueChanged];
@@ -106,6 +139,11 @@
     [localtionUIControllerView setHidden:YES];
     [searchUIControllerView setHidden:NO];
     controllerSegmented.selectedSegmentIndex=1;
+    
+    
+    //地图种类Action
+    mapTypeSegmentedControl.selectedSegmentIndex  = self.mapView.mapType;
+    [mapTypeSegmentedControl addTarget:self action:@selector(mapTypeAction:) forControlEvents:UIControlEventValueChanged];
     
     //定位开关
     [showUserLocationSegment addTarget:self action:@selector(showsSegmentAction:) forControlEvents:UIControlEventValueChanged];
@@ -129,8 +167,11 @@
     doubleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleDoubleTap:)];
     doubleTap.delegate = self;
     doubleTap.numberOfTapsRequired = 2;
+    
     [self.view addGestureRecognizer:doubleTap];
     
+    
+    //
     singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
     singleTap.delegate = self;
     [singleTap requireGestureRecognizerToFail:doubleTap];
@@ -147,6 +188,8 @@
     [self initShapeLayer];
     
     self.shapeLayer.hidden=YES;
+    
+    //
 
 }
 
@@ -176,19 +219,7 @@
     [self.view.layer addSublayer:self.shapeLayer];
 }
 
-#pragma mark 继承父类方法，键盘处理事件
--(void)delelageForTextField{
-    
-    //比例
-    zoomdegree.delegate=self;
-    
-    //旋转度
-    rotatedegree.delegate=self;
-    
-    //俯视度
-    overlookdegree.delegate=self;
-    
-}
+
 - (void)changeControllerType:(id)sender {
     NSInteger index = controllerSegmented.selectedSegmentIndex;
     switch (index) {
