@@ -162,6 +162,12 @@
     [gestureZoomAction addTarget:self action:@selector(gestureZoomAction:) forControlEvents:UIControlEventValueChanged];
     gestureScorllction.on = YES;
     
+    [gestureRotateSwitch addTarget:self action:@selector(gestureRotateAction:) forControlEvents:UIControlEventValueChanged];
+    gestureRotateSwitch.on=YES;
+    
+    [gestureCameraSwitch addTarget:self action:@selector(gestureCameraAction:) forControlEvents:UIControlEventValueChanged];
+    gestureCameraSwitch.on=YES;
+    
     //手势
     // 需要额外添加一个双击手势，以避免当执行mapView的双击动作时响应两次单击手势。
     doubleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleDoubleTap:)];
@@ -249,23 +255,6 @@
     }
 }
 
-//交通路况Action
-- (void)trafficAction:(UISwitch *)switcher
-{
-    self.mapView.showTraffic = switcher.on;
-}
-
-//手势放大、缩小
-- (void)gestureScorllAction:(UISwitch *)switcher
-{
-    self.mapView.zoomEnabled = switcher.on;
-
-}
-
-//收缩、俯视、旋转度操作
-- (IBAction)overlookdegreeClick:(id)sender {
-    
-}
 
 - (IBAction)snapCaptureClick:(id)sender {
     //[self captureAction];
@@ -294,17 +283,47 @@
    
 }
 
+
+//交通路况Action
+- (void)trafficAction:(UISwitch *)switcher
+{
+    self.mapView.showTraffic = switcher.on;
+}
+
+//手势放大、缩小
+- (void)gestureScorllAction:(UISwitch *)switcher
+{
+    self.mapView.zoomEnabled = switcher.on;
+    
+}
+
+//收缩、俯视、旋转度操作
+- (IBAction)overlookdegreeClick:(id)sender {
+    self.mapView.cameraDegree=[overlookdegree.text doubleValue];
+}
+
 - (IBAction)zoomLevelClick:(id)sender {
     [self.mapView setZoomLevel:[zoomdegree.text floatValue] animated:YES];
     
 }
 
 - (IBAction)rotatedegreeClick:(id)sender {
+    self.mapView.rotationDegree=[rotatedegree.text doubleValue];
 }
 
 //手势移动
 - (void)gestureZoomAction:(UISwitch *)switcher{
      self.mapView.scrollEnabled = switcher.on;
+}
+
+//手势旋转
+- (void)gestureRotateAction:(UISwitch *)switcher{
+    self.mapView.rotateEnabled = switcher.on;
+}
+
+//手势拍照
+- (void)gestureCameraAction:(UISwitch *)switcher{
+    self.mapView.rotateCameraEnabled = switcher.on;
 }
 
 - (void)showsSegmentAction:(UISegmentedControl *)sender
@@ -469,44 +488,6 @@
 #pragma mark -高德地图
 
 #pragma mark - MAMapViewDelegate
-
-- (MAOverlayRenderer *)mapView:(MAMapView *)mapView rendererForOverlay:(id <MAOverlay>)overlay
-{
-    if ([overlay isKindOfClass:[MACircle class]])
-    {
-        MACircleRenderer *circleRenderer = [[MACircleRenderer alloc] initWithCircle:overlay];
-        
-        circleRenderer.lineWidth   = 4;
-        circleRenderer.strokeColor = [UIColor blueColor];
-        circleRenderer.fillColor   = [[UIColor greenColor] colorWithAlphaComponent:0.3];
-        
-        return circleRenderer;
-    }
-    
-    return nil;
-}
-
-- (void)mapView:(MAMapView *)mapView didAddAnnotationViews:(NSArray *)views
-{
-    MAAnnotationView *view = views[0];
-    
-    // 放到该方法中用以保证userlocation的annotationView已经添加到地图上了。
-    if ([view.annotation isKindOfClass:[MAUserLocation class]])
-    {
-        MAUserLocationRepresentation *pre = [[MAUserLocationRepresentation alloc] init];
-        pre.fillColor = [UIColor colorWithRed:0.9 green:0.1 blue:0.1 alpha:0.3];
-        pre.strokeColor = [UIColor colorWithRed:0.1 green:0.1 blue:0.9 alpha:1.0];
-        pre.image = [UIImage imageNamed:@"userPosition"];
-        pre.lineWidth = 3;
-        
-        [self.mapView updateUserLocationRepresentation:pre];
-        
-        view.calloutOffset = CGPointMake(0, 0);
-        view.canShowCallout = NO;
-        self.userLocationAnnotationView = view;
-    }
-}
-
 - (void)mapView:(MAMapView *)mapView didUpdateUserLocation:(MAUserLocation *)userLocation updatingLocation:(BOOL)updatingLocation
 {
     if (!updatingLocation && self.userLocationAnnotationView != nil)
@@ -518,8 +499,51 @@
             
         }];
     }
-    
+
 }
+
+//自定义定位
+- (MAOverlayView *)mapView:(MAMapView *)mapView viewForOverlay:(id <MAOverlay>)overlay
+{
+    /* 自定义定位精度对应的MACircleView. */
+    if (overlay == mapView.userLocationAccuracyCircle)
+    {
+        MACircleView *accuracyCircleView = [[MACircleView alloc] initWithCircle:overlay];
+        
+        accuracyCircleView.lineWidth    = 2.f;
+        accuracyCircleView.strokeColor  = [UIColor lightGrayColor];
+        accuracyCircleView.fillColor    = [UIColor colorWithRed:1 green:0 blue:0 alpha:.3];
+        
+        return accuracyCircleView;
+    }
+    
+    return nil;
+}
+
+//自定义定位
+- (MAAnnotationView *)mapView:(MAMapView *)mapView viewForAnnotation:(id<MAAnnotation>)annotation
+{
+    /* 自定义userLocation对应的annotationView. */
+    if ([annotation isKindOfClass:[MAUserLocation class]])
+    {
+        static NSString *userLocationStyleReuseIndetifier = @"userLocationStyleReuseIndetifier";
+        MAAnnotationView *annotationView = [mapView dequeueReusableAnnotationViewWithIdentifier:userLocationStyleReuseIndetifier];
+        if (annotationView == nil)
+        {
+            annotationView = [[MAPinAnnotationView alloc] initWithAnnotation:annotation
+                                                             reuseIdentifier:userLocationStyleReuseIndetifier];
+        }
+        
+        annotationView.image = [UIImage imageNamed:@"userPosition"];
+        
+        self.userLocationAnnotationView = annotationView;
+        
+        return annotationView;
+    }
+    
+    return nil;
+}
+
 
 
 

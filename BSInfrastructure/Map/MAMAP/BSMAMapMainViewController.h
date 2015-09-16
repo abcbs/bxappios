@@ -49,10 +49,18 @@
     //楼宇、地面物
     
     //手势UISwitch
+    //平移
     IBOutlet UISwitch *gestureScorllction;
     
-    
+    //伸缩
     IBOutlet UISwitch *gestureZoomAction;
+    
+    //旋转开关
+    IBOutlet UISwitch *gestureRotateSwitch;
+    
+    //翻转开关
+    IBOutlet UISwitch *gestureCameraSwitch;
+    
     
     //比例尺
     IBOutlet UISwitch *levelAction;
@@ -150,6 +158,9 @@
     
     //查看共享URL
     IBOutlet UIButton *browseUrlAction;
+    
+    
+    
 }
 
 //导航栏中显示和隐藏地图控制区域

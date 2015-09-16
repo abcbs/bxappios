@@ -63,6 +63,12 @@
         
     }
     
+    //地图开关初始化设置
+    self.mapView.scrollEnabled       = YES;
+    self.mapView.zoomEnabled         = YES;
+    self.mapView.rotateEnabled       = YES;
+    self.mapView.rotateCameraEnabled = YES;
+    
 }
 
 - (void)initSearch
