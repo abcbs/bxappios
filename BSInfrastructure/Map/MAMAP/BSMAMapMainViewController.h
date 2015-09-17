@@ -95,6 +95,10 @@
     //查询地址
     IBOutlet UITextField *addressText;
     
+    //检索关键字的SearchBar
+    
+    IBOutlet UISearchBar *addressSearchBar;
+    
     //经度
     IBOutlet UITextField *longitudeText;
     
@@ -137,6 +141,12 @@
     
     //终点地址
     IBOutlet UITextField *endAddressText;
+    //线路规划查询的Search Bar
+    IBOutlet UISearchBar *endAddressSearchBar;
+    
+    //搜索按钮
+    
+    IBOutlet UITableView *tableView;
     
     //公交
     IBOutlet UIButton *routeByBusAction;

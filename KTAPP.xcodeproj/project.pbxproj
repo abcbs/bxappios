@@ -1560,6 +1560,42 @@
 		84F84ADB1B7C4E2B008DF38F /* BSDesSecurity.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F84AD91B7C4E2B008DF38F /* BSDesSecurity.m */; };
 		84F84ADE1B7C5A8C008DF38F /* BSSecurityFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F84ADD1B7C5A8C008DF38F /* BSSecurityFactory.m */; };
 		84F84ADF1B7C5A8C008DF38F /* BSSecurityFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F84ADD1B7C5A8C008DF38F /* BSSecurityFactory.m */; };
+		84F884711BAAA0D000ECEAA3 /* AnimatedAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F884501BAAA0D000ECEAA3 /* AnimatedAnnotation.m */; };
+		84F884721BAAA0D000ECEAA3 /* AnimatedAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F884501BAAA0D000ECEAA3 /* AnimatedAnnotation.m */; };
+		84F884731BAAA0D000ECEAA3 /* AnimatedAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F884521BAAA0D000ECEAA3 /* AnimatedAnnotationView.m */; };
+		84F884741BAAA0D000ECEAA3 /* AnimatedAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F884521BAAA0D000ECEAA3 /* AnimatedAnnotationView.m */; };
+		84F884751BAAA0D000ECEAA3 /* BusStopAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F884541BAAA0D000ECEAA3 /* BusStopAnnotation.m */; };
+		84F884761BAAA0D000ECEAA3 /* BusStopAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F884541BAAA0D000ECEAA3 /* BusStopAnnotation.m */; };
+		84F884771BAAA0D000ECEAA3 /* CusAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F884561BAAA0D000ECEAA3 /* CusAnnotationView.m */; };
+		84F884781BAAA0D000ECEAA3 /* CusAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F884561BAAA0D000ECEAA3 /* CusAnnotationView.m */; };
+		84F884791BAAA0D000ECEAA3 /* CustomCalloutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F884581BAAA0D000ECEAA3 /* CustomCalloutView.m */; };
+		84F8847A1BAAA0D000ECEAA3 /* CustomCalloutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F884581BAAA0D000ECEAA3 /* CustomCalloutView.m */; };
+		84F8847B1BAAA0D000ECEAA3 /* FaceOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F8845A1BAAA0D000ECEAA3 /* FaceOverlay.m */; };
+		84F8847C1BAAA0D000ECEAA3 /* FaceOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F8845A1BAAA0D000ECEAA3 /* FaceOverlay.m */; };
+		84F8847D1BAAA0D000ECEAA3 /* FaceOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F8845C1BAAA0D000ECEAA3 /* FaceOverlayView.m */; };
+		84F8847E1BAAA0D000ECEAA3 /* FaceOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F8845C1BAAA0D000ECEAA3 /* FaceOverlayView.m */; };
+		84F8847F1BAAA0D000ECEAA3 /* GeocodeAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F8845E1BAAA0D000ECEAA3 /* GeocodeAnnotation.m */; };
+		84F884801BAAA0D000ECEAA3 /* GeocodeAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F8845E1BAAA0D000ECEAA3 /* GeocodeAnnotation.m */; };
+		84F884811BAAA0D000ECEAA3 /* LineDashPolyline.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F884601BAAA0D000ECEAA3 /* LineDashPolyline.m */; };
+		84F884821BAAA0D000ECEAA3 /* LineDashPolyline.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F884601BAAA0D000ECEAA3 /* LineDashPolyline.m */; };
+		84F884831BAAA0D000ECEAA3 /* LocalTileOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F884621BAAA0D000ECEAA3 /* LocalTileOverlay.m */; };
+		84F884841BAAA0D000ECEAA3 /* LocalTileOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F884621BAAA0D000ECEAA3 /* LocalTileOverlay.m */; };
+		84F884851BAAA0D000ECEAA3 /* MAHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F884641BAAA0D000ECEAA3 /* MAHeaderView.m */; };
+		84F884861BAAA0D000ECEAA3 /* MAHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F884641BAAA0D000ECEAA3 /* MAHeaderView.m */; };
+		84F884871BAAA0D000ECEAA3 /* MANaviAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F884661BAAA0D000ECEAA3 /* MANaviAnnotation.m */; };
+		84F884881BAAA0D000ECEAA3 /* MANaviAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F884661BAAA0D000ECEAA3 /* MANaviAnnotation.m */; };
+		84F884891BAAA0D000ECEAA3 /* MANaviAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F884681BAAA0D000ECEAA3 /* MANaviAnnotationView.m */; };
+		84F8848A1BAAA0D000ECEAA3 /* MANaviAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F884681BAAA0D000ECEAA3 /* MANaviAnnotationView.m */; };
+		84F8848B1BAAA0D000ECEAA3 /* MANaviPolyline.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F8846A1BAAA0D000ECEAA3 /* MANaviPolyline.m */; };
+		84F8848C1BAAA0D000ECEAA3 /* MANaviPolyline.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F8846A1BAAA0D000ECEAA3 /* MANaviPolyline.m */; };
+		84F8848D1BAAA0D000ECEAA3 /* MANaviRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F8846C1BAAA0D000ECEAA3 /* MANaviRoute.m */; };
+		84F8848E1BAAA0D000ECEAA3 /* MANaviRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F8846C1BAAA0D000ECEAA3 /* MANaviRoute.m */; };
+		84F8848F1BAAA0D000ECEAA3 /* POIAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F8846E1BAAA0D000ECEAA3 /* POIAnnotation.m */; };
+		84F884901BAAA0D000ECEAA3 /* POIAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F8846E1BAAA0D000ECEAA3 /* POIAnnotation.m */; };
+		84F884911BAAA0D000ECEAA3 /* ReGeocodeAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F884701BAAA0D000ECEAA3 /* ReGeocodeAnnotation.m */; };
+		84F884921BAAA0D000ECEAA3 /* ReGeocodeAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F884701BAAA0D000ECEAA3 /* ReGeocodeAnnotation.m */; };
+		84F884951BAAA15200ECEAA3 /* CommonUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F884941BAAA15200ECEAA3 /* CommonUtility.m */; };
+		84F884961BAAA15200ECEAA3 /* CommonUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F884941BAAA15200ECEAA3 /* CommonUtility.m */; };
 		84FB97941B937DA20018790A /* BSMapMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84FB97931B937DA20018790A /* BSMapMain.storyboard */; };
 		84FB97951B937DA20018790A /* BSMapMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84FB97931B937DA20018790A /* BSMapMain.storyboard */; };
 		84FB97961B937DA20018790A /* BSMapMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84FB97931B937DA20018790A /* BSMapMain.storyboard */; };
@@ -2813,6 +2849,42 @@
 		84F84AD91B7C4E2B008DF38F /* BSDesSecurity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSDesSecurity.m; sourceTree = "<group>"; };
 		84F84ADC1B7C5A8C008DF38F /* BSSecurityFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSSecurityFactory.h; sourceTree = "<group>"; };
 		84F84ADD1B7C5A8C008DF38F /* BSSecurityFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSSecurityFactory.m; sourceTree = "<group>"; };
+		84F8844F1BAAA0D000ECEAA3 /* AnimatedAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimatedAnnotation.h; sourceTree = "<group>"; };
+		84F884501BAAA0D000ECEAA3 /* AnimatedAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimatedAnnotation.m; sourceTree = "<group>"; };
+		84F884511BAAA0D000ECEAA3 /* AnimatedAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimatedAnnotationView.h; sourceTree = "<group>"; };
+		84F884521BAAA0D000ECEAA3 /* AnimatedAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimatedAnnotationView.m; sourceTree = "<group>"; };
+		84F884531BAAA0D000ECEAA3 /* BusStopAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusStopAnnotation.h; sourceTree = "<group>"; };
+		84F884541BAAA0D000ECEAA3 /* BusStopAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusStopAnnotation.m; sourceTree = "<group>"; };
+		84F884551BAAA0D000ECEAA3 /* CusAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CusAnnotationView.h; sourceTree = "<group>"; };
+		84F884561BAAA0D000ECEAA3 /* CusAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CusAnnotationView.m; sourceTree = "<group>"; };
+		84F884571BAAA0D000ECEAA3 /* CustomCalloutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCalloutView.h; sourceTree = "<group>"; };
+		84F884581BAAA0D000ECEAA3 /* CustomCalloutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCalloutView.m; sourceTree = "<group>"; };
+		84F884591BAAA0D000ECEAA3 /* FaceOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FaceOverlay.h; sourceTree = "<group>"; };
+		84F8845A1BAAA0D000ECEAA3 /* FaceOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FaceOverlay.m; sourceTree = "<group>"; };
+		84F8845B1BAAA0D000ECEAA3 /* FaceOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FaceOverlayView.h; sourceTree = "<group>"; };
+		84F8845C1BAAA0D000ECEAA3 /* FaceOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FaceOverlayView.m; sourceTree = "<group>"; };
+		84F8845D1BAAA0D000ECEAA3 /* GeocodeAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeocodeAnnotation.h; sourceTree = "<group>"; };
+		84F8845E1BAAA0D000ECEAA3 /* GeocodeAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeocodeAnnotation.m; sourceTree = "<group>"; };
+		84F8845F1BAAA0D000ECEAA3 /* LineDashPolyline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineDashPolyline.h; sourceTree = "<group>"; };
+		84F884601BAAA0D000ECEAA3 /* LineDashPolyline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineDashPolyline.m; sourceTree = "<group>"; };
+		84F884611BAAA0D000ECEAA3 /* LocalTileOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalTileOverlay.h; sourceTree = "<group>"; };
+		84F884621BAAA0D000ECEAA3 /* LocalTileOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalTileOverlay.m; sourceTree = "<group>"; };
+		84F884631BAAA0D000ECEAA3 /* MAHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAHeaderView.h; sourceTree = "<group>"; };
+		84F884641BAAA0D000ECEAA3 /* MAHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAHeaderView.m; sourceTree = "<group>"; };
+		84F884651BAAA0D000ECEAA3 /* MANaviAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MANaviAnnotation.h; sourceTree = "<group>"; };
+		84F884661BAAA0D000ECEAA3 /* MANaviAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MANaviAnnotation.m; sourceTree = "<group>"; };
+		84F884671BAAA0D000ECEAA3 /* MANaviAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MANaviAnnotationView.h; sourceTree = "<group>"; };
+		84F884681BAAA0D000ECEAA3 /* MANaviAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MANaviAnnotationView.m; sourceTree = "<group>"; };
+		84F884691BAAA0D000ECEAA3 /* MANaviPolyline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MANaviPolyline.h; sourceTree = "<group>"; };
+		84F8846A1BAAA0D000ECEAA3 /* MANaviPolyline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MANaviPolyline.m; sourceTree = "<group>"; };
+		84F8846B1BAAA0D000ECEAA3 /* MANaviRoute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MANaviRoute.h; sourceTree = "<group>"; };
+		84F8846C1BAAA0D000ECEAA3 /* MANaviRoute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MANaviRoute.m; sourceTree = "<group>"; };
+		84F8846D1BAAA0D000ECEAA3 /* POIAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POIAnnotation.h; sourceTree = "<group>"; };
+		84F8846E1BAAA0D000ECEAA3 /* POIAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POIAnnotation.m; sourceTree = "<group>"; };
+		84F8846F1BAAA0D000ECEAA3 /* ReGeocodeAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReGeocodeAnnotation.h; sourceTree = "<group>"; };
+		84F884701BAAA0D000ECEAA3 /* ReGeocodeAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReGeocodeAnnotation.m; sourceTree = "<group>"; };
+		84F884931BAAA15200ECEAA3 /* CommonUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonUtility.h; sourceTree = "<group>"; };
+		84F884941BAAA15200ECEAA3 /* CommonUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonUtility.m; sourceTree = "<group>"; };
 		84FB97931B937DA20018790A /* BSMapMain.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BSMapMain.storyboard; sourceTree = "<group>"; };
 		84FB97A21B93922F0018790A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		886ADE756FA5F0898C847C9D /* libPods-KT-LS-Controller.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KT-LS-Controller.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -4946,6 +5018,7 @@
 		84EDB19F1B937849006D925B /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				84F8844E1BAAA0D000ECEAA3 /* MAMAPModels */,
 				84F34E371BA6FFFD00188756 /* MAMAP */,
 				84F34E1E1BA6FFEC00188756 /* BaiduMap */,
 			);
@@ -5127,6 +5200,49 @@
 			children = (
 			);
 			path = AccountManagerControl;
+			sourceTree = "<group>";
+		};
+		84F8844E1BAAA0D000ECEAA3 /* MAMAPModels */ = {
+			isa = PBXGroup;
+			children = (
+				84F884931BAAA15200ECEAA3 /* CommonUtility.h */,
+				84F884941BAAA15200ECEAA3 /* CommonUtility.m */,
+				84F8844F1BAAA0D000ECEAA3 /* AnimatedAnnotation.h */,
+				84F884501BAAA0D000ECEAA3 /* AnimatedAnnotation.m */,
+				84F884511BAAA0D000ECEAA3 /* AnimatedAnnotationView.h */,
+				84F884521BAAA0D000ECEAA3 /* AnimatedAnnotationView.m */,
+				84F884531BAAA0D000ECEAA3 /* BusStopAnnotation.h */,
+				84F884541BAAA0D000ECEAA3 /* BusStopAnnotation.m */,
+				84F884551BAAA0D000ECEAA3 /* CusAnnotationView.h */,
+				84F884561BAAA0D000ECEAA3 /* CusAnnotationView.m */,
+				84F884571BAAA0D000ECEAA3 /* CustomCalloutView.h */,
+				84F884581BAAA0D000ECEAA3 /* CustomCalloutView.m */,
+				84F884591BAAA0D000ECEAA3 /* FaceOverlay.h */,
+				84F8845A1BAAA0D000ECEAA3 /* FaceOverlay.m */,
+				84F8845B1BAAA0D000ECEAA3 /* FaceOverlayView.h */,
+				84F8845C1BAAA0D000ECEAA3 /* FaceOverlayView.m */,
+				84F8845D1BAAA0D000ECEAA3 /* GeocodeAnnotation.h */,
+				84F8845E1BAAA0D000ECEAA3 /* GeocodeAnnotation.m */,
+				84F8845F1BAAA0D000ECEAA3 /* LineDashPolyline.h */,
+				84F884601BAAA0D000ECEAA3 /* LineDashPolyline.m */,
+				84F884611BAAA0D000ECEAA3 /* LocalTileOverlay.h */,
+				84F884621BAAA0D000ECEAA3 /* LocalTileOverlay.m */,
+				84F884631BAAA0D000ECEAA3 /* MAHeaderView.h */,
+				84F884641BAAA0D000ECEAA3 /* MAHeaderView.m */,
+				84F884651BAAA0D000ECEAA3 /* MANaviAnnotation.h */,
+				84F884661BAAA0D000ECEAA3 /* MANaviAnnotation.m */,
+				84F884671BAAA0D000ECEAA3 /* MANaviAnnotationView.h */,
+				84F884681BAAA0D000ECEAA3 /* MANaviAnnotationView.m */,
+				84F884691BAAA0D000ECEAA3 /* MANaviPolyline.h */,
+				84F8846A1BAAA0D000ECEAA3 /* MANaviPolyline.m */,
+				84F8846B1BAAA0D000ECEAA3 /* MANaviRoute.h */,
+				84F8846C1BAAA0D000ECEAA3 /* MANaviRoute.m */,
+				84F8846D1BAAA0D000ECEAA3 /* POIAnnotation.h */,
+				84F8846E1BAAA0D000ECEAA3 /* POIAnnotation.m */,
+				84F8846F1BAAA0D000ECEAA3 /* ReGeocodeAnnotation.h */,
+				84F884701BAAA0D000ECEAA3 /* ReGeocodeAnnotation.m */,
+			);
+			path = MAMAPModels;
 			sourceTree = "<group>";
 		};
 		A0028F341ADE4D5500747D8A /* Frameworks */ = {
@@ -6895,6 +7011,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84F34E531BA7007400188756 /* BSMapSearchView.m in Sources */,
+				84F8848C1BAAA0D000ECEAA3 /* MANaviPolyline.m in Sources */,
 				84F84AD71B7C4BA3008DF38F /* BSDesCrypto.m in Sources */,
 				84F34E2E1BA6FFEC00188756 /* BSRadarNearbyViewController.mm in Sources */,
 				847C1C751B8CADBE00BCBEC9 /* EHNetwork.m in Sources */,
@@ -6911,10 +7028,14 @@
 				84ECC7071BA8870B00965514 /* ScreenshotDetailViewController.m in Sources */,
 				845AC3511B674C870077E0ED /* BSUICollectionCollectionViewController.m in Sources */,
 				84D2DA7A1BA06DB000E4C6EB /* MoreView.m in Sources */,
+				84F8847C1BAAA0D000ECEAA3 /* FaceOverlay.m in Sources */,
+				84F884741BAAA0D000ECEAA3 /* AnimatedAnnotationView.m in Sources */,
 				84E9D7A31B61E10C00F2CD24 /* BSCheckmarkView.m in Sources */,
 				84EAFF601B596C8900A90992 /* BSUITableViewCanEditedController.m in Sources */,
 				8425E1901B6765DA00A93C43 /* BSPhotoImagePickerController.m in Sources */,
+				84F884961BAAA15200ECEAA3 /* CommonUtility.m in Sources */,
 				84DB2F061B7CCB700041588B /* ESSEddystone.m in Sources */,
+				84F884921BAAA0D000ECEAA3 /* ReGeocodeAnnotation.m in Sources */,
 				84DB2F081B7CCB700041588B /* ESSTimer.m in Sources */,
 				84F28FD41B62BB31001078D8 /* BSPhotoViewController.m in Sources */,
 				844570DA1B4D67D5000CA1C7 /* BTLECentralViewController.m in Sources */,
@@ -6928,12 +7049,14 @@
 				84DB2F041B7CCB700041588B /* ESSBeaconScanner.m in Sources */,
 				84EBF0351BA0538E00B3F16A /* BSUIKeyboardCoView.m in Sources */,
 				84BF8FC41B4AC2FA001042F1 /* Conf.m in Sources */,
+				84F884781BAAA0D000ECEAA3 /* CusAnnotationView.m in Sources */,
 				84BF8FC61B4AC2FA001042F1 /* ErrorMessage.m in Sources */,
 				84E9D79F1B61E10C00F2CD24 /* BSAssetCell.m in Sources */,
 				84BF8FCD1B4AC2FA001042F1 /* BSTableViewRefreshController.m in Sources */,
 				84F34E431BA6FFFD00188756 /* BaseMapViewController.m in Sources */,
 				84F34E451BA6FFFD00188756 /* BSMAMapMainViewController.m in Sources */,
 				84E6C0901B7DCBA100289D94 /* ESSScannerViewController.m in Sources */,
+				84F8848A1BAAA0D000ECEAA3 /* MANaviAnnotationView.m in Sources */,
 				84E9D7A91B61E10C00F2CD24 /* BSVideoIconView.m in Sources */,
 				848C7C381B79A38A000774A1 /* Base64.m in Sources */,
 				84BF8FCF1B4AC2FA001042F1 /* BSTableSection.m in Sources */,
@@ -6941,6 +7064,7 @@
 				84F34E341BA6FFEC00188756 /* UIImage+Rotate.m in Sources */,
 				84E9D79D1B61E10C00F2CD24 /* BSAlbumsViewController.m in Sources */,
 				84BF8FD31B4AC2FA001042F1 /* UIViewController+BSTableObject.m in Sources */,
+				84F884801BAAA0D000ECEAA3 /* GeocodeAnnotation.m in Sources */,
 				84BF8FD51B4AC2FA001042F1 /* BSUITableViewInitRuntimeController.m in Sources */,
 				84BF8FDA1B4AC2FA001042F1 /* BSTableViewCellData.m in Sources */,
 				84E9D7AB1B61E10C00F2CD24 /* BSVideoIndicatorView.m in Sources */,
@@ -6951,28 +7075,36 @@
 				84BF8FE01B4AC2FA001042F1 /* BSContentObjectNavigation.m in Sources */,
 				84BF8FE21B4AC2FA001042F1 /* BSFCRollingADImageUIView.m in Sources */,
 				84F34E2C1BA6FFEC00188756 /* BSBaiduViewController.mm in Sources */,
+				84F884861BAAA0D000ECEAA3 /* MAHeaderView.m in Sources */,
 				844FFE951B8B542300658A36 /* NSData+CommonCrypto.m in Sources */,
 				846FC4571B7FA65100496F96 /* ESSBeaconIssue.m in Sources */,
 				84BF8FE51B4AC2FA001042F1 /* BSUIImageTitleTableViewCell.m in Sources */,
 				84F34E471BA6FFFD00188756 /* BSMAMapRadarNearbyViewController.m in Sources */,
 				844570CE1B4D63F8000CA1C7 /* BLEDevicesTableViewController.m in Sources */,
 				84BF8FE71B4AC2FA001042F1 /* BSUISingleImageTableViewCell.m in Sources */,
+				84F884841BAAA0D000ECEAA3 /* LocalTileOverlay.m in Sources */,
+				84F8847E1BAAA0D000ECEAA3 /* FaceOverlayView.m in Sources */,
 				84EAFF681B596F2400A90992 /* BSUITableViewCommonController.m in Sources */,
 				84BF8FE91B4AC2FA001042F1 /* BSUIFiveColTableViewCell.m in Sources */,
 				84D2DA6E1BA0685A00E4C6EB /* HistoryImage.m in Sources */,
 				84E9D7A71B61E10C00F2CD24 /* BSSlomoIconView.m in Sources */,
 				84F34E4F1BA7004600188756 /* BSBaseControllerView.m in Sources */,
+				84F884821BAAA0D000ECEAA3 /* LineDashPolyline.m in Sources */,
 				84F34E301BA6FFEC00188756 /* BSRadarUploadViewController.mm in Sources */,
 				84118EFF1B667AD50052E275 /* BSPhotoTakeViewController.m in Sources */,
 				84BF8FF11B4AC2FA001042F1 /* BSUIComponentView.m in Sources */,
 				84EADEEF1B9EAA2E0098ABCE /* BSWebViewViewController.m in Sources */,
+				84F884761BAAA0D000ECEAA3 /* BusStopAnnotation.m in Sources */,
 				84BF8FF31B4AC2FA001042F1 /* BSUIBlockButton.m in Sources */,
 				84EC6B591BA2A3EE00EE529B /* BSNetworkNotify.m in Sources */,
 				84E9D7A11B61E10C00F2CD24 /* BSAssetsViewController.m in Sources */,
 				84F84ADF1B7C5A8C008DF38F /* BSSecurityFactory.m in Sources */,
 				84D2DA621BA061F600E4C6EB /* FaceView.m in Sources */,
+				84F884721BAAA0D000ECEAA3 /* AnimatedAnnotation.m in Sources */,
+				84F884901BAAA0D000ECEAA3 /* POIAnnotation.m in Sources */,
 				84BF8FF61B4AC2FA001042F1 /* BSUIBarButtonItem.m in Sources */,
 				84F34E571BA7017800188756 /* BSRouteNaviView.m in Sources */,
+				84F8848E1BAAA0D000ECEAA3 /* MANaviRoute.m in Sources */,
 				84052EB61B73B4D100FAB304 /* BSValidatePredicate.m in Sources */,
 				84EC6B5B1BA2A3EE00EE529B /* Reachability.m in Sources */,
 				84F28F9D1B626F9C001078D8 /* BSUIContentViewController.m in Sources */,
@@ -6986,6 +7118,8 @@
 				84D2DA661BA063D200E4C6EB /* FunctionView.m in Sources */,
 				84517BB51B8628F800469111 /* BSTRPushHelper.m in Sources */,
 				84E9D79B1B61E10C00F2CD24 /* BSAlbumCell.m in Sources */,
+				84F884881BAAA0D000ECEAA3 /* MANaviAnnotation.m in Sources */,
+				84F8847A1BAAA0D000ECEAA3 /* CustomCalloutView.m in Sources */,
 				84BF8FFC1B4AC2FA001042F1 /* BSModelRoute.m in Sources */,
 				84BF8FFE1B4AC2FA001042F1 /* BSModelRouter.m in Sources */,
 				84BF8FAD1B4ABC88001042F1 /* BSUICommonController.m in Sources */,
@@ -7121,6 +7255,7 @@
 				8460AE801B4259BE00022280 /* BSUITabBarCommonController.m in Sources */,
 				844570C91B4D6323000CA1C7 /* BLEDeviceDetailsTableViewController.m in Sources */,
 				84F34E421BA6FFFD00188756 /* BaseMapViewController.m in Sources */,
+				84F884951BAAA15200ECEAA3 /* CommonUtility.m in Sources */,
 				8474DEB51B3F7D0600D9DE36 /* BSUICommonController.m in Sources */,
 				848C7C371B79A38A000774A1 /* Base64.m in Sources */,
 				8470761A1B3A5F7800F28180 /* SetCell.m in Sources */,
@@ -7129,6 +7264,7 @@
 				A0F0C3E61B10209500CE406D /* BasicBody.m in Sources */,
 				8425E18F1B6765DA00A93C43 /* BSPhotoImagePickerController.m in Sources */,
 				847433021B2A8F4A00B030C4 /* WaitPayment.m in Sources */,
+				84F884751BAAA0D000ECEAA3 /* BusStopAnnotation.m in Sources */,
 				8460AE7D1B42578B00022280 /* BSTableViewMultCellData.m in Sources */,
 				84832D691B565F5E00FB6D28 /* UserSessionAndUserAddressDomain.m in Sources */,
 				84EA96F01B57D62100AC549F /* LBHandySearchMainTableController.m in Sources */,
@@ -7136,6 +7272,7 @@
 				8405CBD21B5578E50014AF8D /* Resources.m in Sources */,
 				8405CB951B5569A30014AF8D /* UserDetailed.m in Sources */,
 				842043771B2991770002C868 /* DLTabedSlideView.m in Sources */,
+				84F8847F1BAAA0D000ECEAA3 /* GeocodeAnnotation.m in Sources */,
 				8405CB9D1B556D760014AF8D /* BusinessBaseDomail.m in Sources */,
 				847076561B3A8E1200F28180 /* communicateCell.m in Sources */,
 				84F34E521BA7007400188756 /* BSMapSearchView.m in Sources */,
@@ -7145,6 +7282,7 @@
 				A0F0C3EC1B10209500CE406D /* UpdateShoppingCartResult.m in Sources */,
 				84D2DA791BA06DB000E4C6EB /* MoreView.m in Sources */,
 				8405CBCD1B5577E80014AF8D /* UserPaySessionDomain.m in Sources */,
+				84F8847D1BAAA0D000ECEAA3 /* FaceOverlayView.m in Sources */,
 				843B2E771B74FAE5009FC187 /* RemoteUserManager.m in Sources */,
 				8460AE7A1B42569300022280 /* BSTableViewCellData.m in Sources */,
 				84EBA0131B4189E0003309F6 /* LBLiferServiceController.m in Sources */,
@@ -7171,6 +7309,7 @@
 				84D2DA611BA061F600E4C6EB /* FaceView.m in Sources */,
 				8405CB781B55617D0014AF8D /* ProductBase.m in Sources */,
 				84BA967D1B2829D500388B58 /* Delcartlist.m in Sources */,
+				84F884811BAAA0D000ECEAA3 /* LineDashPolyline.m in Sources */,
 				84F309431B9D41DC0070EF19 /* PromptInfo.m in Sources */,
 				A0F0C3F61B10209500CE406D /* DeleteShoppingCartRequest.m in Sources */,
 				848058151B39A377005817D7 /* BSFCRollingADImageUIView.m in Sources */,
@@ -7188,10 +7327,12 @@
 				842042C51B2988410002C868 /* BSModelRoute.m in Sources */,
 				84BA96861B2829D500388B58 /* WaterSendingDetails.m in Sources */,
 				84EADEEE1B9EAA2E0098ABCE /* BSWebViewViewController.m in Sources */,
+				84F884791BAAA0D000ECEAA3 /* CustomCalloutView.m in Sources */,
 				84F34E461BA6FFFD00188756 /* BSMAMapRadarNearbyViewController.m in Sources */,
 				8470765B1B3A8F1400F28180 /* adsCell.m in Sources */,
 				842043741B2991770002C868 /* DLSlideView.m in Sources */,
 				84E9D79E1B61E10C00F2CD24 /* BSAssetCell.m in Sources */,
+				84F884891BAAA0D000ECEAA3 /* MANaviAnnotationView.m in Sources */,
 				8469CD691B4121F000EF6757 /* LFRecommendViewController.m in Sources */,
 				84820A4E1B285D960093B87B /* MSWaterSendingCell.m in Sources */,
 				8474331C1B2A92B400B030C4 /* ForgetViewController.m in Sources */,
@@ -7219,6 +7360,7 @@
 				841F95051B8C54D1001B26B5 /* BSModelSerializer.m in Sources */,
 				84E6C0981B7DD06C00289D94 /* ESSIssueViewController.m in Sources */,
 				84BA96881B2829D500388B58 /* ShoppingCart.m in Sources */,
+				84F884911BAAA0D000ECEAA3 /* ReGeocodeAnnotation.m in Sources */,
 				844A32061B4064310045CA6C /* BSUIBarButtonItem.m in Sources */,
 				847076711B3AB21300F28180 /* UIViewController+BSTableObject.m in Sources */,
 				8405CB801B5565990014AF8D /* HeadPortraitDomail.m in Sources */,
@@ -7249,6 +7391,7 @@
 				84BA96811B2829D500388B58 /* RegistModel.m in Sources */,
 				847076231B3A89F000F28180 /* recommendCard.m in Sources */,
 				84052EB51B73B4D100FAB304 /* BSValidatePredicate.m in Sources */,
+				84F8848F1BAAA0D000ECEAA3 /* POIAnnotation.m in Sources */,
 				847433211B2A934000B030C4 /* applyShop.m in Sources */,
 				847076251B3A89F000F28180 /* recommendguest.m in Sources */,
 				8405CB841B5566940014AF8D /* UserInfoDomain.m in Sources */,
@@ -7257,6 +7400,8 @@
 				84D2DA711BA0696000E4C6EB /* ToolView.m in Sources */,
 				8405CBB51B5572D40014AF8D /* BusinessProductAdvert.m in Sources */,
 				84BA96851B2829D500388B58 /* WaterSending.m in Sources */,
+				84F884871BAAA0D000ECEAA3 /* MANaviAnnotation.m in Sources */,
+				84F8847B1BAAA0D000ECEAA3 /* FaceOverlay.m in Sources */,
 				844570DB1B4D67D5000CA1C7 /* BTLEPeripheralViewController.m in Sources */,
 				847432F91B2A8E5500B030C4 /* AlreadyPayment.m in Sources */,
 				84EBF0341BA0538E00B3F16A /* BSUIKeyboardCoView.m in Sources */,
@@ -7277,9 +7422,11 @@
 				8405CBAD1B5570700014AF8D /* BusinessProduct.m in Sources */,
 				84F34E4E1BA7004600188756 /* BSBaseControllerView.m in Sources */,
 				8474DEAB1B3F474700D9DE36 /* BSUIBlockButton.m in Sources */,
+				84F8848B1BAAA0D000ECEAA3 /* MANaviPolyline.m in Sources */,
 				84E9D7A81B61E10C00F2CD24 /* BSVideoIconView.m in Sources */,
 				84D2DA6D1BA0685A00E4C6EB /* HistoryImage.m in Sources */,
 				8461B72B1B54BAB5002A7C43 /* KTHandyViewController.m in Sources */,
+				84F884771BAAA0D000ECEAA3 /* CusAnnotationView.m in Sources */,
 				A0F0C3EE1B10209500CE406D /* BasicParams.m in Sources */,
 				842043761B2991770002C868 /* DLScrollTabbarView.m in Sources */,
 				847076331B3A8AF800F28180 /* expressController.m in Sources */,
@@ -7304,6 +7451,8 @@
 				8405CBB91B5573770014AF8D /* BusinessProductComment.m in Sources */,
 				847433131B2A915C00B030C4 /* myWallet.m in Sources */,
 				847432D01B2A8AF700B030C4 /* VPImageCropperViewController.m in Sources */,
+				84F884711BAAA0D000ECEAA3 /* AnimatedAnnotation.m in Sources */,
+				84F8848D1BAAA0D000ECEAA3 /* MANaviRoute.m in Sources */,
 				84F34E2D1BA6FFEC00188756 /* BSRadarNearbyViewController.mm in Sources */,
 				844FFE901B8B4C4600658A36 /* BSAesSecurity.m in Sources */,
 				A0F0C3EA1B10209500CE406D /* DeleteShoppingCartResult.m in Sources */,
@@ -7320,6 +7469,7 @@
 				845AC3501B674C870077E0ED /* BSUICollectionCollectionViewController.m in Sources */,
 				84832D301B564EA200FB6D28 /* BusinessCartDomain.m in Sources */,
 				A0F0C3EB1B10209500CE406D /* JoinShoppingCartResult.m in Sources */,
+				84F884851BAAA0D000ECEAA3 /* MAHeaderView.m in Sources */,
 				84E9D79A1B61E10C00F2CD24 /* BSAlbumCell.m in Sources */,
 				842043731B2991770002C868 /* DLCustomSlideView.m in Sources */,
 				A0F0C3F11B10209500CE406D /* JoinShoppingCartParams.m in Sources */,
@@ -7346,9 +7496,11 @@
 				84E71F341B4E5473003089B2 /* BLEDevicesAddTableViewController.m in Sources */,
 				84E9D7A41B61E10C00F2CD24 /* BSImagePickerController.m in Sources */,
 				84F34E2B1BA6FFEC00188756 /* BSBaiduViewController.mm in Sources */,
+				84F884831BAAA0D000ECEAA3 /* LocalTileOverlay.m in Sources */,
 				84EAFF5E1B5969EF00A90992 /* BSUITableViewCanEditedController.m in Sources */,
 				84E6C08F1B7DCBA100289D94 /* ESSScannerViewController.m in Sources */,
 				84EC6B5A1BA2A3EE00EE529B /* Reachability.m in Sources */,
+				84F884731BAAA0D000ECEAA3 /* AnimatedAnnotationView.m in Sources */,
 				84BA96871B2829D500388B58 /* CartList.m in Sources */,
 				844168B11B6A1E7C0060F9A7 /* BusinessCatalogue.m in Sources */,
 				842042C61B2988410002C868 /* BSModelRouter.m in Sources */,

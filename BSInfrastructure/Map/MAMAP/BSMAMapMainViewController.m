@@ -9,14 +9,17 @@
 #import "BSMAMapMainViewController.h"
 #import "BSIFTTHeader.h"
 #import "ScreenshotDetailViewController.h"
+#import "GeocodeAnnotation.h"
+#import "CommonUtility.h"
 
-@interface BSMAMapMainViewController ()<UIGestureRecognizerDelegate>{
+@interface BSMAMapMainViewController ()<UIGestureRecognizerDelegate ,UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate>{
     UIImage *screenshotImage ;
 }
 
 
 //导航栏中显示和隐藏地图控制区域
 - (IBAction)hideControllerClick:(id)sender;
+
 @property (nonatomic, strong) UILabel *tip;
 
 //自定义定位
@@ -30,6 +33,8 @@
 @property (nonatomic, strong) MAPointAnnotation *pointAnnotation;
 @property (nonatomic, strong) MACircle *circle;
 
+@property (nonatomic, strong) NSMutableArray *tips;
+
 @property (nonatomic) BOOL started;
 //
 @end
@@ -41,6 +46,8 @@
 @synthesize shapeLayer = _shapeLayer;
 @synthesize started    = _started;
 
+
+@synthesize tips=_tips;
 #pragma mark - Action Handlers
 
 - (void)mapTypeAction:(UISegmentedControl *)segmentedControl
@@ -175,8 +182,6 @@
     doubleTap.numberOfTapsRequired = 2;
     
     [self.view addGestureRecognizer:doubleTap];
-    
-    
     //
     singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
     singleTap.delegate = self;
@@ -196,7 +201,166 @@
     self.shapeLayer.hidden=YES;
     
     //
+    addressSearchBar.translucent  = YES;
+    addressSearchBar.delegate     = self;
+    addressSearchBar.keyboardType = UIKeyboardTypeDefault;
+    tableView.dataSource=self;
+    tableView.delegate=self;
 
+}
+
+/* 地理编码 搜索. */
+- (void)searchGeocodeWithKey:(NSString *)key
+{
+    if (key.length == 0)
+    {
+        return;
+    }
+    
+    AMapGeocodeSearchRequest *geo = [[AMapGeocodeSearchRequest alloc] init];
+    geo.address = key;
+    
+    [self.search AMapGeocodeSearch:geo];
+}
+
+/* 输入提示 搜索.*/
+- (void)searchTipsWithKey:(NSString *)key
+{
+    if (key.length == 0)
+    {
+        return;
+    }
+    NSArray *cities=[[NSArray alloc] initWithObjects:@"北京市",nil];
+    AMapInputTipsSearchRequest *tips = [[AMapInputTipsSearchRequest alloc] init];
+    tips.city=cities;
+    tips.keywords = key;
+    [self.search AMapInputTipsSearch:tips];
+}
+
+/* 清除annotation. */
+- (void)clear
+{
+    [self.mapView removeAnnotations:self.mapView.annotations];
+}
+
+- (void)clearAndSearchGeocodeWithKey:(NSString *)key
+{
+    /* 清除annotation. */
+    [self clear];
+    
+    [self searchGeocodeWithKey:key];
+}
+
+- (void)gotoDetailForGeocode:(AMapGeocode *)geocode
+{
+    BSLog(@"进入地图详细信息页");
+    if (geocode != nil)
+    {
+        /*
+        GeoDetailViewController *geoDetailViewController = [[GeoDetailViewController alloc] init];
+        geoDetailViewController.geocode = geocode;
+        
+        [self.navigationController pushViewController:geoDetailViewController animated:YES];
+        */
+    }
+}
+
+#pragma mark - AMapSearchDelegate
+
+/* 地理编码回调.*/
+- (void)onGeocodeSearchDone:(AMapGeocodeSearchRequest *)request response:(AMapGeocodeSearchResponse *)response
+{
+    if (response.geocodes.count == 0)
+    {
+        return;
+    }
+    
+    NSMutableArray *annotations = [NSMutableArray array];
+    
+    [response.geocodes enumerateObjectsUsingBlock:^(AMapGeocode *obj, NSUInteger idx, BOOL *stop) {
+        GeocodeAnnotation *geocodeAnnotation = [[GeocodeAnnotation alloc] initWithGeocode:obj];
+        
+        [annotations addObject:geocodeAnnotation];
+    }];
+    
+    if (annotations.count == 1)
+    {
+        [self.mapView setCenterCoordinate:[annotations[0] coordinate] animated:YES];
+    }
+    else
+    {
+        [self.mapView setVisibleMapRect:[CommonUtility minMapRectForAnnotations:annotations]
+                               animated:YES];
+    }
+    
+    [self.mapView addAnnotations:annotations];
+}
+
+/* 输入提示回调. */
+- (void)onInputTipsSearchDone:(AMapInputTipsSearchRequest *)request response:(AMapInputTipsSearchResponse *)response
+{
+    NSArray *array=response.tips;
+    
+    if (self.tips==nil) {
+        self.tips=[NSMutableArray arrayWithArray:array];
+    }else{
+        [self.tips setArray:response.tips];
+    }
+    //
+    if ([array count]>0) {
+        [tableView reloadData];
+        [tableView setHidden:NO];
+        [self.mapView setHidden:YES];
+    }
+    
+}
+
+#pragma mark - UISearchBarDelegate
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    NSString *key = searchBar.text;
+    [self searchTipsWithKey:key];
+    [addressSearchBar resignFirstResponder];
+}
+
+#pragma mark - UITableViewDataSource
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.tips.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableview cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *tipCellIdentifier = @"tipCellIdentifier";
+    
+    UITableViewCell *cell = [tableview dequeueReusableCellWithIdentifier:tipCellIdentifier];
+    
+    if (cell == nil)
+    {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
+                                      reuseIdentifier:tipCellIdentifier];
+    }
+    
+    AMapTip *tip = self.tips[indexPath.row];
+    
+    cell.textLabel.text = tip.name;
+    
+    return cell;
+}
+
+#pragma mark - UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableview didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    AMapTip *tip = self.tips[indexPath.row];
+    
+    [self clearAndSearchGeocodeWithKey:tip.name];
+    addressSearchBar.placeholder = tip.name;
+    addressSearchBar.text=tip.name;
+    addressText.text=tip.name;
+    [self.mapView setHidden:NO];
+    tableView.hidden=YES;
 }
 
 - (void)initAnnotationAndOverlay
@@ -521,30 +685,55 @@
 }
 
 //自定义定位
+- (MAAnnotationView *)mapView:(MAMapView *)mapView viewForMAUserLocationAnnotation:(id<MAAnnotation>)annotation{
+    static NSString *userLocationStyleReuseIndetifier = @"userLocationStyleReuseIndetifier";
+    MAAnnotationView *annotationView = [mapView dequeueReusableAnnotationViewWithIdentifier:userLocationStyleReuseIndetifier];
+    if (annotationView == nil)
+    {
+        annotationView = [[MAPinAnnotationView alloc] initWithAnnotation:annotation
+                                                         reuseIdentifier:userLocationStyleReuseIndetifier];
+    }
+    
+    annotationView.image = [UIImage imageNamed:@"userPosition"];
+    
+    self.userLocationAnnotationView = annotationView;
+    
+    return annotationView;
+
+}
+
+//地理编码
+- (MAAnnotationView *)mapView:(MAMapView *)mapView viewForGeocodeAnnotationAnnotation:(id<MAAnnotation>)annotation{
+    static NSString *geoCellIdentifier = @"geoCellIdentifier";
+    
+    MAPinAnnotationView *poiAnnotationView = (MAPinAnnotationView*)[self.mapView dequeueReusableAnnotationViewWithIdentifier:geoCellIdentifier];
+    if (poiAnnotationView == nil)
+    {
+        poiAnnotationView = [[MAPinAnnotationView alloc] initWithAnnotation:annotation
+                                                            reuseIdentifier:geoCellIdentifier];
+    }
+    
+    poiAnnotationView.canShowCallout            = YES;
+    poiAnnotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+    
+    return poiAnnotationView;
+
+}
 - (MAAnnotationView *)mapView:(MAMapView *)mapView viewForAnnotation:(id<MAAnnotation>)annotation
 {
     /* 自定义userLocation对应的annotationView. */
     if ([annotation isKindOfClass:[MAUserLocation class]])
     {
-        static NSString *userLocationStyleReuseIndetifier = @"userLocationStyleReuseIndetifier";
-        MAAnnotationView *annotationView = [mapView dequeueReusableAnnotationViewWithIdentifier:userLocationStyleReuseIndetifier];
-        if (annotationView == nil)
-        {
-            annotationView = [[MAPinAnnotationView alloc] initWithAnnotation:annotation
-                                                             reuseIdentifier:userLocationStyleReuseIndetifier];
-        }
-        
-        annotationView.image = [UIImage imageNamed:@"userPosition"];
-        
-        self.userLocationAnnotationView = annotationView;
-        
-        return annotationView;
+        return [self mapView:mapView
+            viewForMAUserLocationAnnotation:annotation];
     }
-    
+    if ([annotation isKindOfClass:[GeocodeAnnotation class]])
+    {
+        return [self mapView:mapView
+            viewForGeocodeAnnotationAnnotation:annotation];
+    }
+
     return nil;
 }
-
-
-
 
 @end

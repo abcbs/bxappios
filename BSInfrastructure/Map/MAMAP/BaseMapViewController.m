@@ -68,6 +68,7 @@
     self.mapView.zoomEnabled         = YES;
     self.mapView.rotateEnabled       = YES;
     self.mapView.rotateCameraEnabled = YES;
+    [self.mapView setHidden:NO];
     
 }
 
