@@ -1,9 +1,5 @@
 //
 //  MANaviAnnotationView.m
-//  OfficialDemo3D
-//
-//  Created by 翁乐 on 15/4/10.
-//  Copyright (c) 2015年 songjian. All rights reserved.
 //
 
 #import "MANaviAnnotationView.h"

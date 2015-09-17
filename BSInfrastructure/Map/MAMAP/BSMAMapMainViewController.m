@@ -13,6 +13,12 @@
 #import "CommonUtility.h"
 #import "MyAMapGeocode.h"
 #import "GeoDetailViewController.h"
+#import "ReGeocodeAnnotation.h"
+#import "MANaviAnnotationView.h"
+#import "InvertGeoDetailViewController.h"
+
+#define RightCallOutTag 1
+#define LeftCallOutTag 2
 
 @interface BSMAMapMainViewController ()<UIGestureRecognizerDelegate ,UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate>{
     UIImage *screenshotImage ;
@@ -201,6 +207,14 @@
     self.pan.maximumNumberOfTouches = 1;
     
     [self.view addGestureRecognizer:self.pan];
+    
+    //长摁
+    UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self
+                                                                                            action:@selector(handleLongPressForRevertGeo:)];
+    longPress.minimumPressDuration = 0.5;
+    longPress.delegate = self;
+    
+    [self.view addGestureRecognizer:longPress];
 
     [self initShapeLayer];
     
@@ -213,6 +227,43 @@
     tableView.dataSource=self;
     tableView.delegate=self;
 
+}
+
+- (void)handleLongPressForRevertGeo:(UILongPressGestureRecognizer *)longPress
+{
+    if (longPress.state == UIGestureRecognizerStateBegan)
+    {
+        CLLocationCoordinate2D coordinate =
+        [self.mapView convertPoint:[longPress locationInView:self.view]
+              toCoordinateFromView:self.mapView];
+        //已经获取经纬度
+        BSLog(@"onLongClick-latitude==%f,longitude==%f",
+               coordinate.latitude,coordinate.longitude);
+       
+        NSString* showmeg = [NSString stringWithFormat:@"点击获得经纬度,当前经度:%f,当前纬度:%f",coordinate.longitude,coordinate.latitude];
+        
+        _showMsgLabel.text = showmeg;
+        
+        
+        
+        longitudeText.text = [NSString stringWithFormat:@"%f",
+                              coordinate.longitude];//纬度
+        
+        latitudeText.text = [NSString stringWithFormat:@"%f",
+                             coordinate.latitude];//经度
+
+        [self searchReGeocodeWithCoordinate:coordinate];
+    }
+}
+
+- (void)searchReGeocodeWithCoordinate:(CLLocationCoordinate2D)coordinate
+{
+    AMapReGeocodeSearchRequest *regeo = [[AMapReGeocodeSearchRequest alloc] init];
+    
+    regeo.location = [AMapGeoPoint locationWithLatitude:coordinate.latitude longitude:coordinate.longitude];
+    regeo.requireExtension = YES;
+    regeo.radius=5000;
+    [self.search AMapReGoecodeSearch:regeo];
 }
 
 /* 地理编码 搜索. */
@@ -258,9 +309,9 @@
     [self searchGeocodeWithKey:key];
 }
 
+//正向进入详细
 - (void)gotoDetailForGeocode:(AMapGeocode *)geocode
 {
-    BSLog(@"进入地图详细信息页");
     if (geocode != nil)
     {
         MyAMapGeocode *myAMapGeocode=[[MyAMapGeocode alloc]initWithAMapGeocode:geocode];
@@ -275,6 +326,19 @@
     }
 }
 
+//反向进入详细
+- (void)gotoDetailForReGeocode:(AMapReGeocode *)reGeocode
+{
+    if (reGeocode != nil)
+    {
+        InvertGeoDetailViewController *invertGeoDetailViewController = [[InvertGeoDetailViewController alloc] init];
+        
+        invertGeoDetailViewController.reGeocode = reGeocode;
+        
+        [self.navigationController pushViewController:invertGeoDetailViewController animated:YES];
+    }
+}
+
 #pragma mark - AMapSearchDelegate
 //地图标注点击事件
 - (void)mapView:(MAMapView *)mapView annotationView:(MAAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
@@ -283,56 +347,30 @@
     {
         [self gotoDetailForGeocode:[(GeocodeAnnotation*)view.annotation geocode]];
     }
+    if ([view.annotation isKindOfClass:[ReGeocodeAnnotation class]]){
+        [self mapView:mapView annotationViewForRevertGeo:view calloutAccessoryControlTapped:control];
+    }
 }
 
-/* 地理编码回调.*/
-- (void)onGeocodeSearchDone:(AMapGeocodeSearchRequest *)request response:(AMapGeocodeSearchResponse *)response
+- (void)mapView:(MAMapView *)mapView annotationViewForRevertGeo:(MAAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {
-    if (response.geocodes.count == 0)
-    {
-        return;
-    }
-    
-    NSMutableArray *annotations = [NSMutableArray array];
-    
-    [response.geocodes enumerateObjectsUsingBlock:^(AMapGeocode *obj, NSUInteger idx, BOOL *stop) {
-        GeocodeAnnotation *geocodeAnnotation = [[GeocodeAnnotation alloc] initWithGeocode:obj];
-        
-        [annotations addObject:geocodeAnnotation];
-    }];
-    
-    if (annotations.count == 1)
-    {
-        //地理编码
-        GeocodeAnnotation *geoAnnotation=(GeocodeAnnotation*)annotations[0];
-        //_geocode	AMapGeocode *	0x1702b75e0	0x00000001702b75e0
-        AMapGeocode * geocode=geoAnnotation.geocode;
-        
-        CLLocationCoordinate2D coor=[annotations[0] coordinate];
-        BSLog(@"onLongClick-latitude==%f,longitude==%f",coor.latitude,coor.longitude);
-        NSString* showmeg = [NSString stringWithFormat:@"地址:%@,当前经度:%f,当前纬度:%f", geocode.formattedAddress,coor.longitude,coor.latitude];
-        
-        _showMsgLabel.text = showmeg;
-        
-        cityText.text=geocode.city;
-        
-        addressText.text=geocode.formattedAddress;
-        
-        longitudeText.text = [NSString stringWithFormat:@"%f",
-                              coor.longitude];//纬度
-        
-        latitudeText.text = [NSString stringWithFormat:@"%f",
-                             coor.latitude];//经度
-        [self.mapView setCenterCoordinate:[annotations[0] coordinate] animated:YES];
-        
-    }
-    else
-    {
-        [self.mapView setVisibleMapRect:[CommonUtility minMapRectForAnnotations:annotations]
-                               animated:YES];
-    }
-    
-    [self.mapView addAnnotations:annotations];
+        if ([control tag] == RightCallOutTag)
+        {
+            [self gotoDetailForReGeocode:[(ReGeocodeAnnotation*)view.annotation reGeocode]];
+        }
+        else if([control tag] == LeftCallOutTag)
+        {
+            MANaviConfig *config = [MANaviConfig new];
+            config.destination = view.annotation.coordinate;
+            config.appScheme = [self getApplicationScheme];
+            config.appName = [self getApplicationName];
+            // config.style = MADrivingStrategyFastest;
+            //调客户端
+            if(![MAMapURLSearch openAMapNavigation:config])
+            {
+                [MAMapURLSearch getLatestAMapApp];
+            }
+        }
 }
 
 /* 输入提示回调. */
@@ -345,11 +383,13 @@
     }else{
         [self.tips setArray:response.tips];
     }
-    //
+
     if ([array count]>0) {
         [tableView reloadData];
         [tableView setHidden:NO];
-        //[self.mapView setHidden:YES];
+    }else{
+        [tableView setHidden:YES];
+        [self.tips removeAllObjects];
     }
     
 }
@@ -410,14 +450,6 @@
     tableView.hidden=YES;
 }
 
-- (void)initAnnotationAndOverlay
-{
-    self.pointAnnotation = [[MAPointAnnotation alloc] init];
-    self.pointAnnotation.coordinate = CLLocationCoordinate2DMake(39.911447, 116.406026);
-    self.pointAnnotation.title      = @"Why Not!";
-    
-    self.circle = [MACircle circleWithCenterCoordinate:self.pointAnnotation.coordinate radius:5000];
-}
 - (void)initShapeLayer
 {
     self.shapeLayer = [[CAShapeLayer alloc] init];
@@ -699,6 +731,72 @@
 #pragma mark -高德地图
 
 #pragma mark - MAMapViewDelegate
+
+
+/* 地理编码回调.*/
+- (void)onGeocodeSearchDone:(AMapGeocodeSearchRequest *)request response:(AMapGeocodeSearchResponse *)response
+{
+    if (response.geocodes.count == 0)
+    {
+        return;
+    }
+    
+    NSMutableArray *annotations = [NSMutableArray array];
+    
+    [response.geocodes enumerateObjectsUsingBlock:^(AMapGeocode *obj, NSUInteger idx, BOOL *stop) {
+        GeocodeAnnotation *geocodeAnnotation = [[GeocodeAnnotation alloc] initWithGeocode:obj];
+        
+        [annotations addObject:geocodeAnnotation];
+    }];
+    
+    if (annotations.count == 1)
+    {
+        //地理编码
+        GeocodeAnnotation *geoAnnotation=(GeocodeAnnotation*)annotations[0];
+        //_geocode	AMapGeocode *	0x1702b75e0	0x00000001702b75e0
+        AMapGeocode * geocode=geoAnnotation.geocode;
+        
+        CLLocationCoordinate2D coor=[annotations[0] coordinate];
+        BSLog(@"onLongClick-latitude==%f,longitude==%f",coor.latitude,coor.longitude);
+        NSString* showmeg = [NSString stringWithFormat:@"地址:%@,当前经度:%f,当前纬度:%f", geocode.formattedAddress,coor.longitude,coor.latitude];
+        
+        _showMsgLabel.text = showmeg;
+        
+        cityText.text=geocode.city;
+        
+        addressText.text=geocode.formattedAddress;
+        
+        longitudeText.text = [NSString stringWithFormat:@"%f",
+                              coor.longitude];//纬度
+        
+        latitudeText.text = [NSString stringWithFormat:@"%f",
+                             coor.latitude];//经度
+        [self.mapView setCenterCoordinate:[annotations[0] coordinate] animated:YES];
+        
+    }
+    else
+    {
+        [self.mapView setVisibleMapRect:[CommonUtility minMapRectForAnnotations:annotations]
+                               animated:YES];
+    }
+    
+    [self.mapView addAnnotations:annotations];
+}
+
+/* 逆地理编码回调. */
+- (void)onReGeocodeSearchDone:(AMapReGeocodeSearchRequest *)request response:(AMapReGeocodeSearchResponse *)response
+{
+    if (response.regeocode != nil)
+    {
+        CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(request.location.latitude, request.location.longitude);
+        ReGeocodeAnnotation *reGeocodeAnnotation = [[ReGeocodeAnnotation alloc] initWithCoordinate:coordinate
+                                                                                         reGeocode:response.regeocode];
+        
+        [self.mapView addAnnotation:reGeocodeAnnotation];
+        [self.mapView selectAnnotation:reGeocodeAnnotation animated:YES];
+    }
+}
+
 - (void)mapView:(MAMapView *)mapView didUpdateUserLocation:(MAUserLocation *)userLocation updatingLocation:(BOOL)updatingLocation
 {
     if (!updatingLocation && self.userLocationAnnotationView != nil)
@@ -766,6 +864,37 @@
     return poiAnnotationView;
 
 }
+
+- (MAAnnotationView *)mapView:(MAMapView *)mapView viewForRevertAnnotation:(id<MAAnnotation>)annotation
+{
+    if ([annotation isKindOfClass:[ReGeocodeAnnotation class]])
+    {
+        static NSString *invertGeoIdentifier = @"invertGeoIdentifier";
+        
+        MANaviAnnotationView *poiAnnotationView = (MANaviAnnotationView*)[self.mapView dequeueReusableAnnotationViewWithIdentifier:invertGeoIdentifier];
+        if (poiAnnotationView == nil)
+        {
+            poiAnnotationView = [[MANaviAnnotationView alloc] initWithAnnotation:annotation
+                                                                 reuseIdentifier:invertGeoIdentifier];
+        }
+        
+        poiAnnotationView.animatesDrop              = YES;
+        poiAnnotationView.canShowCallout            = YES;
+        poiAnnotationView.draggable = NO;
+        
+        //show detail by right callout accessory view.
+        poiAnnotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+        poiAnnotationView.rightCalloutAccessoryView.tag = RightCallOutTag;
+        
+        //call online navi by left accessory.
+        poiAnnotationView.leftCalloutAccessoryView.tag = LeftCallOutTag;
+        
+        return poiAnnotationView;
+    }
+    
+    return nil;
+}
+
 - (MAAnnotationView *)mapView:(MAMapView *)mapView viewForAnnotation:(id<MAAnnotation>)annotation
 {
     /* 自定义userLocation对应的annotationView. */
@@ -779,7 +908,10 @@
         return [self mapView:mapView
             viewForGeocodeAnnotationAnnotation:annotation];
     }
-
+    if ([annotation isKindOfClass:[ReGeocodeAnnotation class]]){
+        return [self mapView:mapView
+            viewForRevertAnnotation:annotation];
+    }
     return nil;
 }
 

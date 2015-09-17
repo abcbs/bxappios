@@ -3,7 +3,7 @@
 //  KTAPP
 //
 //  Created by admin on 15/9/17.
-//  Copyright (c) 2015年 itcast. All rights reserved.
+//  Copyright (c) 2015年 KingTeller. All rights reserved.
 //
 
 #import "MyAMapGeocode.h"

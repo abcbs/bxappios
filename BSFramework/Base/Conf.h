@@ -199,7 +199,8 @@ extern float autoSizeScaleY;
 #define QUERY_EXCEPTION @"2001" //查询出现异常
 #define INSERT_EXCEPTION @"2002" //数据插入异常
 #define UPDATE_EXCEPTION @"2003" //数据更新异常
-
+//高德地图
+#define TemporaryNotOpened @"暂未开通"
 
 #pragma mark--公共机制显示相关配置信息
 

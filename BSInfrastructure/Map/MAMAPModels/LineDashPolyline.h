@@ -1,9 +1,5 @@
 //
 //  LineDashPolyline.h
-//  OfficialDemo3D
-//
-//  Created by Li Fei on 10/25/13.
-//  Copyright (c) 2013 songjian. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

@@ -6,6 +6,9 @@
 #import "BSUIFrameworkHeader.h"
 
 @implementation BaseMapViewController
+{
+    MAMapStatus * _lastStatus;
+}
 @synthesize mapView = _mapView;
 @synthesize search  = _search;
 
@@ -13,6 +16,7 @@
 
 - (void)clearMapView
 {
+    /*
     self.mapView.showsUserLocation = NO;
     
     [self.mapView removeAnnotations:self.mapView.annotations];
@@ -20,6 +24,19 @@
     [self.mapView removeOverlays:self.mapView.overlays];
     
     self.mapView.delegate = nil;
+     */
+    
+    self.mapView.showsUserLocation = NO;
+    
+    [self.mapView removeAnnotations:self.mapView.annotations];
+    
+    [self.mapView removeOverlays:self.mapView.overlays];
+    
+    [self.mapView setMapStatus: _lastStatus animated:NO duration:0];
+    
+    self.mapView.delegate = nil;
+    
+    [self.mapView setCompassImage:nil];
 }
 
 - (void)clearSearch
@@ -69,6 +86,14 @@
     self.mapView.rotateEnabled       = YES;
     self.mapView.rotateCameraEnabled = YES;
     //[self.mapView setHidden:NO];
+    
+    //self.mapView.frame = self.view.bounds;
+    
+    //self.mapView.delegate = self;
+    
+    //[self.view addSubview:self.mapView];
+    
+    _lastStatus = [self.mapView getMapStatus];
     
 }
 
@@ -127,14 +152,14 @@
 - (void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    [self initMapView];
+    //[self initMapView];
     
-    [self initSearch];
+    //[self initSearch];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    [self clearResource];
+    //[self clearResource];
 }
 
 - (void)viewDidLoad
@@ -145,5 +170,8 @@
     
     [self initSearch];
 }
+
+
+
 
 @end

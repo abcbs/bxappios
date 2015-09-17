@@ -1,9 +1,5 @@
 //
 //  MAHeaderView.h
-//  MAMapKit_static_demo
-//
-//  Created by songjian on 14-4-28.
-//  Copyright (c) 2014年 songjian. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

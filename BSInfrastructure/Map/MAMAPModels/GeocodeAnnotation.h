@@ -1,9 +1,5 @@
 //
 //  GeocodeAnnotation.h
-//  SearchV3Demo
-//
-//  Created by songjian on 13-8-23.
-//  Copyright (c) 2013年 songjian. All rights reserved.
 //
 
 #import <MAMapKit/MAMapKit.h>
