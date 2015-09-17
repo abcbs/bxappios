@@ -216,7 +216,7 @@ static const char *const kOperationQueueName = "kESSLocationCheckOperationQueueN
     [BSUIComponentView configButtonStyle:routeBusBtn];
     [BSUIComponentView configButtonStyle:routeDriveBtn];
     [BSUIComponentView configButtonStyle:rountWayBtn];
-    
+    [BSUIComponentView configButtonStyle:rountWay];
     [_mapView setTrafficEnabled:NO];
     [_mapView setBuildingsEnabled:YES];
     [_mapView setBaiduHeatMapEnabled:NO];
@@ -2399,13 +2399,13 @@ static const char *const kOperationQueueName = "kESSLocationCheckOperationQueueN
 -(IBAction)onClickWayPointSearch{
     isPoiShortUrlShare=NO;
     isLocationPrompt=YES;
-    WayPointRouteSearchViewController * wayPointCont = [[WayPointRouteSearchViewController alloc]init];
-    wayPointCont.title = @"驾车途经点";
-    UIBarButtonItem *customLeftBarButtonItem = [[UIBarButtonItem alloc] init];
-    customLeftBarButtonItem.title = @"返回";
-    self.navigationItem.backBarButtonItem = customLeftBarButtonItem;
-    [self.navigationController pushViewController:wayPointCont animated:YES];
-
+    BSTableContentObject *wayPointContContentObject=[BSTableContentObject
+                 initWithContentObject:nil
+                 methodName:@"title" imageName:nil
+                 colClass:[WayPointRouteSearchViewController class]];
+    
+    wayPointContContentObject.neededMethodData=@"驾车途经点";
+    [self navigating:wayPointContContentObject];
 }
 
 - (NSString*)getMyBundlePath1:(NSString *)filename

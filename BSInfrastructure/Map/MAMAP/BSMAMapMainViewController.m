@@ -11,6 +11,8 @@
 #import "ScreenshotDetailViewController.h"
 #import "GeocodeAnnotation.h"
 #import "CommonUtility.h"
+#import "MyAMapGeocode.h"
+#import "GeoDetailViewController.h"
 
 @interface BSMAMapMainViewController ()<UIGestureRecognizerDelegate ,UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate>{
     UIImage *screenshotImage ;
@@ -68,6 +70,8 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    [tableView setHidden:YES];
+    [self.tips removeAllObjects];
 }
 
 #pragma mark 继承父类方法，键盘处理事件
@@ -133,6 +137,8 @@
     [BSUIComponentView configButtonStyle:routeBySelfDriving];
     [BSUIComponentView configButtonStyle:routteByTrampAction];
     [BSUIComponentView configButtonStyle:routeByBikeAction];
+   
+    
     [BSUIComponentView configButtonStyle:addressSharedAction];
     [BSUIComponentView configButtonStyle:geoSharedAction];
     [BSUIComponentView configButtonStyle:browseUrlAction];
@@ -241,6 +247,7 @@
 - (void)clear
 {
     [self.mapView removeAnnotations:self.mapView.annotations];
+    [self.tips removeAllObjects];
 }
 
 - (void)clearAndSearchGeocodeWithKey:(NSString *)key
@@ -256,16 +263,27 @@
     BSLog(@"进入地图详细信息页");
     if (geocode != nil)
     {
-        /*
-        GeoDetailViewController *geoDetailViewController = [[GeoDetailViewController alloc] init];
-        geoDetailViewController.geocode = geocode;
-        
-        [self.navigationController pushViewController:geoDetailViewController animated:YES];
-        */
+        MyAMapGeocode *myAMapGeocode=[[MyAMapGeocode alloc]initWithAMapGeocode:geocode];
+        BSTableContentObject *geoDetailContentObject=[BSTableContentObject
+                                     initWithContentObject:nil
+                                     methodName:@"geocodeCopy" imageName:nil
+                                     colClass:[GeoDetailViewController class]];
+ 
+        geoDetailContentObject.neededMethodData=myAMapGeocode;
+        [self navigating:geoDetailContentObject];
+
     }
 }
 
 #pragma mark - AMapSearchDelegate
+//地图标注点击事件
+- (void)mapView:(MAMapView *)mapView annotationView:(MAAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
+{
+    if ([view.annotation isKindOfClass:[GeocodeAnnotation class]])
+    {
+        [self gotoDetailForGeocode:[(GeocodeAnnotation*)view.annotation geocode]];
+    }
+}
 
 /* 地理编码回调.*/
 - (void)onGeocodeSearchDone:(AMapGeocodeSearchRequest *)request response:(AMapGeocodeSearchResponse *)response
@@ -285,7 +303,28 @@
     
     if (annotations.count == 1)
     {
+        //地理编码
+        GeocodeAnnotation *geoAnnotation=(GeocodeAnnotation*)annotations[0];
+        //_geocode	AMapGeocode *	0x1702b75e0	0x00000001702b75e0
+        AMapGeocode * geocode=geoAnnotation.geocode;
+        
+        CLLocationCoordinate2D coor=[annotations[0] coordinate];
+        BSLog(@"onLongClick-latitude==%f,longitude==%f",coor.latitude,coor.longitude);
+        NSString* showmeg = [NSString stringWithFormat:@"地址:%@,当前经度:%f,当前纬度:%f", geocode.formattedAddress,coor.longitude,coor.latitude];
+        
+        _showMsgLabel.text = showmeg;
+        
+        cityText.text=geocode.city;
+        
+        addressText.text=geocode.formattedAddress;
+        
+        longitudeText.text = [NSString stringWithFormat:@"%f",
+                              coor.longitude];//纬度
+        
+        latitudeText.text = [NSString stringWithFormat:@"%f",
+                             coor.latitude];//经度
         [self.mapView setCenterCoordinate:[annotations[0] coordinate] animated:YES];
+        
     }
     else
     {
@@ -310,7 +349,7 @@
     if ([array count]>0) {
         [tableView reloadData];
         [tableView setHidden:NO];
-        [self.mapView setHidden:YES];
+        //[self.mapView setHidden:YES];
     }
     
 }
@@ -321,9 +360,15 @@
     NSString *key = searchBar.text;
     [self searchTipsWithKey:key];
     [addressSearchBar resignFirstResponder];
+    [tableView setHidden:NO];
 }
 
 #pragma mark - UITableViewDataSource
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    return @"请选择下面地址";
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -346,6 +391,8 @@
     
     cell.textLabel.text = tip.name;
     
+    
+    
     return cell;
 }
 
@@ -359,7 +406,7 @@
     addressSearchBar.placeholder = tip.name;
     addressSearchBar.text=tip.name;
     addressText.text=tip.name;
-    [self.mapView setHidden:NO];
+    //[self.mapView setHidden:NO];
     tableView.hidden=YES;
 }
 

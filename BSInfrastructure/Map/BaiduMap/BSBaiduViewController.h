@@ -155,6 +155,9 @@
     
     
     IBOutlet UIButton *rountWayBtn;
+    
+    IBOutlet UIButton *rountWay;
+    
 }
 
 

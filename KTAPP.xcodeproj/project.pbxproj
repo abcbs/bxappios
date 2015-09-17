@@ -180,6 +180,10 @@
 		844168AE1B6A0BD50060F9A7 /* LOBusinsessMaintainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844168AC1B6A0BD50060F9A7 /* LOBusinsessMaintainViewController.m */; };
 		844168B11B6A1E7C0060F9A7 /* BusinessCatalogue.m in Sources */ = {isa = PBXBuildFile; fileRef = 844168B01B6A1E7C0060F9A7 /* BusinessCatalogue.m */; };
 		844168B21B6A1E7C0060F9A7 /* BusinessCatalogue.m in Sources */ = {isa = PBXBuildFile; fileRef = 844168B01B6A1E7C0060F9A7 /* BusinessCatalogue.m */; };
+		8441FF031BAADED800C141D2 /* GeoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8441FF021BAADED800C141D2 /* GeoDetailViewController.m */; };
+		8441FF041BAADED800C141D2 /* GeoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8441FF021BAADED800C141D2 /* GeoDetailViewController.m */; };
+		8441FF0B1BAAE36800C141D2 /* MyAMapGeocode.m in Sources */ = {isa = PBXBuildFile; fileRef = 8441FF0A1BAAE36800C141D2 /* MyAMapGeocode.m */; };
+		8441FF0C1BAAE36800C141D2 /* MyAMapGeocode.m in Sources */ = {isa = PBXBuildFile; fileRef = 8441FF0A1BAAE36800C141D2 /* MyAMapGeocode.m */; };
 		844570C91B4D6323000CA1C7 /* BLEDeviceDetailsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844570C81B4D6323000CA1C7 /* BLEDeviceDetailsTableViewController.m */; };
 		844570CA1B4D6323000CA1C7 /* BLEDeviceDetailsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844570C81B4D6323000CA1C7 /* BLEDeviceDetailsTableViewController.m */; };
 		844570CD1B4D63F8000CA1C7 /* BLEDevicesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844570CC1B4D63F8000CA1C7 /* BLEDevicesTableViewController.m */; };
@@ -1937,6 +1941,10 @@
 		844168AC1B6A0BD50060F9A7 /* LOBusinsessMaintainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LOBusinsessMaintainViewController.m; sourceTree = "<group>"; };
 		844168AF1B6A1E7C0060F9A7 /* BusinessCatalogue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusinessCatalogue.h; sourceTree = "<group>"; };
 		844168B01B6A1E7C0060F9A7 /* BusinessCatalogue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusinessCatalogue.m; sourceTree = "<group>"; };
+		8441FF011BAADED800C141D2 /* GeoDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeoDetailViewController.h; sourceTree = "<group>"; };
+		8441FF021BAADED800C141D2 /* GeoDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeoDetailViewController.m; sourceTree = "<group>"; };
+		8441FF091BAAE36800C141D2 /* MyAMapGeocode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAMapGeocode.h; sourceTree = "<group>"; };
+		8441FF0A1BAAE36800C141D2 /* MyAMapGeocode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAMapGeocode.m; sourceTree = "<group>"; };
 		844570C71B4D6323000CA1C7 /* BLEDeviceDetailsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLEDeviceDetailsTableViewController.h; sourceTree = "<group>"; };
 		844570C81B4D6323000CA1C7 /* BLEDeviceDetailsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLEDeviceDetailsTableViewController.m; sourceTree = "<group>"; };
 		844570CB1B4D63F8000CA1C7 /* BLEDevicesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLEDevicesTableViewController.h; sourceTree = "<group>"; };
@@ -5150,6 +5158,8 @@
 		84F34E371BA6FFFD00188756 /* MAMAP */ = {
 			isa = PBXGroup;
 			children = (
+				8441FF011BAADED800C141D2 /* GeoDetailViewController.h */,
+				8441FF021BAADED800C141D2 /* GeoDetailViewController.m */,
 				84ECC7041BA8870B00965514 /* ScreenshotDetailViewController.h */,
 				84ECC7051BA8870B00965514 /* ScreenshotDetailViewController.m */,
 				84F34E381BA6FFFD00188756 /* BaseMapViewController.h */,
@@ -5241,6 +5251,8 @@
 				84F8846E1BAAA0D000ECEAA3 /* POIAnnotation.m */,
 				84F8846F1BAAA0D000ECEAA3 /* ReGeocodeAnnotation.h */,
 				84F884701BAAA0D000ECEAA3 /* ReGeocodeAnnotation.m */,
+				8441FF091BAAE36800C141D2 /* MyAMapGeocode.h */,
+				8441FF0A1BAAE36800C141D2 /* MyAMapGeocode.m */,
 			);
 			path = MAMAPModels;
 			sourceTree = "<group>";
@@ -7039,6 +7051,7 @@
 				84DB2F081B7CCB700041588B /* ESSTimer.m in Sources */,
 				84F28FD41B62BB31001078D8 /* BSPhotoViewController.m in Sources */,
 				844570DA1B4D67D5000CA1C7 /* BTLECentralViewController.m in Sources */,
+				8441FF041BAADED800C141D2 /* GeoDetailViewController.m in Sources */,
 				844FFE911B8B4C4600658A36 /* BSAesSecurity.m in Sources */,
 				84F84ADB1B7C4E2B008DF38F /* BSDesSecurity.m in Sources */,
 				84D19FF11B4C440500BA25BF /* LeTemperatureAlarmService.m in Sources */,
@@ -7067,6 +7080,7 @@
 				84F884801BAAA0D000ECEAA3 /* GeocodeAnnotation.m in Sources */,
 				84BF8FD51B4AC2FA001042F1 /* BSUITableViewInitRuntimeController.m in Sources */,
 				84BF8FDA1B4AC2FA001042F1 /* BSTableViewCellData.m in Sources */,
+				8441FF0C1BAAE36800C141D2 /* MyAMapGeocode.m in Sources */,
 				84E9D7AB1B61E10C00F2CD24 /* BSVideoIndicatorView.m in Sources */,
 				84BF8FDC1B4AC2FA001042F1 /* BSTableViewMultCellData.m in Sources */,
 				84DAA4A51B7AE6120070BF83 /* BSRSACrypto.m in Sources */,
@@ -7291,6 +7305,7 @@
 				84F34E441BA6FFFD00188756 /* BSMAMapMainViewController.m in Sources */,
 				8425E18B1B67644200A93C43 /* BSPhotoTakeController.m in Sources */,
 				84F34E481BA6FFFD00188756 /* BSMAMapRadarUploadViewController.m in Sources */,
+				8441FF0B1BAAE36800C141D2 /* MyAMapGeocode.m in Sources */,
 				842042B01B2984D80002C868 /* KTCartFooterView.m in Sources */,
 				84ECA4501B569F9700452BC4 /* UserBase.m in Sources */,
 				8480581B1B39AEEF005817D7 /* BSTableViewRefreshController.m in Sources */,
@@ -7385,6 +7400,7 @@
 				84BA967F1B2829D500388B58 /* orderDetailModel.m in Sources */,
 				A0F0C3F41B10209500CE406D /* MiddleNetWorkTool.m in Sources */,
 				845A02231B3DA1F3007F5327 /* BSUIImageTitleTableViewCell.m in Sources */,
+				8441FF031BAADED800C141D2 /* GeoDetailViewController.m in Sources */,
 				84E9D7A61B61E10C00F2CD24 /* BSSlomoIconView.m in Sources */,
 				8405CBC91B5577660014AF8D /* UserPay.m in Sources */,
 				84832D611B565EAC00FB6D28 /* UserBaseAndSessionDomain.m in Sources */,

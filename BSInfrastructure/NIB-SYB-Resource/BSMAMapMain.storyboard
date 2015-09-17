@@ -448,8 +448,8 @@
                                         </segments>
                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </segmentedControl>
-                                    <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="1" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Zwu-uG-6ou" userLabel="建议词搜索">
-                                        <rect key="frame" x="0.0" y="44" width="336" height="200"/>
+                                    <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="yiy-ug-2c5">
+                                        <rect key="frame" x="0.0" y="0.0" width="336" height="200"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="点击、长按或双击地图以获取地图状态" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5bk-Pu-Q1k">
@@ -519,7 +519,7 @@
                         <outlet property="searchUIControllerView" destination="6RB-Le-502" id="lYa-iW-JYL"/>
                         <outlet property="showUserLocationSegment" destination="qEI-bS-khZ" id="HEU-Ra-gxn"/>
                         <outlet property="singleTap" destination="UZX-En-MyQ" id="GOW-zH-vq4"/>
-                        <outlet property="tableView" destination="Zwu-uG-6ou" id="eeg-wU-EbV"/>
+                        <outlet property="tableView" destination="yiy-ug-2c5" id="nuA-A9-ohv"/>
                         <outlet property="trafficSwitch" destination="X8s-ae-i66" id="mpf-Ms-ozE"/>
                         <outlet property="zoomLevelAction" destination="9RS-2b-bOF" id="pVn-ce-VgG"/>
                         <outlet property="zoomdegree" destination="Aw5-Qz-DaA" id="Pes-1A-c3x"/>
