@@ -16,12 +16,15 @@
 #import "ReGeocodeAnnotation.h"
 #import "MANaviAnnotationView.h"
 #import "InvertGeoDetailViewController.h"
+#import "POIAnnotation.h"
+#import "PoiDetailViewController.h"
 
 #define RightCallOutTag 1
 #define LeftCallOutTag 2
 
 @interface BSMAMapMainViewController ()<UIGestureRecognizerDelegate ,UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate>{
     UIImage *screenshotImage ;
+    int curPage;
 }
 
 
@@ -43,6 +46,8 @@
 
 @property (nonatomic, strong) NSMutableArray *tips;
 
+@property (nonatomic) AMapSearchType searchType;
+
 @property (nonatomic) BOOL started;
 //
 @end
@@ -56,6 +61,9 @@
 
 
 @synthesize tips=_tips;
+
+@synthesize searchType=_searchType;
+
 #pragma mark - Action Handlers
 
 - (void)mapTypeAction:(UISegmentedControl *)segmentedControl
@@ -287,9 +295,8 @@
     {
         return;
     }
-    NSArray *cities=[[NSArray alloc] initWithObjects:@"北京市",nil];
     AMapInputTipsSearchRequest *tips = [[AMapInputTipsSearchRequest alloc] init];
-    tips.city=cities;
+    tips.city=@[cityText.text];
     tips.keywords = key;
     [self.search AMapInputTipsSearch:tips];
 }
@@ -331,11 +338,23 @@
 {
     if (reGeocode != nil)
     {
+        /*
         InvertGeoDetailViewController *invertGeoDetailViewController = [[InvertGeoDetailViewController alloc] init];
         
         invertGeoDetailViewController.reGeocode = reGeocode;
         
         [self.navigationController pushViewController:invertGeoDetailViewController animated:YES];
+        */
+        MyAMapReGeocode *myReAMapGeocode=[[MyAMapReGeocode alloc]initWithAMapReGeocode:reGeocode];
+        
+        BSTableContentObject *reGeocodeContentObject=[BSTableContentObject
+             initWithContentObject:nil
+              methodName:@"reGeocodeCopy" imageName:nil
+              colClass:[InvertGeoDetailViewController class]];
+        
+        reGeocodeContentObject.neededMethodData=myReAMapGeocode;
+        [self navigating:reGeocodeContentObject];
+
     }
 }
 
@@ -349,6 +368,9 @@
     }
     if ([view.annotation isKindOfClass:[ReGeocodeAnnotation class]]){
         [self mapView:mapView annotationViewForRevertGeo:view calloutAccessoryControlTapped:control];
+    }
+    if ([view.annotation isKindOfClass:[POIAnnotation class]]){
+        [self mapView:mapView annotationPOIAnnotationView:view calloutAccessoryControlTapped:control];
     }
 }
 
@@ -373,6 +395,21 @@
         }
 }
 
+- (void)mapView:(MAMapView *)mapView annotationPOIAnnotationView:(MAAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
+{
+    id<MAAnnotation> annotation = view.annotation;
+    
+    if ([annotation isKindOfClass:[POIAnnotation class]])
+    {
+        POIAnnotation *poiAnnotation = (POIAnnotation*)annotation;
+        
+        PoiDetailViewController *detail = [[PoiDetailViewController alloc] init];
+        detail.poi = poiAnnotation.poi;
+        
+        /* 进入POI详情页面. */
+        [self.navigationController pushViewController:detail animated:YES];
+    }
+}
 /* 输入提示回调. */
 - (void)onInputTipsSearchDone:(AMapInputTipsSearchRequest *)request response:(AMapInputTipsSearchResponse *)response
 {
@@ -649,6 +686,7 @@
     return YES;
 }
 
+//快照手势
 - (void)panGesture:(UIPanGestureRecognizer *)panGesture
 {
     static CGPoint startPoint;
@@ -731,6 +769,48 @@
 #pragma mark -高德地图
 
 #pragma mark - MAMapViewDelegate
+/* POI 搜索回调. */
+- (void)onPlaceSearchDone:(AMapPlaceSearchRequest *)request response:(AMapPlaceSearchResponse *)respons
+{
+    if (request.searchType != self.searchType)
+    {
+        return;
+    }
+    
+    if (respons.pois.count == 0)
+    {
+        return;
+    }
+    
+    NSMutableArray *poiAnnotations = [NSMutableArray arrayWithCapacity:respons.pois.count];
+    
+    [respons.pois enumerateObjectsUsingBlock:^(AMapPOI *obj, NSUInteger idx, BOOL *stop) {
+        
+        [poiAnnotations addObject:[[POIAnnotation alloc] initWithPOI:obj]];
+        
+    }];
+    
+    /* 将结果以annotation的形式加载到地图上. */
+    [self.mapView addAnnotations:poiAnnotations];
+    //画出圈
+    /* Circle. */
+    MACircle *circle = [MACircle circleWithCenterCoordinate:CLLocationCoordinate2DMake([latitudeText.text doubleValue], [longitudeText.text doubleValue]) radius:[rangRadius.text doubleValue]];
+    //[self.overlaysAboveRoads addObject:circle];
+    [self.mapView addOverlay:circle level:MAOverlayLevelAboveRoads];
+
+    
+    /* 如果只有一个结果，设置其为中心点. */
+    if (poiAnnotations.count == 1)
+    {
+        self.mapView.centerCoordinate = [poiAnnotations[0] coordinate];
+    }
+    /* 如果有多个结果, 设置地图使所有的annotation都可见. */
+    else
+    {
+        [self.mapView showAnnotations:poiAnnotations animated:YES];
+    }
+}
+
 
 
 /* 地理编码回调.*/
@@ -824,6 +904,16 @@
         accuracyCircleView.fillColor    = [UIColor colorWithRed:1 green:0 blue:0 alpha:.3];
         
         return accuracyCircleView;
+    }else if ([overlay isKindOfClass:[MACircle class]])
+    {
+        MACircleView *circleView = [[MACircleView alloc] initWithCircle:overlay];
+        
+        circleView.lineWidth    = 2.f;
+        //circleView.strokeColor  = [UIColor colorWithRed:0.6 green:0.6 blue:0.6 alpha:0.8];
+        //circleView.fillColor    = [UIColor whiteColor];
+        circleView.lineDash     = YES;
+        
+        return circleView;
     }
     
     return nil;
@@ -895,6 +985,27 @@
     return nil;
 }
 
+- (MAAnnotationView *)mapView:(MAMapView *)mapView viewForPOIAnnotationAnnotation:(id<MAAnnotation>)annotation
+{
+    if ([annotation isKindOfClass:[POIAnnotation class]])
+    {
+        static NSString *poiIdentifier = @"poiIdentifier";
+        MAPinAnnotationView *poiAnnotationView = (MAPinAnnotationView*)[self.mapView dequeueReusableAnnotationViewWithIdentifier:poiIdentifier];
+        if (poiAnnotationView == nil)
+        {
+            poiAnnotationView = [[MAPinAnnotationView alloc] initWithAnnotation:annotation
+                                                                reuseIdentifier:poiIdentifier];
+        }
+        
+        poiAnnotationView.canShowCallout            = YES;
+        poiAnnotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+        
+        return poiAnnotationView;
+    }
+    
+    return nil;
+}
+
 - (MAAnnotationView *)mapView:(MAMapView *)mapView viewForAnnotation:(id<MAAnnotation>)annotation
 {
     /* 自定义userLocation对应的annotationView. */
@@ -912,7 +1023,80 @@
         return [self mapView:mapView
             viewForRevertAnnotation:annotation];
     }
+    if ([annotation isKindOfClass:[POIAnnotation class]]){
+        return [self mapView:mapView
+            viewForPOIAnnotationAnnotation:annotation];
+    }
     return nil;
+}
+
+//POI查找如果坐标不为空，则执行周边查找，
+- (IBAction)poiFindClick:(id)sender {
+    curPage = 0;
+    [self clearMapData];
+    if ([keyText.text isEqualToString:@""]) {
+        [self searchPoiByKeyword];
+    }else{
+        [self searchPoiByCenterCoordinate];
+    }
+}
+
+- (IBAction)poiNextPageClick:(id)sender {
+    curPage++;
+    if ([keyText.text isEqualToString:@""]) {
+        [self searchPoiByKeyword];
+    }else{
+        [self searchPoiByCenterCoordinate];
+    }
+}
+
+- (IBAction)poiResultSave:(id)sender {
+    
+}
+
+
+/* 根据关键字来搜索POI. */
+- (void)searchPoiByKeyword
+{
+    self.searchType=2;
+    AMapPlaceSearchRequest *request = [[AMapPlaceSearchRequest alloc] init];
+    
+    request.searchType          = AMapSearchType_PlaceKeyword;
+    request.keywords            = addressText.text;
+    request.city                = @[cityText.text];
+    request.requireExtension    = YES;
+    request.page=curPage;
+    //每页多少
+    request.offset=20;
+    [self.search AMapPlaceSearch:request];
+}
+
+/* 根据中心点坐标来搜周边的POI. */
+- (void)searchPoiByCenterCoordinate
+{
+    self.searchType=3;
+    AMapPlaceSearchRequest *request = [[AMapPlaceSearchRequest alloc] init];
+    
+    request.searchType          = AMapSearchType_PlaceAround;
+    request.location            = [AMapGeoPoint locationWithLatitude:[latitudeText.text doubleValue]
+                                                           longitude:[longitudeText.text doubleValue]];
+    request.keywords            = keyText.text;
+    /* 按照距离排序. */
+    request.sortrule            = 1;
+    request.requireExtension    = YES;
+    //距离
+    request.radius=[rangRadius.text doubleValue];
+    //默认取回第一个页
+    request.page=curPage;
+    //每页多少
+    request.offset=20;
+    /* 添加搜索结果过滤 */
+    //AMapPlaceSearchFilter *filter = [[AMapPlaceSearchFilter alloc] init];
+    //filter.costFilter = @[@"100", @"200"];
+    //filter.requireFilter = AMapRequireGroupbuy;
+    //request.searchFilter = filter;
+    
+    [self.search AMapPlaceSearch:request];
 }
 
 @end

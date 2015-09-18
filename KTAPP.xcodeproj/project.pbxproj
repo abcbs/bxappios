@@ -1654,6 +1654,10 @@
 		84FB97951B937DA20018790A /* BSMapMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84FB97931B937DA20018790A /* BSMapMain.storyboard */; };
 		84FB97961B937DA20018790A /* BSMapMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84FB97931B937DA20018790A /* BSMapMain.storyboard */; };
 		84FB97A31B93922F0018790A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84FB97A21B93922F0018790A /* OpenGLES.framework */; };
+		84FD20DC1BABAE4000FB83C7 /* MyAMapReGeocode.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FD20DB1BABAE4000FB83C7 /* MyAMapReGeocode.m */; };
+		84FD20DD1BABAE4000FB83C7 /* MyAMapReGeocode.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FD20DB1BABAE4000FB83C7 /* MyAMapReGeocode.m */; };
+		84FD20E01BABC04F00FB83C7 /* MyPOIAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FD20DF1BABC04F00FB83C7 /* MyPOIAnnotation.m */; };
+		84FD20E11BABC04F00FB83C7 /* MyPOIAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FD20DF1BABC04F00FB83C7 /* MyPOIAnnotation.m */; };
 		A04366AF1AD7B550005842EE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A04366AE1AD7B550005842EE /* main.m */; };
 		A04366BA1AD7B550005842EE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A04366B91AD7B550005842EE /* Images.xcassets */; };
 		A05E9BDF1AE79DD5008C97C9 /* KTTabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A05E9BDE1AE79DD5008C97C9 /* KTTabBarButton.m */; };
@@ -2995,6 +2999,10 @@
 		84F884941BAAA15200ECEAA3 /* CommonUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonUtility.m; sourceTree = "<group>"; };
 		84FB97931B937DA20018790A /* BSMapMain.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BSMapMain.storyboard; sourceTree = "<group>"; };
 		84FB97A21B93922F0018790A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		84FD20DA1BABAE4000FB83C7 /* MyAMapReGeocode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAMapReGeocode.h; sourceTree = "<group>"; };
+		84FD20DB1BABAE4000FB83C7 /* MyAMapReGeocode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAMapReGeocode.m; sourceTree = "<group>"; };
+		84FD20DE1BABC04F00FB83C7 /* MyPOIAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPOIAnnotation.h; sourceTree = "<group>"; };
+		84FD20DF1BABC04F00FB83C7 /* MyPOIAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPOIAnnotation.m; sourceTree = "<group>"; };
 		886ADE756FA5F0898C847C9D /* libPods-KT-LS-Controller.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KT-LS-Controller.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FCA45FC7E90066EB24B7BB5 /* Pods-KT-MODEL-MODULE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KT-MODEL-MODULE.release.xcconfig"; path = "Pods/Target Support Files/Pods-KT-MODEL-MODULE/Pods-KT-MODEL-MODULE.release.xcconfig"; sourceTree = "<group>"; };
 		9716BBC36AB1843CB19C2918 /* libPods-KT-OPERATORS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KT-OPERATORS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -5411,6 +5419,10 @@
 				84F884701BAAA0D000ECEAA3 /* ReGeocodeAnnotation.m */,
 				8441FF091BAAE36800C141D2 /* MyAMapGeocode.h */,
 				8441FF0A1BAAE36800C141D2 /* MyAMapGeocode.m */,
+				84FD20DA1BABAE4000FB83C7 /* MyAMapReGeocode.h */,
+				84FD20DB1BABAE4000FB83C7 /* MyAMapReGeocode.m */,
+				84FD20DE1BABC04F00FB83C7 /* MyPOIAnnotation.h */,
+				84FD20DF1BABC04F00FB83C7 /* MyPOIAnnotation.m */,
 			);
 			path = MAMAPModels;
 			sourceTree = "<group>";
@@ -7189,6 +7201,7 @@
 				8425E18C1B67644200A93C43 /* BSPhotoTakeController.m in Sources */,
 				8461B72C1B54BAB5002A7C43 /* KTHandyViewController.m in Sources */,
 				841F95061B8C54D1001B26B5 /* BSModelSerializer.m in Sources */,
+				84FD20E11BABC04F00FB83C7 /* MyPOIAnnotation.m in Sources */,
 				84D2DA721BA0696000E4C6EB /* ToolView.m in Sources */,
 				84D2DA6A1BA0672D00E4C6EB /* ImageModelClass.m in Sources */,
 				84D19FED1B4C440500BA25BF /* BSBLEViewController.m in Sources */,
@@ -7223,6 +7236,7 @@
 				84F34E4B1BA6FFFD00188756 /* MapTypeViewController.m in Sources */,
 				84DB2F041B7CCB700041588B /* ESSBeaconScanner.m in Sources */,
 				84EBF0351BA0538E00B3F16A /* BSUIKeyboardCoView.m in Sources */,
+				84FD20DD1BABAE4000FB83C7 /* MyAMapReGeocode.m in Sources */,
 				84BF8FC41B4AC2FA001042F1 /* Conf.m in Sources */,
 				84F884781BAAA0D000ECEAA3 /* CusAnnotationView.m in Sources */,
 				84EF57721BAB099E00D8AFE2 /* DeepContentViewController.m in Sources */,
@@ -7535,8 +7549,10 @@
 				84EF57871BAB099E00D8AFE2 /* RoadInterDetailViewController.m in Sources */,
 				842042C51B2988410002C868 /* BSModelRoute.m in Sources */,
 				84BA96861B2829D500388B58 /* WaterSendingDetails.m in Sources */,
+				84FD20DC1BABAE4000FB83C7 /* MyAMapReGeocode.m in Sources */,
 				84EADEEE1B9EAA2E0098ABCE /* BSWebViewViewController.m in Sources */,
 				84F884791BAAA0D000ECEAA3 /* CustomCalloutView.m in Sources */,
+				84FD20E01BABC04F00FB83C7 /* MyPOIAnnotation.m in Sources */,
 				84F34E461BA6FFFD00188756 /* BSMAMapRadarNearbyViewController.m in Sources */,
 				8470765B1B3A8F1400F28180 /* adsCell.m in Sources */,
 				842043741B2991770002C868 /* DLSlideView.m in Sources */,

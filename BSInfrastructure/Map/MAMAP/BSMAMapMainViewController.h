@@ -187,6 +187,23 @@
 
 - (IBAction)snapSaveClick:(id)sender;
 
+//关键字或者周边查找
+//当坐标不为空时，默认进入周边查找
+- (IBAction)poiFindClick:(id)sender;
+
+//POI下一页
+- (IBAction)poiNextPageClick:(id)sender;
+
+- (IBAction)poiResultSave:(id)sender;
+
+//收藏
+@property (strong, nonatomic) IBOutlet UIButton *favClick;
+
+//查找收藏
+@property (strong, nonatomic) IBOutlet UIButton *favBrowserClick;
+
+//删除收藏
+@property (strong, nonatomic) IBOutlet UIButton *favDelete;
 
 
 @end

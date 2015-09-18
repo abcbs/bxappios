@@ -305,18 +305,27 @@
                                                 <state key="normal" title="查找">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="poiFindClick:" destination="SJt-da-KIZ" eventType="touchUpInside" id="oXa-u1-CE6"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OuE-DQ-kts">
                                                 <rect key="frame" x="51" y="155" width="50" height="30"/>
                                                 <state key="normal" title="下一组">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="poiNextPageClick:" destination="SJt-da-KIZ" eventType="touchUpInside" id="fQ6-qL-dI2"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tvy-VQ-1kH">
                                                 <rect key="frame" x="104" y="155" width="51" height="30"/>
                                                 <state key="normal" title="保存">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="poiResultSave:" destination="SJt-da-KIZ" eventType="touchUpInside" id="RmO-C2-cdf"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l3u-ED-Wti">
                                                 <rect key="frame" x="158" y="155" width="53" height="30"/>
@@ -485,7 +494,9 @@
                         <outlet property="endAddressText" destination="TD0-YC-LL9" id="WT8-gt-ryk"/>
                         <outlet property="endCityText" destination="a3h-fP-Xp2" id="ydm-3w-OWq"/>
                         <outlet property="favBrowser" destination="uge-4e-AOS" id="jOz-XH-9R1"/>
-                        <outlet property="favDelete" destination="fhs-gn-W6A" id="yNO-u7-HBZ"/>
+                        <outlet property="favBrowserClick" destination="uge-4e-AOS" id="u6x-Ae-E2N"/>
+                        <outlet property="favClick" destination="l3u-ED-Wti" id="wBl-VM-4wD"/>
+                        <outlet property="favDelete" destination="fhs-gn-W6A" id="6pt-33-cst"/>
                         <outlet property="favSave" destination="l3u-ED-Wti" id="gp7-4V-pBM"/>
                         <outlet property="geoAction" destination="dqA-DW-7gQ" id="lF4-OC-scf"/>
                         <outlet property="geoSharedAction" destination="ozU-hW-tle" id="0wM-o0-vq1"/>

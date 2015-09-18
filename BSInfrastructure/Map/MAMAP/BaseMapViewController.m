@@ -53,6 +53,15 @@
     [self clearSearch];
 }
 
+- (void)clearMapData
+{
+    [self.mapView removeAnnotations:self.mapView.annotations];
+    
+    [self.mapView removeOverlays:self.mapView.overlays];
+   
+}
+
+
 #pragma mark - AMapSearchDelegate
 
 - (void)searchRequest:(id)request didFailWithError:(NSError *)error

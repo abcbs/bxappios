@@ -11,7 +11,7 @@
 			<string>abc.$(PRODUCT_NAME:rfc1034identifier)</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>生活圈监控版</string>
+				<string>${PRODUCT_NAME}</string>
 			</array>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
@@ -20,7 +20,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>生活圈监管版</string>
+	<string>应用</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -41,6 +41,7 @@
 	<string></string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
+		<string>iosamap</string>
 		<string>baidumap</string>
 	</array>
 	<key>LSRequiresIPhoneOS</key>

@@ -21,7 +21,15 @@
 @implementation InvertGeoDetailViewController
 @synthesize reGeocode = _reGeocode;
 @synthesize tableView = _tableView;
+@synthesize reGeocodeCopy=_reGeocodeCopy;
 
+-(AMapReGeocode *)reGeocode{
+    if (self.reGeocodeCopy!=nil){
+        return self.reGeocodeCopy.reGeocode;
+    }else{
+        return _reGeocode;
+    }
+}
 #pragma mark - Utility
 
 - (NSString *)titleForIndexPath:(NSIndexPath *)indexPath

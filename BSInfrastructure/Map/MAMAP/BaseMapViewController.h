@@ -16,6 +16,7 @@
 
 
 - (void)clearResource;
+- (void)clearMapData;
 
 - (NSString *)getApplicationName;
 - (NSString *)getApplicationScheme;
