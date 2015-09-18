@@ -5,7 +5,8 @@
 #import <UIKit/UIKit.h>
 #import "BSUICommonController.h"
 
-@interface ScreenshotDetailViewController : BSUICommonController
+@interface ScreenshotDetailViewController :
+BSUICommonController<UIScrollViewDelegate>
 
 @property (nonatomic, strong) UIImage *screenshotImage;
 

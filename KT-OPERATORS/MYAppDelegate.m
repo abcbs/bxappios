@@ -12,7 +12,9 @@
 #import <BaiduMapAPI/BMapKit.h>
 #import <SystemConfiguration/SystemConfiguration.h>
 #import "PromptInfo.h"
-//#import <AMapNaviKit/AMapNaviKit.h>
+#import "GeoDetailViewController.h"
+#import "KTLBMainTabBarController.h"
+
 #import <MAMapKit/MAMapKit.h>
 @interface MYAppDelegate () <UIApplicationDelegate, BMKGeneralDelegate> {
     }
@@ -92,7 +94,9 @@ BSNetworkNotify *networkNotify;
     */
     //NSString *identifier = [[NSBundle mainBundle] bundleIdentifier];
 
+    //
     
+
     return YES;
 }
 
@@ -133,6 +137,7 @@ BSNetworkNotify *networkNotify;
 #pragma mark -关闭--首次（多次）终止2
 - (void)applicationDidEnterBackground:(UIApplication *)application{
     BSLog(@"\n/*=---------------App关闭\n\t\tapplicationDidEnterBackground\n-------------------=*/");
+    [self addLocalNotification];
 }
 
 #pragma mark -关机
@@ -169,6 +174,16 @@ didReceiveLocalNotification:(UILocalNotification *)notification{
         [alert show];
     }
      */
+    if (application.applicationState != UIApplicationStateActive){
+        BSTableContentObject *geoDetailContentObject=[BSTableContentObject
+                                                  initWithContentObject:nil
+                                                  methodName:nil
+                                                      imageName:nil
+                                                  colClass:[KTLBMainTabBarController class]];
+        //[BSContentObjectNavigation
+         //   navigatingControllWithStorybord:self.window.rootViewController
+         //bsContentObject:geoDetailContentObject];
+    }
 }
 
 #pragma mark -远程通知方法
@@ -227,14 +242,14 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo {
 #endif
 
 #pragma mark 调用过用户注册通知方法之后执行（也就是调用完registerUserNotificationSettings:方法之后执行）
-/*
+
 -(void)application:(UIApplication *)application
 didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings{
     if (notificationSettings.types!=UIUserNotificationTypeNone) {
         [self addLocalNotification];
     }
 }
-*/
+
 #pragma mark - 私有方法
 #pragma mark 添加本地通知
 -(void)addLocalNotification{

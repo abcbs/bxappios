@@ -6,7 +6,7 @@
 #import <BaiduMapAPI/BMapKit.h>
 #import <SystemConfiguration/SystemConfiguration.h>
 #import "PromptInfo.h"
-@interface SellerAppDelegate () <UIApplicationDelegate,BMKGeneralDelegate> {
+@interface SellerAppDelegate () < UIApplicationDelegate,BMKGeneralDelegate> {
 }
 
 @end
@@ -77,12 +77,20 @@ BSNetworkNotify *networkNotify;
      UILocalNotification *notification=[launchOptions valueForKey:UIApplicationLaunchOptionsLocalNotificationKey];
      NSDictionary *userInfo= notification.userInfo;
      
-     [userInfo writeToFile:@"/Users/kenshincui/Desktop/didFinishLaunchingWithOptions.txt" atomically:YES];
+     //[userInfo writeToFile:@"/Users/kenshincui/Desktop/didFinishLaunchingWithOptions.txt" atomically:YES];
      NSLog(@"didFinishLaunchingWithOptions:The userInfo is %@.",userInfo);
     
     //NSString *identifier = [[NSBundle mainBundle] bundleIdentifier];
     
-    
+    if (launchOptions) {
+        NSString *pushString =  [NSString stringWithFormat:@"%@", launchOptions];
+
+        NSString *url= [[launchOptions objectForKey:@"UIApplicationLaunchOptionsRemoteNotificationKey"] objectForKey:@"url"];
+        //appDelegate.push= url;
+        
+        NSDictionary* remoteNotification = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
+        
+    }
     return YES;
 }
 
@@ -91,7 +99,7 @@ BSNetworkNotify *networkNotify;
 -(void)applicationWillEnterForeground:(UIApplication *)application{
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
     BSLog(@"\n/*=---------------App再次运行\n\t\tapplicationWillEnterForeground\n-------------------=*/");
-    [[UIApplication sharedApplication]setApplicationIconBadgeNumber:0];//进入前台取消应用消息图标
+
 }
 
 
@@ -123,6 +131,20 @@ BSNetworkNotify *networkNotify;
 #pragma mark -关闭--首次（多次）终止2
 - (void)applicationDidEnterBackground:(UIApplication *)application{
     BSLog(@"\n/*=---------------App关闭\n\t\tapplicationDidEnterBackground\n-------------------=*/");
+    [self execBackrgoundMethod];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        while(TRUE)
+        {
+            [NSThread sleepForTimeInterval:1];
+            
+            //编写执行任务代码
+            BSLog(@"后台执行中");
+        }
+        
+        //[application endBackgroundTask: background_task];
+        //background_task = UIBackgroundTaskInvalid;
+    });
+
 }
 
 #pragma mark -关机
@@ -160,6 +182,31 @@ didReceiveLocalNotification:(UILocalNotification *)notification{
     }
      */
     
+    UIApplicationState state = [application applicationState];
+    if (state == UIApplicationStateInactive) {
+        //这个通知用户已经看过了。
+    }else{
+        application.applicationIconBadgeNumber = 0;
+        //NSString *reminderText = [notification.userInfo
+        //                          objectForKey:kRemindMeNotificationDataKey];
+        //NSLog(@"%@",reminderText);
+
+    }
+    
+    if (application.applicationState != UIApplicationStateActive)
+     {
+            
+           
+      
+       [self.window.rootViewController presentViewController:nil animated:YES completion:nil];
+                    
+           
+      }
+   
+    //订阅展示视图消息，将直接打开某个分支视图
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(presentView:) name:@"PresentView" object:nil];
+    //弹出消息框提示用户有订阅通知消息。主要用于用户在使用应用时，弹出提示框
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showNotification:) name:@"Notification" object:nil];
 }
 
 #pragma mark -远程通知方法
@@ -249,6 +296,7 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo {
     
     //调用通知
     [[UIApplication sharedApplication] scheduleLocalNotification:notification];
+ 
 }
 
 #pragma mark 移除本地通知，在不需要此通知时记得移除
@@ -280,4 +328,72 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo {
         [PromptInfo showWithText:@"APP授权失败" topOffset:54 duration:2];
     }
 }
+
+
+
+-(void)execBackrgoundMethod
+{
+    /*
+     Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
+     If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+     */
+    [[UIApplication sharedApplication] applicationState]; //app状态
+    [[UIApplication sharedApplication] setMinimumBackgroundFetchInterval:3600]; //设置后台运行时间
+    NSTimeInterval remainTime = [[UIApplication sharedApplication] backgroundTimeRemaining]; //app后台运行的时间
+    NSLog(@"remainTIme = %f",remainTime);
+    int state = [[UIApplication sharedApplication] backgroundRefreshStatus]; //后台刷新的状态
+    NSLog(@"state = %d",state);
+    [[UIApplication sharedApplication] beginBackgroundTaskWithName:@"taskOne" expirationHandler:^{
+        NSLog(@"后台运行中taskOne");
+
+    }];
+    [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^{
+        NSLog(@"后台运行中");
+
+        
+    }];
+    [[UIApplication sharedApplication] endBackgroundTask:1];
+    
+    
+    UIApplication* app = [UIApplication sharedApplication];
+    __block UIBackgroundTaskIdentifier bgTask = [app beginBackgroundTaskWithExpirationHandler:^{
+        //app endBackgroundTask:bgTask];
+        //bgTask = UIBackgroundTaskInvalid;
+        NSLog(@"后台运行中//////////////////");
+        [self addLocalNotification];
+        [self scheduleAlarmForDate:nil];
+        
+    }];
+
+    // Start the long-running task and return immediately.
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,
+                                             0), ^{
+        NSLog(@"后台运行中//////////////////");
+        //在这里写你要在后运行行的代码
+        //[app endBackgroundTask:bgTask];
+        //bgTask = UIBackgroundTaskInvalid;
+    });
+}
+
+- (void)scheduleAlarmForDate:(NSDate*)theDate
+{
+    //theDate延迟多长时间弹出
+    UIApplication* app = [UIApplication sharedApplication];
+    NSArray* oldNotifications = [app scheduledLocalNotifications];
+    // Clear out the old notification before scheduling a new one.
+    if ([oldNotifications count] > 0)
+        [app cancelAllLocalNotifications];
+    // Create a new notification.
+    UILocalNotification* alarm = [[UILocalNotification alloc] init];
+    if (alarm)
+    {
+        alarm.fireDate = theDate;
+        alarm.timeZone = [NSTimeZone defaultTimeZone];
+        alarm.repeatInterval = 0;
+        alarm.soundName = @"alarmsound.caf";
+        alarm.alertBody = @"Time to wake up!";
+        [app scheduleLocalNotification:alarm];
+    }
+}
+
 @end
