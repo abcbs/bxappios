@@ -19,10 +19,18 @@
 @end
 
 @implementation PoiDetailViewController
-@synthesize poi = _poi;
+//@synthesize poi = _poi;
 @synthesize tableView = _tableView;
+@synthesize poiCopy=_poiCopy;
 
 #pragma mark - Utility
+-(AMapPOI *)poi{
+    if (self.poiCopy!=nil){
+        return self.poiCopy.poi;
+    }else{
+        return _poi;
+    }
+}
 
 - (NSString *)titleForIndexPath:(NSIndexPath *)indexPath
 {

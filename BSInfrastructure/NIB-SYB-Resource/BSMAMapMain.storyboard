@@ -240,7 +240,7 @@
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                             </button>
-                                            <searchBar opaque="NO" contentMode="redraw" fixedFrame="YES" placeholder="天安门" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ft1-LL-WwS" userLabel="地址检索">
+                                            <searchBar opaque="NO" tag="10" contentMode="redraw" fixedFrame="YES" placeholder="天安门" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ft1-LL-WwS" userLabel="地址检索">
                                                 <rect key="frame" x="110" y="18" width="191" height="44"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -332,12 +332,18 @@
                                                 <state key="normal" title="收藏">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="favClick:" destination="SJt-da-KIZ" eventType="touchUpInside" id="22B-WH-UHf"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uge-4e-AOS">
                                                 <rect key="frame" x="215" y="155" width="47" height="30"/>
                                                 <state key="normal" title="查看">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="favBrowserClick:" destination="SJt-da-KIZ" eventType="touchUpInside" id="n5V-JD-RSP"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K5u-lJ-aFi">
                                                 <rect key="frame" x="0.0" y="100" width="336" height="2"/>
@@ -351,6 +357,9 @@
                                                 <state key="normal" title="取消">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="favDeleteClick:" destination="SJt-da-KIZ" eventType="touchUpInside" id="Vbx-9x-7CP"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -384,7 +393,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C1K-am-6fm">
+                                            <searchBar tag="100" contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C1K-am-6fm">
                                                 <rect key="frame" x="97" y="56" width="208" height="44"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </searchBar>
@@ -494,8 +503,6 @@
                         <outlet property="endAddressText" destination="TD0-YC-LL9" id="WT8-gt-ryk"/>
                         <outlet property="endCityText" destination="a3h-fP-Xp2" id="ydm-3w-OWq"/>
                         <outlet property="favBrowser" destination="uge-4e-AOS" id="jOz-XH-9R1"/>
-                        <outlet property="favBrowserClick" destination="uge-4e-AOS" id="u6x-Ae-E2N"/>
-                        <outlet property="favClick" destination="l3u-ED-Wti" id="wBl-VM-4wD"/>
                         <outlet property="favDelete" destination="fhs-gn-W6A" id="6pt-33-cst"/>
                         <outlet property="favSave" destination="l3u-ED-Wti" id="gp7-4V-pBM"/>
                         <outlet property="geoAction" destination="dqA-DW-7gQ" id="lF4-OC-scf"/>

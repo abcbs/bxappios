@@ -1658,6 +1658,8 @@
 		84FD20DD1BABAE4000FB83C7 /* MyAMapReGeocode.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FD20DB1BABAE4000FB83C7 /* MyAMapReGeocode.m */; };
 		84FD20E01BABC04F00FB83C7 /* MyPOIAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FD20DF1BABC04F00FB83C7 /* MyPOIAnnotation.m */; };
 		84FD20E11BABC04F00FB83C7 /* MyPOIAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FD20DF1BABC04F00FB83C7 /* MyPOIAnnotation.m */; };
+		84FD20E41BABF50C00FB83C7 /* MyAMapPOI.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FD20E31BABF50C00FB83C7 /* MyAMapPOI.m */; };
+		84FD20E51BABF50C00FB83C7 /* MyAMapPOI.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FD20E31BABF50C00FB83C7 /* MyAMapPOI.m */; };
 		A04366AF1AD7B550005842EE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A04366AE1AD7B550005842EE /* main.m */; };
 		A04366BA1AD7B550005842EE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A04366B91AD7B550005842EE /* Images.xcassets */; };
 		A05E9BDF1AE79DD5008C97C9 /* KTTabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A05E9BDE1AE79DD5008C97C9 /* KTTabBarButton.m */; };
@@ -3003,6 +3005,8 @@
 		84FD20DB1BABAE4000FB83C7 /* MyAMapReGeocode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAMapReGeocode.m; sourceTree = "<group>"; };
 		84FD20DE1BABC04F00FB83C7 /* MyPOIAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPOIAnnotation.h; sourceTree = "<group>"; };
 		84FD20DF1BABC04F00FB83C7 /* MyPOIAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPOIAnnotation.m; sourceTree = "<group>"; };
+		84FD20E21BABF50C00FB83C7 /* MyAMapPOI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAMapPOI.h; sourceTree = "<group>"; };
+		84FD20E31BABF50C00FB83C7 /* MyAMapPOI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAMapPOI.m; sourceTree = "<group>"; };
 		886ADE756FA5F0898C847C9D /* libPods-KT-LS-Controller.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KT-LS-Controller.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FCA45FC7E90066EB24B7BB5 /* Pods-KT-MODEL-MODULE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KT-MODEL-MODULE.release.xcconfig"; path = "Pods/Target Support Files/Pods-KT-MODEL-MODULE/Pods-KT-MODEL-MODULE.release.xcconfig"; sourceTree = "<group>"; };
 		9716BBC36AB1843CB19C2918 /* libPods-KT-OPERATORS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KT-OPERATORS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -5423,6 +5427,8 @@
 				84FD20DB1BABAE4000FB83C7 /* MyAMapReGeocode.m */,
 				84FD20DE1BABC04F00FB83C7 /* MyPOIAnnotation.h */,
 				84FD20DF1BABC04F00FB83C7 /* MyPOIAnnotation.m */,
+				84FD20E21BABF50C00FB83C7 /* MyAMapPOI.h */,
+				84FD20E31BABF50C00FB83C7 /* MyAMapPOI.m */,
 			);
 			path = MAMAPModels;
 			sourceTree = "<group>";
@@ -7269,6 +7275,7 @@
 				84BF8FDC1B4AC2FA001042F1 /* BSTableViewMultCellData.m in Sources */,
 				84DAA4A51B7AE6120070BF83 /* BSRSACrypto.m in Sources */,
 				84BF8FDE1B4AC2FA001042F1 /* BSUITabBarCommonController.m in Sources */,
+				84FD20E51BABF50C00FB83C7 /* MyAMapPOI.m in Sources */,
 				84F34E491BA6FFFD00188756 /* BSMAMapRadarUploadViewController.m in Sources */,
 				84BF8FE01B4AC2FA001042F1 /* BSContentObjectNavigation.m in Sources */,
 				84BF8FE21B4AC2FA001042F1 /* BSFCRollingADImageUIView.m in Sources */,
@@ -7536,6 +7543,7 @@
 				848058151B39A377005817D7 /* BSFCRollingADImageUIView.m in Sources */,
 				84EC6B581BA2A3EE00EE529B /* BSNetworkNotify.m in Sources */,
 				845A02411B3DE9FE007F5327 /* BSUISingleImageTableViewCell.m in Sources */,
+				84FD20E41BABF50C00FB83C7 /* MyAMapPOI.m in Sources */,
 				84820A601B285ECA0093B87B /* KTWaterDetailsViewController.m in Sources */,
 				844570D91B4D67D5000CA1C7 /* BTLECentralViewController.m in Sources */,
 				842043781B2991770002C868 /* DLUtility.m in Sources */,

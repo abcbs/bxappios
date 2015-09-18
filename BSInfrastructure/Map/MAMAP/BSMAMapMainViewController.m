@@ -18,6 +18,7 @@
 #import "InvertGeoDetailViewController.h"
 #import "POIAnnotation.h"
 #import "PoiDetailViewController.h"
+#import "MyAMapPOI.h"
 
 #define RightCallOutTag 1
 #define LeftCallOutTag 2
@@ -25,7 +26,10 @@
 @interface BSMAMapMainViewController ()<UIGestureRecognizerDelegate ,UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate>{
     UIImage *screenshotImage ;
     int curPage;
+    int controllerIndex;
+    CLLocationCoordinate2D endCoordinate;
 }
+
 
 
 //导航栏中显示和隐藏地图控制区域
@@ -42,6 +46,7 @@
 @property (nonatomic, strong) CAShapeLayer *shapeLayer;
 
 @property (nonatomic, strong) MAPointAnnotation *pointAnnotation;
+
 @property (nonatomic, strong) MACircle *circle;
 
 @property (nonatomic, strong) NSMutableArray *tips;
@@ -228,10 +233,17 @@
     
     self.shapeLayer.hidden=YES;
     
-    //
+    //地址搜索
     addressSearchBar.translucent  = YES;
     addressSearchBar.delegate     = self;
     addressSearchBar.keyboardType = UIKeyboardTypeDefault;
+    
+    //
+    endAddressSearchBar.translucent  = YES;
+    endAddressSearchBar.delegate     = self;
+    endAddressSearchBar.keyboardType = UIKeyboardTypeDefault;
+    
+    
     tableView.dataSource=self;
     tableView.delegate=self;
 
@@ -251,9 +263,7 @@
         NSString* showmeg = [NSString stringWithFormat:@"点击获得经纬度,当前经度:%f,当前纬度:%f",coordinate.longitude,coordinate.latitude];
         
         _showMsgLabel.text = showmeg;
-        
-        
-        
+
         longitudeText.text = [NSString stringWithFormat:@"%f",
                               coordinate.longitude];//纬度
         
@@ -270,7 +280,7 @@
     
     regeo.location = [AMapGeoPoint locationWithLatitude:coordinate.latitude longitude:coordinate.longitude];
     regeo.requireExtension = YES;
-    regeo.radius=5000;
+    regeo.radius=[rangRadius.text doubleValue];
     [self.search AMapReGoecodeSearch:regeo];
 }
 
@@ -305,6 +315,7 @@
 - (void)clear
 {
     [self.mapView removeAnnotations:self.mapView.annotations];
+    [self.mapView removeOverlays:self.mapView.annotations];
     [self.tips removeAllObjects];
 }
 
@@ -316,100 +327,6 @@
     [self searchGeocodeWithKey:key];
 }
 
-//正向进入详细
-- (void)gotoDetailForGeocode:(AMapGeocode *)geocode
-{
-    if (geocode != nil)
-    {
-        MyAMapGeocode *myAMapGeocode=[[MyAMapGeocode alloc]initWithAMapGeocode:geocode];
-        BSTableContentObject *geoDetailContentObject=[BSTableContentObject
-                                     initWithContentObject:nil
-                                     methodName:@"geocodeCopy" imageName:nil
-                                     colClass:[GeoDetailViewController class]];
- 
-        geoDetailContentObject.neededMethodData=myAMapGeocode;
-        [self navigating:geoDetailContentObject];
-
-    }
-}
-
-//反向进入详细
-- (void)gotoDetailForReGeocode:(AMapReGeocode *)reGeocode
-{
-    if (reGeocode != nil)
-    {
-        /*
-        InvertGeoDetailViewController *invertGeoDetailViewController = [[InvertGeoDetailViewController alloc] init];
-        
-        invertGeoDetailViewController.reGeocode = reGeocode;
-        
-        [self.navigationController pushViewController:invertGeoDetailViewController animated:YES];
-        */
-        MyAMapReGeocode *myReAMapGeocode=[[MyAMapReGeocode alloc]initWithAMapReGeocode:reGeocode];
-        
-        BSTableContentObject *reGeocodeContentObject=[BSTableContentObject
-             initWithContentObject:nil
-              methodName:@"reGeocodeCopy" imageName:nil
-              colClass:[InvertGeoDetailViewController class]];
-        
-        reGeocodeContentObject.neededMethodData=myReAMapGeocode;
-        [self navigating:reGeocodeContentObject];
-
-    }
-}
-
-#pragma mark - AMapSearchDelegate
-//地图标注点击事件
-- (void)mapView:(MAMapView *)mapView annotationView:(MAAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
-{
-    if ([view.annotation isKindOfClass:[GeocodeAnnotation class]])
-    {
-        [self gotoDetailForGeocode:[(GeocodeAnnotation*)view.annotation geocode]];
-    }
-    if ([view.annotation isKindOfClass:[ReGeocodeAnnotation class]]){
-        [self mapView:mapView annotationViewForRevertGeo:view calloutAccessoryControlTapped:control];
-    }
-    if ([view.annotation isKindOfClass:[POIAnnotation class]]){
-        [self mapView:mapView annotationPOIAnnotationView:view calloutAccessoryControlTapped:control];
-    }
-}
-
-- (void)mapView:(MAMapView *)mapView annotationViewForRevertGeo:(MAAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
-{
-        if ([control tag] == RightCallOutTag)
-        {
-            [self gotoDetailForReGeocode:[(ReGeocodeAnnotation*)view.annotation reGeocode]];
-        }
-        else if([control tag] == LeftCallOutTag)
-        {
-            MANaviConfig *config = [MANaviConfig new];
-            config.destination = view.annotation.coordinate;
-            config.appScheme = [self getApplicationScheme];
-            config.appName = [self getApplicationName];
-            // config.style = MADrivingStrategyFastest;
-            //调客户端
-            if(![MAMapURLSearch openAMapNavigation:config])
-            {
-                [MAMapURLSearch getLatestAMapApp];
-            }
-        }
-}
-
-- (void)mapView:(MAMapView *)mapView annotationPOIAnnotationView:(MAAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
-{
-    id<MAAnnotation> annotation = view.annotation;
-    
-    if ([annotation isKindOfClass:[POIAnnotation class]])
-    {
-        POIAnnotation *poiAnnotation = (POIAnnotation*)annotation;
-        
-        PoiDetailViewController *detail = [[PoiDetailViewController alloc] init];
-        detail.poi = poiAnnotation.poi;
-        
-        /* 进入POI详情页面. */
-        [self.navigationController pushViewController:detail animated:YES];
-    }
-}
 /* 输入提示回调. */
 - (void)onInputTipsSearchDone:(AMapInputTipsSearchRequest *)request response:(AMapInputTipsSearchResponse *)response
 {
@@ -434,10 +351,18 @@
 #pragma mark - UISearchBarDelegate
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
+    
     NSString *key = searchBar.text;
     [self searchTipsWithKey:key];
-    [addressSearchBar resignFirstResponder];
     [tableView setHidden:NO];
+     //需要区别对待两个不同的
+    if (controllerIndex==2) {
+        [endAddressSearchBar resignFirstResponder];
+    }else{
+        [addressSearchBar resignFirstResponder];
+        //搜索时停止定位
+        [self localtionStopAction];
+    }
 }
 
 #pragma mark - UITableViewDataSource
@@ -467,9 +392,6 @@
     AMapTip *tip = self.tips[indexPath.row];
     
     cell.textLabel.text = tip.name;
-    
-    
-    
     return cell;
 }
 
@@ -477,15 +399,22 @@
 
 - (void)tableView:(UITableView *)tableview didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    //搜索结果
     AMapTip *tip = self.tips[indexPath.row];
-    
     [self clearAndSearchGeocodeWithKey:tip.name];
-    addressSearchBar.placeholder = tip.name;
-    addressSearchBar.text=tip.name;
-    addressText.text=tip.name;
-    //[self.mapView setHidden:NO];
     tableView.hidden=YES;
-}
+    if (controllerIndex==2) {
+        [endAddressSearchBar resignFirstResponder];
+        endAddressSearchBar.placeholder = tip.name;
+        endAddressSearchBar.text=tip.name;
+        endAddressText.text=tip.name;
+
+    }else{
+        addressSearchBar.placeholder = tip.name;
+        addressSearchBar.text=tip.name;
+        addressText.text=tip.name;
+    }
+   }
 
 - (void)initShapeLayer
 {
@@ -510,18 +439,21 @@
     NSInteger index = controllerSegmented.selectedSegmentIndex;
     switch (index) {
         case 0://基本的
+            controllerIndex=0;
             [baseUIControllerView setHidden:NO];
             [localtionUIControllerView setHidden:YES];
             [searchUIControllerView setHidden:YES];
             break;
             
         case 1://检查
+            controllerIndex=1;
             [baseUIControllerView setHidden:YES];
             [localtionUIControllerView setHidden:YES];
             [searchUIControllerView setHidden:NO];
             break;
             
         case 2://定位
+            controllerIndex=2;
             [baseUIControllerView setHidden:YES];
             [localtionUIControllerView setHidden:NO];
             [searchUIControllerView setHidden:YES];
@@ -620,6 +552,13 @@
     }
     
     self.mapView.showsUserLocation = !sender.selectedSegmentIndex;
+}
+
+- (void)localtionStopAction
+{
+    modeUserLocationSegment.enabled=NO;
+    self.mapView.showsUserLocation = NO;
+    self.mapView.userTrackingMode = MAUserTrackingModeNone;
 }
 
 - (void)modeAction:(UISegmentedControl *)sender
@@ -765,8 +704,112 @@
     
 }
 
+#pragma mark -高德地图操作
+//正向进入详细
+- (void)gotoDetailForGeocode:(AMapGeocode *)geocode
+{
+    if (geocode != nil)
+    {
+        MyAMapGeocode *myAMapGeocode=[[MyAMapGeocode alloc]initWithAMapGeocode:geocode];
+        BSTableContentObject *geoDetailContentObject=[BSTableContentObject
+                                                      initWithContentObject:nil
+                                                      methodName:@"geocodeCopy" imageName:nil
+                                                      colClass:[GeoDetailViewController class]];
+        
+        geoDetailContentObject.neededMethodData=myAMapGeocode;
+        [self navigating:geoDetailContentObject];
+        
+    }
+}
+
+//反向进入详细
+- (void)gotoDetailForReGeocode:(AMapReGeocode *)reGeocode
+{
+    if (reGeocode != nil)
+    {
+
+        MyAMapReGeocode *myReAMapGeocode=[[MyAMapReGeocode alloc]initWithAMapReGeocode:reGeocode];
+        
+        BSTableContentObject *reGeocodeContentObject=[BSTableContentObject
+                                                      initWithContentObject:nil
+                                                      methodName:@"reGeocodeCopy" imageName:nil
+                                                      colClass:[InvertGeoDetailViewController class]];
+        
+        reGeocodeContentObject.neededMethodData=myReAMapGeocode;
+        [self navigating:reGeocodeContentObject];
+        
+    }
+}
 
 #pragma mark -高德地图
+#pragma mark - AMapSearchDelegate
+
+//检索之后点击地图上冒泡后的动作
+- (void)mapView:(MAMapView *)mapView annotationView:(MAAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
+{
+    if ([view.annotation isKindOfClass:[GeocodeAnnotation class]])
+    {
+        [self gotoDetailForGeocode:[(GeocodeAnnotation*)view.annotation geocode]];
+    }
+    if ([view.annotation isKindOfClass:[ReGeocodeAnnotation class]]){
+        [self mapView:mapView annotationViewForRevertGeo:view calloutAccessoryControlTapped:control];
+    }
+    if ([view.annotation isKindOfClass:[POIAnnotation class]]){
+        [self mapView:mapView annotationPOIAnnotationView:view calloutAccessoryControlTapped:control];
+    }
+}
+
+//反向时，地图操作
+- (void)mapView:(MAMapView *)mapView annotationViewForRevertGeo:(MAAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
+{
+    if ([control tag] == RightCallOutTag)
+    {
+        [self gotoDetailForReGeocode:[(ReGeocodeAnnotation*)view.annotation reGeocode]];
+    }
+    else if([control tag] == LeftCallOutTag)
+    {
+        MANaviConfig *config = [MANaviConfig new];
+        config.destination = view.annotation.coordinate;
+        config.appScheme = [self getApplicationScheme];
+        config.appName = [self getApplicationName];
+        // config.style = MADrivingStrategyFastest;
+        //调客户端
+        if(![MAMapURLSearch openAMapNavigation:config])
+        {
+            [MAMapURLSearch getLatestAMapApp];
+        }
+    }
+}
+
+#pragma POI操作
+- (void)mapView:(MAMapView *)mapView annotationPOIAnnotationView:(MAAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
+{
+    id<MAAnnotation> annotation = view.annotation;
+    
+    if ([annotation isKindOfClass:[POIAnnotation class]])
+    {
+        
+        POIAnnotation *poiAnnotation = (POIAnnotation*)annotation;
+        /*
+        PoiDetailViewController *detail = [[PoiDetailViewController alloc] init];
+        detail.poi = poiAnnotation.poi;
+        */
+        //[self.navigationController pushViewController:detail animated:YES];
+        /* 进入POI详情页面. */
+        MyAMapPOI *poiDetail=
+            [[MyAMapPOI alloc]initWithAMapPOI:poiAnnotation.poi];
+        
+        BSTableContentObject *poiDetailContentObject=[BSTableContentObject
+                                                      initWithContentObject:nil
+                                                      methodName:@"poiCopy" imageName:nil
+                                                      colClass:[PoiDetailViewController class]];
+        
+        poiDetailContentObject.neededMethodData=poiDetail;
+        [self navigating:poiDetailContentObject];
+
+    }
+}
+#pragma mark -冒泡动作结束
 
 #pragma mark - MAMapViewDelegate
 /* POI 搜索回调. */
@@ -811,8 +854,6 @@
     }
 }
 
-
-
 /* 地理编码回调.*/
 - (void)onGeocodeSearchDone:(AMapGeocodeSearchRequest *)request response:(AMapGeocodeSearchResponse *)response
 {
@@ -841,16 +882,21 @@
         NSString* showmeg = [NSString stringWithFormat:@"地址:%@,当前经度:%f,当前纬度:%f", geocode.formattedAddress,coor.longitude,coor.latitude];
         
         _showMsgLabel.text = showmeg;
+        //默认为地理检索，如果是路线规划，应当在目的地查询框中做设置标志
+        if (controllerIndex==2) {
+            endCoordinate=coor;
+            endAddressText.text=geocode.formattedAddress;
+        }else{
+            cityText.text=geocode.city;
         
-        cityText.text=geocode.city;
+            addressText.text=geocode.formattedAddress;
         
-        addressText.text=geocode.formattedAddress;
-        
-        longitudeText.text = [NSString stringWithFormat:@"%f",
+            longitudeText.text = [NSString stringWithFormat:@"%f",
                               coor.longitude];//纬度
         
-        latitudeText.text = [NSString stringWithFormat:@"%f",
+            latitudeText.text = [NSString stringWithFormat:@"%f",
                              coor.latitude];//经度
+        }
         [self.mapView setCenterCoordinate:[annotations[0] coordinate] animated:YES];
         
     }
@@ -877,10 +923,20 @@
     }
 }
 
+//定位回调函数
 - (void)mapView:(MAMapView *)mapView didUpdateUserLocation:(MAUserLocation *)userLocation updatingLocation:(BOOL)updatingLocation
 {
     if (!updatingLocation && self.userLocationAnnotationView != nil)
     {
+       
+        //获取定位的信息
+        BSLog(@"onLongClick-latitude==%f,longitude==%f",
+               userLocation.coordinate.latitude, userLocation.coordinate.longitude);
+        
+        NSString* showmeg = [NSString stringWithFormat:@"名称:%@,当前经度:%f,当前纬度:%f",userLocation.subtitle, userLocation.coordinate.longitude, userLocation.coordinate.latitude];
+        latitudeText.text=[NSString stringWithFormat:@"%f", userLocation.coordinate.latitude];
+        longitudeText.text=[NSString stringWithFormat:@"%f", userLocation.coordinate.longitude];
+        _showMsgLabel.text = showmeg;
         [UIView animateWithDuration:0.1 animations:^{
             
             double degree = userLocation.heading.trueHeading;
@@ -891,6 +947,8 @@
 
 }
 
+#pragma mark -定位、检索、反编码回调方法结束
+#pragma mark -高德地图，显示地图信息
 //自定义定位
 - (MAOverlayView *)mapView:(MAMapView *)mapView viewForOverlay:(id <MAOverlay>)overlay
 {
@@ -940,7 +998,7 @@
 //地理编码
 - (MAAnnotationView *)mapView:(MAMapView *)mapView viewForGeocodeAnnotationAnnotation:(id<MAAnnotation>)annotation{
     static NSString *geoCellIdentifier = @"geoCellIdentifier";
-    
+    //地理编码显示
     MAPinAnnotationView *poiAnnotationView = (MAPinAnnotationView*)[self.mapView dequeueReusableAnnotationViewWithIdentifier:geoCellIdentifier];
     if (poiAnnotationView == nil)
     {
@@ -965,7 +1023,7 @@
         if (poiAnnotationView == nil)
         {
             poiAnnotationView = [[MANaviAnnotationView alloc] initWithAnnotation:annotation
-                                                                 reuseIdentifier:invertGeoIdentifier];
+                reuseIdentifier:invertGeoIdentifier];
         }
         
         poiAnnotationView.animatesDrop              = YES;
@@ -978,6 +1036,7 @@
         
         //call online navi by left accessory.
         poiAnnotationView.leftCalloutAccessoryView.tag = LeftCallOutTag;
+        poiAnnotationView.pinColor=MAPinAnnotationColorPurple;
         
         return poiAnnotationView;
     }
@@ -999,6 +1058,7 @@
         
         poiAnnotationView.canShowCallout            = YES;
         poiAnnotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+        poiAnnotationView.pinColor=MAPinAnnotationColorGreen;
         
         return poiAnnotationView;
     }
@@ -1052,6 +1112,15 @@
 
 - (IBAction)poiResultSave:(id)sender {
     
+}
+
+- (IBAction)favClick:(id)sender {
+}
+
+- (IBAction)favBrowserClick:(id)sender {
+}
+
+- (IBAction)favDeleteClick:(id)sender {
 }
 
 

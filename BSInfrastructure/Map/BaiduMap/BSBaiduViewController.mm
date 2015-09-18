@@ -1629,6 +1629,7 @@ static const char *const kOperationQueueName = "kESSLocationCheckOperationQueueN
     NSInteger index = controllerSegmented.selectedSegmentIndex;
     switch (index) {
         case 0://基本的
+            
             [baseUIControllerView setHidden:NO];
             [localtionUIControllerView setHidden:YES];
             [searchUIControllerView setHidden:YES];

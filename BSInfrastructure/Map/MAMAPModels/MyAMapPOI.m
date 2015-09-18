@@ -1,20 +1,21 @@
 //
-//  MyPOIAnnotation.m
+//  MyAMapPOI.m
 //  KTAPP
 //
 //  Created by admin on 15/9/18.
 //  Copyright (c) 2015年 itcast. All rights reserved.
 //
 
-#import "MyPOIAnnotation.h"
+#import "MyAMapPOI.h"
 
-@implementation MyPOIAnnotation
+@implementation MyAMapPOI
 
-- (id)initWithPOIAnnotation:(POIAnnotation *)poinnotation
+
+- (id)initWithAMapPOI:(AMapPOI *)poi
 {
     if (self = [super init])
     {
-        self.poinnotation = poinnotation;
+        self.poi = poi;
     }
     
     return self;

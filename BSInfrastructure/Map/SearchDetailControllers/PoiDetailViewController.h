@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "POIAnnotation.h"
-
+#import "MyAMapPOI.h"
 @interface PoiDetailViewController : UIViewController
 
 @property (nonatomic, strong) AMapPOI *poi;
+
+@property (nonatomic, strong) MyAMapPOI *poiCopy;
 
 @end

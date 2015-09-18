@@ -169,6 +169,7 @@
     //查看共享URL
     IBOutlet UIButton *browseUrlAction;
     
+
     
     
 }
@@ -196,14 +197,13 @@
 
 - (IBAction)poiResultSave:(id)sender;
 
-//收藏
-@property (strong, nonatomic) IBOutlet UIButton *favClick;
 
-//查找收藏
-@property (strong, nonatomic) IBOutlet UIButton *favBrowserClick;
+- (IBAction)favClick:(id)sender;
 
-//删除收藏
-@property (strong, nonatomic) IBOutlet UIButton *favDelete;
+- (IBAction)favBrowserClick:(id)sender;
+
+- (IBAction)favDeleteClick:(id)sender;
+
 
 
 @end
