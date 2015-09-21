@@ -83,6 +83,8 @@
 		8405CBCE1B5577E80014AF8D /* UserPaySessionDomain.m in Sources */ = {isa = PBXBuildFile; fileRef = 8405CBCC1B5577E80014AF8D /* UserPaySessionDomain.m */; };
 		8405CBD21B5578E50014AF8D /* Resources.m in Sources */ = {isa = PBXBuildFile; fileRef = 8405CBD11B5578E50014AF8D /* Resources.m */; };
 		8405CBD31B5578E50014AF8D /* Resources.m in Sources */ = {isa = PBXBuildFile; fileRef = 8405CBD11B5578E50014AF8D /* Resources.m */; };
+		840F51361BB0489D00480C39 /* NSObject+BSSecurity.m in Sources */ = {isa = PBXBuildFile; fileRef = 840F51351BB0489D00480C39 /* NSObject+BSSecurity.m */; };
+		840F51371BB0489D00480C39 /* NSObject+BSSecurity.m in Sources */ = {isa = PBXBuildFile; fileRef = 840F51351BB0489D00480C39 /* NSObject+BSSecurity.m */; };
 		84118EFE1B667AD50052E275 /* BSPhotoTakeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84118EFD1B667AD50052E275 /* BSPhotoTakeViewController.m */; };
 		84118EFF1B667AD50052E275 /* BSPhotoTakeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84118EFD1B667AD50052E275 /* BSPhotoTakeViewController.m */; };
 		8412CA7B1B79EB12004EDFAB /* pkcs8_private_key.pem in Resources */ = {isa = PBXBuildFile; fileRef = 8412CA741B79EB12004EDFAB /* pkcs8_private_key.pem */; };
@@ -1895,6 +1897,8 @@
 		8405CBCC1B5577E80014AF8D /* UserPaySessionDomain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserPaySessionDomain.m; sourceTree = "<group>"; };
 		8405CBD01B5578E50014AF8D /* Resources.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Resources.h; sourceTree = "<group>"; };
 		8405CBD11B5578E50014AF8D /* Resources.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Resources.m; sourceTree = "<group>"; };
+		840F51341BB0489D00480C39 /* NSObject+BSSecurity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+BSSecurity.h"; sourceTree = "<group>"; };
+		840F51351BB0489D00480C39 /* NSObject+BSSecurity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+BSSecurity.m"; sourceTree = "<group>"; };
 		84118EFC1B667AD50052E275 /* BSPhotoTakeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSPhotoTakeViewController.h; sourceTree = "<group>"; };
 		84118EFD1B667AD50052E275 /* BSPhotoTakeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSPhotoTakeViewController.m; sourceTree = "<group>"; };
 		8412CA741B79EB12004EDFAB /* pkcs8_private_key.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pkcs8_private_key.pem; sourceTree = "<group>"; };
@@ -4478,6 +4482,8 @@
 			children = (
 				841F95031B8C54D1001B26B5 /* BSModelSerializer.h */,
 				841F95041B8C54D1001B26B5 /* BSModelSerializer.m */,
+				840F51341BB0489D00480C39 /* NSObject+BSSecurity.h */,
+				840F51351BB0489D00480C39 /* NSObject+BSSecurity.m */,
 			);
 			path = Serializers;
 			sourceTree = "<group>";
@@ -7230,6 +7236,7 @@
 				84EF576E1BAB099E00D8AFE2 /* BusStopDetailViewController.m in Sources */,
 				84DB2F081B7CCB700041588B /* ESSTimer.m in Sources */,
 				84F28FD41B62BB31001078D8 /* BSPhotoViewController.m in Sources */,
+				840F51371BB0489D00480C39 /* NSObject+BSSecurity.m in Sources */,
 				84EF57821BAB099E00D8AFE2 /* PoiDetailViewController.m in Sources */,
 				844570DA1B4D67D5000CA1C7 /* BTLECentralViewController.m in Sources */,
 				844FFE911B8B4C4600658A36 /* BSAesSecurity.m in Sources */,
@@ -7467,6 +7474,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0F0C3E91B10209500CE406D /* CommodityEvaluationResult.m in Sources */,
+				840F51361BB0489D00480C39 /* NSObject+BSSecurity.m in Sources */,
 				A0F0C3EF1B10209500CE406D /* CommodityEvaluationParams.m in Sources */,
 				847432DB1B2A8CE500B030C4 /* MyOrderCell.m in Sources */,
 				84D19FE61B4C36EC00BA25BF /* LeDiscovery.m in Sources */,

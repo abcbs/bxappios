@@ -52,11 +52,11 @@
     if (self.loginUser)
     {
         isEdit = YES;
-        self.anonName.text=self.loginUser.userName;
+        self.anonName.text=self.loginUser.username;
         self.realName.text=self.loginUser.realName;
         self.phone.text=self.loginUser.phoneNum;
-        self.password.text=self.loginUser.passWord;
-        self.againPassword.text=self.loginUser.passWord;
+        self.password.text=self.loginUser.password;
+        self.againPassword.text=self.loginUser.password;
         self.address.text=self.loginUser.address;
         
         if ([self.loginUser.sex  isEqualToString:@"1"]) {
@@ -214,11 +214,11 @@
     if (![self checkRightfulData]) {
         return;
     }
-    self.loginUser.userName=self.anonName.text;
+    self.loginUser.username=self.anonName.text;
     self.loginUser.realName=self.realName.text;
     self.loginUser.sex=[NSString stringWithFormat:@"%ld", sex];
    
-    self.loginUser.passWord= self.password.text;
+    self.loginUser.password= self.password.text;
     self.loginUser.commitCode=self.againPassword.text;
     self.loginUser.address=self.address.text;
     self.loginUser.phoneNum=self.phone.text;
@@ -239,11 +239,11 @@
     {
         //用户注册，由TabBar进入
         self.loginUser=[LoginUser new];
-        self.loginUser.userName=self.anonName.text;
+        self.loginUser.username=self.anonName.text;
         self.loginUser.realName=self.realName.text;
         self.loginUser.sex=[NSString stringWithFormat:@"%ld", sex];
         
-        self.loginUser.passWord= self.password.text;
+        self.loginUser.password= self.password.text;
         self.loginUser.commitCode=self.againPassword.text;
         self.loginUser.address=self.address.text;
         self.loginUser.phoneNum=self.phone.text;

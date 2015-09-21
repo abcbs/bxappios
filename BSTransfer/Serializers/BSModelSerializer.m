@@ -1,29 +1,47 @@
 //
-//  YYHMantleModelSerializer.m
-//  YYHModelRouterExample
 //
 //  Copyright (c) 2015年 KT. All rights reserved.
+//  在HTTP请求的Response和Resquest中增加加密解密内容
 //
 
 #import "BSModelSerializer.h"
 #import "MJExtension.h"
-//#import <Mantle/Mantle.h>
+#import "BSUIFrameworkHeader.h"
+#import "BSIFTTHeader.h"
+#import "LBModelsHeader.h"
+#import "NSObject+BSSecurity.h"
 
-
+@interface BSModelSerializer(){
+    BSSecurity *security;
+}
+@end
 @implementation BSModelSerializer
 
 static NSNumberFormatter *_numberFormatter;
 
-
+-(instancetype)init{
+    self = [super init];
+    if (!self) {
+        return nil;
+    }
+    security=[BSSecurityFactory initBSecurity:BSEncryptionAlgorithmRSA];
+    return self;
+}
 #pragma mark - YYHModelSerialization
 
 - (id)modelForJSONDictionary:(NSDictionary *)jsonDictionary modelClass:(Class)modelClass error:(NSError *__autoreleasing *)error {
-    return [modelClass objectWithKeyValues:jsonDictionary ];
+    //增加加解密处理
+    //Ivar object_setInstanceVariable ( id obj, const char *name, void *value );
+    id object=[modelClass objectWithKeyValues:jsonDictionary ];
+    return object;
 }
 
 - (id)modelsForJSONArray:(NSArray *)jsonArray modelClass:(Class)modelClass error:(NSError *__autoreleasing *)error {
-    return [ modelClass objectWithKeyValues:jsonArray ];
+    id object=[ modelClass objectWithKeyValues:jsonArray ];
+
+    return object;
 }
+
 -(id)objectWithKeyValue:(NSObject *)responseObject
               modelClass:(Class)modelClass{
     id response=[self objectWithPrimaryKeyValue:responseObject
@@ -31,6 +49,7 @@ static NSNumberFormatter *_numberFormatter;
     if (response) {
         return response;
     }else{
+        
         return [modelClass objectWithKeyValues:responseObject];
     }
     return responseObject;
@@ -85,6 +104,33 @@ static NSNumberFormatter *_numberFormatter;
 - (id)objectArrayWithKeyValuesArray:(NSArray *)jsonArray
                          modelClass:(Class)modelClass
 {
-    return [ modelClass objectArrayWithKeyValuesArray:jsonArray ];
+    id keyValuesArray= [ modelClass objectArrayWithKeyValuesArray:jsonArray ];
+    //
+    NSMutableArray *modelArray = [NSMutableArray array];
+    // 3.遍历 配置方法 LiuJQ
+    for (NSDictionary *keyValues in keyValuesArray) {
+         //安全配置处理
+         [modelArray addObject:[keyValues encrypt:modelClass]];
+    }
+    
+    return modelArray;
+}
+
+/**
+ *请求加密处理，
+ */
+- (NSDictionary *)jsonDictionaryForModel:(NSObject *)object modelClass:(Class)modelClass error:(NSError **)error{
+    if ([object isKindOfClass:[NSDictionary class]]) {
+        return (NSDictionary *)object;
+    }
+    //加解密处理
+    if ([modelClass isSubclassOfClass:[LoginUser class]]) {
+        LoginUser *objResponse= (LoginUser *)object;
+        NSString *encrAcc=[security encryptString:objResponse.username];
+        [objResponse setValue:encrAcc forKey:@"username"];
+        NSDictionary * dic=[object keyValues];
+        return dic;
+    }
+    return nil;
 }
 @end

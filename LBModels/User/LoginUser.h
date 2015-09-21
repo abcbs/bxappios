@@ -11,7 +11,7 @@
 
 @interface LoginUser : NSObject
 //用户名
-@property (nonatomic, retain)NSString *userName;
+@property (nonatomic, retain)NSString *username;
 //真实姓名
 @property (nonatomic, retain)NSString *realName;
 //性别
@@ -21,15 +21,15 @@
 //验证码
 @property (nonatomic, retain)NSString *yanZhengCode;
 //密码
-@property (nonatomic ,retain)NSString *passWord;
+@property (nonatomic ,retain)NSString *password;
 //确认密码
 @property (nonatomic ,retain)NSString* commitCode;
 //详细地址
 @property (nonatomic, retain)NSString *address;
 //登陆者UseBaseId
-@property (nonatomic, assign)NSInteger userId;
+@property (nonatomic, assign)NSNumber * userId;
 //所属商户
-@property (nonatomic, assign) NSInteger businessId;
+@property (nonatomic, assign) NSNumber * businessId;
 
 @property (nonatomic,retain) UIImage *headerImage;
 

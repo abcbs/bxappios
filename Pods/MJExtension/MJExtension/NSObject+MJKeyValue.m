@@ -128,6 +128,7 @@ static NSNumberFormatter *_numberFormatter;
             id value = keyValues ;
             NSArray *propertyKeys = [property propertyKeysFromClass:[self class]];
             for (MJPropertyKey *propertyKey in propertyKeys) {
+                //获取的原始值 LiuJQ
                 value = [propertyKey valueInObject:value];
             }
             
@@ -232,7 +233,7 @@ static NSNumberFormatter *_numberFormatter;
     // 2.创建数组
     NSMutableArray *modelArray = [NSMutableArray array];
     
-    // 3.遍历
+    // 3.遍历 配置方法 LiuJQ
     for (NSDictionary *keyValues in keyValuesArray) {
         if ([keyValues isKindOfClass:[NSArray class]]){
             [modelArray addObject:[self objectArrayWithKeyValuesArray:keyValues context:context error:error]];

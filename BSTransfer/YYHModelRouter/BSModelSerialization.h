@@ -19,4 +19,8 @@
 -(id)objectWithKeyValue:(NSObject *)responseObject
              modelClass:(Class)modelClass;
 
+
+- (NSDictionary *)jsonDictionaryForModel:(NSObject *)object modelClass:(Class)modelClass error:(NSError **)error;
+
+
 @end

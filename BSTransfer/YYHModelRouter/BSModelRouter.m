@@ -345,8 +345,11 @@ static BSDigestAuthorization *digestAuthorization;
     if ([responseObject isKindOfClass:[NSDictionary class]]) {
         return [self serializedModelForJSONDictionary:responseObject modelClass:modelClass error:error];
     } else if ([responseObject isKindOfClass:[NSArray class]]) {
-        return [self serializedModelsForJSONArray:responseObject
-                                       modelClass:modelClass ];
+        id objectArray=[self serializedModelsForJSONArray:responseObject
+                                               modelClass:modelClass ];
+        
+        return objectArray;
+        
     }else  if ([responseObject isKindOfClass:[NSObject class]]) {
         return [self serializedModelsForJSONObject:responseObject
                                         modelClass:modelClass];

@@ -87,9 +87,9 @@
 -(void)display{
     
     if (self.loginUser) {
-        self.anonName.text=self.loginUser.userName;
+        self.anonName.text=self.loginUser.username;
         self.realName.text=self.loginUser.realName;
-        self.password.text=self.loginUser.passWord;
+        self.password.text=self.loginUser.password;
         self.address.text=self.loginUser.address;
         self.phone.text=self.loginUser.phoneNum;
 

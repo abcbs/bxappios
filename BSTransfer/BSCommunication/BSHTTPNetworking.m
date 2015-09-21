@@ -12,15 +12,18 @@
 #import "LoginUser.h"
 #import "UserSession.h"
 #import "BSDigestAuthorization.h"
+#import "BSModelSerializer.h"
 
 @interface BSHTTPNetworking (){
-    
+    //modelSerializer = [[BSModelSerializer alloc] init];
+    //BSModelSerializer *modelSerializer;
 }
 
 @property (nonatomic, strong) AFHTTPRequestOperationManager *bsmanager;
 
 @property (nonatomic, strong) BSModelRouter *router;
 
+@property (nonatomic, strong) BSModelSerializer *modelSerializer;
 
 @end
 
@@ -53,7 +56,11 @@ static int loginRetryNumber;
     if (!self) {
         return nil;
     }
+    if (!self.modelSerializer) {
+        self.modelSerializer=[[BSModelSerializer alloc] init];
+    }
     if(!self.router) {
+        
         self.router=  [[BSModelRouter alloc]
                        initWithBaseURL:[NSURL URLWithString:KBS_URL]];
         digestAuthorization=[BSDigestAuthorization instaceDigestAuthorization];
@@ -160,14 +167,14 @@ static int loginRetryNumber;
 }
 
 +(void)httpPOST:(NSString *)restPath
-    pathPattern:(NSString * )pathPattern
+    pathPattern:(Class  )paramModel
      parameters:(id)parameters
      modelClass:(Class)modelClass
      keyPath:(NSString *)keyPath
      block:(BSHTTPResponse)block
 {
     [self httpPOST:restPath
-       pathPattern:pathPattern
+       pathPattern:paramModel
         parameters:parameters
         modelClass:modelClass
         keyPath:keyPath
@@ -177,7 +184,7 @@ static int loginRetryNumber;
 }
 
 +(void)httpPOST:(NSString *)restPath
-    pathPattern:(NSString * )pathPattern
+    pathPattern:(Class  )paramModel
     parameters:(id)parameters
     modelClass:(Class)modelClass
     keyPath:(NSString *)keyPath
@@ -185,7 +192,7 @@ static int loginRetryNumber;
     errorUILabel:( UILabel *)errorUILabel
 {
     BSHTTPNetworking * bshttp=[self httpManager];
-    [bshttp  post:restPath pathPattern:pathPattern
+    [bshttp  post:restPath pathPattern:paramModel
             parameters:parameters
             modelClass:modelClass
             keyPath:keyPath
@@ -195,12 +202,12 @@ static int loginRetryNumber;
 }
 
 -(void)post:(NSString *)restPath
-    pathPattern:(NSString * )pathPattern
+    pathPattern:(Class  )paramModel
     parameters:(id)parameters
     modelClass:(Class)modelClass
     keyPath:(NSString *)keyPath
       block:(BSHTTPResponse)block{
-    [self  post:restPath pathPattern:pathPattern
+    [self  post:restPath pathPattern:paramModel
             parameters:parameters
             modelClass:modelClass
             keyPath:keyPath
@@ -212,7 +219,7 @@ static int loginRetryNumber;
 
 #pragma mark - BSHTTP HandlesHttp Restful Post ,Data Model Descrited JMExtension
 -(void)post:(NSString *)restPath
-    pathPattern:(NSString * )pathPattern
+    pathPattern:(Class  )paramModel
     parameters:(id)parameters
     modelClass:(Class)modelClass
     keyPath:(NSString *)keyPath
@@ -228,14 +235,17 @@ static int loginRetryNumber;
     if (netStatus!=nil&&[netStatus isEqualToString:@"noNet"]) {
         return ;
     }
-    //uri=pathPattern;
-    uri=[[NSString alloc]initWithFormat:@"%@%@",KBS_URL,pathPattern];
+    
+    uri=[[NSString alloc]initWithFormat:@"%@%@",KBS_URL,restPath];
     httpMethod=@"POST";
     //[BSHTTPNetworking httpManager];
+    //如果是post方法，当传入的参数不是字典时，需要做转换
+    NSDictionary * params=[self.modelSerializer jsonDictionaryForModel:parameters modelClass:paramModel error:nil ];
+    //参数转换完成
     [digestAuthorization ncDisgest:uri];
-    [router routePOST:pathPattern modelClass:[modelClass class] keyPath:keyPath];
+    [router routePOST:restPath modelClass:[modelClass class] keyPath:keyPath];
     
-    [router POST:restPath parameters:parameters
+    [router POST:restPath parameters:params
          success:[self block:block errorUILabel:errorUILabel]
          failure:[self block:block failure:nil errorUILabel:errorUILabel]
     ];
@@ -271,7 +281,7 @@ static int loginRetryNumber;
 }
 
 +(void)httpAuthorizationPOST:(NSString *)restPath
-                 pathPattern:(NSString * )pathPattern
+                 pathPattern:(Class )pathPattern
                   parameters:(id)parameters
                   modelClass:(Class)modelClass
                      keyPath:(NSString *)keyPath
@@ -341,10 +351,10 @@ static int loginRetryNumber;
         if ([localizedDescription containsString:@"401"]&&loginRetryNumber<AUTHORIZATION_RETRY) {
             //权限认证出现异常,则再次请求
             loginRetryNumber++;
-             NSDictionary *dicLogin = [NSDictionary dictionaryWithObjectsAndKeys:loginUser.userName,@"username",
-                loginUser.passWord,@"password", nil];
+             NSDictionary *dicLogin = [NSDictionary dictionaryWithObjectsAndKeys:loginUser.username,@"username",
+                loginUser.password,@"password", nil];
             [BSHTTPNetworking httpAuthorizationPOST:USER_LOGIN_SCHEMA
-                           pathPattern:USER_LOGIN_SCHEMA
+                           pathPattern:[LoginUser class]
                             parameters:dicLogin
                             modelClass:[UserSession class]
                                keyPath:@""

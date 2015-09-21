@@ -192,8 +192,8 @@ static UserSession *session;
           blockArray:(BSHTTPResponse)block{
     BSLog(@"loginWithUser");
     UserSession *us=[UserSession new];
-    us.sessionId=[user.userName md5_base64];
-    us.username=user.userName;
+    us.sessionId=[user.username md5_base64];
+    us.username=user.username;
     us.status=@"1";
     if (block) {
         block(us,nil,nil);

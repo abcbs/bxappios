@@ -62,8 +62,17 @@ typedef void (^BSHTTPRequestFailure)(NSError *error);
     keyPath:(NSString *)keyPath
     block:(BSHTTPResponse)block;
 
+/**
+ *    @param restPath POST请求restPath为请求URL
+ *
+ *    @param pathPattern 在post同restPath保持一致
+ *
+ *    @  请求参数默认为字典，parameters
+ *
+ *     modelClass
+ **/
 +(void)httpPOST:(NSString *)restPath
-        pathPattern:(NSString * )pathPattern
+        pathPattern:(Class )paramModel
         parameters:(id)parameters
         modelClass:(Class)modelClass
         keyPath:(NSString *)keyPath
@@ -71,7 +80,7 @@ typedef void (^BSHTTPRequestFailure)(NSError *error);
         errorUILabel:( UILabel *)errorUILabel;
 
 +(void)httpPOST:(NSString *)restPath
-    pathPattern:(NSString * )pathPattern
+    pathPattern:(Class  )paramModel
      parameters:(id)parameters
      modelClass:(Class)modelClass
         keyPath:(NSString *)keyPath
@@ -81,7 +90,7 @@ typedef void (^BSHTTPRequestFailure)(NSError *error);
  * Http Restful Post ,Data Model Descrited JMExtension
  */
 -(void)post:(NSString *)restPath
-    pathPattern:(NSString * )pathPattern
+    pathPattern:(Class  )paramModel
     parameters:(id)parameters
     modelClass:(Class)modelClass
     keyPath:(NSString *)keyPath
@@ -89,7 +98,7 @@ typedef void (^BSHTTPRequestFailure)(NSError *error);
     errorUILabel:( UILabel *)errorUILabel;
 
 -(void)post:(NSString *)restPath
-pathPattern:(NSString * )pathPattern
+    pathPattern:(Class  )paramModel
     parameters:(id)parameters
     modelClass:(Class)modelClass
     keyPath:(NSString *)keyPath

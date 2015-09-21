@@ -76,7 +76,7 @@
     LoginUser *lu=_bsList[indexPath.row];
     cell.textLabel.text = lu.realName;
     
-    cell.detailTextLabel.text = lu.userName;
+    cell.detailTextLabel.text = lu.username;
     //p的图片，在服务端为资源标示
     if (lu.headerImage) {
         cell.imageView.image = lu.headerImage;

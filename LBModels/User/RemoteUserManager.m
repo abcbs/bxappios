@@ -24,7 +24,7 @@ static RemoteUserManager *instance;
             blockArray:(BSHTTPResponse)block{
     NSDictionary *dic1 = [NSDictionary dictionaryWithObjectsAndKeys:user.realName,@"name",user.address,@"address",user.phoneNum,@"phone",nil];
     NSDictionary *dic2 = [NSDictionary dictionaryWithObjectsAndKeys:user.sex,@"sex",nil];
-    NSDictionary *dic3 = [NSDictionary dictionaryWithObjectsAndKeys:user.userName,@"username",user.passWord,@"password",user.commitCode,@"confirmPassword",nil];
+    NSDictionary *dic3 = [NSDictionary dictionaryWithObjectsAndKeys:user.username,@"username",user.password,@"password",user.commitCode,@"confirmPassword",nil];
     NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:dic1,@"userBase",dic2,@"userDetailed",dic3,@"loginUser", nil];
     
     [BSHTTPNetworking httpPOST:USER_REGISTER_SCHEMA
@@ -61,12 +61,12 @@ static RemoteUserManager *instance;
 -(void)loginWithUser:(LoginUser *) user
           blockArray:(BSHTTPResponse)block{
     
-    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:user.userName,@"username",user.passWord,@"password", nil];
+    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:user.username,@"username",user.password,@"password", nil];
     //设置登陆得密码
     [BSHTTPNetworking currentUser:user];
     [BSHTTPNetworking httpPOST:USER_LOGIN_SCHEMA
-                   pathPattern:USER_LOGIN_SCHEMA
-                    parameters:dic
+                   pathPattern:[LoginUser class]
+                    parameters:user
                     modelClass:[UserSession class]
                        keyPath:@""
                          block:(BSHTTPResponse)block

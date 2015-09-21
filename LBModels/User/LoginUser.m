@@ -17,7 +17,7 @@
 - (void)encodeWithCoder:(NSCoder *)aCoder
 {
     //用户名
-    [aCoder encodeObject:_userName forKey:@"userName"];
+    [aCoder encodeObject:_username forKey:@"username"];
     
     //真实姓名
     [aCoder encodeObject:_realName forKey:@"realName"];
@@ -32,7 +32,7 @@
     [aCoder encodeObject:_yanZhengCode forKey:@"yanZhengCode"];
     
     //密码
-    [aCoder encodeObject:_passWord forKey:@"passWord"];
+    [aCoder encodeObject:_password forKey:@"password"];
     
     //确认密码
     [aCoder encodeObject:_commitCode forKey:@"commitCode"];
@@ -56,7 +56,7 @@
 {
     
     //用户名
-    _userName=[aDecoder decodeObjectForKey:@"userName"];
+    _username=[aDecoder decodeObjectForKey:@"username"];
     //真实姓名
     _realName=[aDecoder decodeObjectForKey:@"realName"];
     //性别
@@ -69,7 +69,7 @@
     _yanZhengCode=[aDecoder decodeObjectForKey:@"yanZhengCode"];
     
     //密码
-    _passWord=[aDecoder decodeObjectForKey:@"passWord"];
+    _password=[aDecoder decodeObjectForKey:@"password"];
     
     //确认密码
     _commitCode=[aDecoder decodeObjectForKey:@"commitCode"];
@@ -81,9 +81,9 @@
     
     _resourceInfo=[aDecoder decodeObjectForKey:@"resourceInfo"];
     
-    _userId=[aDecoder decodeIntegerForKey:@"userId"];
+    _userId=[aDecoder decodeObjectForKey:@"userId"];
     
-    _businessId=[aDecoder decodeIntegerForKey:@"businessId"];
+    _businessId=[aDecoder decodeObjectForKey:@"businessId"];
     
     
     return self;
@@ -91,6 +91,6 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"用户信息\t%@ \t用户标示: %ld", _userName,(long)_userId];
+    return [NSString stringWithFormat:@"用户信息\t%@ \t用户标示: %ld", _username,(long)_userId];
 }
 @end

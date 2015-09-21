@@ -43,7 +43,7 @@
 
 -(void)setupData{
     if (self.loginUser) {
-        self.phone.text=self.loginUser.userName;
+        self.phone.text=self.loginUser.username;
     }
 }
 /*

@@ -102,14 +102,14 @@
         [BSUIComponentView confirmUIAlertView:@"登陆密码点击超过%ld次,已经锁住，请联系运维人员解锁"];
         return;
     }
-    [self.activeIndicator startAnimating];
-    [self.loginButton setEnabled:NO];
+    //[self.activeIndicator startAnimating];
+    //[self.loginButton setEnabled:NO];
     [self.resetPasswordButton setEnabled:NO];
     BSSecurity *security=[BSSecurityFactory
                           initBSecurity:BSEncryptionAlgorithmRSA];
    
-    NSString *encrAcc=[security encryptString:self.account.text];
-    BSLog(@"加密账户信息为:\t%@",encrAcc);
+    //NSString *encrAcc=[security encryptString:self.account.text];
+    //BSLog(@"加密账户信息为:\t%@",encrAcc);
      /*
     BSSecurity *aessecurity=[BSSecurityFactory
                           initBSecurity:BSEncryptionAlgorithmAES];
@@ -130,8 +130,8 @@
     BSLog(@"加密账户信息为:\t%@",decrAcc);
     */
     loginUser=[LoginUser new];
-    loginUser.userName=encrAcc;
-    loginUser.passWord=self.password.text;
+    loginUser.username=self.account.text;
+    loginUser.password=self.password.text;
     UserManager *um=[UserManager userManager];
     [um loginWithUser:loginUser blockArray:^(NSObject *response, NSError *error, ErrorMessage *errorMessage) {
       
@@ -144,8 +144,8 @@
         //NSUserDefaults *userDefaults=[NSUserDefaults standardUserDefaults];
         //[userDefaults setObject:sessionId forKey:@"sessionId"];
         //
-        [self.activeIndicator stopAnimating];
-        [self.loginButton setEnabled:YES];
+        //[self.activeIndicator stopAnimating];
+        //[self.loginButton setEnabled:YES];
         
         [self.resetPasswordButton setEnabled:YES];
         if (self.bsContentObject) {
@@ -203,7 +203,7 @@
     bsContentObject.method=@"loginUser";
     if (loginUser==nil) {
         loginUser=[[LoginUser alloc]init];
-        loginUser.userName=self.account.text;
+        loginUser.username=self.account.text;
     }
     bsContentObject.neededMethodData=loginUser;
     //[self navigating:self storybord:@"LOUserManager" identity:@"LOResetPasswordViewController"
