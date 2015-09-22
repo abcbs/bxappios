@@ -32,13 +32,13 @@ static NSNumberFormatter *_numberFormatter;
     //增加加解密处理
     //Ivar object_setInstanceVariable ( id obj, const char *name, void *value );
     id object=[modelClass objectWithKeyValues:jsonDictionary ];
-    return object;
+    return [object decrypt];//;
 }
 
 - (id)modelsForJSONArray:(NSArray *)jsonArray modelClass:(Class)modelClass error:(NSError *__autoreleasing *)error {
     id object=[ modelClass objectWithKeyValues:jsonArray ];
 
-    return object;
+    return [object decrypt];
 }
 
 -(id)objectWithKeyValue:(NSObject *)responseObject
@@ -46,12 +46,12 @@ static NSNumberFormatter *_numberFormatter;
     id response=[self objectWithPrimaryKeyValue:responseObject
                                 modelClass:modelClass];
     if (response) {
-        return response;
+        return [response decrypt];
     }else{
         
         return [modelClass objectWithKeyValues:responseObject];
     }
-    return responseObject;
+    return [responseObject decrypt];
 }
 
 -(id) objectWithPrimaryKeyValue:(NSObject *)keyValues
