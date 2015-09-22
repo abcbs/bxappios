@@ -68,7 +68,7 @@ static  UITabBar  *gTabBar;
 /**
  *显示确定按钮
  */
-+(void)confirmUIAlertView:message
++(void)confirmUIAlertView:(NSString *)message
 {
     [self confirmUIAlertView:CONFIRM_TITLE
     message:message

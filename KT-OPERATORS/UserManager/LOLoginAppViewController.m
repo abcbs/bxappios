@@ -99,14 +99,15 @@
     }
     loginNumber++;
     if (loginNumber>USER_LONGIN_NUMBER) {
-        [BSUIComponentView confirmUIAlertView:@"登陆密码点击超过%ld次,已经锁住，请联系运维人员解锁"];
+        NSString *alertstr=[NSString stringWithFormat:@"登陆密码点击超过%d次,已经锁住，请联系运维人员解锁",USER_LONGIN_NUMBER];
+        [BSUIComponentView confirmUIAlertView:alertstr];
         return;
     }
     //[self.activeIndicator startAnimating];
     //[self.loginButton setEnabled:NO];
-    [self.resetPasswordButton setEnabled:NO];
-    BSSecurity *security=[BSSecurityFactory
-                          initBSecurity:BSEncryptionAlgorithmRSA];
+    //[self.resetPasswordButton setEnabled:NO];
+    //BSSecurity *security=[BSSecurityFactory
+    //                      initBSecurity:BSEncryptionAlgorithmRSA];
    
     //NSString *encrAcc=[security encryptString:self.account.text];
     //BSLog(@"加密账户信息为:\t%@",encrAcc);
@@ -146,8 +147,8 @@
         //
         //[self.activeIndicator stopAnimating];
         //[self.loginButton setEnabled:YES];
-        
-        [self.resetPasswordButton setEnabled:YES];
+        loginNumber--;
+        //[self.resetPasswordButton setEnabled:YES];
         if (self.bsContentObject) {
             [self navigating:self.bsContentObject];
         }else {
