@@ -14,7 +14,6 @@
 
 @interface NSObject (BSSecurity)
 
-- (id)encrypt:(Class)modelClass context:(NSManagedObjectContext *)context error:(NSError *__autoreleasing *)error;
-
-- (id)encrypt:(Class)modelClass ;
+- (id)decrypt;
+- (id) encrypt;
 @end

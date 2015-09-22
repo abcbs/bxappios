@@ -136,9 +136,9 @@
     [um loginWithUser:loginUser blockArray:^(NSObject *response, NSError *error, ErrorMessage *errorMessage) {
       
         UserSession *userSession=(UserSession*)response;
-        NSString *decrAcc=[security decryptString:userSession.username];
-        userSession.username=decrAcc;
-        BSLog(@"解密账户信息为:\t%@",decrAcc);
+        //NSString *decrAcc=[security decryptString:userSession.username];
+        //userSession.username=decrAcc;
+        //BSLog(@"解密账户信息为:\t%@",decrAcc);
         [UserManager registSession:userSession];
         //便捷的数据保存方式
         //NSUserDefaults *userDefaults=[NSUserDefaults standardUserDefaults];

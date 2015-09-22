@@ -890,6 +890,8 @@
 		84EA1A821B6FCB040058161E /* LOCatagoryManager.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84EA1A811B6FCB040058161E /* LOCatagoryManager.storyboard */; };
 		84EA1A831B6FCB040058161E /* LOCatagoryManager.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84EA1A811B6FCB040058161E /* LOCatagoryManager.storyboard */; };
 		84EA1A841B6FCB040058161E /* LOCatagoryManager.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84EA1A811B6FCB040058161E /* LOCatagoryManager.storyboard */; };
+		84EA2A211BB101BA009CFD28 /* BSSecurityConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EA2A201BB101BA009CFD28 /* BSSecurityConfig.m */; };
+		84EA2A221BB101BA009CFD28 /* BSSecurityConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EA2A201BB101BA009CFD28 /* BSSecurityConfig.m */; };
 		84EA96CB1B57D31C00AC549F /* LSMainIndexViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 84BF8F6B1B4AB63C001042F1 /* LSMainIndexViewController.mm */; };
 		84EA96CD1B57D31C00AC549F /* LSHandySearchNavViewController..mm in Sources */ = {isa = PBXBuildFile; fileRef = 84F66D671B53E7DE00498734 /* LSHandySearchNavViewController..mm */; };
 		84EA96CF1B57D31C00AC549F /* LSProductListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8461B7971B55044D002A7C43 /* LSProductListTableViewController.m */; };
@@ -2584,6 +2586,8 @@
 		84E9D7921B61E10C00F2CD24 /* BSVideoIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSVideoIndicatorView.m; sourceTree = "<group>"; };
 		84E9D7B01B61E22300F2CD24 /* BSImagePicker.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = BSImagePicker.strings; sourceTree = "<group>"; };
 		84EA1A811B6FCB040058161E /* LOCatagoryManager.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LOCatagoryManager.storyboard; sourceTree = "<group>"; };
+		84EA2A1F1BB101BA009CFD28 /* BSSecurityConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSSecurityConfig.h; sourceTree = "<group>"; };
+		84EA2A201BB101BA009CFD28 /* BSSecurityConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSSecurityConfig.m; sourceTree = "<group>"; };
 		84EA96B31B57D2D400AC549F /* libKT-LS-Controller.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libKT-LS-Controller.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84EA96EE1B57D62100AC549F /* LBHandySearchMainTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBHandySearchMainTableController.h; sourceTree = "<group>"; };
 		84EA96EF1B57D62100AC549F /* LBHandySearchMainTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBHandySearchMainTableController.m; sourceTree = "<group>"; };
@@ -4484,6 +4488,8 @@
 				841F95041B8C54D1001B26B5 /* BSModelSerializer.m */,
 				840F51341BB0489D00480C39 /* NSObject+BSSecurity.h */,
 				840F51351BB0489D00480C39 /* NSObject+BSSecurity.m */,
+				84EA2A1F1BB101BA009CFD28 /* BSSecurityConfig.h */,
+				84EA2A201BB101BA009CFD28 /* BSSecurityConfig.m */,
 			);
 			path = Serializers;
 			sourceTree = "<group>";
@@ -7264,6 +7270,7 @@
 				84EF57841BAB099E00D8AFE2 /* RichContentViewController.m in Sources */,
 				848C7C381B79A38A000774A1 /* Base64.m in Sources */,
 				84EF57961BAB099E00D8AFE2 /* TicketViewController.m in Sources */,
+				84EA2A221BB101BA009CFD28 /* BSSecurityConfig.m in Sources */,
 				84BF8FCF1B4AC2FA001042F1 /* BSTableSection.m in Sources */,
 				84EF576A1BAB099E00D8AFE2 /* BizExtenViewController.m in Sources */,
 				84BF8FD11B4AC2FA001042F1 /* BSTableContentObject.m in Sources */,
@@ -7713,6 +7720,7 @@
 				84E9D7AA1B61E10C00F2CD24 /* BSVideoIndicatorView.m in Sources */,
 				84F28FD31B62BB31001078D8 /* BSPhotoViewController.m in Sources */,
 				84832D441B5659D300FB6D28 /* CustomerCancleOrder.m in Sources */,
+				84EA2A211BB101BA009CFD28 /* BSSecurityConfig.m in Sources */,
 				8405CB911B55682B0014AF8D /* UserSession.m in Sources */,
 				846541ED1B42C47300DE2BC1 /* BSUIFiveColTableViewCell.m in Sources */,
 				842042A21B2983B40002C868 /* AppDelegate.m in Sources */,

@@ -12,7 +12,7 @@
 #import "NSObject+BSSecurity.h"
 
 @interface BSModelSerializer(){
-    BSSecurity *security;
+
 }
 @end
 @implementation BSModelSerializer
@@ -24,7 +24,6 @@ static NSNumberFormatter *_numberFormatter;
     if (!self) {
         return nil;
     }
-    security=[BSSecurityFactory initBSecurity:BSEncryptionAlgorithmRSA];
     return self;
 }
 #pragma mark - YYHModelSerialization
@@ -110,7 +109,7 @@ static NSNumberFormatter *_numberFormatter;
     // 3.遍历 配置方法 LiuJQ
     for (NSDictionary *keyValues in keyValuesArray) {
          //安全配置处理
-         [modelArray addObject:[keyValues encrypt:modelClass]];
+         [modelArray addObject:[keyValues decrypt]];
     }
     
     return modelArray;
@@ -124,13 +123,8 @@ static NSNumberFormatter *_numberFormatter;
         return (NSDictionary *)object;
     }
     //加解密处理
-    if ([modelClass isSubclassOfClass:[LoginUser class]]) {
-        LoginUser *objResponse= (LoginUser *)object;
-        NSString *encrAcc=[security encryptString:objResponse.username];
-        [objResponse setValue:encrAcc forKey:@"username"];
-        NSDictionary * dic=[object keyValues];
-        return dic;
-    }
-    return nil;
+    id objectdec=[object encrypt];
+    NSDictionary * dic=[objectdec keyValues];
+    return dic;
 }
 @end
