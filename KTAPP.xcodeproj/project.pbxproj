@@ -1593,8 +1593,6 @@
 		84F34E531BA7007400188756 /* BSMapSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F34E511BA7007400188756 /* BSMapSearchView.m */; };
 		84F34E561BA7017800188756 /* BSRouteNaviView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F34E551BA7017800188756 /* BSRouteNaviView.m */; };
 		84F34E571BA7017800188756 /* BSRouteNaviView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F34E551BA7017800188756 /* BSRouteNaviView.m */; };
-		84F34E581BA7125300188756 /* libstdc++.6.0.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F309261B9D3D110070EF19 /* libstdc++.6.0.9.dylib */; };
-		84F34E591BA7125E00188756 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 84517B7A1B86129A00469111 /* libz.dylib */; };
 		84F34E5A1BA7127300188756 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F309211B9D3CA90070EF19 /* AudioToolbox.framework */; };
 		84F34E5B1BA7128400188756 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F309231B9D3CB40070EF19 /* AVFoundation.framework */; };
 		84F34E5C1BA7128E00188756 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A0765F1B21AAC8001CE3A2 /* AddressBook.framework */; };
@@ -3147,8 +3145,6 @@
 				84F34E5C1BA7128E00188756 /* AddressBook.framework in Frameworks */,
 				84F34E5B1BA7128400188756 /* AVFoundation.framework in Frameworks */,
 				84F34E5A1BA7127300188756 /* AudioToolbox.framework in Frameworks */,
-				84F34E591BA7125E00188756 /* libz.dylib in Frameworks */,
-				84F34E581BA7125300188756 /* libstdc++.6.0.9.dylib in Frameworks */,
 				84F58D4E1B93F659002C535B /* Security.framework in Frameworks */,
 				84F58D4D1B93F64F002C535B /* CoreGraphics.framework in Frameworks */,
 				84F58D4C1B93F645002C535B /* SystemConfiguration.framework in Frameworks */,
@@ -7942,6 +7938,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/parse-osx-library-1",
@@ -7967,7 +7964,6 @@
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
-					"-ObjC",
 					"-l\"Pods-KT-BUSINESS-SELLER-AFNetworkActivityLogger\"",
 					"-l\"Pods-KT-BUSINESS-SELLER-AFNetworking\"",
 					"-l\"Pods-KT-BUSINESS-SELLER-CocoaLumberjack\"",
@@ -8000,6 +7996,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/parse-osx-library-1",
@@ -8021,7 +8018,6 @@
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
-					"-ObjC",
 					"-l\"Pods-KT-BUSINESS-SELLER-AFNetworkActivityLogger\"",
 					"-l\"Pods-KT-BUSINESS-SELLER-AFNetworking\"",
 					"-l\"Pods-KT-BUSINESS-SELLER-CocoaLumberjack\"",
@@ -8069,7 +8065,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -8096,7 +8093,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -8200,6 +8198,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/parse-osx-library-1",
@@ -8237,6 +8236,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/parse-osx-library-1",
@@ -8350,6 +8350,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -8392,6 +8393,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

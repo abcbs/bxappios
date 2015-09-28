@@ -64,9 +64,9 @@
                 initWithContentObject:@"检索"
                 methodName:nil
                 imageName:@"im_post.png"
-                vcClass:@"LOProductCatalogueDetailViewController"];
+                vcClass:@"LOLoginUserListViewController"];
     
-    bsnMagamer.storybordName=@"LOCatagoryManager";
+    bsnMagamer.storybordName=@"LOUserManager";
     [bsTable addBSTableContent:bsnMagamer
                  sectionHeader:@"用户（联系人）管理管理"];
     
@@ -74,22 +74,34 @@
                 initWithContentObject:@"新增"
                 methodName:nil
                 imageName:@"im_activity.png"
-                vcClass:@"LOProductCatalogueDetailViewController"];
+                vcClass:@"LOLoginUserMaintainViewController"];
     
-     bsnMagamer.storybordName=@"LOCatagoryManager";
+     bsnMagamer.storybordName=@"LOUserManager";
     [bsTable addBSTableContent:bsnMagamer
                  sectionHeader:@"用户（联系人）管理管理"];
     
     
     bsnMagamer=[BSTableContentObject
-                initWithContentObject:@"删除"
+                initWithContentObject:@"登陆"
                 methodName:nil
                 imageName:@"98bj@2x.png"
-                vcClass:@"LOProductCatalogueDetailViewController"];
+                vcClass:@"LOLoginAppViewController"];
     
-     bsnMagamer.storybordName=@"LOCatagoryManager";
+     bsnMagamer.storybordName=@"LOUserManager";
     [bsTable addBSTableContent:bsnMagamer
                  sectionHeader:@"用户（联系人）管理管理"];
+    
+    
+    bsnMagamer=[BSTableContentObject
+                initWithContentObject:@"修改密码"
+                methodName:nil
+                imageName:@"98bj@2x.png"
+                vcClass:@"LOResetPasswordViewController"];
+    
+    bsnMagamer.storybordName=@"LOUserManager";
+    [bsTable addBSTableContent:bsnMagamer
+                 sectionHeader:@"用户（联系人）管理管理"];
+    
     
     //商户账户管理
     bsnMagamer=[BSTableContentObject
@@ -99,6 +111,7 @@
                 vcClass:@"LOProductCatalogueDetailViewController"];
     
      bsnMagamer.storybordName=@"LOCatagoryManager";
+    
     [bsTable addBSTableContent:bsnMagamer sectionHeader:@"商户账户管理"];
     
     bsnMagamer=[BSTableContentObject

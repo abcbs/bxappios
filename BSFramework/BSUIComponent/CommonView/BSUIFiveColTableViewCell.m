@@ -89,7 +89,7 @@
             [cellBtn setTag:tagIndex];
             [self addSubview:cellBtn];
             
-            UILabel *cellLb=[[UILabel alloc ]initWithFrame:BSRectMake(lbRect.origin.x+(lbRowWith+lbRowHZ)*tagIndex,
+            UILabel *cellLb=[[UILabel alloc ]initWithFrame:BSRectMake(lbRect.origin.x+(lbRowWith+lbRowHZ-4)*tagIndex,
                                                                       lbRect.origin.y ,
                                                                       lbRect.size.width,lbRect.size.height) ];
             cellLb.textAlignment = NSTextAlignmentCenter;
