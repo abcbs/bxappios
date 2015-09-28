@@ -227,7 +227,6 @@
 		84517BB51B8628F800469111 /* BSTRPushHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 84517BB31B8628F800469111 /* BSTRPushHelper.m */; };
 		84578F531B35D11D00C3A4EA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84578F521B35D11D00C3A4EA /* ViewController.m */; };
 		84578F781B35E80700C3A4EA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84578F7A1B35E80700C3A4EA /* LaunchScreen.xib */; };
-		845A02231B3DA1F3007F5327 /* BSUIImageTitleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 845A02221B3DA1F3007F5327 /* BSUIImageTitleTableViewCell.m */; };
 		845A022C1B3DABF0007F5327 /* Conf.m in Sources */ = {isa = PBXBuildFile; fileRef = 845A02291B3DABF0007F5327 /* Conf.m */; };
 		845A022D1B3DABF0007F5327 /* ErrorMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 845A022B1B3DABF0007F5327 /* ErrorMessage.m */; };
 		845A02351B3DBA7E007F5327 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 845A02341B3DBA7E007F5327 /* UIView+Frame.m */; };
@@ -751,6 +750,11 @@
 		84832D6A1B565F5E00FB6D28 /* UserSessionAndUserAddressDomain.m in Sources */ = {isa = PBXBuildFile; fileRef = 84832D681B565F5E00FB6D28 /* UserSessionAndUserAddressDomain.m */; };
 		8485B47C1BB9201500BCA13D /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8485B47B1BB9201500BCA13D /* libstdc++.6.0.9.tbd */; };
 		8485B47D1BB9680A00BCA13D /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84FB97A21B93922F0018790A /* OpenGLES.framework */; };
+		8485B4991BB9B2DE00BCA13D /* BSUIImageTitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8485B4961BB9B2DE00BCA13D /* BSUIImageTitleTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
+		8485B49C1BB9B35E00BCA13D /* BSUIImageTitleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8485B49B1BB9B35E00BCA13D /* BSUIImageTitleTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		8485B49D1BB9B35E00BCA13D /* BSUIImageTitleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8485B49B1BB9B35E00BCA13D /* BSUIImageTitleTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		8485B49E1BB9B38300BCA13D /* BSUIImageTitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8485B4961BB9B2DE00BCA13D /* BSUIImageTitleTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
+		8485B49F1BB9B38300BCA13D /* BSUIImageTitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8485B4961BB9B2DE00BCA13D /* BSUIImageTitleTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
 		8487F1851B3005C100F0F7B2 /* KTInformationConfViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8487F1801B3005C100F0F7B2 /* KTInformationConfViewController.m */; };
 		8487F1861B3005C100F0F7B2 /* KTInformationConfViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8487F1811B3005C100F0F7B2 /* KTInformationConfViewController.storyboard */; };
 		8487F1871B3005C100F0F7B2 /* KTOnlinePayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8487F1831B3005C100F0F7B2 /* KTOnlinePayViewController.m */; };
@@ -804,7 +808,6 @@
 		84BF8FDE1B4AC2FA001042F1 /* BSUITabBarCommonController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8460AE7F1B4259BE00022280 /* BSUITabBarCommonController.m */; };
 		84BF8FE01B4AC2FA001042F1 /* BSContentObjectNavigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8460AE821B426E4C00022280 /* BSContentObjectNavigation.m */; };
 		84BF8FE21B4AC2FA001042F1 /* BSFCRollingADImageUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 848058131B39A377005817D7 /* BSFCRollingADImageUIView.m */; };
-		84BF8FE51B4AC2FA001042F1 /* BSUIImageTitleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 845A02221B3DA1F3007F5327 /* BSUIImageTitleTableViewCell.m */; };
 		84BF8FE71B4AC2FA001042F1 /* BSUISingleImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 845A02401B3DE9FE007F5327 /* BSUISingleImageTableViewCell.m */; };
 		84BF8FE91B4AC2FA001042F1 /* BSUIFiveColTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 846541EB1B42C47300DE2BC1 /* BSUIFiveColTableViewCell.m */; };
 		84BF8FF11B4AC2FA001042F1 /* BSUIComponentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E97AB61B307535001D4100 /* BSUIComponentView.m */; };
@@ -1430,8 +1433,6 @@
 		84ECC7031BA8069C00965514 /* userPosition@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84ECC6A91BA8069C00965514 /* userPosition@2x.png */; };
 		84ECC7061BA8870B00965514 /* ScreenshotDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84ECC7051BA8870B00965514 /* ScreenshotDetailViewController.m */; };
 		84ECC7071BA8870B00965514 /* ScreenshotDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84ECC7051BA8870B00965514 /* ScreenshotDetailViewController.m */; };
-		84ECE42D1B4F9BB4003D1AEE /* BSUIDefaultTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84ECE42C1B4F9BB4003D1AEE /* BSUIDefaultTableViewCell.m */; };
-		84ECE42E1B4F9BB4003D1AEE /* BSUIDefaultTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84ECE42C1B4F9BB4003D1AEE /* BSUIDefaultTableViewCell.m */; };
 		84ECE4321B4FC29D003D1AEE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84ECE4301B4FC29D003D1AEE /* LaunchScreen.xib */; };
 		84ECE43C1B4FC627003D1AEE /* libKT-FRAME-PK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84BF8F901B4ABA7E001042F1 /* libKT-FRAME-PK.a */; };
 		84ECE43D1B4FC627003D1AEE /* libKT-MODEL-MODULE.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84BF902B1B4AC55D001042F1 /* libKT-MODEL-MODULE.a */; };
@@ -2033,8 +2034,6 @@
 		84578F771B35E7F700C3A4EA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		84578F791B35E80700C3A4EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		84578F7B1B35E81900C3A4EA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		845A02211B3DA1F3007F5327 /* BSUIImageTitleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUIImageTitleTableViewCell.h; sourceTree = "<group>"; };
-		845A02221B3DA1F3007F5327 /* BSUIImageTitleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUIImageTitleTableViewCell.m; sourceTree = "<group>"; };
 		845A02241B3DA669007F5327 /* BSUIFrameworkHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSUIFrameworkHeader.h; sourceTree = "<group>"; };
 		845A02251B3DA7B7007F5327 /* LBModelsHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBModelsHeader.h; sourceTree = "<group>"; };
 		845A02261B3DA83E007F5327 /* LBControllerHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBControllerHeader.h; sourceTree = "<group>"; };
@@ -2454,6 +2453,9 @@
 		84832D671B565F5E00FB6D28 /* UserSessionAndUserAddressDomain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserSessionAndUserAddressDomain.h; sourceTree = "<group>"; };
 		84832D681B565F5E00FB6D28 /* UserSessionAndUserAddressDomain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserSessionAndUserAddressDomain.m; sourceTree = "<group>"; };
 		8485B47B1BB9201500BCA13D /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
+		8485B4961BB9B2DE00BCA13D /* BSUIImageTitleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSUIImageTitleTableViewCell.xib; sourceTree = "<group>"; };
+		8485B49A1BB9B35E00BCA13D /* BSUIImageTitleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUIImageTitleTableViewCell.h; sourceTree = "<group>"; };
+		8485B49B1BB9B35E00BCA13D /* BSUIImageTitleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUIImageTitleTableViewCell.m; sourceTree = "<group>"; };
 		8487F17F1B3005C100F0F7B2 /* KTInformationConfViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTInformationConfViewController.h; sourceTree = "<group>"; };
 		8487F1801B3005C100F0F7B2 /* KTInformationConfViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTInformationConfViewController.m; sourceTree = "<group>"; };
 		8487F1811B3005C100F0F7B2 /* KTInformationConfViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = KTInformationConfViewController.storyboard; sourceTree = "<group>"; };
@@ -2844,8 +2846,6 @@
 		84ECC6A91BA8069C00965514 /* userPosition@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "userPosition@2x.png"; sourceTree = "<group>"; };
 		84ECC7041BA8870B00965514 /* ScreenshotDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScreenshotDetailViewController.h; sourceTree = "<group>"; };
 		84ECC7051BA8870B00965514 /* ScreenshotDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScreenshotDetailViewController.m; sourceTree = "<group>"; };
-		84ECE42B1B4F9BB4003D1AEE /* BSUIDefaultTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUIDefaultTableViewCell.h; sourceTree = "<group>"; };
-		84ECE42C1B4F9BB4003D1AEE /* BSUIDefaultTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUIDefaultTableViewCell.m; sourceTree = "<group>"; };
 		84ECE4301B4FC29D003D1AEE /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		84ECE4341B4FC50B003D1AEE /* libPods-KT-FRAME-PK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-KT-FRAME-PK.a"; path = "Pods/../build/Debug-iphoneos/libPods-KT-FRAME-PK.a"; sourceTree = SOURCE_ROOT; };
 		84EF57331BAB099E00D8AFE2 /* AddressComponentDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressComponentDetailViewController.h; sourceTree = "<group>"; };
@@ -4136,11 +4136,12 @@
 		848058111B39A377005817D7 /* CommonView */ = {
 			isa = PBXGroup;
 			children = (
+				8485B49A1BB9B35E00BCA13D /* BSUIImageTitleTableViewCell.h */,
+				8485B49B1BB9B35E00BCA13D /* BSUIImageTitleTableViewCell.m */,
+				8485B4961BB9B2DE00BCA13D /* BSUIImageTitleTableViewCell.xib */,
 				848058121B39A377005817D7 /* BSFCRollingADImageUIView.h */,
 				848058131B39A377005817D7 /* BSFCRollingADImageUIView.m */,
 				848058141B39A377005817D7 /* ADTImagePlayer.xib */,
-				845A02211B3DA1F3007F5327 /* BSUIImageTitleTableViewCell.h */,
-				845A02221B3DA1F3007F5327 /* BSUIImageTitleTableViewCell.m */,
 				8476A0451B4BB93100DB2CF0 /* BSUISingleImageTableViewCell.xib */,
 				845A023F1B3DE9FE007F5327 /* BSUISingleImageTableViewCell.h */,
 				845A02401B3DE9FE007F5327 /* BSUISingleImageTableViewCell.m */,
@@ -4149,8 +4150,6 @@
 				846541EC1B42C47300DE2BC1 /* BSUIFiveColTableViewCell.xib */,
 				846541EF1B42C8A400DE2BC1 /* BSUITableCellOperation.h */,
 				846541F01B42C97400DE2BC1 /* BSUITableMultCellOperation.h */,
-				84ECE42B1B4F9BB4003D1AEE /* BSUIDefaultTableViewCell.h */,
-				84ECE42C1B4F9BB4003D1AEE /* BSUIDefaultTableViewCell.m */,
 			);
 			path = CommonView;
 			sourceTree = "<group>";
@@ -5980,6 +5979,7 @@
 				8461B7681B54BB69002A7C43 /* Demo1ViewController.xib in Resources */,
 				8461B76B1B54BB69002A7C43 /* WaitPaymentDetail.xib in Resources */,
 				84EA97BE1B57E21F00AC549F /* 98bj@2x.png in Resources */,
+				8485B49E1BB9B38300BCA13D /* BSUIImageTitleTableViewCell.xib in Resources */,
 				84EA98141B57E21F00AC549F /* second_selected.png in Resources */,
 				84EADA241B95C59500302A90 /* poi_22.png in Resources */,
 				84E6C0941B7DCCEF00289D94 /* LSBLEIFTTUpHoldMain.storyboard in Resources */,
@@ -6340,6 +6340,7 @@
 				847415551B639312005BF59D /* gouwu.png in Resources */,
 				847415971B639312005BF59D /* 322.png in Resources */,
 				847415251B639312005BF59D /* bjfw@2x.png in Resources */,
+				8485B49F1BB9B38300BCA13D /* BSUIImageTitleTableViewCell.xib in Resources */,
 				847415871B639312005BF59D /* login-head.png in Resources */,
 				84ECC7001BA8069C00965514 /* userPosition.png in Resources */,
 				84F290201B638BA7001078D8 /* KTWaterDetailsViewController.storyboard in Resources */,
@@ -6535,6 +6536,7 @@
 				847432FF1B2A8EB100B030C4 /* WaitPaymentDetail.xib in Resources */,
 				84EA98B11B57E21F00AC549F /* login-1.png in Resources */,
 				84EA98251B57E21F00AC549F /* wdqzs@2x.png in Resources */,
+				8485B4991BB9B2DE00BCA13D /* BSUIImageTitleTableViewCell.xib in Resources */,
 				84ECC6D71BA8069C00965514 /* compass@2x.png in Resources */,
 				84ECC6D11BA8069C00965514 /* car@2x.png in Resources */,
 				84EA983D1B57E21F00AC549F /* a6.png in Resources */,
@@ -7298,7 +7300,6 @@
 				844FFE951B8B542300658A36 /* NSData+CommonCrypto.m in Sources */,
 				84EF57681BAB099E00D8AFE2 /* AddressComponentDetailViewController.m in Sources */,
 				846FC4571B7FA65100496F96 /* ESSBeaconIssue.m in Sources */,
-				84BF8FE51B4AC2FA001042F1 /* BSUIImageTitleTableViewCell.m in Sources */,
 				84F34E471BA6FFFD00188756 /* BSMAMapRadarNearbyViewController.m in Sources */,
 				844570CE1B4D63F8000CA1C7 /* BLEDevicesTableViewController.m in Sources */,
 				84BF8FE71B4AC2FA001042F1 /* BSUISingleImageTableViewCell.m in Sources */,
@@ -7326,6 +7327,7 @@
 				84EF57801BAB099E00D8AFE2 /* PathDetailViewController.m in Sources */,
 				84F84ADF1B7C5A8C008DF38F /* BSSecurityFactory.m in Sources */,
 				84D2DA621BA061F600E4C6EB /* FaceView.m in Sources */,
+				8485B49D1BB9B35E00BCA13D /* BSUIImageTitleTableViewCell.m in Sources */,
 				84F884721BAAA0D000ECEAA3 /* AnimatedAnnotation.m in Sources */,
 				84F884901BAAA0D000ECEAA3 /* POIAnnotation.m in Sources */,
 				84BF8FF61B4AC2FA001042F1 /* BSUIBarButtonItem.m in Sources */,
@@ -7336,7 +7338,6 @@
 				84EF578A1BAB099E00D8AFE2 /* RoomInfoViewController.m in Sources */,
 				84EC6B5B1BA2A3EE00EE529B /* Reachability.m in Sources */,
 				84F28F9D1B626F9C001078D8 /* BSUIContentViewController.m in Sources */,
-				84ECE42E1B4F9BB4003D1AEE /* BSUIDefaultTableViewCell.m in Sources */,
 				844570CA1B4D6323000CA1C7 /* BLEDeviceDetailsTableViewController.m in Sources */,
 				84E9D7A51B61E10C00F2CD24 /* BSImagePickerController.m in Sources */,
 				848C7C331B79A301000774A1 /* BSSecurity.m in Sources */,
@@ -7636,7 +7637,6 @@
 				84EF57811BAB099E00D8AFE2 /* PoiDetailViewController.m in Sources */,
 				84BA967F1B2829D500388B58 /* orderDetailModel.m in Sources */,
 				A0F0C3F41B10209500CE406D /* MiddleNetWorkTool.m in Sources */,
-				845A02231B3DA1F3007F5327 /* BSUIImageTitleTableViewCell.m in Sources */,
 				84E9D7A61B61E10C00F2CD24 /* BSSlomoIconView.m in Sources */,
 				8405CBC91B5577660014AF8D /* UserPay.m in Sources */,
 				84832D611B565EAC00FB6D28 /* UserBaseAndSessionDomain.m in Sources */,
@@ -7690,7 +7690,6 @@
 				847076401B3A8B9000F28180 /* UIView+SZ.m in Sources */,
 				8470762F1B3A8AF800F28180 /* communicate.m in Sources */,
 				847076671B3AA01B00F28180 /* BSTableContentObject.m in Sources */,
-				84ECE42D1B4F9BB4003D1AEE /* BSUIDefaultTableViewCell.m in Sources */,
 				84F34E4A1BA6FFFD00188756 /* MapTypeViewController.m in Sources */,
 				847432E51B2A8D6800B030C4 /* SystemSetCell.m in Sources */,
 				84EF577F1BAB099E00D8AFE2 /* PathDetailViewController.m in Sources */,
@@ -7707,6 +7706,7 @@
 				84BA967C1B2829D500388B58 /* AFNHelp.m in Sources */,
 				84E9D79C1B61E10C00F2CD24 /* BSAlbumsViewController.m in Sources */,
 				8405CBB91B5573770014AF8D /* BusinessProductComment.m in Sources */,
+				8485B49C1BB9B35E00BCA13D /* BSUIImageTitleTableViewCell.m in Sources */,
 				847433131B2A915C00B030C4 /* myWallet.m in Sources */,
 				847432D01B2A8AF700B030C4 /* VPImageCropperViewController.m in Sources */,
 				84F884711BAAA0D000ECEAA3 /* AnimatedAnnotation.m in Sources */,

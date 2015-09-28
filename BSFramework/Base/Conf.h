@@ -253,7 +253,7 @@ extern float autoSizeScaleY;
 #define DIGEST_NONCE_KEY @"testNonce"
 #define DIGEST_NONCE_VALIDITY_SEC 10000
 
-#define DATA_IS_LOCAL NO
+#define DATA_IS_LOCAL YES
 
 typedef void (^BSHTTPResponse)(NSObject *response,
                                NSError *error,

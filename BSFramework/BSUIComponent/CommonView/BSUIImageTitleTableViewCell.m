@@ -17,6 +17,8 @@
 -(UITableViewCell *)viewCellWithBSContentObject:(BSTableContentObject *)bsContentObject{
     self.cellName.text =[bsContentObject colTitle];
     self.cellImage.image=[UIImage imageNamed:[bsContentObject colImageName]];
+    //self.frame=BSRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+    //self.contentView.frame=BSRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
     return self;
 }
 
@@ -28,8 +30,11 @@
     UILabel *lable=[[UILabel alloc]initWithFrame:(BSRectMake(SCREEN_WIDTH/3+16, 100, 90, 60))];
     
     lable.text=[bsContentObject colTitle];
+    //self.frame=BSRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
     [self.contentView addSubview:lable];
     [self.contentView addSubview:cell];
+    //[self addSubview:lable];
+    //[self addSubview:cell];
     return self;
 }
 -(void)dealloc{
