@@ -154,7 +154,16 @@
     
     [bsTable addBSTableContent:bleDevices sectionHeader:@"百度地图"];
     
-
+    //BTLECentralViewController
+    bleDevices=[BSTableContentObject
+                initWithContentObject:@"高德"
+                methodName:nil
+                imageName:@"im_search.png"
+                vcClass:@"BSMAMapMainViewController"];
+    
+    bleDevices.storybordName=@"BSMAMapMain";
+    
+    [bsTable addBSTableContent:bleDevices sectionHeader:@"百度地图"];
     [super setValue:bsTable forKey:@"bSTableObjects"];
     
     

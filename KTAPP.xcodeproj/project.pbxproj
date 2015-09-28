@@ -749,6 +749,8 @@
 		84832D621B565EAC00FB6D28 /* UserBaseAndSessionDomain.m in Sources */ = {isa = PBXBuildFile; fileRef = 84832D601B565EAC00FB6D28 /* UserBaseAndSessionDomain.m */; };
 		84832D691B565F5E00FB6D28 /* UserSessionAndUserAddressDomain.m in Sources */ = {isa = PBXBuildFile; fileRef = 84832D681B565F5E00FB6D28 /* UserSessionAndUserAddressDomain.m */; };
 		84832D6A1B565F5E00FB6D28 /* UserSessionAndUserAddressDomain.m in Sources */ = {isa = PBXBuildFile; fileRef = 84832D681B565F5E00FB6D28 /* UserSessionAndUserAddressDomain.m */; };
+		8485B47C1BB9201500BCA13D /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8485B47B1BB9201500BCA13D /* libstdc++.6.0.9.tbd */; };
+		8485B47D1BB9680A00BCA13D /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84FB97A21B93922F0018790A /* OpenGLES.framework */; };
 		8487F1851B3005C100F0F7B2 /* KTInformationConfViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8487F1801B3005C100F0F7B2 /* KTInformationConfViewController.m */; };
 		8487F1861B3005C100F0F7B2 /* KTInformationConfViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8487F1811B3005C100F0F7B2 /* KTInformationConfViewController.storyboard */; };
 		8487F1871B3005C100F0F7B2 /* KTOnlinePayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8487F1831B3005C100F0F7B2 /* KTOnlinePayViewController.m */; };
@@ -1536,7 +1538,6 @@
 		84F309301B9D3DC30070EF19 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F309211B9D3CA90070EF19 /* AudioToolbox.framework */; };
 		84F309311B9D3DCC0070EF19 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F309231B9D3CB40070EF19 /* AVFoundation.framework */; };
 		84F309321B9D3DD50070EF19 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A0765F1B21AAC8001CE3A2 /* AddressBook.framework */; };
-		84F309331B9D3DE50070EF19 /* libstdc++.6.0.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F309261B9D3D110070EF19 /* libstdc++.6.0.9.dylib */; };
 		84F309431B9D41DC0070EF19 /* PromptInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F309421B9D41DC0070EF19 /* PromptInfo.m */; };
 		84F3094B1B9D42D70070EF19 /* mapapi.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 84F309471B9D42D70070EF19 /* mapapi.bundle */; };
 		84F3094C1B9D42D70070EF19 /* mapapi.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 84F309471B9D42D70070EF19 /* mapapi.bundle */; };
@@ -2454,6 +2455,7 @@
 		84832D601B565EAC00FB6D28 /* UserBaseAndSessionDomain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserBaseAndSessionDomain.m; sourceTree = "<group>"; };
 		84832D671B565F5E00FB6D28 /* UserSessionAndUserAddressDomain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserSessionAndUserAddressDomain.h; sourceTree = "<group>"; };
 		84832D681B565F5E00FB6D28 /* UserSessionAndUserAddressDomain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserSessionAndUserAddressDomain.m; sourceTree = "<group>"; };
+		8485B47B1BB9201500BCA13D /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
 		8487F17F1B3005C100F0F7B2 /* KTInformationConfViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTInformationConfViewController.h; sourceTree = "<group>"; };
 		8487F1801B3005C100F0F7B2 /* KTInformationConfViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTInformationConfViewController.m; sourceTree = "<group>"; };
 		8487F1811B3005C100F0F7B2 /* KTInformationConfViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = KTInformationConfViewController.storyboard; sourceTree = "<group>"; };
@@ -3112,8 +3114,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8485B47D1BB9680A00BCA13D /* OpenGLES.framework in Frameworks */,
+				8485B47C1BB9201500BCA13D /* libstdc++.6.0.9.tbd in Frameworks */,
 				84EF57A11BAB281600D8AFE2 /* AMapSearchKit.framework in Frameworks */,
-				84F309331B9D3DE50070EF19 /* libstdc++.6.0.9.dylib in Frameworks */,
 				84F613E01BA9CD1E00C2B4F1 /* MAMapKit.framework in Frameworks */,
 				84517BB01B86284200469111 /* libz.dylib in Frameworks */,
 				84F309321B9D3DD50070EF19 /* AddressBook.framework in Frameworks */,
@@ -5448,6 +5451,7 @@
 		A0028F341ADE4D5500747D8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8485B47B1BB9201500BCA13D /* libstdc++.6.0.9.tbd */,
 				84F3092C1B9D3DA40070EF19 /* AddressBookUI.framework */,
 				84F309261B9D3D110070EF19 /* libstdc++.6.0.9.dylib */,
 				84F309231B9D3CB40070EF19 /* AVFoundation.framework */,
@@ -7954,12 +7958,33 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "KT-BUSINESS-SELLER/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
 					"$(PROJECT_DIR)/民生小区/JPush-iOS-SDK-1.7.4",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"Pods-KT-BUSINESS-SELLER-AFNetworkActivityLogger\"",
+					"-l\"Pods-KT-BUSINESS-SELLER-AFNetworking\"",
+					"-l\"Pods-KT-BUSINESS-SELLER-CocoaLumberjack\"",
+					"-l\"Pods-KT-BUSINESS-SELLER-MBProgressHUD\"",
+					"-l\"Pods-KT-BUSINESS-SELLER-MJExtension\"",
+					"-l\"Pods-KT-BUSINESS-SELLER-MJRefresh\"",
+					"-l\"Pods-KT-BUSINESS-SELLER-SDWebImage\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "$(inherited) $(BUILT_PRODUCTS_DIR)";
@@ -7987,12 +8012,33 @@
 				);
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "KT-BUSINESS-SELLER/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
 					"$(PROJECT_DIR)/民生小区/JPush-iOS-SDK-1.7.4",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"Pods-KT-BUSINESS-SELLER-AFNetworkActivityLogger\"",
+					"-l\"Pods-KT-BUSINESS-SELLER-AFNetworking\"",
+					"-l\"Pods-KT-BUSINESS-SELLER-CocoaLumberjack\"",
+					"-l\"Pods-KT-BUSINESS-SELLER-MBProgressHUD\"",
+					"-l\"Pods-KT-BUSINESS-SELLER-MJExtension\"",
+					"-l\"Pods-KT-BUSINESS-SELLER-MJRefresh\"",
+					"-l\"Pods-KT-BUSINESS-SELLER-SDWebImage\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "$(inherited) $(BUILT_PRODUCTS_DIR)";
@@ -8170,7 +8216,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "KT-OPERATORS/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -8203,7 +8249,7 @@
 				);
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "KT-OPERATORS/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

@@ -6,6 +6,8 @@
 #import <BaiduMapAPI/BMapKit.h>
 #import <SystemConfiguration/SystemConfiguration.h>
 #import "PromptInfo.h"
+#import <MAMapKit/MAMapKit.h>
+
 @interface SellerAppDelegate () < UIApplicationDelegate,BMKGeneralDelegate> {
 }
 
@@ -67,6 +69,9 @@ BSNetworkNotify *networkNotify;
      BSLog(@"/*=--------APP百度地图启动成功------------+=/");
      
      }
+    
+    //高德地图
+    [MAMapServices sharedServices].apiKey =@"b4b17852c2a8bac769b3af0aed171dec";
     
     //注册设备
     [[UIApplication sharedApplication] registerForRemoteNotifications];
@@ -159,7 +164,7 @@ BSNetworkNotify *networkNotify;
 /*
  禁止横屏
  */
-- (NSUInteger)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window
+- (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window
 {
     return UIInterfaceOrientationMaskPortrait;
 }
