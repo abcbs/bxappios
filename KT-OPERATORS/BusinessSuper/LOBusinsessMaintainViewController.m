@@ -685,28 +685,6 @@
     return titleHeader;
 }
 
-//业务类型判断
--(BOOL) isBusinessBaseSelection:(NSString *)titleHeader
-                        section:(NSInteger)section{
-    return [titleHeader isEqualToString:SECTION_BUSINESS]&&section==IDX_BUSINESS;
-}
-
-
-//业务类型判断
--(BOOL) isCatagorySelection:(NSString *)titleHeader section:(NSInteger)section{
-    return [titleHeader isEqualToString:SECTION_CATAGORY]&&section==IDX_CATAGORY;
-}
-
-//联系方式判断
--(BOOL) isContractSelection:(NSString *)titleHeader section:(NSInteger)section{
-    return [titleHeader isEqualToString:SECTION_CONTRACT]&&section==IDX_CONTRACT;
-}
-
-//联系方式判断
--(BOOL) isUserPaySelection:(NSString *)titleHeader section:(NSInteger)section{
-    return [titleHeader isEqualToString:SECTION_USERPAY]&&section==IDX_USERPAY;
-}
-
 //先执行titleForHeaderInSection
 -(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
@@ -718,13 +696,13 @@
     //联系人
     if ([self isCatagorySelection:titleHeader section:section]) {
         UIView *catagoryView=[UIView new];
-       
+        
         //添加到视图
         [catagoryView addSubview:[self headerLable:@"业务类型"]];
-
-         UIButton * maintain=[self headerButton:@"业务类型管理"
-                                               action:@selector(catatoryClick:)];
-         [catagoryView addSubview:maintain];
+        
+        UIButton * maintain=[self headerButton:@"业务类型管理"
+                                        action:@selector(catatoryClick:)];
+        [catagoryView addSubview:maintain];
         
         viewHeader=catagoryView;
     }else if([self isContractSelection:titleHeader section:section]){
@@ -751,6 +729,62 @@
         viewHeader=catagoryView;
     }
     return viewHeader;
+}
+
+- (NSString*)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
+{
+    NSString *titleFooter=[super tableView:tableView
+                   titleForFooterInSection:section];
+    
+    return titleFooter;
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return NO;
+}
+
+- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return NO;
+}
+
+
+- (UIView*)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    UIView* viewFooter=[super tableView:tableView
+                 viewForFooterInSection:section];
+    return viewFooter;
+}
+
+
+//设置Cell行缩进量
+-(NSInteger)tableView:(UITableView *)tableView indentationLevelForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSInteger sIndexPath=[super tableView:tableView indentationLevelForRowAtIndexPath:indexPath];
+    return sIndexPath;
+}
+
+//业务类型判断
+-(BOOL) isBusinessBaseSelection:(NSString *)titleHeader
+                        section:(NSInteger)section{
+    return [titleHeader isEqualToString:SECTION_BUSINESS]&&section==IDX_BUSINESS;
+}
+
+
+//业务类型判断
+-(BOOL) isCatagorySelection:(NSString *)titleHeader section:(NSInteger)section{
+    return [titleHeader isEqualToString:SECTION_CATAGORY]&&section==IDX_CATAGORY;
+}
+
+//联系方式判断
+-(BOOL) isContractSelection:(NSString *)titleHeader section:(NSInteger)section{
+    return [titleHeader isEqualToString:SECTION_CONTRACT]&&section==IDX_CONTRACT;
+}
+
+//联系方式判断
+-(BOOL) isUserPaySelection:(NSString *)titleHeader section:(NSInteger)section{
+    return [titleHeader isEqualToString:SECTION_USERPAY]&&section==IDX_USERPAY;
 }
 
 -(UIButton *)headerButton:(NSString *)title action:(SEL)action{
@@ -781,41 +815,5 @@
     headLable.frame = BSRectMake(8, -6, 80, 36);
     return headLable;
 }
-- (NSString*)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
-{
-    NSString *titleFooter=[super tableView:tableView
-                   titleForFooterInSection:section];
-
-    return titleFooter;
-}
-
-
-
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return NO;
-}
-
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return NO;
-}
-
-
-- (UIView*)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
-{
-    UIView* viewFooter=[super tableView:tableView
-                 viewForFooterInSection:section];
-    return viewFooter;
-}
-
-
-//设置Cell行缩进量
--(NSInteger)tableView:(UITableView *)tableView indentationLevelForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    NSInteger sIndexPath=[super tableView:tableView indentationLevelForRowAtIndexPath:indexPath];
-    return sIndexPath;
-}
-
 
 @end

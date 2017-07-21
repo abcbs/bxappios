@@ -103,6 +103,8 @@
             @try {
                 cell.detailTextLabel.text=[characteristicValueDic
                                            objectForKey:[keys objectAtIndex:indexPath.section]];
+                NSLog(@"特征值信息为:\n%@",[characteristicValueDic
+                      objectForKey:[keys objectAtIndex:indexPath.section]]);
             }
             @catch (NSException *exception) {
                 BSLog(@"数据输出时，产生错误\t%@",exception.reason);
@@ -111,6 +113,7 @@
         }else{
             cell.detailTextLabel.text=@"获取不到特征值的值";
         }
+       
     }else{
         cell.textLabel.text=@"获取不到特征值";
     }

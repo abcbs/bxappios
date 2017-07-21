@@ -32,6 +32,7 @@ static RemoteUserManager *instance;
                     parameters:dic
                     modelClass:[NSString class]
                        keyPath:@""
+     
                          block:(BSHTTPResponse)block
      ];
     

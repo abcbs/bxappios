@@ -61,7 +61,7 @@ static BSSecurity *security;
 - (id)encryptOrDecryptData:(int) cryptType {
     // 如果自己不是模型类
     if ([MJFoundation isClassFromFoundation:[self class]]) return (NSMutableDictionary *)self;
-    
+    /*
     @try {
         Class aClass = [self class];
         NSArray *allowedPropertyNames = [aClass totalAllowedPropertyNames];
@@ -128,6 +128,7 @@ static BSSecurity *security;
     } @catch (NSException *exception) {
         BSLog(@"加解密失败，\t%@",exception.description);
     }
+     */
     return self;
 }
 

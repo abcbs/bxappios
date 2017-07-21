@@ -92,7 +92,7 @@
 {
     
     [self.centralManager scanForPeripheralsWithServices:
-        @[[CBUUID UUIDWithString:TRANSFER_SERVICE_UUID]]
+        @[[CBUUID UUIDWithString:TRANSFER_SERVICE_UUID]]//搜索具体的服务
           options:@{ CBCentralManagerScanOptionAllowDuplicatesKey : @YES }
      ];
     BSLog(@"Scanning started");

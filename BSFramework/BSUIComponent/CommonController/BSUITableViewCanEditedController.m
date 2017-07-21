@@ -51,7 +51,6 @@
         self.tableView.delegate = self;
         self.tableView.separatorStyle=UITableViewCellSeparatorStyleNone;
     }
-    
     //设置TextField键盘
     [self delelageForTextField];
     //设置界面元素样式

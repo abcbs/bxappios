@@ -81,7 +81,7 @@
     // We need to add this manually so we have a way to dismiss the keyboard
     UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"确定" style:UIBarButtonItemStylePlain target:self action:@selector(dismissKeyboard)];
     //[self.tintColor]
-    self.navigationItem.rightBarButtonItem = rightButton;
+//    self.navigationItem.rightBarButtonItem = rightButton;
 }
 
 /** Finishes the editing */

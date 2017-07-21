@@ -70,7 +70,7 @@
     // Then the service
     //2.创建周边服务
     self.transferService = [[CBMutableService alloc] initWithType:[CBUUID UUIDWithString:TRANSFER_SERVICE_UUID]
-                                                                       primary:YES];
+         primary:YES];
     
     // Add the characteristic to the service
     /**3.特征值添加到服务中

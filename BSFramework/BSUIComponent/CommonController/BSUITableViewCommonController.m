@@ -16,39 +16,39 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    if (self.navigationController) {
-        //iOS有默认导航栏，使用固有的导航栏
-        [BSUIComponentView initNavigationHeaderWithDefault:self
-                        navigationProcess:self
-                        title:self.title];
-        [BSUIComponentView initNarHeaderWithDefault:self
-              title:self.title
-                            bDisplaySearchButtonNav:self.bDisplaySearchButtonNav
-                            bDisplayReturnButtonNav:self.bDisplayReturnButtonNav
-         
-         ];
-        [BSUIComponentView navigationHeader:self.navigationController];
-        
-    }else{
-         //没有导航栏，使用Button完成
-        [BSUIComponentView initNarHeaderWithDefault:self title: self.title];
-        //[BSUIComponentView navigationHeader:self.navigationController];
-        
-    }
-  
-    [BSUIComponentView changeTabBarWithNotification:self addedInfo:self.inform];
-    [self modifiedStyle];
-    if (self.tableView==nil) {
-        NSLog(@" BSUITableViewCommonController tableView is null");
-    }else{
-        self.tableView.backgroundColor=[UIColor groupTableViewBackgroundColor];
-        self.tableView.frame=BSRectMake(NAVIGATIONBAR_X, NAVIGATIONBAR_HEIGHT, SCREEN_WIDTH, SCREEN_HEIGHT-NAVIGATION_ADD_STATUS_HEIGHT);
-        
-        self.tableView.dataSource =self;
-        self.tableView.delegate = self;
-        self.tableView.separatorStyle=UITableViewCellSeparatorStyleNone;
-    }
-    
+//    if (self.navigationController) {
+//        //iOS有默认导航栏，使用固有的导航栏
+//        [BSUIComponentView initNavigationHeaderWithDefault:self
+//                        navigationProcess:self
+//                        title:self.title];
+//        [BSUIComponentView initNarHeaderWithDefault:self
+//              title:self.title
+//                            bDisplaySearchButtonNav:self.bDisplaySearchButtonNav
+//                            bDisplayReturnButtonNav:self.bDisplayReturnButtonNav
+//         
+//         ];
+//        [BSUIComponentView navigationHeader:self.navigationController];
+//        
+//    }else{
+//         //没有导航栏，使用Button完成
+//        [BSUIComponentView initNarHeaderWithDefault:self title: self.title];
+//        //[BSUIComponentView navigationHeader:self.navigationController];
+//        
+//    }
+//  
+//    [BSUIComponentView changeTabBarWithNotification:self addedInfo:self.inform];
+//    [self modifiedStyle];
+//    if (self.tableView==nil) {
+//        NSLog(@" BSUITableViewCommonController tableView is null");
+//    }else{
+//        self.tableView.backgroundColor=[UIColor groupTableViewBackgroundColor];
+//        self.tableView.frame=BSRectMake(NAVIGATIONBAR_X, NAVIGATIONBAR_HEIGHT, SCREEN_WIDTH, SCREEN_HEIGHT-NAVIGATION_ADD_STATUS_HEIGHT);
+//        
+//        self.tableView.dataSource =self;
+//        self.tableView.delegate = self;
+//        self.tableView.separatorStyle=UITableViewCellSeparatorStyleNone;
+//    }
+//    
     //设置TextField键盘
     [self delelageForTextField];
     //设置界面元素样式

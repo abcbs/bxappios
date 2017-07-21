@@ -240,6 +240,7 @@ static NSString *const kSeenCacheOnLostTimer = @"on_lost_timer";
 }
 
 
+
 - (void)startScanning {
     /**
      *  使用dispatch_async或dispatch_sync函数来加载需要运行的block。
