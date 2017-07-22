@@ -10,30 +10,35 @@
 
 @interface CTMainViewController : BSUITableViewCommonController
 
-//交易类型
+//0-交易类型
 @property (weak, nonatomic) IBOutlet UIPickerView *transactionTypePick;
 
-//赠与关系
+//1-赠与关系
 @property (weak, nonatomic) IBOutlet UIPickerView *giftRelationshipPick;
 
-//房屋类型
+@property (weak, nonatomic) IBOutlet UILabel *giftRelationshipLabel;
+
+//2-房屋类型
 @property (weak, nonatomic) IBOutlet UIPickerView *houseTypePick;
 
-//买方住房记录类型
+//3-买方住房记录类型
 @property (weak, nonatomic) IBOutlet UIPickerView *buyerHistTypePick;
 
-//卖方住房类型
+//4-卖方住房类型
 @property (weak, nonatomic) IBOutlet UIPickerView *sellerHouseTypePick;
 
-//卖方购房年限类型
+//5-卖方购房年限类型
 @property (weak, nonatomic) IBOutlet UIPickerView *sellerFixedYearsTypePick;
 
-//卖方购房记录类型
+//6-卖方购房记录类型
 @property (weak, nonatomic) IBOutlet UIPickerView *sellerHouseRecordTypePick;
 
-//个人所得税征收方式
+//7-个人所得税征收方式
 @property (weak, nonatomic) IBOutlet UIPickerView *incomeTaxTypePick;
 
-//土地增值税征收方式
+//8-土地增值税征收方式
 @property (weak, nonatomic) IBOutlet UIPickerView *landTaxTypePick;
+
+
+
 @end

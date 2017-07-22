@@ -1703,7 +1703,6 @@
 		A14656F71ADEB5A400571E9A /* KTFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = A14656EF1ADEB5A400571E9A /* KTFooterView.m */; };
 		A14656F81ADEB5A400571E9A /* KTFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A14656F01ADEB5A400571E9A /* KTFooterView.xib */; };
 		A22718561F1F4882006D3CD7 /* suan_shui_app.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A22718551F1F4882006D3CD7 /* suan_shui_app.storyboard */; };
-		A25883C51F227E0500CBA325 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A25883C41F227E0500CBA325 /* AppDelegate.m */; };
 		A2F6A67E1F22441C00B30A37 /* CTMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2F6A67D1F22441C00B30A37 /* CTMainViewController.m */; };
 		A2F6A6821F2249DB00B30A37 /* CTTxtInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A2F6A6811F2249DB00B30A37 /* CTTxtInfo.m */; };
 		A2F6A6851F224A2A00B30A37 /* CTResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2F6A6841F224A2A00B30A37 /* CTResultViewController.m */; };
@@ -3110,8 +3109,6 @@
 		A14656EF1ADEB5A400571E9A /* KTFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTFooterView.m; sourceTree = "<group>"; };
 		A14656F01ADEB5A400571E9A /* KTFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KTFooterView.xib; sourceTree = "<group>"; };
 		A22718551F1F4882006D3CD7 /* suan_shui_app.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = suan_shui_app.storyboard; path = "NIB-SYB-Resource/suan_shui_app.storyboard"; sourceTree = "<group>"; };
-		A25883C31F227E0500CBA325 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		A25883C41F227E0500CBA325 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		A2F6A67C1F22441C00B30A37 /* CTMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTMainViewController.h; sourceTree = "<group>"; };
 		A2F6A67D1F22441C00B30A37 /* CTMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTMainViewController.m; sourceTree = "<group>"; };
 		A2F6A67F1F2248F600B30A37 /* CTManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTManagerDelegate.h; sourceTree = "<group>"; };
@@ -5779,8 +5776,6 @@
 		A2F6A67B1F22417C00B30A37 /* CalTxt */ = {
 			isa = PBXGroup;
 			children = (
-				A25883C31F227E0500CBA325 /* AppDelegate.h */,
-				A25883C41F227E0500CBA325 /* AppDelegate.m */,
 				A22718551F1F4882006D3CD7 /* suan_shui_app.storyboard */,
 				A2F6A67C1F22441C00B30A37 /* CTMainViewController.h */,
 				A2F6A67D1F22441C00B30A37 /* CTMainViewController.m */,
@@ -7371,7 +7366,6 @@
 				8461B7981B55044D002A7C43 /* LSProductListTableViewController.m in Sources */,
 				84F66D681B53E7DE00498734 /* LSHandySearchNavViewController..mm in Sources */,
 				8461B7A41B5507EA002A7C43 /* LSProductDetailTableViewController.m in Sources */,
-				A25883C51F227E0500CBA325 /* AppDelegate.m in Sources */,
 				84E767CE1B60DB9C0018A9E3 /* LSProductMaintainViewController.m in Sources */,
 				84BF8F631B4AB63C001042F1 /* main.m in Sources */,
 			);
