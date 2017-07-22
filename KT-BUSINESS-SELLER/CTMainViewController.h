@@ -7,8 +7,11 @@
 //
 
 #import "BSUITableViewCommonController.h"
+#import "CTManagerDelegate.h"
+#import "CTTxtInfo.h"
 
-@interface CTMainViewController : BSUITableViewCommonController
+@interface CTMainViewController : BSUITableViewCommonController<CTManagerDelegate>
+
 
 //0-交易类型
 @property (weak, nonatomic) IBOutlet UIPickerView *transactionTypePick;
@@ -40,5 +43,5 @@
 @property (weak, nonatomic) IBOutlet UIPickerView *landTaxTypePick;
 
 
-
+//算税模型数据
 @end

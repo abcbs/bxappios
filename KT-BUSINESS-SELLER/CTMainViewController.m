@@ -7,10 +7,12 @@
 //
 
 #import "CTMainViewController.h"
+#import "CTTxtInfo.h"
+#import "CTResultViewController.h"
 
+@interface CTMainViewController ()<UIPickerViewDelegate,UIPickerViewDataSource,
+        UITextFieldDelegate,UITextViewDelegate>
 
-
-@interface CTMainViewController ()<UIPickerViewDelegate,UIPickerViewDataSource>
 {
     NSArray *transactionTypeData;
     NSArray *giftRelationshipData;
@@ -50,6 +52,7 @@
     NSString *landTaxTypeFacts;
     NSString *landTaxTypeFactsContent;
     
+    CTTxtInfo *calTaxInfo;
 }
 
 
@@ -71,78 +74,89 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    calTaxInfo=[CTTxtInfo calTaxInfo];
     //0-交易类型
-    transactionType=0;
+    transactionType=[CTTxtInfo transactionType];
     //1-赠与类型
-    giftRelationshipType=1;
+    giftRelationshipType=[CTTxtInfo giftRelationshipType];
     //2-房屋类型
-    houseType=2;
+    houseType=[CTTxtInfo houseType];
     //3-买方住房记录类型
-    buyerHistType=3;
+    buyerHistType=[CTTxtInfo buyerHistType];
     //4-卖方住房类型;
-    sellerHouseType=4;
+    sellerHouseType=[CTTxtInfo sellerHouseType];
     //5-卖方购房年限类型
-    sellerFixedYearsType=5;
+    sellerFixedYearsType=[CTTxtInfo sellerFixedYearsType];
     //6-卖方购房记录类型
-    sellerHouseRecordType=6;
+    sellerHouseRecordType=[CTTxtInfo sellerHouseRecordType];
     //7-个人所得税征收方式
-    incomeTaxType=7;
+    incomeTaxType=[CTTxtInfo incomeTaxType];
     //8-土地增值税征收方式
-    landTaxType=8;
+    landTaxType=[CTTxtInfo landTaxType];
+    
+    //逻辑控制与说明
+    //个人所得税
+    incomeTaxTypeFactsContent=[CTTxtInfo incomeTaxTypeFactsContent];
+    //土地增值税征收方式
+    landTaxTypeFactsContent=[CTTxtInfo landTaxTypeFactsContent];
+
     
     //0-交易类型
     transactionTypePick.delegate=self;
     transactionTypePick.dataSource = self;
     transactionTypePick.showsSelectionIndicator=YES;
-    transactionTypeData=[[NSArray alloc]initWithObjects:@"",@"买卖",@"赠与", nil];
+    transactionTypeData=[CTTxtInfo transactionTypeData];
     
     //1-赠与类型
     giftRelationshipPick.delegate=self;
     giftRelationshipPick.dataSource = self;
     giftRelationshipPick.showsSelectionIndicator=YES;
-    giftRelationshipData=[[NSArray alloc]initWithObjects:@"",@"亲属关系",@"非亲属关系", nil];
+    giftRelationshipData=[CTTxtInfo giftRelationshipData];
     
     //2-房屋类型
     houseTypePick.delegate=self;
     houseTypePick.dataSource = self;
     houseTypePick.showsSelectionIndicator=YES;
-    houseTypeData=[[NSArray alloc]initWithObjects:@"",@"住房",@"非住房", nil];
-   
+    houseTypeData=[CTTxtInfo houseTypeData];
+
+    
     //3-买方住房记录类型
     buyerHistTypePick.delegate=self;
     buyerHistTypePick.dataSource = self;
     buyerHistTypePick.showsSelectionIndicator=YES;
-    buyerHistTypeData=[[NSArray alloc]initWithObjects:@"",@"家庭唯一住房",@"非家庭唯一住房", nil];
+    buyerHistTypeData=[CTTxtInfo buyerHistTypeData];
     
     //4-卖方住房类型
     sellerHouseTypePick.delegate=self;
     sellerHouseTypePick.dataSource = self;
     sellerHouseTypePick.showsSelectionIndicator=YES;
-    sellerHouseTypeData=[[NSArray alloc]initWithObjects:@"",@"普通住房",@"非普通住房", nil];
+    sellerHouseTypeData=[CTTxtInfo sellerHouseTypeData];
     
     //5-卖方购房年限类型
     sellerFixedYearsTypePick.delegate=self;
     sellerFixedYearsTypePick.dataSource = self;
     sellerFixedYearsTypePick.showsSelectionIndicator=YES;
-    sellerFixedYearsTypeData=[[NSArray alloc]initWithObjects:@"",@"不满两年",@"满两年不满五年",@"已满五年", nil];
+    sellerFixedYearsTypeData=[CTTxtInfo sellerFixedYearsTypeData];
     
     //6-卖方购房记录类型
     sellerHouseRecordTypePick.delegate=self;
     sellerHouseRecordTypePick.dataSource = self;
     sellerHouseRecordTypePick.showsSelectionIndicator=YES;
-    sellerHouseRecordTypeData=[[NSArray alloc]initWithObjects:@"",@"家庭唯一住房",@"非家庭唯一住房", nil];
+    sellerHouseRecordTypeData=[CTTxtInfo sellerHouseRecordTypeData];
     
     //7-个人所得税征收方式
     incomeTaxTypePick.delegate=self;
     incomeTaxTypePick.dataSource = self;
     incomeTaxTypePick.showsSelectionIndicator=YES;
-    incomeTaxTypeData=[[NSArray alloc]initWithObjects:@"",@"核定征收",@"据实征收", @"满五年家庭唯一住房免税",nil];
+    incomeTaxTypeData=[CTTxtInfo incomeTaxTypeData];
     
     //8-土地增值税征收方式
     landTaxTypePick.delegate=self;
     landTaxTypePick.dataSource = self;
     landTaxTypePick.showsSelectionIndicator=YES;
-    landTaxTypeData=[[NSArray alloc]initWithObjects:@"",@"核定征收",@"据实征收", @"个人住房免税",nil];
+    landTaxTypeData=[CTTxtInfo landTaxTypeData];
+    
     
     pickArr=[[NSMutableArray alloc] init];
     [pickArr addObject:transactionTypeData];//0
@@ -155,12 +169,7 @@
     [pickArr addObject:incomeTaxTypeData];//7
     [pickArr addObject:landTaxTypeData];//8
     
-    //逻辑控制与说明
-    //个人所得税
-    incomeTaxTypeFactsContent=@"据实征收";
-    //土地增值税征收方式
-    landTaxTypeFactsContent=@"据实征收";
-}
+   }
 
 
 #pragma mark Picker Date Source Methods
@@ -174,7 +183,6 @@
 //返回当前列显示的行数
 -(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
-    NSLog(@"TAG=%d",pickerView.tag);
     //0-交易类型                transactionType=0;
     //1-赠与类型                giftRelationshipType=1;
     //2-房屋类型                houseType=2;
@@ -391,8 +399,19 @@
 //     Get the new view controller using [segue destinationViewController].
 //     Pass the selected object to the new view controller.
     NSLog(@"prepareForSegue");
+    if ([segue.identifier isEqualToString:@"calTaxSegue"])
+    {//商品维护
+        CTResultViewController *info = (CTResultViewController *)segue.destinationViewController;
+        info.resultDelegate=self;
+        calTaxInfo.calTax;
+        info.taxInfo=calTaxInfo;
+    }
+
 
 }
 
+-(CTTxtInfo *) loadTaxInfo:(CTTxtInfo *)taxInfo{
+    return calTaxInfo;
+}
 
 @end

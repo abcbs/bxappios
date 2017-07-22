@@ -7,7 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "CTTxtInfo.h"
 @protocol CTManagerDelegate <NSObject>
+
+/**
+ *装载初始化数据
+ */
+-(CTTxtInfo*) loadTaxInfo:(CTTxtInfo *)taxInfo;
+
 
 @end
