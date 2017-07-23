@@ -33,6 +33,8 @@
 //8-土地增值税征收方式
 +(NSInteger) landTaxType;
 
++transactionTypeContent;
+//个人所得税征收方式为据实征收选项
 +(NSString *) incomeTaxTypeFactsContent;
 //土地增值税征收方式，如果是据实征收
 +(NSString *)landTaxTypeFactsContent;
@@ -40,9 +42,8 @@
 #pragma mark -算税模型
 
 #pragma mark -字典信息
-/**
- *0-交易类型
- */
+
+//0-交易类型
 +(NSArray *) transactionTypeData;
 //1-赠与类型
 +(NSArray *) giftRelationshipData;
@@ -69,6 +70,7 @@
 //土地增值税征收方式，如果是据实征收
 @property (retain,nonatomic) NSString * landTaxTypeFacts;
 
+///////////////////////////////////////////////////////////
 //0-交易类型
 @property (assign,nonatomic) NSString * transactionTypeCurrent;
 
@@ -95,6 +97,7 @@
 
 //8-土地增值税征收方式
 @property (assign,nonatomic) NSString * landTaxTypeCurrent;
+////////////////////////////////////////////////////////////
 
 //房屋建筑面积
 @property (assign,nonatomic) float houseBuiltArea;
@@ -121,6 +124,7 @@
 //发票年限
 @property (assign,nonatomic) float invoicesYearLimit;
 
+////////////////////////////////////////////////////////
 //买方信息-契税
 
 //买方信息-契税税率
@@ -134,7 +138,9 @@
 //买方合计
 @property (assign,nonatomic) float totalSeller;
 
-//卖方信息
+//Seller 卖方
+//buyer 买方
+//卖方信息,
 //卖方信息-增值税率
 @property (assign,nonatomic) float addedValueTaxRateBuyer;
 //卖方信息-增值税
@@ -172,11 +178,12 @@
 
 //计算后数据
 - (void)calTax;
-
+//计算后数据
+- (NSString *)formattedTaxResult;
 //工具方法
 +(NSString * ) convertFloatToString:(float)date;
 //百分比
 +(NSString * ) convertFloatToStringProc:(float)date;
 +(float) convertStringToFloat:(NSString *)date;
-
++ (NSString *)currentDate;
 @end

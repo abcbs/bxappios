@@ -9,20 +9,21 @@
 #import "CTMainViewController.h"
 #import "CTTxtInfo.h"
 #import "CTResultViewController.h"
-
+#import "PromptInfo.h"
+#import "BSIFTTHeader.h"
 @interface CTMainViewController ()<UIPickerViewDelegate,UIPickerViewDataSource,
         UITextFieldDelegate,UITextViewDelegate>
 
 {
-    NSArray *transactionTypeData;
-    NSArray *giftRelationshipData;
-    NSArray *houseTypeData;//房屋类型
-    NSArray *buyerHistTypeData;//买方住房记录类型
-    NSArray *sellerHouseTypeData;//卖方住房类型
-    NSArray *sellerFixedYearsTypeData;//卖方购房年限类型
-    NSArray *sellerHouseRecordTypeData;//卖方购房记录类型
-    NSArray *incomeTaxTypeData;//个人所得税征收方式
-    NSArray *landTaxTypeData;//土地增值税征收方式
+    NSArray *transactionTypeData;//0-交易类型
+    NSArray *giftRelationshipData;//1-赠与关系
+    NSArray *houseTypeData;//2-房屋类型
+    NSArray *buyerHistTypeData;//3-买方住房记录类型
+    NSArray *sellerHouseTypeData;//4-卖方住房类型
+    NSArray *sellerFixedYearsTypeData;//5-卖方购房年限类型
+    NSArray *sellerHouseRecordTypeData;//6-卖方购房记录类型
+    NSArray *incomeTaxTypeData;//7-个人所得税征收方式
+    NSArray *landTaxTypeData;//8-土地增值税征收方式
     NSMutableArray *pickArr;
     
     //0-交易类型
@@ -157,7 +158,23 @@
     landTaxTypePick.showsSelectionIndicator=YES;
     landTaxTypeData=[CTTxtInfo landTaxTypeData];
     
+    //样式控制
+    [BSUIComponentView configTextField:self.builtAreaTextField];
+    [BSUIComponentView configTextField:self.onlineSignedPriceTextField];
+    [BSUIComponentView configTextField:self.approvedPriceTextField];
+    [BSUIComponentView configTextField:self.houseRawPriceTextField];
+
+    [BSUIComponentView configTextField:self.houseRawPriceTextField];
+    [BSUIComponentView configTextField:self.contractRawTaxTextField];
+    [BSUIComponentView configTextField:self.renovationFaxTextField];
+    [BSUIComponentView configTextField:self.loanInterestTextField];
     
+    [BSUIComponentView configTextField:self.houseRawPriceLandTextField];
+    [BSUIComponentView configTextField:self.contractRawTaxLandTextField];
+    [BSUIComponentView configTextField:self.invoicesYearLimitTextField];
+
+
+    //选项数据
     pickArr=[[NSMutableArray alloc] init];
     [pickArr addObject:transactionTypeData];//0
     [pickArr addObject:giftRelationshipData];//1
@@ -247,9 +264,9 @@
     lbl.font =  [UIFont systemFontOfSize:17];
     [lbl setTextAlignment:0];
     if(row==0){
-        [lbl setBackgroundColor: [UIColor redColor]];
-    }else{
         [lbl setBackgroundColor: [UIColor lightGrayColor]];
+    }else{
+        [lbl setBackgroundColor: [UIColor whiteColor]];
     }
     lbl.text = [self pickerView:pickerView titleForRow:row forComponent:component];
     
@@ -277,7 +294,7 @@
     //8-土地增值税征收方式   landTaxType=8;
     
     //如果交易类型为赠与，则显示【赠与关系】
-    if(pickerView.tag == transactionType && row==2){
+    if(pickerView.tag == transactionType && row==2){//第二个选项
         giftRelationshipPick.hidden=NO;
         giftRelationshipLabel.hidden=NO;
         
@@ -303,8 +320,49 @@
         [self.tableView reloadData];
     }
     
-    
+    //
+    //0-交易类型            transactionType=0;
+    if(pickerView.tag == transactionType){
+        calTaxInfo.transactionTypeCurrent=transactionTypeData[row];
+    }
+    //1-赠与类型            giftRelationshipType=1;
+    if(pickerView.tag == giftRelationshipType){
+        calTaxInfo.giftRelationshipCurrent=giftRelationshipData[row];
+    }
+    //2-房屋类型            houseType=2;
+    if(pickerView.tag == houseType){
+        calTaxInfo.houseTypeCurrent=houseTypeData[row];
+    }
+    //3-买方住房记录类型     buyerHistType=3;
+    if(pickerView.tag == buyerHistType){
+        calTaxInfo.buyerHistTypeCurrent=buyerHistTypeData[row];
+    }
+    //4-卖方住房类型        sellerHouseType=4;
+    if(pickerView.tag == sellerHouseType){
+        calTaxInfo.sellerHouseTypeCurrent=sellerHouseTypeData[row];
+    }
+    //5-卖方购房年限类型     sellerFixedYearsType=5;
+    if(pickerView.tag == sellerFixedYearsType){
+        calTaxInfo.sellerFixedYearsTypeCurrent=sellerFixedYearsTypeData[row];
+    }
+    //6-卖方购房记录类型     sellerHouseRecordType=6;
+    if(pickerView.tag == sellerHouseRecordType){
+        calTaxInfo.sellerHouseRecordTypeCurrent=sellerHouseRecordTypeData[row];
+    }
+    //7-个人所得税征收方式   incomeTaxType=7;
+    if(pickerView.tag == incomeTaxType){
+        calTaxInfo.incomeTaxTypeCurrent=incomeTaxTypeData[row];
+    }
+    //8-土地增值税征收方式   landTaxType=8;
+    if(pickerView.tag == landTaxType){
+        calTaxInfo.landTaxTypeCurrent=landTaxTypeData[row];
+    }
+    //
+//    [self compareOnlineSignedAndApprovedPrice];
+
+
 }
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -392,23 +450,195 @@
 {
     return NO;
 }
+
+#pragma mark -UITextField的代理事件，换行执行的操作，去掉键盘
+-(void)delelageForTextField{
+    //网签价格
+    self.onlineSignedPriceTextField.delegate=self;
+    //核定价格
+    self.approvedPriceTextField.delegate=self;
+
+    
+}
+
+//每次键盘输入值均变化
+- (BOOL)textField:(UITextField*)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    [self compareOnlineSignedAndApprovedPrice];
+
+    return YES;
+    
+}
+
+/** Finishes the editing */
+- (void)dismissKeyboard
+{
+    [self compareOnlineSignedAndApprovedPrice];
+}
+
+- (BOOL)textFieldShouldEndEditing:(UITextField *)textField{
+    
+    [self compareOnlineSignedAndApprovedPrice];
+    return YES;
+    
+}
+
 #pragma mark - Navigation
 
- //In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//     Get the new view controller using [segue destinationViewController].
-//     Pass the selected object to the new view controller.
-    NSLog(@"prepareForSegue");
+    
     if ([segue.identifier isEqualToString:@"calTaxSegue"])
-    {//商品维护
+    {
         CTResultViewController *info = (CTResultViewController *)segue.destinationViewController;
         info.resultDelegate=self;
-        calTaxInfo.calTax;
+        [calTaxInfo calTax];//计算步骤
         info.taxInfo=calTaxInfo;
     }
 
 
 }
+
+#pragma mark - 比较网签与核定价格大小
+//
+//网签价格
+- (void)compareOnlineSignedAndApprovedPrice
+{
+    float onlineSignedPrice=[CTTxtInfo convertStringToFloat:self.onlineSignedPriceTextField.text];
+    //核定价格
+    float approvedPrice=[CTTxtInfo convertStringToFloat:self.approvedPriceTextField.text];
+    if(approvedPrice==0&&onlineSignedPrice==0){
+        self.onlineSignedPriceTextField.backgroundColor=[UIColor whiteColor];
+        self.approvedPriceTextField.backgroundColor=[UIColor whiteColor];
+        return;
+    }
+    if(onlineSignedPrice<approvedPrice){
+        self.approvedPriceTextField.backgroundColor=[UIColor grayColor];
+        self.onlineSignedPriceTextField.backgroundColor=[UIColor whiteColor];
+        
+    }else{
+        self.approvedPriceTextField.backgroundColor=[UIColor whiteColor];
+        self.onlineSignedPriceTextField.backgroundColor=[UIColor grayColor];
+    }
+    
+}
+
+#pragma mark - checkTextField
+-(BOOL)checkTextField{
+    //下面三个为三个通用输入项
+    //房屋建筑面积
+    NSString *houseBuiltArea=self.builtAreaTextField.text;
+    //网签价格
+    NSString *onlineSignedPrice=self.onlineSignedPriceTextField.text;
+    //核定价格
+    NSString *approvedPrice=self.approvedPriceTextField.text;
+    
+    //下面为条件控制项
+    //房屋原始价格
+    NSString *houseRawPrice=self.houseRawPriceTextField.text;
+    //房屋原始契税
+    NSString *contractRawTax=self.contractRawTaxTextField.text;
+    //装修费用
+    NSString *renovationFax=self.renovationFaxTextField.text;
+    //贷款利息
+    NSString *loanInterest=self.loanInterestTextField.text;
+    
+    
+    //房屋原始价格-土地增值税
+    NSString *houseRawPriceLand=self.houseRawPriceLandTextField.text;
+    //房屋原始契税-土地增值税
+    NSString *contractRawTaxLand=self.houseRawPriceLandTextField.text;
+    //发票年限
+    NSString *invoicesYearLimit=self.houseRawPriceLandTextField.text;
+    
+    if([houseBuiltArea isEqualToString:@""]||[onlineSignedPrice isEqualToString:@""]||[approvedPrice isEqualToString:@""]){
+        return NO;
+    }else{
+        //
+        calTaxInfo.houseBuiltArea=[CTTxtInfo convertStringToFloat:houseBuiltArea];
+        calTaxInfo.onlineSignedPrice=[CTTxtInfo convertStringToFloat:onlineSignedPrice];
+        calTaxInfo.approvedPrice=[CTTxtInfo convertStringToFloat:approvedPrice];
+    }
+   
+    //0-交易类型            transactionType=0;
+    if(calTaxInfo.transactionTypeCurrent==nil ||[calTaxInfo.transactionTypeCurrent isEqualToString:@""]){
+        return NO;
+    }
+    //1-赠与类型            giftRelationshipType=1;
+    //赠与选项验证
+    if([calTaxInfo.transactionTypeCurrent isEqualToString:[CTTxtInfo transactionTypeContent]]
+       &&(calTaxInfo.giftRelationshipCurrent==nil ||[calTaxInfo.giftRelationshipCurrent isEqualToString:@""])
+       ){
+        return NO;
+    }
+    //2-房屋类型            houseType=2;
+    if(calTaxInfo.houseTypeCurrent==nil ||[calTaxInfo.houseTypeCurrent isEqualToString:@""]){
+        return NO;
+    }
+    //3-买方住房记录类型     buyerHistType=3;
+    if(calTaxInfo.buyerHistTypeCurrent==nil ||[calTaxInfo.buyerHistTypeCurrent isEqualToString:@""]){
+        return NO;
+    }
+    //4-卖方住房类型        sellerHouseType=4;
+    if(calTaxInfo.sellerHouseTypeCurrent==nil ||[calTaxInfo.sellerHouseTypeCurrent isEqualToString:@""]){
+        return NO;
+    }
+    //5-卖方购房年限类型     sellerFixedYearsType=5;
+    if(calTaxInfo.sellerFixedYearsTypeCurrent==nil ||[calTaxInfo.sellerFixedYearsTypeCurrent isEqualToString:@""]){
+        return NO;
+    }
+    //6-卖方购房记录类型     sellerHouseRecordType=6;
+    if(calTaxInfo.sellerHouseRecordTypeCurrent==nil ||[calTaxInfo.sellerHouseRecordTypeCurrent isEqualToString:@""]){
+        return NO;
+    }
+    //7-个人所得税征收方式   incomeTaxType=7;
+    if(calTaxInfo.incomeTaxTypeCurrent==nil ||[calTaxInfo.incomeTaxTypeCurrent isEqualToString:@""]){
+        return NO;
+    }
+
+    //8-土地增值税征收方式   landTaxType=8;
+    if(calTaxInfo.landTaxTypeCurrent==nil ||[calTaxInfo.landTaxTypeCurrent isEqualToString:@""]){
+        return NO;
+    }
+    //个人所得税征收方式为据实征收选项
+    if([calTaxInfo.incomeTaxTypeCurrent isEqualToString:[CTTxtInfo incomeTaxTypeFactsContent]]){
+        if([houseRawPrice isEqualToString:@""]||[contractRawTax isEqualToString:@""]||[renovationFax isEqualToString:@""]||[loanInterest isEqualToString:@""]){
+            return NO;
+        }else{
+            calTaxInfo.houseRawPrice=[CTTxtInfo convertStringToFloat:houseRawPrice];
+            calTaxInfo.contractRawTax=[CTTxtInfo convertStringToFloat:contractRawTax];
+            calTaxInfo.renovationFax=[CTTxtInfo convertStringToFloat:renovationFax];
+            calTaxInfo.loanInterest=[CTTxtInfo convertStringToFloat:loanInterest];
+
+        }
+        
+    }
+    //土地增值税征收方式，如果是据实征收
+    if([calTaxInfo.landTaxTypeCurrent isEqualToString:[CTTxtInfo landTaxTypeFactsContent]]){
+        if([houseRawPriceLand isEqualToString:@""]||[contractRawTaxLand isEqualToString:@""]||[invoicesYearLimit isEqualToString:@""]){
+            return NO;
+        }else{
+            calTaxInfo.houseRawPriceLand=[CTTxtInfo convertStringToFloat:houseRawPriceLand];
+            calTaxInfo.contractRawTaxLand=[CTTxtInfo convertStringToFloat:contractRawTaxLand];
+            calTaxInfo.invoicesYearLimit=[CTTxtInfo convertStringToFloat:invoicesYearLimit];
+        }
+
+    }
+    return YES;
+}
+
+#pragma mark --控制是否可以根据故事板跳转
+-(BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
+{
+    BOOL input=[self checkTextField];
+    if (input==NO) {
+        [PromptInfo showWithText:@"录入信息不全" topOffset:54 duration:2];
+        return NO;
+    }else{
+        return YES;
+    }
+    
+}
+
 
 -(CTTxtInfo *) loadTaxInfo:(CTTxtInfo *)taxInfo{
     return calTaxInfo;

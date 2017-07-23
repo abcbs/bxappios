@@ -94,5 +94,12 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *incomeLandBuyerLabel;
 
+//文字粘贴，和制表日期
+@property (weak, nonatomic) IBOutlet UIButton *builtResultToTextsButton;
+
+- (IBAction)builtResultToTexts:(id)sender;
+
+//计算日期
+@property (weak, nonatomic) IBOutlet UILabel *calDateLabel;
 
 @end

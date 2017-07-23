@@ -1703,7 +1703,7 @@
 		A14656F71ADEB5A400571E9A /* KTFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = A14656EF1ADEB5A400571E9A /* KTFooterView.m */; };
 		A14656F81ADEB5A400571E9A /* KTFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A14656F01ADEB5A400571E9A /* KTFooterView.xib */; };
 		A22718561F1F4882006D3CD7 /* suan_shui_app.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A22718551F1F4882006D3CD7 /* suan_shui_app.storyboard */; };
-		A2F6A67E1F22441C00B30A37 /* CTMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2F6A67D1F22441C00B30A37 /* CTMainViewController.m */; };
+		A24444CA1F24F05F00A1BAC7 /* CTMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A24444C91F24F05F00A1BAC7 /* CTMainViewController.m */; };
 		A2F6A6821F2249DB00B30A37 /* CTTxtInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A2F6A6811F2249DB00B30A37 /* CTTxtInfo.m */; };
 		A2F6A6851F224A2A00B30A37 /* CTResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2F6A6841F224A2A00B30A37 /* CTResultViewController.m */; };
 		DFD86AB01AFC5886000AB8E6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DFD86AB21AFC5886000AB8E6 /* InfoPlist.strings */; };
@@ -3109,8 +3109,8 @@
 		A14656EF1ADEB5A400571E9A /* KTFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTFooterView.m; sourceTree = "<group>"; };
 		A14656F01ADEB5A400571E9A /* KTFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KTFooterView.xib; sourceTree = "<group>"; };
 		A22718551F1F4882006D3CD7 /* suan_shui_app.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = suan_shui_app.storyboard; path = "NIB-SYB-Resource/suan_shui_app.storyboard"; sourceTree = "<group>"; };
+		A24444C91F24F05F00A1BAC7 /* CTMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTMainViewController.m; sourceTree = "<group>"; };
 		A2F6A67C1F22441C00B30A37 /* CTMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTMainViewController.h; sourceTree = "<group>"; };
-		A2F6A67D1F22441C00B30A37 /* CTMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTMainViewController.m; sourceTree = "<group>"; };
 		A2F6A67F1F2248F600B30A37 /* CTManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTManagerDelegate.h; sourceTree = "<group>"; };
 		A2F6A6801F2249DB00B30A37 /* CTTxtInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTTxtInfo.h; sourceTree = "<group>"; };
 		A2F6A6811F2249DB00B30A37 /* CTTxtInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTTxtInfo.m; sourceTree = "<group>"; };
@@ -5778,7 +5778,7 @@
 			children = (
 				A22718551F1F4882006D3CD7 /* suan_shui_app.storyboard */,
 				A2F6A67C1F22441C00B30A37 /* CTMainViewController.h */,
-				A2F6A67D1F22441C00B30A37 /* CTMainViewController.m */,
+				A24444C91F24F05F00A1BAC7 /* CTMainViewController.m */,
 				A2F6A67F1F2248F600B30A37 /* CTManagerDelegate.h */,
 				A2F6A6801F2249DB00B30A37 /* CTTxtInfo.h */,
 				A2F6A6811F2249DB00B30A37 /* CTTxtInfo.m */,
@@ -7359,12 +7359,12 @@
 				8405CB7D1B5564A90014AF8D /* BusinessActivity.m in Sources */,
 				84EB39731B5899A000AD9F66 /* LSProductAduitTableViewController.m in Sources */,
 				84BF8F661B4AB63C001042F1 /* SellerAppDelegate.m in Sources */,
-				A2F6A67E1F22441C00B30A37 /* CTMainViewController.m in Sources */,
 				A2F6A6851F224A2A00B30A37 /* CTResultViewController.m in Sources */,
 				8461B79E1B550655002A7C43 /* LSProductADTableViewController.m in Sources */,
 				8461B7A11B550708002A7C43 /* LSProductUpperLowerViewController.m in Sources */,
 				8461B7981B55044D002A7C43 /* LSProductListTableViewController.m in Sources */,
 				84F66D681B53E7DE00498734 /* LSHandySearchNavViewController..mm in Sources */,
+				A24444CA1F24F05F00A1BAC7 /* CTMainViewController.m in Sources */,
 				8461B7A41B5507EA002A7C43 /* LSProductDetailTableViewController.m in Sources */,
 				84E767CE1B60DB9C0018A9E3 /* LSProductMaintainViewController.m in Sources */,
 				84BF8F631B4AB63C001042F1 /* main.m in Sources */,

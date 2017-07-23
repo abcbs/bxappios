@@ -43,5 +43,39 @@
 @property (weak, nonatomic) IBOutlet UIPickerView *landTaxTypePick;
 
 
-//算税模型数据
+//算税模型数据-输入框
+//建筑面积
+@property (weak, nonatomic) IBOutlet UITextField *builtAreaTextField;
+
+//网签价格
+@property (weak, nonatomic) IBOutlet UITextField *onlineSignedPriceTextField;
+
+//核定价格
+@property (weak, nonatomic) IBOutlet UITextField *approvedPriceTextField;
+
+
+////////////////////
+//房屋原始价格
+@property (weak, nonatomic) IBOutlet UITextField *houseRawPriceTextField;
+
+
+//房屋原始契税
+@property (weak, nonatomic) IBOutlet UITextField *contractRawTaxTextField;
+
+//装修费用
+@property (weak, nonatomic) IBOutlet UITextField *renovationFaxTextField;
+
+//贷款利息
+@property (weak, nonatomic) IBOutlet UITextField *loanInterestTextField;
+
+
+//房屋原始价格-土地增值税
+@property (weak, nonatomic) IBOutlet UITextField *houseRawPriceLandTextField;
+
+//房屋原始契税-土地增值税
+@property (weak, nonatomic) IBOutlet UITextField *contractRawTaxLandTextField;
+
+//发票年限
+@property (weak, nonatomic) IBOutlet UITextField *invoicesYearLimitTextField;
+
 @end
