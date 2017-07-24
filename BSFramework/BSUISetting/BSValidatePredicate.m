@@ -119,11 +119,9 @@
 //
 + (BOOL)checkNumber : (NSString *) number
 {
-    NSString *pattern = @"^[0-9]+(.[0-9]{0,2})";
-    
-    NSPredicate *pred = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", pattern];
-    BOOL isMatch = [pred evaluateWithObject:number];
-    return isMatch;
+    NSScanner* scan = [NSScanner scannerWithString:number];
+    float val;
+    return[scan scanFloat:&val] && [scan isAtEnd];
     
 }
 #pragma mark -正则匹员工号,12位的数字

@@ -102,7 +102,7 @@
                                                         <constraint firstAttribute="width" constant="103" id="iym-hS-uPy"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -133,7 +133,7 @@
                                                     <rect key="frame" x="80" y="3" width="103" height="30"/>
                                                     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="核定价格:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CL5-gI-Xgx">
                                                     <rect key="frame" x="190" y="7" width="73" height="21"/>
@@ -153,7 +153,7 @@
                                                         <constraint firstAttribute="height" constant="30" id="aar-nw-pxp"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -310,7 +310,7 @@
                                                     <rect key="frame" x="78" y="4" width="103" height="30"/>
                                                     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="原始契税:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V3f-O6-kuz">
                                                     <rect key="frame" x="194" y="8" width="74" height="21"/>
@@ -330,7 +330,7 @@
                                                         <constraint firstAttribute="width" constant="103" id="aeI-MO-baH"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="装修费用:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OlW-tP-GEb">
                                                     <rect key="frame" x="4" y="41" width="74" height="21"/>
@@ -342,7 +342,7 @@
                                                     <rect key="frame" x="78" y="37" width="103" height="30"/>
                                                     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="贷款利息:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h6s-Ka-UxL">
                                                     <rect key="frame" x="194" y="40" width="74" height="21"/>
@@ -362,7 +362,7 @@
                                                         <constraint firstAttribute="height" constant="30" id="Qr5-Gg-rZW"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -416,7 +416,7 @@
                                                     <rect key="frame" x="78" y="3" width="103" height="30"/>
                                                     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                 </textField>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="123456元" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PFM-BN-hTd">
                                                     <rect key="frame" x="264" y="3" width="103" height="30"/>
@@ -426,7 +426,7 @@
                                                         <constraint firstAttribute="height" constant="30" id="wL7-oX-BYk"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="发票年限:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bc1-PA-1KV">
                                                     <rect key="frame" x="4" y="41" width="74" height="21"/>
@@ -438,7 +438,7 @@
                                                     <rect key="frame" x="78" y="37" width="103" height="30"/>
                                                     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="原始契税:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kgq-nS-3br">
                                                     <rect key="frame" x="194" y="8" width="74" height="21"/>
@@ -518,7 +518,7 @@
                                         <rect key="frame" x="0.0" y="92" width="375" height="119"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Buw-pu-rjK" id="qSc-Qm-p3a">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="119"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="118.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="印花税：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L28-Ss-doX">
@@ -631,7 +631,7 @@
                                         <rect key="frame" x="0.0" y="267" width="375" height="389"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6Fk-Ko-zie" id="MWe-ef-stt">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="389"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="388.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="增值税：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Bd-H0-f4f">
@@ -966,7 +966,7 @@
                                         <rect key="frame" x="0.0" y="712" width="375" height="36"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="d1j-c8-FIY" id="uME-SK-TA2">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="36"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="35.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B61-l6-Q4p">

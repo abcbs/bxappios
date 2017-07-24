@@ -482,10 +482,11 @@
 - (BOOL)textField:(UITextField*)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
     [self compareOnlineSignedAndApprovedPrice];
-    BOOL is=[BSValidatePredicate checkNumber:textField.text];
-    if(is==NO){
-        [PromptInfo showWithText:@"数字应为包含两位小数的数字" topOffset:54 duration:2];
-    }
+//    NSString *number=textField.text;
+//    BOOL is=[BSValidatePredicate checkNumber:number];
+//    if(is==NO){
+//        [PromptInfo showWithText:@"数字应为包含两位小数的数字" topOffset:54 duration:2];
+//    }
 
     return YES;
     
@@ -498,10 +499,10 @@
 }
 
 - (BOOL)textFieldShouldEndEditing:(UITextField *)textField{
-    BOOL is=[BSValidatePredicate checkNumber:textField.text];
-    if(is==NO){
-        [PromptInfo showWithText:@"数字应为包含两位小数的数字" topOffset:54 duration:2];
-    }
+//    BOOL is=[BSValidatePredicate checkNumber:textField.text];
+//    if(is==NO){
+//        [PromptInfo showWithText:@"数字应为包含两位小数的数字" topOffset:54 duration:2];
+//    }
     [self compareOnlineSignedAndApprovedPrice];
     return YES;
     
@@ -582,9 +583,6 @@
        
         if([houseBuiltArea isEqualToString:@""]){
 
-//            BOOL checkRealName=[BSValidatePredicate
-//                                checkUserNameField:self.houseRawPriceLandTextField
-//                                alert:@"房屋建筑面积不能为空"];
             [PromptInfo showWithText:@"房屋建筑面积不能为空" topOffset:54 duration:2];
         }
         if([onlineSignedPrice isEqualToString:@""]){
@@ -689,8 +687,6 @@
             if([invoicesYearLimit isEqualToString:@""]){
                 [PromptInfo showWithText:@"发票年限不能为空" topOffset:54 duration:2];
             }
-          
-
             return NO;
         }else{
             calTaxInfo.houseRawPriceLand=[CTTxtInfo convertStringToFloat:houseRawPriceLand];
