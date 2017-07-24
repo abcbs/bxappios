@@ -5,7 +5,6 @@
 //  Created by 刘建强 on 17/7/21.
 //  Copyright © 2017年 itcast. All rights reserved.
 //
-
 #import "CTMainViewController.h"
 #import "CTTxtInfo.h"
 #import "CTResultViewController.h"
@@ -262,8 +261,10 @@
         lbl = [[UILabel alloc]init];
     }
     lbl.font =  [UIFont systemFontOfSize:17];
+//    [BSUIComponentView configLableStyle:lbl];
+
     [lbl setTextAlignment:0];
-    if(row==0){
+    if(row==0){//configLableStyle
         [lbl setBackgroundColor: [UIColor lightGrayColor]];
     }else{
         [lbl setBackgroundColor: [UIColor whiteColor]];
@@ -385,7 +386,7 @@
     }else if(landTaxTypeFacts!=landTaxTypeFactsContent&&idx==10){
         return 0;
     }
-
+    
     return [super tableView:tableView heightForRowAtIndexPath:indexPath];;
 }
 
@@ -457,14 +458,34 @@
     self.onlineSignedPriceTextField.delegate=self;
     //核定价格
     self.approvedPriceTextField.delegate=self;
-
+    //建筑面积
+    self.builtAreaTextField.delegate=self;
+    //房屋原始价格
+    self.houseRawPriceTextField.delegate=self;
+     //房屋原始契税
+    self.contractRawTaxTextField.delegate=self;
+    //装修费用
+    self.renovationFaxTextField.delegate=self;
+    //贷款利息
+    self.loanInterestTextField.delegate=self;
+    //房屋原始价格-土地增值税
+    self.houseRawPriceLandTextField.delegate=self;
+    //房屋原始契税-土地增值税
+    self.contractRawTaxLandTextField.delegate=self;
+    //发票年限
+    self.invoicesYearLimitTextField.delegate=self;
     
+
 }
 
 //每次键盘输入值均变化
 - (BOOL)textField:(UITextField*)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
     [self compareOnlineSignedAndApprovedPrice];
+    BOOL is=[BSValidatePredicate checkNumber:textField.text];
+    if(is==NO){
+        [PromptInfo showWithText:@"数字应为包含两位小数的数字" topOffset:54 duration:2];
+    }
 
     return YES;
     
@@ -477,7 +498,10 @@
 }
 
 - (BOOL)textFieldShouldEndEditing:(UITextField *)textField{
-    
+    BOOL is=[BSValidatePredicate checkNumber:textField.text];
+    if(is==NO){
+        [PromptInfo showWithText:@"数字应为包含两位小数的数字" topOffset:54 duration:2];
+    }
     [self compareOnlineSignedAndApprovedPrice];
     return YES;
     
@@ -512,12 +536,16 @@
         return;
     }
     if(onlineSignedPrice<approvedPrice){
-        self.approvedPriceTextField.backgroundColor=[UIColor grayColor];
+        //self.approvedPriceTextField.backgroundColor=[UIColor lightGrayColor];
+        self.approvedPriceTextField.textColor=[UIColor redColor];
+        self.onlineSignedPriceTextField.textColor=[UIColor blackColor];
         self.onlineSignedPriceTextField.backgroundColor=[UIColor whiteColor];
         
     }else{
         self.approvedPriceTextField.backgroundColor=[UIColor whiteColor];
-        self.onlineSignedPriceTextField.backgroundColor=[UIColor grayColor];
+        self.onlineSignedPriceTextField.textColor=[UIColor redColor];
+        self.approvedPriceTextField.textColor=[UIColor blackColor];
+        //self.onlineSignedPriceTextField.backgroundColor=[UIColor lightGrayColor];
     }
     
 }
@@ -546,11 +574,25 @@
     //房屋原始价格-土地增值税
     NSString *houseRawPriceLand=self.houseRawPriceLandTextField.text;
     //房屋原始契税-土地增值税
-    NSString *contractRawTaxLand=self.houseRawPriceLandTextField.text;
+    NSString *contractRawTaxLand=self.contractRawTaxTextField.text;
     //发票年限
-    NSString *invoicesYearLimit=self.houseRawPriceLandTextField.text;
+    NSString *invoicesYearLimit=self.invoicesYearLimitTextField.text;
     
     if([houseBuiltArea isEqualToString:@""]||[onlineSignedPrice isEqualToString:@""]||[approvedPrice isEqualToString:@""]){
+       
+        if([houseBuiltArea isEqualToString:@""]){
+
+//            BOOL checkRealName=[BSValidatePredicate
+//                                checkUserNameField:self.houseRawPriceLandTextField
+//                                alert:@"房屋建筑面积不能为空"];
+            [PromptInfo showWithText:@"房屋建筑面积不能为空" topOffset:54 duration:2];
+        }
+        if([onlineSignedPrice isEqualToString:@""]){
+            [PromptInfo showWithText:@"网签价格不能为空" topOffset:54 duration:2];
+        }
+        if([approvedPrice isEqualToString:@""]){
+            [PromptInfo showWithText:@"核定价格不能为空" topOffset:54 duration:2];
+        }
         return NO;
     }else{
         //
@@ -561,6 +603,7 @@
    
     //0-交易类型            transactionType=0;
     if(calTaxInfo.transactionTypeCurrent==nil ||[calTaxInfo.transactionTypeCurrent isEqualToString:@""]){
+        [PromptInfo showWithText:@"交易类型不能为空" topOffset:54 duration:2];
         return NO;
     }
     //1-赠与类型            giftRelationshipType=1;
@@ -568,40 +611,62 @@
     if([calTaxInfo.transactionTypeCurrent isEqualToString:[CTTxtInfo transactionTypeContent]]
        &&(calTaxInfo.giftRelationshipCurrent==nil ||[calTaxInfo.giftRelationshipCurrent isEqualToString:@""])
        ){
+        [PromptInfo showWithText:@"赠与类型不能为空" topOffset:54 duration:2];
+      
         return NO;
     }
     //2-房屋类型            houseType=2;
     if(calTaxInfo.houseTypeCurrent==nil ||[calTaxInfo.houseTypeCurrent isEqualToString:@""]){
+       [PromptInfo showWithText:@"房屋类型不能为空" topOffset:54 duration:2];
         return NO;
     }
     //3-买方住房记录类型     buyerHistType=3;
     if(calTaxInfo.buyerHistTypeCurrent==nil ||[calTaxInfo.buyerHistTypeCurrent isEqualToString:@""]){
+        [PromptInfo showWithText:@"买方住房记录类型不能为空" topOffset:54 duration:2];
         return NO;
     }
     //4-卖方住房类型        sellerHouseType=4;
     if(calTaxInfo.sellerHouseTypeCurrent==nil ||[calTaxInfo.sellerHouseTypeCurrent isEqualToString:@""]){
+        [PromptInfo showWithText:@"卖方住房类型不能为空" topOffset:54 duration:2];
         return NO;
     }
     //5-卖方购房年限类型     sellerFixedYearsType=5;
     if(calTaxInfo.sellerFixedYearsTypeCurrent==nil ||[calTaxInfo.sellerFixedYearsTypeCurrent isEqualToString:@""]){
+        [PromptInfo showWithText:@"卖方购房年限类型不能为空" topOffset:54 duration:2];
         return NO;
     }
     //6-卖方购房记录类型     sellerHouseRecordType=6;
     if(calTaxInfo.sellerHouseRecordTypeCurrent==nil ||[calTaxInfo.sellerHouseRecordTypeCurrent isEqualToString:@""]){
+        [PromptInfo showWithText:@"卖方购房记录类型不能为空" topOffset:54 duration:2];
         return NO;
     }
     //7-个人所得税征收方式   incomeTaxType=7;
     if(calTaxInfo.incomeTaxTypeCurrent==nil ||[calTaxInfo.incomeTaxTypeCurrent isEqualToString:@""]){
+        [PromptInfo showWithText:@"个人所得税征收方式不能为空" topOffset:54 duration:2];
         return NO;
     }
 
     //8-土地增值税征收方式   landTaxType=8;
     if(calTaxInfo.landTaxTypeCurrent==nil ||[calTaxInfo.landTaxTypeCurrent isEqualToString:@""]){
+        [PromptInfo showWithText:@"土地增值税征收方式不能为空" topOffset:54 duration:2];
         return NO;
     }
     //个人所得税征收方式为据实征收选项
     if([calTaxInfo.incomeTaxTypeCurrent isEqualToString:[CTTxtInfo incomeTaxTypeFactsContent]]){
         if([houseRawPrice isEqualToString:@""]||[contractRawTax isEqualToString:@""]||[renovationFax isEqualToString:@""]||[loanInterest isEqualToString:@""]){
+            if([houseRawPrice isEqualToString:@""]){
+                [PromptInfo showWithText:@"房屋原始价格不能为空" topOffset:54 duration:2];
+            }
+            if([contractRawTax isEqualToString:@""]){
+                [PromptInfo showWithText:@"房屋原始契税不能为空" topOffset:54 duration:2];
+            }
+            if([renovationFax isEqualToString:@""]){
+                [PromptInfo showWithText:@"装修费用不能为空" topOffset:54 duration:2];
+            }
+            if([loanInterest isEqualToString:@""]){
+                [PromptInfo showWithText:@"贷款利息不能为空" topOffset:54 duration:2];
+            }
+            
             return NO;
         }else{
             calTaxInfo.houseRawPrice=[CTTxtInfo convertStringToFloat:houseRawPrice];
@@ -615,6 +680,17 @@
     //土地增值税征收方式，如果是据实征收
     if([calTaxInfo.landTaxTypeCurrent isEqualToString:[CTTxtInfo landTaxTypeFactsContent]]){
         if([houseRawPriceLand isEqualToString:@""]||[contractRawTaxLand isEqualToString:@""]||[invoicesYearLimit isEqualToString:@""]){
+            if([houseRawPriceLand isEqualToString:@""]){
+                [PromptInfo showWithText:@"房屋原始价格不能为空" topOffset:54 duration:2];
+            }
+            if([contractRawTaxLand isEqualToString:@""]){
+                [PromptInfo showWithText:@"房屋原始契税不能为空" topOffset:54 duration:2];
+            }
+            if([invoicesYearLimit isEqualToString:@""]){
+                [PromptInfo showWithText:@"发票年限不能为空" topOffset:54 duration:2];
+            }
+          
+
             return NO;
         }else{
             calTaxInfo.houseRawPriceLand=[CTTxtInfo convertStringToFloat:houseRawPriceLand];
@@ -631,7 +707,7 @@
 {
     BOOL input=[self checkTextField];
     if (input==NO) {
-        [PromptInfo showWithText:@"录入信息不全" topOffset:54 duration:2];
+        //[PromptInfo showWithText:@"录入信息不全" topOffset:54 duration:2];
         return NO;
     }else{
         return YES;

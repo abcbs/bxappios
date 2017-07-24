@@ -36,4 +36,5 @@
 + (BOOL)checkNilField:(UITextField *) field;
 + (BOOL)checkNilField:(UITextField *) field alert:(NSString *)prompt;
 
++ (BOOL)checkNumber : (NSString *) number;
 @end

@@ -145,9 +145,9 @@ BSDeprecated("建议使用统一处理方式，使用initNavigationHeaderWithDef
 }
 +(void)configLableStyle:(UILabel *)lable{
     [lable.layer setMasksToBounds:YES];
-    [lable.layer setCornerRadius:10.0]; //设置矩形四个圆角半径
-    [lable.layer setBorderWidth:1.0]; //边框宽度
-    [lable setBackgroundColor:[BSUIComponentView navigationColor]];
+    [lable.layer setCornerRadius:2.0]; //设置矩形四个圆角半径
+    [lable.layer setBorderWidth:0.5]; //边框宽度
+    //[lable setBackgroundColor:[BSUIComponentView navigationColor]];
 
 }
 /**
